@@ -5,6 +5,7 @@ import HowItWorks from "@/components/landing/HowItWorks";
 import Coverage from "@/components/landing/Coverage";
 import Safety from "@/components/landing/Safety";
 import Testimonials from "@/components/landing/Testimonials";
+import DownloadSection from "@/components/landing/DownloadSection";
 import FinalCTA from "@/components/landing/FinalCTA";
 
 export default function Index() {
@@ -17,6 +18,7 @@ export default function Index() {
       <Coverage />
       <Safety />
       <Testimonials />
+      <DownloadSection />
       <FinalCTA />
     </main>
   );
