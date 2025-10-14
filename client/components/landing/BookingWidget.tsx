@@ -22,7 +22,11 @@ export default function BookingWidget() {
 
   const item = {
     hidden: { opacity: 0, y: 12 },
-    show: (i: number) => ({ opacity: 1, y: 0, transition: { delay: 0.05 * i } }),
+    show: (i: number) => ({
+      opacity: 1,
+      y: 0,
+      transition: { delay: 0.05 * i },
+    }),
   };
 
   return (
@@ -77,7 +81,11 @@ export default function BookingWidget() {
           className="w-full h-12 pl-10 pr-4 rounded-lg bg-black/50 border border-white/10 text-white placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-[hsl(var(--primary))]"
         />
       </motion.label>
-      <motion.div className="lg:col-span-4 flex justify-end mt-1" custom={4} variants={item}>
+      <motion.div
+        className="lg:col-span-4 flex justify-end mt-1"
+        custom={4}
+        variants={item}
+      >
         <Button type="submit" variant="glow" className="h-12 px-6">
           <Send className="mr-1" /> Book a Ride
         </Button>

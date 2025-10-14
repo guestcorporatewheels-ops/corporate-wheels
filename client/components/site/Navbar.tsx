@@ -15,13 +15,19 @@ export default function Navbar() {
   }, []);
 
   return (
-    <header className={`fixed inset-x-0 top-0 z-50 transition-colors ${
-      scrolled ? "backdrop-blur-md bg-black/60 border-b border-white/5" : "bg-transparent"
-    }`}>
+    <header
+      className={`fixed inset-x-0 top-0 z-50 transition-colors ${
+        scrolled
+          ? "backdrop-blur-md bg-black/60 border-b border-white/5"
+          : "bg-transparent"
+      }`}
+    >
       <div className="container flex items-center justify-between py-4">
         <Link to="/" className="flex items-center gap-2">
           <div className="size-8 rounded-md btn-gradient" />
-          <span className="font-heading text-lg tracking-wide text-white">DarkMode Chauffeur</span>
+          <span className="font-heading text-lg tracking-wide text-white">
+            DarkMode Chauffeur
+          </span>
         </Link>
         <nav className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
           {[
@@ -32,7 +38,11 @@ export default function Navbar() {
             ["Download", "#download"],
             ["Sign In", "#signin"],
           ].map(([label, href]) => (
-            <a key={label} href={href} className="hover:text-white transition-colors">
+            <a
+              key={label}
+              href={href}
+              className="hover:text-white transition-colors"
+            >
               {label}
             </a>
           ))}
@@ -59,7 +69,11 @@ export default function Navbar() {
               ["Download", "#download"],
               ["Sign In", "#signin"],
             ].map(([label, href]) => (
-              <a key={label} href={href} className="text-muted-foreground hover:text-white">
+              <a
+                key={label}
+                href={href}
+                className="text-muted-foreground hover:text-white"
+              >
                 {label}
               </a>
             ))}

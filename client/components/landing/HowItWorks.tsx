@@ -13,8 +13,12 @@ export default function HowItWorks() {
     <section id="how" className="py-20">
       <div className="container">
         <div className="text-center mb-12">
-          <h2 className="font-heading text-3xl md:text-4xl text-white">How It Works</h2>
-          <p className="mt-2 text-muted-foreground">Simple steps to your next ride.</p>
+          <h2 className="font-heading text-3xl md:text-4xl text-white">
+            How It Works
+          </h2>
+          <p className="mt-2 text-muted-foreground">
+            Simple steps to your next ride.
+          </p>
         </div>
         <div className="relative">
           <div className="absolute left-4 right-4 top-10 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
@@ -34,7 +38,9 @@ export default function HowItWorks() {
                   </div>
                   <div className="absolute -z-10 inset-0 rounded-xl blur-xl opacity-30 bg-[radial-gradient(circle,rgba(0,216,180,0.5)_0%,transparent_60%)]" />
                 </div>
-                <p className="mt-3 text-sm text-muted-foreground max-w-[12rem]">{s.title}</p>
+                <p className="mt-3 text-sm text-muted-foreground max-w-[12rem]">
+                  {s.title}
+                </p>
               </motion.div>
             ))}
           </div>

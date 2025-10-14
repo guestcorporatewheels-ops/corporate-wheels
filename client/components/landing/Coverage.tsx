@@ -14,8 +14,12 @@ export default function Coverage() {
     <section className="py-20">
       <div className="container">
         <div className="text-center mb-10">
-          <h2 className="font-heading text-3xl md:text-4xl text-white">Global Coverage</h2>
-          <p className="mt-2 text-muted-foreground">Premium rides in 300+ cities worldwide.</p>
+          <h2 className="font-heading text-3xl md:text-4xl text-white">
+            Global Coverage
+          </h2>
+          <p className="mt-2 text-muted-foreground">
+            Premium rides in 300+ cities worldwide.
+          </p>
         </div>
         <div className="relative rounded-2xl overflow-hidden border border-white/10 bg-[radial-gradient(120%_120%_at_50%_0%,#0f172a,transparent)]">
           <div className="aspect-[16/9]">

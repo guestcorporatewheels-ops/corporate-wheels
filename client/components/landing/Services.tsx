@@ -26,11 +26,18 @@ const services = [
 
 export default function Services() {
   return (
-    <section id="services" className="py-20 bg-[radial-gradient(60%_60%_at_70%_0%,rgba(0,216,180,0.08),transparent)]">
+    <section
+      id="services"
+      className="py-20 bg-[radial-gradient(60%_60%_at_70%_0%,rgba(0,216,180,0.08),transparent)]"
+    >
       <div className="container">
         <div className="text-center mb-10">
-          <h2 className="font-heading text-3xl md:text-4xl text-white">Our Services</h2>
-          <p className="mt-2 text-muted-foreground">Choose the perfect ride for every occasion.</p>
+          <h2 className="font-heading text-3xl md:text-4xl text-white">
+            Our Services
+          </h2>
+          <p className="mt-2 text-muted-foreground">
+            Choose the perfect ride for every occasion.
+          </p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {services.map((s, i) => (
