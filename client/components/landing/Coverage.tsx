@@ -1,11 +1,20 @@
 import { motion } from "framer-motion";
-import { MapPin } from "lucide-react";
 
 const cities = [
   { name: "New York", x: "35%", y: "40%" },
   { name: "London", x: "52%", y: "30%" },
+  { name: "Paris", x: "54%", y: "33%" },
+  { name: "Berlin", x: "56%", y: "31%" },
   { name: "Dubai", x: "63%", y: "48%" },
+  { name: "Mumbai", x: "68%", y: "52%" },
   { name: "Singapore", x: "78%", y: "62%" },
+  { name: "Tokyo", x: "80%", y: "38%" },
+  { name: "Seoul", x: "81%", y: "34%" },
+  { name: "Cape Town", x: "50%", y: "82%" },
+  { name: "Johannesburg", x: "52%", y: "74%" },
+  { name: "Sao Paulo", x: "23%", y: "60%" },
+  { name: "Mexico City", x: "23%", y: "46%" },
+  { name: "Los Angeles", x: "22%", y: "36%" },
   { name: "Sydney", x: "86%", y: "78%" },
 ];
 
