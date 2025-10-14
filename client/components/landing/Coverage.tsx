@@ -21,9 +21,10 @@ export default function Coverage() {
             Premium rides in 300+ cities worldwide.
           </p>
         </div>
+        
         <div className="relative rounded-2xl overflow-hidden border border-white/10 bg-[radial-gradient(120%_120%_at_50%_0%,#0f172a,transparent)]">
           <div className="aspect-[16/9]">
-            <div className="absolute inset-0 bg-[url('https://upload.wikimedia.org/wikipedia/commons/0/02/Simple_world_map.svg')] bg-center bg-contain opacity-10" />
+            <div className="absolute inset-0 bg-[url('https://upload.wikimedia.org/wikipedia/commons/8/80/World_map_-_low_resolution.svg')] bg-center bg-contain opacity-10" />
             {cities.map((c, i) => (
               <motion.div
                 key={c.name}
