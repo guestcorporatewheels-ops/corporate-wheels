@@ -7,7 +7,7 @@ export default function HeroSection() {
   return (
     <section className="relative min-h-[92vh] flex items-center justify-center pt-24">
       <div className="absolute inset-0 -z-10">
-        <div className="absolute inset-0 bg-[url('/public/placeholder.svg')] bg-cover bg-center opacity-10" />
+        <div className="absolute inset-0 bg-[url('/placeholder.svg')] bg-cover bg-center opacity-10" />
         <div className="absolute inset-0 bg-[radial-gradient(50%_50%_at_50%_50%,rgba(26,183,255,0.08)_0%,transparent_60%)]" />
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/50 to-black" />
       </div>
