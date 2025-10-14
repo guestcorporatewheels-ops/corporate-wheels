@@ -14,7 +14,7 @@ export default function ValueBar() {
         {items.map(({ icon: Icon, text }) => (
           <div
             key={text}
-            className="flex items-center gap-3 p-2 rounded-lg hover:shadow-[0_0_15px_#00D8B4] transition"
+            className="flex items-center gap-3 p-2 rounded-lg hover:shadow-[0_0_15px_#00D8B4] transition-all duration-500 ease-in-out "
           >
             <div className="p-2 rounded-md border border-white/10 text-secondary">
               <Icon className="size-4" />
