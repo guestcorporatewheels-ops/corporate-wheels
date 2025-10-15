@@ -1,17 +1,13 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, ChevronDown, Apple, Play } from "lucide-react";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [hoveredDropdown, setHoveredDropdown] = useState<string | null>(null);
+  const hoverTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -19,6 +15,70 @@ export default function Navbar() {
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  // Cleanup timeout on unmount
+  useEffect(() => {
+    return () => {
+      if (hoverTimeoutRef.current) {
+        clearTimeout(hoverTimeoutRef.current);
+      }
+    };
+  }, []);
+
+  const handleMouseEnter = (dropdownId: string) => {
+    if (hoverTimeoutRef.current) {
+      clearTimeout(hoverTimeoutRef.current);
+    }
+    setHoveredDropdown(dropdownId);
+  };
+
+  const handleMouseLeave = () => {
+    hoverTimeoutRef.current = setTimeout(() => {
+      setHoveredDropdown(null);
+    }, 150); // Small delay to prevent flickering
+  };
+
+  const handleDropdownMouseEnter = () => {
+    if (hoverTimeoutRef.current) {
+      clearTimeout(hoverTimeoutRef.current);
+    }
+  };
+
+  const handleDropdownMouseLeave = () => {
+    hoverTimeoutRef.current = setTimeout(() => {
+      setHoveredDropdown(null);
+    }, 150);
+  };
+
+  // Custom Hover Dropdown Component
+  const HoverDropdown = ({
+    trigger,
+    children,
+    dropdownId,
+    className = "",
+  }: {
+    trigger: React.ReactNode;
+    children: React.ReactNode;
+    dropdownId: string;
+    className?: string;
+  }) => (
+    <div
+      className="relative"
+      onMouseEnter={() => handleMouseEnter(dropdownId)}
+      onMouseLeave={handleMouseLeave}
+    >
+      {trigger}
+      {hoveredDropdown === dropdownId && (
+        <div
+          className={`absolute top-full left-0 mt-2 z-50 ${className}`}
+          onMouseEnter={handleDropdownMouseEnter}
+          onMouseLeave={handleDropdownMouseLeave}
+        >
+          {children}
+        </div>
+      )}
+    </div>
+  );
 
   return (
     <header
@@ -39,43 +99,54 @@ export default function Navbar() {
         </Link>
         <nav className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
           {/* Services Dropdown */}
-          <DropdownMenu>
-            <DropdownMenuTrigger className="flex items-center gap-1 hover:text-white transition-colors">
-              Our Services <ChevronDown className="size-4" />
-            </DropdownMenuTrigger>
-            <DropdownMenuContent className="w-56 bg-black/90 border-white/10 backdrop-blur-md">
-              <DropdownMenuItem className="hover:bg-white/10">
-                <a href="#services" className="block w-full">
-                  City-to-City rides
-                </a>
-              </DropdownMenuItem>
-              <DropdownMenuItem className="hover:bg-white/10">
-                <a href="#services" className="block w-full">
-                  Chauffeur hailing
-                </a>
-              </DropdownMenuItem>
-              <DropdownMenuItem className="hover:bg-white/10">
-                <a href="#services" className="block w-full">
-                  Airport transfers
-                </a>
-              </DropdownMenuItem>
-              <DropdownMenuItem className="hover:bg-white/10">
-                <a href="#services" className="block w-full">
-                  Hourly hire
-                </a>
-              </DropdownMenuItem>
-              <DropdownMenuItem className="hover:bg-white/10">
-                <a href="#services" className="block w-full">
-                  Chauffeur service
-                </a>
-              </DropdownMenuItem>
-              <DropdownMenuItem className="hover:bg-white/10">
-                <a href="#services" className="block w-full">
-                  Limousine service
-                </a>
-              </DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu>
+          <HoverDropdown
+            dropdownId="services"
+            trigger={
+              <button className="flex items-center gap-1 hover:text-white transition-colors">
+                Our Services <ChevronDown className="size-4" />
+              </button>
+            }
+            className="w-56 bg-black/90 border border-white/10 backdrop-blur-md rounded-md shadow-lg"
+          >
+            <div className="py-2">
+              <a
+                href="#services"
+                className="block px-4 py-2 hover:bg-white/10 transition-colors"
+              >
+                City-to-City rides
+              </a>
+              <a
+                href="#services"
+                className="block px-4 py-2 hover:bg-white/10 transition-colors"
+              >
+                Chauffeur hailing
+              </a>
+              <a
+                href="#services"
+                className="block px-4 py-2 hover:bg-white/10 transition-colors"
+              >
+                Airport transfers
+              </a>
+              <a
+                href="#services"
+                className="block px-4 py-2 hover:bg-white/10 transition-colors"
+              >
+                Hourly hire
+              </a>
+              <a
+                href="#services"
+                className="block px-4 py-2 hover:bg-white/10 transition-colors"
+              >
+                Chauffeur service
+              </a>
+              <a
+                href="#services"
+                className="block px-4 py-2 hover:bg-white/10 transition-colors"
+              >
+                Limousine service
+              </a>
+            </div>
+          </HoverDropdown>
 
           {/* Other Navigation Items */}
           <a href="#business" className="hover:text-white transition-colors">
@@ -89,23 +160,30 @@ export default function Navbar() {
           </a>
 
           {/* Download Dropdown */}
-          <DropdownMenu>
-            <DropdownMenuTrigger className="flex items-center gap-1 hover:text-white transition-colors">
-              Download <ChevronDown className="size-4" />
-            </DropdownMenuTrigger>
-            <DropdownMenuContent className="w-48 bg-black/90 border-white/10 backdrop-blur-md">
-              <DropdownMenuItem className="hover:bg-white/10">
-                <a href="#download" className="flex items-center gap-2 w-full">
-                  <Apple className="size-4" /> iOS
-                </a>
-              </DropdownMenuItem>
-              <DropdownMenuItem className="hover:bg-white/10">
-                <a href="#download" className="flex items-center gap-2 w-full">
-                  <Play className="size-4" /> Android
-                </a>
-              </DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu>
+          <HoverDropdown
+            dropdownId="download"
+            trigger={
+              <button className="flex items-center gap-1 hover:text-white transition-colors">
+                Download <ChevronDown className="size-4" />
+              </button>
+            }
+            className="w-48 bg-black/90 border border-white/10 backdrop-blur-md rounded-md shadow-lg"
+          >
+            <div className="py-2">
+              <a
+                href="#download"
+                className="flex items-center gap-2 px-4 py-2 hover:bg-white/10 transition-colors"
+              >
+                <Apple className="size-4" /> iOS
+              </a>
+              <a
+                href="#download"
+                className="flex items-center gap-2 px-4 py-2 hover:bg-white/10 transition-colors"
+              >
+                <Play className="size-4" /> Android
+              </a>
+            </div>
+          </HoverDropdown>
 
           <Button asChild variant="glow" className="ml-2">
             <a href="#booking">Book Now</a>
@@ -169,8 +247,8 @@ export default function Navbar() {
             </a>
             <a
               href="#chauffeurs"
-                className="text-muted-foreground hover:text-white"
-              >
+              className="text-muted-foreground hover:text-white"
+            >
               For Chauffeurs
             </a>
             <a href="#help" className="text-muted-foreground hover:text-white">

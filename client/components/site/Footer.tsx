@@ -6,9 +6,13 @@ export default function Footer() {
       <div className="container py-12 grid grid-cols-1 md:grid-cols-4 gap-8">
         <div>
           <div className="flex items-center gap-2">
-            <div className="size-8 rounded-md btn-gradient" />
+            <img
+              src="./logo.png"
+              alt="Corporate Wheels Logo"
+              className="h-10 w-auto object-contain"
+            />
             <span className="font-heading text-white text-lg">
-              DarkMode Chauffeur
+              Corporate Wheels
             </span>
           </div>
           <p className="mt-4 text-sm text-muted-foreground max-w-sm">
@@ -74,8 +78,7 @@ export default function Footer() {
       <div className="border-t border-white/10">
         <div className="container py-6 text-xs text-muted-foreground flex flex-col md:flex-row items-center justify-between">
           <p>
-            © {new Date().getFullYear()} DarkMode Chauffeur. All rights
-            reserved.
+            © {new Date().getFullYear()} Corporate Wheels. All rights reserved.
           </p>
           <p className="mt-2 md:mt-0">
             Built for comfort, designed for the future.
