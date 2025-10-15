@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 export default function FinalCTA() {
   return (
     <section className="relative py-20">
-      <div className="absolute inset-0 -z-10 bg-[radial-gradient(50%_50%_at_50%_50%,rgba(0,216,180,0.08),transparent_60%)]" />
+      <div className="absolute inset-0 -z-10 bg-[radial-gradient(50%_50%_at_50%_50%,rgba(230,167,0,0.08),transparent_60%)]" />
       <div className="container text-center">
         <h2 className="font-heading text-3xl md:text-4xl text-white">
           Ready to ride? <span className="text-gradient">Book now</span> and

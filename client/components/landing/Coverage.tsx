@@ -30,7 +30,7 @@ export default function Coverage() {
             Premium rides in 300+ cities worldwide.
           </p>
         </div>
-        
+
         <div className="relative rounded-2xl overflow-hidden border border-white/10 bg-[radial-gradient(120%_120%_at_50%_0%,#0f172a,transparent)]">
           <div className="aspect-[16/9]">
             <div className="absolute inset-0 bg-[url('https://upload.wikimedia.org/wikipedia/commons/8/80/World_map_-_low_resolution.svg')] bg-center bg-contain opacity-10" />
@@ -45,7 +45,7 @@ export default function Coverage() {
                 style={{ left: c.x, top: c.y }}
               >
                 <div className="-translate-x-1/2 -translate-y-1/2">
-                  <div className="p-2 rounded-full bg-[hsl(var(--primary))] shadow-[0_0_15px_#00D8B4]" />
+                  <div className="p-2 rounded-full bg-[hsl(var(--primary))] shadow-[0_0_15px_hsl(var(--primary))]" />
                 </div>
                 <div className="absolute left-1/2 -translate-x-1/2 mt-2 text-xs text-white opacity-0 group-hover:opacity-100 bg-black/70 px-2 py-1 rounded border border-white/10">
                   {c.name}

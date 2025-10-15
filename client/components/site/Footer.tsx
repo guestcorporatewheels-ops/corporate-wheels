@@ -63,7 +63,7 @@ export default function Footer() {
               <a
                 key={i}
                 href="#"
-                className="p-2 rounded-md border border-white/10 hover:bg-white/5 hover:shadow-[0_0_15px_#00D8B4] transition"
+                className="p-2 rounded-md border border-white/10 hover:bg-white/5 hover:shadow-[0_0_15px_hsl(var(--primary))] transition"
               >
                 <Icon className="size-4" />
               </a>

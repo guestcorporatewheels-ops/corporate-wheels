@@ -33,10 +33,10 @@ export default function HowItWorks() {
                 className="flex flex-col items-center text-center"
               >
                 <div className="relative">
-                  <div className="p-3 rounded-xl border border-white/10 bg-black/50 text-secondary">
+                  <div className="p-3 rounded-xl border border-white/10 bg-black/50 text-[hsl(var(--secondary))]">
                     <s.icon className="size-5" />
                   </div>
-                  <div className="absolute -z-10 inset-0 rounded-xl blur-xl opacity-30 bg-[radial-gradient(circle,rgba(0,216,180,0.5)_0%,transparent_60%)]" />
+                  <div className="absolute -z-10 inset-0 rounded-xl blur-xl opacity-30 bg-[radial-gradient(circle,rgba(230,167,0,0.5)_0%,transparent_60%)]" />
                 </div>
                 <p className="mt-3 text-sm text-muted-foreground max-w-[12rem]">
                   {s.title}

@@ -12,7 +12,7 @@ export default function Safety() {
   return (
     <section
       id="safety"
-      className="py-20 bg-[radial-gradient(60%_60%_at_20%_0%,rgba(26,183,255,0.08),transparent)]"
+      className="py-20 bg-[radial-gradient(60%_60%_at_20%_0%,rgba(230,167,0,0.08),transparent)]"
     >
       <div className="container">
         <div className="text-center mb-10">
@@ -31,10 +31,10 @@ export default function Safety() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.05 }}
-              className="relative p-6 rounded-2xl border border-white/10 bg-gradient-to-b from-white/5 to-white/[0.02] hover:shadow-[0_0_25px_rgba(26,183,255,0.2)]"
+              className="relative p-6 rounded-2xl border border-white/10 bg-gradient-to-b from-white/5 to-white/[0.02] hover:shadow-[0_0_25px_rgba(230,167,0,0.2)]"
             >
               <div className="flex items-start gap-4">
-                <div className="p-2 rounded-lg border border-white/10 text-secondary bg-black/40">
+                <div className="p-2 rounded-lg border border-white/10 text-[hsl(var(--secondary))] bg-black/40">
                   <it.icon className="size-5" />
                 </div>
                 <div>

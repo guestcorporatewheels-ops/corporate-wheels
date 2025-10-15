@@ -6,89 +6,103 @@
 @tailwind utilities;
 
 @layer base {
+
   /**
    * Tailwind CSS theme
    * tailwind.config.ts expects the following color variables to be expressed as HSL values.
    */
   :root {
-    /* Default to dark luxury theme */
-    --background: 0 0% 5%; /* #0D0D0D */
+    /* Corporate Wheels dark theme based on logo colors */
+    --background: 0 0% 4%;
+    /* Darker black background */
     --foreground: 0 0% 100%;
 
-    --card: 0 0% 8%; /* #141414 */
+    --card: 0 0% 7%;
+    /* Slightly lighter than background */
     --card-foreground: 0 0% 100%;
 
-    --popover: 0 0% 8%;
+    --popover: 0 0% 7%;
     --popover-foreground: 0 0% 100%;
 
-    --primary: 170 100% 42%; /* #00D8B4 */
-    --primary-foreground: 0 0% 6%;
+    /* Gold gradient primary - extracted from logo */
+    --primary: 43 96% 56%;
+    /* Rich gold #E6A700 */
+    --primary-foreground: 0 0% 4%;
 
-    --secondary: 199 100% 55%; /* #1AB7FF */
-    --secondary-foreground: 0 0% 6%;
+    /* Red secondary - from logo needle and separators */
+    --secondary: 0 84% 60%;
+    /* Corporate red #E53E3E */
+    --secondary-foreground: 0 0% 100%;
 
     --muted: 0 0% 12%;
-    --muted-foreground: 0 0% 69%; /* #B0B0B0 */
+    --muted-foreground: 0 0% 65%;
+    /* Slightly dimmer for better contrast */
 
-    --accent: 170 100% 42%;
-    --accent-foreground: 0 0% 6%;
+    /* Orange accent - from gauge gradient */
+    --accent: 25 95% 53%;
+    /* Vibrant orange #FF6B35 */
+    --accent-foreground: 0 0% 4%;
+
+    /* Destructive uses logo red */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 18%;
+    /* Slightly darker borders */
+    --input: 0 0% 18%;
+    --ring: 43 96% 56%;
+    /* Gold ring focus */
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 4%;
+    --sidebar-foreground: 0 0% 85%;
+    --sidebar-primary: 43 96% 56%;
+    --sidebar-primary-foreground: 0 0% 4%;
+    --sidebar-accent: 25 95% 53%;
+    --sidebar-accent-foreground: 0 0% 4%;
+    --sidebar-border: 0 0% 18%;
+    --sidebar-ring: 43 96% 56%;
+  }
+
+  .dark {
+    /* Same as root - Corporate Wheels dark theme */
+    --background: 0 0% 4%;
+    --foreground: 0 0% 100%;
+
+    --card: 0 0% 7%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 0 0% 7%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 43 96% 56%;
+    --primary-foreground: 0 0% 4%;
+
+    --secondary: 0 84% 60%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 0 0% 12%;
+    --muted-foreground: 0 0% 65%;
+
+    --accent: 25 95% 53%;
+    --accent-foreground: 0 0% 4%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 20%; /* #333 */
-    --input: 0 0% 20%;
-    --ring: 170 100% 42%;
+    --border: 0 0% 18%;
+    --input: 0 0% 18%;
+    --ring: 43 96% 56%;
 
-    --radius: 0.75rem;
-
-    --sidebar-background: 0 0% 5%;
+    --sidebar-background: 0 0% 4%;
     --sidebar-foreground: 0 0% 85%;
-    --sidebar-primary: 170 100% 42%;
-    --sidebar-primary-foreground: 0 0% 6%;
-    --sidebar-accent: 199 100% 55%;
-    --sidebar-accent-foreground: 0 0% 6%;
-    --sidebar-border: 0 0% 20%;
-    --sidebar-ring: 170 100% 42%;
-  }
-
-  .dark {
-    --background: 0 0% 5%;
-    --foreground: 0 0% 100%;
-
-    --card: 0 0% 8%;
-    --card-foreground: 0 0% 100%;
-
-    --popover: 0 0% 8%;
-    --popover-foreground: 0 0% 100%;
-
-    --primary: 170 100% 42%;
-    --primary-foreground: 0 0% 6%;
-
-    --secondary: 199 100% 55%;
-    --secondary-foreground: 0 0% 6%;
-
-    --muted: 0 0% 12%;
-    --muted-foreground: 0 0% 69%;
-
-    --accent: 170 100% 42%;
-    --accent-foreground: 0 0% 6%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 100%;
-
-    --border: 0 0% 20%;
-    --input: 0 0% 20%;
-    --ring: 170 100% 42%;
-
-    --sidebar-background: 0 0% 5%;
-    --sidebar-foreground: 0 0% 85%;
-    --sidebar-primary: 170 100% 42%;
-    --sidebar-primary-foreground: 0 0% 6%;
-    --sidebar-accent: 199 100% 55%;
-    --sidebar-accent-foreground: 0 0% 6%;
-    --sidebar-border: 0 0% 20%;
-    --sidebar-ring: 170 100% 42%;
+    --sidebar-primary: 43 96% 56%;
+    --sidebar-primary-foreground: 0 0% 4%;
+    --sidebar-accent: 25 95% 53%;
+    --sidebar-accent-foreground: 0 0% 4%;
+    --sidebar-border: 0 0% 18%;
+    --sidebar-ring: 43 96% 56%;
   }
 }
 
@@ -110,6 +124,7 @@
   h6 {
     @apply font-heading tracking-wide;
   }
+
   p {
     @apply text-muted-foreground;
   }
@@ -129,25 +144,59 @@
 /* Utilities */
 @layer utilities {
   .btn-gradient {
-    background-image: linear-gradient(
-      90deg,
-      hsl(var(--primary)) 0%,
-      hsl(var(--secondary)) 100%
-    );
+    background-image: linear-gradient(90deg,
+        #E6A700 0%,
+        /* Corporate gold */
+        #FF6B35 50%,
+        /* Corporate orange */
+        #E53E3E 100%
+        /* Corporate red */
+      );
   }
+
   .btn-gradient-animate {
     background-size: 200% 200%;
     animation: gradient-move 6s ease infinite;
   }
+
   .text-gradient {
-    background-image: linear-gradient(
-      90deg,
-      hsl(var(--primary)) 0%,
-      hsl(var(--secondary)) 100%
-    );
+    background-image: linear-gradient(90deg,
+        #E6A700 0%,
+        /* Corporate gold */
+        #FF6B35 50%,
+        /* Corporate orange */
+        #E53E3E 100%
+        /* Corporate red */
+      );
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
+  }
+
+  .text-gradient-gold {
+    background-image: linear-gradient(135deg,
+        #F4C430 0%,
+        /* Light gold */
+        #E6A700 50%,
+        /* Corporate gold */
+        #B8860B 100%
+        /* Dark gold */
+      );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .bg-corporate-gold {
+    background-color: #E6A700;
+  }
+
+  .text-corporate-gold {
+    color: #E6A700;
+  }
+
+  .border-corporate-gold {
+    border-color: #E6A700;
   }
 }
 
@@ -155,9 +204,11 @@
   0% {
     background-position: 0% 50%;
   }
+
   50% {
     background-position: 100% 50%;
   }
+
   100% {
     background-position: 0% 50%;
   }

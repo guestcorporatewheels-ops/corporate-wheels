@@ -1,6 +1,7 @@
 import HeroSection from "@/components/landing/HeroSection";
 import ValueBar from "@/components/landing/ValueBar";
 import Services from "@/components/landing/Services";
+import CityToCityRoutes from "@/components/landing/CityToCityRoutes";
 import HowItWorks from "@/components/landing/HowItWorks";
 import Coverage from "@/components/landing/Coverage";
 import Safety from "@/components/landing/Safety";
@@ -14,6 +15,7 @@ export default function Index() {
       <HeroSection />
       <ValueBar />
       <Services />
+      <CityToCityRoutes />
       <HowItWorks />
       <Coverage />
       <Safety />

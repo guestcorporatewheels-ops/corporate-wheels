@@ -57,6 +57,16 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        // Corporate Wheels brand colors from logo
+        corporate: {
+          gold: "#E6A700", // Primary gold from logo
+          "gold-light": "#F4C430", // Lighter gold
+          "gold-dark": "#B8860B", // Darker gold
+          red: "#E53E3E", // Corporate red from needle
+          orange: "#FF6B35", // Orange from gauge
+          "yellow-green": "#ADFF2F", // Yellow-green from gauge
+          black: "#0A0A0A", // Logo background
+        },
       },
       fontFamily: {
         heading: ["Poppins", "Inter", "ui-sans-serif", "system-ui"],
