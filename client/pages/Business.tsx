@@ -3,25 +3,146 @@ import { Button } from "@/components/ui/button";
 import { useTypingAnimation } from "@/hooks/use-typing-animation";
 import { cn } from "@/lib/utils";
 
+function FloatingSVGs() {
+  return (
+    <div className="pointer-events-none absolute inset-0 -z-0">
+      <motion.svg
+        width="200"
+        height="200"
+        viewBox="0 0 100 100"
+        className="absolute left-8 top-24 opacity-30"
+        initial={{ y: -10, rotate: 0 }}
+        animate={{ y: [0, -12, 0], rotate: [0, 6, 0] }}
+        transition={{ duration: 6, repeat: Infinity }}
+      >
+        <defs>
+          <linearGradient id="b1" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stopColor="#E6A700" stopOpacity="0.8" />
+            <stop offset="100%" stopColor="#FF6B35" stopOpacity="0.6" />
+          </linearGradient>
+        </defs>
+        <circle cx="50" cy="50" r="40" fill="url(#b1)" />
+      </motion.svg>
+
+      <motion.svg
+        width="160"
+        height="160"
+        viewBox="0 0 100 100"
+        className="absolute right-12 top-48 opacity-25"
+        initial={{ y: 0, rotate: 0 }}
+        animate={{ y: [0, 10, 0], rotate: [0, -8, 0] }}
+        transition={{ duration: 7, repeat: Infinity }}
+      >
+        <defs>
+          <linearGradient id="b2" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stopColor="#FF6B35" stopOpacity="0.7" />
+            <stop offset="100%" stopColor="#E53E3E" stopOpacity="0.5" />
+          </linearGradient>
+        </defs>
+        <rect width="100" height="100" rx="18" fill="url(#b2)" />
+      </motion.svg>
+
+      <motion.svg
+        width="120"
+        height="120"
+        viewBox="0 0 100 100"
+        className="absolute left-1/3 bottom-32 opacity-20"
+        initial={{ scale: 1, rotate: 0 }}
+        animate={{ scale: [1, 1.1, 1], rotate: [0, 180, 360] }}
+        transition={{ duration: 12, repeat: Infinity }}
+      >
+        <defs>
+          <linearGradient id="b3" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stopColor="#F4C430" stopOpacity="0.6" />
+            <stop offset="100%" stopColor="#E6A700" stopOpacity="0.4" />
+          </linearGradient>
+        </defs>
+        <path d="M50 10 L90 50 L50 90 L10 50Z" fill="url(#b3)" />
+      </motion.svg>
+    </div>
+  );
+}
+
+function ParticleLayer({ count = 12 }: { count?: number }) {
+  const particles = Array.from({ length: count }).map((_, i) => ({
+    id: i,
+    left: `${Math.round(Math.random() * 100)}%`,
+    size: 6 + Math.round(Math.random() * 18),
+    delay: Math.random() * 6,
+    duration: 8 + Math.random() * 8,
+    opacity: 0.15 + Math.random() * 0.45,
+  }));
+
+  return (
+    <div className="pointer-events-none absolute inset-0 -z-20 overflow-hidden">
+      {particles.map((p) => (
+        <motion.span
+          key={p.id}
+          className="absolute rounded-full bg-gradient-to-br from-[#E6A700] to-[#FF6B35] blur-sm"
+          style={{
+            left: p.left,
+            width: p.size,
+            height: p.size,
+            opacity: p.opacity,
+            transform: `translateY(0)`,
+          }}
+          initial={{ y: 0, opacity: 0 }}
+          animate={{ y: [-10, -40, -10], opacity: [0, p.opacity, 0] }}
+          transition={{
+            delay: p.delay,
+            duration: p.duration,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        />
+      ))}
+    </div>
+  );
+}
+
 function AnimatedGradientBg({ className = "" }: { className?: string }) {
   return (
     <div className={cn("absolute inset-0 -z-10 overflow-hidden", className)}>
+      {/* Diagonal glossy streaks background */}
+  <svg className="absolute inset-0 w-full h-full z-0" viewBox="0 0 1920 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="streak1" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stopColor="#E6A700" stopOpacity="0.08" />
+            <stop offset="100%" stopColor="#FF6B35" stopOpacity="0.02" />
+          </linearGradient>
+        </defs>
+  <rect x="-200" y="200" width="2200" height="120" rx="60" fill="url(#streak1)" opacity="0.95" transform="rotate(-12 960 260)" />
+  <rect x="-300" y="600" width="2200" height="80" rx="40" fill="url(#streak1)" opacity="0.85" transform="rotate(-10 960 640)" />
+      </svg>
+      {/* Animated gold/orange radial gradients */}
       <div
-        className="absolute -top-32 -left-32 h-[40rem] w-[40rem] rounded-full opacity-20 blur-3xl btn-gradient-animate"
+        className="absolute -top-32 -left-32 h-[40rem] w-[40rem] rounded-full opacity-40 blur-3xl btn-gradient-animate z-0"
         style={{
           backgroundImage:
-            "linear-gradient(120deg,#F4C430,#E6A700,#FF6B35,#E53E3E)",
+            "linear-gradient(120deg,#F4C430 0%,#E6A700 25%,#FF6B35 60%,#E53E3E 100%)",
         }}
       />
       <div
-        className="absolute -bottom-40 -right-40 h-[36rem] w-[36rem] rounded-full opacity-10 blur-3xl btn-gradient-animate"
+        className="absolute -bottom-40 -right-40 h-[36rem] w-[36rem] rounded-full opacity-30 blur-3xl btn-gradient-animate z-0"
         style={{
           backgroundImage:
-            "linear-gradient(60deg,#E53E3E,#FF6B35,#E6A700,#F4C430)",
+            "linear-gradient(60deg,#E53E3E 0%,#FF6B35 40%,#E6A700 70%,#F4C430 100%)",
         }}
       />
-      <div className="absolute inset-0 bg-[radial-gradient(50%_50%_at_50%_50%,rgba(230,167,0,0.08)_0%,transparent_60%)]" />
-      <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/70 to-black/90" />
+  <div className="absolute inset-0 bg-[radial-gradient(50%_50%_at_50%_50%,rgba(230,167,0,0.18)_0%,transparent_60%)] z-0" />
+  <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/70 to-black/90 z-0" />
+
+      {/* Subtle moving gradient overlay */}
+      <motion.div
+        className="absolute -left-1/4 -top-1/4 w-[150%] h-[150%] opacity-50 z-0"
+        style={{
+          backgroundImage:
+            "radial-gradient(circle at 10% 20%, rgba(230,167,0,0.12), transparent 10%), radial-gradient(circle at 80% 80%, rgba(255,107,53,0.08), transparent 12%)",
+          mixBlendMode: "screen",
+        }}
+        animate={{ x: [0, 40, 0], y: [0, 20, 0], rotate: [0, 4, 0] }}
+        transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
+      />
     </div>
   );
 }
@@ -33,9 +154,13 @@ function Hero() {
     300,
   );
   return (
-    <section className="relative pt-28 pb-20 min-h-[70vh] flex items-center">
+    <section className="relative pt-28 pb-20 min-h-[70vh] flex items-center overflow-hidden bg-transparent">
       <AnimatedGradientBg />
-      <div className="container">
+      {/* Dark overlay above gradients for contrast */}
+      <div className="absolute inset-0 z-10 pointer-events-none bg-black/70" />
+      <ParticleLayer count={16} />
+      <FloatingSVGs />
+      <div className="container relative z-20">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -127,7 +252,23 @@ function Features() {
     },
   ];
   return (
-    <section className="relative py-20">
+    <section className="relative py-20 overflow-hidden">
+      {/* Animated SVG background */}
+      <motion.svg
+        className="absolute left-10 top-10 w-32 h-32 opacity-20 pointer-events-none"
+        viewBox="0 0 100 100"
+        initial={{ scale: 0.9, rotate: 0 }}
+        animate={{ scale: [0.9, 1.05, 0.9], rotate: [0, 12, 0] }}
+        transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+      >
+        <circle cx="50" cy="50" r="40" fill="url(#f1)" />
+        <defs>
+          <radialGradient id="f1" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stopColor="#E6A700" stopOpacity="0.18" />
+            <stop offset="100%" stopColor="#FF6B35" stopOpacity="0.08" />
+          </radialGradient>
+        </defs>
+      </motion.svg>
       <div className="container">
         <motion.h2
           initial={{ opacity: 0, y: 16 }}
@@ -148,43 +289,102 @@ function Features() {
   );
 }
 
-function RandomImageGrid() {
-  const topics = [
-    "business",
-    "meeting",
-    "airport",
-    "luxury-car",
-    "city",
-    "executive",
+function WorldwidePresence() {
+  const cities = [
+    {
+      name: "London",
+      image: "/images/business/cities/Noimage.jpg",
+      stats: "500+ rides/month",
+    },
+    {
+      name: "Dubai",
+      image: "/images/business/cities/Noimage.jpg",
+      stats: "300+ rides/month",
+    },
+    {
+      name: "Singapore",
+      image: "/images/business/cities/Noimage.jpg",
+      stats: "400+ rides/month",
+    },
+    {
+      name: "New York",
+      image: "/images/business/cities/Noimage.jpg",
+      stats: "600+ rides/month",
+    },
+    {
+      name: "Tokyo",
+      image: "/images/business/cities/Noimage.jpg",
+      stats: "350+ rides/month",
+    },
+    {
+      name: "Paris",
+      image: "/images/business/cities/Noimage.jpg",
+      stats: "450+ rides/month",
+    },
   ];
+
   return (
-    <section className="relative py-20">
-      <div className="container">
-        <motion.h3
-          initial={{ opacity: 0, y: 16 }}
+    <section className="relative py-20 overflow-hidden">
+      {/* Animated background gradient */}
+      <motion.div
+        className="absolute inset-0 bg-[radial-gradient(70%_70%_at_50%_100%,rgba(230,167,0,0.08)_0%,transparent_70%)]"
+        animate={{
+          opacity: [0.5, 0.8, 0.5],
+          scale: [1, 1.1, 1],
+        }}
+        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+      />
+      {/* Animated SVG background */}
+      <motion.svg
+        className="absolute right-10 top-16 w-28 h-28 opacity-20 pointer-events-none"
+        viewBox="0 0 100 100"
+        initial={{ scale: 1, rotate: 0 }}
+        animate={{ scale: [1, 1.08, 1], rotate: [0, -10, 0] }}
+        transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
+      >
+        <rect x="10" y="10" width="80" height="80" rx="18" fill="url(#wp1)" />
+        <defs>
+          <linearGradient id="wp1" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stopColor="#E6A700" stopOpacity="0.12" />
+            <stop offset="100%" stopColor="#FF6B35" stopOpacity="0.08" />
+          </linearGradient>
+        </defs>
+      </motion.svg>
+      <div className="container relative">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="text-2xl md:text-3xl font-heading text-white mb-8 text-center"
+          transition={{ duration: 0.7 }}
+          className="text-center mb-12"
         >
-          In action around the world
-        </motion.h3>
-        <div className="grid gap-4 grid-cols-2 md:grid-cols-3 lg:grid-cols-6">
-          {Array.from({ length: 12 }).map((_, i) => (
+          <h2 className="text-3xl font-heading text-white mb-4">In action around the world</h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto">
+            From airport transfers to multi-city event logistics, we're trusted by corporations worldwide
+            for reliable executive transport.
+          </p>
+        </motion.div>
+
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+          {cities.map((city, index) => (
             <motion.div
-              key={i}
-              initial={{ opacity: 0, scale: 0.96 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: i * 0.03 }}
-              className="aspect-[4/3] overflow-hidden rounded-lg border border-white/10 bg-white/5"
+              key={city.name}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              whileHover={{ y: -5 }}
+              transition={{ delay: index * 0.1 }}
+              className="relative rounded-xl overflow-hidden aspect-[4/3] group"
             >
               <img
-                src={`https://source.unsplash.com/random/800x600?${topics[i % topics.length]}&sig=${i + 11}`}
-                alt="Business travel"
+                src={city.image}
+                alt={`Corporate transport in ${city.name}`}
+                className="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110"
                 loading="lazy"
-                className="h-full w-full object-cover hover:scale-105 transition-transform duration-500"
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
+                <h3 className="text-xl font-semibold mb-1">{city.name}</h3>
+                <p className="text-sm text-white/80">{city.stats}</p>
+              </div>
             </motion.div>
           ))}
         </div>
@@ -287,52 +487,96 @@ function Integrations() {
   );
 }
 
-function CaseStudy() {
+function CaseStudies() {
+    const studies = [
+    {
+      title: "Global Tech Summit",
+      desc: "Coordinated 200+ executive transfers across 3 days in multiple cities. Achieved 100% on-time performance.",
+      image: "/images/business/case-studies/Noimage.jpg",
+      stats: ["200+ Transfers", "3 Cities", "100% On-time"]
+    },
+    {
+      title: "Financial Conference",
+      desc: "24/7 dedicated support for 50+ VIP attendees. Custom billing for different cost centers.",
+      image: "/images/business/case-studies/Noimage.jpg",
+      stats: ["50+ VIPs", "24/7 Support", "18% Cost Savings"]
+    },
+    {
+      title: "Fashion Week",
+      desc: "Luxury fleet coordination for designer showcases. Real-time tracking and schedule adjustments.",
+      image: "/images/business/case-studies/Noimage.jpg",
+      stats: ["100+ Routes", "Premium Fleet", "Live Tracking"]
+    }
+  ];
+
   return (
-    <section className="relative py-20">
-      <div className="container grid gap-12 lg:grid-cols-2 items-center">
+    <section className="relative py-20 overflow-hidden">
+      {/* Animated SVG background */}
+      <motion.svg
+        className="absolute left-10 bottom-10 w-28 h-28 opacity-20 pointer-events-none"
+        viewBox="0 0 100 100"
+        initial={{ scale: 1, rotate: 0 }}
+        animate={{ scale: [1, 1.08, 1], rotate: [0, 10, 0] }}
+        transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }}
+      >
+        <ellipse cx="50" cy="50" rx="40" ry="30" fill="url(#cs1)" />
+        <defs>
+          <radialGradient id="cs1" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stopColor="#E6A700" stopOpacity="0.14" />
+            <stop offset="100%" stopColor="#FF6B35" stopOpacity="0.07" />
+          </radialGradient>
+        </defs>
+      </motion.svg>
+      <div className="container">
         <motion.div
-          initial={{ opacity: 0, x: -20 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.5 }}
+          className="text-center mb-12"
         >
-          <h3 className="text-3xl md:text-4xl font-heading text-white">
-            Case study: Global logistics firm
-          </h3>
-          <p className="mt-4 text-muted-foreground max-w-xl">
-            How a global logistics firm consolidated ground travel, reduced
-            costs by 18% and improved executive satisfaction with centralized
-            policies and reporting.
+          <h2 className="text-3xl md:text-4xl font-heading text-white mb-4">Success Stories</h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto">
+            See how leading organizations streamline their executive transportation with our platform.
           </p>
-          <ul className="mt-6 text-muted-foreground list-disc list-inside space-y-2">
-            <li>Centralized billing and cost allocation</li>
-            <li>Custom policy enforcement and approvals</li>
-            <li>Realtime trip visibility and priority support</li>
-          </ul>
-          <div className="mt-6 flex gap-3">
-            <Button size="md" variant="glow">
-              Read full story
-            </Button>
-            <Button size="md" variant="outline">
-              Contact Sales
-            </Button>
-          </div>
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, x: 20 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="rounded-lg overflow-hidden shadow-lg"
-        >
-          <img
-            src={`https://source.unsplash.com/random/900x700?corporate,meeting`}
-            alt="Case study"
-            className="w-full h-80 object-cover"
-          />
-        </motion.div>
+        <div className="grid md:grid-cols-3 gap-8">
+          {studies.map((study, i) => (
+            <motion.article
+              key={study.title}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              whileHover={{ y: -5 }}
+              transition={{ duration: 0.5, delay: i * 0.1 }}
+              className="rounded-xl overflow-hidden bg-black/40 border border-white/6 group"
+            >
+              <div className="relative aspect-[16/10] overflow-hidden">
+                <img
+                  src={study.image}
+                  alt={study.title}
+                  className="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-semibold text-white mb-3">{study.title}</h3>
+                <p className="text-muted-foreground text-sm mb-4">{study.desc}</p>
+                <div className="flex flex-wrap gap-2">
+                  {study.stats.map((stat, index) => (
+                    <span
+                      key={index}
+                      className="inline-block px-3 py-1 rounded-full text-xs bg-white/5 border border-white/10 text-white/80"
+                    >
+                      {stat}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </motion.article>
+          ))}
+        </div>
       </div>
     </section>
   );
@@ -376,9 +620,9 @@ export default function Business() {
       <Hero />
       <Features />
       <EnterpriseFeatures />
+      <WorldwidePresence />
+      <CaseStudies />
       <Integrations />
-      <RandomImageGrid />
-      <CaseStudy />
       <CTA />
     </main>
   );

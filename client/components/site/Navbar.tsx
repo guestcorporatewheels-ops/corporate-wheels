@@ -98,53 +98,35 @@ export default function Navbar() {
           <p className="text-white">Corporate Wheels</p>
         </Link>
         <nav className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
-          {/* Services Dropdown */}
+          {/* Services Dropdown (improved spacing & hover/focus) */}
           <HoverDropdown
             dropdownId="services"
             trigger={
-              <button className="flex items-center gap-1 hover:text-white transition-colors">
+              <button className="flex items-center gap-1 hover:text-white transition-colors focus:outline-none">
                 Our Services <ChevronDown className="size-4" />
               </button>
             }
-            className="w-56 bg-black/90 border border-white/10 backdrop-blur-md rounded-md shadow-lg"
+            className="w-56 bg-black/90 border border-white/8 backdrop-blur-md rounded-lg shadow-lg p-2"
           >
-            <div className="py-2">
-              <a
-                href="#services"
-                className="block px-4 py-2 hover:bg-white/10 transition-colors"
-              >
-                City-to-City rides
-              </a>
-              <a
-                href="#services"
-                className="block px-4 py-2 hover:bg-white/10 transition-colors"
-              >
-                Chauffeur hailing
-              </a>
-              <a
-                href="#services"
-                className="block px-4 py-2 hover:bg-white/10 transition-colors"
-              >
-                Airport transfers
-              </a>
-              <a
-                href="#services"
-                className="block px-4 py-2 hover:bg-white/10 transition-colors"
-              >
-                Hourly hire
-              </a>
-              <a
-                href="#services"
-                className="block px-4 py-2 hover:bg-white/10 transition-colors"
-              >
-                Chauffeur service
-              </a>
-              <a
-                href="#services"
-                className="block px-4 py-2 hover:bg-white/10 transition-colors"
-              >
-                Limousine service
-              </a>
+            <div className="py-1">
+              {[
+                "City-to-City rides",
+                "Chauffeur hailing",
+                "Airport transfers",
+                "Hourly hire",
+                "Chauffeur service",
+                "Limousine service",
+              ].map((item) => (
+                <a
+                  key={item}
+                  href="#services"
+                  className="group block px-3 py-2 rounded-md text-white/90 hover:bg-white/8 focus:bg-white/12 focus:outline-none transition-colors"
+                >
+                  <span className="group-hover:text-corporate-gold group-focus:text-corporate-gold transition-colors">
+                    {item}
+                  </span>
+                </a>
+              ))}
             </div>
           </HoverDropdown>
 
@@ -155,7 +137,7 @@ export default function Navbar() {
               isActive ? "text-white" : "hover:text-white transition-colors"
             }
           >
-            For Business
+            Business
           </NavLink>
           <NavLink
             to="/chauffeurs"
@@ -163,9 +145,9 @@ export default function Navbar() {
               isActive ? "text-white" : "hover:text-white transition-colors"
             }
           >
-            For Chauffeurs
+            Chauffeurs
           </NavLink>
-          <a href="#help" className="hover:text-white transition-colors">
+          <a href="/help" className="hover:text-white transition-colors">
             Help
           </a>
 
@@ -173,24 +155,26 @@ export default function Navbar() {
           <HoverDropdown
             dropdownId="download"
             trigger={
-              <button className="flex items-center gap-1 hover:text-white transition-colors">
+              <button className="flex items-center gap-1 hover:text-white transition-colors focus:outline-none">
                 Download <ChevronDown className="size-4" />
               </button>
             }
-            className="w-48 bg-black/90 border border-white/10 backdrop-blur-md rounded-md shadow-lg"
+            className="w-48 bg-black/90 border border-white/8 backdrop-blur-md rounded-lg shadow-lg p-2"
           >
-            <div className="py-2">
+            <div className="py-1">
               <a
                 href="#download"
-                className="flex items-center gap-2 px-4 py-2 hover:bg-white/10 transition-colors"
+                className="group flex items-center gap-2 px-3 py-2 rounded-md text-white/90 hover:bg-white/8 focus:bg-white/12 transition-colors transform hover:-translate-y-0.5"
               >
-                <Apple className="size-4" /> iOS
+                <Apple className="size-4 text-white/80 group-hover:text-corporate-gold group-focus:text-corporate-gold transition-colors" />
+                <span className="ml-1 group-hover:text-corporate-gold group-focus:text-corporate-gold transition-colors">iOS</span>
               </a>
               <a
                 href="#download"
-                className="flex items-center gap-2 px-4 py-2 hover:bg-white/10 transition-colors"
+                className="group flex items-center gap-2 px-3 py-2 rounded-md text-white/90 hover:bg-white/8 focus:bg-white/12 transition-colors transform hover:-translate-y-0.5"
               >
-                <Play className="size-4" /> Android
+                <Play className="size-4 text-white/80 group-hover:text-corporate-gold group-focus:text-corporate-gold transition-colors" />
+                <span className="ml-1 group-hover:text-corporate-gold group-focus:text-corporate-gold transition-colors">Android</span>
               </a>
             </div>
           </HoverDropdown>
@@ -212,42 +196,22 @@ export default function Navbar() {
           <div className="container py-4 flex flex-col gap-4">
             <div className="text-white font-medium mb-2">Our Services</div>
             <div className="pl-4 space-y-2">
-              <a
-                href="#services"
-                className="block text-muted-foreground hover:text-white"
-              >
-                City-to-City rides
-              </a>
-              <a
-                href="#services"
-                className="block text-muted-foreground hover:text-white"
-              >
-                Chauffeur hailing
-              </a>
-              <a
-                href="#services"
-                className="block text-muted-foreground hover:text-white"
-              >
-                Airport transfers
-              </a>
-              <a
-                href="#services"
-                className="block text-muted-foreground hover:text-white"
-              >
-                Hourly hire
-              </a>
-              <a
-                href="#services"
-                className="block text-muted-foreground hover:text-white"
-              >
-                Chauffeur service
-              </a>
-              <a
-                href="#services"
-                className="block text-muted-foreground hover:text-white"
-              >
-                Limousine service
-              </a>
+              {[
+                "City-to-City rides",
+                "Chauffeur hailing",
+                "Airport transfers",
+                "Hourly hire",
+                "Chauffeur service",
+                "Limousine service",
+              ].map((s) => (
+                <a
+                  key={s}
+                  href="#services"
+                  className="block text-muted-foreground hover:text-corporate-gold focus:text-corporate-gold"
+                >
+                  {s}
+                </a>
+              ))}
             </div>
             <NavLink
               to="/business"
@@ -276,13 +240,13 @@ export default function Navbar() {
             <div className="pl-4 space-y-2">
               <a
                 href="#download"
-                className="flex items-center gap-2 text-muted-foreground hover:text-white"
+                className="flex items-center gap-2 text-muted-foreground hover:text-corporate-gold focus:text-corporate-gold"
               >
                 <Apple className="size-4" /> iOS
               </a>
               <a
                 href="#download"
-                className="flex items-center gap-2 text-muted-foreground hover:text-white"
+                className="flex items-center gap-2 text-muted-foreground hover:text-corporate-gold focus:text-corporate-gold"
               >
                 <Play className="size-4" /> Android
               </a>
