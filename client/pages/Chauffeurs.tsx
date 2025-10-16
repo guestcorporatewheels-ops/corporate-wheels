@@ -131,28 +131,43 @@ function Benefit({ title, desc, delay = 0 }: { title: string; desc: string; dela
 
 function Benefits() {
   const items = [
-    { t: "Premium Rides", d: "Airport, hourly, and business-class trips in your city." },
-    { t: "Fast Payouts", d: "Reliable payments with clear statements and support." },
-    { t: "Flexible Schedule", d: "Drive when you want. Set your hours and availability." },
-    { t: "Safety First", d: "Verified passengers, trip details, and in-ride support." },
-    { t: "Growth Support", d: "Dedicated partner support and quality standards guidance." },
-    { t: "Global Network", d: "Access demand from travelers around the world." },
+    { t: "Reliable payments", d: "Monthly payouts with clear statements and flexible settlement options." },
+    { t: "Complete schedule control", d: "Choose your hours, accept rides that fit your timeline and vehicle type." },
+    { t: "Join an international crew", d: "Operate across cities and get access to global demand and partners." },
+    { t: "Superior account management", d: "Easily manage rides, documentation, and schedules from the partner portal." },
+    { t: "Dedicated support team", d: "24/7 partner support for admin issues, payouts and safety." },
+    { t: "Growth opportunities", d: "Promotions and priority access to premium corporate demand." },
   ];
+
   return (
     <section className="relative py-20">
       <div className="container">
-        <motion.h2
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="text-3xl md:text-4xl font-heading text-white text-center"
-        >
+        <motion.h2 initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="text-3xl md:text-4xl font-heading text-white text-center">
           Partner benefits
         </motion.h2>
+
         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {items.map((it, i) => (
-            <Benefit key={it.t} title={it.t} desc={it.d} delay={i * 0.07} />
+            <motion.div key={it.t} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: i * 0.06 }} className="relative rounded-xl overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-white/2 to-white/3 opacity-60 pointer-events-none" />
+              <div className="relative p-6 border border-white/6 rounded-xl bg-white/3 backdrop-blur-sm hover:scale-[1.01] transform transition-transform duration-300">
+                <div className="flex items-start gap-4">
+                  <div className="flex-shrink-0">
+                    <span className="inline-flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-br from-corporate-gold to-orange-400 text-black shadow-sm">
+                      {/* simple icon */}
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3 12h18" stroke="#000" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                        <path d="M6 8h.01M6 16h.01M10 8h.01M10 16h.01" stroke="#000" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
+                    </span>
+                  </div>
+                  <div>
+                    <h4 className="text-lg font-medium text-white">{it.t}</h4>
+                    <p className="mt-2 text-sm text-muted-foreground">{it.d}</p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
           ))}
         </div>
       </div>
