@@ -178,41 +178,62 @@ function Benefits() {
 function RequirementsOnboarding() {
   return (
     <section className="relative py-20">
-      <div className="container grid gap-12 lg:grid-cols-2 items-center">
-        <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="rounded-lg overflow-hidden shadow-lg">
-          <img src={"https://cdn.builder.io/api/v1/image/assets%2F61ee9e27d554424082cbdf1901a81607%2F080d709fb303444194d516e473a34087?format=webp&width=800"} alt="Requirements" className="w-full h-72 object-cover" />
-        </motion.div>
+      {/* Decorative animated gradients */}
+      <div className="absolute -left-24 -top-12 w-80 h-80 rounded-full opacity-20 blur-3xl bg-gradient-to-br from-corporate-gold to-orange-400 animate-[spin_18s_linear_infinite]" />
+      <div className="absolute right-[-6rem] top-40 w-72 h-72 rounded-full opacity-12 blur-2xl bg-gradient-to-br from-red-500 to-orange-400 animate-[spin_20s_linear_infinite]" />
 
-        <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
-          <h3 className="text-2xl md:text-3xl font-heading text-white">Requirements</h3>
-          <ul className="mt-4 space-y-3 text-muted-foreground list-disc list-inside">
-            <li>Valid company registration plus licenses and insurance for all chauffeurs and vehicles</li>
-            <li>Vehicles must be clean, undamaged, smoke-free, and in full compliance with local regulations</li>
-            <li>Companies must keep up-to-date with new standards and policies to ensure excellent quality</li>
-          </ul>
-          <div className="mt-6 flex gap-3">
-            <Button size="md" variant="glow">View local requirements</Button>
-            <Button size="md" variant="outline">Contact Partnership</Button>
-          </div>
-        </motion.div>
+      <div className="container">
+        <div className="grid gap-12 lg:grid-cols-2 items-center">
+          <motion.div initial={{ opacity: 0, x: -28 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }} className="rounded-xl overflow-hidden shadow-2xl border border-white/6">
+            <img src={"https://cdn.builder.io/api/v1/image/assets%2F61ee9e27d554424082cbdf1901a81607%2F080d709fb303444194d516e473a34087?format=webp&width=800"} alt="Requirements" className="w-full h-88 object-cover" />
+          </motion.div>
 
-        {/* Onboarding block reversed */}
-        <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
-          <h3 className="text-2xl md:text-3xl font-heading text-white">Onboarding</h3>
-          <ol className="mt-4 space-y-3 text-muted-foreground list-decimal list-inside">
-            <li>Apply through our onboarding portal</li>
-            <li>Upload your documentation for our team to review</li>
-            <li>Complete training modules and have a short interview</li>
-            <li>Accept your first ride and go live</li>
-          </ol>
-          <div className="mt-6">
-            <Button size="md" variant="glow">Apply now</Button>
-          </div>
-        </motion.div>
+          <motion.div initial={{ opacity: 0, x: 28 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }}>
+            <h3 className="text-3xl font-heading text-white">Requirements</h3>
+            <p className="mt-3 text-muted-foreground max-w-xl">Joining is straightforward — meet the local requirements, keep vehicles in top condition, and follow our quality standards. We provide clear guidance and support throughout the process.</p>
 
-        <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="rounded-lg overflow-hidden shadow-lg">
-          <img src={IMG2} alt="Onboarding" className="w-full h-72 object-cover" />
-        </motion.div>
+            <div className="mt-6 grid gap-3">
+              <div className="flex items-start gap-4">
+                <div className="flex items-center justify-center h-10 w-10 rounded-md bg-white/5 text-corporate-gold">✓</div>
+                <div className="text-sm text-muted-foreground">Valid registration, licenses, and insurance</div>
+              </div>
+              <div className="flex items-start gap-4">
+                <div className="flex items-center justify-center h-10 w-10 rounded-md bg-white/5 text-corporate-gold">✓</div>
+                <div className="text-sm text-muted-foreground">Clean, compliant and well-maintained vehicles</div>
+              </div>
+              <div className="flex items-start gap-4">
+                <div className="flex items-center justify-center h-10 w-10 rounded-md bg-white/5 text-corporate-gold">✓</div>
+                <div className="text-sm text-muted-foreground">Ongoing policy & quality updates</div>
+              </div>
+            </div>
+
+            <div className="mt-6 flex gap-3">
+              <Button size="md" variant="glow">View local requirements</Button>
+              <Button size="md" variant="outline">Contact Partnership</Button>
+            </div>
+          </motion.div>
+        </div>
+
+        <div className="my-12" />
+
+        <div className="grid gap-12 lg:grid-cols-2 items-center">
+          <motion.div initial={{ opacity: 0, x: -28 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }}>
+            <h3 className="text-3xl font-heading text-white">Onboarding</h3>
+            <ol className="mt-6 space-y-4 text-muted-foreground list-decimal list-inside">
+              <li>Apply through our onboarding portal</li>
+              <li>Upload required documentation for review</li>
+              <li>Complete short training and interview</li>
+              <li>Accept your first ride and go live</li>
+            </ol>
+            <div className="mt-6">
+              <Button size="md" variant="glow">Apply now</Button>
+            </div>
+          </motion.div>
+
+          <motion.div initial={{ opacity: 0, x: 28 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }} className="rounded-xl overflow-hidden shadow-2xl border border-white/6">
+            <img src={IMG2} alt="Onboarding" className="w-full h-88 object-cover" />
+          </motion.div>
+        </div>
       </div>
     </section>
   );
@@ -227,20 +248,27 @@ function FAQSection() {
 
   return (
     <section className="relative py-20">
+      <div className="absolute left-0 top-0 w-full h-24 bg-gradient-to-b from-black/40 to-transparent pointer-events-none" />
       <div className="container grid gap-8 lg:grid-cols-2 items-start">
         <div>
           <h3 className="text-3xl md:text-4xl font-heading text-white">Frequently asked questions</h3>
           <div className="mt-6 space-y-3">
             {faqs.map((f, i) => (
-              <details key={i} className="rounded-md border border-white/6 bg-white/3 p-4">
-                <summary className="cursor-pointer text-white font-medium">{f.q}</summary>
+              <motion.details key={i} initial={{ opacity: 0, y: 8 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="group rounded-md border border-white/6 bg-white/3 p-4">
+                <summary className="cursor-pointer text-white font-medium flex items-center justify-between">
+                  <span>{f.q}</span>
+                  <svg className="transition-transform duration-200 group-open:rotate-90" width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6 9l6 6 6-6" stroke="#fff" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </summary>
                 <div className="mt-2 text-sm text-muted-foreground">{f.a}</div>
-              </details>
+              </motion.details>
             ))}
           </div>
         </div>
 
-        <motion.div initial={{ opacity: 0, scale: 0.98 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
+        <motion.div initial={{ opacity: 0, scale: 0.98 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="relative">
+          <div className="absolute -left-12 -top-8 w-48 h-48 rounded-full bg-gradient-to-br from-corporate-gold to-orange-400 opacity-10 blur-2xl pointer-events-none" />
           <img src={IMG3} alt="Chauffeur FAQ" className="w-full rounded-lg shadow-lg object-cover h-[520px]" />
         </motion.div>
       </div>
