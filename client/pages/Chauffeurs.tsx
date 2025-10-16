@@ -3,13 +3,65 @@ import { Button } from "@/components/ui/button";
 import { useTypingAnimation } from "@/hooks/use-typing-animation";
 import { cn } from "@/lib/utils";
 
+const IMG1 = "https://cdn.builder.io/api/v1/image/assets%2F61ee9e27d554424082cbdf1901a81607%2Fc149abdc6bf547a797bc2fb41e2ec216?format=webp&width=800";
+const IMG2 = "https://cdn.builder.io/api/v1/image/assets%2F61ee9e27d554424082cbdf1901a81607%2F4a60117866cb448d89dd68fb27dd4adc?format=webp&width=800";
+const IMG3 = "https://cdn.builder.io/api/v1/image/assets%2F61ee9e27d554424082cbdf1901a81607%2F0d53bbf70cd84f6b96ff8ea3c57ba289?format=webp&width=800";
+
 function AnimatedGradientBg({ className = "" }: { className?: string }) {
   return (
     <div className={cn("absolute inset-0 -z-10 overflow-hidden", className)}>
-      <div className="absolute -top-24 -right-24 h-[36rem] w-[36rem] rounded-full opacity-20 blur-3xl btn-gradient-animate" style={{ backgroundImage: "linear-gradient(135deg,#FF6B35,#E6A700,#F4C430,#E53E3E)" }} />
-      <div className="absolute -bottom-32 -left-32 h-[40rem] w-[40rem] rounded-full opacity-10 blur-3xl btn-gradient-animate" style={{ backgroundImage: "linear-gradient(90deg,#E53E3E,#FF6B35,#E6A700,#F4C430)" }} />
-      <div className="absolute inset-0 bg-[radial-gradient(50%_50%_at_50%_50%,rgba(229,62,62,0.06)_0%,transparent_60%)]" />
-      <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/70 to-black/90" />
+      <div
+        className="absolute -top-28 -left-20 h-[36rem] w-[36rem] rounded-full opacity-20 blur-3xl btn-gradient-animate"
+        style={{
+          backgroundImage:
+            "linear-gradient(120deg,#F4C430 0%,#E6A700 25%,#FF6B35 60%,#E53E3E 100%)",
+        }}
+      />
+      <div
+        className="absolute -bottom-36 -right-28 h-[40rem] w-[40rem] rounded-full opacity-12 blur-3xl btn-gradient-animate"
+        style={{
+          backgroundImage:
+            "linear-gradient(60deg,#E53E3E 0%,#FF6B35 40%,#E6A700 70%,#F4C430 100%)",
+        }}
+      />
+      <div className="absolute inset-0 bg-[radial-gradient(50%_50%_at_50%_50%,rgba(230,167,0,0.06)_0%,transparent_60%)]" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/60 to-black/90" />
+    </div>
+  );
+}
+
+function FloatingSVGs() {
+  return (
+    <div className="pointer-events-none absolute inset-0 -z-0">
+      <motion.svg
+        width="180"
+        height="180"
+        viewBox="0 0 100 100"
+        className="absolute left-8 top-24 opacity-40"
+        initial={{ y: -10, rotate: 0 }}
+        animate={{ y: [0, -12, 0], rotate: [0, 6, 0] }}
+        transition={{ duration: 6, repeat: Infinity }}
+      >
+        <defs>
+          <linearGradient id="g1" x1="0" x2="1">
+            <stop offset="0" stopColor="#E6A700" />
+            <stop offset="1" stopColor="#FF6B35" />
+          </linearGradient>
+        </defs>
+        <rect width="100" height="100" rx="18" fill="url(#g1)" />
+      </motion.svg>
+
+      <motion.svg
+        width="140"
+        height="140"
+        viewBox="0 0 100 100"
+        className="absolute right-12 top-48 opacity-30"
+        initial={{ y: 0, rotate: 0 }}
+        animate={{ y: [0, 10, 0], rotate: [0, -8, 0] }}
+        transition={{ duration: 7, repeat: Infinity }}
+      >
+        <circle cx="50" cy="50" r="40" fill="rgba(255,107,53,0.85)" />
+      </motion.svg>
     </div>
   );
 }
@@ -18,25 +70,43 @@ function Hero() {
   const { displayText, isComplete } = useTypingAnimation(
     "For Professional Chauffeurs.",
     70,
-    300
+    300,
   );
   return (
-    <section className="relative pt-28 pb-20 min-h-[70vh] flex items-center">
+    <section className="relative pt-28 pb-20 min-h-[70vh] flex items-center overflow-hidden">
       <AnimatedGradientBg />
+      <FloatingSVGs />
       <div className="container">
-        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="max-w-3xl">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="max-w-3xl"
+        >
           <h1 className="text-4xl md:text-6xl font-heading text-white leading-tight">
             <span className="text-gradient inline-block">{displayText}</span>
             {!isComplete && (
-              <motion.span animate={{ opacity: [1, 0, 1] }} transition={{ duration: 0.8, repeat: Infinity }} className="text-[hsl(var(--primary))] ml-1">|</motion.span>
+              <motion.span
+                animate={{ opacity: [1, 0, 1] }}
+                transition={{ duration: 0.8, repeat: Infinity }}
+                className="text-[hsl(var(--primary))] ml-1"
+              >
+                |
+              </motion.span>
             )}
           </h1>
           <p className="mt-5 text-lg text-muted-foreground max-w-2xl">
-            Grow your business with high-value rides, reliable payouts, and 24/7 support. Set your availability and drive with confidence.
+            Grow your business with high-value rides, reliable payouts, and
+            24/7 support. Set your availability and drive with confidence.
           </p>
           <div className="mt-8 flex gap-4">
-            <Button size="lg" variant="glow">Apply as Chauffeur</Button>
-            <Button size="lg" variant="outline">Learn Requirements</Button>
+            <Button size="lg" variant="glow">
+              Apply as Chauffeur
+            </Button>
+            <Button size="lg" variant="outline">
+              Learn Requirements
+            </Button>
           </div>
         </motion.div>
       </div>
@@ -46,7 +116,13 @@ function Hero() {
 
 function Benefit({ title, desc, delay = 0 }: { title: string; desc: string; delay?: number }) {
   return (
-    <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.3 }} transition={{ duration: 0.6, delay }} className="rounded-xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm shadow-glow">
+    <motion.div
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.3 }}
+      transition={{ duration: 0.6, delay }}
+      className="rounded-xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm shadow-glow"
+    >
       <h3 className="text-xl font-heading text-white">{title}</h3>
       <p className="mt-2 text-sm text-muted-foreground">{desc}</p>
     </motion.div>
@@ -65,7 +141,13 @@ function Benefits() {
   return (
     <section className="relative py-20">
       <div className="container">
-        <motion.h2 initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="text-3xl md:text-4xl font-heading text-white text-center">
+        <motion.h2
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="text-3xl md:text-4xl font-heading text-white text-center"
+        >
           Partner benefits
         </motion.h2>
         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -78,43 +160,94 @@ function Benefits() {
   );
 }
 
-function RandomImageGrid() {
-  const topics = ["chauffeur", "mercedes", "sedan", "airport", "city-night", "luxury-car"];
+function RequirementsOnboarding() {
   return (
     <section className="relative py-20">
-      <div className="container">
-        <motion.h3 initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="text-2xl md:text-3xl font-heading text-white mb-8 text-center">
-          A look from the road
-        </motion.h3>
-        <div className="grid gap-4 grid-cols-2 md:grid-cols-3 lg:grid-cols-6">
-          {Array.from({ length: 12 }).map((_, i) => (
-            <motion.div key={i} initial={{ opacity: 0, scale: 0.96 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: i * 0.03 }} className="aspect-[4/3] overflow-hidden rounded-lg border border-white/10 bg-white/5">
-              <img
-                src={`https://source.unsplash.com/random/800x600?${topics[i % topics.length]}&sig=${i + 101}`}
-                alt="Chauffeur ride"
-                loading="lazy"
-                className="h-full w-full object-cover hover:scale-105 transition-transform duration-500"
-              />
-            </motion.div>
-          ))}
-        </div>
+      <div className="container grid gap-12 lg:grid-cols-2 items-center">
+        <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="rounded-lg overflow-hidden shadow-lg">
+          <img src={IMG1} alt="Requirements" className="w-full h-72 object-cover" />
+        </motion.div>
+
+        <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
+          <h3 className="text-2xl md:text-3xl font-heading text-white">Requirements</h3>
+          <ul className="mt-4 space-y-3 text-muted-foreground list-disc list-inside">
+            <li>Valid company registration plus licenses and insurance for all chauffeurs and vehicles</li>
+            <li>Vehicles must be clean, undamaged, smoke-free, and in full compliance with local regulations</li>
+            <li>Companies must keep up-to-date with new standards and policies to ensure excellent quality</li>
+          </ul>
+          <div className="mt-6 flex gap-3">
+            <Button size="md" variant="glow">View local requirements</Button>
+            <Button size="md" variant="outline">Contact Partnership</Button>
+          </div>
+        </motion.div>
+
+        {/* Onboarding block reversed */}
+        <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
+          <h3 className="text-2xl md:text-3xl font-heading text-white">Onboarding</h3>
+          <ol className="mt-4 space-y-3 text-muted-foreground list-decimal list-inside">
+            <li>Apply through our onboarding portal</li>
+            <li>Upload your documentation for our team to review</li>
+            <li>Complete training modules and have a short interview</li>
+            <li>Accept your first ride and go live</li>
+          </ol>
+          <div className="mt-6">
+            <Button size="md" variant="glow">Apply now</Button>
+          </div>
+        </motion.div>
+
+        <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="rounded-lg overflow-hidden shadow-lg">
+          <img src={IMG2} alt="Onboarding" className="w-full h-72 object-cover" />
+        </motion.div>
       </div>
     </section>
   );
 }
 
-function CTA() {
+function FAQSection() {
+  const faqs = [
+    { q: "Can anyone become a partner?", a: "We evaluate applicants based on local regulations, vehicle standards and available demand in your city." },
+    { q: "How do I get paid?", a: "Payouts are processed weekly with clear statements and support for any queries." },
+    { q: "Which vehicles are eligible?", a: "Professional sedans and vans that meet our quality standards are eligible; check local rules for specifics." },
+  ];
+
   return (
     <section className="relative py-20">
-      <div className="container">
-        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="rounded-2xl border border-white/10 bg-gradient-to-r from-red-500/20 to-orange-500/10 p-8 md:p-10">
-          <h3 className="text-2xl md:text-3xl font-heading text-white">Join as a professional partner</h3>
-          <p className="mt-2 text-muted-foreground">Apply today to access premium rides and a global passenger network.</p>
-          <div className="mt-6 flex gap-3">
-            <Button size="lg" variant="glow">Apply Now</Button>
-            <Button size="lg" variant="secondary">See Requirements</Button>
+      <div className="container grid gap-8 lg:grid-cols-2 items-start">
+        <div>
+          <h3 className="text-3xl md:text-4xl font-heading text-white">Frequently asked questions</h3>
+          <div className="mt-6 space-y-3">
+            {faqs.map((f, i) => (
+              <details key={i} className="rounded-md border border-white/6 bg-white/3 p-4">
+                <summary className="cursor-pointer text-white font-medium">{f.q}</summary>
+                <div className="mt-2 text-sm text-muted-foreground">{f.a}</div>
+              </details>
+            ))}
           </div>
+        </div>
+
+        <motion.div initial={{ opacity: 0, scale: 0.98 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
+          <img src={IMG3} alt="Chauffeur FAQ" className="w-full rounded-lg shadow-lg object-cover h-[520px]" />
         </motion.div>
+      </div>
+    </section>
+  );
+}
+
+function FinalCTA() {
+  return (
+    <section className="relative py-20">
+      <div className="absolute inset-0 -z-10">
+        <div className="absolute inset-0 btn-gradient-animate opacity-30" style={{ backgroundImage: 'linear-gradient(90deg,#E6A700 0%, #FF6B35 50%, #E53E3E 100%)', filter: 'blur(40px)' }} />
+      </div>
+      <div className="container text-center">
+        <motion.h2 initial={{ opacity: 0, y: 8 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="text-3xl md:text-4xl font-heading text-white">
+          Join our global chauffeur community
+        </motion.h2>
+        <p className="mt-3 text-muted-foreground max-w-2xl mx-auto">Access premium rides, reliable payouts, and a supportive partner team.</p>
+        <div className="mt-6 flex justify-center gap-4">
+          <Button size="lg" variant="glow">Apply now</Button>
+          <Button size="lg" variant="outline">Contact support</Button>
+        </div>
       </div>
     </section>
   );
@@ -122,11 +255,12 @@ function CTA() {
 
 export default function Chauffeurs() {
   return (
-    <main className="relative bg-background text-foreground">
+    <main className="relative bg-background text-foreground overflow-hidden">
       <Hero />
       <Benefits />
-      <RandomImageGrid />
-      <CTA />
+      <RequirementsOnboarding />
+      <FAQSection />
+      <FinalCTA />
     </main>
   );
 }
