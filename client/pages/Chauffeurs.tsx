@@ -1,14 +1,8 @@
 import { motion } from "framer-motion";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { useTypingAnimation } from "@/hooks/use-typing-animation";
 import { cn } from "@/lib/utils";
-
-const IMG1 =
-  "https://cdn.builder.io/api/v1/image/assets%2F61ee9e27d554424082cbdf1901a81607%2Fc149abdc6bf547a797bc2fb41e2ec216?format=webp&width=800";
-const IMG2 =
-  "https://cdn.builder.io/api/v1/image/assets%2F61ee9e27d554424082cbdf1901a81607%2F4a60117866cb448d89dd68fb27dd4adc?format=webp&width=800";
-const IMG3 =
-  "https://cdn.builder.io/api/v1/image/assets%2F61ee9e27d554424082cbdf1901a81607%2F0d53bbf70cd84f6b96ff8ea3c57ba289?format=webp&width=800";
 
 function AnimatedGradientBg({ className = "" }: { className?: string }) {
   return (
@@ -141,30 +135,156 @@ function Benefit({
 }
 
 function Benefits() {
+  // Themed dashed-ring icon wrapper matching reference style
+  function RingIcon({ children }: { children: React.ReactNode }) {
+    const id = Math.random().toString(36).slice(2);
+    return (
+      <svg width="48" height="48" viewBox="0 0 48 48" className="shrink-0">
+        <defs>
+          <linearGradient id={`grad-${id}`} x1="0" x2="1">
+            <stop offset="0" stopColor="#F4C430" />
+            <stop offset="1" stopColor="#FF6B35" />
+          </linearGradient>
+        </defs>
+        <circle
+          cx="24"
+          cy="24"
+          r="20"
+          fill="transparent"
+          stroke={`url(#grad-${id})`}
+          strokeWidth="3"
+          strokeDasharray="4 6"
+        />
+        <g transform="translate(14,14)">{children}</g>
+      </svg>
+    );
+  }
+
+  // Minimal icons matching semantics
+  const IconMoney = () => (
+    <svg
+      width="20"
+      height="20"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <rect
+        x="3"
+        y="6"
+        width="18"
+        height="12"
+        rx="2"
+        stroke="currentColor"
+        strokeWidth="1.8"
+      />
+      <circle cx="12" cy="12" r="2.4" stroke="currentColor" strokeWidth="1.8" />
+    </svg>
+  );
+  const IconClock = () => (
+    <svg
+      width="20"
+      height="20"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <circle cx="12" cy="12" r="8" stroke="currentColor" strokeWidth="1.8" />
+      <path
+        d="M12 8v4l3 2"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+  const IconDoc = () => (
+    <svg
+      width="20"
+      height="20"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M7 3h7l5 5v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z"
+        stroke="currentColor"
+        strokeWidth="1.8"
+      />
+      <path d="M14 3v5h5" stroke="currentColor" strokeWidth="1.8" />
+    </svg>
+  );
+  const IconManage = () => (
+    <svg
+      width="20"
+      height="20"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M3 7h18M3 12h18M3 17h12"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+  const IconHeadset = () => (
+    <svg
+      width="20"
+      height="20"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path d="M4 12a8 8 0 0 1 16 0" stroke="currentColor" strokeWidth="1.8" />
+      <rect
+        x="3"
+        y="12"
+        width="4"
+        height="6"
+        rx="1"
+        stroke="currentColor"
+        strokeWidth="1.8"
+      />
+      <rect
+        x="17"
+        y="12"
+        width="4"
+        height="6"
+        rx="1"
+        stroke="currentColor"
+        strokeWidth="1.8"
+      />
+    </svg>
+  );
+
   const items = [
     {
       t: "Reliable payments",
-      d: "Monthly payouts with clear statements and flexible settlement options.",
+      d: "The amount shown with each offer is the minimum that will be transferred to your account – we deduct no further fees or taxes. Monthly payments for your completed rides will be deposited directly to your bank account.",
+      icon: <IconMoney />,
     },
     {
       t: "Complete schedule control",
-      d: "Choose your hours, accept rides that fit your timeline and vehicle type.",
+      d: "Select your rides through our reverse auction. Shape your own schedule and simply take the rides that best fit your timeline, location, and vehicle type. We offer A‑to‑B transfers, hourly bookings, City to City rides, and more!",
+      icon: <IconClock />,
     },
     {
       t: "Join an international crew",
-      d: "Operate across cities and get access to global demand and partners.",
+      d: "As a member of our crew, you'll be able to say you're part of an international service, since we arrange rides for our partners and their guests in many countries.",
+      icon: <IconDoc />,
     },
     {
       t: "Superior account management",
-      d: "Easily manage rides, documentation, and schedules from the partner portal.",
+      d: "Whether you’re a dispatcher assigning rides to your crew or an owner/operator on the go with some spare time, our app and online Partner Portal are designed to make your life easier. Easily manage all your rides with a few taps or clicks.",
+      icon: <IconManage />,
     },
     {
       t: "Dedicated support team",
-      d: "24/7 partner support for admin issues, payouts and safety.",
-    },
-    {
-      t: "Growth opportunities",
-      d: "Promotions and priority access to premium corporate demand.",
+      d: "Alongside our 24/7 Customer Care who help with ongoing/upcoming rides, our Partner Support Team can assist 24/5 for admin issues via chat and email. Plus, FAQs are at your fingertips in our Partner Help Center.",
+      icon: <IconHeadset />,
     },
   ];
 
@@ -181,54 +301,38 @@ function Benefits() {
           Partner benefits
         </motion.h2>
 
-        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {items.map((it, i) => (
-            <motion.div
-              key={it.t}
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.06 }}
-              className="relative rounded-xl overflow-hidden"
-            >
-              <div className="absolute inset-0 bg-gradient-to-br from-white/2 to-white/3 opacity-60 pointer-events-none" />
-              <div className="relative p-6 border border-white/6 rounded-xl bg-white/3 backdrop-blur-sm hover:scale-[1.01] transform transition-transform duration-300">
-                <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0">
-                    <span className="inline-flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-br from-corporate-gold to-orange-400 text-black shadow-sm">
-                      {/* simple icon */}
-                      <svg
-                        width="20"
-                        height="20"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M3 12h18"
-                          stroke="#000"
-                          strokeWidth="1.5"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                        <path
-                          d="M6 8h.01M6 16h.01M10 8h.01M10 16h.01"
-                          stroke="#000"
-                          strokeWidth="1.5"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                      </svg>
-                    </span>
-                  </div>
-                  <div>
-                    <h4 className="text-lg font-medium text-white">{it.t}</h4>
-                    <p className="mt-2 text-sm text-muted-foreground">{it.d}</p>
+        <div className="mt-10 grid gap-6 lg:grid-cols-12">
+          {items.map((it, i) => {
+            const col = i < 3 ? "lg:col-span-4" : "lg:col-span-6";
+            return (
+              <motion.div
+                key={it.t}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.05 }}
+                className={cn("relative", col)}
+              >
+                <div className="rounded-2xl border border-white/10 bg-white/5 p-8   backdrop-blur-sm  shadow-[0_0_15px_rgba(230,167,0,0.25)]">
+                  <div className="flex items-start gap-5 text-white">
+                    <div className="text-orange-400">
+                      <RingIcon>
+                        <g className="text-orange-400">{it.icon}</g>
+                      </RingIcon>
+                    </div>
+                    <div>
+                      <h4 className="text-xl font-semibold tracking-tight text-white">
+                        {it.t}
+                      </h4>
+                      <p className="mt-3 text-[15px] leading-6 text-muted-foreground">
+                        {it.d}
+                      </p>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </motion.div>
-          ))}
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>
@@ -243,7 +347,8 @@ function RequirementsOnboarding() {
       <div className="absolute right-[-6rem] top-40 w-72 h-72 rounded-full opacity-12 blur-2xl bg-gradient-to-br from-red-500 to-orange-400 animate-[spin_20s_linear_infinite]" />
 
       <div className="container">
-        <div className="grid gap-12 lg:grid-cols-2 items-center">
+        {/* Row 1: Image left, Requirements right */}
+        <div className="grid gap-12 lg:grid-cols-2 items-start">
           <motion.div
             initial={{ opacity: 0, x: -28 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -253,7 +358,7 @@ function RequirementsOnboarding() {
           >
             <img
               src={
-                "https://cdn.builder.io/api/v1/image/assets%2F61ee9e27d554424082cbdf1901a81607%2F080d709fb303444194d516e473a34087?format=webp&width=800"
+                "https://images.ctfassets.net/ov8o7v78mnye/4vI4gSo7BEj9US3qQIJOGC/885a347cec4b29f25fe2e0079489fc8d/02_Get_to.jpg?w=1280&f=center&q=85&fm=webp"
               }
               alt="Requirements"
               className="w-full h-88 object-cover"
@@ -267,44 +372,30 @@ function RequirementsOnboarding() {
             transition={{ duration: 0.7 }}
           >
             <h3 className="text-3xl font-heading text-white">Requirements</h3>
-            <p className="mt-3 text-muted-foreground max-w-xl">
-              Joining is straightforward — meet the local requirements, keep
-              vehicles in top condition, and follow our quality standards. We
-              provide clear guidance and support throughout the process.
-            </p>
-
-            <div className="mt-6 grid gap-3">
-              <div className="flex items-start gap-4">
-                <div className="flex items-center justify-center h-10 w-10 rounded-md bg-white/5 text-corporate-gold">
-                  ✓
-                </div>
-                <div className="text-sm text-muted-foreground">
-                  Valid registration, licenses, and insurance
-                </div>
-              </div>
-              <div className="flex items-start gap-4">
-                <div className="flex items-center justify-center h-10 w-10 rounded-md bg-white/5 text-corporate-gold">
-                  ✓
-                </div>
-                <div className="text-sm text-muted-foreground">
-                  Clean, compliant and well-maintained vehicles
-                </div>
-              </div>
-              <div className="flex items-start gap-4">
-                <div className="flex items-center justify-center h-10 w-10 rounded-md bg-white/5 text-corporate-gold">
-                  ✓
-                </div>
-                <div className="text-sm text-muted-foreground">
-                  Ongoing policy & quality updates
-                </div>
-              </div>
-            </div>
+            <ul className="mt-4 max-w-xl space-y-2 text-[15px] leading-7 text-muted-foreground list-disc list-inside">
+              <li>
+                Valid company registration plus licenses and insurance for all
+                chauffeurs and vehicles.
+              </li>
+              <li>
+                Vehicles must be clean, undamaged, smoke-free, and in full
+                compliance with local regulations.
+              </li>
+              <li>
+                Companies must keep up-to-date with new standards and policies
+                and ensure excellent quality.
+              </li>
+              <li>
+                Specifics vary, please check the complete list for your
+                location.
+              </li>
+            </ul>
 
             <div className="mt-6 flex gap-3">
-              <Button size="md" variant="glow">
+              <Button size="lg" variant="glow">
                 View local requirements
               </Button>
-              <Button size="md" variant="outline">
+              <Button size="lg" variant="outline">
                 Contact Partnership
               </Button>
             </div>
@@ -313,7 +404,8 @@ function RequirementsOnboarding() {
 
         <div className="my-12" />
 
-        <div className="grid gap-12 lg:grid-cols-2 items-center">
+        {/* Row 2: Onboarding left, Image right */}
+        <div className="grid gap-12 lg:grid-cols-2 items-start">
           <motion.div
             initial={{ opacity: 0, x: -28 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -321,14 +413,14 @@ function RequirementsOnboarding() {
             transition={{ duration: 0.7 }}
           >
             <h3 className="text-3xl font-heading text-white">Onboarding</h3>
-            <ol className="mt-6 space-y-4 text-muted-foreground list-decimal list-inside">
+            <ol className="mt-4 space-y-3 text-muted-foreground list-decimal list-inside text-[15px] leading-7">
               <li>Apply through our onboarding portal</li>
               <li>Upload required documentation for review</li>
               <li>Complete short training and interview</li>
               <li>Accept your first ride and go live</li>
             </ol>
             <div className="mt-6">
-              <Button size="md" variant="glow">
+              <Button size="lg" variant="glow">
                 Apply now
               </Button>
             </div>
@@ -342,10 +434,55 @@ function RequirementsOnboarding() {
             className="rounded-xl overflow-hidden shadow-2xl border border-white/6"
           >
             <img
-              src={IMG2}
+              src={
+                "https://images.ctfassets.net/ov8o7v78mnye/6qTZF2EL2byG2vD5X5G8KW/7bc2e2c481580ba65e7da50dfcd7b132/02__2_.jpg?w=1280&f=center&q=85&fm=webp"
+              }
               alt="Onboarding"
               className="w-full h-88 object-cover"
             />
+          </motion.div>
+        </div>
+
+        {/* Row 3: Driving a sustainable future - Image left, Text right */}
+        <div className="my-12" />
+        <div className="grid gap-12 lg:grid-cols-2 items-start">
+          <motion.div
+            initial={{ opacity: 0, x: -28 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="rounded-xl overflow-hidden shadow-2xl border border-white/6"
+          >
+            <img
+              src={
+                "https://images.ctfassets.net/ov8o7v78mnye/7ocxqnMbSIYuxmyXDKNWkb/198471527214467c535938d14e809144/03_Shuttle.jpg?w=1280&f=center&q=85&fm=webp"
+              }
+              alt="Sustainable future"
+              className="w-full h-88 object-cover"
+            />
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: 28 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+          >
+            <h3 className="text-3xl font-heading text-white">
+              Driving a sustainable future
+            </h3>
+            <p className="mt-4 text-[15px] leading-7 text-muted-foreground max-w-xl">
+              We’re committed to reducing our environmental impact. We’re moving
+              toward making all of our rides electric, while also incorporating
+              more electric vehicles into our fleets globally. Every ride since
+              2017 is carbon offset and we’re working on offsetting all of our
+              carbon emissions since the company’s founding.
+            </p>
+            <div className="mt-6">
+              <Button size="lg" variant="glow">
+                Learn more
+              </Button>
+            </div>
           </motion.div>
         </div>
       </div>
@@ -367,7 +504,21 @@ function FAQSection() {
       q: "Which vehicles are eligible?",
       a: "Professional sedans and vans that meet our quality standards are eligible; check local rules for specifics.",
     },
+    {
+      q: "Which vehicles are eligible?",
+      a: "Professional sedans and vans that meet our quality standards are eligible; check local rules for specifics.",
+    },
+    {
+      q: "Which vehicles are eligible?",
+      a: "Professional sedans and vans that meet our quality standards are eligible; check local rules for specifics.",
+    },
+    {
+      q: "Which vehicles are eligible?",
+      a: "Professional sedans and vans that meet our quality standards are eligible; check local rules for specifics.",
+    },
   ];
+
+  const [open, setOpen] = useState<number | null>(null);
 
   return (
     <section className="relative py-20">
@@ -378,36 +529,56 @@ function FAQSection() {
             Frequently asked questions
           </h3>
           <div className="mt-6 space-y-3">
-            {faqs.map((f, i) => (
-              <motion.details
-                key={i}
-                initial={{ opacity: 0, y: 8 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="group rounded-md border border-white/6 bg-white/3 p-4"
-              >
-                <summary className="cursor-pointer text-white font-medium flex items-center justify-between">
-                  <span>{f.q}</span>
-                  <svg
-                    className="transition-transform duration-200 group-open:rotate-90"
-                    width="18"
-                    height="18"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
+            {faqs.map((f, i) => {
+              const isOpen = open === i;
+              return (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 8 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  className="rounded-md border border-white/6 bg-white/3"
+                >
+                  <button
+                    onClick={() => setOpen(isOpen ? null : i)}
+                    className="w-full p-4 text-white font-medium flex items-center justify-between"
                   >
-                    <path
-                      d="M6 9l6 6 6-6"
-                      stroke="#fff"
-                      strokeWidth="1.6"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </summary>
-                <div className="mt-2 text-sm text-muted-foreground">{f.a}</div>
-              </motion.details>
-            ))}
+                    <span>{f.q}</span>
+                    <motion.svg
+                      animate={{ rotate: isOpen ? 90 : 0 }}
+                      transition={{ duration: 0.2 }}
+                      width="18"
+                      height="18"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M6 9l6 6 6-6"
+                        stroke="#fff"
+                        strokeWidth="1.6"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </motion.svg>
+                  </button>
+                  <motion.div
+                    initial={false}
+                    animate={
+                      isOpen
+                        ? { height: "auto", opacity: 1 }
+                        : { height: 0, opacity: 0 }
+                    }
+                    transition={{ duration: 0.28, ease: "easeInOut" }}
+                    className="overflow-hidden"
+                  >
+                    <div className="px-4 pb-4 text-sm text-muted-foreground">
+                      {f.a}
+                    </div>
+                  </motion.div>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
 
@@ -420,7 +591,9 @@ function FAQSection() {
         >
           <div className="absolute -left-12 -top-8 w-48 h-48 rounded-full bg-gradient-to-br from-corporate-gold to-orange-400 opacity-10 blur-2xl pointer-events-none" />
           <img
-            src={IMG3}
+            src={
+              "https://images.ctfassets.net/ov8o7v78mnye/6BPRfdSwYGXY525DIjVT70/3e220a07d3292fd9c8f5c71f18c0ee45/Blacklane-LA-Social-37_FAQ.jpg?w=486&h=792&fit=fill&f=center&q=95&fm=webp"
+            }
             alt="Chauffeur FAQ"
             className="w-full rounded-lg shadow-lg object-cover h-[520px]"
           />
