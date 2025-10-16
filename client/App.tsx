@@ -8,6 +8,7 @@ import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import Business from "./pages/Business";
+import Help from "./pages/Help";
 import Chauffeurs from "./pages/Chauffeurs";
 import Navbar from "@/components/site/Navbar";
 import Footer from "@/components/site/Footer";
@@ -38,6 +39,7 @@ export default function App() {
                 <Route index element={<Index />} />
                 <Route path="business" element={<Business />} />
                 <Route path="chauffeurs" element={<Chauffeurs />} />
+                <Route path="help" element={<Help />} />
                 <Route path="*" element={<NotFound />} />
               </Route>
             </Routes>
