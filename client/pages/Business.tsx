@@ -103,38 +103,26 @@ function ParticleLayer({ count = 12 }: { count?: number }) {
 function AnimatedGradientBg({ className = "" }: { className?: string }) {
   return (
     <div className={cn("absolute inset-0 -z-10 overflow-hidden", className)}>
-      {/* Diagonal glossy streaks background */}
-  <svg className="absolute inset-0 w-full h-full z-0" viewBox="0 0 1920 900" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <linearGradient id="streak1" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stopColor="#E6A700" stopOpacity="0.08" />
-            <stop offset="100%" stopColor="#FF6B35" stopOpacity="0.02" />
-          </linearGradient>
-        </defs>
-  <rect x="-200" y="200" width="2200" height="120" rx="60" fill="url(#streak1)" opacity="0.95" transform="rotate(-12 960 260)" />
-  <rect x="-300" y="600" width="2200" height="80" rx="40" fill="url(#streak1)" opacity="0.85" transform="rotate(-10 960 640)" />
-      </svg>
-      {/* Animated gold/orange radial gradients */}
       <div
-        className="absolute -top-32 -left-32 h-[40rem] w-[40rem] rounded-full opacity-40 blur-3xl btn-gradient-animate z-0"
+        className="absolute -top-32 -left-32 h-[40rem] w-[40rem] rounded-full opacity-20 blur-3xl btn-gradient-animate"
         style={{
           backgroundImage:
             "linear-gradient(120deg,#F4C430 0%,#E6A700 25%,#FF6B35 60%,#E53E3E 100%)",
         }}
       />
       <div
-        className="absolute -bottom-40 -right-40 h-[36rem] w-[36rem] rounded-full opacity-30 blur-3xl btn-gradient-animate z-0"
+        className="absolute -bottom-40 -right-40 h-[36rem] w-[36rem] rounded-full opacity-10 blur-3xl btn-gradient-animate"
         style={{
           backgroundImage:
             "linear-gradient(60deg,#E53E3E 0%,#FF6B35 40%,#E6A700 70%,#F4C430 100%)",
         }}
       />
-  <div className="absolute inset-0 bg-[radial-gradient(50%_50%_at_50%_50%,rgba(230,167,0,0.18)_0%,transparent_60%)] z-0" />
-  <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/70 to-black/90 z-0" />
+      <div className="absolute inset-0 bg-[radial-gradient(50%_50%_at_50%_50%,rgba(230,167,0,0.08)_0%,transparent_60%)]" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/70 to-black/90" />
 
       {/* Subtle moving gradient overlay */}
       <motion.div
-        className="absolute -left-1/4 -top-1/4 w-[150%] h-[150%] opacity-50 z-0"
+        className="absolute -left-1/4 -top-1/4 w-[150%] h-[150%] opacity-30"
         style={{
           backgroundImage:
             "radial-gradient(circle at 10% 20%, rgba(230,167,0,0.12), transparent 10%), radial-gradient(circle at 80% 80%, rgba(255,107,53,0.08), transparent 12%)",
@@ -154,13 +142,11 @@ function Hero() {
     300,
   );
   return (
-    <section className="relative pt-28 pb-20 min-h-[70vh] flex items-center overflow-hidden bg-transparent">
+    <section className="relative pt-28 pb-20 min-h-[70vh] flex items-center overflow-hidden">
       <AnimatedGradientBg />
-      {/* Dark overlay above gradients for contrast */}
-      <div className="absolute inset-0 z-10 pointer-events-none bg-black/70" />
       <ParticleLayer count={16} />
       <FloatingSVGs />
-      <div className="container relative z-20">
+      <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
