@@ -180,7 +180,7 @@ function RequirementsOnboarding() {
     <section className="relative py-20">
       <div className="container grid gap-12 lg:grid-cols-2 items-center">
         <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="rounded-lg overflow-hidden shadow-lg">
-          <img src={IMG1} alt="Requirements" className="w-full h-72 object-cover" />
+          <img src={"https://cdn.builder.io/api/v1/image/assets%2F61ee9e27d554424082cbdf1901a81607%2F080d709fb303444194d516e473a34087?format=webp&width=800"} alt="Requirements" className="w-full h-72 object-cover" />
         </motion.div>
 
         <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
