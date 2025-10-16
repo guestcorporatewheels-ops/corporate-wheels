@@ -103,6 +103,78 @@ function RandomImageGrid() {
   );
 }
 
+function EnterpriseFeatures() {
+  const items = [
+    { t: 'Enterprise-grade security', d: 'SAML SSO, role-based access, and secure invoicing for large organisations.' },
+    { t: 'Custom billing & reporting', d: 'Detailed invoicing, cost centers, and exportable spend reports.' },
+    { t: 'Policy controls', d: 'Set ride approval workflows, spend limits and preferred vehicle classes.' },
+  ];
+
+  return (
+    <section className="relative py-20">
+      <div className="absolute inset-0 -z-10">
+        <div className="absolute left-0 top-8 w-72 h-72 rounded-full opacity-10 blur-3xl btn-gradient-animate" style={{ backgroundImage: 'linear-gradient(90deg,#E6A700 0%, #FF6B35 50%, #E53E3E 100%)' }} />
+      </div>
+      <div className="container">
+        <motion.h2 initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="text-3xl md:text-4xl font-heading text-white text-center">Enterprise features</motion.h2>
+        <div className="mt-10 grid gap-6 sm:grid-cols-1 md:grid-cols-3">
+          {items.map((it, i) => (
+            <motion.div key={it.t} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: i * 0.08 }} className="p-6 rounded-xl border border-white/6 bg-white/4 backdrop-blur-sm">
+              <h4 className="text-lg font-medium text-white">{it.t}</h4>
+              <p className="mt-2 text-sm text-muted-foreground">{it.d}</p>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Integrations() {
+  const logos = ['Google', 'Slack', 'SAP', 'Oracle'];
+  return (
+    <section className="relative py-20">
+      <div className="container">
+        <motion.h2 initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="text-3xl md:text-4xl font-heading text-white text-center">Integrations</motion.h2>
+        <p className="mt-3 text-center text-muted-foreground max-w-2xl mx-auto">Connect with your existing tools — calendar sync, SSO, reporting and expense platforms.</p>
+        <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-6 items-center">
+          {logos.map((l, i) => (
+            <motion.div key={l} initial={{ opacity: 0, scale: 0.96 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: i * 0.06 }} className="bg-white/4 rounded-lg p-6 flex items-center justify-center border border-white/6">
+              <span className="text-muted-foreground">{l}</span>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function CaseStudy() {
+  return (
+    <section className="relative py-20">
+      <div className="container grid gap-12 lg:grid-cols-2 items-center">
+        <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
+          <h3 className="text-3xl md:text-4xl font-heading text-white">Case study: Global logistics firm</h3>
+          <p className="mt-4 text-muted-foreground max-w-xl">How a global logistics firm consolidated ground travel, reduced costs by 18% and improved executive satisfaction with centralized policies and reporting.</p>
+          <ul className="mt-6 text-muted-foreground list-disc list-inside space-y-2">
+            <li>Centralized billing and cost allocation</li>
+            <li>Custom policy enforcement and approvals</li>
+            <li>Realtime trip visibility and priority support</li>
+          </ul>
+          <div className="mt-6 flex gap-3">
+            <Button size="md" variant="glow">Read full story</Button>
+            <Button size="md" variant="outline">Contact Sales</Button>
+          </div>
+        </motion.div>
+
+        <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="rounded-lg overflow-hidden shadow-lg">
+          <img src={`https://source.unsplash.com/random/900x700?corporate,meeting`} alt="Case study" className="w-full h-80 object-cover" />
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+
 function CTA() {
   return (
     <section className="relative py-20">
@@ -125,7 +197,10 @@ export default function Business() {
     <main className="relative bg-background text-foreground">
       <Hero />
       <Features />
+      <EnterpriseFeatures />
+      <Integrations />
       <RandomImageGrid />
+      <CaseStudy />
       <CTA />
     </main>
   );
