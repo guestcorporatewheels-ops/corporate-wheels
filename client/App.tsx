@@ -7,6 +7,8 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
+import Business from "./pages/Business";
+import Chauffeurs from "./pages/Chauffeurs";
 import Navbar from "@/components/site/Navbar";
 import Footer from "@/components/site/Footer";
 import ErrorBoundary from "@/components/ErrorBoundary";
@@ -34,6 +36,8 @@ export default function App() {
             <Routes>
               <Route element={<RootLayout />}>
                 <Route index element={<Index />} />
+                <Route path="business" element={<Business />} />
+                <Route path="chauffeurs" element={<Chauffeurs />} />
                 <Route path="*" element={<NotFound />} />
               </Route>
             </Routes>
