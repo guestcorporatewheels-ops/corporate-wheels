@@ -149,10 +149,20 @@ export default function Navbar() {
           </HoverDropdown>
 
           {/* Other Navigation Items */}
-          <NavLink to="/business" className={({isActive}) => isActive ? "text-white" : "hover:text-white transition-colors"}>
+          <NavLink
+            to="/business"
+            className={({ isActive }) =>
+              isActive ? "text-white" : "hover:text-white transition-colors"
+            }
+          >
             For Business
           </NavLink>
-          <NavLink to="/chauffeurs" className={({isActive}) => isActive ? "text-white" : "hover:text-white transition-colors"}>
+          <NavLink
+            to="/chauffeurs"
+            className={({ isActive }) =>
+              isActive ? "text-white" : "hover:text-white transition-colors"
+            }
+          >
             For Chauffeurs
           </NavLink>
           <a href="#help" className="hover:text-white transition-colors">
@@ -239,10 +249,24 @@ export default function Navbar() {
                 Limousine service
               </a>
             </div>
-            <NavLink to="/business" className={({isActive}) => isActive ? "text-white" : "text-muted-foreground hover:text-white"}>
+            <NavLink
+              to="/business"
+              className={({ isActive }) =>
+                isActive
+                  ? "text-white"
+                  : "text-muted-foreground hover:text-white"
+              }
+            >
               For Business
             </NavLink>
-            <NavLink to="/chauffeurs" className={({isActive}) => isActive ? "text-white" : "text-muted-foreground hover:text-white"}>
+            <NavLink
+              to="/chauffeurs"
+              className={({ isActive }) =>
+                isActive
+                  ? "text-white"
+                  : "text-muted-foreground hover:text-white"
+              }
+            >
               For Chauffeurs
             </NavLink>
             <a href="#help" className="text-muted-foreground hover:text-white">
