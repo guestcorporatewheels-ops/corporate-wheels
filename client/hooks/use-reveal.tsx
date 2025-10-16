@@ -19,7 +19,7 @@ export default function useReveal<T extends Element>(options?: Options) {
           }
         });
       },
-      { threshold: 0.1, ...options }
+      { threshold: 0.1, ...options },
     );
 
     observer.observe(el);

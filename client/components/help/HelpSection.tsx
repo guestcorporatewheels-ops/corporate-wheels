@@ -26,7 +26,7 @@ const HelpSection: React.FC<Props> = ({ id, title, summary, children }) => {
       aria-labelledby={`${id}-title`}
       className={cn(
         "reveal rounded-lg border border-sidebar-border bg-card/50 p-6 shadow-sm transition-transform duration-700 ease-out",
-        "opacity-0 translate-y-6"
+        "opacity-0 translate-y-6",
       )}
     >
       <div className="flex items-start gap-4">
@@ -37,7 +37,9 @@ const HelpSection: React.FC<Props> = ({ id, title, summary, children }) => {
           <h2 id={`${id}-title`} className="text-lg font-semibold">
             {title}
           </h2>
-          {summary ? <p className="mt-1 text-sm text-muted-foreground">{summary}</p> : null}
+          {summary ? (
+            <p className="mt-1 text-sm text-muted-foreground">{summary}</p>
+          ) : null}
         </div>
       </div>
 

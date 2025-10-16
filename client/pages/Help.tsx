@@ -17,9 +17,9 @@ const Help: React.FC = () => {
             summary="How to create an account, book your first ride and understand core features."
           >
             <p>
-              Create an account, verify your email, and use the booking widget to
-              request a ride. We recommend saving frequent addresses for faster
-              bookings.
+              Create an account, verify your email, and use the booking widget
+              to request a ride. We recommend saving frequent addresses for
+              faster bookings.
             </p>
           </HelpSection>
 
@@ -68,7 +68,11 @@ const Help: React.FC = () => {
             </p>
           </HelpSection>
 
-          <HelpSection id="faqs" title="FAQs" summary="Answers to common questions.">
+          <HelpSection
+            id="faqs"
+            title="FAQs"
+            summary="Answers to common questions."
+          >
             <p>
               Quick answers covering common scenarios like lost items, billing
               disputes and accessibility options.
