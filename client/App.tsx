@@ -14,6 +14,7 @@ import HourlyHire from "./pages/HourlyHire";
 import CityToCity from "./pages/CityToCity";
 import ChauffeurHailing from "./pages/ChauffeurHailing";
 import AirportTransfer from "./pages/AirportTransfer";
+import LimousineService from "./pages/LimousineService";
 import Navbar from "@/components/site/Navbar";
 import Footer from "@/components/site/Footer";
 import ErrorBoundary from "@/components/ErrorBoundary";
@@ -48,6 +49,7 @@ export default function App() {
                 <Route path="hourly-hire" element={<HourlyHire />} />
                 <Route path="city-to-city" element={<CityToCity />} />
                 <Route path="airport-transfer" element={<AirportTransfer />} />
+                <Route path="limousine-service" element={<LimousineService />} />
                 <Route path="*" element={<NotFound />} />
               </Route>
             </Routes>
