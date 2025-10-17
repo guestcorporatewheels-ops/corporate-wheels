@@ -10,6 +10,10 @@ import NotFound from "./pages/NotFound";
 import Business from "./pages/Business";
 import Help from "./pages/Help";
 import Chauffeurs from "./pages/Chauffeurs";
+import HourlyHire from "./pages/HourlyHire";
+import CityToCity from "./pages/CityToCity";
+import ChauffeurHailing from "./pages/ChauffeurHailing";
+import AirportTransfer from "./pages/AirportTransfer";
 import Navbar from "@/components/site/Navbar";
 import Footer from "@/components/site/Footer";
 import ErrorBoundary from "@/components/ErrorBoundary";
@@ -39,7 +43,11 @@ export default function App() {
                 <Route index element={<Index />} />
                 <Route path="business" element={<Business />} />
                 <Route path="chauffeurs" element={<Chauffeurs />} />
+                <Route path="chauffeur-hailing" element={<ChauffeurHailing />} />
                 <Route path="help" element={<Help />} />
+                <Route path="hourly-hire" element={<HourlyHire />} />
+                <Route path="city-to-city" element={<CityToCity />} />
+                <Route path="airport-transfer" element={<AirportTransfer />} />
                 <Route path="*" element={<NotFound />} />
               </Route>
             </Routes>

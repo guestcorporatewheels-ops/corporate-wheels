@@ -110,22 +110,22 @@ export default function Navbar() {
           >
             <div className="py-1">
               {[
-                "City-to-City rides",
-                "Chauffeur hailing",
-                "Airport transfers",
-                "Hourly hire",
-                "Chauffeur service",
-                "Limousine service",
+                { label: "City-to-City rides", path: "/city-to-city" },
+                { label: "Chauffeur hailing", path: "/chauffeur-hailing" },
+                { label: "Airport transfer", path: "/airport-transfer" },
+                { label: "Hourly hire", path: "/hourly-hire" },
+                { label: "Chauffeur service", path: "/chauffeur-service" },
+                { label: "Limousine service", path: "/limousine-service" },
               ].map((item) => (
-                <a
-                  key={item}
-                  href="#services"
+                <Link
+                  key={item.label}
+                  to={item.path}
                   className="group block px-3 py-2 rounded-md text-white/90 hover:bg-white/8 focus:bg-white/12 focus:outline-none transition-colors"
                 >
                   <span className="group-hover:text-corporate-gold group-focus:text-corporate-gold transition-colors">
-                    {item}
+                    {item.label}
                   </span>
-                </a>
+                </Link>
               ))}
             </div>
           </HoverDropdown>
@@ -197,20 +197,22 @@ export default function Navbar() {
             <div className="text-white font-medium mb-2">Our Services</div>
             <div className="pl-4 space-y-2">
               {[
-                "City-to-City rides",
-                "Chauffeur hailing",
-                "Airport transfers",
-                "Hourly hire",
-                "Chauffeur service",
-                "Limousine service",
-              ].map((s) => (
-                <a
-                  key={s}
-                  href="#services"
-                  className="block text-muted-foreground hover:text-corporate-gold focus:text-corporate-gold"
+                { label: "City-to-City rides", path: "/city-to-city" },
+                { label: "Chauffeur hailing", path: "/chauffeur-hailing" },
+                { label: "Airport transfer", path: "/airport-transfer" },
+                { label: "Hourly hire", path: "/hourly-hire" },
+                { label: "Chauffeur service", path: "/chauffeur-service" },
+                { label: "Limousine service", path: "/limousine-service" },
+              ].map((item) => (
+                <NavLink
+                  key={item.label}
+                  to={item.path}
+                  className={({ isActive }) =>
+                    isActive ? "block text-white" : "block text-muted-foreground hover:text-corporate-gold focus:text-corporate-gold"
+                  }
                 >
-                  {s}
-                </a>
+                  {item.label}
+                </NavLink>
               ))}
             </div>
             <NavLink
