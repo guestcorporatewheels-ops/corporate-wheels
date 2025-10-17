@@ -225,10 +225,83 @@ export default function Help() {
     
 
   <div className="relative z-10 container py-20">
-        {/* Hero */}
-        <motion.section initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }} className="mb-16 text-center max-w-3xl mx-auto">
-          <h1 className="text-4xl md:text-5xl font-extrabold mb-4 text-corporate-gold drop-shadow">How can we help you?</h1>
-          <p className="text-gray-300 text-lg">Find answers, guides, and support for every step of your journey with Corporate Wheels.</p>
+        {/* Hero Section */}
+        <motion.section 
+          initial={{ opacity: 0, y: 30 }} 
+          whileInView={{ opacity: 1, y: 0 }} 
+          viewport={{ once: true }} 
+          transition={{ duration: 0.7 }} 
+          className="mb-16 text-center max-w-4xl mx-auto"
+        >
+          {/* Main Title */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2, duration: 0.5 }}
+          >
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4">
+              <span className="bg-gradient-to-r from-corporate-gold to-yellow-200 bg-clip-text text-transparent">
+                How can we assist you today?
+              </span>
+            </h1>
+          </motion.div>
+
+          {/* Subtitle */}
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4, duration: 0.5 }}
+            className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto"
+          >
+            Your premium journey deserves premium support. Find instant answers or connect with our 24/7 concierge team.
+          </motion.p>
+
+          {/* Quick Action Buttons */}
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6, duration: 0.5 }}
+            className="flex flex-col sm:flex-row gap-4 justify-center mb-12"
+          >
+            <button className="px-8 py-4 bg-corporate-gold hover:bg-corporate-gold/90 text-black font-semibold rounded-lg transition-colors flex items-center justify-center gap-2">
+              <MessageCircle className="w-5 h-5" />
+              Start Live Chat
+            </button>
+            <button className="px-8 py-4 border-2 border-corporate-gold/50 hover:border-corporate-gold text-corporate-gold font-semibold rounded-lg transition-colors flex items-center justify-center gap-2">
+              <PhoneCall className="w-5 h-5" />
+              Call Support
+            </button>
+          </motion.div>
+
+          {/* Help Categories */}
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.8, duration: 0.5 }}
+            className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto"
+          >
+            {[
+              { icon: <User className="w-6 h-6" />, text: "Account Help" },
+              { icon: <CreditCard className="w-6 h-6" />, text: "Booking Support" },
+              { icon: <Shield className="w-6 h-6" />, text: "Safety & Security" },
+              { icon: <BookOpen className="w-6 h-6" />, text: "Service Guide" }
+            ].map((item, index) => (
+              <motion.button
+                key={index}
+                whileHover={{ scale: 1.05 }}
+                className="p-4 rounded-xl bg-black/40 border border-corporate-gold/20 hover:border-corporate-gold/50 transition-colors group"
+              >
+                <div className="flex flex-col items-center gap-2">
+                  <span className="text-corporate-gold group-hover:scale-110 transition-transform">
+                    {item.icon}
+                  </span>
+                  <span className="text-sm font-medium text-gray-300 group-hover:text-white transition-colors">
+                    {item.text}
+                  </span>
+                </div>
+              </motion.button>
+            ))}
+          </motion.div>
         </motion.section>
 
         {/* Sectioned Help Content */}
