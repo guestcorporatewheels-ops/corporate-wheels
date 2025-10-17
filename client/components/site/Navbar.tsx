@@ -167,14 +167,18 @@ export default function Navbar() {
                 className="group flex items-center gap-2 px-3 py-2 rounded-md text-white/90 hover:bg-white/8 focus:bg-white/12 transition-colors transform hover:-translate-y-0.5"
               >
                 <Apple className="size-4 text-white/80 group-hover:text-corporate-gold group-focus:text-corporate-gold transition-colors" />
-                <span className="ml-1 group-hover:text-corporate-gold group-focus:text-corporate-gold transition-colors">iOS</span>
+                <span className="ml-1 group-hover:text-corporate-gold group-focus:text-corporate-gold transition-colors">
+                  iOS
+                </span>
               </a>
               <a
                 href="#download"
                 className="group flex items-center gap-2 px-3 py-2 rounded-md text-white/90 hover:bg-white/8 focus:bg-white/12 transition-colors transform hover:-translate-y-0.5"
               >
                 <Play className="size-4 text-white/80 group-hover:text-corporate-gold group-focus:text-corporate-gold transition-colors" />
-                <span className="ml-1 group-hover:text-corporate-gold group-focus:text-corporate-gold transition-colors">Android</span>
+                <span className="ml-1 group-hover:text-corporate-gold group-focus:text-corporate-gold transition-colors">
+                  Android
+                </span>
               </a>
             </div>
           </HoverDropdown>

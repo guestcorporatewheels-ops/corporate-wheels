@@ -5,12 +5,12 @@ import { cn } from "@/lib/utils";
 
 function FloatingSVGs() {
   return (
-    <div className="pointer-events-none absolute inset-0 -z-0">
+    <div className="pointer-events-none absolute inset-0 -z-0 overflow-hidden">
       <motion.svg
-        width="200"
-        height="200"
+        width="180"
+        height="180"
         viewBox="0 0 100 100"
-        className="absolute left-8 top-24 opacity-30"
+        className="absolute left-4 top-20 opacity-30"
         initial={{ y: -10, rotate: 0 }}
         animate={{ y: [0, -12, 0], rotate: [0, 6, 0] }}
         transition={{ duration: 6, repeat: Infinity }}
@@ -25,10 +25,10 @@ function FloatingSVGs() {
       </motion.svg>
 
       <motion.svg
-        width="160"
-        height="160"
+        width="140"
+        height="140"
         viewBox="0 0 100 100"
-        className="absolute right-12 top-48 opacity-25"
+        className="absolute right-4 top-40 opacity-25"
         initial={{ y: 0, rotate: 0 }}
         animate={{ y: [0, 10, 0], rotate: [0, -8, 0] }}
         transition={{ duration: 7, repeat: Infinity }}
@@ -43,10 +43,10 @@ function FloatingSVGs() {
       </motion.svg>
 
       <motion.svg
-        width="120"
-        height="120"
+        width="100"
+        height="100"
         viewBox="0 0 100 100"
-        className="absolute left-1/3 bottom-32 opacity-20"
+        className="absolute left-1/3 bottom-24 opacity-20"
         initial={{ scale: 1, rotate: 0 }}
         animate={{ scale: [1, 1.1, 1], rotate: [0, 180, 360] }}
         transition={{ duration: 12, repeat: Infinity }}
@@ -104,14 +104,14 @@ function AnimatedGradientBg({ className = "" }: { className?: string }) {
   return (
     <div className={cn("absolute inset-0 -z-10 overflow-hidden", className)}>
       <div
-        className="absolute -top-32 -left-32 h-[40rem] w-[40rem] rounded-full opacity-20 blur-3xl btn-gradient-animate"
+        className="absolute -top-20 -left-16 h-[36rem] w-[36rem] rounded-full opacity-20 blur-3xl btn-gradient-animate"
         style={{
           backgroundImage:
             "linear-gradient(120deg,#F4C430 0%,#E6A700 25%,#FF6B35 60%,#E53E3E 100%)",
         }}
       />
       <div
-        className="absolute -bottom-40 -right-40 h-[36rem] w-[36rem] rounded-full opacity-10 blur-3xl btn-gradient-animate"
+        className="absolute -bottom-28 -right-20 h-[32rem] w-[32rem] rounded-full opacity-10 blur-3xl btn-gradient-animate"
         style={{
           backgroundImage:
             "linear-gradient(60deg,#E53E3E 0%,#FF6B35 40%,#E6A700 70%,#F4C430 100%)",
@@ -122,13 +122,13 @@ function AnimatedGradientBg({ className = "" }: { className?: string }) {
 
       {/* Subtle moving gradient overlay */}
       <motion.div
-        className="absolute -left-1/4 -top-1/4 w-[150%] h-[150%] opacity-30"
+        className="absolute -left-1/4 -top-1/4 w-[150%] h-[150%] opacity-30 overflow-hidden"
         style={{
           backgroundImage:
             "radial-gradient(circle at 10% 20%, rgba(230,167,0,0.12), transparent 10%), radial-gradient(circle at 80% 80%, rgba(255,107,53,0.08), transparent 12%)",
           mixBlendMode: "screen",
         }}
-        animate={{ x: [0, 40, 0], y: [0, 20, 0], rotate: [0, 4, 0] }}
+        animate={{ x: [0, 20, 0], y: [0, 10, 0], rotate: [0, 2, 0] }}
         transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
       />
     </div>
@@ -142,19 +142,19 @@ function Hero() {
     300,
   );
   return (
-    <section className="relative pt-28 pb-20 min-h-[70vh] flex items-center overflow-hidden">
+    <section className="relative pt-20 pb-16 min-h-[60vh] flex items-center overflow-hidden w-full">
       <AnimatedGradientBg />
       <ParticleLayer count={16} />
       <FloatingSVGs />
-      <div className="container">
+      <div className="container px-4 w-full max-w-full">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="max-w-3xl"
+          className="max-w-3xl w-full"
         >
-          <h1 className="text-4xl md:text-6xl font-heading text-white leading-tight">
+          <h1 className="text-3xl sm:text-4xl md:text-6xl font-heading text-white leading-tight">
             <span className="text-gradient-gold inline-block">
               {displayText}
             </span>
@@ -168,16 +168,16 @@ function Hero() {
               </motion.span>
             )}
           </h1>
-          <p className="mt-5 text-lg text-muted-foreground max-w-2xl">
+          <p className="mt-4 text-base sm:text-lg text-muted-foreground max-w-2xl">
             Centralized travel, reliable billing, and vetted chauffeurs for
             teams and executives. Scale your ground travel with control and
             visibility.
           </p>
-          <div className="mt-8 flex gap-4">
-            <Button size="lg" variant="glow">
+          <div className="mt-6 flex flex-col sm:flex-row gap-3 sm:gap-4">
+            <Button size="lg" variant="glow" className="w-full sm:w-auto">
               Start a Business Account
             </Button>
-            <Button size="lg" variant="outline">
+            <Button size="lg" variant="outline" className="w-full sm:w-auto">
               Talk to Sales
             </Button>
           </div>
@@ -238,10 +238,10 @@ function Features() {
     },
   ];
   return (
-    <section className="relative py-20 overflow-hidden">
+    <section className="relative py-16 overflow-hidden w-full">
       {/* Animated SVG background */}
       <motion.svg
-        className="absolute left-10 top-10 w-32 h-32 opacity-20 pointer-events-none"
+        className="absolute left-4 top-6 w-24 h-24 opacity-20 pointer-events-none"
         viewBox="0 0 100 100"
         initial={{ scale: 0.9, rotate: 0 }}
         animate={{ scale: [0.9, 1.05, 0.9], rotate: [0, 12, 0] }}
@@ -255,17 +255,17 @@ function Features() {
           </radialGradient>
         </defs>
       </motion.svg>
-      <div className="container">
+      <div className="container px-4 w-full max-w-full">
         <motion.h2
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-3xl md:text-4xl font-heading text-white text-center"
+          className="text-2xl sm:text-3xl md:text-4xl font-heading text-white text-center"
         >
           Built for Operations & Finance
         </motion.h2>
-        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-8 grid gap-4 sm:gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {items.map((it, i) => (
             <Feature key={it.t} title={it.t} desc={it.d} delay={i * 0.07} />
           ))}
@@ -310,7 +310,7 @@ function WorldwidePresence() {
   ];
 
   return (
-    <section className="relative py-20 overflow-hidden">
+    <section className="relative py-16 overflow-hidden">
       {/* Animated background gradient */}
       <motion.div
         className="absolute inset-0 bg-[radial-gradient(70%_70%_at_50%_100%,rgba(230,167,0,0.08)_0%,transparent_70%)]"
@@ -322,7 +322,7 @@ function WorldwidePresence() {
       />
       {/* Animated SVG background */}
       <motion.svg
-        className="absolute right-10 top-16 w-28 h-28 opacity-20 pointer-events-none"
+        className="absolute right-4 top-12 w-20 h-20 opacity-20 pointer-events-none"
         viewBox="0 0 100 100"
         initial={{ scale: 1, rotate: 0 }}
         animate={{ scale: [1, 1.08, 1], rotate: [0, -10, 0] }}
@@ -336,17 +336,19 @@ function WorldwidePresence() {
           </linearGradient>
         </defs>
       </motion.svg>
-      <div className="container relative">
+      <div className="container px-4 w-full max-w-full relative">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl font-heading text-white mb-4">In action around the world</h2>
+          <h2 className="text-3xl font-heading text-white mb-4">
+            In action around the world
+          </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            From airport transfers to multi-city event logistics, we're trusted by corporations worldwide
-            for reliable executive transport.
+            From airport transfers to multi-city event logistics, we're trusted
+            by corporations worldwide for reliable executive transport.
           </p>
         </motion.div>
 
@@ -396,17 +398,17 @@ function EnterpriseFeatures() {
   ];
 
   return (
-    <section className="relative py-20">
+    <section className="relative py-16 overflow-hidden w-full">
       <div className="absolute inset-0 -z-10">
         <div
-          className="absolute left-0 top-8 w-72 h-72 rounded-full opacity-10 blur-3xl btn-gradient-animate"
+          className="absolute left-0 top-4 w-56 h-56 rounded-full opacity-10 blur-3xl btn-gradient-animate"
           style={{
             backgroundImage:
               "linear-gradient(90deg,#E6A700 0%, #FF6B35 50%, #E53E3E 100%)",
           }}
         />
       </div>
-      <div className="container">
+      <div className="container px-4 w-full max-w-full">
         <motion.h2
           initial={{ opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -474,32 +476,32 @@ function Integrations() {
 }
 
 function CaseStudies() {
-    const studies = [
+  const studies = [
     {
       title: "Global Tech Summit",
       desc: "Coordinated 200+ executive transfers across 3 days in multiple cities. Achieved 100% on-time performance.",
       image: "/images/business/case-studies/Noimage.jpg",
-      stats: ["200+ Transfers", "3 Cities", "100% On-time"]
+      stats: ["200+ Transfers", "3 Cities", "100% On-time"],
     },
     {
       title: "Financial Conference",
       desc: "24/7 dedicated support for 50+ VIP attendees. Custom billing for different cost centers.",
       image: "/images/business/case-studies/Noimage.jpg",
-      stats: ["50+ VIPs", "24/7 Support", "18% Cost Savings"]
+      stats: ["50+ VIPs", "24/7 Support", "18% Cost Savings"],
     },
     {
       title: "Fashion Week",
       desc: "Luxury fleet coordination for designer showcases. Real-time tracking and schedule adjustments.",
       image: "/images/business/case-studies/Noimage.jpg",
-      stats: ["100+ Routes", "Premium Fleet", "Live Tracking"]
-    }
+      stats: ["100+ Routes", "Premium Fleet", "Live Tracking"],
+    },
   ];
 
   return (
-    <section className="relative py-20 overflow-hidden">
+    <section className="relative py-16 overflow-hidden w-full">
       {/* Animated SVG background */}
       <motion.svg
-        className="absolute left-10 bottom-10 w-28 h-28 opacity-20 pointer-events-none"
+        className="absolute left-4 bottom-6 w-20 h-20 opacity-20 pointer-events-none"
         viewBox="0 0 100 100"
         initial={{ scale: 1, rotate: 0 }}
         animate={{ scale: [1, 1.08, 1], rotate: [0, 10, 0] }}
@@ -513,7 +515,7 @@ function CaseStudies() {
           </radialGradient>
         </defs>
       </motion.svg>
-      <div className="container">
+      <div className="container px-4 w-full max-w-full">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -521,9 +523,12 @@ function CaseStudies() {
           transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl md:text-4xl font-heading text-white mb-4">Success Stories</h2>
+          <h2 className="text-3xl md:text-4xl font-heading text-white mb-4">
+            Success Stories
+          </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            See how leading organizations streamline their executive transportation with our platform.
+            See how leading organizations streamline their executive
+            transportation with our platform.
           </p>
         </motion.div>
 
@@ -547,8 +552,12 @@ function CaseStudies() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-semibold text-white mb-3">{study.title}</h3>
-                <p className="text-muted-foreground text-sm mb-4">{study.desc}</p>
+                <h3 className="text-xl font-semibold text-white mb-3">
+                  {study.title}
+                </h3>
+                <p className="text-muted-foreground text-sm mb-4">
+                  {study.desc}
+                </p>
                 <div className="flex flex-wrap gap-2">
                   {study.stats.map((stat, index) => (
                     <span
@@ -570,27 +579,27 @@ function CaseStudies() {
 
 function CTA() {
   return (
-    <section className="relative py-20">
-      <div className="container">
+    <section className="relative py-16 w-full overflow-hidden">
+      <div className="container px-4 w-full max-w-full">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="rounded-2xl border border-white/10 bg-gradient-to-r from-corporate-gold/20 to-corporate-gold/0 p-8 md:p-10"
+          className="rounded-2xl border border-white/10 bg-gradient-to-r from-corporate-gold/20 to-corporate-gold/0 p-6 md:p-10"
         >
-          <h3 className="text-2xl md:text-3xl font-heading text-white">
+          <h3 className="text-xl sm:text-2xl md:text-3xl font-heading text-white">
             Ready to streamline ground travel?
           </h3>
-          <p className="mt-2 text-muted-foreground">
+          <p className="mt-2 text-sm sm:text-base text-muted-foreground">
             Create a business account in minutes and start booking with control
             and visibility.
           </p>
-          <div className="mt-6 flex gap-3">
-            <Button size="lg" variant="glow">
+          <div className="mt-6 flex flex-col sm:flex-row gap-3">
+            <Button size="lg" variant="glow" className="w-full sm:w-auto">
               Create Account
             </Button>
-            <Button size="lg" variant="secondary">
+            <Button size="lg" variant="secondary" className="w-full sm:w-auto">
               Contact Sales
             </Button>
           </div>
@@ -602,14 +611,16 @@ function CTA() {
 
 export default function Business() {
   return (
-    <main className="relative bg-background text-foreground">
-      <Hero />
-      <Features />
-      <EnterpriseFeatures />
-      <WorldwidePresence />
-      <CaseStudies />
-      <Integrations />
-      <CTA />
-    </main>
+    <div className="w-full overflow-x-hidden">
+      <main className="relative bg-background text-foreground min-h-screen">
+        <Hero />
+        <Features />
+        <EnterpriseFeatures />
+        <WorldwidePresence />
+        <CaseStudies />
+        <Integrations />
+        <CTA />
+      </main>
+    </div>
   );
 }
