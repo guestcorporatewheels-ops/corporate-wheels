@@ -8,14 +8,14 @@ function AnimatedGradientBg({ className = "" }: { className?: string }) {
   return (
     <div className={cn("absolute inset-0 -z-10 overflow-hidden", className)}>
       <div
-        className="absolute -top-16 -left-16 h-[32rem] w-[32rem] rounded-full opacity-20 blur-3xl btn-gradient-animate"
+        className="absolute -top-28 -left-20 h-[36rem] w-[36rem] rounded-full opacity-20 blur-3xl btn-gradient-animate"
         style={{
           backgroundImage:
             "linear-gradient(120deg,#F4C430 0%,#E6A700 25%,#FF6B35 60%,#E53E3E 100%)",
         }}
       />
       <div
-        className="absolute -bottom-20 -right-16 h-[36rem] w-[36rem] rounded-full opacity-12 blur-3xl btn-gradient-animate"
+        className="absolute -bottom-36 -right-28 h-[40rem] w-[40rem] rounded-full opacity-12 blur-3xl btn-gradient-animate"
         style={{
           backgroundImage:
             "linear-gradient(60deg,#E53E3E 0%,#FF6B35 40%,#E6A700 70%,#F4C430 100%)",
@@ -29,12 +29,12 @@ function AnimatedGradientBg({ className = "" }: { className?: string }) {
 
 function FloatingSVGs() {
   return (
-    <div className="pointer-events-none absolute inset-0 -z-0 overflow-hidden">
+    <div className="pointer-events-none absolute inset-0 -z-0">
       <motion.svg
-        width="160"
-        height="160"
+        width="180"
+        height="180"
         viewBox="0 0 100 100"
-        className="absolute left-4 top-20 opacity-40"
+        className="absolute left-8 top-24 opacity-40"
         initial={{ y: -10, rotate: 0 }}
         animate={{ y: [0, -12, 0], rotate: [0, 6, 0] }}
         transition={{ duration: 6, repeat: Infinity }}
@@ -49,10 +49,10 @@ function FloatingSVGs() {
       </motion.svg>
 
       <motion.svg
-        width="120"
-        height="120"
+        width="140"
+        height="140"
         viewBox="0 0 100 100"
-        className="absolute right-4 top-40 opacity-30"
+        className="absolute right-12 top-48 opacity-30"
         initial={{ y: 0, rotate: 0 }}
         animate={{ y: [0, 10, 0], rotate: [0, -8, 0] }}
         transition={{ duration: 7, repeat: Infinity }}
@@ -70,18 +70,18 @@ function Hero() {
     300,
   );
   return (
-    <section className="relative pt-20 pb-16 min-h-[60vh] flex items-center overflow-hidden w-full">
+    <section className="relative pt-28 pb-20 min-h-[70vh] flex items-center overflow-hidden">
       <AnimatedGradientBg />
       <FloatingSVGs />
-      <div className="container px-4 w-full max-w-full">
+      <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="max-w-3xl w-full"
+          className="max-w-3xl"
         >
-          <h1 className="text-3xl sm:text-4xl md:text-6xl font-heading text-white leading-tight">
+          <h1 className="text-4xl md:text-6xl font-heading text-white leading-tight">
             <span className="text-gradient inline-block">{displayText}</span>
             {!isComplete && (
               <motion.span
@@ -93,15 +93,15 @@ function Hero() {
               </motion.span>
             )}
           </h1>
-          <p className="mt-4 text-base sm:text-lg text-muted-foreground max-w-2xl">
+          <p className="mt-5 text-lg text-muted-foreground max-w-2xl">
             Grow your business with high-value rides, reliable payouts, and 24/7
             support. Set your availability and drive with confidence.
           </p>
-          <div className="mt-6 flex flex-col sm:flex-row gap-3 sm:gap-4">
-            <Button size="lg" variant="glow" className="w-full sm:w-auto">
+          <div className="mt-8 flex gap-4">
+            <Button size="lg" variant="glow">
               Apply as Chauffeur
             </Button>
-            <Button size="lg" variant="outline" className="w-full sm:w-auto">
+            <Button size="lg" variant="outline">
               Learn Requirements
             </Button>
           </div>
@@ -289,19 +289,19 @@ function Benefits() {
   ];
 
   return (
-    <section className="relative py-16 w-full overflow-hidden">
-      <div className="container px-4 w-full max-w-full">
+    <section className="relative py-20">
+      <div className="container">
         <motion.h2
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-2xl sm:text-3xl md:text-4xl font-heading text-white text-center"
+          className="text-3xl md:text-4xl font-heading text-white text-center"
         >
           Partner benefits
         </motion.h2>
 
-        <div className="mt-8 grid gap-4 sm:gap-6 lg:grid-cols-12">
+        <div className="mt-10 grid gap-6 lg:grid-cols-12">
           {items.map((it, i) => {
             const col = i < 3 ? "lg:col-span-4" : "lg:col-span-6";
             return (
@@ -313,18 +313,18 @@ function Benefits() {
                 transition={{ duration: 0.5, delay: i * 0.05 }}
                 className={cn("relative", col)}
               >
-                <div className="rounded-2xl border border-white/10 bg-white/5 p-6 sm:p-8 backdrop-blur-sm shadow-[0_0_15px_rgba(230,167,0,0.25)]">
-                  <div className="flex items-start gap-4 sm:gap-5 text-white">
-                    <div className="text-orange-400 shrink-0">
+                <div className="rounded-2xl border border-white/10 bg-white/5 p-8   backdrop-blur-sm  shadow-[0_0_15px_rgba(230,167,0,0.25)]">
+                  <div className="flex items-start gap-5 text-white">
+                    <div className="text-orange-400">
                       <RingIcon>
                         <g className="text-orange-400">{it.icon}</g>
                       </RingIcon>
                     </div>
                     <div>
-                      <h4 className="text-lg sm:text-xl font-semibold tracking-tight text-white">
+                      <h4 className="text-xl font-semibold tracking-tight text-white">
                         {it.t}
                       </h4>
-                      <p className="mt-2 sm:mt-3 text-sm sm:text-[15px] leading-5 sm:leading-6 text-muted-foreground">
+                      <p className="mt-3 text-[15px] leading-6 text-muted-foreground">
                         {it.d}
                       </p>
                     </div>
@@ -341,14 +341,14 @@ function Benefits() {
 
 function RequirementsOnboarding() {
   return (
-    <section className="relative py-16 overflow-hidden w-full">
+    <section className="relative py-20">
       {/* Decorative animated gradients */}
-      <div className="absolute -left-16 -top-8 w-64 h-64 rounded-full opacity-20 blur-3xl bg-gradient-to-br from-corporate-gold to-orange-400 animate-[spin_18s_linear_infinite]" />
-      <div className="absolute right-[-4rem] top-32 w-56 h-56 rounded-full opacity-12 blur-2xl bg-gradient-to-br from-red-500 to-orange-400 animate-[spin_20s_linear_infinite]" />
+      <div className="absolute -left-24 -top-12 w-80 h-80 rounded-full opacity-20 blur-3xl bg-gradient-to-br from-corporate-gold to-orange-400 animate-[spin_18s_linear_infinite]" />
+      <div className="absolute right-[-6rem] top-40 w-72 h-72 rounded-full opacity-12 blur-2xl bg-gradient-to-br from-red-500 to-orange-400 animate-[spin_20s_linear_infinite]" />
 
-      <div className="container px-4 w-full max-w-full">
+      <div className="container">
         {/* Row 1: Image left, Requirements right */}
-        <div className="grid gap-8 lg:gap-12 lg:grid-cols-2 items-start">
+        <div className="grid gap-12 lg:grid-cols-2 items-start">
           <motion.div
             initial={{ opacity: 0, x: -28 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -371,10 +371,8 @@ function RequirementsOnboarding() {
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
           >
-            <h3 className="text-2xl sm:text-3xl font-heading text-white">
-              Requirements
-            </h3>
-            <ul className="mt-4 max-w-xl space-y-2 text-sm sm:text-[15px] leading-6 sm:leading-7 text-muted-foreground list-disc list-inside">
+            <h3 className="text-3xl font-heading text-white">Requirements</h3>
+            <ul className="mt-4 max-w-xl space-y-2 text-[15px] leading-7 text-muted-foreground list-disc list-inside">
               <li>
                 Valid company registration plus licenses and insurance for all
                 chauffeurs and vehicles.
@@ -393,11 +391,11 @@ function RequirementsOnboarding() {
               </li>
             </ul>
 
-            <div className="mt-6 flex flex-col sm:flex-row gap-3">
-              <Button size="lg" variant="glow" className="w-full sm:w-auto">
+            <div className="mt-6 flex gap-3">
+              <Button size="lg" variant="glow">
                 View local requirements
               </Button>
-              <Button size="lg" variant="outline" className="w-full sm:w-auto">
+              <Button size="lg" variant="outline">
                 Contact Partnership
               </Button>
             </div>
@@ -407,24 +405,22 @@ function RequirementsOnboarding() {
         <div className="my-12" />
 
         {/* Row 2: Onboarding left, Image right */}
-        <div className="grid gap-8 lg:gap-12 lg:grid-cols-2 items-start">
+        <div className="grid gap-12 lg:grid-cols-2 items-start">
           <motion.div
             initial={{ opacity: 0, x: -28 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
           >
-            <h3 className="text-2xl sm:text-3xl font-heading text-white">
-              Onboarding
-            </h3>
-            <ol className="mt-4 space-y-3 text-muted-foreground list-decimal list-inside text-sm sm:text-[15px] leading-6 sm:leading-7">
+            <h3 className="text-3xl font-heading text-white">Onboarding</h3>
+            <ol className="mt-4 space-y-3 text-muted-foreground list-decimal list-inside text-[15px] leading-7">
               <li>Apply through our onboarding portal</li>
               <li>Upload required documentation for review</li>
               <li>Complete short training and interview</li>
               <li>Accept your first ride and go live</li>
             </ol>
             <div className="mt-6">
-              <Button size="lg" variant="glow" className="w-full sm:w-auto">
+              <Button size="lg" variant="glow">
                 Apply now
               </Button>
             </div>
@@ -448,8 +444,8 @@ function RequirementsOnboarding() {
         </div>
 
         {/* Row 3: Driving a sustainable future - Image left, Text right */}
-        <div className="my-8 sm:my-12" />
-        <div className="grid gap-8 lg:gap-12 lg:grid-cols-2 items-start">
+        <div className="my-12" />
+        <div className="grid gap-12 lg:grid-cols-2 items-start">
           <motion.div
             initial={{ opacity: 0, x: -28 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -462,7 +458,7 @@ function RequirementsOnboarding() {
                 "https://images.ctfassets.net/ov8o7v78mnye/7ocxqnMbSIYuxmyXDKNWkb/198471527214467c535938d14e809144/03_Shuttle.jpg?w=1280&f=center&q=85&fm=webp"
               }
               alt="Sustainable future"
-              className="w-full h-64 sm:h-88 object-cover"
+              className="w-full h-88 object-cover"
             />
           </motion.div>
 
@@ -472,18 +468,18 @@ function RequirementsOnboarding() {
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
           >
-            <h3 className="text-2xl sm:text-3xl font-heading text-white">
+            <h3 className="text-3xl font-heading text-white">
               Driving a sustainable future
             </h3>
-            <p className="mt-4 text-sm sm:text-[15px] leading-6 sm:leading-7 text-muted-foreground max-w-xl">
-              We're committed to reducing our environmental impact. We're moving
+            <p className="mt-4 text-[15px] leading-7 text-muted-foreground max-w-xl">
+              We’re committed to reducing our environmental impact. We’re moving
               toward making all of our rides electric, while also incorporating
               more electric vehicles into our fleets globally. Every ride since
-              2017 is carbon offset and we're working on offsetting all of our
-              carbon emissions since the company's founding.
+              2017 is carbon offset and we’re working on offsetting all of our
+              carbon emissions since the company’s founding.
             </p>
             <div className="mt-6">
-              <Button size="lg" variant="glow" className="w-full sm:w-auto">
+              <Button size="lg" variant="glow">
                 Learn more
               </Button>
             </div>
@@ -525,14 +521,14 @@ function FAQSection() {
   const [open, setOpen] = useState<number | null>(null);
 
   return (
-    <section className="relative py-16 w-full overflow-hidden">
+    <section className="relative py-20">
       <div className="absolute left-0 top-0 w-full h-24 bg-gradient-to-b from-black/40 to-transparent pointer-events-none" />
-      <div className="container px-4 w-full max-w-full grid gap-8 lg:grid-cols-2 items-start">
+      <div className="container grid gap-8 lg:grid-cols-2 items-start">
         <div>
-          <h3 className="text-2xl sm:text-3xl md:text-4xl font-heading text-white">
+          <h3 className="text-3xl md:text-4xl font-heading text-white">
             Frequently asked questions
           </h3>
-          <div className="mt-4 sm:mt-6 space-y-3">
+          <div className="mt-6 space-y-3">
             {faqs.map((f, i) => {
               const isOpen = open === i;
               return (
@@ -545,9 +541,9 @@ function FAQSection() {
                 >
                   <button
                     onClick={() => setOpen(isOpen ? null : i)}
-                    className="w-full p-3 sm:p-4 text-white font-medium flex items-center justify-between text-left"
+                    className="w-full p-4 text-white font-medium flex items-center justify-between"
                   >
-                    <span className="text-sm sm:text-base">{f.q}</span>
+                    <span>{f.q}</span>
                     <motion.svg
                       animate={{ rotate: isOpen ? 90 : 0 }}
                       transition={{ duration: 0.2 }}
@@ -576,7 +572,7 @@ function FAQSection() {
                     transition={{ duration: 0.28, ease: "easeInOut" }}
                     className="overflow-hidden"
                   >
-                    <div className="px-3 sm:px-4 pb-3 sm:pb-4 text-xs sm:text-sm text-muted-foreground">
+                    <div className="px-4 pb-4 text-sm text-muted-foreground">
                       {f.a}
                     </div>
                   </motion.div>
@@ -593,13 +589,13 @@ function FAQSection() {
           transition={{ duration: 0.6 }}
           className="relative"
         >
-          <div className="absolute -left-8 -top-6 w-32 h-32 rounded-full bg-gradient-to-br from-corporate-gold to-orange-400 opacity-10 blur-2xl pointer-events-none" />
+          <div className="absolute -left-12 -top-8 w-48 h-48 rounded-full bg-gradient-to-br from-corporate-gold to-orange-400 opacity-10 blur-2xl pointer-events-none" />
           <img
             src={
               "https://images.ctfassets.net/ov8o7v78mnye/6BPRfdSwYGXY525DIjVT70/3e220a07d3292fd9c8f5c71f18c0ee45/Blacklane-LA-Social-37_FAQ.jpg?w=486&h=792&fit=fill&f=center&q=95&fm=webp"
             }
             alt="Chauffeur FAQ"
-            className="w-full rounded-lg shadow-lg object-cover h-[400px] sm:h-[520px]"
+            className="w-full rounded-lg shadow-lg object-cover h-[520px]"
           />
         </motion.div>
       </div>
@@ -609,7 +605,7 @@ function FAQSection() {
 
 function FinalCTA() {
   return (
-    <section className="relative py-16 w-full overflow-hidden">
+    <section className="relative py-20">
       <div className="absolute inset-0 -z-10">
         <div
           className="absolute inset-0 btn-gradient-animate opacity-30"
@@ -620,24 +616,24 @@ function FinalCTA() {
           }}
         />
       </div>
-      <div className="container px-4 w-full max-w-full text-center">
+      <div className="container text-center">
         <motion.h2
           initial={{ opacity: 0, y: 8 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-2xl sm:text-3xl md:text-4xl font-heading text-white"
+          className="text-3xl md:text-4xl font-heading text-white"
         >
           Join our global chauffeur community
         </motion.h2>
-        <p className="mt-3 text-sm sm:text-base text-muted-foreground max-w-2xl mx-auto">
+        <p className="mt-3 text-muted-foreground max-w-2xl mx-auto">
           Access premium rides, reliable payouts, and a supportive partner team.
         </p>
-        <div className="mt-6 flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
-          <Button size="lg" variant="glow" className="w-full sm:w-auto">
+        <div className="mt-6 flex justify-center gap-4">
+          <Button size="lg" variant="glow">
             Apply now
           </Button>
-          <Button size="lg" variant="outline" className="w-full sm:w-auto">
+          <Button size="lg" variant="outline">
             Contact support
           </Button>
         </div>
@@ -648,14 +644,12 @@ function FinalCTA() {
 
 export default function Chauffeurs() {
   return (
-    <div className="w-full overflow-x-hidden">
-      <main className="relative bg-background text-foreground min-h-screen">
-        <Hero />
-        <Benefits />
-        <RequirementsOnboarding />
-        <FAQSection />
-        <FinalCTA />
-      </main>
-    </div>
+    <main className="relative bg-background text-foreground overflow-hidden">
+      <Hero />
+      <Benefits />
+      <RequirementsOnboarding />
+      <FAQSection />
+      <FinalCTA />
+    </main>
   );
 }

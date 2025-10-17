@@ -44,35 +44,6 @@ const HelpHero: React.FC = () => {
             article.
           </p>
 
-          <div className="mt-5 flex flex-col gap-4 sm:flex-row sm:items-center">
-            <div className="relative w-full max-w-md">
-              <input
-                type="search"
-                placeholder="Search help articles..."
-                aria-label="Search help articles"
-                className="w-full rounded-md border bg-background px-4 py-2 pr-10 text-sm shadow-sm outline-none focus:ring-2 focus:ring-primary"
-              />
-              <span className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground text-xs">
-                ⌘K
-              </span>
-            </div>
-
-            <div className="flex gap-2">
-              <a
-                href="#faqs"
-                className="rounded-md px-3 py-2 text-sm bg-primary text-primary-foreground hover:opacity-90"
-              >
-                Browse FAQs
-              </a>
-              <a
-                href="#contact-support"
-                className="rounded-md px-3 py-2 text-sm bg-muted hover:bg-muted/80"
-              >
-                Contact Support
-              </a>
-            </div>
-          </div>
-
           <nav
             aria-label="Help quick links"
             className="mt-4 flex flex-wrap gap-3"
@@ -90,16 +61,10 @@ const HelpHero: React.FC = () => {
               Booking & Pricing
             </a>
             <a
-              href="#account-payments"
+              href="#contact-support"
               className="rounded-md px-3 py-2 text-sm bg-primary/10 hover:bg-primary/20"
             >
-              Account & Payments
-            </a>
-            <a
-              href="#safety-policies"
-              className="rounded-md px-3 py-2 text-sm bg-primary/10 hover:bg-primary/20"
-            >
-              Safety & Policies
+              Contact Support
             </a>
           </nav>
         </div>
