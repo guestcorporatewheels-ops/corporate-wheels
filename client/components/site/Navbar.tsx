@@ -114,13 +114,13 @@ export default function Navbar() {
                 { label: "Chauffeur hailing", path: "/chauffeur-hailing" },
                 { label: "Airport transfer", path: "/airport-transfer" },
                 { label: "Hourly hire", path: "/hourly-hire" },
-                { label: "Chauffeur service", path: "/chauffeur-service" },
+                // { label: "Chauffeur service", path: "/chauffeur-service" },
                 { label: "Limousine service", path: "/limousine-service" },
               ].map((item) => (
                 <Link
                   key={item.label}
                   to={item.path}
-                  className="group block px-3 py-2 rounded-md text-white/90 hover:bg-white/8 focus:bg-white/12 focus:outline-none transition-colors"
+                  className="group block px-3 py-3 rounded-md text-white/90 hover:bg-white/8 focus:bg-white/12 focus:outline-none transition-colors"
                 >
                   <span className="group-hover:text-corporate-gold group-focus:text-corporate-gold transition-colors">
                     {item.label}
@@ -201,7 +201,7 @@ export default function Navbar() {
                 { label: "Chauffeur hailing", path: "/chauffeur-hailing" },
                 { label: "Airport transfer", path: "/airport-transfer" },
                 { label: "Hourly hire", path: "/hourly-hire" },
-                { label: "Chauffeur service", path: "/chauffeur-service" },
+                // { label: "Chauffeur service", path: "/chauffeur-service" },
                 { label: "Limousine service", path: "/limousine-service" },
               ].map((item) => (
                 <NavLink
