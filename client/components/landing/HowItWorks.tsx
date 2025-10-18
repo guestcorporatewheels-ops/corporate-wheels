@@ -1,48 +1,121 @@
-import { ListChecks, Car, CreditCard, MapPin } from "lucide-react";
+import { ListChecks, Car, CreditCard, MapPin, Calendar, Shield, Clock } from "lucide-react";
 import { motion } from "framer-motion";
 
 const steps = [
-  { title: "Enter pickup & drop", icon: MapPin },
-  { title: "Choose car class", icon: Car },
-  { title: "Confirm & Pay", icon: CreditCard },
-  { title: "Ride with comfort", icon: ListChecks },
+  { 
+    title: "Book Your Journey",
+    desc: "Enter your pickup location, destination, and preferred time. Our smart system calculates the optimal route.",
+    icon: MapPin,
+    features: ["Real-time route planning", "Flexible scheduling", "Multiple stops option"]
+  },
+  { 
+    title: "Select Your Vehicle",
+    desc: "Choose from our fleet of luxury vehicles. Each car is maintained to the highest standards.",
+    icon: Car,
+    features: ["Premium fleet", "Chauffeur profiles", "Vehicle amenities"]
+  },
+  { 
+    title: "Secure Payment",
+    desc: "Pay securely with your preferred method. Clear pricing with no hidden fees.",
+    icon: CreditCard,
+    features: ["Multiple payment options", "Secure transactions", "Corporate billing"]
+  },
+  { 
+    title: "Travel in Style",
+    desc: "Enjoy a smooth, comfortable journey with our professional chauffeurs.",
+    icon: ListChecks,
+    features: ["Live tracking", "24/7 support", "Door-to-door service"]
+  },
 ];
 
 export default function HowItWorks() {
   return (
-    <section id="how" className="py-20">
-      <div className="container">
-        <div className="text-center mb-12">
-          <h2 className="font-heading text-3xl md:text-4xl text-white">
+    <section id="how" className="py-20 relative overflow-hidden">
+      <div className="absolute inset-0 bg-black" />
+      <div className="container relative">
+        <div className="text-center max-w-2xl mx-auto mb-16">
+          <h2 className="font-heading text-3xl md:text-4xl text-white mb-4">
             How It Works
           </h2>
-          <p className="mt-2 text-muted-foreground">
-            Simple steps to your next ride.
+          <p className="text-lg text-muted-foreground">
+            Experience luxury travel in four simple steps. Our seamless booking process ensures a premium journey from start to finish.
           </p>
         </div>
+
         <div className="relative">
-          <div className="absolute left-4 right-4 top-10 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="absolute left-0 right-0 top-28 h-px bg-gradient-to-r from-transparent via-corporate-gold/30 to-transparent" />
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {steps.map((s, i) => (
               <motion.div
                 key={s.title}
-                initial={{ opacity: 0, y: 10 }}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: i * 0.05 }}
-                className="flex flex-col items-center text-center"
+                transition={{ delay: i * 0.1 }}
+                className="relative group"
               >
-                <div className="relative">
-                  <div className="p-3 rounded-xl border border-white/10 bg-black/50 text-[hsl(var(--secondary))]">
-                    <s.icon className="size-5" />
+                <div className="text-center mb-6">
+                  <div className="relative inline-flex mb-4">
+                    <div className="w-16 h-16 rounded-2xl bg-corporate-gold/10 border border-corporate-gold/20 flex items-center justify-center">
+                      <s.icon className="size-8 text-corporate-gold" />
+                    </div>
+                    <div className="absolute -inset-4 rounded-3xl blur-2xl bg-corporate-gold/5 -z-10 group-hover:bg-corporate-gold/10 transition-colors" />
+                    <div className="absolute top-0 right-0 -mr-2 -mt-2 w-6 h-6 rounded-full bg-corporate-gold text-black flex items-center justify-center text-sm font-medium">
+                      {i + 1}
+                    </div>
                   </div>
-                  <div className="absolute -z-10 inset-0 rounded-xl blur-xl opacity-30 bg-[radial-gradient(circle,rgba(230,167,0,0.5)_0%,transparent_60%)]" />
+                  <h3 className="text-xl font-semibold text-white mb-2">{s.title}</h3>
+                  <p className="text-muted-foreground">{s.desc}</p>
                 </div>
-                <p className="mt-3 text-sm text-muted-foreground max-w-[12rem]">
-                  {s.title}
-                </p>
+
+                <motion.div 
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1 + 0.2 }}
+                  className="space-y-2"
+                >
+                  {s.features.map((feature, j) => (
+                    <motion.div 
+                      key={feature}
+                      initial={{ opacity: 0, x: -10 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: i * 0.1 + j * 0.1 }}
+                      className="flex items-center space-x-2 text-sm text-muted-foreground"
+                    >
+                      <svg viewBox="0 0 24 24" className="w-5 h-5 text-corporate-gold" fill="none" stroke="currentColor">
+                        <path strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                      <span>{feature}</span>
+                    </motion.div>
+                  ))}
+                </motion.div>
               </motion.div>
             ))}
+          </div>
+
+          <div className="mt-16 text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="inline-flex items-center space-x-8 bg-white/5 backdrop-blur rounded-2xl p-6 border border-white/10"
+            >
+              <div className="flex items-center space-x-3">
+                <Clock className="size-5 text-corporate-gold" />
+                <span className="text-sm text-muted-foreground">24/7 Booking</span>
+              </div>
+              <div className="flex items-center space-x-3">
+                <Shield className="size-5 text-corporate-gold" />
+                <span className="text-sm text-muted-foreground">Secure Payment</span>
+              </div>
+              <div className="flex items-center space-x-3">
+                <Calendar className="size-5 text-corporate-gold" />
+                <span className="text-sm text-muted-foreground">Advance Booking</span>
+              </div>
+            </motion.div>
           </div>
         </div>
       </div>
