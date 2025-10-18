@@ -137,51 +137,92 @@ function AnimatedGradientBg({ className = "" }: { className?: string }) {
 
 function Hero() {
   const { displayText, isComplete } = useTypingAnimation(
-    "Made for Business Travel.",
+    "Enterprise Travel Solutions.",
     70,
     300,
   );
   return (
-    <section className="relative pt-28 pb-20 min-h-[70vh] flex items-center overflow-hidden">
+    <section className="relative pt-28 pb-20 min-h-[80vh] flex items-center overflow-hidden">
       <AnimatedGradientBg />
-      <ParticleLayer count={16} />
+      <ParticleLayer count={20} />
       <FloatingSVGs />
       <div className="container">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="max-w-3xl"
-        >
-          <h1 className="text-4xl md:text-6xl font-heading text-white leading-tight">
-            <span className="text-gradient-gold inline-block">
-              {displayText}
-            </span>
-            {!isComplete && (
-              <motion.span
-                animate={{ opacity: [1, 0, 1] }}
-                transition={{ duration: 0.8, repeat: Infinity }}
-                className="text-[hsl(var(--primary))] ml-1"
-              >
-                |
-              </motion.span>
-            )}
-          </h1>
-          <p className="mt-5 text-lg text-muted-foreground max-w-2xl">
-            Centralized travel, reliable billing, and vetted chauffeurs for
-            teams and executives. Scale your ground travel with control and
-            visibility.
-          </p>
-          <div className="mt-8 flex gap-4">
-            <Button size="lg" variant="glow">
-              Start a Business Account
-            </Button>
-            <Button size="lg" variant="outline">
-              Talk to Sales
-            </Button>
-          </div>
-        </motion.div>
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="max-w-3xl"
+          >
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-6">
+              <span className="w-2 h-2 rounded-full bg-[#E6A700] animate-pulse" />
+              <span className="text-sm text-white/80">Trusted by Fortune 500 Companies</span>
+            </div>
+            <h1 className="text-4xl md:text-6xl xl:text-7xl font-heading text-white leading-tight">
+              <span className="text-gradient-gold inline-block">
+                {displayText}
+              </span>
+              {!isComplete && (
+                <motion.span
+                  animate={{ opacity: [1, 0, 1] }}
+                  transition={{ duration: 0.8, repeat: Infinity }}
+                  className="text-[hsl(var(--primary))] ml-1"
+                >
+                  |
+                </motion.span>
+              )}
+            </h1>
+            <p className="mt-6 text-lg text-muted-foreground max-w-2xl">
+              Transform your corporate travel with our premium chauffeur service. 
+              Streamlined booking, real-time tracking, and enterprise-grade security 
+              for teams of any size.
+            </p>
+            <div className="mt-8 flex flex-col sm:flex-row gap-4">
+              <Button size="lg" variant="glow" className="sm:min-w-[200px]">
+                Start Free Trial
+              </Button>
+              <Button size="lg" variant="outline" className="sm:min-w-[200px]">
+                Schedule Demo
+              </Button>
+            </div>
+            <div className="mt-8 flex items-center gap-6">
+              <div className="flex -space-x-3">
+                {[1,2,3,4].map((i) => (
+                  <div key={i} className="w-10 h-10 rounded-full border-2 border-background bg-white/10" />
+                ))}
+              </div>
+              <p className="text-sm text-white/80">
+                Join <span className="text-[#E6A700]">2,000+</span> companies worldwide
+              </p>
+            </div>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+            className="relative hidden lg:block"
+          >
+            <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent z-10" />
+            <img 
+              src="https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=800&auto=format&fit=crop&q=80" 
+              alt="Business Dashboard Interface"
+              className="rounded-lg border border-white/10 shadow-2xl"
+            />
+            <div className="absolute -right-8 -bottom-8 p-6 backdrop-blur-md bg-white/5 border border-white/10 rounded-lg z-20">
+              <div className="flex items-center gap-3">
+                <div className="w-12 h-12 rounded-full bg-[#E6A700]/20 flex items-center justify-center">
+                  <span className="text-[#E6A700] text-xl">↗</span>
+                </div>
+                <div>
+                  <p className="text-white text-sm font-medium">Monthly Bookings</p>
+                  <p className="text-[#E6A700] text-lg font-bold">+127%</p>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
       </div>
     </section>
   );
@@ -210,36 +251,77 @@ function Feature({
   );
 }
 
+function Stats() {
+  const stats = [
+    { label: "Corporate clients", value: "2,000+", prefix: "", suffix: "" },
+    { label: "Cities covered", value: "150", prefix: "", suffix: "+" },
+    { label: "Monthly rides", value: "25", prefix: "", suffix: "K+" },
+    { label: "Client retention", value: "97", prefix: "", suffix: "%" },
+  ];
+
+  return (
+    <section className="relative py-16">
+      <div className="container">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          {stats.map((stat, i) => (
+            <motion.div
+              key={stat.label}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: i * 0.1 }}
+              className="text-center"
+            >
+              <h3 className="text-3xl md:text-4xl font-bold text-white mb-2">
+                {stat.prefix}
+                <span className="text-gradient-gold">{stat.value}</span>
+                {stat.suffix}
+              </h3>
+              <p className="text-sm text-muted-foreground">{stat.label}</p>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function Features() {
   const items = [
     {
-      t: "Centralized Billing",
-      d: "Consolidated monthly invoices, cost centers, and custom policies.",
+      t: "Smart Booking Platform",
+      d: "AI-powered booking system with predictive analytics and route optimization.",
+      icon: "🎯"
     },
     {
-      t: "Admin Controls",
-      d: "Invite users, set ride limits, approve travel, and track usage live.",
+      t: "Real-time Fleet Tracking",
+      d: "Live vehicle tracking, instant notifications, and journey analytics.",
+      icon: "🚗"
     },
     {
-      t: "Priority Support",
-      d: "24/7 support with proactive ride monitoring for executives.",
+      t: "Enterprise Management",
+      d: "Multi-level admin controls, custom policies, and department-wise billing.",
+      icon: "🏢"
     },
     {
-      t: "Global Coverage",
-      d: "Trusted chauffeurs across major cities and airports worldwide.",
+      t: "Premium Support",
+      d: "24/7 dedicated account manager and priority assistance for executives.",
+      icon: "💎"
     },
     {
-      t: "Compliance & Safety",
-      d: "Background checks, vehicle standards, and live trip tracking.",
+      t: "Global Network",
+      d: "Access to vetted chauffeurs and premium vehicles worldwide.",
+      icon: "🌍"
     },
     {
-      t: "Integrations",
-      d: "Calendar and SSO-friendly flows that fit your stack.",
+      t: "Smart Integrations",
+      d: "Seamless connection with your travel, expense, and calendar tools.",
+      icon: "🔄"
     },
   ];
+  
   return (
     <section className="relative py-20 overflow-hidden">
-      {/* Animated SVG background */}
       <motion.svg
         className="absolute left-10 top-10 w-32 h-32 opacity-20 pointer-events-none"
         viewBox="0 0 100 100"
@@ -255,19 +337,39 @@ function Features() {
           </radialGradient>
         </defs>
       </motion.svg>
+      
       <div className="container">
-        <motion.h2
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="text-3xl md:text-4xl font-heading text-white text-center"
-        >
-          Built for Operations & Finance
-        </motion.h2>
+        <div className="max-w-3xl mx-auto text-center mb-16">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <h2 className="text-3xl md:text-5xl font-heading text-white mb-4">
+              Built for Modern Enterprises
+            </h2>
+            <p className="text-lg text-muted-foreground">
+              Streamline your corporate travel with powerful features designed for scale and efficiency
+            </p>
+          </motion.div>
+        </div>
+
         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {items.map((it, i) => (
-            <Feature key={it.t} title={it.t} desc={it.d} delay={i * 0.07} />
+            <motion.div
+              key={it.t}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              whileHover={{ y: -4 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.6, delay: i * 0.07 }}
+              className="group rounded-xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm hover:border-white/20 hover:bg-white/10"
+            >
+              <div className="mb-4 text-3xl">{it.icon}</div>
+              <h3 className="text-xl font-heading text-white mb-2 group-hover:text-gradient-gold">{it.t}</h3>
+              <p className="text-sm text-muted-foreground">{it.d}</p>
+            </motion.div>
           ))}
         </div>
       </div>
@@ -279,32 +381,32 @@ function WorldwidePresence() {
   const cities = [
     {
       name: "London",
-      image: "/images/business/cities/Noimage.jpg",
+      image: "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=800&auto=format&fit=crop&q=80",
       stats: "500+ rides/month",
     },
     {
       name: "Dubai",
-      image: "/images/business/cities/Noimage.jpg",
+      image: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=800&auto=format&fit=crop&q=80",
       stats: "300+ rides/month",
     },
     {
       name: "Singapore",
-      image: "/images/business/cities/Noimage.jpg",
+      image: "https://images.unsplash.com/photo-1525625293386-3f8f99389edd?w=800&auto=format&fit=crop&q=80",
       stats: "400+ rides/month",
     },
     {
       name: "New York",
-      image: "/images/business/cities/Noimage.jpg",
+      image: "https://images.unsplash.com/photo-1522083165195-3424ed129620?w=800&auto=format&fit=crop&q=80",
       stats: "600+ rides/month",
     },
     {
       name: "Tokyo",
-      image: "/images/business/cities/Noimage.jpg",
+      image: "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=800&auto=format&fit=crop&q=80",
       stats: "350+ rides/month",
     },
     {
       name: "Paris",
-      image: "/images/business/cities/Noimage.jpg",
+      image: "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=800&auto=format&fit=crop&q=80",
       stats: "450+ rides/month",
     },
   ];
@@ -478,19 +580,19 @@ function CaseStudies() {
     {
       title: "Global Tech Summit",
       desc: "Coordinated 200+ executive transfers across 3 days in multiple cities. Achieved 100% on-time performance.",
-      image: "/images/business/case-studies/Noimage.jpg",
+      image: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&auto=format&fit=crop&q=80",
       stats: ["200+ Transfers", "3 Cities", "100% On-time"]
     },
     {
       title: "Financial Conference",
       desc: "24/7 dedicated support for 50+ VIP attendees. Custom billing for different cost centers.",
-      image: "/images/business/case-studies/Noimage.jpg",
+      image: "https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=800&auto=format&fit=crop&q=80",
       stats: ["50+ VIPs", "24/7 Support", "18% Cost Savings"]
     },
     {
       title: "Fashion Week",
       desc: "Luxury fleet coordination for designer showcases. Real-time tracking and schedule adjustments.",
-      image: "/images/business/case-studies/Noimage.jpg",
+      image: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=800&auto=format&fit=crop&q=80",
       stats: ["100+ Routes", "Premium Fleet", "Live Tracking"]
     }
   ];
@@ -570,29 +672,72 @@ function CaseStudies() {
 
 function CTA() {
   return (
-    <section className="relative py-20">
-      <div className="container">
+    <section className="relative py-24">
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#E6A700]/5 to-transparent" />
+      <div className="container relative">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="rounded-2xl border border-white/10 bg-gradient-to-r from-corporate-gold/20 to-corporate-gold/0 p-8 md:p-10"
+          className="rounded-2xl border border-white/10 bg-gradient-to-r from-[#E6A700]/20 via-[#FF6B35]/10 to-[#E6A700]/5 p-12 backdrop-blur-sm"
         >
-          <h3 className="text-2xl md:text-3xl font-heading text-white">
-            Ready to streamline ground travel?
-          </h3>
-          <p className="mt-2 text-muted-foreground">
-            Create a business account in minutes and start booking with control
-            and visibility.
-          </p>
-          <div className="mt-6 flex gap-3">
-            <Button size="lg" variant="glow">
-              Create Account
-            </Button>
-            <Button size="lg" variant="secondary">
-              Contact Sales
-            </Button>
+          <div className="grid md:grid-cols-2 gap-8 items-center">
+            <div>
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-6">
+                <span className="w-2 h-2 rounded-full bg-[#E6A700] animate-pulse" />
+                <span className="text-sm text-white/80">Limited Time Offer</span>
+              </div>
+              <h3 className="text-3xl md:text-4xl font-heading text-white leading-tight">
+                Transform Your <span className="text-gradient-gold">Corporate Travel</span> Today
+              </h3>
+              <p className="mt-4 text-lg text-muted-foreground">
+                Get 3 months free when you sign up for an annual enterprise plan.
+                Plus, a dedicated account manager to ensure smooth onboarding.
+              </p>
+              <div className="mt-8 flex flex-col sm:flex-row gap-4">
+                <Button size="lg" variant="glow" className="sm:min-w-[200px]">
+                  Start Free Trial
+                </Button>
+                <Button size="lg" variant="outline" className="sm:min-w-[200px]">
+                  Book Demo
+                </Button>
+              </div>
+            </div>
+            <div className="relative hidden md:block">
+              <motion.div
+                className="absolute -right-6 -top-6 w-24 h-24"
+                animate={{ 
+                  scale: [1, 1.2, 1],
+                  rotate: [0, 180, 360]
+                }}
+                transition={{
+                  duration: 20,
+                  repeat: Infinity,
+                  ease: "linear"
+                }}
+              >
+                <div className="w-full h-full rounded-full border-2 border-dashed border-[#E6A700]/30 animate-spin-slow" />
+              </motion.div>
+              <div className="relative z-10 p-6 backdrop-blur-md bg-black/40 border border-white/10 rounded-lg">
+                <div className="flex items-center justify-between mb-6">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-full bg-[#E6A700]/20 flex items-center justify-center">
+                      <span className="text-[#E6A700]">✓</span>
+                    </div>
+                    <span className="text-white font-medium">Enterprise Features</span>
+                  </div>
+                </div>
+                <div className="space-y-3">
+                  {["Dedicated Support", "Custom Integration", "Priority Booking"].map((feature) => (
+                    <div key={feature} className="flex items-center gap-2">
+                      <div className="w-1.5 h-1.5 rounded-full bg-[#E6A700]" />
+                      <span className="text-sm text-white/80">{feature}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
           </div>
         </motion.div>
       </div>
@@ -604,9 +749,10 @@ export default function Business() {
   return (
     <main className="relative bg-background text-foreground">
       <Hero />
+      <Stats />
       <Features />
-      <EnterpriseFeatures />
       <WorldwidePresence />
+      <EnterpriseFeatures />
       <CaseStudies />
       <Integrations />
       <CTA />
