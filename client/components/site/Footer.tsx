@@ -30,14 +30,14 @@ export default function Footer() {
               </Link>
             </li>
              <li>
-              <a href="/business" className="hover:text-white">
+              <Link to="/business" className="hover:text-white">
                 Business
-              </a>
+              </Link>
             </li>
              <li>
-              <a href="/chauffeurs" className="hover:text-white">
+              <Link to="/chauffeurs" className="hover:text-white">
                 Chauffeurs
-              </a>
+              </Link>
             </li>
             <li>
               <Link to="/blog" className="hover:text-white">

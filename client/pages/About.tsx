@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import { ScrollToTop } from "@/components/ui/scroll-to-top";
 
 const teamMembers = [
 	{
@@ -618,6 +619,8 @@ export default function About() {
 					</motion.div>
 				</div>
 			</section>
+
+			<ScrollToTop />
 		</main>
 	);
 }

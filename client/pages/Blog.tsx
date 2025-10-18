@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { ScrollToTop } from "@/components/ui/scroll-to-top";
 
 // Featured and latest blog posts data
 const featuredPost = {
@@ -82,6 +83,7 @@ const popularArticles = [
 export default function Blog() {
   return (
     <main className="relative bg-background text-foreground min-h-screen">
+      <ScrollToTop />
       {/* Hero Section */}
       <section className="relative pt-32 pb-16 overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-corporate-gold/20 via-background to-background" />

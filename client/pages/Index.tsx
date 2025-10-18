@@ -8,10 +8,12 @@ import Safety from "@/components/landing/Safety";
 import Testimonials from "@/components/landing/Testimonials";
 import DownloadSection from "@/components/landing/DownloadSection";
 import FinalCTA from "@/components/landing/FinalCTA";
+import { ScrollToTop } from "@/components/ui/scroll-to-top";
 
 export default function Index() {
   return (
     <main className="bg-background text-foreground">
+      <ScrollToTop />
       <HeroSection />
       <ValueBar />
       <Services />

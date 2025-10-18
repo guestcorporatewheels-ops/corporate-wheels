@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { useTypingAnimation } from "@/hooks/use-typing-animation";
 import { cn } from "@/lib/utils";
+import { ScrollToTop } from "@/components/ui/scroll-to-top";
 
 function FloatingSVGs() {
   return (
@@ -748,6 +749,7 @@ function CTA() {
 export default function Business() {
   return (
     <main className="relative bg-background text-foreground">
+      <ScrollToTop />
       <Hero />
       <Stats />
       <Features />
