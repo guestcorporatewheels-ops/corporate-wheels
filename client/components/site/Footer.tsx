@@ -1,4 +1,5 @@
 import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
@@ -28,35 +29,41 @@ export default function Footer() {
                 About
               </a>
             </li>
+             <li>
+              <a href="/business" className="hover:text-white">
+                Business
+              </a>
+            </li>
+             <li>
+              <a href="/chauffeurs" className="hover:text-white">
+                Chauffeurs
+              </a>
+            </li>
             <li>
-              <a href="#" className="hover:text-white">
+              <Link to="/blog" className="hover:text-white">
                 Blog
-              </a>
+              </Link>
             </li>
-            <li>
-              <a href="#" className="hover:text-white">
-                Careers
-              </a>
-            </li>
+           
           </ul>
         </div>
         <div>
           <h4 className="text-white font-medium mb-3">Legal</h4>
           <ul className="space-y-2 text-sm text-muted-foreground">
             <li>
-              <a href="#" className="hover:text-white">
-                Privacy
-              </a>
+              <Link to="/privacy" className="hover:text-white transition-colors">
+                Privacy Policy
+              </Link>
             </li>
             <li>
-              <a href="#" className="hover:text-white">
-                Terms
-              </a>
+              <Link to="/terms" className="hover:text-white transition-colors">
+                Terms & Conditions
+              </Link>
             </li>
             <li>
-              <a href="#" className="hover:text-white">
-                Contact
-              </a>
+              <Link to="/contact" className="hover:text-white transition-colors">
+                Contact Us
+              </Link>
             </li>
           </ul>
         </div>

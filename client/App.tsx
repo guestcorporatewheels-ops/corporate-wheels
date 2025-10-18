@@ -15,6 +15,10 @@ import CityToCity from "./pages/CityToCity";
 import ChauffeurHailing from "./pages/ChauffeurHailing";
 import AirportTransfer from "./pages/AirportTransfer";
 import LimousineService from "./pages/LimousineService";
+import Privacy from "./pages/Privacy";
+import Terms from "./pages/Terms";
+import Contact from "./pages/Contact";
+import Blog from "./pages/Blog";
 import Navbar from "@/components/site/Navbar";
 import Footer from "@/components/site/Footer";
 import ErrorBoundary from "@/components/ErrorBoundary";
@@ -50,6 +54,10 @@ export default function App() {
                 <Route path="city-to-city" element={<CityToCity />} />
                 <Route path="airport-transfer" element={<AirportTransfer />} />
                 <Route path="limousine-service" element={<LimousineService />} />
+                <Route path="privacy" element={<Privacy />} />
+                <Route path="terms" element={<Terms />} />
+                <Route path="contact" element={<Contact />} />
+                <Route path="blog" element={<Blog />} />
                 <Route path="*" element={<NotFound />} />
               </Route>
             </Routes>
