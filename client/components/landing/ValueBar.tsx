@@ -1,4 +1,5 @@
 import { ShieldCheck, PhoneCall, Leaf, BadgeDollarSign } from "lucide-react";
+import { motion } from "framer-motion";
 
 const items = [
   {
@@ -26,20 +27,25 @@ const items = [
 export default function ValueBar() {
   return (
     <section className="border-y border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.04),rgba(255,255,255,0.02))]">
-      <div className="container py-4 grid grid-cols-2 md:grid-cols-4 gap-4">
-        {items.map(({ icon: Icon, text, description }) => (
-          <div
+      <div className="container py-6 grid grid-cols-2 md:grid-cols-4 gap-4">
+        {items.map(({ icon: Icon, text, description }, i) => (
+          <motion.div
             key={text}
-            className="flex items-center gap-3 p-3 rounded-lg hover:shadow-[0_0_15px_hsl(var(--primary))] transition-all duration-500 ease-in-out hover:bg-white/5"
+            initial={{ opacity: 0, y: 8 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.08 * i, duration: 0.4 }}
+            className="flex items-center gap-3 p-3 rounded-lg hover:shadow-[0_10px_30px_rgba(230,167,0,0.08)] transition-all duration-400 ease-in-out hover:bg-white/5"
           >
-            <div className="p-2 rounded-md border border-white/10 text-[hsl(var(--secondary))] flex-shrink-0">
-              <Icon className="size-4" />
+            <div className="p-2 rounded-md flex-shrink-0 border border-white/6 bg-gradient-to-br from-[rgba(230,167,0,0.15)] to-[rgba(255,107,53,0.06)]">
+              <div className="w-8 h-8 flex items-center justify-center text-[hsl(var(--secondary))]">
+                <Icon className="size-4" />
+              </div>
             </div>
             <div className="min-w-0">
-              <p className="text-sm font-medium text-white">{text}</p>
+              <p className="text-sm font-semibold text-white">{text}</p>
               <p className="text-xs text-muted-foreground">{description}</p>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </section>

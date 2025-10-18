@@ -198,6 +198,15 @@
   .border-corporate-gold {
     border-color: #E6A700;
   }
+
+  .shadow-glow {
+    box-shadow: 0 8px 30px rgba(230, 167, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.6);
+  }
+
+  .backdrop-blur-md {
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+  }
 }
 
 @keyframes gradient-move {
@@ -211,5 +220,39 @@
 
   100% {
     background-position: 0% 50%;
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@layer utilities {
+  .hero-phone-screen {
+    background-image: url('/images/mobile-banner-image.png');
+    background-size: cover;
+    background-position: center;
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .gold-gradient-circle {
+    background: linear-gradient(120deg, #F4C430, #FF6B35);
+  }
+
+  .pulse-shadow {
+    box-shadow: 0 0 18px rgba(230, 167, 0, 0.18);
   }
 }
