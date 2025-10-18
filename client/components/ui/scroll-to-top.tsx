@@ -1,19 +1,17 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 
 export function useScrollToTop() {
   const [showScrollTop, setShowScrollTop] = useState(false);
-
-  // Scroll to top on mount
-  useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  }, []);
-
   // Handle scroll event to show/hide scroll-to-top button
   useEffect(() => {
     const handleScroll = () => {
       setShowScrollTop(window.scrollY > 400);
     };
+
+    // initialize
+    handleScroll();
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -24,10 +22,20 @@ export function useScrollToTop() {
 
 export function ScrollToTop() {
   const { showScrollTop } = useScrollToTop();
+  const location = useLocation();
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
+
+  // Scroll to top when the route changes
+  useEffect(() => {
+    // small timeout so the page layout has a chance to settle
+    const t = setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }, 40);
+    return () => clearTimeout(t);
+  }, [location.pathname]);
 
   return (
     <AnimatePresence>

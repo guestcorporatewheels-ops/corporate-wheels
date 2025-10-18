@@ -23,6 +23,7 @@ import About from "./pages/About";
 import Navbar from "@/components/site/Navbar";
 import Footer from "@/components/site/Footer";
 import ErrorBoundary from "@/components/ErrorBoundary";
+import { ScrollToTop } from "@/components/ui/scroll-to-top";
 
 const queryClient = new QueryClient();
 
@@ -30,6 +31,7 @@ function RootLayout() {
   return (
     <div className="min-h-dvh bg-background text-foreground">
       <Navbar />
+      <ScrollToTop />
       <Outlet />
       <Footer />
     </div>
