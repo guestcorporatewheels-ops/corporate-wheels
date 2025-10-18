@@ -256,3 +256,47 @@
     box-shadow: 0 0 18px rgba(230, 167, 0, 0.18);
   }
 }
+
+/* Scrollbar styling - WebKit and Firefox friendly, theme-aware */
+@layer utilities {
+  :root {
+    --scrollbar-thumb: #E6A700; /* corporate gold */
+    --scrollbar-track: rgba(255,255,255,0.02);
+    --scrollbar-thumb-hover: #F4C430;
+  }
+
+  .dark {
+    --scrollbar-thumb: #F4C430;
+    --scrollbar-track: rgba(255,255,255,0.03);
+    --scrollbar-thumb-hover: #E6A700;
+  }
+
+  /* WebKit (Chrome, Edge, Safari) */
+  *::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: var(--scrollbar-track);
+    border-radius: 999px;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, var(--scrollbar-thumb), var(--scrollbar-thumb-hover));
+    border-radius: 999px;
+    border: 3px solid transparent;
+    background-clip: padding-box;
+  }
+
+  *::-webkit-scrollbar-thumb:hover {
+    transform: scale(1.02);
+    filter: brightness(1.05);
+  }
+
+  /* Firefox */
+  * {
+    scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+    scrollbar-width: thin;
+  }
+}
