@@ -20,7 +20,37 @@ export default function Footer() {
             Premium, carbon-neutral rides with professional chauffeurs in over
             300 cities worldwide.
           </p>
+          <div>
+            {" "}
+            <div className="mt-6 flex items-center gap-4">
+              <div className="w-16">
+                <img
+                  src="/images/partners/ico.png"
+                  alt="ICO"
+                  className="w-full h-auto object-contain"
+                />
+              </div>
+              <div className="w-20">
+                <img
+                  src="/images/partners/tfl.png"
+                  alt="Transport for London"
+                  className="w-full h-auto object-contain"
+                />
+              </div>
+            </div>
+            <div className="mt-4 text-sm text-white/90">
+              <div>
+                <span className="text-white/80">TFL Operator License No:</span>
+                <span className="font-semibold ml-2">XXXXXXX</span>
+              </div>
+              <div className="mt-1">
+                <span className="text-white/80">Company Registration No:</span>
+                <span className="font-semibold ml-2">XXXXXX</span>
+              </div>
+            </div>
+          </div>
         </div>
+
         <div>
           <h4 className="text-white font-medium mb-3">Company</h4>
           <ul className="space-y-2 text-sm text-muted-foreground">
@@ -29,12 +59,12 @@ export default function Footer() {
                 About
               </Link>
             </li>
-             <li>
+            <li>
               <Link to="/business" className="hover:text-white">
                 Business
               </Link>
             </li>
-             <li>
+            <li>
               <Link to="/chauffeurs" className="hover:text-white">
                 Chauffeurs
               </Link>
@@ -44,14 +74,16 @@ export default function Footer() {
                 Blog
               </Link>
             </li>
-           
           </ul>
         </div>
         <div>
           <h4 className="text-white font-medium mb-3">Legal</h4>
           <ul className="space-y-2 text-sm text-muted-foreground">
             <li>
-              <Link to="/privacy" className="hover:text-white transition-colors">
+              <Link
+                to="/privacy"
+                className="hover:text-white transition-colors"
+              >
                 Privacy Policy
               </Link>
             </li>
@@ -61,7 +93,10 @@ export default function Footer() {
               </Link>
             </li>
             <li>
-              <Link to="/contact" className="hover:text-white transition-colors">
+              <Link
+                to="/contact"
+                className="hover:text-white transition-colors"
+              >
                 Contact Us
               </Link>
             </li>

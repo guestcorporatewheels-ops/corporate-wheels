@@ -23,6 +23,7 @@ import About from "./pages/About";
 import Booking from "./pages/Booking";
 import Navbar from "@/components/site/Navbar";
 import Footer from "@/components/site/Footer";
+import CookieBanner from "@/components/site/CookieBanner";
 import ErrorBoundary from "@/components/ErrorBoundary";
 import { ScrollToTop } from "@/components/ui/scroll-to-top";
 
@@ -33,7 +34,8 @@ function RootLayout() {
     <div className="min-h-dvh bg-background text-foreground">
       <Navbar />
       <ScrollToTop />
-      <Outlet />
+        <Outlet />
+        <CookieBanner />
       <Footer />
     </div>
   );

@@ -155,6 +155,14 @@ export default function Navbar() {
           >
             Booking
           </NavLink>
+           <NavLink
+            to="/about"
+            className={({ isActive }) =>
+              isActive ? "text-corporate-gold" : "hover:text-corporate-gold transition-colors"
+            }
+          >
+            About Us
+          </NavLink>
           <NavLink to="/help" className={({ isActive }) =>
               isActive ? "text-corporate-gold" : "hover:text-corporate-gold transition-colors"
             }>

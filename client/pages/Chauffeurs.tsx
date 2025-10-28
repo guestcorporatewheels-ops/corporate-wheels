@@ -858,16 +858,80 @@ function Stats() {
     </section>
   );
 }
+function PricingTable() {
+  return (
+    <section className="py-20 bg-black/40">
+      <div className="container">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-12"
+        >
+          <h2 className="text-3xl md:text-4xl font-heading text-white mb-4">
+            <span className="text-gradient-gold">Transparent Pricing</span> for Your Chauffeur Experience
+          </h2>
+          <p className="text-white/80 max-w-2xl mx-auto">
+            Choose from our fleet of luxury Mercedes vehicles with competitive rates for every service.
+          </p>
+        </motion.div>
 
+        <div className="relative overflow-x-auto rounded-xl border border-white/10">
+          <table className="w-full text-left">
+            <thead>
+              <tr className="border-b border-white/10 bg-white/5">
+                <th className="p-4 text-white font-medium">Service</th>
+                <th className="p-4 text-white font-medium">Mercedes E-Class/EQE</th>
+                <th className="p-4 text-white font-medium">Mercedes S-Class/EQS</th>
+              </tr>
+            </thead>
+            <tbody>
+              {[
+                { service: "Minimum Charge", eClass: "£65", sClass: "£130" },
+                { service: "Hourly Rate", eClass: "£45 (4 hours min)", sClass: "£60 (4 hours min)" },
+                { service: "Daily Rate (8 hours)", eClass: "£360", sClass: "£480" },
+                { service: "Heathrow", eClass: "£95", sClass: "£135" },
+                { service: "Gatwick", eClass: "£145", sClass: "£200" },
+                { service: "Stansted", eClass: "£220", sClass: "£300" },
+                { service: "Luton", eClass: "£150", sClass: "£205" },
+                { service: "London City Airport", eClass: "£80", sClass: "£120" },
+                { service: "Farnborough Airport", eClass: "£225", sClass: "£305" },
+                { service: "Biggin Hill", eClass: "£135", sClass: "£200" },
+              ].map((row, i) => (
+                <tr
+                  key={i}
+                  className="border-b border-white/10 bg-white/[0.02] hover:bg-white/[0.04] transition-colors"
+                >
+                  <td className="p-4 text-white">{row.service}</td>
+                  <td className="p-4 text-[#F4C430]">{row.eClass}</td>
+                  <td className="p-4 text-[#F4C430]">{row.sClass}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        <div className="mt-8 text-center">
+          <p className="text-white/60 text-sm">
+            * All prices are inclusive of VAT. Additional charges may apply for waiting time, extra stops, or special requirements.
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+}
 export default function Chauffeurs() {
   return (
     <main className="relative bg-background text-foreground overflow-hidden">
       <Hero />
       <Stats />
+       <PricingTable />
       <Benefits />
       <RequirementsOnboarding />
       <FAQSection />
       <FinalCTA />
+     
     </main>
   );
 }
