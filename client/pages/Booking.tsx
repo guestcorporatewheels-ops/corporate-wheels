@@ -81,8 +81,10 @@ export default function Booking() {
   const [selectedDay, setSelectedDay] = useState<Date | undefined>(undefined);
   const [showDatePicker, setShowDatePicker] = useState(false);
   const [showTimePicker, setShowTimePicker] = useState(false);
+  const [showPassengerPicker, setShowPassengerPicker] = useState(false);
   const dateRef = useRef<HTMLDivElement | null>(null);
   const timeRef = useRef<HTMLDivElement | null>(null);
+  const passengerRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     const onDocClick = (e: MouseEvent) => {
@@ -91,6 +93,9 @@ export default function Booking() {
       }
       if (timeRef.current && !timeRef.current.contains(e.target as Node)) {
         setShowTimePicker(false);
+      }
+      if (passengerRef.current && !passengerRef.current.contains(e.target as Node)) {
+        setShowPassengerPicker(false);
       }
     };
     document.addEventListener("click", onDocClick);
@@ -335,23 +340,50 @@ export default function Booking() {
                   </div>
                 </div>
 
-                <label className="flex flex-col">
+                <div className="flex flex-col" ref={timeRef}>
                   <span className="text-sm text-muted-foreground">Passengers</span>
                   <div className="relative mt-1">
-                    <select
+                    <input
+                      readOnly
                       value={form.passengers}
-                      onChange={(e) => handle("passengers", e.target.value)}
-                      className="w-full rounded-lg bg-transparent px-3 py-2 border border-white/6 focus:outline-none focus:ring-2 focus:ring-corporate-gold"
-                    >
-                      {[1, 2, 3, 4, 5].map((n) => (
-                        <option key={n} value={String(n)}>
-                          {n}
-                        </option>
-                      ))}
-                    </select>
-                    <Users className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground" />
+                      onClick={() => setShowPassengerPicker((s) => !s)}
+                      className="w-full rounded-lg bg-black/40 px-3 py-2 border border-white/10 focus:outline-none focus:ring-2 focus:ring-corporate-gold cursor-pointer"
+                    />
+                    <Users className="absolute right-3 top-1/2 -translate-y-1/2 text-corporate-gold" />
+                    
+                    {showPassengerPicker && (
+                      <motion.div 
+                        initial={{ opacity: 0, y: -4 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        className="absolute right-0 z-50 mt-2 w-full bg-black/95 backdrop-blur-sm rounded-lg shadow-xl border border-white/10"
+                      >
+                        <div className="p-3 border-b border-white/10">
+                          <div className="text-lg font-medium text-center">{form.passengers}</div>
+                          <div className="text-xs text-center text-muted-foreground mt-1">Select passengers</div>
+                        </div>
+                        <div className="grid grid-cols-5 gap-1 p-2">
+                          {[1, 2, 3, 4, 5].map((n) => (
+                            <button
+                              key={n}
+                              type="button"
+                              onClick={() => {
+                                handle("passengers", String(n));
+                                setShowPassengerPicker(false);
+                              }}
+                              className={`text-sm py-2 px-3 rounded-md transition-colors ${
+                                form.passengers === String(n)
+                                  ? "bg-corporate-gold text-black font-medium"
+                                  : "hover:bg-white/5"
+                              }`}
+                            >
+                              {n}
+                            </button>
+                          ))}
+                        </div>
+                      </motion.div>
+                    )}
                   </div>
-                </label>
+                </div>
 
                 <label className="flex flex-col sm:col-span-2">
                   <span className="text-sm text-muted-foreground">Additional notes</span>
