@@ -102,7 +102,7 @@ export default function Navbar() {
           <HoverDropdown
             dropdownId="services"
             trigger={
-              <button className="flex items-center gap-1 hover:text-white transition-colors focus:outline-none">
+              <button className="flex items-center gap-1 hover:text-corporate-gold transition-colors focus:outline-none">
                 Our Services <ChevronDown className="size-4" />
               </button>
             }
@@ -134,7 +134,7 @@ export default function Navbar() {
           <NavLink
             to="/business"
             className={({ isActive }) =>
-              isActive ? "text-white" : "hover:text-white transition-colors"
+              isActive ? "text-corporate-gold" : "hover:text-corporate-gold transition-colors"
             }
           >
             Business
@@ -142,14 +142,16 @@ export default function Navbar() {
           <NavLink
             to="/chauffeurs"
             className={({ isActive }) =>
-              isActive ? "text-white" : "hover:text-white transition-colors"
+              isActive ? "text-corporate-gold" : "hover:text-corporate-gold transition-colors"
             }
           >
             Chauffeurs
           </NavLink>
-          <a href="/help" className="hover:text-white transition-colors">
+          <NavLink to="/help" className={({ isActive }) =>
+              isActive ? "text-corporate-gold" : "hover:text-corporate-gold transition-colors"
+            }>
             Help
-          </a>
+          </NavLink>
 
           {/* Download Dropdown */}
           <HoverDropdown

@@ -393,53 +393,90 @@ export default function About() {
 				</section>
 			</section>
 
-			{/* Mission & Vision Section */}
+			{/* Mission, Vision & Core Values Section */}
 			<section className="relative py-16">
-				<svg className="absolute right-16 top-8 w-32 h-32 z-0 animate-pulse" viewBox="0 0 128 128" fill="none">
-					<circle cx="64" cy="64" r="56" fill="#F4C430" fillOpacity="0.18" />
-					<circle cx="64" cy="64" r="48" stroke="#FF6B35" strokeWidth="6" fill="none" />
-				</svg>
-				<div className="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
-					<motion.div
-						initial={{ opacity: 0, x: -40 }}
-						whileInView={{ opacity: 1, x: 0 }}
-						viewport={{ once: true }}
-						transition={{ duration: 0.7 }}
-						className="bg-white/[0.03] backdrop-blur-sm border border-white/10 rounded-xl p-8"
-					>
-						<h2 className="text-3xl font-heading text-corporate-gold mb-4">
-							Our Mission
-						</h2>
-						<p className="text-muted-foreground mb-4">
-							To deliver world-class luxury transportation while leading the industry
-							in sustainability and customer satisfaction.
-						</p>
-						<ul className="list-disc pl-6 text-left text-muted-foreground">
-							<li>Carbon-neutral rides</li>
-							<li>Professional, courteous chauffeurs</li>
-							<li>Cutting-edge technology for seamless booking</li>
-						</ul>
-					</motion.div>
-					<motion.div
-						initial={{ opacity: 0, x: 40 }}
-						whileInView={{ opacity: 1, x: 0 }}
-						viewport={{ once: true }}
-						transition={{ duration: 0.7 }}
-						className="bg-white/[0.03] backdrop-blur-sm border border-white/10 rounded-xl p-8"
-					>
-						<h2 className="text-3xl font-heading text-corporate-gold mb-4">
-							Our Vision
-						</h2>
-						<p className="text-muted-foreground mb-4">
-							To be the global benchmark for luxury, eco-friendly travel, inspiring
-							trust and delight in every journey.
-						</p>
-						<ul className="list-disc pl-6 text-left text-muted-foreground">
-							<li>Expanding to new cities and markets</li>
-							<li>Continuous innovation in fleet and service</li>
-							<li>Empowering communities through responsible travel</li>
-						</ul>
-					</motion.div>
+				<div className="container mx-auto px-4 space-y-12">
+					{/* Mission - image left, text right */}
+					<div className="grid md:grid-cols-2 gap-8 items-center">
+						<motion.img
+							src="https://ahexecutivetravels.com/images/mpvside.jpg"
+							alt="Our Mission"
+							initial={{ opacity: 0, x: -30 }}
+							whileInView={{ opacity: 1, x: 0 }}
+							viewport={{ once: true }}
+							transition={{ duration: 0.8 }}
+							className="rounded-xl shadow-lg w-full h-64 object-cover border-2 border-corporate-gold"
+						/>
+						<motion.div
+							initial={{ opacity: 0, x: 30 }}
+							whileInView={{ opacity: 1, x: 0 }}
+							viewport={{ once: true }}
+							transition={{ duration: 0.8 }}
+							className="bg-white/[0.03] backdrop-blur-sm border border-white/10 rounded-xl p-8"
+						>
+							<h2 className="text-3xl font-heading text-corporate-gold mb-4">Our Mission</h2>
+							<p className="text-muted-foreground mb-4">
+								To redefine executive transportation through tailored, discreet and punctual
+								chauffeur services — where luxury is seamless from booking to drop-off.
+							</p>
+							<ul className="list-disc pl-6 text-left text-muted-foreground space-y-2">
+								<li>Absolute discretion and privacy for every client</li>
+								<li>Punctuality backed by real-time flight & traffic monitoring</li>
+								<li>Consistent five-star customer experiences</li>
+							</ul>
+						</motion.div>
+					</div>
+
+					{/* Vision - image right, text left */}
+					<div className="grid md:grid-cols-2 gap-8 items-center">
+						<motion.div
+							initial={{ opacity: 0, x: -30 }}
+							whileInView={{ opacity: 1, x: 0 }}
+							viewport={{ once: true }}
+							transition={{ duration: 0.8 }}
+							className="bg-white/[0.03] backdrop-blur-sm border border-white/10 rounded-xl p-8"
+						>
+							<h2 className="text-3xl font-heading text-corporate-gold mb-4">Our Vision</h2>
+							<p className="text-muted-foreground mb-4">
+								To be the foremost choice for luxury travel — setting new benchmarks
+								in professionalism, sustainability and client experience across cities.
+							</p>
+							<ul className="list-disc pl-6 text-left text-muted-foreground space-y-2">
+								<li>Expand thoughtfully to strategic markets</li>
+								<li>Invest in eco-luxury fleets and technology</li>
+								<li>Create lasting partnerships built on trust</li>
+							</ul>
+						</motion.div>
+						<motion.img
+							src="https://ahexecutivetravels.com/images/table.jpg"
+							alt="Our Vision"
+							initial={{ opacity: 0, x: 30 }}
+							whileInView={{ opacity: 1, x: 0 }}
+							viewport={{ once: true }}
+							transition={{ duration: 0.8 }}
+							className="rounded-xl shadow-lg w-full h-64 object-cover border-2 border-corporate-gold"
+						/>
+					</div>
+
+					{/* Core Values */}
+					<div className="bg-white/[0.02] backdrop-blur-sm border border-white/8 rounded-xl p-8 grid md:grid-cols-2 gap-8 items-center">
+						<div>
+							<h2 className="text-3xl font-heading text-corporate-gold mb-4">Our Core Values</h2>
+							<p className="text-muted-foreground mb-4">
+								We operate on principles that ensure every journey is secure, comfortable and exceptional.
+							</p>
+							<ul className="space-y-3 text-muted-foreground">
+								<li><strong>Professionalism:</strong> Courtesy, presentation and attention to detail on every ride.</li>
+								<li><strong>Discretion:</strong> Confidential service for VIPs and corporate clients.</li>
+								<li><strong>Punctuality:</strong> Timely arrivals with proactive real-time adjustments.</li>
+								<li><strong>Luxury:</strong> Premium vehicles, amenities and pristine service standards.</li>
+								<li><strong>Customer Focus:</strong> Personalized journeys tailored to each client's needs.</li>
+							</ul>
+						</div>
+						<div className="flex items-center justify-center">
+							<img src="https://ahexecutivetravels.com/images/savoyh.jpg" alt="Core Values" className="rounded-xl shadow-lg w-full max-w-md object-cover border-2 border-corporate-gold" />
+						</div>
+					</div>
 				</div>
 			</section>
 
