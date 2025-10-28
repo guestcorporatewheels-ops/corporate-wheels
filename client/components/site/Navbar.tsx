@@ -147,6 +147,14 @@ export default function Navbar() {
           >
             Chauffeurs
           </NavLink>
+          <NavLink
+            to="/booking"
+            className={({ isActive }) =>
+              isActive ? "text-corporate-gold" : "hover:text-corporate-gold transition-colors"
+            }
+          >
+            Booking
+          </NavLink>
           <NavLink to="/help" className={({ isActive }) =>
               isActive ? "text-corporate-gold" : "hover:text-corporate-gold transition-colors"
             }>
@@ -182,7 +190,7 @@ export default function Navbar() {
           </HoverDropdown>
 
           <Button asChild variant="glow" className="ml-2">
-            <a href="#booking">Book Now</a>
+            <NavLink to="/booking">Book Now</NavLink>
           </Button>
         </nav>
         <button
@@ -240,6 +248,16 @@ export default function Navbar() {
             <a href="#help" className="text-muted-foreground hover:text-white">
               Help
             </a>
+            <NavLink
+              to="/booking"
+              className={({ isActive }) =>
+                isActive
+                  ? "text-white"
+                  : "text-muted-foreground hover:text-white"
+              }
+            >
+              Booking
+            </NavLink>
             <div className="text-white font-medium mb-2">Download</div>
             <div className="pl-4 space-y-2">
               <a
@@ -256,7 +274,7 @@ export default function Navbar() {
               </a>
             </div>
             <Button asChild variant="glow" className="mt-4">
-              <a href="#booking">Book Now</a>
+              <NavLink to="/booking">Book Now</NavLink>
             </Button>
           </div>
         </div>

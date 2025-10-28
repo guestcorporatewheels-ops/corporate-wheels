@@ -20,6 +20,7 @@ import Terms from "./pages/Terms";
 import Contact from "./pages/Contact";
 import Blog from "./pages/Blog";
 import About from "./pages/About";
+import Booking from "./pages/Booking";
 import Navbar from "@/components/site/Navbar";
 import Footer from "@/components/site/Footer";
 import ErrorBoundary from "@/components/ErrorBoundary";
@@ -62,6 +63,7 @@ export default function App() {
                 <Route path="contact" element={<Contact />} />
                 <Route path="blog" element={<Blog />} />
                 <Route path="about" element={<About />} />
+                <Route path="booking" element={<Booking />} />
                 <Route path="*" element={<NotFound />} />
               </Route>
             </Routes>
