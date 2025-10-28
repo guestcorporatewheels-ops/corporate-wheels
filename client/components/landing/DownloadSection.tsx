@@ -107,21 +107,23 @@ export default function DownloadSection() {
                     </div>
                   </div>
 
-                  <div className="flex flex-col items-center gap-3">
+                  <div className="flex flex-col items-center space-between ">
                     <a href="#" aria-label="Download on the App Store">
                       <img
-                        src="/appstoredownload.png"
+                        src="/images/GetItOnGooglePlay_Badge_Web_color_English-01.svg"
                         alt="Download on the App Store"
-                        className="h-12 w-auto"
+                        className="h-16 w-auto"
                         loading="lazy"
+                        // width={"150px"}
                       />
                     </a>
                     <a href="#" aria-label="Get it on Google Play">
                       <img
-                        src="/google-play-badge-logo-svgrepo-com.svg"
+                        src="/images/download-on-the-app-store.svg"
                         alt="Get it on Google Play"
                         className="h-12 w-auto"
                         loading="lazy"
+                        // width={"150px"}
                       />
                     </a>
                   </div>
@@ -134,6 +136,7 @@ export default function DownloadSection() {
               <div className="relative h-[520px] w-[260px] rounded-[38px] border border-white/15 bg-black/60 shadow-2xl overflow-hidden">
                 {/* animated screen */}
                 <div className="absolute inset-[10px] rounded-[30px] overflow-hidden hero-phone-screen animate-float" />
+                <img src="./mobile-app.jpg" alt="" />
                 {/* side glare */}
                 <div className="absolute -inset-x-4 inset-y-0 rounded-[46px] bg-gradient-to-b from-white/10 to-transparent pointer-events-none" />
               </div>
