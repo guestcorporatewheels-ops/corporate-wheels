@@ -480,6 +480,110 @@ export default function About() {
 				</div>
 			</section>
 
+			{/* Our Culture Section */}
+			<section className="py-32 bg-gradient-to-b from-black via-black/95 to-black relative overflow-hidden">
+				{/* Decorative Elements */}
+				<div className="absolute inset-0 opacity-30">
+					<div className="absolute top-0 left-1/4 w-96 h-96 bg-corporate-gold/10 rounded-full filter blur-3xl"></div>
+					<div className="absolute bottom-0 right-1/4 w-96 h-96 bg-corporate-gold/10 rounded-full filter blur-3xl"></div>
+				</div>
+
+				<div className="container mx-auto px-4 relative z-10">
+					{/* Section Header */}
+					<div className="max-w-4xl mx-auto text-center mb-24">
+						<motion.div
+							initial={{ opacity: 0, scale: 0.9 }}
+							whileInView={{ opacity: 1, scale: 1 }}
+							viewport={{ once: true }}
+							transition={{ duration: 1 }}
+							className="inline-block mb-6"
+						>
+							<div className="relative">
+								<div className="absolute inset-0 bg-corporate-gold/20 blur-xl rounded-full"></div>
+								<span className="relative bg-gradient-to-r from-corporate-gold to-corporate-gold/80 text-transparent bg-clip-text text-4xl md:text-6xl font-bold font-heading">
+									Our Culture
+								</span>
+							</div>
+						</motion.div>
+						<motion.p
+							initial={{ opacity: 0, y: 20 }}
+							whileInView={{ opacity: 1, y: 0 }}
+							viewport={{ once: true }}
+							transition={{ duration: 0.8, delay: 0.2 }}
+							className="text-gray-400 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed"
+						>
+							At Corporate Wheels, our values are more than words—they're the driving force behind every journey, every interaction, and every innovation.
+						</motion.p>
+					</div>
+
+					{/* Values Grid */}
+					<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+						{[
+							{
+								title: "Customer Focus",
+								description: "We put our customers at the heart of every decision, ensuring exceptional service at every touchpoint.",
+								icon: "🎯",
+								gradient: "from-purple-500/20 to-corporate-gold/20"
+							},
+							{
+								title: "Drive for Excellence",
+								description: "Continuously raising the bar through innovation and dedication to superior quality.",
+								icon: "⭐",
+								gradient: "from-corporate-gold/20 to-orange-500/20"
+							},
+							{
+								title: "Born to Innovate",
+								description: "Embracing change and pioneering new solutions in the transportation industry.",
+								icon: "💡",
+								gradient: "from-blue-500/20 to-corporate-gold/20"
+							},
+							{
+								title: "Growing Global",
+								description: "Expanding our reach while maintaining consistent quality across borders.",
+								icon: "🌍",
+								gradient: "from-green-500/20 to-corporate-gold/20"
+							},
+							{
+								title: "Ownership",
+								description: "Taking responsibility and pride in our work, treating every task as our own.",
+								icon: "🔑",
+								gradient: "from-red-500/20 to-corporate-gold/20"
+							},
+							{
+								title: "Creativity",
+								description: "Finding innovative solutions to complex challenges through creative thinking.",
+								icon: "✨",
+								gradient: "from-pink-500/20 to-corporate-gold/20"
+							}
+						].map((value, index) => (
+							<motion.div
+								key={value.title}
+								initial={{ opacity: 0, y: 30 }}
+								whileInView={{ opacity: 1, y: 0 }}
+								viewport={{ once: true }}
+								transition={{ duration: 0.6, delay: index * 0.1 }}
+								className="group relative"
+							>
+								<div className={`relative bg-gradient-to-br ${value.gradient} p-[1px] rounded-2xl backdrop-blur-lg`}>
+									<div className="bg-black/80 rounded-2xl p-8 h-full relative backdrop-blur-sm">
+										<div className="absolute inset-0 bg-gradient-to-br from-corporate-gold/5 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 rounded-2xl"></div>
+										<div className="relative z-10">
+											<div className="mb-6 text-5xl transform group-hover:scale-110 transition-transform duration-300">{value.icon}</div>
+											<h3 className="text-corporate-gold text-xl font-bold mb-4">{value.title}</h3>
+											<p className="text-gray-400 leading-relaxed group-hover:text-gray-300 transition-colors duration-300">{value.description}</p>
+										</div>
+									</div>
+								</div>
+							</motion.div>
+						))}
+					</div>
+
+				
+				</div>
+			</section>
+						
+					
+
 			{/* Sustainability Section */}
 			<section className="relative py-16">
 				<svg className="absolute left-8 top-8 w-24 h-24 z-0 animate-pulse" viewBox="0 0 96 96" fill="none">
