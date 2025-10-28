@@ -34,16 +34,18 @@ export default function ValueBar() {
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.08 * i, duration: 0.4 }}
-            className="flex items-center gap-3 p-3 rounded-lg hover:shadow-[0_10px_30px_rgba(230,167,0,0.08)] transition-all duration-400 ease-in-out hover:bg-white/5"
+            className="flex flex-col md:flex-row items-center md:items-center text-center md:text-left gap-2 md:gap-3 p-3 rounded-lg hover:shadow-[0_10px_30px_rgba(230,167,0,0.08)] transition-all duration-400 ease-in-out hover:bg-white/5"
           >
-            <div className="p-2 rounded-md flex-shrink-0 border border-white/6 bg-gradient-to-br from-[rgba(230,167,0,0.15)] to-[rgba(255,107,53,0.06)]">
+            <div className="p-2 rounded-md border border-white/6 bg-gradient-to-br from-[rgba(230,167,0,0.15)] to-[rgba(255,107,53,0.06)]">
               <div className="w-8 h-8 flex items-center justify-center text-[hsl(var(--secondary))]">
                 <Icon className="size-4" />
               </div>
             </div>
-            <div className="min-w-0">
+            <div className="min-w-0 mt-2 md:mt-0">
               <p className="text-sm font-semibold text-white">{text}</p>
-              <p className="text-xs text-muted-foreground">{description}</p>
+              <p className="hidden md:block text-xs text-muted-foreground">
+                {description}
+              </p>
             </div>
           </motion.div>
         ))}

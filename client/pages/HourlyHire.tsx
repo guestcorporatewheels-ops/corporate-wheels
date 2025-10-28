@@ -1,56 +1,112 @@
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
-import { Button } from '@/components/ui/button';
-import { Card } from '@/components/ui/card';
-import { motion } from 'framer-motion';
-import { ArrowRight, Calendar, Car, CheckCircle, Clock, CreditCard, DollarSign, Globe, MapPin, Phone, Shield, Star } from 'lucide-react';
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
+import { motion } from "framer-motion";
+import {
+  ArrowRight,
+  Calendar,
+  Car,
+  CheckCircle,
+  Clock,
+  CreditCard,
+  DollarSign,
+  Globe,
+  MapPin,
+  Phone,
+  Shield,
+  Star,
+} from "lucide-react";
 
 export default function HourlyHire() {
- 
-  
   return (
     <div className="min-h-screen bg-gradient-to-b from-black via-gray-900 to-black text-white">
       {/* Hero Section with refined two-column layout */}
       <section className="relative min-h-[72vh] flex items-center overflow-hidden pt-20">
         <div className="absolute inset-0 z-0">
-          <img src="https://images.unsplash.com/photo-1505765056039-8e2ff0fc6a2b?q=80&w=2000&auto=format&fit=crop" alt="luxury car" className="w-full h-full object-cover brightness-60" />
+          <img
+            src="https://images.unsplash.com/photo-1505765056039-8e2ff0fc6a2b?q=80&w=2000&auto=format&fit=crop"
+            alt="luxury car"
+            className="w-full h-full object-cover brightness-60"
+          />
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70" />
           <div className="absolute -top-12 right-12 w-56 h-56 rounded-full bg-corporate-gold/10 blur-3xl" />
         </div>
 
         <div className="container relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-            <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }} className="text-left">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="text-left"
+            >
               <div className="mb-4">
                 <Star className="w-12 h-12 text-corporate-gold" />
               </div>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight">Premium Hourly Chauffeur Service</h1>
-              <p className="text-lg text-gray-300 max-w-2xl mb-8">Tailored hourly chauffeur solutions for business and leisure — flexible booking, seamless itineraries, and professional chauffeurs available 24/7.</p>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight">
+                Premium Hourly Chauffeur Service
+              </h1>
+              <p className="text-lg text-gray-300 max-w-2xl mb-8">
+                Tailored hourly chauffeur solutions for business and leisure —
+                flexible booking, seamless itineraries, and professional
+                chauffeurs available 24/7.
+              </p>
 
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
-                <a href="https://booking.corporate-wheels.com/hourly" target="_blank" rel="noreferrer">
-                  <Button className="bg-corporate-gold text-black px-6 py-4">Book Now</Button>
+                <a
+                  href="https://booking.corporate-wheels.com/hourly"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <Button className="bg-corporate-gold text-black px-6 py-4">
+                    Book Now
+                  </Button>
                 </a>
                 <a href="tel:+1-800-CHAUFFEUR">
-                  <Button variant="outline" className="border-corporate-gold text-corporate-gold px-6 py-4">Call Concierge</Button>
+                  <Button
+                    variant="outline"
+                    className="border-corporate-gold text-corporate-gold px-6 py-4"
+                  >
+                    Call Concierge
+                  </Button>
                 </a>
               </div>
 
               <div className="flex items-center gap-8">
                 <div>
                   <p className="font-semibold">24/7 Availability</p>
-                  <p className="text-sm text-gray-400">Flexible hours to suit your schedule</p>
+                  <p className="text-sm text-gray-400">
+                    Flexible hours to suit your schedule
+                  </p>
                 </div>
                 <div>
                   <p className="font-semibold">Vetted Chauffeurs</p>
-                  <p className="text-sm text-gray-400">Professional, licensed and insured</p>
+                  <p className="text-sm text-gray-400">
+                    Professional, licensed and insured
+                  </p>
                 </div>
               </div>
             </motion.div>
 
-            <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
               <Card className="bg-black/60 border-gray-800 p-6 shadow-2xl">
                 <h3 className="text-xl font-semibold mb-4">Quick Book</h3>
-                <p className="text-sm text-gray-400 mb-4">Choose hours, vehicle type and request add-ons — book instantly.</p>
+                <p className="text-sm text-gray-400 mb-4">
+                  Choose hours, vehicle type and request add-ons — book
+                  instantly.
+                </p>
+
                 <div className="grid grid-cols-1 gap-3">
                   <select className="bg-gray-900/50 border border-gray-700 rounded-lg p-3 text-white">
                     <option>2 Hours</option>
@@ -58,16 +114,29 @@ export default function HourlyHire() {
                     <option>6 Hours</option>
                     <option>8 Hours</option>
                   </select>
+
                   <select className="bg-gray-900/50 border border-gray-700 rounded-lg p-3 text-white">
                     <option>Luxury Sedan</option>
                     <option>Executive SUV</option>
                     <option>Van</option>
                   </select>
-                  <div className="flex gap-2">
-                    <input type="date" className="bg-gray-900/50 border border-gray-700 rounded-lg p-3 text-white w-full" />
-                    <input type="time" className="bg-gray-900/50 border border-gray-700 rounded-lg p-3 text-white w-full" />
+
+                  {/* Responsive fix starts here */}
+                  <div className="flex flex-col sm:flex-row gap-2">
+                    <input
+                      type="date"
+                      className="bg-gray-900/50 border border-gray-700 rounded-lg p-3 text-white w-full"
+                    />
+                    <input
+                      type="time"
+                      className="bg-gray-900/50 border border-gray-700 rounded-lg p-3 text-white w-full"
+                    />
                   </div>
-                  <Button className="bg-corporate-gold text-black mt-2">Check Availability</Button>
+                  {/* Responsive fix ends here */}
+
+                  <Button className="bg-corporate-gold text-black mt-2">
+                    Check Availability
+                  </Button>
                 </div>
               </Card>
             </motion.div>
@@ -134,8 +203,8 @@ export default function HourlyHire() {
         </div>
       </section> */}
 
-  {/* Premium Features Section */}
-  <section className="py-24">
+      {/* Premium Features Section */}
+      <section className="py-24">
         <div className="container">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -144,9 +213,12 @@ export default function HourlyHire() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold mb-6">Experience Premium Service</h2>
+            <h2 className="text-4xl font-bold mb-6">
+              Experience Premium Service
+            </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Discover why leading businesses and individuals choose our premium chauffeur service for their transportation needs.
+              Discover why leading businesses and individuals choose our premium
+              chauffeur service for their transportation needs.
             </p>
           </motion.div>
 
@@ -155,21 +227,24 @@ export default function HourlyHire() {
               {
                 icon: Clock,
                 title: "Flexible Scheduling",
-                description: "Book for as many hours as needed, with easy extensions and 24/7 availability",
-                image: "/images/features/car.jpeg"
+                description:
+                  "Book for as many hours as needed, with easy extensions and 24/7 availability",
+                image: "/images/features/car.jpeg",
               },
               {
                 icon: Shield,
                 title: "Elite Chauffeurs",
-                description: "Professionally trained, background-checked, and certified for your peace of mind",
-                image: "/images/features/car.jpeg"
+                description:
+                  "Professionally trained, background-checked, and certified for your peace of mind",
+                image: "/images/features/car.jpeg",
               },
               {
                 icon: Car,
                 title: "Luxury Fleet",
-                description: "Choose from our curated selection of premium vehicles for any occasion",
-                image: "/images/features/car.jpeg"
-              }
+                description:
+                  "Choose from our curated selection of premium vehicles for any occasion",
+                image: "/images/features/car.jpeg",
+              },
             ].map((feature, index) => (
               <motion.div
                 key={index}
@@ -187,7 +262,9 @@ export default function HourlyHire() {
                   />
                   <div className="relative z-10 p-6 h-full flex flex-col justify-end bg-gradient-to-t from-black/90 to-transparent">
                     <feature.icon className="w-12 h-12 text-corporate-gold mb-4 transform group-hover:scale-110 transition-transform duration-500" />
-                    <h3 className="text-2xl font-semibold mb-3">{feature.title}</h3>
+                    <h3 className="text-2xl font-semibold mb-3">
+                      {feature.title}
+                    </h3>
                     <p className="text-gray-300">{feature.description}</p>
                   </div>
                 </Card>
@@ -197,8 +274,8 @@ export default function HourlyHire() {
         </div>
       </section>
 
-  {/* Pricing Section */}
-  <section className="py-24 bg-gray-900/30">
+      {/* Pricing Section */}
+      <section className="py-24 bg-gray-900/30">
         <div className="container">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -209,7 +286,8 @@ export default function HourlyHire() {
           >
             <h2 className="text-4xl font-bold mb-6">Transparent Pricing</h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Choose the perfect package for your needs with our straightforward pricing options.
+              Choose the perfect package for your needs with our straightforward
+              pricing options.
             </p>
           </motion.div>
 
@@ -224,8 +302,8 @@ export default function HourlyHire() {
                   "Professional Chauffeur",
                   "Complimentary Water",
                   "City Coverage",
-                  "Free Cancellation"
-                ]
+                  "Free Cancellation",
+                ],
               },
               {
                 title: "Premium",
@@ -238,8 +316,8 @@ export default function HourlyHire() {
                   "Premium Refreshments",
                   "Extended Area Coverage",
                   "Free Cancellation",
-                  "Priority Support"
-                ]
+                  "Priority Support",
+                ],
               },
               {
                 title: "Executive",
@@ -252,9 +330,9 @@ export default function HourlyHire() {
                   "Unlimited Area Coverage",
                   "Free Cancellation",
                   "24/7 Concierge",
-                  "Custom Itinerary"
-                ]
-              }
+                  "Custom Itinerary",
+                ],
+              },
             ].map((plan, index) => (
               <motion.div
                 key={index}
@@ -271,7 +349,9 @@ export default function HourlyHire() {
                     </span>
                   </div>
                 )}
-                <Card className={`p-8 ${plan.popular ? 'bg-black/50 border-corporate-gold shadow-xl' : 'bg-black/40 border-gray-800'} hover:border-corporate-gold transition-all duration-300`}>
+                <Card
+                  className={`p-8 ${plan.popular ? "bg-black/50 border-corporate-gold shadow-xl" : "bg-black/40 border-gray-800"} hover:border-corporate-gold transition-all duration-300`}
+                >
                   <h3 className="text-2xl font-semibold mb-2">{plan.title}</h3>
                   <div className="mb-6">
                     <span className="text-4xl font-bold">${plan.price}</span>
@@ -288,8 +368,8 @@ export default function HourlyHire() {
                   <Button
                     className={`w-full ${
                       plan.popular
-                        ? 'bg-corporate-gold hover:bg-corporate-gold/90 text-black'
-                        : 'bg-gray-800 hover:bg-gray-700'
+                        ? "bg-corporate-gold hover:bg-corporate-gold/90 text-black"
+                        : "bg-gray-800 hover:bg-gray-700"
                     }`}
                   >
                     Select Package
@@ -314,32 +394,42 @@ export default function HourlyHire() {
             >
               <div className="absolute -top-10 -left-10 w-32 h-32 bg-corporate-gold/20 rounded-full blur-3xl"></div>
               <div className="relative">
-                <h2 className="text-4xl md:text-5xl font-bold mb-6">Multi-Stop Journey Excellence</h2>
+                <h2 className="text-4xl md:text-5xl font-bold mb-6">
+                  Multi-Stop Journey Excellence
+                </h2>
                 <p className="text-xl text-gray-300 mb-8">
-                  Perfect for days filled with multiple destinations. Experience seamless transitions between locations with our professional chauffeur service.
+                  Perfect for days filled with multiple destinations. Experience
+                  seamless transitions between locations with our professional
+                  chauffeur service.
                 </p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   {[
                     {
                       title: "Business Meetings",
-                      description: "Move efficiently between multiple client locations",
-                      icon: <MapPin className="w-6 h-6 text-corporate-gold" />
+                      description:
+                        "Move efficiently between multiple client locations",
+                      icon: <MapPin className="w-6 h-6 text-corporate-gold" />,
                     },
                     {
                       title: "Shopping Tours",
-                      description: "Visit multiple shopping destinations hassle-free",
-                      icon: <DollarSign className="w-6 h-6 text-corporate-gold" />
+                      description:
+                        "Visit multiple shopping destinations hassle-free",
+                      icon: (
+                        <DollarSign className="w-6 h-6 text-corporate-gold" />
+                      ),
                     },
                     {
                       title: "Tourist Excursions",
                       description: "Explore city attractions at your own pace",
-                      icon: <Globe className="w-6 h-6 text-corporate-gold" />
+                      icon: <Globe className="w-6 h-6 text-corporate-gold" />,
                     },
                     {
                       title: "Special Events",
                       description: "Perfect for weddings and special occasions",
-                      icon: <Calendar className="w-6 h-6 text-corporate-gold" />
-                    }
+                      icon: (
+                        <Calendar className="w-6 h-6 text-corporate-gold" />
+                      ),
+                    },
                   ].map((item, index) => (
                     <motion.div
                       key={index}
@@ -352,8 +442,12 @@ export default function HourlyHire() {
                       <div className="mb-4 transform group-hover:scale-110 transition-transform">
                         {item.icon}
                       </div>
-                      <h3 className="text-lg font-semibold mb-2">{item.title}</h3>
-                      <p className="text-gray-400 text-sm">{item.description}</p>
+                      <h3 className="text-lg font-semibold mb-2">
+                        {item.title}
+                      </h3>
+                      <p className="text-gray-400 text-sm">
+                        {item.description}
+                      </p>
                     </motion.div>
                   ))}
                 </div>
@@ -398,12 +492,15 @@ export default function HourlyHire() {
       <section className="py-20 bg-gray-900/30 relative overflow-hidden">
         <div className="absolute inset-0 opacity-30">
           <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black" />
-          <div className="absolute inset-0" style={{ 
-            backgroundImage: "url('/images/benefits-bg-pattern.svg')",
-            backgroundSize: "30px 30px",
-            backgroundRepeat: "repeat",
-            opacity: 0.1
-          }} />
+          <div
+            className="absolute inset-0"
+            style={{
+              backgroundImage: "url('/images/benefits-bg-pattern.svg')",
+              backgroundSize: "30px 30px",
+              backgroundRepeat: "repeat",
+              opacity: 0.1,
+            }}
+          />
         </div>
         <div className="container relative z-10">
           <motion.div
@@ -415,7 +512,8 @@ export default function HourlyHire() {
           >
             <h2 className="text-4xl font-bold mb-6">Why Choose Our Service?</h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Experience the perfect blend of luxury, reliability, and professional service.
+              Experience the perfect blend of luxury, reliability, and
+              professional service.
             </p>
           </motion.div>
 
@@ -424,23 +522,26 @@ export default function HourlyHire() {
               {
                 icon: Shield,
                 title: "Safety First",
-                description: "Fully insured and licensed chauffeurs with extensive safety training"
+                description:
+                  "Fully insured and licensed chauffeurs with extensive safety training",
               },
               {
                 icon: Clock,
                 title: "24/7 Availability",
-                description: "Round-the-clock service to accommodate your schedule"
+                description:
+                  "Round-the-clock service to accommodate your schedule",
               },
               {
                 icon: CreditCard,
                 title: "Easy Payment",
-                description: "Secure and flexible payment options for your convenience"
+                description:
+                  "Secure and flexible payment options for your convenience",
               },
               {
                 icon: Phone,
                 title: "Live Support",
-                description: "24/7 customer service for immediate assistance"
-              }
+                description: "24/7 customer service for immediate assistance",
+              },
             ].map((benefit, index) => (
               <motion.div
                 key={index}
@@ -479,7 +580,8 @@ export default function HourlyHire() {
           >
             <h2 className="text-4xl font-bold mb-6">Global Presence</h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Experience consistent luxury service across major cities worldwide.
+              Experience consistent luxury service across major cities
+              worldwide.
             </p>
           </motion.div>
 
@@ -488,23 +590,23 @@ export default function HourlyHire() {
               {
                 region: "North America",
                 cities: ["New York", "Los Angeles", "Toronto", "Miami"],
-                icon: "🌎"
+                icon: "🌎",
               },
               {
                 region: "Europe",
                 cities: ["London", "Paris", "Berlin", "Rome"],
-                icon: "🌍"
+                icon: "🌍",
               },
               {
                 region: "Asia Pacific",
                 cities: ["Tokyo", "Singapore", "Sydney", "Dubai"],
-                icon: "🌏"
+                icon: "🌏",
               },
               {
                 region: "Emerging Markets",
                 cities: ["Mumbai", "São Paulo", "Cape Town", "Mexico City"],
-                icon: "🌐"
-              }
+                icon: "🌐",
+              },
             ].map((region, index) => (
               <motion.div
                 key={region.region}
@@ -518,7 +620,10 @@ export default function HourlyHire() {
                 <h3 className="text-xl font-semibold mb-4">{region.region}</h3>
                 <ul className="space-y-2">
                   {region.cities.map((city) => (
-                    <li key={city} className="flex items-center gap-2 text-gray-300">
+                    <li
+                      key={city}
+                      className="flex items-center gap-2 text-gray-300"
+                    >
                       <MapPin className="w-4 h-4 text-corporate-gold" />
                       {city}
                     </li>
@@ -566,7 +671,8 @@ export default function HourlyHire() {
             <Star className="w-12 h-12 text-corporate-gold mx-auto mb-6" />
             <h2 className="text-4xl font-bold mb-6">Client Experiences</h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Discover why our clients choose us for their premium transportation needs.
+              Discover why our clients choose us for their premium
+              transportation needs.
             </p>
           </motion.div>
 
@@ -577,22 +683,22 @@ export default function HourlyHire() {
                 author: "Sarah & James",
                 role: "Wedding Clients",
                 rating: 5,
-                image: "/images/testimonials/wedding-couple.jpg"
+                image: "/images/testimonials/wedding-couple.jpg",
               },
               {
                 text: "As a business executive, the reliability and flexibility of the hourly service is invaluable. The chauffeurs are always punctual and professional.",
                 author: "Michael Chen",
                 role: "CEO, Tech Solutions",
                 rating: 5,
-                image: "/images/testimonials/business-exec.jpg"
+                image: "/images/testimonials/business-exec.jpg",
               },
               {
                 text: "A perfect way to explore the city! Our chauffeur was knowledgeable and accommodating, making our tourist experience truly memorable and luxurious.",
                 author: "Emma Thompson",
                 role: "International Tourist",
                 rating: 5,
-                image: "/images/testimonials/tourist.jpg"
-              }
+                image: "/images/testimonials/tourist.jpg",
+              },
             ].map((testimonial, index) => (
               <motion.div
                 key={index}
@@ -603,17 +709,27 @@ export default function HourlyHire() {
                 className="bg-black/30 backdrop-blur-sm p-8 rounded-xl border border-gray-800 hover:border-corporate-gold transition-all duration-300 group"
               >
                 <div className="flex flex-col md:flex-row gap-6">
-               
                   <div className="w-full ">
                     <div className="flex gap-1 mb-4">
-                      {Array.from({ length: testimonial.rating }).map((_, i) => (
-                        <Star key={i} className="w-5 h-5 fill-corporate-gold text-corporate-gold" />
-                      ))}
+                      {Array.from({ length: testimonial.rating }).map(
+                        (_, i) => (
+                          <Star
+                            key={i}
+                            className="w-5 h-5 fill-corporate-gold text-corporate-gold"
+                          />
+                        ),
+                      )}
                     </div>
-                    <p className="text-gray-300 mb-4 italic">"{testimonial.text}"</p>
+                    <p className="text-gray-300 mb-4 italic">
+                      "{testimonial.text}"
+                    </p>
                     <div>
-                      <p className="font-semibold text-lg">{testimonial.author}</p>
-                      <p className="text-sm text-gray-400">{testimonial.role}</p>
+                      <p className="font-semibold text-lg">
+                        {testimonial.author}
+                      </p>
+                      <p className="text-sm text-gray-400">
+                        {testimonial.role}
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -651,7 +767,8 @@ export default function HourlyHire() {
           >
             <h2 className="text-4xl font-bold mb-6">Common Questions</h2>
             <p className="text-xl text-gray-300">
-              Find answers to frequently asked questions about our hourly chauffeur service.
+              Find answers to frequently asked questions about our hourly
+              chauffeur service.
             </p>
           </motion.div>
 
@@ -659,29 +776,34 @@ export default function HourlyHire() {
             {[
               {
                 question: "What is the minimum booking duration?",
-                answer: "Our minimum booking duration is 2 hours. This ensures you have enough time to complete your planned activities without feeling rushed. For special events or custom requirements, please contact our concierge service.",
-                icon: Clock
+                answer:
+                  "Our minimum booking duration is 2 hours. This ensures you have enough time to complete your planned activities without feeling rushed. For special events or custom requirements, please contact our concierge service.",
+                icon: Clock,
               },
               {
                 question: "Can I extend my booking time?",
-                answer: "Yes, you can extend your booking time during the service, subject to chauffeur availability. We recommend notifying the chauffeur in advance if you think you might need extra time. Additional hours are charged at the standard hourly rate.",
-                icon: Calendar
+                answer:
+                  "Yes, you can extend your booking time during the service, subject to chauffeur availability. We recommend notifying the chauffeur in advance if you think you might need extra time. Additional hours are charged at the standard hourly rate.",
+                icon: Calendar,
               },
               {
                 question: "What happens if my plans change during the service?",
-                answer: "Our service is flexible, and your chauffeur can accommodate changes to your itinerary. You can modify your destinations or make additional stops as needed within your booked hours. Just inform your chauffeur or contact our 24/7 support team.",
-                icon: MapPin
+                answer:
+                  "Our service is flexible, and your chauffeur can accommodate changes to your itinerary. You can modify your destinations or make additional stops as needed within your booked hours. Just inform your chauffeur or contact our 24/7 support team.",
+                icon: MapPin,
               },
               {
                 question: "Are there any mileage limits?",
-                answer: "Our hourly service includes unlimited mileage within the metropolitan area. For journeys outside the city limits, additional charges may apply. Long-distance travel may require special arrangements - please discuss with our booking team.",
-                icon: Car
+                answer:
+                  "Our hourly service includes unlimited mileage within the metropolitan area. For journeys outside the city limits, additional charges may apply. Long-distance travel may require special arrangements - please discuss with our booking team.",
+                icon: Car,
               },
               {
                 question: "What types of vehicles are available?",
-                answer: "We offer a comprehensive range of luxury vehicles including Mercedes S-Class, BMW 7 Series, premium SUVs like the Range Rover, and luxury vans. All vehicles are late-model and maintained to the highest standards of comfort and safety.",
-                icon: Shield
-              }
+                answer:
+                  "We offer a comprehensive range of luxury vehicles including Mercedes S-Class, BMW 7 Series, premium SUVs like the Range Rover, and luxury vans. All vehicles are late-model and maintained to the highest standards of comfort and safety.",
+                icon: Shield,
+              },
             ].map((faq, index) => (
               <motion.div
                 key={index}
@@ -690,7 +812,10 @@ export default function HourlyHire() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: index * 0.1 }}
               >
-                <AccordionItem value={`item-${index}`} className="border-gray-800">
+                <AccordionItem
+                  value={`item-${index}`}
+                  className="border-gray-800"
+                >
                   <AccordionTrigger className="text-left hover:text-corporate-gold group">
                     <div className="flex items-center gap-3">
                       <div className="p-2 rounded-lg bg-gray-900/50 group-hover:bg-corporate-gold/10 transition-colors">
@@ -735,7 +860,8 @@ export default function HourlyHire() {
                 Experience Luxury Transportation
               </h2>
               <p className="text-xl text-gray-300 mb-12">
-                Book your premium chauffeur service today and elevate your journey with Corporate Wheels.
+                Book your premium chauffeur service today and elevate your
+                journey with Corporate Wheels.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button
