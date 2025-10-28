@@ -581,9 +581,7 @@ export default function About() {
 				
 				</div>
 			</section>
-						
-					
-
+		
 			{/* Sustainability Section */}
 			<section className="relative py-16">
 				<svg className="absolute left-8 top-8 w-24 h-24 z-0 animate-pulse" viewBox="0 0 96 96" fill="none">
