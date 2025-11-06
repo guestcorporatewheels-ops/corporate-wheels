@@ -580,6 +580,7 @@ export default function About() {
               <h2 className="text-3xl font-heading text-corporate-gold mb-4">
                 Our Vision
               </h2>
+              
               <p className="text-muted-foreground mb-4">
                 To be the foremost choice for luxury travel — setting new
                 benchmarks in professionalism, sustainability and client
