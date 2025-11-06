@@ -8,28 +8,32 @@ const topCities = [
     desc: "Business hub with connections to all major East Coast cities",
     routes: 21,
     features: ["Airport transfers", "24/7 service", "Corporate accounts"],
-    image: "https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+    image:
+      "https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
   },
   {
     name: "London",
     desc: "Premier service across UK's business and leisure destinations",
     routes: 25,
     features: ["Cross-country routes", "Chauffeur service", "VIP access"],
-    image: "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+    image:
+      "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
   },
   {
     name: "Paris",
     desc: "Luxury travel throughout France's iconic destinations",
     routes: 16,
     features: ["Wine tours", "Event transport", "Multilingual drivers"],
-    image: "https://images.unsplash.com/photo-1502602898536-47ad22581b52?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+    image:
+      "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=800&auto=format&fit=crop&q=80",
   },
   {
     name: "Dubai",
     desc: "Premium transport connecting all UAE emirates",
     routes: 15,
     features: ["Desert safaris", "Business class", "Airport meet & greet"],
-    image: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+    image:
+      "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
   },
 ];
 
@@ -40,31 +44,31 @@ const topRoutes = [
     duration: "1h 50m",
     distance: "59 mi",
     price: "From $299",
-    perks: ["WiFi", "Refreshments", "Flexible pickup"]
+    perks: ["WiFi", "Refreshments", "Flexible pickup"],
   },
-  { 
+  {
     from: "London",
     to: "Oxford",
     duration: "1h 45m",
     distance: "96 km",
     price: "From £189",
-    perks: ["University service", "Student discount", "Group booking"]
+    perks: ["University service", "Student discount", "Group booking"],
   },
-  { 
+  {
     from: "Paris",
     to: "Reims",
     duration: "2h 15m",
     distance: "145 km",
     price: "From €259",
-    perks: ["Champagne tour", "Local guide", "Luxury sedan"]
+    perks: ["Champagne tour", "Local guide", "Luxury sedan"],
   },
-  { 
+  {
     from: "Dubai",
     to: "Abu Dhabi",
     duration: "1h 15m",
     distance: "136 km",
     price: "From AED 499",
-    perks: ["Business class", "Meet & greet", "VIP service"]
+    perks: ["Business class", "Meet & greet", "VIP service"],
   },
   {
     from: "New York",
@@ -72,52 +76,51 @@ const topRoutes = [
     duration: "2h 30m",
     distance: "68 mi",
     price: "From $349",
-    perks: ["Beach transfer", "Summer special", "Door-to-door"]
+    perks: ["Beach transfer", "Summer special", "Door-to-door"],
   },
-  { 
+  {
     from: "Manchester",
     to: "Liverpool",
     duration: "1h",
     distance: "57 km",
     price: "From £149",
-    perks: ["Event service", "Match day", "Express route"]
+    perks: ["Event service", "Match day", "Express route"],
   },
-  { 
+  {
     from: "Nice",
     to: "Saint Tropez",
     duration: "1h 40m",
     distance: "112 km",
     price: "From €299",
-    perks: ["Coastal route", "Yacht transfer", "VIP service"]
+    perks: ["Coastal route", "Yacht transfer", "VIP service"],
   },
-  { 
+  {
     from: "Brisbane",
     to: "Gold Coast",
     duration: "1h",
     distance: "79 km",
     price: "From $199",
-    perks: ["Beach service", "Theme parks", "Airport link"]
+    perks: ["Beach service", "Theme parks", "Airport link"],
   },
 ];
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
-  show: { 
-    opacity: 1, 
+  show: {
+    opacity: 1,
     y: 0,
     transition: {
       duration: 0.5,
-      ease: "easeOut"
-    }
-  }
+      ease: "easeOut",
+    },
+  },
 };
 
 export default function CityToCityRoutes() {
-
   return (
     <section className="py-20 relative overflow-hidden">
       <div className="absolute inset-0 bg-black" />
-      
+
       <div className="container relative">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <motion.h2
@@ -135,7 +138,8 @@ export default function CityToCityRoutes() {
             transition={{ delay: 0.1 }}
             className="text-lg text-muted-foreground"
           >
-            Premium intercity travel with fixed rates, WiFi-equipped vehicles, and professional chauffeurs.
+            Premium intercity travel with fixed rates, WiFi-equipped vehicles,
+            and professional chauffeurs.
           </motion.p>
         </div>
 
@@ -178,14 +182,12 @@ export default function CityToCityRoutes() {
                     <h4 className="font-heading text-xl text-white mb-1">
                       {city.name}
                     </h4>
-                    <p className="text-sm text-white/80">
-                      {city.desc}
-                    </p>
+                    <p className="text-sm text-white/80">{city.desc}</p>
                   </div>
                 </div>
                 <div className="p-4 space-y-3">
                   {city.features.map((feature, j) => (
-                    <motion.div 
+                    <motion.div
                       key={feature}
                       initial={{ opacity: 0, x: -10 }}
                       whileInView={{ opacity: 1, x: 0 }}
@@ -193,10 +195,22 @@ export default function CityToCityRoutes() {
                       transition={{ delay: i * 0.1 + j * 0.1 }}
                       className="flex items-center space-x-2"
                     >
-                      <svg viewBox="0 0 24 24" className="w-4 h-4 text-corporate-gold" fill="none" stroke="currentColor">
-                        <path strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                      <svg
+                        viewBox="0 0 24 24"
+                        className="w-4 h-4 text-corporate-gold"
+                        fill="none"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M5 13l4 4L19 7"
+                        />
                       </svg>
-                      <span className="text-sm text-muted-foreground">{feature}</span>
+                      <span className="text-sm text-muted-foreground">
+                        {feature}
+                      </span>
                     </motion.div>
                   ))}
                 </div>
@@ -244,7 +258,7 @@ export default function CityToCityRoutes() {
                     <span>{route.distance}</span>
                   </div>
                 </div>
-                
+
                 <div className="text-lg font-semibold text-corporate-gold mb-4">
                   {route.price}
                 </div>
@@ -259,10 +273,22 @@ export default function CityToCityRoutes() {
                       transition={{ delay: i * 0.1 + j * 0.1 }}
                       className="flex items-center space-x-2"
                     >
-                      <svg viewBox="0 0 24 24" className="w-4 h-4 text-corporate-gold" fill="none" stroke="currentColor">
-                        <path strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                      <svg
+                        viewBox="0 0 24 24"
+                        className="w-4 h-4 text-corporate-gold"
+                        fill="none"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M5 13l4 4L19 7"
+                        />
                       </svg>
-                      <span className="text-sm text-muted-foreground">{perk}</span>
+                      <span className="text-sm text-muted-foreground">
+                        {perk}
+                      </span>
                     </motion.div>
                   ))}
                 </div>
@@ -309,5 +335,4 @@ export default function CityToCityRoutes() {
       </div>
     </section>
   );
-    
 }

@@ -1,6 +1,13 @@
 import { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Calendar, Clock, MapPin, Users, ChevronLeft, ChevronRight } from "lucide-react";
+import {
+  Calendar,
+  Clock,
+  MapPin,
+  Users,
+  ChevronLeft,
+  ChevronRight,
+} from "lucide-react";
 import { DayPicker } from "react-day-picker";
 import { format } from "date-fns";
 import "react-day-picker/dist/style.css";
@@ -59,10 +66,11 @@ const VEHICLES = [
 ];
 
 const VEHICLE_IMAGES: Record<string, string> = {
-  executive: "/images/features/car.jpeg",
-  suv: "/images/features/car2.jpeg",
-  mpv: "/images/features/car2.jpeg",
-  minibus: "/images/features/car2.jpeg",
+  executive: "https://aetworldwide.com/wp-content/uploads/2019/05/03-1.jpg",
+  suv: "https://www.spinny.com/blog/wp-content/uploads/2023/03/Black-Mahindra-XUV700-jpg.webp",
+  mpv: "https://luxurychauffeurdubai.com/wp-content/uploads/elementor/thumbs/a833cb03-cd45-4c3d-90e5-c8610ff3ed1b-2-rd5o3c8xglyih41rlqnlgroo9b4oelyiem8m01seq0.jpg",
+  minibus:
+    "https://s.alicdn.com/@sc04/kf/A0f7ec22e917344a2b93cae04ac46b64dB.jpg?avif=close&webp=close",
 };
 
 export default function Booking() {
@@ -94,7 +102,10 @@ export default function Booking() {
       if (timeRef.current && !timeRef.current.contains(e.target as Node)) {
         setShowTimePicker(false);
       }
-      if (passengerRef.current && !passengerRef.current.contains(e.target as Node)) {
+      if (
+        passengerRef.current &&
+        !passengerRef.current.contains(e.target as Node)
+      ) {
         setShowPassengerPicker(false);
       }
     };
@@ -112,7 +123,7 @@ export default function Booking() {
 
   useEffect(() => {
     // Inject the date picker styles
-    const style = document.createElement('style');
+    const style = document.createElement("style");
     style.textContent = datePickerStyles;
     document.head.appendChild(style);
     return () => style.remove();
@@ -133,15 +144,21 @@ export default function Booking() {
                 Book premium transfers in seconds
               </h1>
               <p className="mt-4 text-muted-foreground max-w-xl">
-                Instant quotes, professional chauffeurs and a fleet to match your
-                requirements. Choose a vehicle, set pickup & drop-off and get an
-                immediate estimate.
+                Instant quotes, professional chauffeurs and a fleet to match
+                your requirements. Choose a vehicle, set pickup & drop-off and
+                get an immediate estimate.
               </p>
               <div className="mt-6 flex gap-3">
-                <a href="#form" className="inline-flex items-center gap-2 bg-corporate-gold text-black px-4 py-2 rounded-md font-semibold">
+                <a
+                  href="#form"
+                  className="inline-flex items-center gap-2 bg-corporate-gold text-black px-4 py-2 rounded-md font-semibold"
+                >
                   Start Booking
                 </a>
-                <a href="#vehicles" className="inline-flex items-center gap-2 border border-white/8 px-4 py-2 rounded-md text-muted-foreground hover:text-corporate-gold">
+                <a
+                  href="#vehicles"
+                  className="inline-flex items-center gap-2 border border-white/8 px-4 py-2 rounded-md text-muted-foreground hover:text-corporate-gold"
+                >
                   View vehicles
                 </a>
               </div>
@@ -154,7 +171,12 @@ export default function Booking() {
               className="relative"
             >
               {/* decorative golden swoosh */}
-              <svg aria-hidden className="absolute -right-16 -top-12 w-72 h-72 opacity-90 hidden lg:block" viewBox="0 0 200 200" fill="none">
+              <svg
+                aria-hidden
+                className="absolute -right-16 -top-12 w-72 h-72 opacity-90 hidden lg:block"
+                viewBox="0 0 200 200"
+                fill="none"
+              >
                 <defs>
                   <radialGradient id="goldGrad" cx="30%" cy="30%">
                     <stop offset="0%" stopColor="#F4C430" stopOpacity="0.9" />
@@ -165,12 +187,23 @@ export default function Booking() {
               </svg>
 
               {/* hero image */}
-              <img src="/images/features/car.jpeg" alt="Executive car" className="hidden lg:block rounded-xl w-64 h-40 object-cover mb-4 shadow-md" />
+              <img
+                src="/images/FlexibleScheduling.jpeg"
+                alt="Executive car"
+                className="hidden lg:block rounded-xl w-64 h-40 object-cover mb-4 shadow-md"
+              />
 
               <div className="rounded-xl bg-gradient-to-br from-slate-800/60 to-black/40 p-4 shadow-xl border border-white/6">
-                <div className="text-sm text-muted-foreground">Quick estimate</div>
-                <div className="mt-3 text-2xl font-bold">£{(Math.random() * 120 + 40).toFixed(2)}</div>
-                <div className="mt-4 text-xs text-muted-foreground">Typical fares shown for guidance only. Final fare confirmed on booking.</div>
+                <div className="text-sm text-muted-foreground">
+                  Quick estimate
+                </div>
+                <div className="mt-3 text-2xl font-bold">
+                  £{(Math.random() * 120 + 40).toFixed(2)}
+                </div>
+                <div className="mt-4 text-xs text-muted-foreground">
+                  Typical fares shown for guidance only. Final fare confirmed on
+                  booking.
+                </div>
               </div>
             </motion.div>
           </div>
@@ -184,7 +217,9 @@ export default function Booking() {
             <form className="bg-surface/40 p-6 rounded-xl border border-white/6 shadow-sm">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <label className="flex flex-col">
-                  <span className="text-sm text-muted-foreground">Pickup address</span>
+                  <span className="text-sm text-muted-foreground">
+                    Pickup address
+                  </span>
                   <div className="relative mt-1">
                     <input
                       value={form.pickup}
@@ -197,7 +232,9 @@ export default function Booking() {
                 </label>
 
                 <label className="flex flex-col">
-                  <span className="text-sm text-muted-foreground">Drop-off address</span>
+                  <span className="text-sm text-muted-foreground">
+                    Drop-off address
+                  </span>
                   <div className="relative mt-1">
                     <input
                       value={form.dropoff}
@@ -213,7 +250,11 @@ export default function Booking() {
                   <div className="relative mt-1">
                     <input
                       readOnly
-                      value={selectedDay ? selectedDay.toLocaleDateString('en-GB') : ""}
+                      value={
+                        selectedDay
+                          ? selectedDay.toLocaleDateString("en-GB")
+                          : ""
+                      }
                       onClick={() => setShowDatePicker((s) => !s)}
                       placeholder="Select date"
                       className="w-full rounded-lg bg-black/40 px-3 py-2 border border-white/10 focus:outline-none focus:ring-2 focus:ring-corporate-gold cursor-pointer placeholder:text-white/40"
@@ -221,16 +262,18 @@ export default function Booking() {
                     <Calendar className="absolute right-3 top-1/2 -translate-y-1/2 text-corporate-gold" />
 
                     {showDatePicker && (
-                      <motion.div 
+                      <motion.div
                         initial={{ opacity: 0, y: -4 }}
                         animate={{ opacity: 1, y: 0 }}
                         className="absolute z-50 mt-2 bg-black/95 backdrop-blur-sm border border-white/10 rounded-lg shadow-xl p-3"
                       >
                         <div className="flex justify-between items-center mb-2">
-                          <span className="text-sm font-medium">October 2025</span>
+                          <span className="text-sm font-medium">
+                            October 2025
+                          </span>
                           <div className="flex gap-1">
-                            <button 
-                              onClick={() => setShowDatePicker(false)} 
+                            <button
+                              onClick={() => setShowDatePicker(false)}
                               className="p-1 rounded hover:bg-white/5 text-corporate-gold hover:text-corporate-gold/80 transition-colors"
                             >
                               <Calendar className="h-4 w-4" />
@@ -246,16 +289,26 @@ export default function Booking() {
                           </button>
                         </div>
                         <div className="grid grid-cols-7 gap-1 mb-2">
-                          {['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'].map(day => (
-                            <div key={day} className="text-xs text-center text-muted-foreground p-1">{day}</div>
-                          ))}
+                          {["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"].map(
+                            (day) => (
+                              <div
+                                key={day}
+                                className="text-xs text-center text-muted-foreground p-1"
+                              >
+                                {day}
+                              </div>
+                            ),
+                          )}
                         </div>
                         <DayPicker
                           mode="single"
                           selected={selectedDay}
                           onSelect={(d) => {
                             setSelectedDay(d);
-                            handle("date", d ? d.toISOString().slice(0, 10) : "");
+                            handle(
+                              "date",
+                              d ? d.toISOString().slice(0, 10) : "",
+                            );
                             setShowDatePicker(false);
                           }}
                           modifiers={{
@@ -263,25 +316,25 @@ export default function Booking() {
                           }}
                           modifiersStyles={{
                             selected: {
-                              backgroundColor: '#F4C430',
-                              color: 'black',
-                              fontWeight: 'bold'
-                            }
+                              backgroundColor: "#F4C430",
+                              color: "black",
+                              fontWeight: "bold",
+                            },
                           }}
                           styles={{
-                            caption: { display: 'none' },
-                            head: { display: 'none' },
+                            caption: { display: "none" },
+                            head: { display: "none" },
                             day: {
-                              width: '32px',
-                              height: '32px',
-                              fontSize: '14px',
-                              margin: '0',
+                              width: "32px",
+                              height: "32px",
+                              fontSize: "14px",
+                              margin: "0",
                             },
                             button: {
-                              border: 'none',
-                              backgroundColor: 'transparent',
-                              color: 'white',
-                              borderRadius: '4px',
+                              border: "none",
+                              backgroundColor: "transparent",
+                              color: "white",
+                              borderRadius: "4px",
                             },
                             // button_selected: {
                             //   backgroundColor: '#F4C430',
@@ -307,14 +360,18 @@ export default function Booking() {
                     <Clock className="absolute right-3 top-1/2 -translate-y-1/2 text-corporate-gold" />
 
                     {showTimePicker && (
-                      <motion.div 
+                      <motion.div
                         initial={{ opacity: 0, y: -4 }}
                         animate={{ opacity: 1, y: 0 }}
                         className="absolute right-0 z-50 mt-2 w-64 bg-black/95 backdrop-blur-sm rounded-lg shadow-xl border border-white/10"
                       >
                         <div className="p-3 border-b border-white/10">
-                          <div className="text-lg font-medium text-center">{form.time || "20:00"}</div>
-                          <div className="text-xs text-center text-muted-foreground mt-1">Select pickup time</div>
+                          <div className="text-lg font-medium text-center">
+                            {form.time || "20:00"}
+                          </div>
+                          <div className="text-xs text-center text-muted-foreground mt-1">
+                            Select pickup time
+                          </div>
                         </div>
                         <div className="grid grid-cols-3 gap-1 p-2 max-h-[240px] overflow-auto">
                           {TIME_SLOTS.map((ts) => (
@@ -341,7 +398,9 @@ export default function Booking() {
                 </div>
 
                 <div className="flex flex-col" ref={timeRef}>
-                  <span className="text-sm text-muted-foreground">Passengers</span>
+                  <span className="text-sm text-muted-foreground">
+                    Passengers
+                  </span>
                   <div className="relative mt-1">
                     <input
                       readOnly
@@ -350,16 +409,20 @@ export default function Booking() {
                       className="w-full rounded-lg bg-black/40 px-3 py-2 border border-white/10 focus:outline-none focus:ring-2 focus:ring-corporate-gold cursor-pointer"
                     />
                     <Users className="absolute right-3 top-1/2 -translate-y-1/2 text-corporate-gold" />
-                    
+
                     {showPassengerPicker && (
-                      <motion.div 
+                      <motion.div
                         initial={{ opacity: 0, y: -4 }}
                         animate={{ opacity: 1, y: 0 }}
                         className="absolute right-0 z-50 mt-2 w-full bg-black/95 backdrop-blur-sm rounded-lg shadow-xl border border-white/10"
                       >
                         <div className="p-3 border-b border-white/10">
-                          <div className="text-lg font-medium text-center">{form.passengers}</div>
-                          <div className="text-xs text-center text-muted-foreground mt-1">Select passengers</div>
+                          <div className="text-lg font-medium text-center">
+                            {form.passengers}
+                          </div>
+                          <div className="text-xs text-center text-muted-foreground mt-1">
+                            Select passengers
+                          </div>
                         </div>
                         <div className="grid grid-cols-5 gap-1 p-2">
                           {[1, 2, 3, 4, 5].map((n) => (
@@ -386,7 +449,9 @@ export default function Booking() {
                 </div>
 
                 <label className="flex flex-col sm:col-span-2">
-                  <span className="text-sm text-muted-foreground">Additional notes</span>
+                  <span className="text-sm text-muted-foreground">
+                    Additional notes
+                  </span>
                   <textarea
                     value={form.notes}
                     onChange={(e) => handle("notes", e.target.value)}
@@ -423,7 +488,9 @@ export default function Booking() {
                   aria-hidden={false}
                 />
               </div>
-              <div className="p-3 text-sm text-muted-foreground">Map shows central London area. Drag to move or zoom.</div>
+              <div className="p-3 text-sm text-muted-foreground">
+                Map shows central London area. Drag to move or zoom.
+              </div>
             </div>
           </div>
 
@@ -435,7 +502,9 @@ export default function Booking() {
               className="rounded-xl bg-gradient-to-br from-slate-800/60 to-black/40 p-6 shadow-lg border border-white/6"
             >
               <h3 className="text-lg font-medium">Booking summary</h3>
-              <p className="mt-2 text-sm text-muted-foreground">Preview of your booking details and estimated fare.</p>
+              <p className="mt-2 text-sm text-muted-foreground">
+                Preview of your booking details and estimated fare.
+              </p>
 
               <dl className="mt-4 grid grid-cols-1 gap-2 text-sm">
                 <div className="flex justify-between">
@@ -448,7 +517,9 @@ export default function Booking() {
                 </div>
                 <div className="flex justify-between">
                   <dt className="text-muted-foreground">Date / Time</dt>
-                  <dd className="font-medium">{(form.date || "—") + (form.time ? ` · ${form.time}` : "")}</dd>
+                  <dd className="font-medium">
+                    {(form.date || "—") + (form.time ? ` · ${form.time}` : "")}
+                  </dd>
                 </div>
                 <div className="flex justify-between">
                   <dt className="text-muted-foreground">Passengers</dt>
@@ -456,14 +527,22 @@ export default function Booking() {
                 </div>
                 <div className="flex justify-between">
                   <dt className="text-muted-foreground">Vehicle</dt>
-                  <dd className="font-medium">{selectedVehicle || "Not selected"}</dd>
+                  <dd className="font-medium">
+                    {selectedVehicle || "Not selected"}
+                  </dd>
                 </div>
               </dl>
 
               <div className="mt-6">
-                <div className="text-xs text-muted-foreground">Estimated fare</div>
-                <div className="text-2xl font-bold mt-1">£{(Math.random() * 120 + 40).toFixed(2)}</div>
-                <div className="mt-3 text-xs text-muted-foreground">Final fare confirmed on booking confirmation.</div>
+                <div className="text-xs text-muted-foreground">
+                  Estimated fare
+                </div>
+                <div className="text-2xl font-bold mt-1">
+                  £{(Math.random() * 120 + 40).toFixed(2)}
+                </div>
+                <div className="mt-3 text-xs text-muted-foreground">
+                  Final fare confirmed on booking confirmation.
+                </div>
               </div>
             </motion.div>
 
@@ -487,14 +566,22 @@ export default function Booking() {
                   >
                     <div className="w-14 h-10 flex-shrink-0 rounded overflow-hidden bg-white/5">
                       {VEHICLE_IMAGES[v.id] ? (
-                        <img src={VEHICLE_IMAGES[v.id]} alt={v.name} className="w-full h-full object-cover" />
+                        <img
+                          src={VEHICLE_IMAGES[v.id]}
+                          alt={v.name}
+                          className="w-full h-full object-cover"
+                        />
                       ) : (
-                        <div className="flex items-center justify-center h-full text-2xl">{v.emoji}</div>
+                        <div className="flex items-center justify-center h-full text-2xl">
+                          {v.emoji}
+                        </div>
                       )}
                     </div>
                     <div>
                       <div className="font-medium">{v.name}</div>
-                      <div className="text-xs text-muted-foreground">Seats: {v.seats}</div>
+                      <div className="text-xs text-muted-foreground">
+                        Seats: {v.seats}
+                      </div>
                     </div>
                   </motion.button>
                 ))}

@@ -1,13 +1,30 @@
-import { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
-import { Button } from '@/components/ui/button';
-import { Card } from '@/components/ui/card';
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
-import { 
-  Car, MapPin, Clock, Shield, Star, CheckCircle, Route, ArrowRight, 
-  Download, Phone, Calendar, CreditCard, ThumbsUp, ChevronRight 
-} from 'lucide-react';
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import {
+  Car,
+  MapPin,
+  Clock,
+  Shield,
+  Star,
+  CheckCircle,
+  Route,
+  ArrowRight,
+  Download,
+  Phone,
+  Calendar,
+  CreditCard,
+  ThumbsUp,
+  ChevronRight,
+} from "lucide-react";
 
 const cityRoutes = [
   {
@@ -16,7 +33,8 @@ const cityRoutes = [
     distance: "215 miles",
     duration: "4 hours",
     price: "499",
-    image: "https://images.unsplash.com/photo-1534270804882-6b5048b1c1fc?q=80&w=2940&auto=format&fit=crop"
+    image:
+      "https://images.unsplash.com/photo-1534270804882-6b5048b1c1fc?q=80&w=2940&auto=format&fit=crop",
   },
   {
     from: "Los Angeles",
@@ -24,7 +42,8 @@ const cityRoutes = [
     distance: "270 miles",
     duration: "4.5 hours",
     price: "549",
-    image: "https://images.unsplash.com/photo-1581351721010-8cf859cb14a4?q=80&w=2940&auto=format&fit=crop"
+    image:
+      "https://images.unsplash.com/photo-1581351721010-8cf859cb14a4?q=80&w=2940&auto=format&fit=crop",
   },
   {
     from: "Miami",
@@ -32,7 +51,8 @@ const cityRoutes = [
     distance: "235 miles",
     duration: "4 hours",
     price: "479",
-    image: "https://images.unsplash.com/photo-1605723517503-3cadb5818a0c?q=80&w=2940&auto=format&fit=crop"
+    image:
+      "https://images.unsplash.com/photo-1605723517503-3cadb5818a0c?q=80&w=2940&auto=format&fit=crop",
   },
   {
     from: "Chicago",
@@ -40,7 +60,8 @@ const cityRoutes = [
     distance: "280 miles",
     duration: "4.5 hours",
     price: "529",
-    image: "https://images.unsplash.com/photo-1612825173281-9a193378527e?q=80&w=2940&auto=format&fit=crop"
+    image:
+      "https://images.unsplash.com/photo-1477414956199-7dafc86a4f1a?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170",
   },
 ];
 
@@ -70,20 +91,32 @@ export default function CityToCity() {
               transition={{ duration: 0.8 }}
               className="text-left px-4 lg:px-0"
             >
-              <p className="inline-block px-3 py-1 rounded-full text-sm bg-corporate-gold/10 text-corporate-gold font-medium mb-4">City-to-City</p>
+              <p className="inline-block px-3 py-1 rounded-full text-sm bg-corporate-gold/10 text-corporate-gold font-medium mb-4">
+                City-to-City
+              </p>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
                 Travel Between Cities—Comfort, Punctuality, and Transparency
               </h1>
               <p className="text-lg text-gray-300 max-w-2xl mb-8">
-                Book professional chauffeurs and premium vehicles for predictable, door-to-door intercity journeys. We offer fixed, all-inclusive pricing, flexible pickup times, and vetted chauffeurs so you can focus on your trip — not the logistics.
+                Book professional chauffeurs and premium vehicles for
+                predictable, door-to-door intercity journeys. We offer fixed,
+                all-inclusive pricing, flexible pickup times, and vetted
+                chauffeurs so you can focus on your trip — not the logistics.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 mb-6">
-                <Button size="lg" className="bg-corporate-gold hover:bg-corporate-gold/90 text-black font-semibold px-6 py-4">
+                <Button
+                  size="lg"
+                  className="bg-corporate-gold hover:bg-corporate-gold/90 text-black font-semibold px-6 py-4"
+                >
                   Book a Route
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
-                <Button size="lg" variant="outline" className="border-corporate-gold text-corporate-gold hover:bg-corporate-gold/10 px-6 py-4">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-corporate-gold text-corporate-gold hover:bg-corporate-gold/10 px-6 py-4"
+                >
                   Contact Concierge
                 </Button>
               </div>
@@ -93,7 +126,9 @@ export default function CityToCity() {
                   <Star className="w-6 h-6 text-corporate-gold" />
                   <div>
                     <p className="font-semibold">4.9/5</p>
-                    <p className="text-sm text-gray-400">Average Customer Rating</p>
+                    <p className="text-sm text-gray-400">
+                      Average Customer Rating
+                    </p>
                   </div>
                 </div>
 
@@ -101,7 +136,9 @@ export default function CityToCity() {
                   <Shield className="w-6 h-6 text-corporate-gold" />
                   <div>
                     <p className="font-semibold">Vetted Drivers</p>
-                    <p className="text-sm text-gray-400">Background-checked & insured</p>
+                    <p className="text-sm text-gray-400">
+                      Background-checked & insured
+                    </p>
                   </div>
                 </div>
               </div>
@@ -116,21 +153,33 @@ export default function CityToCity() {
               className="px-4 lg:px-0"
             >
               <div className="grid grid-cols-2 gap-4">
-                {[{
-                  city: 'New York → Boston',
-                  img: 'https://images.unsplash.com/photo-1534270804882-6b5048b1c1fc?q=80&w=1000'
-                },{
-                  city: 'Los Angeles → Las Vegas',
-                  img: 'https://images.unsplash.com/photo-1581351721010-8cf859cb14a4?q=80&w=1000'
-                },{
-                  city: 'Miami → Orlando',
-                  img: 'https://images.unsplash.com/photo-1605723517503-3cadb5818a0c?q=80&w=1000'
-                },{
-                  city: 'Chicago → Detroit',
-                  img: 'https://images.unsplash.com/photo-1612825173281-9a193378527e?q=80&w=1000'
-                }].map((c, i) => (
-                  <div key={i} className="relative rounded-xl overflow-hidden shadow-xl">
-                    <img src={c.img} alt={c.city} className="w-full h-40 object-cover" />
+                {[
+                  {
+                    city: "New York → Boston",
+                    img: "https://images.unsplash.com/photo-1534270804882-6b5048b1c1fc?q=80&w=1000",
+                  },
+                  {
+                    city: "Los Angeles → Las Vegas",
+                    img: "https://images.unsplash.com/photo-1581351721010-8cf859cb14a4?q=80&w=1000",
+                  },
+                  {
+                    city: "Miami → Orlando",
+                    img: "https://images.unsplash.com/photo-1605723517503-3cadb5818a0c?q=80&w=1000",
+                  },
+                  {
+                    city: "Chicago → Detroit",
+                    img: "https://images.unsplash.com/photo-1477414956199-7dafc86a4f1a?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170",
+                  },
+                ].map((c, i) => (
+                  <div
+                    key={i}
+                    className="relative rounded-xl overflow-hidden shadow-xl"
+                  >
+                    <img
+                      src={c.img}
+                      alt={c.city}
+                      className="w-full h-40 object-cover"
+                    />
                     <div className="absolute inset-0 bg-black/30 flex items-end p-4">
                       <div className="text-white">
                         <p className="text-sm text-gray-200">Popular route</p>
@@ -141,7 +190,10 @@ export default function CityToCity() {
                 ))}
               </div>
 
-              <p className="text-sm text-gray-400 mt-4">Can’t find your route? Contact our concierge for a custom quote and schedule.</p>
+              <p className="text-sm text-gray-400 mt-4">
+                Can’t find your route? Contact our concierge for a custom quote
+                and schedule.
+              </p>
             </motion.div>
           </div>
         </div>
@@ -160,9 +212,12 @@ export default function CityToCity() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold mb-6">The Better Way Between Cities</h2>
+            <h2 className="text-4xl font-bold mb-6">
+              The Better Way Between Cities
+            </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Experience the comfort and convenience of our premium intercity chauffeur service.
+              Experience the comfort and convenience of our premium intercity
+              chauffeur service.
             </p>
           </motion.div>
 
@@ -171,18 +226,21 @@ export default function CityToCity() {
               {
                 icon: Car,
                 title: "Premium Fleet",
-                description: "Latest model luxury vehicles equipped with premium amenities for maximum comfort"
+                description:
+                  "Latest model luxury vehicles equipped with premium amenities for maximum comfort",
               },
               {
                 icon: Shield,
                 title: "Professional Chauffeurs",
-                description: "Experienced, background-checked chauffeurs with extensive route knowledge"
+                description:
+                  "Experienced, background-checked chauffeurs with extensive route knowledge",
               },
               {
                 icon: CreditCard,
                 title: "All-Inclusive Pricing",
-                description: "Transparent fixed rates with no hidden fees or surge pricing"
-              }
+                description:
+                  "Transparent fixed rates with no hidden fees or surge pricing",
+              },
             ].map((feature, index) => (
               <motion.div
                 key={index}
@@ -194,7 +252,9 @@ export default function CityToCity() {
               >
                 <Card className="bg-black/30 backdrop-blur-sm border-gray-800 p-8 hover:border-corporate-gold transition-all duration-300">
                   <feature.icon className="w-12 h-12 text-corporate-gold mb-6 transform group-hover:scale-110 transition-transform" />
-                  <h3 className="text-xl font-semibold mb-4">{feature.title}</h3>
+                  <h3 className="text-xl font-semibold mb-4">
+                    {feature.title}
+                  </h3>
                   <p className="text-gray-300">{feature.description}</p>
                 </Card>
               </motion.div>
@@ -213,9 +273,12 @@ export default function CityToCity() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold mb-6">Popular City-to-City Routes</h2>
+            <h2 className="text-4xl font-bold mb-6">
+              Popular City-to-City Routes
+            </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Discover our most frequently traveled routes with fixed competitive rates.
+              Discover our most frequently traveled routes with fixed
+              competitive rates.
             </p>
           </motion.div>
 
@@ -227,7 +290,9 @@ export default function CityToCity() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                onClick={() => setSelectedRoute(selectedRoute === index ? null : index)}
+                onClick={() =>
+                  setSelectedRoute(selectedRoute === index ? null : index)
+                }
                 className="cursor-pointer group"
               >
                 <Card className="relative overflow-hidden h-[300px] border-gray-800 hover:border-corporate-gold transition-all duration-500">
@@ -259,7 +324,9 @@ export default function CityToCity() {
                     <div className="flex items-end justify-between">
                       <div>
                         <p className="text-gray-400">Starting from</p>
-                        <p className="text-3xl font-bold text-corporate-gold">${route.price}</p>
+                        <p className="text-3xl font-bold text-corporate-gold">
+                          ${route.price}
+                        </p>
                       </div>
                       <Button
                         variant="outline"
@@ -291,26 +358,31 @@ export default function CityToCity() {
                 Why Choose Our City-to-City Service?
               </h2>
               <p className="text-xl text-gray-300 mb-8">
-                Experience a new standard in intercity travel with our premium chauffeur service.
+                Experience a new standard in intercity travel with our premium
+                chauffeur service.
               </p>
               <div className="space-y-6">
                 {[
                   {
                     title: "Door-to-Door Service",
-                    description: "No need to worry about getting to and from stations or airports"
+                    description:
+                      "No need to worry about getting to and from stations or airports",
                   },
                   {
                     title: "Flexible Scheduling",
-                    description: "Choose your pickup time and travel at your own pace"
+                    description:
+                      "Choose your pickup time and travel at your own pace",
                   },
                   {
                     title: "Professional Chauffeurs",
-                    description: "Experienced drivers with perfect safety records"
+                    description:
+                      "Experienced drivers with perfect safety records",
                   },
                   {
                     title: "Premium Vehicles",
-                    description: "Late-model luxury cars with premium amenities"
-                  }
+                    description:
+                      "Late-model luxury cars with premium amenities",
+                  },
                 ].map((item, index) => (
                   <motion.div
                     key={index}
@@ -324,7 +396,9 @@ export default function CityToCity() {
                       <ThumbsUp className="w-6 h-6 text-corporate-gold" />
                     </div>
                     <div>
-                      <h3 className="text-lg font-semibold mb-2">{item.title}</h3>
+                      <h3 className="text-lg font-semibold mb-2">
+                        {item.title}
+                      </h3>
                       <p className="text-gray-400">{item.description}</p>
                     </div>
                   </motion.div>
@@ -362,7 +436,7 @@ export default function CityToCity() {
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-black/60" />
           <img
-            src="https://images.unsplash.com/photo-1551650975-87deedd944c3?q=80&w=2940&auto=format&fit=crop"
+            src="/images/ada607e9-1a77-4abe-b383-edba1d490fc2.png"
             alt="Background"
             className="w-full h-full object-cover"
           />
@@ -377,7 +451,8 @@ export default function CityToCity() {
             >
               <h2 className="text-4xl font-bold mb-6">Download Our App</h2>
               <p className="text-xl text-gray-300 mb-12">
-                Book your city-to-city rides instantly, track your chauffeur in real-time, and manage your bookings with ease.
+                Book your city-to-city rides instantly, track your chauffeur in
+                real-time, and manage your bookings with ease.
               </p>
               <div className="flex flex-col sm:flex-row gap-6 justify-center">
                 <Button
@@ -412,7 +487,9 @@ export default function CityToCity() {
             transition={{ duration: 0.6 }}
             className="text-center mb-12"
           >
-            <h2 className="text-4xl font-bold mb-6">Frequently Asked Questions</h2>
+            <h2 className="text-4xl font-bold mb-6">
+              Frequently Asked Questions
+            </h2>
             <p className="text-xl text-gray-300">
               Find answers to common questions about our city-to-city service.
             </p>
@@ -422,24 +499,29 @@ export default function CityToCity() {
             {[
               {
                 question: "How does the city-to-city service work?",
-                answer: "Our city-to-city service provides door-to-door transportation between major cities. Simply book your ride, and a professional chauffeur will pick you up at your specified location and drive you to your destination in another city."
+                answer:
+                  "Our city-to-city service provides door-to-door transportation between major cities. Simply book your ride, and a professional chauffeur will pick you up at your specified location and drive you to your destination in another city.",
               },
               {
                 question: "Are the rates fixed?",
-                answer: "Yes, our intercity rates are fixed and all-inclusive. The price you see during booking is the final price you'll pay, with no hidden fees or surge pricing."
+                answer:
+                  "Yes, our intercity rates are fixed and all-inclusive. The price you see during booking is the final price you'll pay, with no hidden fees or surge pricing.",
               },
               {
                 question: "Can I make stops along the way?",
-                answer: "Yes, you can request stops along your journey. Additional stops may affect the total fare and should be arranged in advance when possible."
+                answer:
+                  "Yes, you can request stops along your journey. Additional stops may affect the total fare and should be arranged in advance when possible.",
               },
               {
                 question: "What happens if my plans change?",
-                answer: "We understand plans can change. You can modify or cancel your booking up to 24 hours before the scheduled pickup time without any cancellation fees."
+                answer:
+                  "We understand plans can change. You can modify or cancel your booking up to 24 hours before the scheduled pickup time without any cancellation fees.",
               },
               {
                 question: "What types of vehicles are available?",
-                answer: "We offer a range of premium vehicles including luxury sedans, SUVs, and executive vans. All vehicles are late-model and maintained to the highest standards of comfort and safety."
-              }
+                answer:
+                  "We offer a range of premium vehicles including luxury sedans, SUVs, and executive vans. All vehicles are late-model and maintained to the highest standards of comfort and safety.",
+              },
             ].map((faq, index) => (
               <motion.div
                 key={index}
@@ -448,7 +530,10 @@ export default function CityToCity() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: index * 0.1 }}
               >
-                <AccordionItem value={`item-${index}`} className="border-gray-800">
+                <AccordionItem
+                  value={`item-${index}`}
+                  className="border-gray-800"
+                >
                   <AccordionTrigger className="text-left hover:text-corporate-gold">
                     {faq.question}
                   </AccordionTrigger>
@@ -476,7 +561,8 @@ export default function CityToCity() {
               Ready to Travel in Style?
             </h2>
             <p className="text-xl text-gray-300 mb-12">
-              Book your intercity journey today and experience the comfort of premium chauffeur service.
+              Book your intercity journey today and experience the comfort of
+              premium chauffeur service.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <Button

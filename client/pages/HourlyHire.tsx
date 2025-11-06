@@ -229,21 +229,21 @@ export default function HourlyHire() {
                 title: "Flexible Scheduling",
                 description:
                   "Book for as many hours as needed, with easy extensions and 24/7 availability",
-                image: "/images/features/car.jpeg",
+                image: "/images/FlexibleScheduling.jpeg",
               },
               {
                 icon: Shield,
                 title: "Elite Chauffeurs",
                 description:
                   "Professionally trained, background-checked, and certified for your peace of mind",
-                image: "/images/features/car.jpeg",
+                image: "/images/EliteChauffeurs.jpeg",
               },
               {
                 icon: Car,
                 title: "Luxury Fleet",
                 description:
                   "Choose from our curated selection of premium vehicles for any occasion",
-                image: "/images/features/car.jpeg",
+                image: "/images/LuxuryFleet.jpg",
               },
             ].map((feature, index) => (
               <motion.div
@@ -462,22 +462,22 @@ export default function HourlyHire() {
             >
               <div className="grid grid-cols-2 gap-4">
                 <img
-                  src="/images/features/car2.jpeg"
+                  src="https://plus.unsplash.com/premium_photo-1661777666230-7d04a80d6724?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=687"
                   alt="Business meeting transition"
                   className="rounded-lg shadow-xl w-full h-64 object-cover"
                 />
                 <img
-                  src="/images/features/car2.jpeg"
+                  src="https://images.unsplash.com/photo-1748514338092-943ecca0cdc9?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=687"
                   alt="Luxury shopping experience"
                   className="rounded-lg shadow-xl w-full h-64 object-cover mt-12"
                 />
                 <img
-                  src="/images/features/car2.jpeg"
+                  src="https://images.unsplash.com/photo-1570349723855-7d9ddcbab1b1?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170"
                   alt="Tourist destinations"
                   className="rounded-lg shadow-xl w-full h-64 object-cover"
                 />
                 <img
-                  src="/images/features/car2.jpeg"
+                  src="https://images.unsplash.com/photo-1688054005456-466170816196?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170"
                   alt="Special event transportation"
                   className="rounded-lg shadow-xl w-full h-64 object-cover mt-12"
                 />
