@@ -39,7 +39,7 @@ export default function HeroSection() {
             <Button
               asChild
               size="lg"
-              className="btn-gradient btn-gradient-animate"
+              className="btn-gradient btn-gradient-animate "
             >
               <a href="#booking">Book a Ride</a>
             </Button>

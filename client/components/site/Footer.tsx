@@ -5,23 +5,23 @@ export default function Footer() {
   return (
     <footer className="border-t border-white/10 bg-black">
       <div className="container py-12 grid grid-cols-1 md:grid-cols-4 gap-8">
+        {/* Brand Info */}
         <div>
-          <div className="flex items-center gap-2">
+          <Link to="/" className="flex items-center gap-2">
             <img
               src="./logo.png"
               alt="Corporate Wheels Logo"
-              className="h-10 w-auto object-contain"
+              className="h-14 w-auto object-contain"
             />
             <span className="font-heading text-white text-lg">
               Corporate Wheels
             </span>
-          </div>
+          </Link>
           <p className="mt-4 text-sm text-muted-foreground max-w-sm">
             Premium, carbon-neutral rides with professional chauffeurs in over
             300 cities worldwide.
           </p>
           <div>
-            {" "}
             <div className="mt-6 flex items-center gap-4">
               <div className="w-16">
                 <img
@@ -51,31 +51,39 @@ export default function Footer() {
           </div>
         </div>
 
+        {/* Services */}
         <div>
-          <h4 className="text-white font-medium mb-3">Company</h4>
+          <h4 className="text-white font-medium mb-3">Our Services</h4>
           <ul className="space-y-2 text-sm text-muted-foreground">
             <li>
-              <Link to="/about" className="hover:text-white">
-                About
+              <Link to="/city-to-city" className="hover:text-white">
+                City-to-City rides
               </Link>
             </li>
             <li>
-              <Link to="/business" className="hover:text-white">
-                Business
+              <Link to="/chauffeur-hailing" className="hover:text-white">
+                Chauffeur hailing
               </Link>
             </li>
             <li>
-              <Link to="/chauffeurs" className="hover:text-white">
-                Chauffeurs
+              <Link to="/airport-transfer" className="hover:text-white">
+                Airport transfer
               </Link>
             </li>
             <li>
-              <Link to="/blog" className="hover:text-white">
-                Blog
+              <Link to="/hourly-hire" className="hover:text-white">
+                Hourly hire
+              </Link>
+            </li>
+            <li>
+              <Link to="/limousine-service" className="hover:text-white">
+                Limousine service
               </Link>
             </li>
           </ul>
         </div>
+
+        {/* Legal */}
         <div>
           <h4 className="text-white font-medium mb-3">Legal</h4>
           <ul className="space-y-2 text-sm text-muted-foreground">
@@ -102,7 +110,31 @@ export default function Footer() {
             </li>
           </ul>
         </div>
+
+        {/* Newsletter + Follow */}
         <div>
+          <h4 className="text-white font-medium mb-3">Newsletter</h4>
+          <p className="text-sm text-muted-foreground mb-3">
+            Subscribe to receive updates, offers, and travel inspiration.
+          </p>
+          <form
+            onSubmit={(e) => e.preventDefault()}
+            className="flex items-center gap-2 mb-6"
+          >
+            <input
+              type="email"
+              placeholder="Enter your email"
+              className="flex-1 bg-white/5 border border-white/10 text-white text-sm px-3 py-2 rounded-md placeholder:text-white/50 focus:outline-none focus:border-white/20"
+              required
+            />
+            <button
+              type="submit"
+              className="whitespace-nowrap btn-gradient hover:bg-white/20 text-black text-sm font-medium px-5 py-2 rounded-md transition-all duration-200"
+            >
+              Subscribe
+            </button>
+          </form>
+
           <h4 className="text-white font-medium mb-3">Follow</h4>
           <div className="flex items-center gap-3 text-muted-foreground">
             {[Facebook, Twitter, Instagram, Linkedin].map((Icon, i) => (
@@ -117,6 +149,8 @@ export default function Footer() {
           </div>
         </div>
       </div>
+
+      {/* Footer Bottom */}
       <div className="border-t border-white/10">
         <div className="container py-6 text-xs text-muted-foreground flex flex-col md:flex-row items-center justify-between">
           <p>

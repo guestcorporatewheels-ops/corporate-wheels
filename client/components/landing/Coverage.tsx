@@ -33,20 +33,7 @@ export default function Coverage() {
           <p className="mt-2 text-muted-foreground">
             Premium rides across 300+ cities — local knowledge, global reach.
           </p>
-          <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-6">
-            <div className="text-center">
-              <div className="text-2xl font-bold text-white">300+</div>
-              <div className="text-sm text-muted-foreground">Cities served</div>
-            </div>
-            <div className="text-center">
-              <div className="text-2xl font-bold text-white">24/7</div>
-              <div className="text-sm text-muted-foreground">Support</div>
-            </div>
-            <div className="text-center">
-              <div className="text-2xl font-bold text-white">100k+</div>
-              <div className="text-sm text-muted-foreground">Rides booked</div>
-            </div>
-          </div>
+         
         </div>
 
         <div className="flex justify-center">
@@ -79,7 +66,7 @@ export default function Coverage() {
                   <button
                     type="button"
                     onClick={() => setOpen(true)}
-                    className="inline-flex items-center btn-gradient btn-gradient-animate text-black px-6 py-3 rounded-full font-semibold shadow"
+                    className="inline-flex items-center btn-gradient btn-gradient-animate text-black px-6 py-3 rounded-md font-semibold shadow"
                   >
                     Partner with us
                   </button>

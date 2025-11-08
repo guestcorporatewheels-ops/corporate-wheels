@@ -151,16 +151,7 @@ export default function Navbar() {
           >
             Chauffeurs
           </NavLink>
-          <NavLink
-            to="/booking"
-            className={({ isActive }) =>
-              isActive
-                ? "text-corporate-gold"
-                : "hover:text-corporate-gold transition-colors"
-            }
-          >
-            Booking
-          </NavLink>
+       
           <NavLink
             to="/about"
             className={({ isActive }) =>

@@ -117,17 +117,132 @@ const fadeIn = {
 };
 
 export default function CityToCityRoutes() {
+  // Animation variants for route lines
+  const pathVariants:any = {
+    hidden: { pathLength: 0 },
+    visible: {
+      pathLength: 1,
+      transition: { duration: 2, ease: "easeInOut" }
+    }
+  };
+
+  // Animation variants for dots
+  const dotVariants = {
+    hidden: { scale: 0, opacity: 0 },
+    visible: {
+      scale: 1,
+      opacity: 1,
+      transition: { duration: 0.5 }
+    }
+  };
+
   return (
     <section className="py-20 relative overflow-hidden">
-      <div className="absolute inset-0 bg-black" />
+      {/* Themed Background */}
+      <div className="absolute inset-0">
+        <div className="absolute inset-0 bg-gradient-to-br from-background via-background/95 to-background/90" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,theme(colors.corporate-gold/10),transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,theme(colors.corporate-gold/5),transparent_40%)]" />
+      </div>
 
-      <div className="container relative">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="font-heading text-4xl md:text-5xl text-white mb-4"
+      {/* Animated Route Network */}
+      <motion.svg
+        className="absolute inset-0 w-full h-full pointer-events-none opacity-10"
+        viewBox="0 0 100 100"
+      >
+        <defs>
+          <linearGradient id="routeLineGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#F4C430" stopOpacity="0.6" />
+            <stop offset="100%" stopColor="#4F46E5" stopOpacity="0.3" />
+          </linearGradient>
+        </defs>
+        
+        {/* Animated Route Lines */}
+        <motion.path
+          d="M10,50 Q30,20 50,50 T90,50"
+          stroke="url(#routeLineGrad)"
+          strokeWidth="0.5"
+          fill="none"
+          variants={pathVariants}
+          initial="hidden"
+          animate="visible"
+        />
+        <motion.path
+          d="M10,70 Q30,90 50,70 T90,70"
+          stroke="url(#routeLineGrad)"
+          strokeWidth="0.5"
+          fill="none"
+          variants={pathVariants}
+          initial="hidden"
+          animate="visible"
+          transition={{ delay: 0.5 }}
+        />
+
+        {/* City Markers */}
+        {[
+          [10, 50], [90, 50],
+          [10, 70], [90, 70]
+        ].map(([cx, cy], i) => (
+          <motion.circle
+            key={i}
+            cx={cx}
+            cy={cy}
+            r="1.5"
+            fill="#F4C430"
+            variants={dotVariants}
+            initial="hidden"
+            animate="visible"
+            transition={{ delay: i * 0.3 }}
+          />
+        ))}
+      </motion.svg>
+
+      {/* Floating Icons */}
+      <div className="absolute inset-0 pointer-events-none">
+        <motion.div
+          className="absolute top-1/4 left-20"
+          animate={{
+            y: [0, -20, 0],
+            scale: [1, 1.1, 1],
+          }}
+          transition={{
+            duration: 4,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        >
+          <svg className="w-8 h-8 text-corporate-gold opacity-20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" />
+          </svg>
+        </motion.div>
+        <motion.div
+          className="absolute bottom-1/3 right-24"
+          animate={{
+            y: [0, 20, 0],
+            scale: [1, 1.2, 1],
+          }}
+          transition={{
+            duration: 5,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 1
+          }}
+        >
+          <svg className="w-12 h-12 text-corporate-gold opacity-10" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" />
+          </svg>
+        </motion.div>
+      </div>
+
+      <div className="container relative z-10">
+        <motion.div 
+          className="text-center max-w-3xl mx-auto mb-16"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          <motion.h2 
+            className="font-heading text-4xl md:text-5xl mb-4"
           >
             City-to-City Routes
           </motion.h2>
@@ -141,7 +256,7 @@ export default function CityToCityRoutes() {
             Premium intercity travel with fixed rates, WiFi-equipped vehicles,
             and professional chauffeurs.
           </motion.p>
-        </div>
+        </motion.div>
 
         {/* Top Cities Section */}
         <div className="mb-20">
