@@ -21,8 +21,13 @@ import {
   Shield,
   Star,
 } from "lucide-react";
+import { Link } from "react-router-dom";
+import SelectInput from "@/components/ui/SelectInput";
+import { useState } from "react";
 
 export default function HourlyHire() {
+  const [quickHours, setQuickHours] = useState<string>("2");
+  const [quickCar, setQuickCar] = useState<string>("Luxury Sedan");
   return (
     <div className="min-h-screen bg-gradient-to-b from-black via-gray-900 to-black text-white">
       {/* Hero Section with refined two-column layout */}
@@ -59,21 +64,16 @@ export default function HourlyHire() {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
-                <a
-                  href="https://booking.corporate-wheels.com/hourly"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <Button className="bg-corporate-gold text-black px-6 py-4">
-                    Book Now
-                  </Button>
-                </a>
+                <Button className="bg-corporate-gold text-black px-6 py-4">
+                  <Link to="/booking">Book Now</Link>
+                </Button>
+
                 <a href="tel:+1-800-CHAUFFEUR">
                   <Button
                     variant="outline"
                     className="border-corporate-gold text-corporate-gold px-6 py-4"
                   >
-                    Call Concierge
+                    <Link to="/help">Contact Concierge</Link>
                   </Button>
                 </a>
               </div>
@@ -108,26 +108,42 @@ export default function HourlyHire() {
                 </p>
 
                 <div className="grid grid-cols-1 gap-3">
-                  <select className="bg-gray-900/50 border border-gray-700 rounded-lg p-3 text-white">
-                    <option>2 Hours</option>
-                    <option>4 Hours</option>
-                    <option>6 Hours</option>
-                    <option>8 Hours</option>
-                  </select>
+                  <SelectInput
+                    options={[
+                      { value: "2", label: "2 Hours" },
+                      { value: "4", label: "4 Hours" },
+                      { value: "6", label: "6 Hours" },
+                      { value: "8", label: "8 Hours" },
+                    ]}
+                    value={quickHours}
+                    onChange={(v) => setQuickHours(v)}
+                    ariaLabel="Quick book hours"
+                    name="quick-hours"
+                    className="bg-gray-900/50 border border-gray-700 rounded-lg p-3 text-white"
+                  />
 
-                  <select className="bg-gray-900/50 border border-gray-700 rounded-lg p-3 text-white">
-                    <option>Luxury Sedan</option>
-                    <option>Executive SUV</option>
-                    <option>Van</option>
-                  </select>
+                  <SelectInput
+                    options={[
+                      { value: "Luxury Sedan", label: "Luxury Sedan" },
+                      { value: "Executive SUV", label: "Executive SUV" },
+                      { value: "Van", label: "Van" },
+                    ]}
+                    value={quickCar}
+                    onChange={(v) => setQuickCar(v)}
+                    ariaLabel="Quick book car"
+                    name="quick-car"
+                    className="bg-gray-900/50 border border-gray-700 rounded-lg p-3 text-white"
+                  />
 
                   {/* Responsive fix starts here */}
                   <div className="flex flex-col sm:flex-row gap-2">
                     <input
+                      title="date"
                       type="date"
                       className="bg-gray-900/50 border border-gray-700 rounded-lg p-3 text-white w-full"
                     />
                     <input
+                      title="time"
                       type="time"
                       className="bg-gray-900/50 border border-gray-700 rounded-lg p-3 text-white w-full"
                     />
@@ -868,7 +884,7 @@ export default function HourlyHire() {
                   size="lg"
                   className="bg-corporate-gold hover:bg-corporate-gold/90 text-black font-semibold"
                 >
-                  Book Your Chauffeur
+                  <Link to="/booking">Book Your Chauffeur </Link>
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
                 <Button
@@ -877,7 +893,7 @@ export default function HourlyHire() {
                   className="border-corporate-gold text-corporate-gold hover:bg-corporate-gold/10"
                 >
                   <Phone className="w-5 h-5 mr-2" />
-                  Contact Concierge
+                  <Link to="/help">Contact Concierge</Link>
                 </Button>
               </div>
             </motion.div>

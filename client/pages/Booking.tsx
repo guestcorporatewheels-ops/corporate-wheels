@@ -1,62 +1,8 @@
 import { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
-import {
-  Calendar,
-  Clock,
-  MapPin,
-  Users,
-  ChevronLeft,
-  ChevronRight,
-} from "lucide-react";
-import { DayPicker } from "react-day-picker";
-import { format } from "date-fns";
-import "react-day-picker/dist/style.css";
-
-// Custom CSS for the date picker theme
-const datePickerStyles = `
-  .rdp {
-    --rdp-cell-size: 32px;
-    --rdp-accent-color: #F4C430;
-    --rdp-background-color: rgba(255, 255, 255, 0.05);
-    --rdp-accent-color-dark: #E6A700;
-    --rdp-background-color-dark: rgba(0, 0, 0, 0.8);
-    --rdp-outline: 2px solid var(--rdp-accent-color);
-    --rdp-outline-selected: 2px solid rgba(0, 0, 0, 0.5);
-    margin: 0;
-  }
-  .rdp-button:hover:not([disabled]):not(.rdp-day_selected) {
-    background-color: rgba(255, 255, 255, 0.05);
-  }
-  .rdp-day_selected, 
-  .rdp-day_today {
-    background-color: var(--rdp-accent-color) !important;
-    color: black !important;
-    font-weight: bold;
-  }
-  .rdp-button:focus-visible:not([disabled]) {
-    background-color: var(--rdp-accent-color-dark);
-    color: black;
-  }
-  .rdp-nav_button {
-    color: var(--rdp-accent-color) !important;
-    opacity: 0.8;
-  }
-  .rdp-nav_button:hover {
-    opacity: 1;
-    background-color: rgba(244, 196, 48, 0.1) !important;
-  }
-  .rdp-today {
-    color: #E6A700 !important;
-  }
-  .rdp-chevron {
-    fill: #E6A700 !important;
-  }
-  .rdp-day_today:not(.rdp-day_selected) {
-    border: 1px solid var(--rdp-accent-color) !important;
-    background-color: transparent !important;
-    color: var(--rdp-accent-color) !important;
-  }
-`;
+import { MapPin, Users } from "lucide-react";
+import DateInput from "@/components/ui/DateInput";
+import TimeInput from "@/components/ui/TimeInput";
 
 const VEHICLES = [
   { id: "executive", name: "Executive Sedan", emoji: "🚗", seats: 3 },
@@ -84,24 +30,12 @@ export default function Booking() {
     notes: "",
   });
   const [selectedVehicle, setSelectedVehicle] = useState<string>("");
-
-  // date/time pickers
-  const [selectedDay, setSelectedDay] = useState<Date | undefined>(undefined);
-  const [showDatePicker, setShowDatePicker] = useState(false);
-  const [showTimePicker, setShowTimePicker] = useState(false);
+  // passenger picker only (date/time handled by shared components)
   const [showPassengerPicker, setShowPassengerPicker] = useState(false);
-  const dateRef = useRef<HTMLDivElement | null>(null);
-  const timeRef = useRef<HTMLDivElement | null>(null);
   const passengerRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     const onDocClick = (e: MouseEvent) => {
-      if (dateRef.current && !dateRef.current.contains(e.target as Node)) {
-        setShowDatePicker(false);
-      }
-      if (timeRef.current && !timeRef.current.contains(e.target as Node)) {
-        setShowTimePicker(false);
-      }
       if (
         passengerRef.current &&
         !passengerRef.current.contains(e.target as Node)
@@ -115,19 +49,7 @@ export default function Booking() {
 
   const handle = (k: string, v: string) => setForm((s) => ({ ...s, [k]: v }));
 
-  const TIME_SLOTS = Array.from({ length: 48 }).map((_, i) => {
-    const h = Math.floor(i / 2);
-    const m = i % 2 === 0 ? "00" : "30";
-    return `${String(h).padStart(2, "0")}:${m}`;
-  });
-
-  useEffect(() => {
-    // Inject the date picker styles
-    const style = document.createElement("style");
-    style.textContent = datePickerStyles;
-    document.head.appendChild(style);
-    return () => style.remove();
-  }, []);
+  // Time slots are provided by TimeInput component
 
   return (
     <main className="min-h-screen">
@@ -245,159 +167,31 @@ export default function Booking() {
                   </div>
                 </label>
 
-                <div className="flex flex-col" ref={dateRef}>
+                <div className="flex flex-col">
                   <span className="text-sm text-muted-foreground">Date</span>
                   <div className="relative mt-1">
-                    <input
-                      readOnly
-                      value={
-                        selectedDay
-                          ? selectedDay.toLocaleDateString("en-GB")
-                          : ""
-                      }
-                      onClick={() => setShowDatePicker((s) => !s)}
-                      placeholder="Select date"
-                      className="w-full rounded-lg bg-black/40 px-3 py-2 border border-white/10 focus:outline-none focus:ring-2 focus:ring-corporate-gold cursor-pointer placeholder:text-white/40"
+                    <DateInput
+                      value={form.date}
+                      onChange={(d) => handle("date", d)}
+                      ariaLabel="Booking date"
+                      name="booking-date"
                     />
-                    <Calendar className="absolute right-3 top-1/2 -translate-y-1/2 text-corporate-gold" />
-
-                    {showDatePicker && (
-                      <motion.div
-                        initial={{ opacity: 0, y: -4 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        className="absolute z-50 mt-2 bg-black/95 backdrop-blur-sm border border-white/10 rounded-lg shadow-xl p-3"
-                      >
-                        <div className="flex justify-between items-center mb-2">
-                          <span className="text-sm font-medium">
-                            October 2025
-                          </span>
-                          <div className="flex gap-1">
-                            <button
-                              onClick={() => setShowDatePicker(false)}
-                              className="p-1 rounded hover:bg-white/5 text-corporate-gold hover:text-corporate-gold/80 transition-colors"
-                            >
-                              <Calendar className="h-4 w-4" />
-                            </button>
-                          </div>
-                        </div>
-                        <div className="flex items-center justify-between px-2 mb-2">
-                          <button className="p-1 text-corporate-gold hover:text-corporate-gold/80 transition-colors">
-                            <ChevronLeft className="h-4 w-4" />
-                          </button>
-                          <button className="p-1 text-corporate-gold hover:text-corporate-gold/80 transition-colors">
-                            <ChevronRight className="h-4 w-4" />
-                          </button>
-                        </div>
-                        <div className="grid grid-cols-7 gap-1 mb-2">
-                          {["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"].map(
-                            (day) => (
-                              <div
-                                key={day}
-                                className="text-xs text-center text-muted-foreground p-1"
-                              >
-                                {day}
-                              </div>
-                            ),
-                          )}
-                        </div>
-                        <DayPicker
-                          mode="single"
-                          selected={selectedDay}
-                          onSelect={(d) => {
-                            setSelectedDay(d);
-                            handle(
-                              "date",
-                              d ? d.toISOString().slice(0, 10) : "",
-                            );
-                            setShowDatePicker(false);
-                          }}
-                          modifiers={{
-                            selected: selectedDay,
-                          }}
-                          modifiersStyles={{
-                            selected: {
-                              backgroundColor: "#F4C430",
-                              color: "black",
-                              fontWeight: "bold",
-                            },
-                          }}
-                          styles={{
-                            caption: { display: "none" },
-                            head: { display: "none" },
-                            day: {
-                              width: "32px",
-                              height: "32px",
-                              fontSize: "14px",
-                              margin: "0",
-                            },
-                            button: {
-                              border: "none",
-                              backgroundColor: "transparent",
-                              color: "white",
-                              borderRadius: "4px",
-                            },
-                            // button_selected: {
-                            //   backgroundColor: '#F4C430',
-                            //   color: 'black',
-                            // }
-                          }}
-                        />
-                      </motion.div>
-                    )}
                   </div>
                 </div>
 
-                <div className="flex flex-col" ref={timeRef}>
+                <div className="flex flex-col">
                   <span className="text-sm text-muted-foreground">Time</span>
                   <div className="relative mt-1">
-                    <input
-                      readOnly
-                      value={form.time || ""}
-                      onClick={() => setShowTimePicker((s) => !s)}
-                      placeholder="Select time"
-                      className="w-full rounded-lg bg-black/40 px-3 py-2 border border-white/10 focus:outline-none focus:ring-2 focus:ring-corporate-gold cursor-pointer placeholder:text-white/40"
+                    <TimeInput
+                      value={form.time}
+                      onChange={(t) => handle("time", t)}
+                      ariaLabel="Booking time"
+                      name="booking-time"
                     />
-                    <Clock className="absolute right-3 top-1/2 -translate-y-1/2 text-corporate-gold" />
-
-                    {showTimePicker && (
-                      <motion.div
-                        initial={{ opacity: 0, y: -4 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        className="absolute right-0 z-50 mt-2 w-64 bg-black/95 backdrop-blur-sm rounded-lg shadow-xl border border-white/10"
-                      >
-                        <div className="p-3 border-b border-white/10">
-                          <div className="text-lg font-medium text-center">
-                            {form.time || "20:00"}
-                          </div>
-                          <div className="text-xs text-center text-muted-foreground mt-1">
-                            Select pickup time
-                          </div>
-                        </div>
-                        <div className="grid grid-cols-3 gap-1 p-2 max-h-[240px] overflow-auto">
-                          {TIME_SLOTS.map((ts) => (
-                            <button
-                              key={ts}
-                              type="button"
-                              onClick={() => {
-                                handle("time", ts);
-                                setShowTimePicker(false);
-                              }}
-                              className={`text-sm py-2 px-3 rounded-md transition-colors ${
-                                form.time === ts
-                                  ? "bg-corporate-gold text-black font-medium"
-                                  : "hover:bg-white/5"
-                              }`}
-                            >
-                              {ts}
-                            </button>
-                          ))}
-                        </div>
-                      </motion.div>
-                    )}
                   </div>
                 </div>
 
-                <div className="flex flex-col" ref={timeRef}>
+                <div className="flex flex-col" ref={passengerRef}>
                   <span className="text-sm text-muted-foreground">
                     Passengers
                   </span>
@@ -406,6 +200,7 @@ export default function Booking() {
                       readOnly
                       value={form.passengers}
                       onClick={() => setShowPassengerPicker((s) => !s)}
+                      aria-label="Passengers"
                       className="w-full rounded-lg bg-black/40 px-3 py-2 border border-white/10 focus:outline-none focus:ring-2 focus:ring-corporate-gold cursor-pointer"
                     />
                     <Users className="absolute right-3 top-1/2 -translate-y-1/2 text-corporate-gold" />
@@ -484,8 +279,6 @@ export default function Booking() {
                   title="Pickup area map"
                   src="https://www.openstreetmap.org/export/embed.html?bbox=-0.15%2C51.49%2C-0.10%2C51.52&layer=mapnik&marker=51.5074%2C-0.1278"
                   className="w-full h-full"
-                  loading="lazy"
-                  aria-hidden={false}
                 />
               </div>
               <div className="p-3 text-sm text-muted-foreground">

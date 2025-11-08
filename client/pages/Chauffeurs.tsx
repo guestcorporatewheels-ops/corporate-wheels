@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { useTypingAnimation } from "@/hooks/use-typing-animation";
 import { cn } from "@/lib/utils";
+import ContactModal from "@/components/ui/ContactModal";
 
 function AnimatedGradientBg({ className = "" }: { className?: string }) {
   return (
@@ -84,10 +85,14 @@ function Hero() {
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-6">
               <span className="w-2 h-2 rounded-full bg-[#E6A700] animate-pulse" />
-              <span className="text-sm text-white/80">Now Hiring in Major Cities</span>
+              <span className="text-sm text-white/80">
+                Now Hiring in Major Cities
+              </span>
             </div>
             <h1 className="text-4xl md:text-6xl xl:text-7xl font-heading text-white leading-tight">
-              <span className="text-gradient-gold inline-block">{displayText}</span>
+              <span className="text-gradient-gold inline-block">
+                {displayText}
+              </span>
               {!isComplete && (
                 <motion.span
                   animate={{ opacity: [1, 0, 1] }}
@@ -99,9 +104,9 @@ function Hero() {
               )}
             </h1>
             <p className="mt-6 text-lg text-muted-foreground max-w-2xl">
-              Join our elite network of professional chauffeurs. Enjoy premium clients, 
-              reliable earnings, and flexible scheduling. Take control of your career 
-              with our industry-leading platform.
+              Join our elite network of professional chauffeurs. Enjoy premium
+              clients, reliable earnings, and flexible scheduling. Take control
+              of your career with our industry-leading platform.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row gap-4">
               <Button size="lg" variant="glow" className="sm:min-w-[200px]">
@@ -113,19 +118,20 @@ function Hero() {
             </div>
             <div className="mt-8 flex items-center gap-6">
               <div className="flex -space-x-3">
-                {[1,2,3].map((i) => (
-                  <div 
-                    key={i} 
+                {[1, 2, 3].map((i) => (
+                  <div
+                    key={i}
                     className="w-12 h-12 rounded-full border-2 border-background bg-white/10"
                     style={{
                       backgroundImage: `url(https://images.unsplash.com/photo-${1560000000000 + i}?w=100&h=100&fit=crop)`,
-                      backgroundSize: 'cover'
+                      backgroundSize: "cover",
                     }}
                   />
                 ))}
               </div>
               <p className="text-sm text-white/80">
-                Join <span className="text-[#E6A700]">500+</span> professional chauffeurs
+                Join <span className="text-[#E6A700]">500+</span> professional
+                chauffeurs
               </p>
             </div>
           </motion.div>
@@ -138,8 +144,8 @@ function Hero() {
           >
             <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent z-10" />
             <div className="relative">
-              <img 
-                src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=800&auto=format&fit=crop&q=80" 
+              <img
+                src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=800&auto=format&fit=crop&q=80"
                 alt="Luxury Chauffeur Service"
                 className="rounded-lg border border-white/10 shadow-2xl object-cover h-[500px]"
               />
@@ -147,15 +153,15 @@ function Hero() {
                 <div className="flex items-center gap-2">
                   <div className="flex -space-x-2">
                     <div className="w-8 h-8 rounded-full border-2 border-background bg-[#E6A700]">
-                      <img 
-                        src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&fit=crop&q=80" 
+                      <img
+                        src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&fit=crop&q=80"
                         alt="Professional Chauffeur"
                         className="w-full h-full rounded-full object-cover"
                       />
                     </div>
                     <div className="w-8 h-8 rounded-full border-2 border-background bg-[#E6A700]">
-                      <img 
-                        src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&fit=crop&q=80" 
+                      <img
+                        src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&fit=crop&q=80"
                         alt="Professional Chauffeur"
                         className="w-full h-full rounded-full object-cover"
                       />
@@ -166,10 +172,22 @@ function Hero() {
               </div>
               <div className="absolute bottom-4 left-4 bg-black/30 backdrop-blur-sm px-4 py-2 rounded-full border border-white/10">
                 <div className="flex items-center gap-2">
-                  <svg className="w-5 h-5 text-[#E6A700]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                  <svg
+                    className="w-5 h-5 text-[#E6A700]"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M5 13l4 4L19 7"
+                    />
                   </svg>
-                  <span className="text-white text-sm">Professional Vehicles</span>
+                  <span className="text-white text-sm">
+                    Professional Vehicles
+                  </span>
                 </div>
               </div>
             </div>
@@ -179,7 +197,9 @@ function Hero() {
                   <span className="text-[#E6A700] text-xl">$</span>
                 </div>
                 <div>
-                  <p className="text-white text-sm font-medium">Average Monthly</p>
+                  <p className="text-white text-sm font-medium">
+                    Average Monthly
+                  </p>
                   <p className="text-[#E6A700] text-lg font-bold">$8,500+</p>
                 </div>
               </div>
@@ -420,6 +440,7 @@ function Benefits() {
 }
 
 function RequirementsOnboarding() {
+  const [open, setOpen] = useState(false);
   const requirements = [
     {
       icon: "🚗",
@@ -429,8 +450,8 @@ function RequirementsOnboarding() {
         "Premium vehicles less than 5 years old",
         "Regular maintenance & cleanliness",
         "Full insurance coverage",
-        "Safety inspection clearance"
-      ]
+        "Safety inspection clearance",
+      ],
     },
     {
       icon: "📄",
@@ -440,8 +461,8 @@ function RequirementsOnboarding() {
         "Professional driver's license",
         "Clean driving record",
         "Background check clearance",
-        "Business registration"
-      ]
+        "Business registration",
+      ],
     },
     {
       icon: "💼",
@@ -451,9 +472,9 @@ function RequirementsOnboarding() {
         "Professional appearance",
         "Excellent communication skills",
         "Customer service orientation",
-        "Flexible availability"
-      ]
-    }
+        "Flexible availability",
+      ],
+    },
   ];
 
   const onboardingSteps = [
@@ -461,26 +482,26 @@ function RequirementsOnboarding() {
       number: "01",
       title: "Initial Application",
       desc: "Complete our online application form with your basic information and qualifications.",
-      icon: "✍️"
+      icon: "✍️",
     },
     {
       number: "02",
       title: "Document Verification",
       desc: "Submit required documents and complete background verification process.",
-      icon: "📋"
+      icon: "📋",
     },
     {
       number: "03",
       title: "Training Program",
       desc: "Complete our comprehensive training program covering service standards and platform usage.",
-      icon: "🎓"
+      icon: "🎓",
     },
     {
       number: "04",
       title: "Vehicle Inspection",
       desc: "Schedule and pass our detailed vehicle inspection and safety standards check.",
-      icon: "🔍"
-    }
+      icon: "🔍",
+    },
   ];
 
   return (
@@ -541,11 +562,12 @@ function RequirementsOnboarding() {
               <Button size="lg" variant="glow">
                 View local requirements
               </Button>
-              <Button size="lg" variant="outline">
+              <Button onClick={() => setOpen(true)} size="lg" variant="outline">
                 Contact Partnership
               </Button>
             </div>
           </motion.div>
+          <ContactModal open={open} onClose={() => setOpen(false)} />
         </div>
 
         <div className="my-12" />
@@ -765,20 +787,30 @@ function FinalCTA() {
             <div>
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-6">
                 <span className="w-2 h-2 rounded-full bg-[#E6A700] animate-pulse" />
-                <span className="text-sm text-white/80">Limited Time Bonus</span>
+                <span className="text-sm text-white/80">
+                  Limited Time Bonus
+                </span>
               </div>
               <h3 className="text-3xl md:text-4xl font-heading text-white leading-tight">
-                Start Your Journey as a <span className="text-gradient-gold">Professional Chauffeur</span>
+                Start Your Journey as a{" "}
+                <span className="text-gradient-gold">
+                  Professional Chauffeur
+                </span>
               </h3>
               <p className="mt-4 text-lg text-muted-foreground">
-                Join now and receive a $1,000 signing bonus after completing your first 50 rides.
-                Plus, get priority access to premium clients.
+                Join now and receive a $1,000 signing bonus after completing
+                your first 50 rides. Plus, get priority access to premium
+                clients.
               </p>
               <div className="mt-8 flex flex-col sm:flex-row gap-4">
                 <Button size="lg" variant="glow" className="sm:min-w-[200px]">
                   Apply Today
                 </Button>
-                <Button size="lg" variant="outline" className="sm:min-w-[200px]">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="sm:min-w-[200px]"
+                >
                   Speak to Team
                 </Button>
               </div>
@@ -786,14 +818,14 @@ function FinalCTA() {
             <div className="relative hidden md:block">
               <motion.div
                 className="absolute -right-6 -top-6 w-24 h-24"
-                animate={{ 
+                animate={{
                   scale: [1, 1.2, 1],
-                  rotate: [0, 180, 360]
+                  rotate: [0, 180, 360],
                 }}
                 transition={{
                   duration: 20,
                   repeat: Infinity,
-                  ease: "linear"
+                  ease: "linear",
                 }}
               >
                 <div className="w-full h-full rounded-full border-2 border-dashed border-[#E6A700]/30 animate-spin-slow" />
@@ -804,11 +836,17 @@ function FinalCTA() {
                     <div className="w-10 h-10 rounded-full bg-[#E6A700]/20 flex items-center justify-center">
                       <span className="text-[#E6A700]">✓</span>
                     </div>
-                    <span className="text-white font-medium">Chauffeur Benefits</span>
+                    <span className="text-white font-medium">
+                      Chauffeur Benefits
+                    </span>
                   </div>
                 </div>
                 <div className="space-y-3">
-                  {["Flexible Schedule", "Premium Clients", "Weekly Payments"].map((feature) => (
+                  {[
+                    "Flexible Schedule",
+                    "Premium Clients",
+                    "Weekly Payments",
+                  ].map((feature) => (
                     <div key={feature} className="flex items-center gap-2">
                       <div className="w-1.5 h-1.5 rounded-full bg-[#E6A700]" />
                       <span className="text-sm text-white/80">{feature}</span>
@@ -826,7 +864,12 @@ function FinalCTA() {
 
 function Stats() {
   const stats = [
-    { label: "Average Monthly Income", value: "$8,500", prefix: "", suffix: "+" },
+    {
+      label: "Average Monthly Income",
+      value: "$8,500",
+      prefix: "",
+      suffix: "+",
+    },
     { label: "Active Chauffeurs", value: "500", prefix: "", suffix: "+" },
     { label: "Cities Worldwide", value: "50", prefix: "", suffix: "+" },
     { label: "Client Satisfaction", value: "98", prefix: "", suffix: "%" },
@@ -870,10 +913,12 @@ function PricingTable() {
           className="text-center mb-12"
         >
           <h2 className="text-3xl md:text-4xl font-heading text-white mb-4">
-            <span className="text-gradient-gold">Transparent Pricing</span> for Your Chauffeur Experience
+            <span className="text-gradient-gold">Transparent Pricing</span> for
+            Your Chauffeur Experience
           </h2>
           <p className="text-white/80 max-w-2xl mx-auto">
-            Choose from our fleet of luxury Mercedes vehicles with competitive rates for every service.
+            Choose from our fleet of luxury Mercedes vehicles with competitive
+            rates for every service.
           </p>
         </motion.div>
 
@@ -882,21 +927,41 @@ function PricingTable() {
             <thead>
               <tr className="border-b border-white/10 bg-white/5">
                 <th className="p-4 text-white font-medium">Service</th>
-                <th className="p-4 text-white font-medium">Mercedes E-Class/EQE</th>
-                <th className="p-4 text-white font-medium">Mercedes S-Class/EQS</th>
+                <th className="p-4 text-white font-medium">
+                  Mercedes E-Class/EQE
+                </th>
+                <th className="p-4 text-white font-medium">
+                  Mercedes S-Class/EQS
+                </th>
               </tr>
             </thead>
             <tbody>
               {[
                 { service: "Minimum Charge", eClass: "£65", sClass: "£130" },
-                { service: "Hourly Rate", eClass: "£45 (4 hours min)", sClass: "£60 (4 hours min)" },
-                { service: "Daily Rate (8 hours)", eClass: "£360", sClass: "£480" },
+                {
+                  service: "Hourly Rate",
+                  eClass: "£45 (4 hours min)",
+                  sClass: "£60 (4 hours min)",
+                },
+                {
+                  service: "Daily Rate (8 hours)",
+                  eClass: "£360",
+                  sClass: "£480",
+                },
                 { service: "Heathrow", eClass: "£95", sClass: "£135" },
                 { service: "Gatwick", eClass: "£145", sClass: "£200" },
                 { service: "Stansted", eClass: "£220", sClass: "£300" },
                 { service: "Luton", eClass: "£150", sClass: "£205" },
-                { service: "London City Airport", eClass: "£80", sClass: "£120" },
-                { service: "Farnborough Airport", eClass: "£225", sClass: "£305" },
+                {
+                  service: "London City Airport",
+                  eClass: "£80",
+                  sClass: "£120",
+                },
+                {
+                  service: "Farnborough Airport",
+                  eClass: "£225",
+                  sClass: "£305",
+                },
                 { service: "Biggin Hill", eClass: "£135", sClass: "£200" },
               ].map((row, i) => (
                 <tr
@@ -914,7 +979,8 @@ function PricingTable() {
 
         <div className="mt-8 text-center">
           <p className="text-white/60 text-sm">
-            * All prices are inclusive of VAT. Additional charges may apply for waiting time, extra stops, or special requirements.
+            * All prices are inclusive of VAT. Additional charges may apply for
+            waiting time, extra stops, or special requirements.
           </p>
         </div>
       </div>
@@ -926,12 +992,11 @@ export default function Chauffeurs() {
     <main className="relative bg-background text-foreground overflow-hidden">
       <Hero />
       <Stats />
-       <PricingTable />
+      <PricingTable />
       <Benefits />
       <RequirementsOnboarding />
       <FAQSection />
       <FinalCTA />
-     
     </main>
   );
 }

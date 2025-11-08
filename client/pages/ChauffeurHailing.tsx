@@ -20,6 +20,7 @@ import {
   Users,
   Globe,
 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const cities = [
   "New York",
@@ -90,7 +91,7 @@ export default function ChauffeurHailing() {
                   size="lg"
                   className="bg-corporate-gold hover:bg-corporate-gold/95 text-black px-6 py-4"
                 >
-                  Book Now
+                  <Link to="/booking"> Book Now</Link>
                 </Button>
                 <Button
                   size="lg"
@@ -98,7 +99,7 @@ export default function ChauffeurHailing() {
                   className="border-corporate-gold text-corporate-gold px-6 py-4"
                 >
                   <Download className="w-4 h-4 mr-2" />
-                  Download App
+                  <Link to="/#download"> Download App</Link>
                 </Button>
               </div>
 
@@ -279,7 +280,7 @@ export default function ChauffeurHailing() {
                 Instant availability in supported cities — request a chauffeur
                 for immediate pickup or schedule ahead.
               </p>
-              <div className="flex gap-4">
+              {/* <div className="flex gap-4">
                 <Button className="bg-corporate-gold">Request Pickup</Button>
                 <Button
                   variant="outline"
@@ -287,7 +288,7 @@ export default function ChauffeurHailing() {
                 >
                   See Coverage
                 </Button>
-              </div>
+              </div> */}
             </motion.div>
 
             <motion.div

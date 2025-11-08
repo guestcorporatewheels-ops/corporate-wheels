@@ -9,6 +9,7 @@ import {
   PhoneCall,
   MessageCircle,
 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export default function LimousineService() {
   return (
@@ -80,14 +81,17 @@ export default function LimousineService() {
               whileHover={{ scale: 1.05 }}
               className="inline-flex items-center gap-2 px-8 py-4 bg-corporate-gold text-black font-bold rounded-lg shadow-lg hover:bg-yellow-400 transition-colors"
             >
-              Book Your Limousine <ArrowRight className="w-5 h-5" />
+              {" "}
+              <Link to="/booking">Book Your Limousine </Link>{" "}
+              <ArrowRight className="w-5 h-5" />
             </motion.a>
             <motion.a
               href="#contact"
               whileHover={{ scale: 1.05 }}
               className="inline-flex items-center gap-2 px-8 py-4 border-2 border-corporate-gold text-corporate-gold font-bold rounded-lg shadow-lg hover:bg-corporate-gold/10 transition-colors"
             >
-              24/7 Concierge <PhoneCall className="w-5 h-5" />
+              <Link to="/help">24/7 Concierge </Link>{" "}
+              <PhoneCall className="w-5 h-5" />
             </motion.a>
           </div>
           <div className="flex flex-wrap justify-center gap-6 mt-6">
@@ -307,7 +311,9 @@ export default function LimousineService() {
               whileHover={{ scale: 1.05 }}
               className="inline-flex items-center gap-2 px-8 py-4 bg-corporate-gold text-black font-bold rounded-lg shadow-lg hover:bg-yellow-400 transition-colors mt-2"
             >
-              Book Now <ArrowRight className="w-5 h-5" />
+              {" "}
+              <Link to="/booking">Book Now </Link>{" "}
+              <ArrowRight className="w-5 h-5" />
             </motion.a>
           </div>
         </div>
@@ -365,7 +371,9 @@ export default function LimousineService() {
               whileHover={{ scale: 1.05 }}
               className="inline-flex items-center gap-2 px-8 py-4 bg-corporate-gold text-black font-bold rounded-lg shadow-lg hover:bg-yellow-400 transition-colors mt-2"
             >
-              Book Airport Limo <ArrowRight className="w-5 h-5" />
+              {" "}
+              <Link to="/booking">Book Airport Limo </Link>{" "}
+              <ArrowRight className="w-5 h-5" />
             </motion.a>
           </div>
         </div>

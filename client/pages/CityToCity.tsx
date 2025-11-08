@@ -109,7 +109,7 @@ export default function CityToCity() {
                   size="lg"
                   className="bg-corporate-gold hover:bg-corporate-gold/90 text-black font-semibold px-6 py-4"
                 >
-                  Book a Route
+                  <Link to="/booking">Book a Route</Link>
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
                 <Button
@@ -117,7 +117,8 @@ export default function CityToCity() {
                   variant="outline"
                   className="border-corporate-gold text-corporate-gold hover:bg-corporate-gold/10 px-6 py-4"
                 >
-                  Contact Concierge
+                  {" "}
+                  <Link to="/help"> Contact Concierge</Link>
                 </Button>
               </div>
 
@@ -332,7 +333,8 @@ export default function CityToCity() {
                         variant="outline"
                         className="border-corporate-gold text-corporate-gold hover:bg-corporate-gold hover:text-black transition-all duration-300"
                       >
-                        Book Now
+                        {" "}
+                        <Link to="/booking"> Book Now</Link>
                         <ChevronRight className="ml-2 w-5 h-5" />
                       </Button>
                     </div>
@@ -569,7 +571,7 @@ export default function CityToCity() {
                 size="lg"
                 className="bg-corporate-gold hover:bg-corporate-gold/90 text-black font-semibold"
               >
-                Book Now
+                <Link to="/booking"> Book Now</Link>
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
               <Button
@@ -578,7 +580,7 @@ export default function CityToCity() {
                 className="border-corporate-gold text-corporate-gold hover:bg-corporate-gold/10"
               >
                 <Phone className="w-5 h-5 mr-2" />
-                Contact Us
+                <Link to="/help"> Contact Us</Link>
               </Button>
             </div>
           </motion.div>

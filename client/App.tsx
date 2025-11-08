@@ -21,6 +21,9 @@ import Contact from "./pages/Contact";
 import Blog from "./pages/Blog";
 import About from "./pages/About";
 import Booking from "./pages/Booking";
+import ViewAllServices from "./pages/ViewAllServices";
+import ViewAllCities from "./pages/ViewAllCities";
+import ViewAllRoutes from "./pages/ViewAllRoutes";
 import Navbar from "@/components/site/Navbar";
 import Footer from "@/components/site/Footer";
 import CookieBanner from "@/components/site/CookieBanner";
@@ -34,8 +37,8 @@ function RootLayout() {
     <div className="min-h-dvh bg-background text-foreground">
       <Navbar />
       <ScrollToTop />
-        <Outlet />
-        <CookieBanner />
+      <Outlet />
+      <CookieBanner />
       <Footer />
     </div>
   );
@@ -54,18 +57,27 @@ export default function App() {
                 <Route index element={<Index />} />
                 <Route path="business" element={<Business />} />
                 <Route path="chauffeurs" element={<Chauffeurs />} />
-                <Route path="chauffeur-hailing" element={<ChauffeurHailing />} />
+                <Route
+                  path="chauffeur-hailing"
+                  element={<ChauffeurHailing />}
+                />
                 <Route path="help" element={<Help />} />
                 <Route path="hourly-hire" element={<HourlyHire />} />
                 <Route path="city-to-city" element={<CityToCity />} />
                 <Route path="airport-transfer" element={<AirportTransfer />} />
-                <Route path="limousine-service" element={<LimousineService />} />
+                <Route
+                  path="limousine-service"
+                  element={<LimousineService />}
+                />
                 <Route path="privacy" element={<Privacy />} />
                 <Route path="terms" element={<Terms />} />
                 <Route path="contact" element={<Contact />} />
                 <Route path="blog" element={<Blog />} />
                 <Route path="about" element={<About />} />
                 <Route path="booking" element={<Booking />} />
+                <Route path="services" element={<ViewAllServices />} />
+                <Route path="cities" element={<ViewAllCities />} />
+                <Route path="routes" element={<ViewAllRoutes />} />
                 <Route path="*" element={<NotFound />} />
               </Route>
             </Routes>

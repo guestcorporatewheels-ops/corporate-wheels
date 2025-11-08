@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { CheckCircle } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export default function FinalCTA() {
   return (
@@ -24,7 +25,7 @@ export default function FinalCTA() {
             size="lg"
             className="px-8 btn-gradient-animate"
           >
-            Book a Ride
+            <Link to="/booking">Book a Ride</Link>
           </Button>
 
           <Button variant="outline-glow" size="lg" className="px-8" asChild>

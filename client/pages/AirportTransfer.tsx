@@ -22,6 +22,7 @@ import {
   ArrowRight,
   Plane,
 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const serviceClasses = [
   {
@@ -133,14 +134,14 @@ export default function AirportTransfer() {
                   size="lg"
                   className="bg-corporate-gold text-black px-6 py-4"
                 >
-                  Book Airport Transfer
+                  <Link to="/booking"> Book Airport Transfer</Link>
                 </Button>
                 <Button
                   size="lg"
                   variant="outline"
                   className="border-corporate-gold text-corporate-gold px-6 py-4"
                 >
-                  Contact Concierge
+                  <Link to="/help">Contact Concierge</Link>
                 </Button>
               </div>
               <div className="flex items-center gap-8">
@@ -172,7 +173,7 @@ export default function AirportTransfer() {
                   airport, anywhere in the world.
                 </p>
                 <Button className="bg-corporate-gold text-black w-full">
-                  Book Now
+                  <Link to="/booking">Book Now</Link>
                 </Button>
               </Card>
             </motion.div>

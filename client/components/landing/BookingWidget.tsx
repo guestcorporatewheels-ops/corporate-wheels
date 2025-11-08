@@ -1,8 +1,11 @@
 import { useForm } from "react-hook-form";
-import { Calendar, Clock, MapPin, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
+import DateInput from "@/components/ui/DateInput";
+import TimeInput from "@/components/ui/TimeInput";
+import SelectInput from "@/components/ui/SelectInput";
 
 interface BookingForm {
   pickup: string;
@@ -17,16 +20,20 @@ export default function BookingWidget() {
     "one-way",
   );
 
-  const { register, handleSubmit, formState } = useForm<BookingForm>({
-    defaultValues: {
-      pickup: "",
-      dropoff: "",
-      duration: "",
-      date: "",
-      time: "",
-    },
-  });
+  const { register, handleSubmit, formState, setValue, watch } =
+    useForm<BookingForm>({
+      defaultValues: {
+        pickup: "",
+        dropoff: "",
+        duration: "",
+        date: "",
+        time: "",
+      },
+    });
 
+  // Use watch to get current values for controlled Date/Time inputs
+  const watchedDate = watch("date");
+  const watchedTime = watch("time");
   const onSubmit = (values: BookingForm) => {
     console.log("Booking submitted", values);
     alert("Ride request submitted. We'll confirm shortly.");
@@ -49,7 +56,7 @@ export default function BookingWidget() {
       viewport={{ once: true, amount: 0.3 }}
     >
       <motion.div
-        className="bg-[linear-gradient(180deg,rgba(255,255,255,0.08),rgba(255,255,255,0.02))] border border-[hsl(var(--primary))]/20 backdrop-blur-md rounded-2xl p-6"
+        className="bg-black/80 border-2 border-corporate-gold rounded-2xl p-6 shadow-glow flex flex-col gap-6 items-center"
         custom={0}
         variants={item}
       >
@@ -80,107 +87,133 @@ export default function BookingWidget() {
         </div>
 
         {/* Form */}
-        <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <motion.div className="space-y-2" custom={1} variants={item}>
-              <label className="text-sm font-medium text-white">From</label>
-              <div className="relative">
-                <input
-                  {...register("pickup", { required: true })}
-                  placeholder="Pickup location"
-                  className="w-full h-12 px-4 rounded-lg bg-black/40 border border-white/10 text-white placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-[hsl(var(--primary))] focus:border-transparent"
-                />
-              </div>
+        <form
+          onSubmit={handleSubmit(onSubmit)}
+          className="w-full flex flex-col gap-6"
+        >
+          <div className="flex flex-col md:flex-row gap-6 w-full">
+            <motion.div
+              className="flex-1 flex flex-col gap-2"
+              custom={1}
+              variants={item}
+            >
+              <label className="text-base font-semibold text-corporate-gold">
+                From
+              </label>
+              <input
+                {...register("pickup", { required: true })}
+                placeholder="Pickup location"
+                className="w-full h-12 px-4 rounded-xl bg-black/70 border border-corporate-gold text-white placeholder:text-corporate-gold focus:outline-none focus:ring-2 focus:ring-corporate-gold focus:border-corporate-gold"
+              />
             </motion.div>
 
-            <motion.div className="space-y-2" custom={2} variants={item}>
+            <motion.div
+              className="flex-1 flex flex-col gap-2"
+              custom={2}
+              variants={item}
+            >
               {bookingType === "one-way" ? (
                 <>
-                  <label className="text-sm font-medium text-white">To</label>
-                  <div className="relative">
-                    <input
-                      {...register("dropoff", { required: true })}
-                      placeholder="Destination"
-                      className="w-full h-12 px-4 rounded-lg bg-black/40 border border-white/10 text-white placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-[hsl(var(--primary))] focus:border-transparent"
-                    />
-                  </div>
+                  <label className="text-base font-semibold text-corporate-gold">
+                    To
+                  </label>
+                  <input
+                    {...register("dropoff", { required: true })}
+                    placeholder="Destination"
+                    className="w-full h-12 px-4 rounded-xl bg-black/70 border border-corporate-gold text-white placeholder:text-corporate-gold focus:outline-none focus:ring-2 focus:ring-corporate-gold focus:border-corporate-gold"
+                  />
                 </>
               ) : (
                 <>
-                  <label className="text-sm font-medium text-white">
+                  <label className="text-base font-semibold text-corporate-gold">
                     Duration
                   </label>
-                  <div className="relative">
-                    <select
-                      {...register("duration", { required: true })}
-                      className="w-full h-12 px-4 rounded-lg bg-black/40 border border-white/10 text-white focus:outline-none focus:ring-2 focus:ring-[hsl(var(--primary))] focus:border-transparent"
-                    >
-                      <option value="" className="bg-black text-white">
-                        Select duration
-                      </option>
-                      <option value="2" className="bg-black text-white">
-                        2 hours
-                      </option>
-                      <option value="4" className="bg-black text-white">
-                        4 hours
-                      </option>
-                      <option value="6" className="bg-black text-white">
-                        6 hours
-                      </option>
-                      <option value="8" className="bg-black text-white">
-                        8 hours
-                      </option>
-                      <option value="12" className="bg-black text-white">
-                        12 hours
-                      </option>
-                      <option value="24" className="bg-black text-white">
-                        24 hours
-                      </option>
-                    </select>
-                  </div>
+                  <SelectInput
+                    options={[
+                      { value: "2", label: "2 hours" },
+                      { value: "4", label: "4 hours" },
+                      { value: "6", label: "6 hours" },
+                      { value: "8", label: "8 hours" },
+                      { value: "12", label: "12 hours" },
+                      { value: "24", label: "24 hours" },
+                    ]}
+                    placeholder="Select duration"
+                    value={watch("duration")}
+                    onChange={(v) =>
+                      setValue("duration", v, {
+                        shouldValidate: true,
+                        shouldDirty: true,
+                      })
+                    }
+                    ariaLabel="Duration"
+                    name="duration"
+                    className="w-full rounded-xl border border-corporate-gold bg-black/70 text-white focus:outline-none focus:ring-2 focus:ring-corporate-gold"
+                  />
                 </>
               )}
             </motion.div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <motion.div className="space-y-2" custom={3} variants={item}>
-              <label className="text-sm font-medium text-white">Date</label>
-              <div className="relative">
-                <input
-                  type="date"
-                  {...register("date", { required: true })}
-                  className="w-full h-12 px-4 rounded-lg bg-black/40 border border-white/10 text-white placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-[hsl(var(--primary))] focus:border-transparent"
-                />
-                <Calendar className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground size-4" />
-              </div>
+          <div className="flex flex-col md:flex-row gap-6 w-full">
+            <motion.div
+              className="flex-1 flex flex-col gap-2"
+              custom={3}
+              variants={item}
+            >
+              <label className="text-base font-semibold text-corporate-gold">
+                Date
+              </label>
+              <DateInput
+                value={watchedDate}
+                onChange={(d) =>
+                  setValue("date", d, {
+                    shouldValidate: true,
+                    shouldDirty: true,
+                  })
+                }
+                ariaLabel="Booking date"
+                name="widget-date"
+                className="w-full rounded-xl border border-corporate-gold bg-black/70 text-white focus:outline-none focus:ring-2 focus:ring-corporate-gold"
+              />
             </motion.div>
 
-            <motion.div className="space-y-2" custom={4} variants={item}>
-              <label className="text-sm font-medium text-white">Time</label>
-              <div className="relative">
-                <input
-                  type="time"
-                  {...register("time", { required: true })}
-                  className="w-full h-12 px-4 rounded-lg bg-black/40 border border-white/10 text-white placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-[hsl(var(--primary))] focus:border-transparent"
-                />
-                <Clock className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground size-4" />
-              </div>
+            <motion.div
+              className="flex-1 flex flex-col gap-2"
+              custom={4}
+              variants={item}
+            >
+              <label className="text-base font-semibold text-corporate-gold">
+                Time
+              </label>
+              <TimeInput
+                value={watchedTime}
+                onChange={(t) =>
+                  setValue("time", t, {
+                    shouldValidate: true,
+                    shouldDirty: true,
+                  })
+                }
+                ariaLabel="Booking time"
+                name="widget-time"
+                className="w-full rounded-xl border border-corporate-gold bg-black/70 text-white focus:outline-none focus:ring-2 focus:ring-corporate-gold"
+              />
             </motion.div>
           </div>
 
           <motion.div
-            className="flex justify-end pt-2"
+            className="flex justify-end pt-4"
             custom={5}
             variants={item}
           >
             <Button
               type="submit"
               variant="glow"
-              className="h-12 px-8 bg-[hsl(var(--primary))] hover:bg-[hsl(var(--primary))]/90 text-black font-medium"
+              className="h-12 px-8 text-black font-bold text-lg shadow-glow bg-gradient-to-r from-[#E6A700] to-[#FF6B35]"
             >
-              Search Rides
-              <ArrowRight className="ml-2 size-4" />
+              <span className="flex items-center gap-2">
+                Search Rides
+                <ArrowRight className="size-5 text-corporate-gold" />
+              </span>
             </Button>
           </motion.div>
         </form>

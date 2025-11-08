@@ -1,5 +1,5 @@
-import { motion, useAnimationControls } from "framer-motion";
-import { useEffect, useRef } from "react";
+import { motion, useMotionValue, animate } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
 
 const testimonials = [
   {
@@ -26,20 +26,60 @@ const testimonials = [
 ];
 
 export default function Testimonials() {
-  const controls = useAnimationControls();
+  // motion x value used for both auto animation and drag
+  const x = useMotionValue(0);
   const containerRef = useRef<HTMLDivElement | null>(null);
+  const animationRef = useRef<any>(null);
+  const startAutoRef = useRef<() => void>(() => {});
+  const stopAutoRef = useRef<() => void>(() => {});
+  const [halfWidth, setHalfWidth] = useState(0);
+
   useEffect(() => {
-    const loop = async () => {
-      while (true) {
-        await controls.start({
-          x: "-50%",
-          transition: { duration: 20, ease: "linear" },
-        });
-        await controls.start({ x: 0, transition: { duration: 0 } });
-      }
+    const measureAndStart = () => {
+      const el = containerRef.current as HTMLDivElement | null;
+      if (!el) return;
+      // total width is scrollWidth (we duplicated items), half is one loop length
+      const totalHalf = el.scrollWidth / 2;
+      setHalfWidth(totalHalf);
+
+      // duration proportional to content width so speed feels consistent
+      const visible = el.clientWidth || 1;
+      const duration = Math.max(8, (totalHalf / visible) * 20);
+
+      // stop any running animation
+      if (animationRef.current) animationRef.current.stop();
+
+      // animate the motion value from current to -totalHalf and loop
+      animationRef.current = animate(x, -totalHalf, {
+        duration,
+        ease: "linear",
+        repeat: Infinity,
+        repeatType: "loop",
+      });
     };
-    loop();
-  }, [controls]);
+
+    startAutoRef.current = measureAndStart;
+    stopAutoRef.current = () => {
+      if (animationRef.current) animationRef.current.stop();
+    };
+
+    // start on mount
+    measureAndStart();
+
+    const onResize = () => {
+      // reset position and restart to recalc widths
+      stopAutoRef.current();
+      x.set(0);
+      // re-measure on next tick to allow layout to settle
+      requestAnimationFrame(() => measureAndStart());
+    };
+
+    window.addEventListener("resize", onResize);
+    return () => {
+      window.removeEventListener("resize", onResize);
+      stopAutoRef.current();
+    };
+  }, [x]);
 
   return (
     <section className="py-20">
@@ -54,18 +94,18 @@ export default function Testimonials() {
         </div>
         <div
           className="overflow-hidden"
-          onMouseEnter={() => controls.stop()}
-          onMouseLeave={() =>
-            controls.start({
-              x: "-50%",
-              transition: { duration: 20, ease: "linear" },
-            })
-          }
+          onMouseEnter={() => stopAutoRef.current()}
+          onMouseLeave={() => startAutoRef.current()}
         >
           <motion.div
             ref={containerRef}
             className="flex gap-6 items-stretch"
-            animate={controls}
+            style={{ x }}
+            drag="x"
+            dragConstraints={{ left: halfWidth ? -halfWidth : 0, right: 0 }}
+            dragElastic={0.08}
+            onDragStart={() => stopAutoRef.current()}
+            onDragEnd={() => startAutoRef.current()}
           >
             {[...testimonials, ...testimonials].map((t, i) => (
               <div

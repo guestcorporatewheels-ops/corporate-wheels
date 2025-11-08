@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-
+import { Link } from "react-router-dom";
 const topCities = [
   {
     name: "New York",
@@ -118,12 +118,12 @@ const fadeIn = {
 
 export default function CityToCityRoutes() {
   // Animation variants for route lines
-  const pathVariants:any = {
+  const pathVariants: any = {
     hidden: { pathLength: 0 },
     visible: {
       pathLength: 1,
-      transition: { duration: 2, ease: "easeInOut" }
-    }
+      transition: { duration: 2, ease: "easeInOut" },
+    },
   };
 
   // Animation variants for dots
@@ -132,8 +132,8 @@ export default function CityToCityRoutes() {
     visible: {
       scale: 1,
       opacity: 1,
-      transition: { duration: 0.5 }
-    }
+      transition: { duration: 0.5 },
+    },
   };
 
   return (
@@ -151,12 +151,18 @@ export default function CityToCityRoutes() {
         viewBox="0 0 100 100"
       >
         <defs>
-          <linearGradient id="routeLineGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <linearGradient
+            id="routeLineGrad"
+            x1="0%"
+            y1="0%"
+            x2="100%"
+            y2="100%"
+          >
             <stop offset="0%" stopColor="#F4C430" stopOpacity="0.6" />
             <stop offset="100%" stopColor="#4F46E5" stopOpacity="0.3" />
           </linearGradient>
         </defs>
-        
+
         {/* Animated Route Lines */}
         <motion.path
           d="M10,50 Q30,20 50,50 T90,50"
@@ -180,8 +186,10 @@ export default function CityToCityRoutes() {
 
         {/* City Markers */}
         {[
-          [10, 50], [90, 50],
-          [10, 70], [90, 70]
+          [10, 50],
+          [90, 50],
+          [10, 70],
+          [90, 70],
         ].map(([cx, cy], i) => (
           <motion.circle
             key={i}
@@ -208,10 +216,14 @@ export default function CityToCityRoutes() {
           transition={{
             duration: 4,
             repeat: Infinity,
-            ease: "easeInOut"
+            ease: "easeInOut",
           }}
         >
-          <svg className="w-8 h-8 text-corporate-gold opacity-20" viewBox="0 0 24 24" fill="currentColor">
+          <svg
+            className="w-8 h-8 text-corporate-gold opacity-20"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+          >
             <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" />
           </svg>
         </motion.div>
@@ -225,25 +237,27 @@ export default function CityToCityRoutes() {
             duration: 5,
             repeat: Infinity,
             ease: "easeInOut",
-            delay: 1
+            delay: 1,
           }}
         >
-          <svg className="w-12 h-12 text-corporate-gold opacity-10" viewBox="0 0 24 24" fill="currentColor">
+          <svg
+            className="w-12 h-12 text-corporate-gold opacity-10"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+          >
             <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" />
           </svg>
         </motion.div>
       </div>
 
       <div className="container relative z-10">
-        <motion.div 
+        <motion.div
           className="text-center max-w-3xl mx-auto mb-16"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <motion.h2 
-            className="font-heading text-4xl md:text-5xl mb-4"
-          >
+          <motion.h2 className="font-heading text-4xl md:text-5xl mb-4">
             City-to-City Routes
           </motion.h2>
           <motion.p
@@ -436,12 +450,9 @@ export default function CityToCityRoutes() {
                 <Button
                   variant="glow"
                   className="h-12 px-8 bg-corporate-gold hover:bg-corporate-gold/90 text-black font-medium"
-                  asChild
                 >
-                  <a href="#booking" className="flex items-center">
-                    Book Now
-                    <ArrowRight className="ml-2 size-4" />
-                  </a>
+                  <Link to="/booking"> Book Now</Link>
+                  <ArrowRight className="ml-2 size-4" />
                 </Button>
               </div>
             </div>

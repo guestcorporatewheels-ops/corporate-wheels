@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ScrollToTop } from "@/components/ui/scroll-to-top";
+import { Link } from "react-router-dom";
 
 const teamMembers = [
   {
@@ -130,7 +131,7 @@ export default function About() {
             className="inline-block mb-12"
           >
             <Button variant="glow" size="lg" className="text-lg px-10 py-5">
-              Book Your Ride
+              <Link to="/booking">book a ride</Link>
             </Button>
           </motion.div>
         </motion.div>
@@ -580,7 +581,7 @@ export default function About() {
               <h2 className="text-3xl font-heading text-corporate-gold mb-4">
                 Our Vision
               </h2>
-              
+
               <p className="text-muted-foreground mb-4">
                 To be the foremost choice for luxury travel — setting new
                 benchmarks in professionalism, sustainability and client
@@ -1001,7 +1002,7 @@ export default function About() {
               Corporate Wheels today.
             </p>
             <Button variant="glow" size="lg">
-              Book Now
+              <Link to="/booking"> Book Now</Link>
             </Button>
           </motion.div>
         </div>
