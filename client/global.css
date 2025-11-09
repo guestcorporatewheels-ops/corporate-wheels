@@ -209,7 +209,12 @@
     border-color: #E6A700;
   }
 
-
+.hourly-hire ::placeholder{
+  color: white !important;
+}
+.hourly-hire svg{
+  color: grey !important;
+}
   .shadow-glow {
     box-shadow: 0 8px 30px rgba(230, 167, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.6);
   }
