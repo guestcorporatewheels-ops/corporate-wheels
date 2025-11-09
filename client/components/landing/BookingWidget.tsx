@@ -156,7 +156,7 @@ export default function BookingWidget() {
                       }
                       ariaLabel="Duration"
                       name="duration"
-                      className="w-full rounded-xl border border-corporate-gold bg-black/70 text-white focus:outline-none focus:ring-2 focus:ring-corporate-gold"
+                      className="w-full rounded-xl border border-corporate-gold bg-black/70 text-corporate-gold focus:outline-none focus:ring-2 focus:ring-corporate-gold"
                     />
                   </motion.div>
                 )}
