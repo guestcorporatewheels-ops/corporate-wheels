@@ -24,6 +24,7 @@ import {
 import { Link } from "react-router-dom";
 import SelectInput from "@/components/ui/SelectInput";
 import { useState } from "react";
+import DateInput from "@/components/ui/DateInput";
 
 export default function HourlyHire() {
   const [quickHours, setQuickHours] = useState<string>("2");
@@ -137,6 +138,7 @@ export default function HourlyHire() {
 
                   {/* Responsive fix starts here */}
                   <div className="flex flex-col sm:flex-row gap-2">
+                    
                     <input
                       title="date"
                       type="date"
