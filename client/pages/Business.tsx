@@ -158,7 +158,9 @@ function Hero() {
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-6">
               <span className="w-2 h-2 rounded-full bg-[#E6A700] animate-pulse" />
-              <span className="text-sm text-white/80">Trusted by Fortune 500 Companies</span>
+              <span className="text-sm text-white/80">
+                Trusted by Fortune 500 Companies
+              </span>
             </div>
             <h1 className="text-4xl md:text-6xl xl:text-7xl font-heading text-white leading-tight">
               <span className="text-gradient-gold inline-block">
@@ -175,9 +177,9 @@ function Hero() {
               )}
             </h1>
             <p className="mt-6 text-lg text-muted-foreground max-w-2xl">
-              Transform your corporate travel with our premium chauffeur service. 
-              Streamlined booking, real-time tracking, and enterprise-grade security 
-              for teams of any size.
+              Transform your corporate travel with our premium chauffeur
+              service. Streamlined booking, real-time tracking, and
+              enterprise-grade security for teams of any size.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row gap-4">
               <Button size="lg" variant="glow" className="sm:min-w-[200px]">
@@ -189,12 +191,25 @@ function Hero() {
             </div>
             <div className="mt-8 flex items-center gap-6">
               <div className="flex -space-x-3">
-                {[1,2,3,4].map((i) => (
-                  <div key={i} className="w-10 h-10 rounded-full border-2 border-background bg-white/10" />
+                {[
+                  "https://framerusercontent.com/images/7UmMsmgvCMHDxKx6QasBLzW7tG4.png?width=399&height=399", // man smiling
+                  "https://framerusercontent.com/images/CDSoRipaV9Hpq0zdDkZvdZ5lQe8.png?width=400&height=400", // woman portrait
+                  "https://framerusercontent.com/images/Zqzxm1TQf4LIJpN4L4hHxLGhKyA.png?width=400&height=400", // woman laughing
+                ].map((url, i) => (
+                  <div
+                    key={i}
+                    className="w-12 h-12 rounded-full border-2 border-background bg-white/10"
+                    style={{
+                      backgroundImage: `url(${url})`,
+                      backgroundSize: "cover",
+                      backgroundPosition: "center",
+                    }}
+                  />
                 ))}
               </div>
               <p className="text-sm text-white/80">
-                Join <span className="text-[#E6A700]">2,000+</span> companies worldwide
+                Join <span className="text-[#E6A700]">2,000+</span> companies
+                worldwide
               </p>
             </div>
           </motion.div>
@@ -206,8 +221,8 @@ function Hero() {
             className="relative hidden lg:block"
           >
             <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent z-10" />
-            <img 
-              src="https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=800&auto=format&fit=crop&q=80" 
+            <img
+              src="https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=800&auto=format&fit=crop&q=80"
               alt="Business Dashboard Interface"
               className="rounded-lg border border-white/10 shadow-2xl"
             />
@@ -217,7 +232,9 @@ function Hero() {
                   <span className="text-[#E6A700] text-xl">↗</span>
                 </div>
                 <div>
-                  <p className="text-white text-sm font-medium">Monthly Bookings</p>
+                  <p className="text-white text-sm font-medium">
+                    Monthly Bookings
+                  </p>
                   <p className="text-[#E6A700] text-lg font-bold">+127%</p>
                 </div>
               </div>
@@ -255,9 +272,9 @@ function Feature({
 function Stats() {
   const stats = [
     { label: "Corporate clients", value: "2,000+", prefix: "", suffix: "" },
-    { label: "Cities covered", value: "150", prefix: "", suffix: "+" },
-    { label: "Monthly rides", value: "25", prefix: "", suffix: "K+" },
-    { label: "Client retention", value: "97", prefix: "", suffix: "%" },
+    { label: "Cities covered", value: "150+", prefix: "", suffix: "" },
+    { label: "Monthly rides", value: "25k+", prefix: "", suffix: "" },
+    { label: "Client retention", value: "97%", prefix: "", suffix: "" },
   ];
 
   return (
@@ -292,35 +309,35 @@ function Features() {
     {
       t: "Smart Booking Platform",
       d: "AI-powered booking system with predictive analytics and route optimization.",
-      icon: "🎯"
+      icon: "🎯",
     },
     {
       t: "Real-time Fleet Tracking",
       d: "Live vehicle tracking, instant notifications, and journey analytics.",
-      icon: "🚗"
+      icon: "🚗",
     },
     {
       t: "Enterprise Management",
       d: "Multi-level admin controls, custom policies, and department-wise billing.",
-      icon: "🏢"
+      icon: "🏢",
     },
     {
       t: "Premium Support",
       d: "24/7 dedicated account manager and priority assistance for executives.",
-      icon: "💎"
+      icon: "💎",
     },
     {
       t: "Global Network",
       d: "Access to vetted chauffeurs and premium vehicles worldwide.",
-      icon: "🌍"
+      icon: "🌍",
     },
     {
       t: "Smart Integrations",
       d: "Seamless connection with your travel, expense, and calendar tools.",
-      icon: "🔄"
+      icon: "🔄",
     },
   ];
-  
+
   return (
     <section className="relative py-20 overflow-hidden">
       <motion.svg
@@ -338,7 +355,7 @@ function Features() {
           </radialGradient>
         </defs>
       </motion.svg>
-      
+
       <div className="container">
         <div className="max-w-3xl mx-auto text-center mb-16">
           <motion.div
@@ -351,7 +368,8 @@ function Features() {
               Built for Modern Enterprises
             </h2>
             <p className="text-lg text-muted-foreground">
-              Streamline your corporate travel with powerful features designed for scale and efficiency
+              Streamline your corporate travel with powerful features designed
+              for scale and efficiency
             </p>
           </motion.div>
         </div>
@@ -368,7 +386,9 @@ function Features() {
               className="group rounded-xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm hover:border-white/20 hover:bg-white/10"
             >
               <div className="mb-4 text-3xl">{it.icon}</div>
-              <h3 className="text-xl font-heading text-white mb-2 group-hover:text-gradient-gold">{it.t}</h3>
+              <h3 className="text-xl font-heading text-white mb-2 group-hover:text-gradient-gold">
+                {it.t}
+              </h3>
               <p className="text-sm text-muted-foreground">{it.d}</p>
             </motion.div>
           ))}
@@ -382,32 +402,38 @@ function WorldwidePresence() {
   const cities = [
     {
       name: "London",
-      image: "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=800&auto=format&fit=crop&q=80",
+      image:
+        "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=800&auto=format&fit=crop&q=80",
       stats: "500+ rides/month",
     },
     {
       name: "Dubai",
-      image: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=800&auto=format&fit=crop&q=80",
+      image:
+        "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=800&auto=format&fit=crop&q=80",
       stats: "300+ rides/month",
     },
     {
       name: "Singapore",
-      image: "https://images.unsplash.com/photo-1525625293386-3f8f99389edd?w=800&auto=format&fit=crop&q=80",
+      image:
+        "https://images.unsplash.com/photo-1525625293386-3f8f99389edd?w=800&auto=format&fit=crop&q=80",
       stats: "400+ rides/month",
     },
     {
       name: "New York",
-      image: "https://images.unsplash.com/photo-1522083165195-3424ed129620?w=800&auto=format&fit=crop&q=80",
+      image:
+        "https://images.unsplash.com/photo-1522083165195-3424ed129620?w=800&auto=format&fit=crop&q=80",
       stats: "600+ rides/month",
     },
     {
       name: "Tokyo",
-      image: "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=800&auto=format&fit=crop&q=80",
+      image:
+        "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=800&auto=format&fit=crop&q=80",
       stats: "350+ rides/month",
     },
     {
       name: "Paris",
-      image: "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=800&auto=format&fit=crop&q=80",
+      image:
+        "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=800&auto=format&fit=crop&q=80",
       stats: "450+ rides/month",
     },
   ];
@@ -446,10 +472,12 @@ function WorldwidePresence() {
           transition={{ duration: 0.7 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl font-heading text-white mb-4">In action around the world</h2>
+          <h2 className="text-3xl font-heading text-white mb-4">
+            In action around the world
+          </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            From airport transfers to multi-city event logistics, we're trusted by corporations worldwide
-            for reliable executive transport.
+            From airport transfers to multi-city event logistics, we're trusted
+            by corporations worldwide for reliable executive transport.
           </p>
         </motion.div>
 
@@ -577,25 +605,28 @@ function Integrations() {
 }
 
 function CaseStudies() {
-    const studies = [
+  const studies = [
     {
       title: "Global Tech Summit",
       desc: "Coordinated 200+ executive transfers across 3 days in multiple cities. Achieved 100% on-time performance.",
-      image: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&auto=format&fit=crop&q=80",
-      stats: ["200+ Transfers", "3 Cities", "100% On-time"]
+      image:
+        "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&auto=format&fit=crop&q=80",
+      stats: ["200+ Transfers", "3 Cities", "100% On-time"],
     },
     {
       title: "Financial Conference",
       desc: "24/7 dedicated support for 50+ VIP attendees. Custom billing for different cost centers.",
-      image: "https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=800&auto=format&fit=crop&q=80",
-      stats: ["50+ VIPs", "24/7 Support", "18% Cost Savings"]
+      image:
+        "https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=800&auto=format&fit=crop&q=80",
+      stats: ["50+ VIPs", "24/7 Support", "18% Cost Savings"],
     },
     {
       title: "Fashion Week",
       desc: "Luxury fleet coordination for designer showcases. Real-time tracking and schedule adjustments.",
-      image: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=800&auto=format&fit=crop&q=80",
-      stats: ["100+ Routes", "Premium Fleet", "Live Tracking"]
-    }
+      image:
+        "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=800&auto=format&fit=crop&q=80",
+      stats: ["100+ Routes", "Premium Fleet", "Live Tracking"],
+    },
   ];
 
   return (
@@ -624,9 +655,12 @@ function CaseStudies() {
           transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl md:text-4xl font-heading text-white mb-4">Success Stories</h2>
+          <h2 className="text-3xl md:text-4xl font-heading text-white mb-4">
+            Success Stories
+          </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            See how leading organizations streamline their executive transportation with our platform.
+            See how leading organizations streamline their executive
+            transportation with our platform.
           </p>
         </motion.div>
 
@@ -650,8 +684,12 @@ function CaseStudies() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-semibold text-white mb-3">{study.title}</h3>
-                <p className="text-muted-foreground text-sm mb-4">{study.desc}</p>
+                <h3 className="text-xl font-semibold text-white mb-3">
+                  {study.title}
+                </h3>
+                <p className="text-muted-foreground text-sm mb-4">
+                  {study.desc}
+                </p>
                 <div className="flex flex-wrap gap-2">
                   {study.stats.map((stat, index) => (
                     <span
@@ -687,20 +725,29 @@ function CTA() {
             <div>
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-6">
                 <span className="w-2 h-2 rounded-full bg-[#E6A700] animate-pulse" />
-                <span className="text-sm text-white/80">Limited Time Offer</span>
+                <span className="text-sm text-white/80">
+                  Limited Time Offer
+                </span>
               </div>
               <h3 className="text-3xl md:text-4xl font-heading text-white leading-tight">
-                Transform Your <span className="text-gradient-gold">Corporate Travel</span> Today
+                Transform Your{" "}
+                <span className="text-gradient-gold">Corporate Travel</span>{" "}
+                Today
               </h3>
               <p className="mt-4 text-lg text-muted-foreground">
-                Get 3 months free when you sign up for an annual enterprise plan.
-                Plus, a dedicated account manager to ensure smooth onboarding.
+                Get 3 months free when you sign up for an annual enterprise
+                plan. Plus, a dedicated account manager to ensure smooth
+                onboarding.
               </p>
               <div className="mt-8 flex flex-col sm:flex-row gap-4">
                 <Button size="lg" variant="glow" className="sm:min-w-[200px]">
                   Start Free Trial
                 </Button>
-                <Button size="lg" variant="outline" className="sm:min-w-[200px]">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="sm:min-w-[200px]"
+                >
                   Book Demo
                 </Button>
               </div>
@@ -708,14 +755,14 @@ function CTA() {
             <div className="relative hidden md:block">
               <motion.div
                 className="absolute -right-6 -top-6 w-24 h-24"
-                animate={{ 
+                animate={{
                   scale: [1, 1.2, 1],
-                  rotate: [0, 180, 360]
+                  rotate: [0, 180, 360],
                 }}
                 transition={{
                   duration: 20,
                   repeat: Infinity,
-                  ease: "linear"
+                  ease: "linear",
                 }}
               >
                 <div className="w-full h-full rounded-full border-2 border-dashed border-[#E6A700]/30 animate-spin-slow" />
@@ -726,11 +773,17 @@ function CTA() {
                     <div className="w-10 h-10 rounded-full bg-[#E6A700]/20 flex items-center justify-center">
                       <span className="text-[#E6A700]">✓</span>
                     </div>
-                    <span className="text-white font-medium">Enterprise Features</span>
+                    <span className="text-white font-medium">
+                      Enterprise Features
+                    </span>
                   </div>
                 </div>
                 <div className="space-y-3">
-                  {["Dedicated Support", "Custom Integration", "Priority Booking"].map((feature) => (
+                  {[
+                    "Dedicated Support",
+                    "Custom Integration",
+                    "Priority Booking",
+                  ].map((feature) => (
                     <div key={feature} className="flex items-center gap-2">
                       <div className="w-1.5 h-1.5 rounded-full bg-[#E6A700]" />
                       <span className="text-sm text-white/80">{feature}</span>

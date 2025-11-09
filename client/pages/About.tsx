@@ -536,7 +536,7 @@ export default function About() {
           {/* Mission - image left, text right */}
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <motion.img
-              src="https://ahexecutivetravels.com/images/mpvside.jpg"
+              src="https://images.unsplash.com/photo-1502877338535-766e1452684a?w=1600&q=80&auto=format&fit=crop"
               alt="Our Mission"
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -639,7 +639,7 @@ export default function About() {
             </div>
             <div className="flex items-center justify-center">
               <img
-                src="https://ahexecutivetravels.com/images/savoyh.jpg"
+                src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1600&q=80&auto=format&fit=crop"
                 alt="Core Values"
                 className="rounded-xl shadow-lg w-full max-w-md object-cover border-2 border-corporate-gold"
               />
@@ -687,7 +687,7 @@ export default function About() {
           </div>
 
           {/* Values Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {[
               {
                 title: "Customer Focus",
@@ -738,21 +738,21 @@ export default function About() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="group relative"
+                className="group relative flex"
               >
                 <div
-                  className={`relative bg-gradient-to-br ${value.gradient} p-[1px] rounded-2xl backdrop-blur-lg`}
+                  className={`relative bg-gradient-to-br ${value.gradient} p-[1px] rounded-2xl backdrop-blur-lg w-full flex`}
                 >
-                  <div className="bg-black/80 rounded-2xl p-8 h-full relative backdrop-blur-sm">
+                  <div className="bg-black/80 rounded-2xl p-8 w-full flex flex-col justify-between relative backdrop-blur-sm min-h-[320px]">
                     <div className="absolute inset-0 bg-gradient-to-br from-corporate-gold/5 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 rounded-2xl"></div>
-                    <div className="relative z-10">
+                    <div className="relative z-10 flex flex-col flex-1">
                       <div className="mb-6 text-5xl transform group-hover:scale-110 transition-transform duration-300">
                         {value.icon}
                       </div>
                       <h3 className="text-corporate-gold text-xl font-bold mb-4">
                         {value.title}
                       </h3>
-                      <p className="text-gray-400 leading-relaxed group-hover:text-gray-300 transition-colors duration-300">
+                      <p className="text-gray-400 leading-relaxed group-hover:text-gray-300 transition-colors duration-300 flex-grow">
                         {value.description}
                       </p>
                     </div>

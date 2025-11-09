@@ -118,13 +118,18 @@ function Hero() {
             </div>
             <div className="mt-8 flex items-center gap-6">
               <div className="flex -space-x-3">
-                {[1, 2, 3].map((i) => (
+                {[
+                  "https://framerusercontent.com/images/7UmMsmgvCMHDxKx6QasBLzW7tG4.png?width=399&height=399", // man smiling
+                  "https://framerusercontent.com/images/CDSoRipaV9Hpq0zdDkZvdZ5lQe8.png?width=400&height=400", // woman portrait
+                  "https://framerusercontent.com/images/Zqzxm1TQf4LIJpN4L4hHxLGhKyA.png?width=400&height=400", // woman laughing
+                ].map((url, i) => (
                   <div
                     key={i}
                     className="w-12 h-12 rounded-full border-2 border-background bg-white/10"
                     style={{
-                      backgroundImage: `url(https://images.unsplash.com/photo-${1560000000000 + i}?w=100&h=100&fit=crop)`,
+                      backgroundImage: `url(${url})`,
                       backgroundSize: "cover",
+                      backgroundPosition: "center",
                     }}
                   />
                 ))}
@@ -389,68 +394,53 @@ function Benefits() {
   ];
 
   return (
-   <section className="relative py-20 overflow-hidden">
-  <div className="container">
-    <motion.h2
-      initial={{ opacity: 0, y: 16 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5 }}
-      className="text-3xl md:text-4xl font-heading text-white text-center"
-    >
-      Partner benefits
-    </motion.h2>
+    <section className="relative py-20 overflow-hidden">
+      <div className="container">
+        <motion.h2
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="text-3xl md:text-4xl font-heading text-white text-center"
+        >
+          Partner benefits
+        </motion.h2>
 
-    <div className="mt-10 grid gap-6 lg:grid-cols-12">
-      {items.map((it, i) => {
-        const col = i < 3 ? "lg:col-span-4" : "lg:col-span-6";
-        return (
-          <motion.div
-            key={it.t}
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: i * 0.05 }}
-            className={cn(
-              "relative group transition-all duration-500 ease-out",
-              col
-            )}
-          >
-            <div
-              className="
-                rounded-2xl border border-white/10 bg-white/5 p-8 backdrop-blur-sm 
-                shadow-[0_0_15px_rgba(230,167,0,0.25)] 
-                transition-all duration-500 ease-out 
-                group-hover:shadow-[0_0_25px_rgba(230,167,0,0.45)] 
-                group-hover:-translate-y-2
-                group-hover:bg-gradient-to-br 
-                group-hover:from-[#e6a7000d] 
-                group-hover:to-[#e6a70022]
-              "
-            >
-              <div className="flex items-start gap-5 text-white">
-                <div className="text-orange-400 transition-transform duration-500 group-hover:scale-110">
-                  <RingIcon>
-                    <g className="text-orange-400">{it.icon}</g>
-                  </RingIcon>
+        <div className="mt-10 grid gap-6 lg:grid-cols-12">
+          {items.map((it, i) => {
+            const col = i < 3 ? "lg:col-span-4" : "lg:col-span-6";
+            return (
+              <motion.div
+                key={it.t}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.05 }}
+                className={cn("relative", col)}
+              >
+                <div className="rounded-2xl border border-white/10 bg-white/5 p-8   backdrop-blur-sm  shadow-[0_0_15px_rgba(230,167,0,0.25)]">
+                  <div className="flex items-start gap-5 text-white">
+                    <div className="text-orange-400">
+                      <RingIcon>
+                        <g className="text-orange-400">{it.icon}</g>
+                      </RingIcon>
+                    </div>
+                    <div>
+                      <h4 className="text-xl font-semibold tracking-tight text-white">
+                        {it.t}
+                      </h4>
+                      <p className="mt-3 text-[15px] leading-6 text-muted-foreground">
+                        {it.d}
+                      </p>
+                    </div>
+                  </div>
                 </div>
-                <div>
-                  <h4 className="text-xl font-semibold tracking-tight text-white group-hover:text-[#e6a700] transition-colors">
-                    {it.t}
-                  </h4>
-                  <p className="mt-3 text-[15px] leading-6 text-muted-foreground">
-                    {it.d}
-                  </p>
-                </div>
-              </div>
-            </div>
-          </motion.div>
-        );
-      })}
-    </div>
-  </div>
-</section>
-
+              </motion.div>
+            );
+          })}
+        </div>
+      </div>
+    </section>
   );
 }
 
@@ -881,13 +871,13 @@ function Stats() {
   const stats = [
     {
       label: "Average Monthly Income",
-      value: "$8,500",
+      value: "$8,500+",
       prefix: "",
-      suffix: "+",
+      suffix: "",
     },
-    { label: "Active Chauffeurs", value: "500", prefix: "", suffix: "+" },
-    { label: "Cities Worldwide", value: "50", prefix: "", suffix: "+" },
-    { label: "Client Satisfaction", value: "98", prefix: "", suffix: "%" },
+    { label: "Active Chauffeurs", value: "500+", prefix: "", suffix: "" },
+    { label: "Cities Worldwide", value: "50+", prefix: "", suffix: "" },
+    { label: "Client Satisfaction", value: "98%", prefix: "", suffix: "" },
   ];
 
   return (
