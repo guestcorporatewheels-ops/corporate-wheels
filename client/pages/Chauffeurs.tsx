@@ -145,7 +145,7 @@ function Hero() {
             <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent z-10" />
             <div className="relative">
               <img
-                src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=800&auto=format&fit=crop&q=80"
+                src="images/chufferas.png"
                 alt="Luxury Chauffeur Service"
                 className="rounded-lg border border-white/10 shadow-2xl object-cover h-[500px]"
               />
@@ -389,53 +389,68 @@ function Benefits() {
   ];
 
   return (
-    <section className="relative py-20">
-      <div className="container">
-        <motion.h2
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="text-3xl md:text-4xl font-heading text-white text-center"
-        >
-          Partner benefits
-        </motion.h2>
+   <section className="relative py-20 overflow-hidden">
+  <div className="container">
+    <motion.h2
+      initial={{ opacity: 0, y: 16 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5 }}
+      className="text-3xl md:text-4xl font-heading text-white text-center"
+    >
+      Partner benefits
+    </motion.h2>
 
-        <div className="mt-10 grid gap-6 lg:grid-cols-12">
-          {items.map((it, i) => {
-            const col = i < 3 ? "lg:col-span-4" : "lg:col-span-6";
-            return (
-              <motion.div
-                key={it.t}
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.05 }}
-                className={cn("relative", col)}
-              >
-                <div className="rounded-2xl border border-white/10 bg-white/5 p-8   backdrop-blur-sm  shadow-[0_0_15px_rgba(230,167,0,0.25)]">
-                  <div className="flex items-start gap-5 text-white">
-                    <div className="text-orange-400">
-                      <RingIcon>
-                        <g className="text-orange-400">{it.icon}</g>
-                      </RingIcon>
-                    </div>
-                    <div>
-                      <h4 className="text-xl font-semibold tracking-tight text-white">
-                        {it.t}
-                      </h4>
-                      <p className="mt-3 text-[15px] leading-6 text-muted-foreground">
-                        {it.d}
-                      </p>
-                    </div>
-                  </div>
+    <div className="mt-10 grid gap-6 lg:grid-cols-12">
+      {items.map((it, i) => {
+        const col = i < 3 ? "lg:col-span-4" : "lg:col-span-6";
+        return (
+          <motion.div
+            key={it.t}
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: i * 0.05 }}
+            className={cn(
+              "relative group transition-all duration-500 ease-out",
+              col
+            )}
+          >
+            <div
+              className="
+                rounded-2xl border border-white/10 bg-white/5 p-8 backdrop-blur-sm 
+                shadow-[0_0_15px_rgba(230,167,0,0.25)] 
+                transition-all duration-500 ease-out 
+                group-hover:shadow-[0_0_25px_rgba(230,167,0,0.45)] 
+                group-hover:-translate-y-2
+                group-hover:bg-gradient-to-br 
+                group-hover:from-[#e6a7000d] 
+                group-hover:to-[#e6a70022]
+              "
+            >
+              <div className="flex items-start gap-5 text-white">
+                <div className="text-orange-400 transition-transform duration-500 group-hover:scale-110">
+                  <RingIcon>
+                    <g className="text-orange-400">{it.icon}</g>
+                  </RingIcon>
                 </div>
-              </motion.div>
-            );
-          })}
-        </div>
-      </div>
-    </section>
+                <div>
+                  <h4 className="text-xl font-semibold tracking-tight text-white group-hover:text-[#e6a700] transition-colors">
+                    {it.t}
+                  </h4>
+                  <p className="mt-3 text-[15px] leading-6 text-muted-foreground">
+                    {it.d}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        );
+      })}
+    </div>
+  </div>
+</section>
+
   );
 }
 

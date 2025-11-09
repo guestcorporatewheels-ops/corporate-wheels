@@ -39,7 +39,7 @@ export default function HourlyHire() {
       <section className="relative min-h-[72vh] flex items-center  pt-20">
         <div className="absolute inset-0 z-0">
           <img
-            src="https://images.unsplash.com/photo-1505765056039-8e2ff0fc6a2b?q=80&w=2000&auto=format&fit=crop"
+            src="/images/houry-hire.png"
             alt="luxury car"
             className="w-full h-full object-cover brightness-60"
           />
