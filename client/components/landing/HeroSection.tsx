@@ -85,11 +85,11 @@ export default function HeroSection() {
 
           {/* Trust Badge / Testimonial */}
           <div className="mt-8 flex flex-col sm:flex-row gap-6 items-center text-base text-muted-foreground justify-center lg:justify-start">
-            <div className="flex items-center gap-2 bg-black/40 px-4 py-2 rounded-full shadow-inner">
+            <div className="flex items-center gap-2 ">
               <Download className="opacity-90 text-[#e6a700]" />
               <span>Download itinerary & receipts</span>
             </div>
-            <div className="flex items-center gap-2 bg-black/40 px-4 py-2 rounded-full shadow-inner">
+            <div className="flex items-center gap-2 ">
               <svg
                 width="10"
                 height="10"
@@ -101,7 +101,7 @@ export default function HeroSection() {
               </svg>
               <span>Verified chauffeurs</span>
             </div>
-            <div className="flex items-center gap-2 bg-black/40 px-4 py-2 rounded-full shadow-inner">
+            <div className="flex items-center gap-2 ">
               <svg width="18" height="18" fill="none" viewBox="0 0 24 24">
                 <path
                   d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"

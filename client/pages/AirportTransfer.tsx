@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -23,6 +23,8 @@ import {
   Plane,
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import DateInput from "@/components/ui/DateInput";
+import TimeInput from "@/components/ui/TimeInput";
 
 const serviceClasses = [
   {
@@ -78,6 +80,8 @@ const globalCities = [
 ];
 
 export default function AirportTransfer() {
+    const [date, setDate] = useState<any>(null);
+    const [time, setTime] = useState<any>(null);
   return (
     <div className="min-h-screen bg-black text-white">
       {/* Hero Section */}
@@ -565,28 +569,46 @@ export default function AirportTransfer() {
               scheduling, instant confirmation, and 24/7 support.
             </p>
           </motion.div>
-          <div className="max-w-2xl mx-auto bg-black/50 border border-gray-800 rounded-2xl p-8 flex flex-col gap-6 items-center">
-            <div className="w-full flex flex-col md:flex-row gap-4">
-              <input
-                type="text"
-                placeholder="Pickup location"
-                className="flex-1 bg-gray-900/50 border border-gray-700 rounded-lg p-3 text-white"
-              />
-              <input
-                type="text"
-                placeholder="Dropoff (Airport)"
-                className="flex-1 bg-gray-900/50 border border-gray-700 rounded-lg p-3 text-white"
-              />
+          <div className="max-w-2xl mx-auto bg-black/50 border border-gray-800 rounded-2xl p-8 flex flex-col gap-6 items-center " >
+            <div className=" w-full flex flex-col md:flex-row gap-4">
+             <input
+  type="text"
+  placeholder="Pickup location"
+  className="
+    flex-1 bg-gray-900/50 border border-gray-700 rounded-lg p-3 text-white 
+    placeholder:text-gray-500 
+    focus:border-[#e6a700] focus:ring-2 focus:ring-[#e6a700] 
+    focus:outline-none transition-all duration-300
+  "
+/>
+
+<input
+  type="text"
+  placeholder="Dropoff (Airport)"
+  className="
+    flex-1 bg-gray-900/50 border border-gray-700 rounded-lg p-3 text-white 
+    placeholder:text-gray-500 
+    focus:border-[#e6a700] focus:ring-2 focus:ring-[#e6a700] 
+    focus:outline-none transition-all duration-300
+  "
+/>
+
             </div>
-            <div className="w-full flex flex-col md:flex-row gap-4">
-              <input
-                type="date"
-                className="flex-1 bg-gray-900/50 border border-gray-700 rounded-lg p-3 text-white"
-              />
-              <input
-                type="time"
-                className="flex-1 bg-gray-900/50 border border-gray-700 rounded-lg p-3 text-white"
-              />
+            <div className="w-full flex flex-col md:flex-row gap-4 airport-transfer-datetime">
+             <DateInput
+                                  value={date}
+                                  onChange={(d) => setDate(d)}
+                                  ariaLabel="Booking date"
+                                  name="widget-date"
+                                  className="w-full rounded-xl border  bg-gray-900 border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-corporate-gold"
+                                />
+                                <TimeInput
+                                  value={time}
+                                  onChange={(t) => setTime(t)}
+                                  ariaLabel="Booking time"
+                                  name="widget-time"
+                                  className="w-full rounded-xl border  bg-gray-900 border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-corporate-gold "
+                                />
             </div>
             <Button className="bg-corporate-gold text-black w-full">
               Check Availability

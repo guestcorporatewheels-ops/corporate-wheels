@@ -24,17 +24,22 @@ import {
 import { Link } from "react-router-dom";
 import SelectInput from "@/components/ui/SelectInput";
 import { useState } from "react";
+import DateInput from "@/components/ui/DateInput";
+import TimeInput from "@/components/ui/TimeInput";
+import { set } from "date-fns";
 
 export default function HourlyHire() {
   const [quickHours, setQuickHours] = useState<string>("2");
   const [quickCar, setQuickCar] = useState<string>("Luxury Sedan");
+  const [date, setDate] = useState<any>(null);
+  const [time, setTime] = useState<any>(null);
   return (
     <div className="min-h-screen bg-gradient-to-b from-black via-gray-900 to-black text-white">
       {/* Hero Section with refined two-column layout */}
-      <section className="relative min-h-[72vh] flex items-center overflow-hidden pt-20">
+      <section className="relative min-h-[72vh] flex items-center  pt-20">
         <div className="absolute inset-0 z-0">
           <img
-            src="https://images.unsplash.com/photo-1505765056039-8e2ff0fc6a2b?q=80&w=2000&auto=format&fit=crop"
+            src="/images/houry-hire.png"
             alt="luxury car"
             className="w-full h-full object-cover brightness-60"
           />
@@ -136,8 +141,22 @@ export default function HourlyHire() {
                   />
 
                   {/* Responsive fix starts here */}
-                  <div className="flex flex-col sm:flex-row gap-2">
-                    <input
+                  <div className="flex flex-col sm:flex-row gap-2 hourly-hire">
+                    <DateInput
+                      value={date}
+                      onChange={(d) => setDate(d)}
+                      ariaLabel="Booking date"
+                      name="widget-date"
+                      className="w-full rounded-xl border  bg-gray-900 border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-corporate-gold"
+                    />
+                    <TimeInput
+                      value={time}
+                      onChange={(t) => setTime(t)}
+                      ariaLabel="Booking time"
+                      name="widget-time"
+                      className="w-full rounded-xl border  bg-gray-900 border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-corporate-gold "
+                    />
+                    {/* <input
                       title="date"
                       type="date"
                       className="bg-gray-900/50 border border-gray-700 rounded-lg p-3 text-white w-full"
@@ -146,7 +165,7 @@ export default function HourlyHire() {
                       title="time"
                       type="time"
                       className="bg-gray-900/50 border border-gray-700 rounded-lg p-3 text-white w-full"
-                    />
+                    /> */}
                   </div>
                   {/* Responsive fix ends here */}
 

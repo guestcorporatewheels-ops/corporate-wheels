@@ -209,6 +209,12 @@
     border-color: #E6A700;
   }
 
+.hourly-hire ::placeholder{
+  color: white !important;
+}
+.hourly-hire svg{
+  color: grey !important;
+}
   .shadow-glow {
     box-shadow: 0 8px 30px rgba(230, 167, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.6);
   }
@@ -218,6 +224,33 @@
     backdrop-filter: blur(6px);
   }
 }
+.airport-transfer-datetime ::placeholder{
+  color: rgb(175, 175, 175) !important;
+}
+.airport-transfer-datetime svg{
+  color: rgb(175, 175, 175) !important;
+}
+.airport-transfer-datetime .rdp-nav{
+  display: none !important;
+}
+.airport-transfer-datetime .rdp-month_caption{
+display: none !important;
+}
+.hourly-hire .rdp-nav{
+  display: none !important;
+}
+.hourly-hire .rdp-month_caption{
+display: none !important;
+}
+.widget .rdp-nav{
+  display: none !important;
+}
+.widget .rdp-month_caption{
+display: none !important;
+}
+  .rdp-today button{
+    color:#E6A700 !important;
+  }
 
 @keyframes gradient-move {
   0% {

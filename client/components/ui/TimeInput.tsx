@@ -48,7 +48,7 @@ export default function TimeInput({
           value={value || ""}
           onClick={() => setOpen((s) => !s)}
           placeholder={placeholder}
-          className="w-full rounded-lg bg-black/40 px-3 py-2 border border-white/10 focus:outline-none focus:ring-2 focus:ring-corporate-gold cursor-pointer placeholder:text-white/40"
+          className="w-full rounded-lg bg-black/40 px-3 py-2 border border-white/10 focus:outline-none focus:ring-2 focus:ring-corporate-gold cursor-pointer placeholder:text-[#E6A700]"
         />
         <Clock className="absolute right-3 top-1/2 -translate-y-1/2 text-corporate-gold" />
 
