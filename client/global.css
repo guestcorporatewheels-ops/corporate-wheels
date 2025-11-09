@@ -224,6 +224,18 @@
     backdrop-filter: blur(6px);
   }
 }
+.airport-transfer-datetime ::placeholder{
+  color: rgb(175, 175, 175) !important;
+}
+.airport-transfer-datetime svg{
+  color: rgb(175, 175, 175) !important;
+}
+.airport-transfer-datetime .rdp-nav{
+  display: none !important;
+}
+.airport-transfer-datetime .rdp-month_caption{
+display: none !important;
+}
 .hourly-hire .rdp-nav{
   display: none !important;
 }

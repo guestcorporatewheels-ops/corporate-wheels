@@ -115,7 +115,7 @@ export default function CityToCity() {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="border-corporate-gold text-corporate-gold hover:bg-corporate-gold/10 px-6 py-4"
+                  className="border-corporate-gold text-corporate-gold hover:bg-corporate-gold px-6 py-4"
                 >
                   {" "}
                   <Link to="/help"> Contact Concierge</Link>
@@ -460,7 +460,7 @@ export default function CityToCity() {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="border-corporate-gold text-corporate-gold hover:bg-corporate-gold/10"
+                  className="border-corporate-gold text-corporate-gold hover:bg-corporate-gold"
                 >
                   <Download className="w-5 h-5 mr-2" />
                   App Store
@@ -468,7 +468,7 @@ export default function CityToCity() {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="border-corporate-gold text-corporate-gold hover:bg-corporate-gold/10"
+                  className="border-corporate-gold text-corporate-gold hover:bg-corporate-gold"
                 >
                   <Download className="w-5 h-5 mr-2" />
                   Google Play
@@ -577,7 +577,7 @@ export default function CityToCity() {
               <Button
                 size="lg"
                 variant="outline"
-                className="border-corporate-gold text-corporate-gold hover:bg-corporate-gold/10"
+                className="border-corporate-gold text-corporate-gold hover:bg-corporate-gold"
               >
                 <Phone className="w-5 h-5 mr-2" />
                 <Link to="/help"> Contact Us</Link>
