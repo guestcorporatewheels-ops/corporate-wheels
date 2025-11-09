@@ -394,7 +394,7 @@ function Benefits() {
   ];
 
   return (
-    <section className="relative py-20 overflow-hidden">
+    <section className="relative py-20">
       <div className="container">
         <motion.h2
           initial={{ opacity: 0, y: 16 }}
@@ -414,24 +414,34 @@ function Benefits() {
                 key={it.t}
                 initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
+                whileHover={{ y: -8 }}
+                whileTap={{ scale: 0.995 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.05 }}
-                className={cn("relative", col)}
+                transition={{ duration: 0.6, delay: i * 0.06 }}
+                className={cn("relative group", col)}
               >
-                <div className="rounded-2xl border border-white/10 bg-white/5 p-8   backdrop-blur-sm  shadow-[0_0_15px_rgba(230,167,0,0.25)]">
-                  <div className="flex items-start gap-5 text-white">
-                    <div className="text-orange-400">
-                      <RingIcon>
-                        <g className="text-orange-400">{it.icon}</g>
-                      </RingIcon>
-                    </div>
-                    <div>
-                      <h4 className="text-xl font-semibold tracking-tight text-white">
-                        {it.t}
-                      </h4>
-                      <p className="mt-3 text-[15px] leading-6 text-muted-foreground">
-                        {it.d}
-                      </p>
+                <div className="relative rounded-2xl overflow-hidden">
+                  {/* subtle gold glow */}
+                  <div className="absolute -inset-0.5 bg-gradient-to-br from-transparent to-transparent rounded-2xl pointer-events-none" />
+
+                  <div className="relative p-6 md:p-8 rounded-2xl bg-gradient-to-b from-black/60 to-black/40 border border-white/6 backdrop-blur-sm shadow-[0_12px_30px_rgba(0,0,0,0.6)] group-hover:shadow-[0_20px_50px_rgba(0,0,0,0.75)] transition-shadow duration-400 transform group-hover:-translate-y-1 group-hover:scale-[1.01]">
+                    <div className="flex items-start gap-6">
+                      <div className="flex-none">
+                        <div className="w-16 h-16 rounded-xl flex items-center justify-center bg-gradient-to-br from-corporate-gold/10 to-corporate-gold/5 border border-corporate-gold/10 shadow-sm transition-transform duration-300 group-hover:scale-105 group-hover:shadow-[0_8px_30px_rgba(230,167,0,0.12)]">
+                          <div className="text-corporate-gold transition-colors duration-300 group-hover:text-corporate-gold">
+                            {it.icon}
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="min-w-0">
+                        <h4 className="text-2xl md:text-2xl font-heading text-white mb-2 group-hover:text-corporate-gold transition-colors duration-300">
+                          {it.t}
+                        </h4>
+                        <p className="text-base text-white/70 leading-7 group-hover:text-white/90 transition-colors duration-300">
+                          {it.d}
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </div>
