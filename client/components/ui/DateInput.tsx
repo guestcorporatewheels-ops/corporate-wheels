@@ -67,7 +67,7 @@ export default function DateInput({
           <motion.div
             initial={{ opacity: 0, y: -6 }}
             animate={{ opacity: 1, y: 0 }}
-            className="absolute z-50 mt-2 bg-black/95 backdrop-blur-md border border-white/10 rounded-xl shadow-2xl p-3"
+            className="absolute  z-[9999] mt-2 bg-black/95 backdrop-blur-md border border-white/10 rounded-xl shadow-2xl p-3"
           >
             <div className="w-[320px] text-white">
               {/* Custom header */}

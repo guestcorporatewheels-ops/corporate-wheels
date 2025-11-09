@@ -156,7 +156,7 @@ export default function BookingWidget() {
 
           <div className="flex flex-col md:flex-row gap-6 w-full">
             <motion.div
-              className="flex-1 flex flex-col gap-2"
+              className="flex-1 flex flex-col gap-2 "
               custom={3}
               variants={item}
             >
@@ -173,7 +173,7 @@ export default function BookingWidget() {
                 }
                 ariaLabel="Booking date"
                 name="widget-date"
-                className="w-full rounded-xl border border-corporate-gold bg-black/70 text-white focus:outline-none focus:ring-2 focus:ring-corporate-gold"
+                className="w-full z-[#9999] rounded-xl border border-corporate-gold bg-black/70 text-white focus:outline-none focus:ring-2 focus:ring-corporate-gold"
               />
             </motion.div>
 
@@ -212,7 +212,7 @@ export default function BookingWidget() {
             >
               <span className="flex items-center gap-2">
                 Search Rides
-                <ArrowRight className="size-5 text-corporate-gold" />
+                <ArrowRight className="size-5 text-black  " />
               </span>
             </Button>
           </motion.div>

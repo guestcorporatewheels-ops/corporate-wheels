@@ -198,7 +198,7 @@ export default function Services() {
           ))}
         </div>
 
-        <div className="mt-16 text-center relative z-10">
+        {/* <div className="mt-16 text-center relative z-10">
           <a
             href="/services"
             className="inline-flex items-center bg-gradient-to-r btn-gradient text-black px-8 py-3 rounded-md font-semibold shadow-lg transition-all hover:shadow-corporate-gold/40 "
@@ -218,7 +218,7 @@ export default function Services() {
               />
             </svg>
           </a>
-        </div>
+        </div> */}
       </div>
     </section>
   );

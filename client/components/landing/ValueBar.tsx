@@ -26,29 +26,38 @@ const items = [
 
 export default function ValueBar() {
   return (
-    <section className="border-y border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.04),rgba(255,255,255,0.02))]">
-      <div className="container py-6 grid grid-cols-2 md:grid-cols-4 gap-4">
-        {items.map(({ icon: Icon, text, description }, i) => (
-          <motion.div
-            key={text}
-            initial={{ opacity: 0, y: 8 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.08 * i, duration: 0.4 }}
-            className="flex flex-col md:flex-row items-center md:items-center text-center md:text-left gap-2 md:gap-3 p-3 rounded-lg hover:shadow-[0_10px_30px_rgba(230,167,0,0.08)] transition-all duration-400 ease-in-out hover:bg-white/5"
-          >
-            <div className="p-2 rounded-md border border-white/6 bg-gradient-to-br from-[rgba(230,167,0,0.15)] to-[rgba(255,107,53,0.06)]">
-              <div className="w-8 h-8 flex items-center justify-center text-[hsl(var(--secondary))]">
-                <Icon className="size-4" />
+    <section className="border-y border-corporate-gold/20 bg-gradient-to-b from-black via-black/95 to-black/90">
+      <div className="container py-12 md:py-16">
+        <h2 className="sr-only">Why choose Corporate Wheels</h2>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+          {items.map(({ icon: Icon, text, description }, i) => (
+            <motion.div
+              key={text}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.1 * i, duration: 0.5, ease: "easeOut" }}
+              className="relative group h-full"
+            >
+              <div className="absolute inset-0 bg-gradient-to-b from-corporate-gold/5 to-transparent rounded-2xl blur-2xl opacity-0 group-hover:opacity-70 transition-opacity duration-500" />
+
+              <div className="relative flex flex-col justify-between h-full p-6 md:p-8 rounded-2xl bg-gradient-to-b from-white/[0.03] to-transparent border border-white/[0.05] backdrop-blur-sm shadow-[0_8px_20px_rgba(0,0,0,0.5)] group-hover:border-corporate-gold/20 group-hover:shadow-[0_20px_40px_rgba(0,0,0,0.6),inset_0_0_20px_rgba(230,167,0,0.05)] transition-all duration-500">
+                <div>
+                  <div className="flex-none w-16 h-16 mb-4 rounded-xl flex items-center justify-center bg-gradient-to-br from-corporate-gold/10 to-corporate-gold/5 border border-corporate-gold/10 group-hover:border-corporate-gold/20 group-hover:shadow-[0_0_20px_rgba(230,167,0,0.1)] transition-all duration-500">
+                    <Icon className="h-8 w-8 text-corporate-gold" />
+                  </div>
+
+                  <h3 className="text-lg md:text-xl font-semibold text-white tracking-tight mb-2 group-hover:text-corporate-gold transition-colors duration-300">
+                    {text}
+                  </h3>
+                  <p className="text-base text-white/60 group-hover:text-white/70 transition-colors duration-300">
+                    {description}
+                  </p>
+                </div>
               </div>
-            </div>
-            <div className="min-w-0 mt-2 md:mt-0">
-              <p className="text-sm font-semibold text-white">{text}</p>
-              <p className="hidden md:block text-xs text-muted-foreground">
-                {description}
-              </p>
-            </div>
-          </motion.div>
-        ))}
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   );
