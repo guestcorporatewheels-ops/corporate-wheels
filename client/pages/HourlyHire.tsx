@@ -26,10 +26,13 @@ import SelectInput from "@/components/ui/SelectInput";
 import { useState } from "react";
 import DateInput from "@/components/ui/DateInput";
 import TimeInput from "@/components/ui/TimeInput";
+import { set } from "date-fns";
 
 export default function HourlyHire() {
   const [quickHours, setQuickHours] = useState<string>("2");
   const [quickCar, setQuickCar] = useState<string>("Luxury Sedan");
+  const [date, setDate] = useState<any>(null);
+  const [time, setTime] = useState<any>(null);
   return (
     <div className="min-h-screen bg-gradient-to-b from-black via-gray-900 to-black text-white">
       {/* Hero Section with refined two-column layout */}
@@ -140,15 +143,15 @@ export default function HourlyHire() {
                   {/* Responsive fix starts here */}
                   <div className="flex flex-col sm:flex-row gap-2 hourly-hire">
                     <DateInput
-                      value={null}
-                      onChange={(d) => console.log(d)}
+                      value={date}
+                      onChange={(d) => setDate(d)}
                       ariaLabel="Booking date"
                       name="widget-date"
                       className="w-full rounded-xl border  bg-gray-900 border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-corporate-gold"
                     />
                     <TimeInput
-                      value={null}
-                      onChange={(t) => console.log(t)}
+                      value={time}
+                      onChange={(t) => setTime(t)}
                       ariaLabel="Booking time"
                       name="widget-time"
                       className="w-full rounded-xl border  bg-gray-900 border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-corporate-gold "

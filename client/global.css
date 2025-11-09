@@ -224,6 +224,12 @@
     backdrop-filter: blur(6px);
   }
 }
+.hourly-hire .rdp-nav{
+  display: none !important;
+}
+.hourly-hire .rdp-month_caption{
+display: none !important;
+}
 .widget .rdp-nav{
   display: none !important;
 }
