@@ -16,7 +16,9 @@ interface BookingForm {
 }
 
 export default function BookingWidget() {
-  const [bookingType, setBookingType] = useState<"one-way" | "hourly">("one-way");
+  const [bookingType, setBookingType] = useState<"one-way" | "hourly">(
+    "one-way",
+  );
 
   const { register, handleSubmit, setValue, watch } = useForm<BookingForm>({
     defaultValues: {
@@ -57,34 +59,34 @@ export default function BookingWidget() {
         custom={0}
         variants={item}
       >
-       {/* Tab Selector */}
-<div className="flex mb-6 w-full rounded-xl overflow-hidden bg-black/60">
-  {[
-    { key: "one-way", label: "One-way" },
-    { key: "hourly", label: "By the hour" },
-  ].map((tab) => (
-    <motion.button
-      key={tab.key}
-      type="button"
-      onClick={() => setBookingType(tab.key as "one-way" | "hourly")}
-      whileTap={{ scale: 0.97 }}
-      className={`flex-1 py-3 text-base font-semibold whitespace-nowrap flex items-center justify-center transition-all duration-300
+        {/* Tab Selector */}
+        <div className="flex mb-6 w-full rounded-xl overflow-hidden bg-black/60">
+          {[
+            { key: "one-way", label: "One-way" },
+            { key: "hourly", label: "By the hour" },
+          ].map((tab) => (
+            <motion.button
+              key={tab.key}
+              type="button"
+              onClick={() => setBookingType(tab.key as "one-way" | "hourly")}
+              whileTap={{ scale: 0.97 }}
+              className={`flex-1 py-3 text-base font-semibold whitespace-nowrap flex items-center justify-center transition-all duration-300
         ${
           bookingType === tab.key
             ? "bg-gradient-to-r from-[#E6A700] to-[#FF6B35] text-black shadow-[0_0_15px_rgba(230,167,0,0.4)]"
             : "bg-transparent text-gray-400 hover:text-corporate-gold"
         }`}
-    >
-      {tab.label}
-    </motion.button>
-  ))}
-</div>
-
-
-
+            >
+              {tab.label}
+            </motion.button>
+          ))}
+        </div>
 
         {/* Form */}
-        <form onSubmit={handleSubmit(onSubmit)} className="w-full flex flex-col gap-6">
+        <form
+          onSubmit={handleSubmit(onSubmit)}
+          className="w-full flex flex-col gap-6"
+        >
           <div className="flex flex-col md:flex-row gap-6 w-full">
             <motion.div
               className="flex-1 flex flex-col gap-2"
@@ -210,7 +212,11 @@ export default function BookingWidget() {
             </motion.div>
           </div>
 
-          <motion.div className="flex justify-end pt-4" custom={5} variants={item}>
+          <motion.div
+            className="flex justify-end pt-4"
+            custom={5}
+            variants={item}
+          >
             <Button
               type="submit"
               variant="glow"
