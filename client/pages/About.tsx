@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import useReveal from "@/hooks/use-reveal";
 import { Button } from "@/components/ui/button";
 import { ScrollToTop } from "@/components/ui/scroll-to-top";
 import { Link } from "react-router-dom";
@@ -25,6 +26,12 @@ const teamMembers = [
 ];
 
 export default function About() {
+  const heroRef = useReveal<HTMLElement>({ threshold: 0.06 });
+  const galleryRef = useReveal<HTMLElement>({ threshold: 0.08 });
+  const whyRef = useReveal<HTMLElement>({ threshold: 0.12 });
+  const testimonialsRef = useReveal<HTMLElement>({ threshold: 0.12 });
+  const ctaRef = useReveal<HTMLElement>({ threshold: 0.12 });
+
   return (
     <main className="relative bg-background text-foreground min-h-screen scroll-smooth">
       {/* Animated SVG background - luxury wave */}
@@ -48,8 +55,8 @@ export default function About() {
         />
       </motion.svg>
 
-      {/* Hero Section - Redesigned */}
-      <section className="relative pt-40 pb-32 text-center flex flex-col items-center justify-center overflow-hidden">
+  {/* Hero Section - Redesigned */}
+  <section ref={heroRef} className="relative pt-40 pb-32 text-center flex flex-col items-center justify-center overflow-hidden reveal opacity-0 translate-y-6 transition-transform duration-700 ease-out">
         {/* Animated SVGs from Business page */}
         <div className="pointer-events-none absolute inset-0 -z-0">
           <motion.svg
@@ -136,7 +143,7 @@ export default function About() {
           </motion.div>
         </motion.div>
       </section>
-      <section className="relative w-full max-w-6xl mx-auto mt-8 z-10">
+  <section ref={galleryRef} className="relative w-full max-w-6xl mx-auto mt-8 z-10 reveal opacity-0 translate-y-6 transition-transform duration-700 ease-out">
         {/* Image Gallery Grid */}
         <div className="grid md:grid-cols-2 gap-8">
           {/* Main Large Image */}
@@ -282,8 +289,8 @@ export default function About() {
             />
           </svg>
         </div>
-        {/* Why Choose Corporate Wheels Section */}
-        <section className="relative max-w-6xl mx-auto mt-14 text-center z-10 py-16 px-4">
+  {/* Why Choose Corporate Wheels Section */}
+  <section ref={whyRef} className="relative max-w-6xl mx-auto mt-14 text-center z-10 py-16 px-4 reveal opacity-0 translate-y-6 transition-transform duration-700 ease-out">
           {/* Animated glowing SVG accent */}
           <svg
             className="absolute left-1/2 -translate-x-1/2 -top-8 w-24 h-24 z-0 blur-md opacity-70"
@@ -825,8 +832,8 @@ export default function About() {
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <section className="relative py-16">
+  {/* Testimonials Section */}
+  <section ref={testimonialsRef} className="relative py-16 reveal opacity-0 translate-y-6 transition-transform duration-700 ease-out">
         <svg
           className="absolute left-1/2 -translate-x-1/2 -top-10 w-32 h-32 z-0 animate-pulse"
           viewBox="0 0 128 128"
@@ -959,8 +966,8 @@ export default function About() {
         </div>
       </section>
 
-      {/* Call to Action Section */}
-      <section className="relative py-16">
+  {/* Call to Action Section */}
+  <section ref={ctaRef} className="relative py-16 reveal opacity-0 translate-y-6 transition-transform duration-700 ease-out">
         <svg
           className="absolute left-16 bottom-8 w-20 h-20 z-0 animate-pulse"
           viewBox="0 0 80 80"
