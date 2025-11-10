@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import useReveal from "@/hooks/use-reveal";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import {
@@ -32,19 +33,30 @@ const cities = [
 ];
 
 export default function ChauffeurHailing() {
+  const heroRef = useReveal<HTMLDivElement>({ threshold: 0.08 });
+  const whyRef = useReveal<HTMLDivElement>({ threshold: 0.12 });
+  const onDemandRef = useReveal<HTMLDivElement>({ threshold: 0.12 });
+  const citiesRef = useReveal<HTMLDivElement>({ threshold: 0.12 });
+  const downloadRef = useReveal<HTMLDivElement>({ threshold: 0.12 });
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-black via-gray-900 to-black text-white">
       {/* Hero - enhanced */}
-      <section className="relative overflow-hidden pt-24 pb-28">
+      <section
+        ref={heroRef}
+        className="relative overflow-hidden pt-24 pb-28 reveal opacity-0 translate-y-6 transition-transform duration-700 ease-out"
+      >
         <div className="absolute inset-0 -z-10">
           <div className="absolute inset-0 bg-gradient-to-b from-black to-black/85" />
-          <svg
+          <motion.svg
             className="absolute -top-32 left-1/4 opacity-20"
             width="900"
             height="500"
             viewBox="0 0 900 500"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
+            animate={{ rotate: [0, 1.5, 0], opacity: [0.18, 0.22, 0.18] }}
+            transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
           >
             <defs>
               <linearGradient id="goldGrad" x1="0" x2="1">
@@ -52,15 +64,15 @@ export default function ChauffeurHailing() {
                 <stop offset="100%" stopColor="#ffd36a" stopOpacity="0.05" />
               </linearGradient>
             </defs>
-            <ellipse
-              cx="220"
-              cy="100"
-              rx="260"
-              ry="100"
-              fill="url(#goldGrad)"
-            />
+            <ellipse cx="220" cy="100" rx="260" ry="100" fill="url(#goldGrad)" />
             <ellipse cx="700" cy="200" rx="190" ry="90" fill="url(#goldGrad)" />
-          </svg>
+          </motion.svg>
+
+          <motion.div
+            className="absolute -right-40 top-8 w-72 h-72 rounded-full bg-gradient-to-br from-yellow-300/10 to-corporate-gold/5 blur-3xl"
+            animate={{ y: [0, -12, 0], scale: [1, 1.03, 1] }}
+            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+          />
         </div>
 
         <div className="container relative z-10">
@@ -132,7 +144,11 @@ export default function ChauffeurHailing() {
               transition={{ duration: 0.9 }}
             >
               <div className="relative w-full max-w-lg mx-auto">
-                <div className="absolute -right-16 -top-10 w-48 h-48 rounded-full bg-gradient-to-br from-yellow-300/10 to-corporate-gold/5 blur-3xl" />
+                <motion.div
+                  className="absolute -right-16 -top-10 w-48 h-48 rounded-full bg-gradient-to-br from-yellow-300/10 to-corporate-gold/5 blur-3xl"
+                  animate={{ y: [0, -8, 0], rotate: [0, 3, 0] }}
+                  transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+                />
                 <Card className="p-8 bg-black/50 border-gray-800 shadow-2xl">
                   <div className="flex gap-4 items-center">
                     <img
@@ -168,20 +184,28 @@ export default function ChauffeurHailing() {
                 </Card>
 
                 <div className="mt-6 flex gap-4 justify-center">
-                  <div className="w-45 h-40 bg-gradient-to-b from-gray-800 to-black rounded-xl overflow-hidden shadow-xl">
+                  <motion.div
+                    className="w-45 h-40 bg-gradient-to-b from-gray-800 to-black rounded-xl overflow-hidden shadow-xl"
+                    animate={{ y: [0, -6, 0], scale: [1, 1.02, 1] }}
+                    transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+                  >
                     <img
                       src="https://images.unsplash.com/photo-1547731269-e4073e054f12?fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE3fHx8ZW58MHx8fHx8&ixlib=rb-4.1.0&q=60&w=3000"
                       alt="app preview"
                       className="w-full h-full object-cover"
                     />
-                  </div>
-                  <div className="w-45 h-40 bg-gradient-to-b from-gray-800 to-black rounded-xl overflow-hidden shadow-xl">
+                  </motion.div>
+                  <motion.div
+                    className="w-45 h-40 bg-gradient-to-b from-gray-800 to-black rounded-xl overflow-hidden shadow-xl"
+                    whileHover={{ scale: 1.03 }}
+                    transition={{ type: "spring", stiffness: 120 }}
+                  >
                     <img
                       src="https://plus.unsplash.com/premium_photo-1661306646017-c3f9293fdbd8?fm=jpg&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cHJvZmVzc2lvbmFsJTIwZHJpdmVyfGVufDB8fDB8fHww&ixlib=rb-4.1.0&q=60&w=3000"
                       alt="app preview 2"
                       className="w-full h-full object-cover"
                     />
-                  </div>
+                  </motion.div>
                 </div>
               </div>
             </motion.div>
@@ -190,7 +214,10 @@ export default function ChauffeurHailing() {
       </section>
 
       {/* Why Choose - upgraded cards */}
-      <section className="py-24">
+      <section
+        ref={whyRef}
+        className="py-24 reveal opacity-0 translate-y-6 transition-transform duration-700 ease-out"
+      >
         <div className="container">
           <motion.div
             initial={{ opacity: 0, y: 10 }}
@@ -246,9 +273,10 @@ export default function ChauffeurHailing() {
                 initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: idx * 0.08 }}
+                whileHover={{ y: -6, scale: 1.02 }}
+                transition={{ duration: 0.5, delay: idx * 0.08, type: "spring", stiffness: 120 }}
               >
-                <Card className="p-8 bg-black/40 border border-gray-800 rounded-xl hover:scale-105 hover:shadow-2xl transition-transform">
+                <Card className="p-8 bg-black/40 border border-gray-800 rounded-xl hover:shadow-2xl transition-transform">
                   <div className="flex flex-col items-center text-center gap-4">
                     <div className="p-3 rounded-full bg-black/30 border border-white/5">
                       {item.icon}
@@ -264,7 +292,10 @@ export default function ChauffeurHailing() {
       </section>
 
       {/* On-Demand - improved map */}
-      <section className="py-24 bg-gradient-to-b from-gray-900/20 to-black">
+      <section
+        ref={onDemandRef}
+        className="py-24 bg-gradient-to-b from-gray-900/20 to-black reveal opacity-0 translate-y-6 transition-transform duration-700 ease-out"
+      >
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -327,7 +358,10 @@ export default function ChauffeurHailing() {
       </section>
 
       {/* Cities - improved badges */}
-      <section className="py-24">
+      <section
+        ref={citiesRef}
+        className="py-24 reveal opacity-0 translate-y-6 transition-transform duration-700 ease-out"
+      >
         <div className="container">
           <motion.div
             initial={{ opacity: 0, y: 10 }}
@@ -349,7 +383,8 @@ export default function ChauffeurHailing() {
                 initial={{ opacity: 0, y: 6 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.45, delay: i * 0.05 }}
+                whileHover={{ scale: 1.04, y: -4 }}
+                transition={{ duration: 0.35, delay: i * 0.03, type: "spring", stiffness: 120 }}
                 className="px-6 py-3 rounded-full bg-gradient-to-r from-gray-800/60 to-black/40 border border-gray-800 text-sm text-gray-100 flex items-center gap-3"
               >
                 <span className="w-3 h-3 bg-corporate-gold rounded-full shadow-md" />
@@ -361,7 +396,10 @@ export default function ChauffeurHailing() {
       </section>
 
       {/* Download - polished */}
-      <section className="py-24 bg-gradient-to-b from-gray-900/50 to-black relative overflow-hidden">
+      <section
+        ref={downloadRef}
+        className="py-24 bg-gradient-to-b from-gray-900/50 to-black relative overflow-hidden reveal opacity-0 translate-y-6 transition-transform duration-700 ease-out"
+      >
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -403,13 +441,17 @@ export default function ChauffeurHailing() {
             >
               <div className="relative w-full max-w-lg mx-auto">
                 <div className="bg-gradient-to-b from-gray-800/60 to-black/60 border border-gray-800 rounded-3xl p-8 shadow-2xl">
-                  <div className="w-64 h-[420px] bg-gradient-to-b from-black to-gray-800 rounded-2xl mx-auto overflow-hidden shadow-inner">
+                  <motion.div
+                    className="w-64 h-[420px] bg-gradient-to-b from-black to-gray-800 rounded-2xl mx-auto overflow-hidden shadow-inner"
+                    animate={{ y: [0, -8, 0], scale: [1, 1.01, 1] }}
+                    transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+                  >
                     <img
                       src="/images/ada607e9-1a77-4abe-b383-edba1d490fc2.png"
                       alt="app preview"
                       className="w-full h-full object-cover"
                     />
-                  </div>
+                  </motion.div>
                 </div>
               </div>
             </motion.div>
