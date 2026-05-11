@@ -28,40 +28,40 @@ import {
 
 const cityRoutes = [
   {
-    from: "New York",
-    to: "Boston",
-    distance: "215 miles",
+    from: "London",
+    to: "Manchester",
+    distance: "208 miles",
     duration: "4 hours",
-    price: "499",
+    price: "349",
     image:
-      "https://images.unsplash.com/photo-1534270804882-6b5048b1c1fc?q=80&w=2940&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1515586838455-8f8f940d6853?q=80&w=2940&auto=format&fit=crop",
   },
   {
-    from: "Los Angeles",
-    to: "Las Vegas",
-    distance: "270 miles",
-    duration: "4.5 hours",
-    price: "549",
+    from: "London",
+    to: "Oxford",
+    distance: "60 miles",
+    duration: "1.5 hours",
+    price: "189",
     image:
-      "https://images.unsplash.com/photo-1581351721010-8cf859cb14a4?q=80&w=2940&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1548013146-72479768bbaa?q=80&w=2940&auto=format&fit=crop",
   },
   {
-    from: "Miami",
-    to: "Orlando",
-    distance: "235 miles",
-    duration: "4 hours",
-    price: "479",
+    from: "London",
+    to: "Birmingham",
+    distance: "126 miles",
+    duration: "2.5 hours",
+    price: "249",
     image:
-      "https://images.unsplash.com/photo-1605723517503-3cadb5818a0c?q=80&w=2940&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1601372740920-80252579df85?q=80&w=2940&auto=format&fit=crop",
   },
   {
-    from: "Chicago",
-    to: "Detroit",
-    distance: "280 miles",
-    duration: "4.5 hours",
-    price: "529",
+    from: "London",
+    to: "Edinburgh",
+    distance: "402 miles",
+    duration: "7.5 hours",
+    price: "599",
     image:
-      "https://images.unsplash.com/photo-1477414956199-7dafc86a4f1a?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170",
+      "https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?q=80&w=2940&auto=format&fit=crop",
   },
 ];
 
@@ -156,20 +156,20 @@ export default function CityToCity() {
               <div className="grid grid-cols-2 gap-4">
                 {[
                   {
-                    city: "New York → Boston",
-                    img: "https://images.unsplash.com/photo-1534270804882-6b5048b1c1fc?q=80&w=1000",
+                    city: "London → Manchester",
+                    img: "https://images.unsplash.com/photo-1515586838455-8f8f940d6853?q=80&w=1000",
                   },
                   {
-                    city: "Los Angeles → Las Vegas",
-                    img: "https://images.unsplash.com/photo-1581351721010-8cf859cb14a4?q=80&w=1000",
+                    city: "London → Oxford",
+                    img: "https://images.unsplash.com/photo-1548013146-72479768bbaa?q=80&w=1000",
                   },
                   {
-                    city: "Miami → Orlando",
-                    img: "https://images.unsplash.com/photo-1605723517503-3cadb5818a0c?q=80&w=1000",
+                    city: "London → Birmingham",
+                    img: "https://images.unsplash.com/photo-1601372740920-80252579df85?q=80&w=1000",
                   },
                   {
-                    city: "Chicago → Detroit",
-                    img: "https://images.unsplash.com/photo-1477414956199-7dafc86a4f1a?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170",
+                    city: "London → Edinburgh",
+                    img: "https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?q=80&w=1000",
                   },
                 ].map((c, i) => (
                   <div
@@ -326,7 +326,7 @@ export default function CityToCity() {
                       <div>
                         <p className="text-gray-400">Starting from</p>
                         <p className="text-3xl font-bold text-corporate-gold">
-                          ${route.price}
+                          £{route.price}
                         </p>
                       </div>
                       <Button

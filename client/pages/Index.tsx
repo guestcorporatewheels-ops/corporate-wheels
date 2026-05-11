@@ -4,7 +4,6 @@ import ValueBar from "@/components/landing/ValueBar";
 import Services from "@/components/landing/Services";
 import CityToCityRoutes from "@/components/landing/CityToCityRoutes";
 import HowItWorks from "@/components/landing/HowItWorks";
-import Coverage from "@/components/landing/Coverage";
 import Safety from "@/components/landing/Safety";
 import Testimonials from "@/components/landing/Testimonials";
 import DownloadSection from "@/components/landing/DownloadSection";
@@ -353,11 +352,6 @@ export default function Index() {
         <HowItWorks />
       </div>
 
-      {/* Global Coverage Network Animation */}
-      <div className="relative">
-      
-        <Coverage />
-      </div>
       
       {/* Curved Path Animation for Safety Section */}
       <motion.svg

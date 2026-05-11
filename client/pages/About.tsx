@@ -379,49 +379,6 @@ export default function About() {
               </ul>
             </motion.div>
 
-            {/* Global Coverage Card */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className="relative bg-white/[0.07] backdrop-blur-lg border border-white/10 rounded-2xl shadow-xl p-8 group hover:bg-white/[0.09] transition-all duration-300"
-            >
-              <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
-                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-corporate-gold to-orange-600 flex items-center justify-center">
-                  <svg
-                    className="w-8 h-8 text-white"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                    />
-                  </svg>
-                </div>
-              </div>
-              <h3 className="text-xl font-heading text-corporate-gold mt-6 mb-4">
-                Global Coverage
-              </h3>
-              <ul className="text-left text-muted-foreground space-y-3">
-                <li className="flex items-center">
-                  <span className="w-2 h-2 bg-corporate-gold rounded-full mr-2"></span>
-                  Worldwide service
-                </li>
-                <li className="flex items-center">
-                  <span className="w-2 h-2 bg-corporate-gold rounded-full mr-2"></span>
-                  Local expertise
-                </li>
-                <li className="flex items-center">
-                  <span className="w-2 h-2 bg-corporate-gold rounded-full mr-2"></span>
-                  24/7 availability
-                </li>
-              </ul>
-            </motion.div>
 
             {/* Smart Technology Card */}
             <motion.div

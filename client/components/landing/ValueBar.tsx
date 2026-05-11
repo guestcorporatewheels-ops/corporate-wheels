@@ -9,7 +9,7 @@ const items = [
   },
   {
     icon: PhoneCall,
-    text: "24/7 Global Support",
+    text: "24/7 Premium Support",
     description: "Always here to help",
   },
   {

@@ -198,14 +198,12 @@ function Hero() {
             </div>
             <div className="absolute -right-8 -bottom-8 p-6 backdrop-blur-md bg-white/5 border border-white/10 rounded-lg z-20">
               <div className="flex items-center gap-3">
-                <div className="w-12 h-12 rounded-full bg-[#E6A700]/20 flex items-center justify-center">
-                  <span className="text-[#E6A700] text-xl">$</span>
-                </div>
+                  <span className="text-[#E6A700] text-xl">£</span>
                 <div>
                   <p className="text-white text-sm font-medium">
                     Average Monthly
                   </p>
-                  <p className="text-[#E6A700] text-lg font-bold">$8,500+</p>
+                  <p className="text-[#E6A700] text-lg font-bold">£6,500+</p>
                 </div>
               </div>
             </div>
@@ -813,7 +811,7 @@ function FinalCTA() {
                 </span>
               </h3>
               <p className="mt-4 text-lg text-muted-foreground">
-                Join now and receive a $1,000 signing bonus after completing
+                Join now and receive a £1,000 signing bonus after completing
                 your first 50 rides. Plus, get priority access to premium
                 clients.
               </p>
@@ -881,12 +879,12 @@ function Stats() {
   const stats = [
     {
       label: "Average Monthly Income",
-      value: "$8,500+",
+      value: "£6,500+",
       prefix: "",
       suffix: "",
     },
     { label: "Active Chauffeurs", value: "500+", prefix: "", suffix: "" },
-    { label: "Cities Worldwide", value: "50+", prefix: "", suffix: "" },
+    { label: "UK Cities", value: "25+", prefix: "", suffix: "" },
     { label: "Client Satisfaction", value: "98%", prefix: "", suffix: "" },
   ];
 

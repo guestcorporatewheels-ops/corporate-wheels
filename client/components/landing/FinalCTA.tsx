@@ -15,7 +15,7 @@ export default function FinalCTA() {
         </h2>
 
         <p className="mt-4 text-muted-foreground max-w-2xl mx-auto text-lg">
-          Professional chauffeurs, transparent pricing, and global coverage —
+          Professional chauffeurs, transparent pricing, and UK-wide coverage —
           all in one app.
         </p>
 
@@ -68,7 +68,7 @@ export default function FinalCTA() {
                 d="M3 10h18M3 6h18M3 14h12"
               />
             </svg>
-            <span>Global coverage</span>
+            <span>UK-wide coverage</span>
           </div>
         </div>
       </div>

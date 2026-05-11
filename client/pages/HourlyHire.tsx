@@ -389,7 +389,7 @@ export default function HourlyHire() {
                 >
                   <h3 className="text-2xl font-semibold mb-2">{plan.title}</h3>
                   <div className="mb-6">
-                    <span className="text-4xl font-bold">${plan.price}</span>
+                    <span className="text-4xl font-bold">£{plan.price}</span>
                     <span className="text-gray-400">/{plan.duration}</span>
                   </div>
                   <ul className="space-y-4 mb-8">
@@ -595,96 +595,6 @@ export default function HourlyHire() {
         </div>
       </section>
 
-      {/* Global Reach Section */}
-      <section className="py-20 relative overflow-hidden">
-        <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black z-10" />
-          <img
-            src="/images/world-map-dots.svg"
-            alt="World map"
-            className="w-full h-full object-cover opacity-20"
-          />
-        </div>
-        <div className="container relative z-20">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl font-bold mb-6">Global Presence</h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Experience consistent luxury service across major cities
-              worldwide.
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
-            {[
-              {
-                region: "North America",
-                cities: ["New York", "Los Angeles", "Toronto", "Miami"],
-                icon: "🌎",
-              },
-              {
-                region: "Europe",
-                cities: ["London", "Paris", "Berlin", "Rome"],
-                icon: "🌍",
-              },
-              {
-                region: "Asia Pacific",
-                cities: ["Tokyo", "Singapore", "Sydney", "Dubai"],
-                icon: "🌏",
-              },
-              {
-                region: "Emerging Markets",
-                cities: ["Mumbai", "São Paulo", "Cape Town", "Mexico City"],
-                icon: "🌐",
-              },
-            ].map((region, index) => (
-              <motion.div
-                key={region.region}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-black/30 backdrop-blur-sm border border-gray-800 rounded-xl p-6 hover:border-corporate-gold transition-all duration-300"
-              >
-                <div className="text-4xl mb-4">{region.icon}</div>
-                <h3 className="text-xl font-semibold mb-4">{region.region}</h3>
-                <ul className="space-y-2">
-                  {region.cities.map((city) => (
-                    <li
-                      key={city}
-                      className="flex items-center gap-2 text-gray-300"
-                    >
-                      <MapPin className="w-4 h-4 text-corporate-gold" />
-                      {city}
-                    </li>
-                  ))}
-                </ul>
-              </motion.div>
-            ))}
-          </div>
-
-          {/* <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="text-center mt-12"
-          >
-            <Button
-              variant="outline"
-              className="border-corporate-gold text-corporate-gold hover:bg-corporate-gold/10"
-            >
-              View All Locations
-              <ArrowRight className="ml-2 w-4 h-4" />
-            </Button>
-          </motion.div> */}
-        </div>
-      </section>
 
       {/* Testimonials Section */}
       <section className="py-20 bg-gray-900/30 relative overflow-hidden">

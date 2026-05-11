@@ -299,52 +299,6 @@ export default function AirportTransfer() {
         </div>
       </section>
 
-      {/* Airport Transfer in Global Cities (Redesigned) */}
-      <section className="py-14">
-        <div className="container">
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl font-extrabold mb-4 tracking-tight">
-              Airport Transfer in Global Cities
-            </h2>
-            <p className="text-gray-300 max-w-2xl mx-auto text-lg">
-              Available in 50+ cities worldwide. Experience the same premium
-              service wherever you travel.
-            </p>
-          </motion.div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
-            {globalCities.map((city, i) => (
-              <motion.div
-                key={city.name}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.07 }}
-              >
-                <div className="relative group rounded-2xl overflow-hidden shadow-xl border border-gray-800 bg-black/60">
-                  <img
-                    src={city.img}
-                    alt={city.name}
-                    className="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
-                  <div className="absolute bottom-0 left-0 right-0 p-4 flex items-center gap-2">
-                    <span className="w-3 h-3 bg-corporate-gold rounded-full shadow-md" />
-                    <span className="font-semibold text-lg text-white drop-shadow-lg">
-                      {city.name}
-                    </span>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* VIP Meet & Greet Section */}
       <section className="py-12">
@@ -483,7 +437,7 @@ export default function AirportTransfer() {
                   Will use again for all my business trips.”
                 </span>
               </div>
-              <span className="text-gray-400 text-sm">— Daniel, New York</span>
+              <span className="text-gray-400 text-sm">— Daniel, Birmingham</span>
             </Card>
           </div>
         </div>

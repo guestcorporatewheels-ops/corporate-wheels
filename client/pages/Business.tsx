@@ -208,8 +208,8 @@ function Hero() {
                 ))}
               </div>
               <p className="text-sm text-white/80">
-                Join <span className="text-[#E6A700]">2,000+</span> companies
-                worldwide
+                Join <span className="text-[#E6A700]">500+</span> companies across
+                the UK
               </p>
             </div>
           </motion.div>
@@ -272,7 +272,7 @@ function Feature({
 function Stats() {
   const stats = [
     { label: "Corporate clients", value: "2,000+", prefix: "", suffix: "" },
-    { label: "Cities covered", value: "150+", prefix: "", suffix: "" },
+    { label: "UK Cities covered", value: "25+", prefix: "", suffix: "" },
     { label: "Monthly rides", value: "25k+", prefix: "", suffix: "" },
     { label: "Client retention", value: "97%", prefix: "", suffix: "" },
   ];
@@ -327,8 +327,8 @@ function Features() {
       icon: "💎",
     },
     {
-      t: "Global Network",
-      d: "Access to vetted chauffeurs and premium vehicles worldwide.",
+      t: "UK-Wide Network",
+      d: "Access to vetted chauffeurs and premium vehicles across the UK.",
       icon: "🌍",
     },
     {
@@ -407,34 +407,34 @@ function WorldwidePresence() {
       stats: "500+ rides/month",
     },
     {
-      name: "Dubai",
+      name: "Manchester",
       image:
-        "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=800&auto=format&fit=crop&q=80",
+        "https://images.unsplash.com/photo-1515586838455-8f8f940d6853?w=800&auto=format&fit=crop&q=80",
       stats: "300+ rides/month",
     },
     {
-      name: "Singapore",
+      name: "Birmingham",
       image:
-        "https://images.unsplash.com/photo-1525625293386-3f8f99389edd?w=800&auto=format&fit=crop&q=80",
-      stats: "400+ rides/month",
+        "https://images.unsplash.com/photo-1515586838455-8f8f940d6853?w=800&auto=format&fit=crop&q=80",
+      stats: "250+ rides/month",
     },
     {
-      name: "New York",
+      name: "Edinburgh",
       image:
-        "https://images.unsplash.com/photo-1522083165195-3424ed129620?w=800&auto=format&fit=crop&q=80",
-      stats: "600+ rides/month",
+        "https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?w=800&auto=format&fit=crop&q=80",
+      stats: "200+ rides/month",
     },
     {
-      name: "Tokyo",
+      name: "Liverpool",
       image:
-        "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=800&auto=format&fit=crop&q=80",
-      stats: "350+ rides/month",
+        "https://images.unsplash.com/photo-1543731068-7e0f5beff43a?w=800&auto=format&fit=crop&q=80",
+      stats: "150+ rides/month",
     },
     {
-      name: "Paris",
+      name: "Bristol",
       image:
-        "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=800&auto=format&fit=crop&q=80",
-      stats: "450+ rides/month",
+        "https://images.unsplash.com/photo-1518005020250-68a0d0d75642?w=800&auto=format&fit=crop&q=80",
+      stats: "100+ rides/month",
     },
   ];
 
@@ -473,11 +473,11 @@ function WorldwidePresence() {
           className="text-center mb-12"
         >
           <h2 className="text-3xl font-heading text-white mb-4">
-            In action around the world
+            In action across the UK
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
             From airport transfers to multi-city event logistics, we're trusted
-            by corporations worldwide for reliable executive transport.
+            by corporations across the UK for reliable executive transport.
           </p>
         </motion.div>
 
