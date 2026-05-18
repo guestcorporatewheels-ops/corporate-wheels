@@ -24,6 +24,10 @@ import Booking from "./pages/Booking";
 import ViewAllServices from "./pages/ViewAllServices";
 import ViewAllCities from "./pages/ViewAllCities";
 import ViewAllRoutes from "./pages/ViewAllRoutes";
+import FleetCategory from "./pages/FleetCategory";
+import ExecutiveCars from "./pages/fleet/ExecutiveCars";
+import ServiceCategory from "./pages/ServiceCategory";
+import WhyChooseUs from "./pages/WhyChooseUs";
 import Navbar from "@/components/site/Navbar";
 import Footer from "@/components/site/Footer";
 import CookieBanner from "@/components/site/CookieBanner";
@@ -78,6 +82,10 @@ export default function App() {
                 <Route path="services" element={<ViewAllServices />} />
                 <Route path="cities" element={<ViewAllCities />} />
                 <Route path="routes" element={<ViewAllRoutes />} />
+                <Route path="fleet/executive-cars" element={<ExecutiveCars />} />
+                <Route path="fleet/:categoryId" element={<FleetCategory />} />
+                <Route path="services/:serviceId" element={<ServiceCategory />} />
+                <Route path="why-choose-us/:chooseId" element={<WhyChooseUs />} />
                 <Route path="*" element={<NotFound />} />
               </Route>
             </Routes>

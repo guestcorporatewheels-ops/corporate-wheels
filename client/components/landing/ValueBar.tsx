@@ -1,4 +1,4 @@
-import { ShieldCheck, PhoneCall, Leaf, BadgeDollarSign } from "lucide-react";
+import { ShieldCheck, PhoneCall, Leaf, BadgePoundSterling } from "lucide-react";
 import { motion } from "framer-motion";
 
 const items = [
@@ -18,7 +18,7 @@ const items = [
     description: "Eco-friendly travel",
   },
   {
-    icon: BadgeDollarSign,
+    icon: BadgePoundSterling,
     text: "Transparent Pricing",
     description: "No hidden fees",
   },

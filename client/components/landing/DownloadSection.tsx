@@ -1,146 +1,99 @@
+import { motion } from "framer-motion";
+import { Send, Smartphone, Sparkles, ShieldCheck, MapPin, Clock } from "lucide-react";
+
 export default function DownloadSection() {
   return (
-    <section id="download" className="py-20">
-      <div className="container">
-        <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 backdrop-blur-sm">
-          {/* subtle background */}
-          <div className="absolute inset-0 -z-10 bg-[radial-gradient(60%_60%_at_70%_40%,rgba(230,167,0,0.10),transparent_60%)]" />
-
-          <div className="grid items-center gap-10 p-8 md:p-12 lg:p-16 md:grid-cols-2">
+    <section id="download" className="py-24 relative overflow-hidden">
+      {/* Background glowing effects */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-corporate-gold/10 rounded-full blur-[120px] pointer-events-none -z-10" />
+      
+      <div className="container relative z-10">
+        <div className="relative overflow-hidden rounded-[2.5rem] border border-white/10 bg-black/40 backdrop-blur-xl shadow-2xl p-8 md:p-12 lg:p-16">
+          
+          <div className="grid items-center gap-12 lg:gap-20 md:grid-cols-2">
+            
             {/* Left: copy + features + actions */}
-            <div>
-              <h3 className="font-heading text-3xl md:text-4xl text-white">
-                <span className="text-gradient-gold">Effortless travel</span>
-                <span className="block text-white mt-2 text-lg md:text-xl font-medium">
-                  at your fingertips
-                </span>
+            <motion.div 
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-corporate-gold/10 border border-corporate-gold/20 text-corporate-gold text-sm font-semibold mb-6 shadow-[0_0_15px_rgba(230,167,0,0.15)]">
+                <Sparkles className="w-4 h-4" />
+                <span>Next-Gen Mobile Experience</span>
+              </div>
+
+              <h3 className="font-heading text-4xl md:text-5xl lg:text-6xl text-white leading-tight mb-6">
+                Effortless travel <br />
+                <span className="text-gradient-gold">at your fingertips.</span>
               </h3>
 
-              <p className="mt-3 text-base md:text-lg text-muted-foreground max-w-xl">
-                Book, track and manage your journey easily on our app. Instant
-                confirmations, live tracking and secure payments.
+              <p className="text-lg text-white/70 max-w-xl mb-10 leading-relaxed">
+                We're crafting the ultimate chauffeur booking experience. Instant confirmations, live GPS tracking, and seamless corporate billing—all in your pocket. 
               </p>
 
-              <ul className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-sm text-sm text-muted-foreground">
-                <li className="flex items-center gap-2">
-                  <svg
-                    viewBox="0 0 24 24"
-                    className="w-4 h-4 text-corporate-gold"
-                    fill="none"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M5 13l4 4L19 7"
-                    />
-                  </svg>
-                  Live tracking & ETA
-                </li>
-                <li className="flex items-center gap-2">
-                  <svg
-                    viewBox="0 0 24 24"
-                    className="w-4 h-4 text-corporate-gold"
-                    fill="none"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M5 13l4 4L19 7"
-                    />
-                  </svg>
-                  Secure payments
-                </li>
-                <li className="flex items-center gap-2">
-                  <svg
-                    viewBox="0 0 24 24"
-                    className="w-4 h-4 text-corporate-gold"
-                    fill="none"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M5 13l4 4L19 7"
-                    />
-                  </svg>
-                  Easy corporate billing
-                </li>
-                <li className="flex items-center gap-2">
-                  <svg
-                    viewBox="0 0 24 24"
-                    className="w-4 h-4 text-corporate-gold"
-                    fill="none"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M5 13l4 4L19 7"
-                    />
-                  </svg>
-                  24/7 global support
-                </li>
-              </ul>
-
-              <div className="mt-8 flex flex-col sm:flex-row sm:items-center gap-6">
-                {/* QR + store badges card */}
-                <div className="flex items-center gap-4">
-                  <div className="rounded-lg p-3 bg-white/5 border border-white/6 shadow-glow flex items-center gap-4">
-                    <img
-                      src="https://images.ctfassets.net/ov8o7v78mnye/4qZi5AXwLS3ciw4lUtd4DC/68e6b66dbacbe330be3bac30cb6e7d0a/app_qrcode.svg"
-                      alt="QR code to download the app"
-                      className="h-24 w-24 rounded-md bg-white object-cover p-2"
-                    />
-                    <div className="hidden sm:block text-sm text-muted-foreground">
-                      <div className="font-semibold text-white">
-                        Scan to download
-                      </div>
-                      <div className="mt-1">
-                        Open the app and manage bookings instantly.
-                      </div>
+              {/* Glowing features grid */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
+                {[
+                  { icon: MapPin, text: "Live Tracking & ETA" },
+                  { icon: ShieldCheck, text: "Secure Payments" },
+                  { icon: Smartphone, text: "One-Tap Booking" },
+                  { icon: Clock, text: "24/7 Global Support" }
+                ].map((feature, i) => (
+                  <div key={i} className="flex items-center gap-4 p-4 rounded-2xl bg-white/[0.03] border border-white/[0.05] hover:bg-white/[0.08] hover:border-corporate-gold/30 transition-all duration-300 group">
+                    <div className="w-12 h-12 rounded-full bg-corporate-gold/10 flex items-center justify-center border border-corporate-gold/20 group-hover:scale-110 transition-transform duration-300">
+                      <feature.icon className="w-5 h-5 text-corporate-gold" />
                     </div>
+                    <span className="text-white/90 font-medium">{feature.text}</span>
                   </div>
-
-                  <div className="flex flex-col items-center space-between ">
-                    <a href="#" aria-label="Download on the App Store">
-                      <img
-                        src="/images/GetItOnGooglePlay_Badge_Web_color_English-01.svg"
-                        alt="Download on the App Store"
-                        className="h-16 w-auto"
-                        loading="lazy"
-                        // width={"150px"}
-                      />
-                    </a>
-                    <a href="#" aria-label="Get it on Google Play">
-                      <img
-                        src="/images/download-on-the-app-store.svg"
-                        alt="Get it on Google Play"
-                        className="h-12 w-auto"
-                        loading="lazy"
-                        // width={"150px"}
-                      />
-                    </a>
-                  </div>
-                </div>
+                ))}
               </div>
-            </div>
+
+
+            </motion.div>
 
             {/* Right: phone mockup */}
-            <div className="flex justify-center md:justify-end">
-              <div className="relative h-[520px] w-[260px] rounded-[38px] border border-white/15 bg-black/60 shadow-2xl overflow-hidden">
-                {/* animated screen */}
-                <div className="absolute inset-[10px] rounded-[30px] overflow-hidden hero-phone-screen animate-float" />
-                <img src="./mobile-app.jpg" alt="" />
-                {/* side glare */}
-                <div className="absolute -inset-x-4 inset-y-0 rounded-[46px] bg-gradient-to-b from-white/10 to-transparent pointer-events-none" />
+            <motion.div 
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="flex justify-center lg:justify-end relative mt-10 md:mt-0"
+            >
+              {/* Phone Aura */}
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[500px] bg-corporate-gold/20 blur-[80px] rounded-full pointer-events-none" />
+              
+              <div className="relative h-[600px] w-[290px] rounded-[48px] border-[6px] border-[#222] bg-black shadow-[0_20px_50px_rgba(0,0,0,0.5),0_0_0_1px_rgba(255,255,255,0.1)] overflow-hidden group transform transition-transform hover:-translate-y-4 duration-700">
+                
+                {/* Dynamic Island / Notch */}
+                <div className="absolute top-3 left-1/2 -translate-x-1/2 w-24 h-7 bg-black rounded-full z-30 shadow-[inset_0_-2px_4px_rgba(255,255,255,0.1)]" />
+                
+                {/* Screen Content */}
+                <div className="absolute inset-0 bg-black z-0" />
+                <img 
+                  src="./mobile-app.jpg" 
+                  alt="Mobile App Screen" 
+                  className="absolute inset-0 w-full h-full object-cover blur-[3px] opacity-50 scale-110 group-hover:scale-100 transition-transform duration-700 z-10" 
+                />
+                
+                {/* Coming Soon Badge Overlay */}
+                <div className="absolute inset-0 flex flex-col items-center justify-center z-20 pointer-events-none">
+                  <div className="w-32 h-32 bg-corporate-gold/20 rounded-full blur-2xl absolute" />
+                  <motion.div 
+                    animate={{ y: [0, -8, 0] }} 
+                    transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
+                    className="relative bg-gradient-to-r from-corporate-gold to-[#cc9400] text-black px-8 py-3.5 rounded-full font-black text-sm shadow-[0_10px_40px_rgba(230,167,0,0.6)] tracking-[0.2em] uppercase border border-white/20 backdrop-blur-md"
+                  >
+                    COMING SOON
+                  </motion.div>
+                </div>
+
+                {/* Glass Glare Effect */}
+                <div className="absolute inset-0 bg-gradient-to-tr from-white/10 via-white/0 to-white/20 pointer-events-none z-30" />
               </div>
-            </div>
+            </motion.div>
+            
           </div>
         </div>
       </div>

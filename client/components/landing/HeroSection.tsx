@@ -72,23 +72,12 @@ export default function HeroSection() {
               </Link>
             </Button>
 
-            <Button
-              variant="outline"
-              size="lg"
-              className="mt-3 sm:mt-0 shadow-lg text-lg px-8 py-4 font-bold border-gold"
-            >
-              <span className="inline-flex items-center gap-2">
-                <PlayCircle className="mr-2 text-[#e6a700]" /> Watch Demo
-              </span>
-            </Button>
+
           </div>
 
           {/* Trust Badge / Testimonial */}
           <div className="mt-8 flex flex-col sm:flex-row gap-6 items-center text-base text-muted-foreground justify-center lg:justify-start">
-            <div className="flex items-center gap-2 ">
-              <Download className="opacity-90 text-[#e6a700]" />
-              <span>Download itinerary & receipts</span>
-            </div>
+
             <div className="flex items-center gap-2 ">
               <svg
                 width="10"

@@ -93,9 +93,9 @@ export default function Navbar() {
           <img
             src="./logo.png"
             alt="Corporate Wheels Logo"
-            className="h-14 w-auto object-contain"
+            className="h-16 w-auto object-contain"
           />
-          <p className="text-white">Corporate Wheels</p>
+          <p className="text-white text-lg font-semibold">Corporate Wheels</p>
         </Link>
         <nav className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
           {/* Services Dropdown (improved spacing & hover/focus) */}
@@ -110,12 +110,75 @@ export default function Navbar() {
           >
             <div className="py-1">
               {[
-                { label: "City-to-City rides", path: "/city-to-city" },
-                { label: "Chauffeur hailing", path: "/chauffeur-hailing" },
-                { label: "Airport transfer", path: "/airport-transfer" },
-                { label: "Hourly hire", path: "/hourly-hire" },
-                // { label: "Chauffeur service", path: "/chauffeur-service" },
-                { label: "Limousine service", path: "/limousine-service" },
+                { label: "Airport Transfers", path: "/services/airport-transfers" },
+                { label: "Corporate travel", path: "/services/corporate-travel" },
+                { label: "Special events", path: "/services/special-events" },
+                { label: "City Tours", path: "/services/city-tours" },
+                { label: "Private Jet Chauffeur", path: "/services/private-jet-chauffeur" },
+                { label: "London Cruise Transfer", path: "/services/london-cruise-transfer" },
+              ].map((item) => (
+                <Link
+                  key={item.label}
+                  to={item.path}
+                  className="group block px-3 py-3 rounded-md text-white/90 hover:bg-white/8 focus:bg-white/12 focus:outline-none transition-colors"
+                >
+                  <span className="group-hover:text-corporate-gold group-focus:text-corporate-gold transition-colors">
+                    {item.label}
+                  </span>
+                </Link>
+              ))}
+            </div>
+          </HoverDropdown>
+
+          {/* Fleet Dropdown */}
+          <HoverDropdown
+            dropdownId="fleet"
+            trigger={
+              <button className="flex items-center gap-1 hover:text-corporate-gold transition-colors focus:outline-none">
+                Fleet <ChevronDown className="size-4" />
+              </button>
+            }
+            className="w-64 bg-black/90 border border-white/8 backdrop-blur-md rounded-lg shadow-lg p-2"
+          >
+            <div className="py-1">
+              {[
+                { label: "Executive Cars", path: "/fleet/executive-cars" },
+                { label: "Luxury (VIP Class)", path: "/fleet/luxury-class" },
+                { label: "Premium SUVs", path: "/fleet/premium-suvs" },
+                { label: "Business Vans", path: "/fleet/business-vans" },
+                { label: "Special Vehicles (On Request)", path: "/fleet/special-vehicles" },
+                { label: "Electric Class", path: "/fleet/electric-class" },
+                { label: "Vintage Cars for Weddings", path: "/fleet/vintage-cars" },
+              ].map((item) => (
+                <Link
+                  key={item.label}
+                  to={item.path}
+                  className="group block px-3 py-3 rounded-md text-white/90 hover:bg-white/8 focus:bg-white/12 focus:outline-none transition-colors"
+                >
+                  <span className="group-hover:text-corporate-gold group-focus:text-corporate-gold transition-colors">
+                    {item.label}
+                  </span>
+                </Link>
+              ))}
+            </div>
+          </HoverDropdown>
+
+          {/* Why Choose Us Dropdown */}
+          <HoverDropdown
+            dropdownId="why-choose-us"
+            trigger={
+              <button className="flex items-center gap-1 hover:text-corporate-gold transition-colors focus:outline-none">
+                Why Choose Us <ChevronDown className="size-4" />
+              </button>
+            }
+            className="w-60 bg-black/90 border border-white/8 backdrop-blur-md rounded-lg shadow-lg p-2"
+          >
+            <div className="py-1">
+              {[
+                { label: "Safety First", path: "/why-choose-us/safety-first" },
+                { label: "Transparent Pricing", path: "/why-choose-us/transparent-pricing" },
+                { label: "Tailored Luxury Fleet", path: "/why-choose-us/tailored-luxury-fleet" },
+                { label: "Elite Chauffeurs", path: "/why-choose-us/elite-chauffeurs" },
               ].map((item) => (
                 <Link
                   key={item.label}
@@ -131,16 +194,7 @@ export default function Navbar() {
           </HoverDropdown>
 
           {/* Other Navigation Items */}
-          <NavLink
-            to="/business"
-            className={({ isActive }) =>
-              isActive
-                ? "text-corporate-gold"
-                : "hover:text-corporate-gold transition-colors"
-            }
-          >
-            Business
-          </NavLink>
+
           <NavLink
             to="/chauffeurs"
             className={({ isActive }) =>
@@ -172,62 +226,16 @@ export default function Navbar() {
           >
             Help
           </NavLink>
-
-          {/* Download Dropdown */}
-          <HoverDropdown
-            dropdownId="download"
-            trigger={
-              <button className="flex items-center gap-1 hover:text-white transition-colors focus:outline-none">
-                Download <ChevronDown className="size-4" />
-              </button>
+          <NavLink
+            to="/contact"
+            className={({ isActive }) =>
+              isActive
+                ? "text-corporate-gold"
+                : "hover:text-corporate-gold transition-colors"
             }
-            className="w-48 bg-black/90 border border-white/8 backdrop-blur-md rounded-lg shadow-lg p-2"
           >
-            <div className="py-1">
-              <a
-                href="#download"
-                className="group flex items-center gap-2 px-3 py-2 rounded-md text-white/90 hover:bg-white/8 focus:bg-white/12 transition-colors transform hover:-translate-y-0.5"
-              >
-                <div
-                  className="size-4 bg-current text-white/80 group-hover:text-corporate-gold transition-colors"
-                  style={{
-                    maskImage: "url(/images/app-store-svgrepo-com.svg)",
-                    WebkitMaskImage: "url(/images/app-store-svgrepo-com.svg)",
-                    maskSize: "contain",
-                    maskRepeat: "no-repeat",
-                    maskPosition: "center",
-                    WebkitMaskSize: "contain",
-                    WebkitMaskRepeat: "no-repeat",
-                    WebkitMaskPosition: "center",
-                  }}
-                ></div>
-                <span className="ml-1 group-hover:text-corporate-gold group-focus:text-corporate-gold transition-colors">
-                  iOS
-                </span>
-              </a>
-              <a
-                href="#download"
-                className="group flex items-center gap-2 px-3 py-2 rounded-md text-white/90 hover:bg-white/8 focus:bg-white/12 transition-colors transform hover:-translate-y-0.5"
-              >
-                <div
-                  className="size-4 bg-white/80 group-hover:bg-corporate-gold group-focus:bg-corporate-gold transition-colors"
-                  style={{
-                    maskImage: "url(/images/playstore-svgrepo-com.svg)",
-                    WebkitMaskImage: "url(/images/playstore-svgrepo-com.svg)",
-                    maskRepeat: "no-repeat",
-                    WebkitMaskRepeat: "no-repeat",
-                    maskPosition: "center",
-                    WebkitMaskPosition: "center",
-                    maskSize: "contain",
-                    WebkitMaskSize: "contain",
-                  }}
-                ></div>{" "}
-                <span className="ml-1 group-hover:text-corporate-gold group-focus:text-corporate-gold transition-colors">
-                  Android
-                </span>
-              </a>
-            </div>
-          </HoverDropdown>
+            Contact Us
+          </NavLink>
 
           <Button asChild variant="glow" className="ml-2">
             <NavLink to="/booking">Book Now</NavLink>
@@ -255,12 +263,12 @@ export default function Navbar() {
           <div className="text-white font-medium mb-2">Our Services</div>
           <div className="pl-4 space-y-2">
             {[
-              { label: "City-to-City rides", path: "/city-to-city" },
-              { label: "Chauffeur hailing", path: "/chauffeur-hailing" },
-              { label: "Airport transfer", path: "/airport-transfer" },
-              { label: "Hourly hire", path: "/hourly-hire" },
-              // { label: "Chauffeur service", path: "/chauffeur-service" },
-              { label: "Limousine service", path: "/limousine-service" },
+              { label: "Airport Transfers", path: "/services/airport-transfers" },
+              { label: "Corporate travel", path: "/services/corporate-travel" },
+              { label: "Special events", path: "/services/special-events" },
+              { label: "City Tours", path: "/services/city-tours" },
+              { label: "Private Jet Chauffeur", path: "/services/private-jet-chauffeur" },
+              { label: "London Cruise Transfer", path: "/services/london-cruise-transfer" },
             ].map((item) => (
               <NavLink
                 key={item.label}
@@ -276,15 +284,57 @@ export default function Navbar() {
               </NavLink>
             ))}
           </div>
-          <NavLink
-            to="/business"
-            onClick={() => setOpen(false)}
-            className={({ isActive }) =>
-              isActive ? "text-white" : "text-muted-foreground hover:text-white"
-            }
-          >
-            For Business
-          </NavLink>
+          
+          <div className="text-white font-medium mb-2 mt-4">Our Fleet</div>
+          <div className="pl-4 space-y-2">
+            {[
+              { label: "Executive Cars", path: "/fleet/executive-cars" },
+              { label: "Luxury (VIP Class)", path: "/fleet/luxury-class" },
+              { label: "Premium SUVs", path: "/fleet/premium-suvs" },
+              { label: "Business Vans", path: "/fleet/business-vans" },
+              { label: "Special Vehicles", path: "/fleet/special-vehicles" },
+              { label: "Electric Class", path: "/fleet/electric-class" },
+              { label: "Vintage Cars", path: "/fleet/vintage-cars" },
+            ].map((item) => (
+              <NavLink
+                key={item.label}
+                to={item.path}
+                onClick={() => setOpen(false)}
+                className={({ isActive }) =>
+                  isActive
+                    ? "block text-white"
+                    : "block text-muted-foreground hover:text-corporate-gold focus:text-corporate-gold"
+                }
+              >
+                {item.label}
+              </NavLink>
+            ))}
+          </div>
+
+          <div className="text-white font-medium mb-2 mt-4">Why Choose Us</div>
+          <div className="pl-4 space-y-2">
+            {[
+              { label: "Safety First", path: "/why-choose-us/safety-first" },
+              { label: "Transparent Pricing", path: "/why-choose-us/transparent-pricing" },
+              { label: "Tailored Luxury Fleet", path: "/why-choose-us/tailored-luxury-fleet" },
+              { label: "Elite Chauffeurs", path: "/why-choose-us/elite-chauffeurs" },
+            ].map((item) => (
+              <NavLink
+                key={item.label}
+                to={item.path}
+                onClick={() => setOpen(false)}
+                className={({ isActive }) =>
+                  isActive
+                    ? "block text-white"
+                    : "block text-muted-foreground hover:text-corporate-gold focus:text-corporate-gold"
+                }
+              >
+                {item.label}
+              </NavLink>
+            ))}
+          </div>
+
+
           <NavLink
             to="/chauffeurs"
             onClick={() => setOpen(false)}
@@ -294,13 +344,24 @@ export default function Navbar() {
           >
             For Chauffeurs
           </NavLink>
-          <a
-            href="#help"
+          <NavLink
+            to="/help"
             onClick={() => setOpen(false)}
-            className="text-muted-foreground hover:text-white"
+            className={({ isActive }) =>
+              isActive ? "text-white" : "text-muted-foreground hover:text-white"
+            }
           >
             Help
-          </a>
+          </NavLink>
+          <NavLink
+            to="/contact"
+            onClick={() => setOpen(false)}
+            className={({ isActive }) =>
+              isActive ? "text-white" : "text-muted-foreground hover:text-white"
+            }
+          >
+            Contact Us
+          </NavLink>
           <NavLink
             to="/booking"
             onClick={() => setOpen(false)}
@@ -310,49 +371,7 @@ export default function Navbar() {
           >
             Booking
           </NavLink>
-          <div className="text-white font-medium mb-2">Download</div>
-          <div className="pl-4 space-y-2">
-            <a
-              href="#download"
-              onClick={() => setOpen(false)}
-              className="flex items-center gap-2 text-muted-foreground hover:text-corporate-gold focus:text-corporate-gold"
-            >
-              <div
-                className="size-4 bg-current text-white/80 group-hover:text-corporate-gold transition-colors"
-                style={{
-                  maskImage: "url(/images/app-store-svgrepo-com.svg)",
-                  WebkitMaskImage: "url(/images/app-store-svgrepo-com.svg)",
-                  maskSize: "contain",
-                  maskRepeat: "no-repeat",
-                  maskPosition: "center",
-                  WebkitMaskSize: "contain",
-                  WebkitMaskRepeat: "no-repeat",
-                  WebkitMaskPosition: "center",
-                }}
-              ></div>{" "}
-              iOS
-            </a>
-            <a
-              href="#download"
-              onClick={() => setOpen(false)}
-              className="flex items-center gap-2 text-muted-foreground hover:text-corporate-gold focus:text-corporate-gold"
-            >
-              <div
-                className="size-4 bg-white/80 group-hover:bg-corporate-gold group-focus:bg-corporate-gold transition-colors"
-                style={{
-                  maskImage: "url(/images/playstore-svgrepo-com.svg)",
-                  WebkitMaskImage: "url(/images/playstore-svgrepo-com.svg)",
-                  maskRepeat: "no-repeat",
-                  WebkitMaskRepeat: "no-repeat",
-                  maskPosition: "center",
-                  WebkitMaskPosition: "center",
-                  maskSize: "contain",
-                  WebkitMaskSize: "contain",
-                }}
-              ></div>{" "}
-              Android
-            </a>
-          </div>
+
           <Button asChild variant="glow" className="mt-4">
             <NavLink to="/booking" onClick={() => setOpen(false)}>
               Book Now
