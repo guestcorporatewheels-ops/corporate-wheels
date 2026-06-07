@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import BookingWidget from "./BookingWidget";
+import ChauffeurBookingWidget from "@/components/booking/BookingWidget";
 import { Button } from "@/components/ui/button";
 import { Download, PlayCircle } from "lucide-react";
 import { useTypingAnimation } from "@/hooks/use-typing-animation";
@@ -129,7 +129,7 @@ export default function HeroSection() {
             id="booking"
             className="w-full max-w-md bg-gradient-to-br from-black/80 via-black/90 to-[#e6a700]/10 backdrop-blur-xl border-2 border-corporate-gold rounded-3xl p-8 shadow-glow"
           >
-            <BookingWidget />
+            <ChauffeurBookingWidget />
             <p className="mt-4 text-sm text-corporate-gold text-center font-semibold">
               Fast booking with instant confirmations and free cancellations up
               to 24 hours.
