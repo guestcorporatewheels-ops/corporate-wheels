@@ -4,26 +4,24 @@ import { Link } from "react-router-dom";
 export default function Footer() {
   return (
     <footer className="border-t border-white/10 bg-black">
-      
+
       {/* Primary 6-Column Directory */}
       <div className="container py-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-6 gap-10">
-        
+
         {/* Column 1: Brand Descriptor (Spans 2 columns for proper spacing) */}
         <div className="md:col-span-2 space-y-6">
           <Link to="/" className="flex items-center gap-2">
             <img
               src="/logo.png"
               alt="Corporate Wheels Logo"
-              className="h-14 w-auto object-contain shrink-0"
+              className="h-16 w-auto object-contain shrink-0"
             />
-            <span className="font-heading text-white text-lg font-bold">
-              Corporate Wheels
-            </span>
+
           </Link>
           <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed font-light">
             Premium, carbon-neutral rides with professional close-protection chauffeurs in over 300 cities globally.
           </p>
-          
+
           <div className="space-y-4">
             <div className="mt-6 flex items-center gap-4">
               <div className="w-16">
@@ -34,7 +32,7 @@ export default function Footer() {
                 />
               </div>
             </div>
-            
+
             <div className="text-[11px] text-white/40 space-y-1 font-light">
               <div>
                 <span>Company Reg:</span>
@@ -140,7 +138,7 @@ export default function Footer() {
               Receive luxury dispatch insights, carbon-neutral travel reports, and premier invitations en route.
             </p>
           </div>
-          
+
           <div className="flex flex-col sm:flex-row gap-4 items-center w-full">
             <form
               onSubmit={(e) => e.preventDefault()}
@@ -159,7 +157,7 @@ export default function Footer() {
                 Subscribe
               </button>
             </form>
-            
+
             {/* Social Channels */}
             <div className="flex items-center gap-2 shrink-0">
               {[Facebook, Twitter, Instagram, Linkedin].map((Icon, i) => (

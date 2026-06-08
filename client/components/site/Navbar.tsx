@@ -82,11 +82,10 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition-colors ${
-        scrolled
-          ? "backdrop-blur-md bg-black/60 border-b border-white/5"
-          : "bg-transparent"
-      }`}
+      className={`fixed inset-x-0 top-0 z-50 transition-colors ${scrolled
+        ? "backdrop-blur-md bg-black/60 border-b border-white/5"
+        : "bg-transparent"
+        }`}
     >
       <div className="container flex items-center justify-between py-4">
         <Link to="/" className="flex items-center gap-2">
@@ -95,7 +94,7 @@ export default function Navbar() {
             alt="Corporate Wheels Logo"
             className="h-16 w-auto object-contain"
           />
-          <p className="text-white text-lg font-semibold">Corporate Wheels</p>
+
         </Link>
         <nav className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
           {/* Services Dropdown (improved spacing & hover/focus) */}
@@ -205,7 +204,7 @@ export default function Navbar() {
           >
             Chauffeurs
           </NavLink>
-       
+
           <NavLink
             to="/about"
             className={({ isActive }) =>
@@ -253,11 +252,10 @@ export default function Navbar() {
 
       {/* Mobile menu: keep in DOM and animate via max-height + opacity for smooth transition */}
       <div
-        className={`md:hidden transition-[max-height,opacity] duration-300 ease-in-out overflow-hidden ${
-          open
-            ? "max-h-[900px] opacity-100 border-t border-white/10 bg-black/80 backdrop-blur-md"
-            : "max-h-0 opacity-0 border-t-0"
-        }`}
+        className={`md:hidden transition-[max-height,opacity] duration-300 ease-in-out overflow-hidden ${open
+          ? "max-h-[900px] opacity-100 border-t border-white/10 bg-black/80 backdrop-blur-md"
+          : "max-h-0 opacity-0 border-t-0"
+          }`}
       >
         <div className="container py-4 flex flex-col gap-4">
           <div className="text-white font-medium mb-2">Our Services</div>
@@ -284,7 +282,7 @@ export default function Navbar() {
               </NavLink>
             ))}
           </div>
-          
+
           <div className="text-white font-medium mb-2 mt-4">Our Fleet</div>
           <div className="pl-4 space-y-2">
             {[
