@@ -25,6 +25,18 @@ export default function Navbar() {
     };
   }, []);
 
+  // Block body scroll when mobile menu is open
+  useEffect(() => {
+    if (open) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [open]);
+
   const handleMouseEnter = (dropdownId: string) => {
     if (hoverTimeoutRef.current) {
       clearTimeout(hoverTimeoutRef.current);
@@ -237,7 +249,7 @@ export default function Navbar() {
           </NavLink>
 
           <Button asChild variant="glow" className="ml-2">
-            <NavLink to="/booking">Book Now</NavLink>
+            <NavLink to="/">Book Now</NavLink>
           </Button>
         </nav>
         <button
@@ -252,12 +264,12 @@ export default function Navbar() {
 
       {/* Mobile menu: keep in DOM and animate via max-height + opacity for smooth transition */}
       <div
-        className={`md:hidden transition-[max-height,opacity] duration-300 ease-in-out overflow-hidden ${open
-          ? "max-h-[900px] opacity-100 border-t border-white/10 bg-black/80 backdrop-blur-md"
-          : "max-h-0 opacity-0 border-t-0"
+        className={`md:hidden transition-[max-height,opacity] duration-300 ease-in-out ${open
+          ? "max-h-[calc(100vh-5rem)] opacity-100 border-t border-white/10 bg-black/80 backdrop-blur-md overflow-y-auto"
+          : "max-h-0 opacity-0 border-t-0 overflow-hidden"
           }`}
       >
-        <div className="container py-4 flex flex-col gap-4">
+        <div className="container pt-4 pb-10 flex flex-col gap-4">
           <div className="text-white font-medium mb-2">Our Services</div>
           <div className="pl-4 space-y-2">
             {[
@@ -371,7 +383,7 @@ export default function Navbar() {
           </NavLink>
 
           <Button asChild variant="glow" className="mt-4">
-            <NavLink to="/booking" onClick={() => setOpen(false)}>
+            <NavLink to="/" onClick={() => setOpen(false)}>
               Book Now
             </NavLink>
           </Button>
