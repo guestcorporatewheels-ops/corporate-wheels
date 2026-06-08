@@ -12,7 +12,7 @@ export default function Footer() {
         <div className="md:col-span-2 space-y-6">
           <Link to="/" className="flex items-center gap-2">
             <img
-              src="./logo.png"
+              src="/logo.png"
               alt="Corporate Wheels Logo"
               className="h-14 w-auto object-contain shrink-0"
             />

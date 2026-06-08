@@ -91,7 +91,7 @@ export default function Navbar() {
       <div className="container flex items-center justify-between py-4">
         <Link to="/" className="flex items-center gap-2">
           <img
-            src="./logo.png"
+            src="/logo.png"
             alt="Corporate Wheels Logo"
             className="h-16 w-auto object-contain"
           />
