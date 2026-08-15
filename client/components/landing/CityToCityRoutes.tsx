@@ -141,8 +141,8 @@ export default function CityToCityRoutes() {
       {/* Themed Background */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-br from-background via-background/95 to-background/90" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,theme(colors.corporate-gold/10),transparent_50%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,theme(colors.corporate-gold/5),transparent_40%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(230,167,0,0.1),transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(230,167,0,0.05),transparent_40%)]" />
       </div>
 
       {/* Animated Route Network */}
@@ -159,7 +159,7 @@ export default function CityToCityRoutes() {
             y2="100%"
           >
             <stop offset="0%" stopColor="#F4C430" stopOpacity="0.6" />
-            <stop offset="100%" stopColor="#4F46E5" stopOpacity="0.3" />
+            <stop offset="100%" stopColor="#FF6B35" stopOpacity="0.3" />
           </linearGradient>
         </defs>
 
@@ -281,12 +281,12 @@ export default function CityToCityRoutes() {
             className="flex items-center justify-between mb-8"
           >
             <h3 className="text-2xl font-heading text-white">Popular Cities</h3>
-            {/* <a
-              href="/city-to-city"
+            <Link
+              to="/cities"
               className="text-corporate-gold hover:text-corporate-gold/80 transition-colors"
             >
               View all cities
-            </a> */}
+            </Link>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -358,12 +358,12 @@ export default function CityToCityRoutes() {
             className="flex items-center justify-between mb-8"
           >
             <h3 className="text-2xl font-heading text-white">Popular Routes</h3>
-            {/* <a
-              href="/routes"
+            <Link
+              to="/routes"
               className="text-corporate-gold hover:text-corporate-gold/80 transition-colors"
             >
               View all routes
-            </a> */}
+            </Link>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">

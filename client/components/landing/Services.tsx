@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const features = [
   {
@@ -198,9 +199,9 @@ export default function Services() {
           ))}
         </div>
 
-        {/* <div className="mt-16 text-center relative z-10">
-          <a
-            href="/services"
+        <div className="mt-16 text-center relative z-10">
+          <Link
+            to="/services"
             className="inline-flex items-center bg-gradient-to-r btn-gradient text-black px-8 py-3 rounded-md font-semibold shadow-lg transition-all hover:shadow-corporate-gold/40 "
           >
             View all services
@@ -217,8 +218,8 @@ export default function Services() {
                 d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
               />
             </svg>
-          </a>
-        </div> */}
+          </Link>
+        </div>
       </div>
     </section>
   );

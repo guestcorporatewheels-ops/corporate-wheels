@@ -43,16 +43,16 @@ const locationsData = [
 // Interactive Corporate FAQs
 const faqData = [
   {
-    q: "What is your flight synchronization protocol?",
-    a: "Corporate Wheels utilizes advanced flight telemetry synchronization. Your assigned chauffeur is synchronized directly with your tail number or scheduled flight ID, adjusting instantly for early landings or delay parameters with 2 hours of complimentary waiting time."
+    q: "Do you track flight delays?",
+    a: "Yes. Your chauffeur tracks your flight number and adjusts pickup time automatically for early or delayed landings, with 2 hours of complimentary waiting time included."
   },
   {
     q: "How are your chauffeurs vetted and certified?",
-    a: "Fewer than 5% of professional drivers successfully pass our rigorous road, medical, and background screening. All pilots are TfL certified and undergo annual training in VIP high-speed defensive maneuvers, airport tarmac procedures, and executive NDA confidentiality."
+    a: "All chauffeurs undergo rigorous road, medical, and background screening, hold the required TfL certification, and complete annual training in defensive driving and confidentiality protocols."
   },
   {
-    q: "Do you support integrated corporate ledger accounts?",
-    a: "Yes. Corporate desk bookings are consolidated into single, monthly auditable ledgers. We offer split billing, cost-center department coding, and direct accounts payable API synchronizations for seamless travel logging."
+    q: "Do you support corporate accounts?",
+    a: "Yes. Corporate bookings are consolidated into a single monthly invoice, with split billing, cost-center coding, and exportable spend reports."
   },
   {
     q: "What is your cancellation and rescheduling policy?",
@@ -117,32 +117,6 @@ export default function Contact() {
     setSubmitted(false);
   };
 
-  // Dash ring icon wrapper
-  function RingIcon({ children }: { children: React.ReactNode }) {
-    const id = Math.random().toString(36).slice(2);
-    return (
-      <svg width="48" height="48" viewBox="0 0 48 48" className="shrink-0">
-        <defs>
-          <linearGradient id={`grad-${id}`} x1="0" x2="1">
-            <stop offset="0" stopColor="#F4C430" />
-            <stop offset="1" stopColor="#FF6B35" />
-          </linearGradient>
-        </defs>
-        <circle
-          cx="24"
-          cy="24"
-          r="21"
-          fill="transparent"
-          stroke={`url(#grad-${id})`}
-          strokeWidth="2.5"
-          strokeDasharray="5 7"
-          className="animate-spin-slow"
-        />
-        <g transform="translate(14,14)">{children}</g>
-      </svg>
-    );
-  }
-
   return (
     <main className="relative bg-background text-foreground overflow-hidden selection:bg-corporate-gold selection:text-black">
       
@@ -168,7 +142,7 @@ export default function Contact() {
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-corporate-gold"></span>
               </span>
               <span className="text-xs text-white/90 font-semibold tracking-widest uppercase">
-                VIP Global Concierge Desk
+                Get in Touch
               </span>
             </motion.div>
 
@@ -192,7 +166,7 @@ export default function Contact() {
               transition={{ duration: 0.7, delay: 0.2 }}
               className="text-white/60 text-base sm:text-lg max-w-2xl mx-auto font-light leading-relaxed"
             >
-              Whether organizing complex multi-city executive roadshows, airport FBO tarmac collections, or setting up a corporate account, our concierge desk is at your disposal 24/7.
+              Whether you're organizing multi-city executive travel, an airport pickup, or setting up a corporate account, our team is available 24/7.
             </motion.p>
 
           </div>
@@ -299,12 +273,12 @@ export default function Contact() {
                           />
                         </div>
 
-                        <Button 
+                        <Button
                           type="submit"
-                          variant="glow" 
+                          variant="glow"
                           className="w-full h-14 rounded-xl font-heading font-bold uppercase tracking-wider text-xs shadow-glow mt-4"
                         >
-                          Dispatch Manifesto <Send className="w-3.5 h-3.5 ml-2" />
+                          Send Message <Send className="w-3.5 h-3.5 ml-2" />
                         </Button>
                       </form>
                     </motion.div>
@@ -321,51 +295,19 @@ export default function Contact() {
                       </div>
                       
                       <div className="space-y-2">
-                        <span className="text-[10px] text-corporate-gold font-bold uppercase tracking-widest block">Dispatch Complete</span>
-                        <h3 className="text-2xl sm:text-3xl font-heading font-bold text-white">Manifesto Received</h3>
+                        <span className="text-[10px] text-corporate-gold font-bold uppercase tracking-widest block">Message Sent</span>
+                        <h3 className="text-2xl sm:text-3xl font-heading font-bold text-white">Thanks, we've got it</h3>
                         <p className="text-white/60 text-xs sm:text-sm font-light max-w-md mx-auto">
-                          Thank you, <span className="text-corporate-gold font-semibold">{formData.firstName}</span>. Your travel inquiry has been pushed to our Executive Desk. A concierge manager will respond within 15 minutes.
+                          Thank you, <span className="text-corporate-gold font-semibold">{formData.firstName}</span>. A member of our team will respond within 15 minutes.
                         </p>
                       </div>
 
-                      {/* Mock Boarding Pass Voucher */}
-                      <div className="max-w-md mx-auto rounded-2xl border border-corporate-gold/20 bg-white/[0.02] p-5 text-left space-y-4 relative overflow-hidden">
-                        <div className="absolute top-0 bottom-0 left-5 border-l border-dashed border-corporate-gold/20" />
-                        <div className="pl-8 space-y-3">
-                          <div className="flex justify-between items-center">
-                            <span className="text-[9px] text-corporate-gold font-bold uppercase tracking-widest">Corporate Wheels Dispatch</span>
-                            <span className="text-[9px] text-white/50 uppercase">CON-PASS #{Math.floor(100000 + Math.random() * 900000)}</span>
-                          </div>
-                          
-                          <div>
-                            <span className="text-[9px] text-white/40 block uppercase">CONCIERGE TICKET CLASS</span>
-                            <span className="text-sm font-semibold text-white">VIP Priority Dispatch</span>
-                          </div>
-
-                          <div className="grid grid-cols-2 gap-4">
-                            <div>
-                              <span className="text-[9px] text-white/40 block uppercase">FIRST NAME</span>
-                              <span className="text-xs font-medium text-white">{formData.firstName}</span>
-                            </div>
-                            <div>
-                              <span className="text-[9px] text-white/40 block uppercase">DISPATCH QUEUE</span>
-                              <span className="text-xs font-medium text-white">Concierge Desk #3</span>
-                            </div>
-                          </div>
-
-                          <div className="pt-2 border-t border-white/5 flex justify-between items-center text-[10px] text-corporate-gold font-semibold">
-                            <span>SLA RESPONSE TIME: &lt;15 MINS</span>
-                            <span className="tracking-widest">||||| | || |||</span>
-                          </div>
-                        </div>
-                      </div>
-
-                      <Button 
+                      <Button
                         onClick={handleReset}
-                        variant="outline" 
+                        variant="outline"
                         className="rounded-xl border-white/10 text-white hover:bg-white/5 px-8"
                       >
-                        Submit Another Manifesto
+                        Send Another Message
                       </Button>
                     </motion.div>
                   )}
@@ -547,14 +489,14 @@ export default function Contact() {
             </div>
 
             <h3 className="text-3xl md:text-4xl font-heading font-bold text-white tracking-tight leading-tight">
-              Ready To Confirm Your
+              Ready To Book Your
               <span className="text-gradient-gold block italic font-light mt-1">
-                Corporate Ride Manifesto?
+                Next Ride?
               </span>
             </h3>
 
             <p className="text-white/60 text-sm md:text-base font-light leading-relaxed max-w-xl mx-auto">
-              Our automated fleet reservation system secures your vehicle class instantly. Confirm your ride en route now and receive driver notifications 2 hours prior to arrival.
+              Confirm your vehicle class instantly and receive driver details 2 hours before pickup.
             </p>
 
             <div className="pt-4 flex flex-col sm:flex-row justify-center items-center gap-4 max-w-md mx-auto">

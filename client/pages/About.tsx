@@ -1,29 +1,9 @@
 import { motion } from "framer-motion";
+import { Target, Star, Lightbulb, Globe, Key, Sparkles } from "lucide-react";
 import useReveal from "@/hooks/use-reveal";
 import { Button } from "@/components/ui/button";
 import { ScrollToTop } from "@/components/ui/scroll-to-top";
 import { Link } from "react-router-dom";
-
-const teamMembers = [
-  {
-    name: "John Dev",
-    role: "Founder & CEO",
-    image:
-      "https://images.unsplash.com/photo-1511367461989-f85a21fda167?auto=format&fit=crop&q=80",
-  },
-  {
-    name: "Sarah Connor",
-    role: "Head of Operations",
-    image:
-      "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&q=80",
-  },
-  {
-    name: "Ahmed Hassan",
-    role: "Lead Chauffeur",
-    image:
-      "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&q=80",
-  },
-];
 
 export default function About() {
   const heroRef = useReveal<HTMLElement>({ threshold: 0.06 });
@@ -263,7 +243,7 @@ export default function About() {
                   </svg>
                 </div>
                 <h4 className="text-3xl font-bold text-corporate-gold mb-2">
-                  50K+
+                  48,000+
                 </h4>
                 <p className="text-white/80 text-sm">Happy Clients</p>
               </div>
@@ -657,43 +637,43 @@ export default function About() {
                 title: "Customer Focus",
                 description:
                   "We put our customers at the heart of every decision, ensuring exceptional service at every touchpoint.",
-                icon: "🎯",
-                gradient: "from-purple-500/20 to-corporate-gold/20",
+                icon: Target,
+                gradient: "from-corporate-gold/20 to-corporate-orange/20",
               },
               {
                 title: "Drive for Excellence",
                 description:
                   "Continuously raising the bar through innovation and dedication to superior quality.",
-                icon: "⭐",
-                gradient: "from-corporate-gold/20 to-orange-500/20",
+                icon: Star,
+                gradient: "from-corporate-gold/20 to-corporate-orange/20",
               },
               {
                 title: "Born to Innovate",
                 description:
                   "Embracing change and pioneering new solutions in the transportation industry.",
-                icon: "💡",
-                gradient: "from-blue-500/20 to-corporate-gold/20",
+                icon: Lightbulb,
+                gradient: "from-corporate-orange/20 to-corporate-gold/20",
               },
               {
                 title: "Growing Global",
                 description:
                   "Expanding our reach while maintaining consistent quality across borders.",
-                icon: "🌍",
-                gradient: "from-green-500/20 to-corporate-gold/20",
+                icon: Globe,
+                gradient: "from-corporate-gold/20 to-corporate-orange/20",
               },
               {
                 title: "Ownership",
                 description:
                   "Taking responsibility and pride in our work, treating every task as our own.",
-                icon: "🔑",
-                gradient: "from-red-500/20 to-corporate-gold/20",
+                icon: Key,
+                gradient: "from-corporate-red/20 to-corporate-gold/20",
               },
               {
                 title: "Creativity",
                 description:
                   "Finding innovative solutions to complex challenges through creative thinking.",
-                icon: "✨",
-                gradient: "from-pink-500/20 to-corporate-gold/20",
+                icon: Sparkles,
+                gradient: "from-corporate-gold/20 to-corporate-red/20",
               },
             ].map((value, index) => (
               <motion.div
@@ -710,8 +690,8 @@ export default function About() {
                   <div className="bg-black/80 rounded-2xl p-8 w-full flex flex-col justify-between relative backdrop-blur-sm min-h-[320px]">
                     <div className="absolute inset-0 bg-gradient-to-br from-corporate-gold/5 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 rounded-2xl"></div>
                     <div className="relative z-10 flex flex-col flex-1">
-                      <div className="mb-6 text-5xl transform group-hover:scale-110 transition-transform duration-300">
-                        {value.icon}
+                      <div className="mb-6 transform group-hover:scale-110 transition-transform duration-300">
+                        <value.icon className="w-10 h-10 text-corporate-gold" />
                       </div>
                       <h3 className="text-corporate-gold text-xl font-bold mb-4">
                         {value.title}
@@ -875,50 +855,6 @@ export default function About() {
               </p>
               <p className="text-corporate-gold">— Sarah L.</p>
             </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Team Section */}
-      <section className="relative py-16">
-        <svg
-          className="absolute right-8 top-8 w-24 h-24 z-0 animate-pulse"
-          viewBox="0 0 96 96"
-          fill="none"
-        >
-          <circle cx="48" cy="48" r="40" fill="#F4C430" fillOpacity="0.14" />
-          <circle
-            cx="48"
-            cy="48"
-            r="32"
-            stroke="#FF6B35"
-            strokeWidth="4"
-            fill="none"
-          />
-        </svg>
-        <div className="container mx-auto px-4 hidden">
-          <h2 className="text-3xl font-heading text-white mb-12 text-center">
-            Meet Our Team
-          </h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            {teamMembers.map((member, idx) => (
-              <motion.div
-                key={member.name}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.7, delay: idx * 0.2 }}
-                className="bg-white/[0.03] backdrop-blur-sm border border-white/10 rounded-xl p-8 text-center"
-              >
-                <img
-                  src={member.image}
-                  alt={member.name}
-                  className="mx-auto mb-4 rounded-full h-24 w-24 object-cover border-4 border-corporate-gold shadow-lg"
-                />
-                <h3 className="text-xl text-white mb-2">{member.name}</h3>
-                <p className="text-corporate-gold mb-2">{member.role}</p>
-              </motion.div>
-            ))}
           </div>
         </div>
       </section>

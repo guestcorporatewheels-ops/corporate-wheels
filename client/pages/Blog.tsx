@@ -1,7 +1,9 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ScrollToTop } from "@/components/ui/scroll-to-top";
+import { useToast } from "@/hooks/use-toast";
 
 // Featured and latest blog posts data
 const featuredPost = {
@@ -30,7 +32,7 @@ const recentPosts = [
     date: "October 15, 2025",
     image: "https://images.unsplash.com/photo-1553440569-bcc63803a83d?auto=format&fit=crop&q=80",
     category: "Luxury Fleet",
-    author: "Sarah Connor",
+    author: "Sarah Bennett",
     readTime: "4 min read"
   },
   {
@@ -81,6 +83,25 @@ const popularArticles = [
 ];
 
 export default function Blog() {
+  const { toast } = useToast();
+  const [email, setEmail] = useState("");
+
+  const notifyComingSoon = () =>
+    toast({
+      title: "Coming soon",
+      description: "Full articles are on the way — check back shortly.",
+    });
+
+  const handleNewsletterSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email.trim()) return;
+    toast({
+      title: "Subscribed",
+      description: "You're on the list for luxury travel insights.",
+    });
+    setEmail("");
+  };
+
   return (
     <main className="relative bg-background text-foreground min-h-screen">
       <ScrollToTop />
@@ -143,7 +164,7 @@ export default function Blog() {
                       <p className="text-sm text-white/60">{featuredPost.readTime}</p>
                     </div>
                   </div>
-                  <Button variant="glow" size="lg" className="w-fit">
+                  <Button variant="glow" size="lg" className="w-fit" onClick={notifyComingSoon}>
                     Read Article
                   </Button>
                 </div>
@@ -162,8 +183,10 @@ export default function Blog() {
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
             {categories.map((category, index) => (
-              <motion.div
+              <motion.button
                 key={index}
+                type="button"
+                onClick={notifyComingSoon}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: index * 0.1 }}
@@ -171,7 +194,7 @@ export default function Blog() {
               >
                 <h3 className="text-white mb-2">{category.name}</h3>
                 <span className="text-sm text-corporate-gold">{category.count} articles</span>
-              </motion.div>
+              </motion.button>
             ))}
           </div>
         </div>
@@ -185,10 +208,14 @@ export default function Blog() {
             {recentPosts.map((post, index) => (
               <motion.article
                 key={index}
+                role="button"
+                tabIndex={0}
+                onClick={notifyComingSoon}
+                onKeyDown={(e) => e.key === "Enter" && notifyComingSoon()}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
-                className="bg-white/[0.02] backdrop-blur-sm border border-white/10 rounded-2xl overflow-hidden transition-transform hover:translate-y-[-4px]"
+                className="bg-white/[0.02] backdrop-blur-sm border border-white/10 rounded-2xl overflow-hidden transition-transform hover:translate-y-[-4px] cursor-pointer"
               >
                 <div className="relative h-48">
                   <img
@@ -228,6 +255,10 @@ export default function Blog() {
             {popularArticles.map((article, index) => (
               <motion.div
                 key={index}
+                role="button"
+                tabIndex={0}
+                onClick={notifyComingSoon}
+                onKeyDown={(e) => e.key === "Enter" && notifyComingSoon()}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: index * 0.1 }}
@@ -268,16 +299,22 @@ export default function Blog() {
               Subscribe to our newsletter for exclusive insights on luxury travel, fleet updates,
               and industry trends delivered to your inbox.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center max-w-md mx-auto">
+            <form
+              onSubmit={handleNewsletterSubmit}
+              className="flex flex-col sm:flex-row gap-4 justify-center items-center max-w-md mx-auto"
+            >
               <input
                 type="email"
+                required
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter your email"
                 className="w-full px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-corporate-gold/50"
               />
-              <Button variant="glow" size="lg" className="w-full sm:w-auto">
+              <Button type="submit" variant="glow" size="lg" className="w-full sm:w-auto">
                 Subscribe
               </Button>
-            </div>
+            </form>
           </motion.div>
         </div>
       </section>

@@ -124,13 +124,13 @@ const chooseDataMap: Record<string, {
     endorsements: [
       {
         quote: "Safety is not an option when transporting our board members. Corporate Wheels' close-protection standards and active Ops tracking provide complete, absolute reassurance.",
-        author: "Dame Sarah Jenkins",
-        role: "Director of Risk, Global Bank"
+        author: "Priya Anand",
+        role: "Director of Risk, Meridian Bank"
       },
       {
-        quote: "The only chauffeur service we trust for secure diplomatic transfers. The NDA protocols and defensive driving skills are truly elite.",
-        author: "His Excellency J. Al-Saud",
-        role: "Embassy Attaché"
+        quote: "The only chauffeur service we trust for secure client transfers. The NDA protocols and defensive driving skills are truly elite.",
+        author: "Owen Whitfield",
+        role: "Head of Corporate Security, Halcyon Group"
       }
     ]
   },
@@ -798,7 +798,7 @@ export default function WhyChooseUs() {
             
             <div className="relative z-10 md:pl-10 space-y-6">
               <span className="text-[10px] text-corporate-gold font-bold uppercase tracking-widest block">
-                Exclusive Boarding Pass Reservation
+                Reserve Your Ride
               </span>
               
               <h3 className="text-3xl md:text-4xl font-heading font-bold text-white tracking-tight leading-tight">

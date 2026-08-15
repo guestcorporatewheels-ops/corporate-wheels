@@ -11,6 +11,8 @@ import {
 } from "lucide-react";
 import { Link } from "react-router-dom";
 
+const MotionLink = motion(Link);
+
 export default function LimousineService() {
   return (
     <main className="relative min-h-[70vh] bg-black text-white overflow-hidden">
@@ -76,23 +78,22 @@ export default function LimousineService() {
             first class—every time, everywhere.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 p-2 justify-center mb-8">
-            <motion.a
-              href="#booking"
+            <MotionLink
+              to="/booking"
               whileHover={{ scale: 1.05 }}
               className="inline-flex items-center gap-2 px-8 py-4 bg-corporate-gold text-black font-bold rounded-lg shadow-lg hover:bg-yellow-400 transition-colors"
             >
-              {" "}
-              <Link to="/booking">Book Your Limousine </Link>{" "}
+              Book Your Limousine
               <ArrowRight className="w-5 h-5" />
-            </motion.a>
-            <motion.a
-              href="#contact"
+            </MotionLink>
+            <MotionLink
+              to="/help"
               whileHover={{ scale: 1.05 }}
               className="inline-flex items-center gap-2 px-8 py-4 border-2 border-corporate-gold text-corporate-gold font-bold rounded-lg shadow-lg hover:bg-corporate-gold/10 transition-colors"
             >
-              <Link to="/help">24/7 Concierge </Link>{" "}
+              24/7 Concierge
               <PhoneCall className="w-5 h-5" />
-            </motion.a>
+            </MotionLink>
           </div>
           <div className="flex flex-wrap justify-center gap-6 mt-6">
             <span className="inline-flex items-center gap-2 text-lg text-corporate-gold font-semibold">
@@ -264,7 +265,7 @@ export default function LimousineService() {
         </div>
       </motion.section>
 
-      {/* Get Around with a Blacklane Limo Service */}
+      {/* Get Around with Corporate Wheels */}
       <motion.section
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -273,7 +274,7 @@ export default function LimousineService() {
         className="max-w-5xl mx-auto mb-20 p-12 rounded-2xl bg-black/80 border border-corporate-gold/30 shadow-2xl"
       >
         <h2 className="text-4xl font-bold text-corporate-gold mb-8">
-          Get Around with a Blacklane Limo Service
+          Get Around with Corporate Wheels
         </h2>
         <img
           src="https://images.unsplash.com/photo-1750013931537-60974e4df0dc?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170"
@@ -306,15 +307,14 @@ export default function LimousineService() {
               experience from pickup to drop-off. Perfect for business, leisure,
               and special occasions.
             </p>
-            <motion.a
-              href="#booking"
+            <MotionLink
+              to="/booking"
               whileHover={{ scale: 1.05 }}
               className="inline-flex items-center gap-2 px-8 py-4 bg-corporate-gold text-black font-bold rounded-lg shadow-lg hover:bg-yellow-400 transition-colors mt-2"
             >
-              {" "}
-              <Link to="/booking">Book Now </Link>{" "}
+              Book Now
               <ArrowRight className="w-5 h-5" />
-            </motion.a>
+            </MotionLink>
           </div>
         </div>
       </motion.section>
@@ -331,7 +331,7 @@ export default function LimousineService() {
           Airport Limousine Service
         </h2>
         <img
-          src="https://images.surferseo.art/3d356ec8-40c1-44a4-a59f-8fceac0b69bb.png"
+          src="/images/features/car2.jpeg"
           alt="Airport Limo"
           className="rounded-xl shadow-2xl mb-8 w-full object-cover border-4 border-corporate-gold/20"
         />
@@ -366,15 +366,14 @@ export default function LimousineService() {
                 – A. Patel, Frequent Traveler
               </span>
             </blockquote>
-            <motion.a
-              href="#booking"
+            <MotionLink
+              to="/booking"
               whileHover={{ scale: 1.05 }}
               className="inline-flex items-center gap-2 px-8 py-4 bg-corporate-gold text-black font-bold rounded-lg shadow-lg hover:bg-yellow-400 transition-colors mt-2"
             >
-              {" "}
-              <Link to="/booking">Book Airport Limo </Link>{" "}
+              Book Airport Limo
               <ArrowRight className="w-5 h-5" />
-            </motion.a>
+            </MotionLink>
           </div>
         </div>
       </motion.section>
@@ -415,12 +414,12 @@ export default function LimousineService() {
           </div>
           <div className="bg-black/60 border border-corporate-gold/20 rounded-xl p-6 flex flex-col justify-center">
             <h3 className="text-xl font-semibold text-corporate-gold mb-2">
-              Awards & Recognition
+              Why Clients Trust Us
             </h3>
             <ul className="list-disc pl-6 text-gray-300">
-              <li>Global Limousine Excellence Award 2025</li>
-              <li>Best Chauffeur Service – Luxury Travel Magazine</li>
-              <li>Top Safety Rating – International Transport Board</li>
+              <li>Background-checked, professionally trained chauffeurs</li>
+              <li>Fixed, transparent pricing with no hidden fees</li>
+              <li>24/7 support and real-time flight tracking</li>
             </ul>
           </div>
         </div>
@@ -476,7 +475,7 @@ export default function LimousineService() {
             },
             {
               q: "How do I contact support?",
-              a: "Use the contact section below for instant help or live chat.",
+              a: "Use the contact section below to reach our team, or email support@corporatewheels.com.",
             },
           ].map((f, idx) => (
             <details
@@ -516,14 +515,16 @@ export default function LimousineService() {
           >
             <PhoneCall className="w-6 h-6" /> Email Support
           </a>
-          <button className="flex items-center gap-3 bg-corporate-gold hover:bg-corporate-gold/90 text-black rounded-lg px-8 py-6 text-lg font-semibold transition-colors">
-            <MessageCircle className="w-6 h-6" /> Live Chat
-          </button>
+          <Link
+            to="/contact"
+            className="flex items-center gap-3 bg-corporate-gold hover:bg-corporate-gold/90 text-black rounded-lg px-8 py-6 text-lg font-semibold transition-colors"
+          >
+            <MessageCircle className="w-6 h-6" /> Contact Us
+          </Link>
         </div>
         <div className="mt-2 text-gray-400 text-base">
-          Live chat is available for urgent issues. Our agents respond within
-          minutes. For custom requests, event packages, or business accounts,
-          contact our concierge team 24/7.
+          For custom requests, event packages, or business accounts, contact
+          our concierge team 24/7.
         </div>
       </motion.section>
     </main>

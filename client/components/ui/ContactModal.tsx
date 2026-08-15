@@ -31,7 +31,7 @@ export default function ContactModal({ open, onClose }: { open: boolean; onClose
       {open && (
         <motion.div className="fixed inset-0 z-50 flex items-center justify-center p-4" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
           <div className="absolute inset-0 bg-black/50" onClick={onClose} />
-          <motion.div className="relative w-full max-w-lg bg-surface/90 backdrop-blur rounded-2xl p-6 shadow-2xl border border-white/10" initial={{ scale: 0.95, y: 20 }} animate={{ scale: 1, y: 0 }} exit={{ scale: 0.95, y: 20 }}>
+          <motion.div className="relative w-full max-w-lg bg-card/90 backdrop-blur rounded-2xl p-6 shadow-2xl border border-white/10" initial={{ scale: 0.95, y: 20 }} animate={{ scale: 1, y: 0 }} exit={{ scale: 0.95, y: 20 }}>
             <h3 className="text-lg font-semibold">Contact our partnerships team</h3>
             <p className="text-sm text-muted-foreground mt-1">Tell us about your needs and we'll reach out with a tailored plan.</p>
             <form onSubmit={handleSubmit} className="mt-4 space-y-3">

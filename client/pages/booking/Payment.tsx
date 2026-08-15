@@ -109,8 +109,8 @@ export default function Payment() {
               <p className="text-sm text-muted-foreground">{instructions}</p>
               {isPlaceholder && (
                 <p className="text-xs text-muted-foreground">
-                  Placeholder QR — replace with your live payment QR in Admin →
-                  Settings.
+                  Our team will confirm your payment details shortly after
+                  booking.
                 </p>
               )}
             </div>

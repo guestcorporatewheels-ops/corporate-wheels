@@ -606,9 +606,9 @@ export default function ServiceCategory({ forcedCategoryId }: ServiceCategoryPro
               <span className="text-[10px] text-corporate-gold font-bold uppercase tracking-widest">Client Endorsements</span>
             </div>
             <h2 className="text-3xl md:text-5xl font-heading font-bold text-white tracking-tight">
-              Sovereign Service
+              What Our Clients Say
               <span className="text-gradient-gold block italic font-light mt-1.5">
-                Vouched by the Elite.
+                Trusted by professionals.
               </span>
             </h2>
             <div className="w-20 h-[2px] bg-gradient-to-r from-transparent via-corporate-gold to-transparent mx-auto mt-6" />
@@ -854,7 +854,7 @@ export default function ServiceCategory({ forcedCategoryId }: ServiceCategoryPro
               <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white/[0.04] border border-white/10 mb-8 backdrop-blur-md">
                 <span className="w-1.5 h-1.5 rounded-full bg-corporate-gold animate-pulse shadow-[0_0_8px_rgba(230,167,0,0.8)]" />
                 <span className="text-[10px] text-white/80 font-bold uppercase tracking-widest">
-                  VIP Boarding Pass Dispatch
+                  Reserve Your Ride
                 </span>
               </div>
               

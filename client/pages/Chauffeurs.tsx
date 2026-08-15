@@ -109,31 +109,14 @@ function Hero() {
               of your career with our industry-leading platform.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row gap-4">
-              <Button size="lg" variant="glow" className="sm:min-w-[200px]">
-                Apply Now
+              <Button size="lg" variant="glow" className="sm:min-w-[200px]" asChild>
+                <a href="#requirements">Apply Now</a>
               </Button>
-              <Button size="lg" variant="outline" className="sm:min-w-[200px]">
-                View Requirements
+              <Button size="lg" variant="outline" className="sm:min-w-[200px]" asChild>
+                <a href="#requirements">View Requirements</a>
               </Button>
             </div>
             <div className="mt-8 flex items-center gap-6">
-              <div className="flex -space-x-3">
-                {[
-                  "https://framerusercontent.com/images/7UmMsmgvCMHDxKx6QasBLzW7tG4.png?width=399&height=399", // man smiling
-                  "https://framerusercontent.com/images/CDSoRipaV9Hpq0zdDkZvdZ5lQe8.png?width=400&height=400", // woman portrait
-                  "https://framerusercontent.com/images/Zqzxm1TQf4LIJpN4L4hHxLGhKyA.png?width=400&height=400", // woman laughing
-                ].map((url, i) => (
-                  <div
-                    key={i}
-                    className="w-12 h-12 rounded-full border-2 border-background bg-white/10"
-                    style={{
-                      backgroundImage: `url(${url})`,
-                      backgroundSize: "cover",
-                      backgroundPosition: "center",
-                    }}
-                  />
-                ))}
-              </div>
               <p className="text-sm text-white/80">
                 Join <span className="text-[#E6A700]">500+</span> professional
                 chauffeurs
@@ -150,7 +133,7 @@ function Hero() {
             <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent z-10" />
             <div className="relative">
               <img
-                src="images/chufferas.png"
+                src="/images/chufferas.png"
                 alt="Luxury Chauffeur Service"
                 className="rounded-lg border border-white/10 shadow-2xl object-cover h-[500px]"
               />
@@ -518,7 +501,7 @@ function RequirementsOnboarding() {
   ];
 
   return (
-    <section className="relative py-20">
+    <section id="requirements" className="relative py-20">
       {/* Decorative background */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(230,167,0,0.15),transparent_50%)]" />
@@ -537,9 +520,7 @@ function RequirementsOnboarding() {
             className="rounded-xl overflow-hidden shadow-2xl border border-white/6"
           >
             <img
-              src={
-                "https://images.ctfassets.net/ov8o7v78mnye/4vI4gSo7BEj9US3qQIJOGC/885a347cec4b29f25fe2e0079489fc8d/02_Get_to.jpg?w=1280&f=center&q=85&fm=webp"
-              }
+              src="/images/features/car.jpeg"
               alt="Requirements"
               className="w-full h-88 object-cover"
             />
@@ -615,9 +596,7 @@ function RequirementsOnboarding() {
             className="rounded-xl overflow-hidden shadow-2xl border border-white/6"
           >
             <img
-              src={
-                "https://images.ctfassets.net/ov8o7v78mnye/6qTZF2EL2byG2vD5X5G8KW/7bc2e2c481580ba65e7da50dfcd7b132/02__2_.jpg?w=1280&f=center&q=85&fm=webp"
-              }
+              src="/images/features/car2.jpeg"
               alt="Onboarding"
               className="w-full h-88 object-cover"
             />
@@ -635,9 +614,7 @@ function RequirementsOnboarding() {
             className="rounded-xl overflow-hidden shadow-2xl border border-white/6"
           >
             <img
-              src={
-                "https://images.ctfassets.net/ov8o7v78mnye/7ocxqnMbSIYuxmyXDKNWkb/198471527214467c535938d14e809144/03_Shuttle.jpg?w=1280&f=center&q=85&fm=webp"
-              }
+              src="/images/LuxuryFleet.jpg"
               alt="Sustainable future"
               className="w-full h-88 object-cover"
             />
@@ -686,16 +663,16 @@ function FAQSection() {
       a: "Professional sedans and vans that meet our quality standards are eligible; check local rules for specifics.",
     },
     {
-      q: "Which vehicles are eligible?",
-      a: "Professional sedans and vans that meet our quality standards are eligible; check local rules for specifics.",
+      q: "Do I need to work full-time?",
+      a: "No. Set your own schedule and accept as many or as few jobs as suit you.",
     },
     {
-      q: "Which vehicles are eligible?",
-      a: "Professional sedans and vans that meet our quality standards are eligible; check local rules for specifics.",
+      q: "What support do chauffeurs get?",
+      a: "Dedicated partner support, in-app navigation, and priority customer matching.",
     },
     {
-      q: "Which vehicles are eligible?",
-      a: "Professional sedans and vans that meet our quality standards are eligible; check local rules for specifics.",
+      q: "Is there a minimum commitment?",
+      a: "No minimum hours or long-term contract — you can pause or stop taking jobs at any time.",
     },
   ];
 
@@ -772,10 +749,8 @@ function FAQSection() {
         >
           <div className="absolute -left-12 -top-8 w-48 h-48 rounded-full bg-gradient-to-br from-corporate-gold to-orange-400 opacity-10 blur-2xl pointer-events-none" />
           <img
-            src={
-              "https://images.ctfassets.net/ov8o7v78mnye/6BPRfdSwYGXY525DIjVT70/3e220a07d3292fd9c8f5c71f18c0ee45/Blacklane-LA-Social-37_FAQ.jpg?w=486&h=792&fit=fill&f=center&q=95&fm=webp"
-            }
-            alt="Chauffeur FAQ"
+            src="/images/EliteChauffeurs.jpeg"
+            alt="Corporate Wheels chauffeur"
             className="w-full rounded-lg shadow-lg object-cover h-[520px]"
           />
         </motion.div>

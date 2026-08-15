@@ -140,7 +140,6 @@ export default function HourlyHire() {
                     className="bg-gray-900/50 border border-gray-700 rounded-lg p-3 text-white"
                   />
 
-                  {/* Responsive fix starts here */}
                   <div className="flex flex-col sm:flex-row gap-2 hourly-hire">
                     <DateInput
                       value={date}
@@ -156,18 +155,7 @@ export default function HourlyHire() {
                       name="widget-time"
                       className="w-full rounded-xl border  bg-gray-900 border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-corporate-gold "
                     />
-                    {/* <input
-                      title="date"
-                      type="date"
-                      className="bg-gray-900/50 border border-gray-700 rounded-lg p-3 text-white w-full"
-                    />
-                    <input
-                      title="time"
-                      type="time"
-                      className="bg-gray-900/50 border border-gray-700 rounded-lg p-3 text-white w-full"
-                    /> */}
                   </div>
-                  {/* Responsive fix ends here */}
 
                   <Button className="bg-corporate-gold text-black mt-2">
                     Check Availability
@@ -178,65 +166,6 @@ export default function HourlyHire() {
           </div>
         </div>
       </section>
-
-      {/* Quick Booking Widget */}
-      {/* <section className="py-16 bg-gray-900/50 border-y border-gray-800">
-        <div className="container">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="max-w-4xl mx-auto bg-black/50 backdrop-blur-lg rounded-2xl p-8 border border-gray-800"
-          >
-            <h3 className="text-2xl font-semibold mb-8 text-center">Quick Book Your Chauffeur Service</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-              <div className="space-y-2">
-                <label className="text-sm text-gray-400">Pick-up Location</label>
-                <div className="relative">
-                  <MapPin className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
-                  <input
-                    type="text"
-                    placeholder="Enter location"
-                    className="w-full pl-10 pr-4 py-2 bg-gray-900 border border-gray-700 rounded-lg focus:border-corporate-gold focus:ring-1 focus:ring-corporate-gold"
-                  />
-                </div>
-              </div>
-              <div className="space-y-2">
-                <label className="text-sm text-gray-400">Date</label>
-                <div className="relative">
-                  <Calendar className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
-                  <input
-                    type="date"
-                    className="w-full pl-10 pr-4 py-2 bg-gray-900 border border-gray-700 rounded-lg focus:border-corporate-gold focus:ring-1 focus:ring-corporate-gold"
-                  />
-                </div>
-              </div>
-              <div className="space-y-2">
-                <label className="text-sm text-gray-400">Duration</label>
-                <div className="relative">
-                  <Clock className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
-                  <select
-                    className="w-full pl-10 pr-4 py-2 bg-gray-900 border border-gray-700 rounded-lg focus:border-corporate-gold focus:ring-1 focus:ring-corporate-gold"
-                  >
-                    <option>2 Hours</option>
-                    <option>4 Hours</option>
-                    <option>6 Hours</option>
-                    <option>8 Hours</option>
-                    <option>Custom</option>
-                  </select>
-                </div>
-              </div>
-              <Button
-                size="lg"
-                className="bg-corporate-gold hover:bg-corporate-gold/90 text-black font-semibold w-full h-full mt-6 md:mt-0"
-              >
-                Check Availability
-              </Button>
-            </div>
-          </motion.div>
-        </div>
-      </section> */}
 
       {/* Premium Features Section */}
       <section className="py-24">
@@ -681,22 +610,6 @@ export default function HourlyHire() {
               </motion.div>
             ))}
           </div>
-          {/* 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.6 }}
-            className="text-center mt-12"
-          >
-            <Button
-              variant="outline"
-              className="border-corporate-gold text-corporate-gold hover:bg-corporate-gold/10"
-            >
-              View All Reviews
-              <ArrowRight className="ml-2 w-4 h-4" />
-            </Button>
-          </motion.div> */}
         </div>
       </section>
 
@@ -783,15 +696,11 @@ export default function HourlyHire() {
       <section className="py-20 relative overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black z-10" />
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
+          <img
+            src="/images/LuxuryLimousineExperience.jpg"
+            alt=""
             className="w-full h-full object-cover opacity-30"
-          >
-            <source src="/videos/luxury-night-drive.mp4" type="video/mp4" />
-          </video>
+          />
         </div>
         <div className="container relative z-20">
           <div className="max-w-4xl mx-auto text-center">

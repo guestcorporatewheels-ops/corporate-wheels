@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { useTypingAnimation } from "@/hooks/use-typing-animation";
 import { cn } from "@/lib/utils";
@@ -159,7 +160,7 @@ function Hero() {
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-6">
               <span className="w-2 h-2 rounded-full bg-[#E6A700] animate-pulse" />
               <span className="text-sm text-white/80">
-                Trusted by Fortune 500 Companies
+                Corporate Accounts
               </span>
             </div>
             <h1 className="text-4xl md:text-6xl xl:text-7xl font-heading text-white leading-tight">
@@ -182,34 +183,17 @@ function Hero() {
               enterprise-grade security for teams of any size.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row gap-4">
-              <Button size="lg" variant="glow" className="sm:min-w-[200px]">
-                Start Free Trial
+              <Button size="lg" variant="glow" className="sm:min-w-[200px]" asChild>
+                <Link to="/contact">Talk to Our Team</Link>
               </Button>
-              <Button size="lg" variant="outline" className="sm:min-w-[200px]">
-                Schedule Demo
+              <Button size="lg" variant="outline" className="sm:min-w-[200px]" asChild>
+                <Link to="/booking">Book a Ride</Link>
               </Button>
             </div>
-            <div className="mt-8 flex items-center gap-6">
-              <div className="flex -space-x-3">
-                {[
-                  "https://framerusercontent.com/images/7UmMsmgvCMHDxKx6QasBLzW7tG4.png?width=399&height=399", // man smiling
-                  "https://framerusercontent.com/images/CDSoRipaV9Hpq0zdDkZvdZ5lQe8.png?width=400&height=400", // woman portrait
-                  "https://framerusercontent.com/images/Zqzxm1TQf4LIJpN4L4hHxLGhKyA.png?width=400&height=400", // woman laughing
-                ].map((url, i) => (
-                  <div
-                    key={i}
-                    className="w-12 h-12 rounded-full border-2 border-background bg-white/10"
-                    style={{
-                      backgroundImage: `url(${url})`,
-                      backgroundSize: "cover",
-                      backgroundPosition: "center",
-                    }}
-                  />
-                ))}
-              </div>
+            <div className="mt-8 flex items-center gap-3">
+              <span className="w-2 h-2 rounded-full bg-[#E6A700]" />
               <p className="text-sm text-white/80">
-                Join <span className="text-[#E6A700]">500+</span> companies across
-                the UK
+                Trusted by corporate travel desks across the UK
               </p>
             </div>
           </motion.div>
@@ -222,20 +206,22 @@ function Hero() {
           >
             <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent z-10" />
             <img
-              src="https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=800&auto=format&fit=crop&q=80"
-              alt="Business Dashboard Interface"
-              className="rounded-lg border border-white/10 shadow-2xl"
+              src="/images/fleet/business-class.png"
+              alt="Corporate Wheels executive fleet vehicle"
+              className="rounded-lg border border-white/10 shadow-2xl bg-black/40"
             />
             <div className="absolute -right-8 -bottom-8 p-6 backdrop-blur-md bg-white/5 border border-white/10 rounded-lg z-20">
               <div className="flex items-center gap-3">
                 <div className="w-12 h-12 rounded-full bg-[#E6A700]/20 flex items-center justify-center">
-                  <span className="text-[#E6A700] text-xl">↗</span>
+                  <span className="text-[#E6A700] text-xl">✓</span>
                 </div>
                 <div>
                   <p className="text-white text-sm font-medium">
-                    Monthly Bookings
+                    Dedicated account manager
                   </p>
-                  <p className="text-[#E6A700] text-lg font-bold">+127%</p>
+                  <p className="text-[#E6A700] text-sm">
+                    Priority booking, always on call
+                  </p>
                 </div>
               </div>
             </div>
@@ -567,8 +553,11 @@ function EnterpriseFeatures() {
   );
 }
 
-function Integrations() {
-  const logos = ["Google", "Slack", "SAP", "Oracle"];
+function Compliance() {
+  const marks = [
+    { name: "ICO Registered", src: "/images/partners/ico.png" },
+    { name: "TfL Licensed", src: "/images/partners/tfl.png" },
+  ];
   return (
     <section className="relative py-20">
       <div className="container">
@@ -579,23 +568,26 @@ function Integrations() {
           transition={{ duration: 0.6 }}
           className="text-3xl md:text-4xl font-heading text-white text-center"
         >
-          Integrations
+          Trusted & compliant
         </motion.h2>
         <p className="mt-3 text-center text-muted-foreground max-w-2xl mx-auto">
-          Connect with your existing tools — calendar sync, SSO, reporting and
-          expense platforms.
+          Data protection registered and fully licensed for private hire
+          across the UK.
         </p>
-        <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-6 items-center">
-          {logos.map((l, i) => (
+        <div className="mt-8 flex items-center justify-center gap-8">
+          {marks.map((m, i) => (
             <motion.div
-              key={l}
+              key={m.name}
               initial={{ opacity: 0, scale: 0.96 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.06 }}
-              className="bg-white/4 rounded-lg p-6 flex items-center justify-center border border-white/6"
+              className="bg-white/4 rounded-lg p-6 flex flex-col items-center justify-center gap-3 border border-white/6 w-40"
             >
-              <span className="text-muted-foreground">{l}</span>
+              <img src={m.src} alt={m.name} className="h-10 w-auto object-contain" />
+              <span className="text-xs text-muted-foreground text-center">
+                {m.name}
+              </span>
             </motion.div>
           ))}
         </div>
@@ -726,7 +718,7 @@ function CTA() {
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-6">
                 <span className="w-2 h-2 rounded-full bg-[#E6A700] animate-pulse" />
                 <span className="text-sm text-white/80">
-                  Limited Time Offer
+                  Corporate Accounts
                 </span>
               </div>
               <h3 className="text-3xl md:text-4xl font-heading text-white leading-tight">
@@ -735,20 +727,20 @@ function CTA() {
                 Today
               </h3>
               <p className="mt-4 text-lg text-muted-foreground">
-                Get 3 months free when you sign up for an annual enterprise
-                plan. Plus, a dedicated account manager to ensure smooth
-                onboarding.
+                Set up a corporate account with a dedicated account manager,
+                consolidated invoicing, and priority booking across our fleet.
               </p>
               <div className="mt-8 flex flex-col sm:flex-row gap-4">
-                <Button size="lg" variant="glow" className="sm:min-w-[200px]">
-                  Start Free Trial
+                <Button size="lg" variant="glow" className="sm:min-w-[200px]" asChild>
+                  <Link to="/contact">Talk to Our Team</Link>
                 </Button>
                 <Button
                   size="lg"
                   variant="outline"
                   className="sm:min-w-[200px]"
+                  asChild
                 >
-                  Book Demo
+                  <Link to="/booking">Book a Ride</Link>
                 </Button>
               </div>
             </div>
@@ -809,7 +801,7 @@ export default function Business() {
       <WorldwidePresence />
       <EnterpriseFeatures />
       <CaseStudies />
-      <Integrations />
+      <Compliance />
       <CTA />
     </main>
   );

@@ -16,7 +16,7 @@ export default function HeroSection() {
     <section className="relative min-h-screen flex items-center pt-24 pb-16  ">
       {/* Animated Gradient Background */}
       <div className="absolute inset-0 -z-10">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#1a1a2e] via-[#16213e] to-[#e6a700]/30 animate-gradient" />
+        <div className="absolute inset-0 bg-gradient-to-br from-black via-[#0a0a0a] to-[#e6a700]/30 animate-gradient" />
         {/* Floating Gold Circles */}
         <motion.div
           className="absolute top-10 left-10 w-32 h-32 rounded-full bg-gradient-to-tr from-[#e6a700]/60 to-[#fff]/10 blur-2xl"
@@ -44,11 +44,11 @@ export default function HeroSection() {
             <span className="block bg-gradient-to-r from-[#e6a700] via-[#fff] to-[#e6a700] bg-clip-text text-transparent animate-text-flash">
               {displayText}
             </span>
-            <span className="block mt-4 text-xl md:text-2xl text-muted-foreground font-medium">
-              Premium, verified chauffeurs for airport transfers, hourly
-              bookings, and city-to-city rides worldwide.
-            </span>
           </h1>
+          <p className="block -mt-2 mb-6 text-xl md:text-2xl text-muted-foreground font-medium">
+            Premium, verified chauffeurs for airport transfers, hourly
+            bookings, and city-to-city rides worldwide.
+          </p>
 
           <div className="mt-8 flex flex-col sm:flex-row sm:items-center sm:gap-4 justify-center lg:justify-start">
             <Button

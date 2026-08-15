@@ -1,7 +1,21 @@
-import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useToast } from "@/hooks/use-toast";
 
 export default function Footer() {
+  const { toast } = useToast();
+  const [email, setEmail] = useState("");
+
+  const handleSubscribe = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email.trim()) return;
+    toast({
+      title: "Subscribed",
+      description: "You're on the list for Concierge Dispatch updates.",
+    });
+    setEmail("");
+  };
+
   return (
     <footer className="border-t border-white/10 bg-black">
 
@@ -33,12 +47,6 @@ export default function Footer() {
               </div>
             </div>
 
-            <div className="text-[11px] text-white/40 space-y-1 font-light">
-              <div>
-                <span>Company Reg:</span>
-                <span className="font-medium text-white/70 ml-1.5">XXXXXX</span>
-              </div>
-            </div>
           </div>
         </div>
 
@@ -141,11 +149,13 @@ export default function Footer() {
 
           <div className="flex flex-col sm:flex-row gap-4 items-center w-full">
             <form
-              onSubmit={(e) => e.preventDefault()}
+              onSubmit={handleSubscribe}
               className="flex items-center gap-2.5 w-full sm:flex-1"
             >
               <input
                 type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter executive email"
                 className="flex-1 h-11 bg-white/5 border border-white/10 text-white text-xs px-4 rounded-xl placeholder:text-white/20 focus:outline-none focus:border-corporate-gold/40 focus:ring-1 focus:ring-corporate-gold/20 transition-all font-light"
                 required
@@ -157,19 +167,6 @@ export default function Footer() {
                 Subscribe
               </button>
             </form>
-
-            {/* Social Channels */}
-            <div className="flex items-center gap-2 shrink-0">
-              {[Facebook, Twitter, Instagram, Linkedin].map((Icon, i) => (
-                <a
-                  key={i}
-                  href="#"
-                  className="p-3 rounded-xl border border-white/5 bg-white/[0.02] text-white/50 hover:text-corporate-gold hover:border-corporate-gold/20 hover:bg-white/[0.04] transition-all duration-300"
-                >
-                  <Icon className="size-4 shrink-0" />
-                </a>
-              ))}
-            </div>
           </div>
         </div>
       </div>

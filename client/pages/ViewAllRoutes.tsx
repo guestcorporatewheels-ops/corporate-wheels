@@ -1,39 +1,58 @@
-import React from "react";
 import { Link } from "react-router-dom";
+import { ArrowRight } from "lucide-react";
+
+const routes = [
+  { from: "London", to: "Heathrow Airport", duration: "~45-60 min" },
+  { from: "Manchester", to: "Manchester Airport", duration: "~30-40 min" },
+  { from: "Birmingham", to: "City Centre", duration: "~20-30 min" },
+];
 
 export default function ViewAllRoutes() {
-  const routes = [
-    { from: "London", to: "Heathrow" },
-    { from: "Manchester", to: "Airport" },
-    { from: "Birmingham", to: "City Centre" },
-  ];
-
   return (
-    <main className="container py-12">
-      <h1 className="text-3xl font-bold mb-4">All Routes</h1>
-      <p className="text-muted-foreground mb-6">
-        Popular routes and quick info.
-      </p>
-      <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        {routes.map((r, i) => (
-          <li
-            key={i}
-            className="p-4 rounded-lg border border-white/6 bg-surface/40"
-          >
-            <div className="font-medium">
-              {r.from} → {r.to}
-            </div>
-            <div className="text-sm text-muted-foreground mt-1">
-              Estimated time and typical fare info.
-            </div>
-            <div className="mt-3">
-              <Link to="/booking" className="text-corporate-gold underline">
-                Book this route
-              </Link>
-            </div>
-          </li>
-        ))}
-      </ul>
+    <main className="bg-background text-foreground min-h-screen">
+      <section className="pt-36 pb-12">
+        <div className="container">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-6">
+            <span className="w-2 h-2 rounded-full bg-corporate-gold animate-pulse" />
+            <span className="text-sm text-white/80">All Routes</span>
+          </div>
+          <h1 className="text-4xl md:text-5xl font-heading text-white mb-4">
+            Popular <span className="text-gradient-gold">routes</span>
+          </h1>
+          <p className="text-muted-foreground max-w-2xl">
+            Fixed-rate journeys with real-time pricing — get an exact quote
+            when you book.
+          </p>
+        </div>
+      </section>
+
+      <section className="pb-24">
+        <div className="container">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {routes.map((r) => (
+              <div
+                key={`${r.from}-${r.to}`}
+                className="group p-6 rounded-2xl border border-white/10 bg-white/[0.02] hover:border-corporate-gold/30 hover:bg-white/[0.04] transition-colors"
+              >
+                <h3 className="text-lg font-semibold text-white mb-2">
+                  {r.from} → {r.to}
+                </h3>
+                <p className="text-sm text-muted-foreground mb-4">
+                  Typical journey time {r.duration}. Exact fare shown at
+                  booking.
+                </p>
+                <Link
+                  to="/booking"
+                  className="inline-flex items-center gap-1.5 text-sm text-corporate-gold group-hover:gap-2.5 transition-all"
+                >
+                  Book this route
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
     </main>
   );
 }

@@ -1,5 +1,6 @@
-import { useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 import { useEffect } from "react";
+import { Button } from "@/components/ui/button";
 
 const NotFound = () => {
   const location = useLocation();
@@ -12,18 +13,30 @@ const NotFound = () => {
   }, [location.pathname]);
 
   return (
-    <div className="min-h-[60vh] flex items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold text-white mb-2">404</h1>
-        <p className="text-sm text-muted-foreground mb-4">
-          Oops! Page not found
+    <div className="min-h-[70vh] flex items-center justify-center bg-background px-6">
+      <div className="text-center max-w-md">
+        <img
+          src="/logo.png"
+          alt="Corporate Wheels"
+          className="h-14 w-auto object-contain mx-auto mb-8 opacity-90"
+        />
+        <p className="text-sm font-semibold tracking-wider text-corporate-gold uppercase mb-3">
+          404
         </p>
-        <a
-          href="/"
-          className="text-secondary underline-offset-4 hover:underline"
-        >
-          Return to Home
-        </a>
+        <h1 className="text-3xl md:text-4xl font-heading text-white mb-3">
+          Page not found
+        </h1>
+        <p className="text-muted-foreground mb-8">
+          The page you're looking for doesn't exist or may have moved.
+        </p>
+        <div className="flex flex-col sm:flex-row gap-3 justify-center">
+          <Button asChild className="btn-gradient text-primary-foreground">
+            <Link to="/">Return home</Link>
+          </Button>
+          <Button asChild variant="outline">
+            <Link to="/booking">Book a ride</Link>
+          </Button>
+        </div>
       </div>
     </div>
   );

@@ -249,7 +249,7 @@ export default function Navbar() {
           </NavLink>
 
           <Button asChild variant="glow" className="ml-2">
-            <NavLink to="/">Book Now</NavLink>
+            <NavLink to="/booking">Book Now</NavLink>
           </Button>
         </nav>
         <button
@@ -383,7 +383,7 @@ export default function Navbar() {
           </NavLink>
 
           <Button asChild variant="glow" className="mt-4">
-            <NavLink to="/" onClick={() => setOpen(false)}>
+            <NavLink to="/booking" onClick={() => setOpen(false)}>
               Book Now
             </NavLink>
           </Button>

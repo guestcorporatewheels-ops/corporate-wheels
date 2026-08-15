@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 
 export default function Privacy() {
@@ -36,7 +37,7 @@ export default function Privacy() {
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-6">
               <span className="w-2 h-2 rounded-full bg-[#E6A700] animate-pulse" />
               <span className="text-sm text-white/80">
-                Last Updated: January 2024
+                Last Updated: January 2026
               </span>
             </div>
             <h1 className="text-4xl md:text-6xl xl:text-7xl font-heading text-white leading-tight mb-6">
@@ -145,8 +146,8 @@ export default function Privacy() {
 
               {/* Contact Support Button */}
               <div className="text-center mt-12">
-                <Button variant="glow" size="lg">
-                  Contact Support
+                <Button variant="glow" size="lg" asChild>
+                  <Link to="/contact">Contact Support</Link>
                 </Button>
               </div>
             </motion.div>

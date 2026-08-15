@@ -841,9 +841,9 @@ export const serviceCategoriesData: Record<string, ServiceCategoryData> = {
     ],
     testimonials: [
       {
-        clientName: "Lord Charles Sterling",
+        clientName: "Charles Sterling",
         designation: "Private Jet Passenger",
-        review: "Best FBO airside tarmac pickups in London. Absolute coordination with our jet crew at Farnborough. Perfect diplomatic protocol.",
+        review: "Best FBO airside tarmac pickups in London. Absolute coordination with our jet crew at Farnborough.",
         rating: 5,
         date: "May 2026"
       },
@@ -1003,7 +1003,7 @@ export const serviceCategoriesData: Record<string, ServiceCategoryData> = {
     ],
     testimonials: [
       {
-        clientName: "Sir Michael & Lady Davies",
+        clientName: "Michael & Ellen Davies",
         designation: "Cruise Passengers",
         review: "Transiting to Southampton Cruise terminal was so easy. Our chauffeur planned a fantastic coffee stop at Cliveden House and handled all heavy luggage.",
         rating: 5,

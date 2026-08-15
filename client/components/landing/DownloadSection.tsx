@@ -21,7 +21,7 @@ export default function DownloadSection() {
             >
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-corporate-gold/10 border border-corporate-gold/20 text-corporate-gold text-sm font-semibold mb-6 shadow-[0_0_15px_rgba(230,167,0,0.15)]">
                 <Sparkles className="w-4 h-4" />
-                <span>Next-Gen Mobile Experience</span>
+                <span>Mobile App</span>
               </div>
 
               <h3 className="font-heading text-4xl md:text-5xl lg:text-6xl text-white leading-tight mb-6">
@@ -30,7 +30,7 @@ export default function DownloadSection() {
               </h3>
 
               <p className="text-lg text-white/70 max-w-xl mb-10 leading-relaxed">
-                We're crafting the ultimate chauffeur booking experience. Instant confirmations, live GPS tracking, and seamless corporate billing—all in your pocket. 
+                We're building a dedicated app for instant confirmations, live GPS tracking, and corporate billing — all in your pocket.
               </p>
 
               {/* Glowing features grid */}
@@ -71,9 +71,9 @@ export default function DownloadSection() {
                 
                 {/* Screen Content */}
                 <div className="absolute inset-0 bg-black z-0" />
-                <img 
-                  src="./mobile-app.jpg" 
-                  alt="Mobile App Screen" 
+                <img
+                  src="/mobile-app.jpg"
+                  alt="Mobile App Screen"
                   className="absolute inset-0 w-full h-full object-cover blur-[3px] opacity-50 scale-110 group-hover:scale-100 transition-transform duration-700 z-10" 
                 />
                 
