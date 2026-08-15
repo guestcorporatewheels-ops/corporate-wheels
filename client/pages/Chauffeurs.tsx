@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { useTypingAnimation } from "@/hooks/use-typing-animation";
 import { cn } from "@/lib/utils";
 import ContactModal from "@/components/ui/ContactModal";
+import Seo from "@/components/Seo";
 
 function AnimatedGradientBg({ className = "" }: { className?: string }) {
   return (
@@ -648,33 +649,35 @@ function RequirementsOnboarding() {
   );
 }
 
+const chauffeurFaqs = [
+  {
+    q: "Can anyone become a partner?",
+    a: "We evaluate applicants based on local regulations, vehicle standards and available demand in your city.",
+  },
+  {
+    q: "How do I get paid?",
+    a: "Payouts are processed weekly with clear statements and support for any queries.",
+  },
+  {
+    q: "Which vehicles are eligible?",
+    a: "Professional sedans and vans that meet our quality standards are eligible; check local rules for specifics.",
+  },
+  {
+    q: "Do I need to work full-time?",
+    a: "No. Set your own schedule and accept as many or as few jobs as suit you.",
+  },
+  {
+    q: "What support do chauffeurs get?",
+    a: "Dedicated partner support, in-app navigation, and priority customer matching.",
+  },
+  {
+    q: "Is there a minimum commitment?",
+    a: "No minimum hours or long-term contract — you can pause or stop taking jobs at any time.",
+  },
+];
+
 function FAQSection() {
-  const faqs = [
-    {
-      q: "Can anyone become a partner?",
-      a: "We evaluate applicants based on local regulations, vehicle standards and available demand in your city.",
-    },
-    {
-      q: "How do I get paid?",
-      a: "Payouts are processed weekly with clear statements and support for any queries.",
-    },
-    {
-      q: "Which vehicles are eligible?",
-      a: "Professional sedans and vans that meet our quality standards are eligible; check local rules for specifics.",
-    },
-    {
-      q: "Do I need to work full-time?",
-      a: "No. Set your own schedule and accept as many or as few jobs as suit you.",
-    },
-    {
-      q: "What support do chauffeurs get?",
-      a: "Dedicated partner support, in-app navigation, and priority customer matching.",
-    },
-    {
-      q: "Is there a minimum commitment?",
-      a: "No minimum hours or long-term contract — you can pause or stop taking jobs at any time.",
-    },
-  ];
+  const faqs = chauffeurFaqs;
 
   const [open, setOpen] = useState<number | null>(null);
 
@@ -976,8 +979,24 @@ function PricingTable() {
   );
 }
 export default function Chauffeurs() {
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: chauffeurFaqs.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.a },
+    })),
+  };
+
   return (
     <main className="relative bg-background text-foreground overflow-hidden">
+      <Seo
+        title="Become a Chauffeur Partner"
+        description="Join our network of professional chauffeurs. Flexible hours, reliable earnings, and premium clients — apply to drive with Corporate Wheels today."
+        path="/chauffeurs"
+        jsonLd={faqJsonLd}
+      />
       <Hero />
       <Stats />
       <PricingTable />

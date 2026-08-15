@@ -1,9 +1,15 @@
 import { motion } from "framer-motion";
 import ChauffeurBookingWidget from "@/components/booking/BookingWidget";
+import Seo from "@/components/Seo";
 
 export default function Booking() {
   return (
     <main className="min-h-screen">
+      <Seo
+        title="Book a Chauffeur"
+        description="Book premium chauffeur transfers in seconds. Choose your vehicle, set pickup and drop-off, and get an instant quote."
+        path="/booking"
+      />
       {/* Hero */}
       <section className="relative bg-gradient-to-b from-slate-900/60 to-transparent pb-12 pt-24">
         <div className="container">

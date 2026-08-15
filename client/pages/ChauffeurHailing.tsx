@@ -22,6 +22,7 @@ import {
   Globe,
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import Seo from "@/components/Seo";
 
 const cities = [
   "New York",
@@ -41,6 +42,11 @@ export default function ChauffeurHailing() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-black via-gray-900 to-black text-white">
+      <Seo
+        title="On-Demand Chauffeur Hailing"
+        description="Hail a professional chauffeur in minutes. On-demand private hire rides with vetted drivers and premium vehicles, booked instantly from the app."
+        path="/chauffeur-hailing"
+      />
       {/* Hero - enhanced */}
       <section
         ref={heroRef}

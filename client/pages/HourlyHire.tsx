@@ -27,14 +27,65 @@ import { useState } from "react";
 import DateInput from "@/components/ui/DateInput";
 import TimeInput from "@/components/ui/TimeInput";
 import { set } from "date-fns";
+import Seo from "@/components/Seo";
+
+const hourlyHireFaqs = [
+  {
+    question: "What is the minimum booking duration?",
+    answer:
+      "Our minimum booking duration is 2 hours. This ensures you have enough time to complete your planned activities without feeling rushed. For special events or custom requirements, please contact our concierge service.",
+    icon: Clock,
+  },
+  {
+    question: "Can I extend my booking time?",
+    answer:
+      "Yes, you can extend your booking time during the service, subject to chauffeur availability. We recommend notifying the chauffeur in advance if you think you might need extra time. Additional hours are charged at the standard hourly rate.",
+    icon: Calendar,
+  },
+  {
+    question: "What happens if my plans change during the service?",
+    answer:
+      "Our service is flexible, and your chauffeur can accommodate changes to your itinerary. You can modify your destinations or make additional stops as needed within your booked hours. Just inform your chauffeur or contact our 24/7 support team.",
+    icon: MapPin,
+  },
+  {
+    question: "Are there any mileage limits?",
+    answer:
+      "Our hourly service includes unlimited mileage within the metropolitan area. For journeys outside the city limits, additional charges may apply. Long-distance travel may require special arrangements - please discuss with our booking team.",
+    icon: Car,
+  },
+  {
+    question: "What types of vehicles are available?",
+    answer:
+      "We offer a comprehensive range of luxury vehicles including Mercedes S-Class, BMW 7 Series, premium SUVs like the Range Rover, and luxury vans. All vehicles are late-model and maintained to the highest standards of comfort and safety.",
+    icon: Shield,
+  },
+];
 
 export default function HourlyHire() {
   const [quickHours, setQuickHours] = useState<string>("2");
   const [quickCar, setQuickCar] = useState<string>("Luxury Sedan");
   const [date, setDate] = useState<any>(null);
   const [time, setTime] = useState<any>(null);
+
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: hourlyHireFaqs.map((f) => ({
+      "@type": "Question",
+      name: f.question,
+      acceptedAnswer: { "@type": "Answer", text: f.answer },
+    })),
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-black via-gray-900 to-black text-white">
+      <Seo
+        title="Hourly Chauffeur Hire"
+        description="Book a dedicated chauffeur by the hour for meetings, events, or a day at your own pace. Flexible bookings with no hidden fees."
+        path="/hourly-hire"
+        jsonLd={faqJsonLd}
+      />
       {/* Hero Section with refined two-column layout */}
       <section className="relative min-h-[72vh] flex items-center  pt-20">
         <div className="absolute inset-0 z-0">
@@ -69,18 +120,17 @@ export default function HourlyHire() {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
-                <Button className="bg-corporate-gold text-black px-6 py-4">
+                <Button asChild className="bg-corporate-gold text-black px-6 py-4">
                   <Link to="/booking">Book Now</Link>
                 </Button>
 
-                <a href="tel:+1-800-CHAUFFEUR">
-                  <Button
-                    variant="outline"
-                    className="border-corporate-gold text-corporate-gold px-6 py-4"
-                  >
-                    <Link to="/help">Contact Concierge</Link>
-                  </Button>
-                </a>
+                <Button
+                  asChild
+                  variant="outline"
+                  className="border-corporate-gold text-corporate-gold px-6 py-4"
+                >
+                  <Link to="/help">Contact Concierge</Link>
+                </Button>
               </div>
 
               <div className="flex items-center gap-8">
@@ -631,38 +681,7 @@ export default function HourlyHire() {
           </motion.div>
 
           <Accordion type="single" collapsible className="space-y-4">
-            {[
-              {
-                question: "What is the minimum booking duration?",
-                answer:
-                  "Our minimum booking duration is 2 hours. This ensures you have enough time to complete your planned activities without feeling rushed. For special events or custom requirements, please contact our concierge service.",
-                icon: Clock,
-              },
-              {
-                question: "Can I extend my booking time?",
-                answer:
-                  "Yes, you can extend your booking time during the service, subject to chauffeur availability. We recommend notifying the chauffeur in advance if you think you might need extra time. Additional hours are charged at the standard hourly rate.",
-                icon: Calendar,
-              },
-              {
-                question: "What happens if my plans change during the service?",
-                answer:
-                  "Our service is flexible, and your chauffeur can accommodate changes to your itinerary. You can modify your destinations or make additional stops as needed within your booked hours. Just inform your chauffeur or contact our 24/7 support team.",
-                icon: MapPin,
-              },
-              {
-                question: "Are there any mileage limits?",
-                answer:
-                  "Our hourly service includes unlimited mileage within the metropolitan area. For journeys outside the city limits, additional charges may apply. Long-distance travel may require special arrangements - please discuss with our booking team.",
-                icon: Car,
-              },
-              {
-                question: "What types of vehicles are available?",
-                answer:
-                  "We offer a comprehensive range of luxury vehicles including Mercedes S-Class, BMW 7 Series, premium SUVs like the Range Rover, and luxury vans. All vehicles are late-model and maintained to the highest standards of comfort and safety.",
-                icon: Shield,
-              },
-            ].map((faq, index) => (
+            {hourlyHireFaqs.map((faq, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 10 }}

@@ -25,6 +25,7 @@ import {
   ThumbsUp,
   ChevronRight,
 } from "lucide-react";
+import Seo from "@/components/Seo";
 
 const cityRoutes = [
   {
@@ -70,6 +71,11 @@ export default function CityToCity() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-black via-gray-900 to-black text-white">
+      <Seo
+        title="City-to-City Chauffeur Transfers"
+        description="Fixed-rate intercity chauffeur travel with WiFi and refreshments on board. Comfortable, reliable transfers between UK cities."
+        path="/city-to-city"
+      />
       {/* Hero Section - Redesigned: two-column, meaningful copy, CTAs, trust badges */}
       <section className="relative min-h-[72vh] flex items-center overflow-hidden pt-20">
         <div className="absolute inset-0 z-0">

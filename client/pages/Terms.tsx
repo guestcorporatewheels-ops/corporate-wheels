@@ -1,10 +1,16 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import Seo from "@/components/Seo";
 
 export default function Terms() {
   return (
     <main className="relative bg-background text-foreground min-h-screen overflow-hidden">
+      <Seo
+        title="Terms of Service"
+        description="The terms and conditions that apply when you book or use Corporate Wheels' chauffeur and private hire services."
+        path="/terms"
+      />
       {/* Decorative backgrounds */}
       <div className="absolute inset-0">
         <div

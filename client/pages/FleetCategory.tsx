@@ -7,6 +7,7 @@ import { useTypingAnimation } from "@/hooks/use-typing-animation";
 import { cn } from "@/lib/utils";
 import ContactModal from "@/components/ui/ContactModal";
 import { fleetCategoriesData } from "@/data/fleet-data";
+import Seo from "@/components/Seo";
 import {
   Users,
   Briefcase,
@@ -201,6 +202,11 @@ export default function FleetCategory({ forcedCategoryId }: FleetCategoryProps =
 
   return (
     <main className="relative bg-background text-foreground overflow-hidden selection:bg-corporate-gold selection:text-black">
+      <Seo
+        title={`${data.title} | Fleet`}
+        description={data.subtitle}
+        path={`/fleet/${categoryId}`}
+      />
 
       {/* 1. HERO SECTION (REDESIGNED FOR SUPREME PREMIUM LOOK) */}
       <section className="relative pt-36 pb-28 min-h-[95vh] flex items-center overflow-hidden">

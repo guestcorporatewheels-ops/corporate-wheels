@@ -12,6 +12,7 @@ import {
   type OrderStatus,
 } from "@/lib/adminOrdersApi";
 import { formatGbp } from "@/lib/priceBreakdownDisplay";
+import Seo from "@/components/Seo";
 
 export default function AdminDashboard() {
   const [orders, setOrders] = useState<AdminOrderRow[]>([]);
@@ -50,6 +51,7 @@ export default function AdminDashboard() {
 
   return (
     <div className="space-y-6">
+      <Seo title="Admin Dashboard" description="Corporate Wheels admin panel." noindex />
       <div className="flex justify-end">
         <Button variant="outline" size="sm" onClick={load} disabled={loading}>
           <RefreshCw className={`h-4 w-4 mr-1 ${loading ? "animate-spin" : ""}`} />

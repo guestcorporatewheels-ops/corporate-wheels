@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://corporatewheels.co.uk/</loc><priority>1.0</priority></url>
+  <url><loc>https://corporatewheels.co.uk/business</loc><priority>0.8</priority></url>
+  <url><loc>https://corporatewheels.co.uk/chauffeurs</loc><priority>0.6</priority></url>
+  <url><loc>https://corporatewheels.co.uk/chauffeur-hailing</loc><priority>0.7</priority></url>
+  <url><loc>https://corporatewheels.co.uk/help</loc><priority>0.5</priority></url>
+  <url><loc>https://corporatewheels.co.uk/hourly-hire</loc><priority>0.8</priority></url>
+  <url><loc>https://corporatewheels.co.uk/city-to-city</loc><priority>0.8</priority></url>
+  <url><loc>https://corporatewheels.co.uk/airport-transfer</loc><priority>0.9</priority></url>
+  <url><loc>https://corporatewheels.co.uk/limousine-service</loc><priority>0.8</priority></url>
+  <url><loc>https://corporatewheels.co.uk/about</loc><priority>0.6</priority></url>
+  <url><loc>https://corporatewheels.co.uk/contact</loc><priority>0.6</priority></url>
+  <url><loc>https://corporatewheels.co.uk/blog</loc><priority>0.5</priority></url>
+  <url><loc>https://corporatewheels.co.uk/booking</loc><priority>0.9</priority></url>
+  <url><loc>https://corporatewheels.co.uk/services</loc><priority>0.7</priority></url>
+  <url><loc>https://corporatewheels.co.uk/cities</loc><priority>0.7</priority></url>
+  <url><loc>https://corporatewheels.co.uk/routes</loc><priority>0.7</priority></url>
+  <url><loc>https://corporatewheels.co.uk/privacy</loc><priority>0.3</priority></url>
+  <url><loc>https://corporatewheels.co.uk/terms</loc><priority>0.3</priority></url>
+
+  <!-- Fleet categories -->
+  <url><loc>https://corporatewheels.co.uk/fleet/executive-cars</loc><priority>0.7</priority></url>
+  <url><loc>https://corporatewheels.co.uk/fleet/luxury-class</loc><priority>0.7</priority></url>
+  <url><loc>https://corporatewheels.co.uk/fleet/premium-suvs</loc><priority>0.7</priority></url>
+  <url><loc>https://corporatewheels.co.uk/fleet/business-vans</loc><priority>0.7</priority></url>
+  <url><loc>https://corporatewheels.co.uk/fleet/special-vehicles</loc><priority>0.6</priority></url>
+  <url><loc>https://corporatewheels.co.uk/fleet/electric-class</loc><priority>0.6</priority></url>
+  <url><loc>https://corporatewheels.co.uk/fleet/vintage-cars</loc><priority>0.6</priority></url>
+
+  <!-- Service categories -->
+  <url><loc>https://corporatewheels.co.uk/services/airport-transfers</loc><priority>0.8</priority></url>
+  <url><loc>https://corporatewheels.co.uk/services/corporate-travel</loc><priority>0.8</priority></url>
+  <url><loc>https://corporatewheels.co.uk/services/special-events</loc><priority>0.7</priority></url>
+  <url><loc>https://corporatewheels.co.uk/services/city-tours</loc><priority>0.7</priority></url>
+  <url><loc>https://corporatewheels.co.uk/services/private-jet-chauffeur</loc><priority>0.7</priority></url>
+  <url><loc>https://corporatewheels.co.uk/services/london-cruise-transfer</loc><priority>0.7</priority></url>
+
+  <!-- Why choose us -->
+  <url><loc>https://corporatewheels.co.uk/why-choose-us/safety-first</loc><priority>0.6</priority></url>
+  <url><loc>https://corporatewheels.co.uk/why-choose-us/transparent-pricing</loc><priority>0.6</priority></url>
+  <url><loc>https://corporatewheels.co.uk/why-choose-us/tailored-luxury-fleet</loc><priority>0.6</priority></url>
+  <url><loc>https://corporatewheels.co.uk/why-choose-us/elite-chauffeurs</loc><priority>0.6</priority></url>
+</urlset>

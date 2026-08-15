@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useBooking } from "@/context/useBooking";
 import { formatGbp } from "@/lib/priceBreakdownDisplay";
+import Seo from "@/components/Seo";
 
 export default function BookingSuccess() {
   const { bookingData, resetBooking } = useBooking();
@@ -19,6 +20,7 @@ export default function BookingSuccess() {
 
   return (
     <div className="min-h-dvh bg-background pt-28 pb-16">
+      <Seo title="Booking Confirmed" description="Your chauffeur booking is confirmed." noindex />
       <div className="container max-w-lg mx-auto text-center">
         <CheckCircle2 className="h-16 w-16 text-primary mx-auto mb-4" />
         <h1 className="text-2xl font-heading font-bold text-foreground mb-2">

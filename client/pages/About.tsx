@@ -4,6 +4,7 @@ import useReveal from "@/hooks/use-reveal";
 import { Button } from "@/components/ui/button";
 import { ScrollToTop } from "@/components/ui/scroll-to-top";
 import { Link } from "react-router-dom";
+import Seo from "@/components/Seo";
 
 export default function About() {
   const heroRef = useReveal<HTMLElement>({ threshold: 0.06 });
@@ -14,6 +15,11 @@ export default function About() {
 
   return (
     <main className="relative bg-background text-foreground min-h-screen scroll-smooth">
+      <Seo
+        title="About Us"
+        description="Learn about Corporate Wheels' mission to deliver premium, carbon-neutral chauffeur travel with professional, vetted drivers across the UK."
+        path="/about"
+      />
       {/* Animated SVG background - luxury wave */}
       <motion.svg
         initial={{ opacity: 0 }}

@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ScrollToTop } from "@/components/ui/scroll-to-top";
 import { useToast } from "@/hooks/use-toast";
+import Seo from "@/components/Seo";
 
 // Featured and latest blog posts data
 const featuredPost = {
@@ -104,6 +105,11 @@ export default function Blog() {
 
   return (
     <main className="relative bg-background text-foreground min-h-screen">
+      <Seo
+        title="Travel Insights & News"
+        description="Executive travel tips, fleet updates, and industry insights from Corporate Wheels."
+        path="/blog"
+      />
       <ScrollToTop />
       {/* Hero Section */}
       <section className="relative pt-32 pb-16 overflow-hidden">

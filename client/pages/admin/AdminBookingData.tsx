@@ -24,6 +24,7 @@ import {
   type OrderStatus,
 } from "@/lib/adminOrdersApi";
 import { formatGbp } from "@/lib/priceBreakdownDisplay";
+import Seo from "@/components/Seo";
 
 const STATUSES: OrderStatus[] = [
   "not started",
@@ -61,6 +62,7 @@ export default function AdminBookingData() {
 
   return (
     <div className="space-y-4">
+      <Seo title="Booking Data" description="Corporate Wheels admin panel." noindex />
       <div className="flex justify-end">
         <Button variant="outline" size="sm" onClick={load} disabled={loading}>
           <RefreshCw className={`h-4 w-4 mr-1 ${loading ? "animate-spin" : ""}`} />

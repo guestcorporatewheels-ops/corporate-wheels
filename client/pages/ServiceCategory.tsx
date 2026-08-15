@@ -7,6 +7,8 @@ import { useTypingAnimation } from "@/hooks/use-typing-animation";
 import { cn } from "@/lib/utils";
 import ContactModal from "@/components/ui/ContactModal";
 import { serviceCategoriesData } from "@/data/service-data";
+import Seo from "@/components/Seo";
+import { SITE_URL } from "@/lib/siteConfig";
 import {
   Award,
   Clock,
@@ -106,9 +108,42 @@ export default function ServiceCategory({ forcedCategoryId }: ServiceCategoryPro
     }
   };
 
+  const serviceJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: data.title,
+    description: data.subtitle,
+    provider: {
+      "@type": "Organization",
+      name: "Corporate Wheels",
+      url: SITE_URL,
+    },
+    areaServed: "GB",
+    url: `${SITE_URL}/services/${activeId}`,
+  };
+
+  const faqJsonLd =
+    data.faqs && data.faqs.length > 0
+      ? {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: data.faqs.map((f) => ({
+            "@type": "Question",
+            name: f.question,
+            acceptedAnswer: { "@type": "Answer", text: f.answer },
+          })),
+        }
+      : null;
+
   return (
     <main className="min-h-screen bg-black overflow-hidden relative">
-      
+      <Seo
+        title={data.title}
+        description={data.subtitle}
+        path={`/services/${activeId}`}
+        jsonLd={faqJsonLd ? [serviceJsonLd, faqJsonLd] : serviceJsonLd}
+      />
+
       {/* BACKGROUND DECORATIONS (Luxury radial gold light leaks) */}
       <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-[radial-gradient(circle_at_center,rgba(230,167,0,0.06),transparent_70%)] pointer-events-none" />
       <div className="absolute top-1/3 right-1/4 w-[700px] h-[700px] bg-[radial-gradient(circle_at_center,rgba(255,107,53,0.04),transparent_70%)] pointer-events-none" />

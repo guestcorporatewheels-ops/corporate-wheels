@@ -10,12 +10,68 @@ import {
   MessageCircle,
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import Seo from "@/components/Seo";
 
 const MotionLink = motion(Link);
 
+const limousineFaqs = [
+  {
+    q: "How do I book a limousine?",
+    a: "Use our online booking tool or app to select your service, vehicle, and schedule.",
+  },
+  {
+    q: "Are your chauffeurs professionally trained?",
+    a: "Yes, all chauffeurs are background-checked, trained, and certified.",
+  },
+  {
+    q: "Can I book for a group?",
+    a: "Absolutely! Choose our Business Van/SUV for group travel.",
+  },
+  {
+    q: "Is airport pickup included?",
+    a: "Yes, airport pickup includes Meet & Greet and flight tracking.",
+  },
+  {
+    q: "What is your cancellation policy?",
+    a: "Free cancellation up to 1 hour before pickup. See details in booking.",
+  },
+  {
+    q: "Can I request special amenities?",
+    a: "Yes, please specify your preferences during booking or contact our concierge.",
+  },
+  {
+    q: "Do you offer event packages?",
+    a: "We provide tailored packages for weddings, corporate events, and more.",
+  },
+  {
+    q: "Is Wi-Fi available in the vehicles?",
+    a: "Yes, complimentary Wi-Fi is available in most vehicles.",
+  },
+  {
+    q: "How do I contact support?",
+    a: "Use the contact section below to reach our team, or email info@corporatewheels.co.uk.",
+  },
+];
+
 export default function LimousineService() {
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: limousineFaqs.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.a },
+    })),
+  };
+
   return (
     <main className="relative min-h-[70vh] bg-black text-white overflow-hidden">
+      <Seo
+        title="Luxury Limousine Service"
+        description="Premium limousine hire for airport transfers, events, and city travel. Professional chauffeurs, luxury fleet, and transparent pricing."
+        path="/limousine-service"
+        jsonLd={faqJsonLd}
+      />
       {/* SVG Animated Background */}
       <div className="absolute inset-0 -z-10">
         <svg
@@ -440,44 +496,7 @@ export default function LimousineService() {
           </h2>
         </div>
         <div className="divide-y divide-gray-800/50">
-          {[
-            {
-              q: "How do I book a limousine?",
-              a: "Use our online booking tool or app to select your service, vehicle, and schedule.",
-            },
-            {
-              q: "Are your chauffeurs professionally trained?",
-              a: "Yes, all chauffeurs are background-checked, trained, and certified.",
-            },
-            {
-              q: "Can I book for a group?",
-              a: "Absolutely! Choose our Business Van/SUV for group travel.",
-            },
-            {
-              q: "Is airport pickup included?",
-              a: "Yes, airport pickup includes Meet & Greet and flight tracking.",
-            },
-            {
-              q: "What is your cancellation policy?",
-              a: "Free cancellation up to 1 hour before pickup. See details in booking.",
-            },
-            {
-              q: "Can I request special amenities?",
-              a: "Yes, please specify your preferences during booking or contact our concierge.",
-            },
-            {
-              q: "Do you offer event packages?",
-              a: "We provide tailored packages for weddings, corporate events, and more.",
-            },
-            {
-              q: "Is Wi-Fi available in the vehicles?",
-              a: "Yes, complimentary Wi-Fi is available in most vehicles.",
-            },
-            {
-              q: "How do I contact support?",
-              a: "Use the contact section below to reach our team, or email support@corporatewheels.com.",
-            },
-          ].map((f, idx) => (
+          {limousineFaqs.map((f, idx) => (
             <details
               key={idx}
               className="py-4 group cursor-pointer transition-all"
@@ -510,7 +529,7 @@ export default function LimousineService() {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-8">
           <a
-            href="mailto:support@corporatewheels.com"
+            href="mailto:info@corporatewheels.co.uk"
             className="flex items-center gap-3 bg-black/60 border border-corporate-gold/20 rounded-lg px-8 py-6 text-lg font-semibold text-corporate-gold hover:bg-corporate-gold/10 transition-colors"
           >
             <PhoneCall className="w-6 h-6" /> Email Support

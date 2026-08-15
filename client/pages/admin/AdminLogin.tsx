@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ensureAdminSession, loginAdmin } from "@/lib/adminAuth";
+import Seo from "@/components/Seo";
 
 export default function AdminLogin() {
   const navigate = useNavigate();
@@ -34,6 +35,7 @@ export default function AdminLogin() {
 
   return (
     <div className="min-h-dvh flex items-center justify-center bg-background p-4">
+      <Seo title="Admin Login" description="Corporate Wheels admin panel." noindex />
       <Card className="w-full max-w-md border-border">
         <CardHeader>
           <CardTitle>Admin Login</CardTitle>

@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
+import Seo from "@/components/Seo";
 
 const routes = [
   { from: "London", to: "Heathrow Airport", duration: "~45-60 min" },
@@ -10,6 +11,11 @@ const routes = [
 export default function ViewAllRoutes() {
   return (
     <main className="bg-background text-foreground min-h-screen">
+      <Seo
+        title="Popular Chauffeur Routes"
+        description="Fixed-rate chauffeur routes between major UK cities and airports, with real-time pricing at booking."
+        path="/routes"
+      />
       <section className="pt-36 pb-12">
         <div className="container">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-6">

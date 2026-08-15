@@ -29,6 +29,7 @@ import {
   uploadVehicleClassImage,
   type VehicleClassRow,
 } from "@/lib/adminVehicleClassApi";
+import Seo from "@/components/Seo";
 
 const emptyForm = (): Omit<VehicleClassRow, "id"> => ({
   class_name: "",
@@ -97,6 +98,7 @@ export default function AdminVehicleClasses() {
 
   return (
     <div className="space-y-4">
+      <Seo title="Vehicle Classes" description="Corporate Wheels admin panel." noindex />
       <div className="flex justify-between items-center">
         <h2 className="text-lg font-semibold">Vehicle classes</h2>
         <Button size="sm" className="btn-gradient text-primary-foreground" onClick={openCreate}>

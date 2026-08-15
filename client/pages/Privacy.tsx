@@ -1,10 +1,16 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import Seo from "@/components/Seo";
 
 export default function Privacy() {
   return (
     <main className="relative bg-background text-foreground min-h-screen overflow-hidden">
+      <Seo
+        title="Privacy Policy"
+        description="Read how Corporate Wheels collects, uses, and protects your personal data when you book or use our chauffeur service."
+        path="/privacy"
+      />
       {/* Decorative backgrounds */}
       <div className="absolute inset-0">
         <div

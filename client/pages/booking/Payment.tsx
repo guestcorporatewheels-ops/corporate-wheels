@@ -12,6 +12,7 @@ import {
 } from "@/lib/ordersApi";
 import { fetchPaymentQr } from "@/lib/paymentApi";
 import { formatGbp } from "@/lib/priceBreakdownDisplay";
+import Seo from "@/components/Seo";
 
 export default function Payment() {
   const navigate = useNavigate();
@@ -72,6 +73,7 @@ export default function Payment() {
 
   return (
     <BookingGuard requireCar requireCustomer>
+      <Seo title="Payment" description="Complete payment for your chauffeur booking." noindex />
       <BookingStepLayout
         step={4}
         title="Payment"

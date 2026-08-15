@@ -1,6 +1,7 @@
 import { useParams, Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import Seo from "@/components/Seo";
 import { 
   Shield, 
   DollarSign, 
@@ -407,10 +408,19 @@ export default function WhyChooseUs() {
   const { chooseId } = useParams<{ chooseId: string }>();
   const activeId = chooseId || "safety-first";
   const data = chooseDataMap[activeId] || chooseDataMap["safety-first"];
+  const readableLabel = activeId
+    .split("-")
+    .map((w) => w[0].toUpperCase() + w.slice(1))
+    .join(" ");
 
   return (
     <main className="relative min-h-screen bg-background pt-24 overflow-hidden">
-      
+      <Seo
+        title={`${readableLabel} | Why Choose Corporate Wheels`}
+        description={data.title}
+        path={`/why-choose-us/${activeId}`}
+      />
+
       {/* 1. ULTRA-PREMIUM HERO SEGMENT */}
       <section className="relative py-20 lg:py-28 overflow-hidden bg-gradient-to-b from-black via-white/[0.01] to-transparent">
         

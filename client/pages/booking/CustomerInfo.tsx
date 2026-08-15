@@ -7,6 +7,7 @@ import BookingStepLayout from "@/components/booking/BookingStepLayout";
 import PhoneWithCountryField, { toE164 } from "@/components/booking/PhoneWithCountryField";
 import BookingGuard from "./BookingGuard";
 import { useBooking } from "@/context/useBooking";
+import Seo from "@/components/Seo";
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -54,6 +55,7 @@ export default function CustomerInfo() {
 
   return (
     <BookingGuard requireCar>
+      <Seo title="Customer Information" description="Enter your details to continue booking." noindex />
       <BookingStepLayout
         step={2}
         title="Customer information"

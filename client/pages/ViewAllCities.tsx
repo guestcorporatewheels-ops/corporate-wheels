@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, MapPin } from "lucide-react";
+import Seo from "@/components/Seo";
 
 const cities = [
   { name: "London", desc: "Our flagship market — airport, event, and corporate coverage." },
@@ -13,6 +14,11 @@ const cities = [
 export default function ViewAllCities() {
   return (
     <main className="bg-background text-foreground min-h-screen">
+      <Seo
+        title="Cities We Operate In"
+        description="Corporate Wheels chauffeur coverage across London, Manchester, Birmingham, Glasgow, Leeds, and Liverpool."
+        path="/cities"
+      />
       <section className="pt-36 pb-12">
         <div className="container">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-6">

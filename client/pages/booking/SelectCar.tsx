@@ -10,6 +10,7 @@ import type { SelectedCar } from "@/context/bookingTypes";
 import BookingStepLayout from "@/components/booking/BookingStepLayout";
 import { formatGbp } from "@/lib/priceBreakdownDisplay";
 import { cn } from "@/lib/utils";
+import Seo from "@/components/Seo";
 
 const INCLUDES = [
   "Free cancellation up to 24h before pickup",
@@ -43,7 +44,9 @@ export default function SelectCar() {
     bookingData.bookingType === "hourly" ? "Hourly" : "One Way";
 
   return (
-    <BookingStepLayout
+    <>
+      <Seo title="Select Your Vehicle" description="Choose your chauffeur vehicle class." noindex />
+      <BookingStepLayout
       step={1}
       title="Select your vehicle"
       progress={25}
@@ -156,6 +159,7 @@ export default function SelectCar() {
           Back to Home
         </Link>
       </p>
-    </BookingStepLayout>
+      </BookingStepLayout>
+    </>
   );
 }

@@ -34,6 +34,7 @@ import {
   type ExtraPickupTypeRow,
 } from "@/lib/adminExtraPickupTypesApi";
 import { Textarea } from "@/components/ui/textarea";
+import Seo from "@/components/Seo";
 
 const empty = (): Omit<ExtraPickupTypeRow, "id"> => ({
   pickup_type: "",
@@ -90,6 +91,7 @@ export default function AdminSettings() {
 
   return (
     <div className="space-y-8">
+      <Seo title="Admin Settings" description="Corporate Wheels admin panel." noindex />
       <Card className="border-border bg-card">
         <CardContent className="p-6 space-y-4">
           <div>

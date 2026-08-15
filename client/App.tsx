@@ -52,6 +52,7 @@ import AdminVehicleClasses from "./pages/admin/AdminVehicleClasses";
 import AdminSettings from "./pages/admin/AdminSettings";
 import AdminLayout from "@/components/admin/AdminLayout";
 import AdminGuard from "@/components/admin/AdminGuard";
+import OrganizationSchema from "@/components/OrganizationSchema";
 
 const queryClient = new QueryClient();
 
@@ -78,6 +79,7 @@ export default function App() {
         <TooltipProvider>
           <Toaster />
           <Sonner />
+          <OrganizationSchema />
           <ErrorBoundary>
             <BrowserRouter>
               <Routes>

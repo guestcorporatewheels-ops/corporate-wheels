@@ -9,6 +9,7 @@ import {
   displayPriceBreakdownDescription,
   formatGbp,
 } from "@/lib/priceBreakdownDisplay";
+import Seo from "@/components/Seo";
 
 export default function Checkout() {
   const navigate = useNavigate();
@@ -27,6 +28,7 @@ export default function Checkout() {
 
   return (
     <BookingGuard requireCar requireCustomer>
+      <Seo title="Review & Confirm" description="Review your booking details before checkout." noindex />
       <BookingStepLayout
         step={3}
         title="Review & Confirm"

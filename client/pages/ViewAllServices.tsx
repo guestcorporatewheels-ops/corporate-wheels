@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
+import Seo from "@/components/Seo";
 
 const services = [
   {
@@ -31,6 +32,11 @@ const services = [
 export default function ViewAllServices() {
   return (
     <main className="bg-background text-foreground min-h-screen">
+      <Seo
+        title="All Chauffeur Services"
+        description="Explore every Corporate Wheels service — airport transfers, hourly hire, city-to-city travel, business accounts, and event transport."
+        path="/services"
+      />
       <section className="pt-36 pb-12">
         <div className="container">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-6">

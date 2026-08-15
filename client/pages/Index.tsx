@@ -8,10 +8,16 @@ import Testimonials from "@/components/landing/Testimonials";
 import DownloadSection from "@/components/landing/DownloadSection";
 import FinalCTA from "@/components/landing/FinalCTA";
 import { ScrollToTop } from "@/components/ui/scroll-to-top";
+import Seo from "@/components/Seo";
 
 export default function Index() {
   return (
     <main className="bg-background text-foreground relative overflow-hidden">
+      <Seo
+        title="Luxury Chauffeur & Airport Transfer Service"
+        description="Book a professional, background-checked chauffeur in seconds. Airport transfers, hourly hire, and city-to-city rides across the UK with fixed pricing and 24/7 support."
+        path="/"
+      />
       <ScrollToTop />
 
       <HeroSection />

@@ -19,24 +19,17 @@ import {
   ShieldAlert,
   ArrowRight
 } from "lucide-react";
+import Seo from "@/components/Seo";
 
 // Corporate Locations
 const locationsData = [
   {
-    name: "London Mayfair HQ",
-    address: "45 Berkeley Square, London, W1J 5AS",
-    phone: "+44 (0) 20 7946 0192",
-    email: "london@corporate-wheels.com",
-    badge: "Flagship Centre",
+    name: "Corporate Wheels HQ",
+    address: "42 Watling Street, Radlett, Hertfordshire, WD7 7NN",
+    phone: "+44 7351 111355",
+    email: "info@corporatewheels.co.uk",
+    badge: "Registered Office",
     timezone: "GMT / BST"
-  },
-  {
-    name: "New York Manhattan Hub",
-    address: "730 Fifth Avenue, New York, NY 10019",
-    phone: "+1 (212) 555-0148",
-    email: "ny@corporate-wheels.com",
-    badge: "Global Operations Hub",
-    timezone: "EST / EDT"
   }
 ];
 
@@ -117,9 +110,25 @@ export default function Contact() {
     setSubmitted(false);
   };
 
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqData.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.a },
+    })),
+  };
+
   return (
     <main className="relative bg-background text-foreground overflow-hidden selection:bg-corporate-gold selection:text-black">
-      
+      <Seo
+        title="Contact Us"
+        description="Get in touch with Corporate Wheels for bookings, corporate accounts, or support. Registered office in Hertfordshire, available 24/7."
+        path="/contact"
+        jsonLd={faqJsonLd}
+      />
+
       {/* 1. CINEMATIC HERO SECTION */}
       <section className="relative pt-36 pb-24 min-h-[60vh] flex items-center overflow-hidden border-b border-white/5">
         <PremiumAmbientBg />
@@ -397,7 +406,7 @@ export default function Contact() {
 
                 <div className="flex flex-wrap items-center gap-4">
                   <Button variant="glow" className="rounded-xl font-bold uppercase tracking-wider text-[10px] py-5 px-6 shadow-glow" asChild>
-                    <a href="tel:+18001234567">+1 (800) 123-4567</a>
+                    <a href="tel:+447351111355">+44 7351 111355</a>
                   </Button>
                   <Button variant="outline" className="rounded-xl border-white/10 text-white hover:bg-white/5 text-[10px] py-5 px-6" asChild>
                     <Link to="/booking">Modify Booking</Link>

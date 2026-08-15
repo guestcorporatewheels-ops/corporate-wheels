@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { useTypingAnimation } from "@/hooks/use-typing-animation";
 import { cn } from "@/lib/utils";
 import { ScrollToTop } from "@/components/ui/scroll-to-top";
+import Seo from "@/components/Seo";
 
 function FloatingSVGs() {
   return (
@@ -794,6 +795,11 @@ function CTA() {
 export default function Business() {
   return (
     <main className="relative bg-background text-foreground">
+      <Seo
+        title="Corporate Travel Accounts for Business"
+        description="Set up a corporate chauffeur account with dedicated account management, consolidated invoicing, and priority booking for your team's business travel."
+        path="/business"
+      />
       <ScrollToTop />
       <Hero />
       <Stats />

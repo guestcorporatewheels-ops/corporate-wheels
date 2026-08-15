@@ -1,6 +1,8 @@
 
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { HelpCircle, User, CreditCard, Lock, MessageCircle, Video, Shield, XCircle, BookOpen, PhoneCall, ArrowRight } from 'lucide-react';
+import Seo from '@/components/Seo';
 
 const sections = [
   {
@@ -201,6 +203,11 @@ const faqs = [
 export default function Help() {
   return (
     <main className="relative min-h-[70vh] bg-black text-white overflow-hidden">
+      <Seo
+        title="Help & Support"
+        description="Find answers about bookings, cancellations, payments, and chauffeur service — or contact our support team directly."
+        path="/help"
+      />
       {/* SVG Animated Background */}
       <div className="absolute inset-0 -z-10">
         <svg className="w-full h-full" viewBox="0 0 1440 320" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -378,7 +385,7 @@ export default function Help() {
               <div className="space-y-4">
                 <h3 className="text-lg font-semibold text-corporate-gold">Instant Support Options</h3>
                 <div className="flex flex-col gap-4">
-                  <a href="mailto:support@corporatewheels.com" className="flex items-center gap-3 bg-black/60 border border-corporate-gold/20 rounded-lg px-6 py-4 text-lg font-semibold text-corporate-gold hover:bg-corporate-gold/10 transition-colors">
+                  <a href="mailto:info@corporatewheels.co.uk" className="flex items-center gap-3 bg-black/60 border border-corporate-gold/20 rounded-lg px-6 py-4 text-lg font-semibold text-corporate-gold hover:bg-corporate-gold/10 transition-colors">
                     <PhoneCall className="w-6 h-6" /> Priority Email Support
                   </a>
                   <button className="flex items-center gap-3 bg-corporate-gold hover:bg-corporate-gold/90 text-black rounded-lg px-6 py-4 text-lg font-semibold transition-colors">
@@ -426,10 +433,10 @@ export default function Help() {
               <p className="text-gray-300 mt-2">Our premium support team is ready to help you 24/7</p>
             </div>
             <div className="flex flex-col sm:flex-row gap-4 w-full max-w-lg">
-              <button className="flex-1 px-6 py-4 rounded-lg bg-corporate-gold text-black font-semibold text-lg shadow-lg hover:bg-yellow-400 transition-colors">
-                Start Live Chat
-              </button>
-              <a href="tel:+1-800-CORPORATE" className="flex-1 px-6 py-4 rounded-lg border-2 border-corporate-gold text-corporate-gold font-semibold text-lg hover:bg-corporate-gold/10 transition-colors text-center">
+              <Link to="/contact" className="flex-1 px-6 py-4 rounded-lg bg-corporate-gold text-black font-semibold text-lg shadow-lg hover:bg-yellow-400 transition-colors text-center">
+                Contact Us
+              </Link>
+              <a href="tel:+447351111355" className="flex-1 px-6 py-4 rounded-lg border-2 border-corporate-gold text-corporate-gold font-semibold text-lg hover:bg-corporate-gold/10 transition-colors text-center">
                 Call Now
               </a>
             </div>

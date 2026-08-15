@@ -25,6 +25,7 @@ import {
 import { Link } from "react-router-dom";
 import DateInput from "@/components/ui/DateInput";
 import TimeInput from "@/components/ui/TimeInput";
+import Seo from "@/components/Seo";
 
 const serviceClasses = [
   {
@@ -84,6 +85,11 @@ export default function AirportTransfer() {
     const [time, setTime] = useState<any>(null);
   return (
     <div className="min-h-screen bg-black text-white">
+      <Seo
+        title="Airport Transfer Chauffeur Service"
+        description="Reliable airport transfers with flight tracking, meet & greet, and complimentary wait time. Book your chauffeur to or from the airport in seconds."
+        path="/airport-transfer"
+      />
       {/* Hero Section */}
       <section className="relative overflow-hidden pt-24 pb-28">
         <div className="absolute inset-0 -z-10">

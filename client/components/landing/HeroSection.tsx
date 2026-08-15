@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 export default function HeroSection() {
   const { displayText, isComplete } = useTypingAnimation(
-    "Luxury on Time, Every Time.",
+    "Premium Chauffeur & Airport Transfer Service",
     80,
     500,
   );
@@ -40,6 +40,9 @@ export default function HeroSection() {
           transition={{ duration: 0.6 }}
           className="lg:col-span-7 text-center lg:text-left max-w-3xl mx-auto lg:mx-0"
         >
+          <p className="text-sm md:text-base uppercase tracking-widest text-corporate-gold font-semibold mb-3">
+            Luxury on Time, Every Time.
+          </p>
           <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white mb-6 leading-tight">
             <span className="block bg-gradient-to-r from-[#e6a700] via-[#fff] to-[#e6a700] bg-clip-text text-transparent animate-text-flash">
               {displayText}
