@@ -214,9 +214,8 @@ export default function ChatWidget() {
               initial={{ scale: 0.6, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.6, opacity: 0 }}
-              className="relative flex h-9 w-9 items-center justify-center overflow-hidden rounded-full bg-white shadow-inner"
             >
-              <img src="/logo.png" alt="" className="h-8 w-8 object-contain" />
+              <img src="/logo.png" alt="" className="h-11 w-11 object-contain" />
             </motion.span>
           )}
         </AnimatePresence>
@@ -243,9 +242,7 @@ export default function ChatWidget() {
             )}
           >
             <div className="flex items-center gap-3 border-b border-border bg-gradient-to-r from-corporate-black to-[#161616] px-4 py-3.5">
-              <div className="flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-full bg-white ring-2 ring-corporate-gold/40">
-                <img src="/logo.png" alt="Corporate Wheels" className="h-9 w-9 object-contain" />
-              </div>
+              <img src="/logo.png" alt="Corporate Wheels" className="h-10 w-10 shrink-0 object-contain" />
               <div className="min-w-0 flex-1">
                 <p className="truncate text-sm font-semibold text-white">Corporate Wheels Concierge</p>
                 <p className="flex items-center gap-1.5 text-xs text-white/60">
