@@ -2,6 +2,9 @@
   "name": "fusion-starter",
   "private": true,
   "type": "module",
+  "engines": {
+    "node": "22.x"
+  },
   "pkg": {
     "assets": [
       "dist/spa/*"
@@ -22,6 +25,8 @@
   },
   "dependencies": {
     "@googlemaps/js-api-loader": "^2.1.0",
+    "@stripe/react-stripe-js": "^6.8.1",
+    "@stripe/stripe-js": "^9.13.0",
     "dotenv": "^17.2.1",
     "express": "^5.1.0",
     "nodemailer": "^6.10.1",
