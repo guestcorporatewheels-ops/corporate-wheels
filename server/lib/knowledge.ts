@@ -1,6 +1,6 @@
-import { serviceCategoriesData } from "../../client/data/service-data";
-import { fleetCategoriesData } from "../../client/data/fleet-data";
-import { BUSINESS_LOCATIONS, SITE_NAME } from "../../client/lib/siteConfig";
+import { serviceCategoriesData } from "../../client/data/service-data.js";
+import { fleetCategoriesData } from "../../client/data/fleet-data.js";
+import { BUSINESS_LOCATIONS, SITE_NAME } from "../../client/lib/siteConfig.js";
 
 /**
  * Builds a compact, plain-text knowledge base from the site's own content

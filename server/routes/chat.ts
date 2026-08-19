@@ -1,8 +1,8 @@
 import type { RequestHandler } from "express";
 import type { ChatMessage, ChatRequestBody, ChatResponseBody } from "@shared/chat";
-import { kieChatCompletion } from "../lib/kie";
-import { buildKnowledgeBase } from "../lib/knowledge";
-import { sendChatLeadEmail } from "../lib/leadEmail";
+import { kieChatCompletion } from "../lib/kie.js";
+import { buildKnowledgeBase } from "../lib/knowledge.js";
+import { sendChatLeadEmail } from "../lib/leadEmail.js";
 
 const MAX_HISTORY = 16;
 const MAX_MESSAGE_LENGTH = 2000;
