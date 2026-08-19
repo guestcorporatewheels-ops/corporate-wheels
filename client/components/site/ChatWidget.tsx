@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
-import { MessageCircle, X, Send, Loader2, Sparkles } from "lucide-react";
+import { X, Send, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { useIsMobile } from "@/hooks/use-mobile";
@@ -68,12 +68,15 @@ function TypingDots() {
   );
 }
 
+const GREETING_KEY = "corporate-wheels-chat-greeted";
+
 export default function ChatWidget() {
   const isMobile = useIsMobile();
   const [open, setOpen] = useState(false);
   const [state, setState] = useState<StoredChatState>(() => loadStored());
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
+  const [showGreeting, setShowGreeting] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -83,6 +86,38 @@ export default function ChatWidget() {
       /* ignore quota errors */
     }
   }, [state]);
+
+  useEffect(() => {
+    let alreadyGreeted = false;
+    try {
+      alreadyGreeted = sessionStorage.getItem(GREETING_KEY) === "1";
+    } catch {
+      /* ignore */
+    }
+    if (alreadyGreeted || open) return;
+
+    const showTimer = setTimeout(() => {
+      setShowGreeting(true);
+      try {
+        sessionStorage.setItem(GREETING_KEY, "1");
+      } catch {
+        /* ignore */
+      }
+    }, 2500);
+    return () => clearTimeout(showTimer);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  useEffect(() => {
+    if (!showGreeting) return;
+    const hideTimer = setTimeout(() => setShowGreeting(false), 7000);
+    return () => clearTimeout(hideTimer);
+  }, [showGreeting]);
+
+  function openChat() {
+    setOpen(true);
+    setShowGreeting(false);
+  }
 
   useEffect(() => {
     scrollRef.current?.scrollTo({ top: scrollRef.current.scrollHeight, behavior: "smooth" });
@@ -124,26 +159,73 @@ export default function ChatWidget() {
 
   return (
     <>
+      <AnimatePresence>
+        {showGreeting && !open && (
+          <motion.div
+            initial={{ opacity: 0, y: 10, scale: 0.9 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: 10, scale: 0.9 }}
+            transition={{ duration: 0.25 }}
+            className="fixed bottom-8 right-24 z-[70] max-w-[220px] rounded-2xl rounded-br-sm border border-corporate-gold/30 bg-card px-4 py-3 text-sm text-foreground shadow-2xl"
+          >
+            <button
+              type="button"
+              aria-label="Dismiss"
+              onClick={() => setShowGreeting(false)}
+              className="absolute -right-2 -top-2 flex h-5 w-5 items-center justify-center rounded-full bg-muted text-muted-foreground hover:text-foreground"
+            >
+              <X className="h-3 w-3" />
+            </button>
+            <button type="button" onClick={openChat} className="text-left">
+              👋 Need help? Chat with our concierge for instant quotes & booking.
+            </button>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
       <motion.button
         type="button"
         aria-label={open ? "Close chat" : "Chat with Corporate Wheels"}
-        onClick={() => setOpen((v) => !v)}
-        className="fixed bottom-6 right-6 z-[70] flex h-14 w-14 items-center justify-center rounded-full bg-corporate-gold text-black shadow-[0_8px_30px_rgba(230,167,0,0.45)]"
+        onClick={() => (open ? setOpen(false) : openChat())}
+        className="fixed bottom-6 right-6 z-[70] flex h-16 w-16 items-center justify-center rounded-full text-black shadow-[0_8px_30px_rgba(230,167,0,0.45)]"
         whileHover={{ scale: 1.06 }}
         whileTap={{ scale: 0.95 }}
       >
+        {!open && (
+          <>
+            <span className="absolute inset-0 -z-10 rounded-full bg-corporate-gold/60 animate-ping" />
+            <span
+              className="absolute inset-[-8px] -z-10 rounded-full border-2 border-corporate-gold/40 animate-ping"
+              style={{ animationDelay: "0.6s", animationDuration: "2.2s" }}
+            />
+          </>
+        )}
+        <span className="absolute inset-0 -z-10 rounded-full btn-gradient btn-gradient-animate" />
+        <span className="absolute inset-0 -z-20 rounded-full bg-corporate-gold blur-lg opacity-50" />
+
         <AnimatePresence mode="wait" initial={false}>
           {open ? (
             <motion.span key="close" initial={{ rotate: -90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: 90, opacity: 0 }}>
               <X className="h-6 w-6" />
             </motion.span>
           ) : (
-            <motion.span key="open" initial={{ scale: 0.6, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} exit={{ scale: 0.6, opacity: 0 }}>
-              <MessageCircle className="h-6 w-6" />
+            <motion.span
+              key="open"
+              initial={{ scale: 0.6, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.6, opacity: 0 }}
+              className="relative flex h-9 w-9 items-center justify-center overflow-hidden rounded-full bg-white shadow-inner"
+            >
+              <img src="/logo.png" alt="" className="h-8 w-8 object-contain" />
             </motion.span>
           )}
         </AnimatePresence>
-        <span className="absolute inset-0 -z-10 rounded-full bg-corporate-gold blur-lg opacity-40" />
+
+        {!open && (
+          <span className="absolute -right-0.5 -top-0.5 flex h-4 w-4 items-center justify-center rounded-full border-2 border-background bg-corporate-red">
+            <span className="h-full w-full animate-ping rounded-full bg-corporate-red opacity-75" />
+          </span>
+        )}
       </motion.button>
 
       <AnimatePresence>
@@ -161,8 +243,8 @@ export default function ChatWidget() {
             )}
           >
             <div className="flex items-center gap-3 border-b border-border bg-gradient-to-r from-corporate-black to-[#161616] px-4 py-3.5">
-              <div className="flex h-9 w-9 items-center justify-center rounded-full bg-corporate-gold/15 text-corporate-gold">
-                <Sparkles className="h-4.5 w-4.5" />
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-full bg-white ring-2 ring-corporate-gold/40">
+                <img src="/logo.png" alt="Corporate Wheels" className="h-9 w-9 object-contain" />
               </div>
               <div className="min-w-0 flex-1">
                 <p className="truncate text-sm font-semibold text-white">Corporate Wheels Concierge</p>
