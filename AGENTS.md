@@ -148,6 +148,17 @@ const data: MyRouteResponse = await response.json();
 <Route path="/my-page" element={<MyPage />} />
 ```
 
+## AI Chat Widget
+
+`client/components/site/ChatWidget.tsx` is a site-wide, bottom-right chat widget (mounted in `RootLayout` in `client/App.tsx`). It talks to `POST /api/chat`, handled by `server/routes/chat.ts`, which:
+
+- Answers questions using a knowledge base built at request time from `client/data/service-data.ts`, `client/data/fleet-data.ts` and `client/lib/siteConfig.ts` (`server/lib/knowledge.ts`) — so chat answers stay in sync with the site's own content.
+- Calls kie.ai's OpenAI-compatible chat completions API (`server/lib/kie.ts`) — requires `KIE_API_KEY`, model route via `KIE_MODEL_ROUTE`.
+- Detects sales-ready leads (via a `[[LEAD:{...}]]` marker the model appends when it has a name + contact + intent, plus a regex fallback) and emails the team through `server/lib/leadEmail.ts` (same SMTP env vars as `booking-notify-admin.ts`, plus `CHATBOT_ADMIN_EMAIL`/`BOOKING_ADMIN_EMAIL`).
+- Deliberately does **not** re-implement live pricing or payment inside the chat — "Get a Quote" / "Book Now" hand off to the real `/booking` funnel, which already talks to the pricing backend.
+
+`api/[...path].ts` re-exports the same Express app (`server/index.ts`) as a Vercel Serverless Function, so `/api/*` works identically in local dev (`vite.config.ts`'s express plugin), Netlify (`netlify/functions/api.ts`) and Vercel — one implementation, three environments.
+
 ## Production Deployment
 
 - **Standard**: `pnpm build`

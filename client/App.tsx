@@ -37,6 +37,7 @@ import WhyChooseUs from "./pages/WhyChooseUs";
 import Navbar from "@/components/site/Navbar";
 import Footer from "@/components/site/Footer";
 import CookieBanner from "@/components/site/CookieBanner";
+import ChatWidget from "@/components/site/ChatWidget";
 import ErrorBoundary from "@/components/ErrorBoundary";
 import { ScrollToTop } from "@/components/ui/scroll-to-top";
 import { BookingProvider } from "@/context/BookingProvider";
@@ -63,6 +64,7 @@ function RootLayout({ showFooter = true }: { showFooter?: boolean }) {
       <ScrollToTop />
       <Outlet />
       <CookieBanner />
+      <ChatWidget />
       {showFooter && <Footer />}
     </div>
   );
