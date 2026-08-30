@@ -282,7 +282,7 @@ display: none !important;
 
 @layer utilities {
   .hero-phone-screen {
-    background-image: url('/images/mobile-banner-image.png');
+    background-image: url('/images/cw-placeholder.svg');
     background-size: cover;
     background-position: center;
   }

@@ -60,7 +60,7 @@ export const fleetCategoriesData: Record<string, FleetCategoryData> = {
     heroHighlights: ["Active Flight Tracking", "Guaranteed Punctuality", "Mobile Workspace Ready"],
     overviewCard: {
       carName: "Mercedes-Benz E-Class",
-      image: "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=800&auto=format&fit=crop&q=80",
+      image: "/images/cw-placeholder.svg",
       description: "The gold standard of corporate luxury, featuring a serene insulated cabin, smart power docks, and high-speed Wi-Fi.",
       pax: "3 Passengers",
       luggage: "3 Bags",
@@ -75,7 +75,7 @@ export const fleetCategoriesData: Record<string, FleetCategoryData> = {
     vehicles: [
       {
         name: "Mercedes-Benz E-Class",
-        image: "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=800&auto=format&fit=crop&q=80",
+        image: "/images/cw-placeholder.svg",
         pax: "Up to 3 Pax",
         luggage: "3 Bags",
         engineSpecs: [
@@ -94,7 +94,7 @@ export const fleetCategoriesData: Record<string, FleetCategoryData> = {
       },
       {
         name: "BMW 5 Series",
-        image: "https://images.unsplash.com/photo-1555215695-3004980ad54e?w=800&auto=format&fit=crop&q=80",
+        image: "/images/cw-placeholder.svg",
         pax: "Up to 3 Pax",
         luggage: "3 Bags",
         engineSpecs: [
@@ -194,7 +194,7 @@ export const fleetCategoriesData: Record<string, FleetCategoryData> = {
     heroHighlights: ["Bespoke Concierge Desk", "Therapy Massage Seats", "Acoustic Noise Shield"],
     overviewCard: {
       carName: "Mercedes-Benz S-Class",
-      image: "https://images.unsplash.com/photo-1617531653332-bd46c24f2068?w=800&auto=format&fit=crop&q=80",
+      image: "/images/cw-placeholder.svg",
       description: "The absolute pinnacle of luxury transport, boasting reclining executive lounges, hot-stone active massage, and a starlight panoramic dome.",
       pax: "3 Passengers",
       luggage: "3 Bags",
@@ -209,7 +209,7 @@ export const fleetCategoriesData: Record<string, FleetCategoryData> = {
     vehicles: [
       {
         name: "Mercedes-Benz S-Class",
-        image: "https://images.unsplash.com/photo-1617531653332-bd46c24f2068?w=800&auto=format&fit=crop&q=80",
+        image: "/images/cw-placeholder.svg",
         pax: "Up to 3 Pax",
         luggage: "3 Bags",
         engineSpecs: [
@@ -228,7 +228,7 @@ export const fleetCategoriesData: Record<string, FleetCategoryData> = {
       },
       {
         name: "BMW 7 Series",
-        image: "https://images.unsplash.com/photo-1607853202273-797f1c22a38e?w=800&auto=format&fit=crop&q=80",
+        image: "/images/cw-placeholder.svg",
         pax: "Up to 3 Pax",
         luggage: "3 Bags",
         engineSpecs: [
@@ -328,7 +328,7 @@ export const fleetCategoriesData: Record<string, FleetCategoryData> = {
     heroHighlights: ["Generous Cargo Bay", "Intelligent 4WD Traction", "Air Cushion Suspension"],
     overviewCard: {
       carName: "Range Rover Autobiography",
-      image: "https://images.unsplash.com/photo-1606016159991-dfe4f2746ad5?w=800&auto=format&fit=crop&q=80",
+      image: "/images/cw-placeholder.svg",
       description: "A supreme sanctuary on wheels. Blends majestic executive cabin layout with ultimate protection and all-weather capability.",
       pax: "4 Passengers",
       luggage: "5 Bags",
@@ -343,7 +343,7 @@ export const fleetCategoriesData: Record<string, FleetCategoryData> = {
     vehicles: [
       {
         name: "Range Rover Autobiography",
-        image: "https://images.unsplash.com/photo-1606016159991-dfe4f2746ad5?w=800&auto=format&fit=crop&q=80",
+        image: "/images/cw-placeholder.svg",
         pax: "Up to 4 Pax",
         luggage: "5 Bags",
         engineSpecs: [
@@ -362,7 +362,7 @@ export const fleetCategoriesData: Record<string, FleetCategoryData> = {
       },
       {
         name: "Cadillac Escalade ESV",
-        image: "https://images.unsplash.com/photo-1511919884226-fd3cad34687c?w=800&auto=format&fit=crop&q=80",
+        image: "/images/cw-placeholder.svg",
         pax: "Up to 6 Pax",
         luggage: "7 Bags",
         engineSpecs: [
@@ -462,7 +462,7 @@ export const fleetCategoriesData: Record<string, FleetCategoryData> = {
     heroHighlights: ["Conference Seat Layout", "Extensive Luggage Bay", "Folding Work Desks"],
     overviewCard: {
       carName: "Mercedes-Benz V-Class",
-      image: "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=800&auto=format&fit=crop&q=80",
+      image: "/images/cw-placeholder.svg",
       description: "The absolute benchmark for group transport, featuring face-to-face seating, electrical doors, and business tables.",
       pax: "7 Passengers",
       luggage: "7 Bags",
@@ -477,7 +477,7 @@ export const fleetCategoriesData: Record<string, FleetCategoryData> = {
     vehicles: [
       {
         name: "Mercedes-Benz V-Class",
-        image: "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=800&auto=format&fit=crop&q=80",
+        image: "/images/cw-placeholder.svg",
         pax: "Up to 7 Pax",
         luggage: "6 Bags",
         engineSpecs: [
@@ -496,7 +496,7 @@ export const fleetCategoriesData: Record<string, FleetCategoryData> = {
       },
       {
         name: "Volkswagen Caravelle",
-        image: "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=800&auto=format&fit=crop&q=80",
+        image: "/images/cw-placeholder.svg",
         pax: "Up to 7 Pax",
         luggage: "7 Bags",
         engineSpecs: [
@@ -596,7 +596,7 @@ export const fleetCategoriesData: Record<string, FleetCategoryData> = {
     heroHighlights: ["Security Escort Available", "Custom Fleet Layouts", "Diplomatic Compliance"],
     overviewCard: {
       carName: "Mercedes Sprinter VIP",
-      image: "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?w=800&auto=format&fit=crop&q=80",
+      image: "/images/cw-placeholder.svg",
       description: "Customized high-profile VIP transport fitted with luxury leather armchairs, private bar amenities, satellite flat screens, and work desks.",
       pax: "16 Passengers",
       luggage: "12 Bags",
@@ -611,7 +611,7 @@ export const fleetCategoriesData: Record<string, FleetCategoryData> = {
     vehicles: [
       {
         name: "Mercedes Sprinter VIP Edition",
-        image: "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?w=800&auto=format&fit=crop&q=80",
+        image: "/images/cw-placeholder.svg",
         pax: "Up to 16 Pax",
         luggage: "15 Bags",
         engineSpecs: [
@@ -630,7 +630,7 @@ export const fleetCategoriesData: Record<string, FleetCategoryData> = {
       },
       {
         name: "Range Rover Sentinel (Armored)",
-        image: "https://images.unsplash.com/photo-1606016159991-dfe4f2746ad5?w=800&auto=format&fit=crop&q=80",
+        image: "/images/cw-placeholder.svg",
         pax: "Up to 4 Pax",
         luggage: "4 Bags",
         engineSpecs: [
@@ -730,7 +730,7 @@ export const fleetCategoriesData: Record<string, FleetCategoryData> = {
     heroHighlights: ["100% Zero Emissions", "Acoustic Silence", "Medical-Grade HEPA Cabin"],
     overviewCard: {
       carName: "Mercedes-Benz EQS",
-      image: "https://images.unsplash.com/photo-1563720223185-11003d516935?w=800&auto=format&fit=crop&q=80",
+      image: "/images/cw-placeholder.svg",
       description: "A visionary blend of digital intelligence, aerodynamic elegance, and ecological responsibility.",
       pax: "3 Passengers",
       luggage: "3 Bags",
@@ -745,7 +745,7 @@ export const fleetCategoriesData: Record<string, FleetCategoryData> = {
     vehicles: [
       {
         name: "Mercedes-Benz EQS",
-        image: "https://images.unsplash.com/photo-1563720223185-11003d516935?w=800&auto=format&fit=crop&q=80",
+        image: "/images/cw-placeholder.svg",
         pax: "Up to 3 Pax",
         luggage: "3 Bags",
         engineSpecs: [
@@ -764,7 +764,7 @@ export const fleetCategoriesData: Record<string, FleetCategoryData> = {
       },
       {
         name: "Tesla Model X",
-        image: "https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?w=800&auto=format&fit=crop&q=80",
+        image: "/images/cw-placeholder.svg",
         pax: "Up to 5 Pax",
         luggage: "4 Bags",
         engineSpecs: [
@@ -864,7 +864,7 @@ export const fleetCategoriesData: Record<string, FleetCategoryData> = {
     heroHighlights: ["Formal Attired Driver", "Chilled Champagne", "Red Carpet Protocol"],
     overviewCard: {
       carName: "Rolls-Royce Silver Cloud",
-      image: "https://images.unsplash.com/photo-1527247043589-98e6ac08f56c?w=800&auto=format&fit=crop&q=80",
+      image: "/images/cw-placeholder.svg",
       description: "A rolling masterpiece of aesthetic charm, hand-polished wood trim, and deep chrome detailing.",
       pax: "3 Passengers",
       luggage: "2 Bags",
@@ -879,7 +879,7 @@ export const fleetCategoriesData: Record<string, FleetCategoryData> = {
     vehicles: [
       {
         name: "Rolls-Royce Silver Cloud",
-        image: "https://images.unsplash.com/photo-1527247043589-98e6ac08f56c?w=800&auto=format&fit=crop&q=80",
+        image: "/images/cw-placeholder.svg",
         pax: "Up to 3 Pax",
         luggage: "2 Bags",
         engineSpecs: [
@@ -898,7 +898,7 @@ export const fleetCategoriesData: Record<string, FleetCategoryData> = {
       },
       {
         name: "Classic Bentley S2",
-        image: "https://images.unsplash.com/photo-1511919884226-fd3cad34687c?w=800&auto=format&fit=crop&q=80",
+        image: "/images/cw-placeholder.svg",
         pax: "Up to 3 Pax",
         luggage: "2 Bags",
         engineSpecs: [

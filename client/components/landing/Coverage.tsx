@@ -80,7 +80,7 @@ export default function Coverage() {
                     <div className="absolute left-1/2 -translate-x-1/2 -top-36 w-[28rem] h-[28rem] rounded-full opacity-10 blur-2xl gold-gradient-circle" />
                   </div>
                   <div className="aspect-[16/9] relative">
-                    <div className="absolute inset-0 bg-[url('https://upload.wikimedia.org/wikipedia/commons/8/80/World_map_-_low_resolution.svg')] bg-center bg-contain opacity-8" />
+                    <div className="absolute inset-0 bg-[url('/images/cw-placeholder.svg')] bg-center bg-contain opacity-8" />
                     {cities.map((c, i) => (
                       <motion.div
                         key={c.name}

@@ -122,7 +122,7 @@ export default function LimousineService() {
         </div>
         <div className="relative z-10">
           <img
-            src="/images/LuxuryLimousineExperience.jpg"
+            src="/images/cw-placeholder.svg"
             alt="Limousine Service"
             className="mx-auto rounded-2xl shadow-2xl mb-8 w-full max-w-3xl object-cover border-4 border-corporate-gold/30"
           />
@@ -285,7 +285,7 @@ export default function LimousineService() {
           Limo Service in the City
         </h2>
         <img
-          src="https://images.unsplash.com/photo-1605329674253-c7680c5e44cc?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8bGltb3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&q=60&w=600"
+          src="/images/cw-placeholder.svg"
           alt="City Limo"
           className="rounded-xl shadow-2xl mb-8 w-full object-cover border-4 border-corporate-gold/20"
         />
@@ -333,7 +333,7 @@ export default function LimousineService() {
           Get Around with Corporate Wheels
         </h2>
         <img
-          src="https://images.unsplash.com/photo-1750013931537-60974e4df0dc?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170"
+          src="/images/cw-placeholder.svg"
           alt="Get Around"
           className="rounded-xl shadow-2xl mb-8 w-full object-cover border-4 border-corporate-gold/20"
         />
@@ -387,7 +387,7 @@ export default function LimousineService() {
           Airport Limousine Service
         </h2>
         <img
-          src="/images/features/car2.jpeg"
+          src="/images/cw-placeholder.svg"
           alt="Airport Limo"
           className="rounded-xl shadow-2xl mb-8 w-full object-cover border-4 border-corporate-gold/20"
         />

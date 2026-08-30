@@ -90,7 +90,7 @@ export default function HourlyHire() {
       <section className="relative min-h-[72vh] flex items-center  pt-20">
         <div className="absolute inset-0 z-0">
           <img
-            src="/images/houry-hire.png"
+            src="/images/cw-placeholder.svg"
             alt="luxury car"
             className="w-full h-full object-cover brightness-60"
           />
@@ -243,21 +243,21 @@ export default function HourlyHire() {
                 title: "Flexible Scheduling",
                 description:
                   "Book for as many hours as needed, with easy extensions and 24/7 availability",
-                image: "/images/FlexibleScheduling.jpeg",
+                image: "/images/cw-placeholder.svg",
               },
               {
                 icon: Shield,
                 title: "Elite Chauffeurs",
                 description:
                   "Professionally trained, background-checked, and certified for your peace of mind",
-                image: "/images/EliteChauffeurs.jpeg",
+                image: "/images/cw-placeholder.svg",
               },
               {
                 icon: Car,
                 title: "Luxury Fleet",
                 description:
                   "Choose from our curated selection of premium vehicles for any occasion",
-                image: "/images/LuxuryFleet.jpg",
+                image: "/images/cw-placeholder.svg",
               },
             ].map((feature, index) => (
               <motion.div
@@ -476,22 +476,22 @@ export default function HourlyHire() {
             >
               <div className="grid grid-cols-2 gap-4">
                 <img
-                  src="https://plus.unsplash.com/premium_photo-1661777666230-7d04a80d6724?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=687"
+                  src="/images/cw-placeholder.svg"
                   alt="Business meeting transition"
                   className="rounded-lg shadow-xl w-full h-64 object-cover"
                 />
                 <img
-                  src="https://images.unsplash.com/photo-1748514338092-943ecca0cdc9?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=687"
+                  src="/images/cw-placeholder.svg"
                   alt="Luxury shopping experience"
                   className="rounded-lg shadow-xl w-full h-64 object-cover mt-12"
                 />
                 <img
-                  src="https://images.unsplash.com/photo-1570349723855-7d9ddcbab1b1?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170"
+                  src="/images/cw-placeholder.svg"
                   alt="Tourist destinations"
                   className="rounded-lg shadow-xl w-full h-64 object-cover"
                 />
                 <img
-                  src="https://images.unsplash.com/photo-1688054005456-466170816196?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170"
+                  src="/images/cw-placeholder.svg"
                   alt="Special event transportation"
                   className="rounded-lg shadow-xl w-full h-64 object-cover mt-12"
                 />
@@ -575,94 +575,6 @@ export default function HourlyHire() {
       </section>
 
 
-      {/* Testimonials Section */}
-      <section className="py-20 bg-gray-900/30 relative overflow-hidden">
-        <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black z-10" />
-          <div className="absolute inset-0 opacity-5">
-            <div className="absolute transform rotate-45 -left-1/4 -top-1/4 w-1/2 h-1/2 bg-corporate-gold/20 rounded-full blur-3xl" />
-            <div className="absolute transform -rotate-45 -right-1/4 -bottom-1/4 w-1/2 h-1/2 bg-corporate-gold/20 rounded-full blur-3xl" />
-          </div>
-        </div>
-        <div className="container relative z-20">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
-          >
-            <Star className="w-12 h-12 text-corporate-gold mx-auto mb-6" />
-            <h2 className="text-4xl font-bold mb-6">Client Experiences</h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Discover why our clients choose us for their premium
-              transportation needs.
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {[
-              {
-                text: "The hourly service transformed our wedding day. The chauffeur's professionalism and the luxury vehicle added an extra touch of elegance to our special moments.",
-                author: "Sarah & James",
-                role: "Wedding Clients",
-                rating: 5,
-                image: "/images/testimonials/wedding-couple.jpg",
-              },
-              {
-                text: "As a business executive, the reliability and flexibility of the hourly service is invaluable. The chauffeurs are always punctual and professional.",
-                author: "Michael Chen",
-                role: "CEO, Tech Solutions",
-                rating: 5,
-                image: "/images/testimonials/business-exec.jpg",
-              },
-              {
-                text: "A perfect way to explore the city! Our chauffeur was knowledgeable and accommodating, making our tourist experience truly memorable and luxurious.",
-                author: "Emma Thompson",
-                role: "International Tourist",
-                rating: 5,
-                image: "/images/testimonials/tourist.jpg",
-              },
-            ].map((testimonial, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.2 }}
-                className="bg-black/30 backdrop-blur-sm p-8 rounded-xl border border-gray-800 hover:border-corporate-gold transition-all duration-300 group"
-              >
-                <div className="flex flex-col md:flex-row gap-6">
-                  <div className="w-full ">
-                    <div className="flex gap-1 mb-4">
-                      {Array.from({ length: testimonial.rating }).map(
-                        (_, i) => (
-                          <Star
-                            key={i}
-                            className="w-5 h-5 fill-corporate-gold text-corporate-gold"
-                          />
-                        ),
-                      )}
-                    </div>
-                    <p className="text-gray-300 mb-4 italic">
-                      "{testimonial.text}"
-                    </p>
-                    <div>
-                      <p className="font-semibold text-lg">
-                        {testimonial.author}
-                      </p>
-                      <p className="text-sm text-gray-400">
-                        {testimonial.role}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* FAQ Section */}
       <section className="py-20">
         <div className="container max-w-4xl">
@@ -716,7 +628,7 @@ export default function HourlyHire() {
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black z-10" />
           <img
-            src="/images/LuxuryLimousineExperience.jpg"
+            src="/images/cw-placeholder.svg"
             alt=""
             className="w-full h-full object-cover opacity-30"
           />

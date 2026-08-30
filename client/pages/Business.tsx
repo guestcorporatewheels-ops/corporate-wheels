@@ -207,7 +207,7 @@ function Hero() {
           >
             <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent z-10" />
             <img
-              src="/images/fleet/business-class.png"
+              src="/images/cw-placeholder.svg"
               alt="Corporate Wheels executive fleet vehicle"
               className="rounded-lg border border-white/10 shadow-2xl bg-black/40"
             />
@@ -390,37 +390,37 @@ function WorldwidePresence() {
     {
       name: "London",
       image:
-        "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=800&auto=format&fit=crop&q=80",
+        "/images/cw-placeholder.svg",
       stats: "500+ rides/month",
     },
     {
       name: "Manchester",
       image:
-        "https://images.unsplash.com/photo-1515586838455-8f8f940d6853?w=800&auto=format&fit=crop&q=80",
+        "/images/cw-placeholder.svg",
       stats: "300+ rides/month",
     },
     {
       name: "Birmingham",
       image:
-        "https://images.unsplash.com/photo-1515586838455-8f8f940d6853?w=800&auto=format&fit=crop&q=80",
+        "/images/cw-placeholder.svg",
       stats: "250+ rides/month",
     },
     {
       name: "Edinburgh",
       image:
-        "https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?w=800&auto=format&fit=crop&q=80",
+        "/images/cw-placeholder.svg",
       stats: "200+ rides/month",
     },
     {
       name: "Liverpool",
       image:
-        "https://images.unsplash.com/photo-1543731068-7e0f5beff43a?w=800&auto=format&fit=crop&q=80",
+        "/images/cw-placeholder.svg",
       stats: "150+ rides/month",
     },
     {
       name: "Bristol",
       image:
-        "https://images.unsplash.com/photo-1518005020250-68a0d0d75642?w=800&auto=format&fit=crop&q=80",
+        "/images/cw-placeholder.svg",
       stats: "100+ rides/month",
     },
   ];
@@ -556,8 +556,8 @@ function EnterpriseFeatures() {
 
 function Compliance() {
   const marks = [
-    { name: "ICO Registered", src: "/images/partners/ico.png" },
-    { name: "TfL Licensed", src: "/images/partners/tfl.png" },
+    { name: "ICO Registered", src: "/images/cw-placeholder.svg" },
+    { name: "TfL Licensed", src: "/images/cw-placeholder.svg" },
   ];
   return (
     <section className="relative py-20">
@@ -603,21 +603,21 @@ function CaseStudies() {
       title: "Global Tech Summit",
       desc: "Coordinated 200+ executive transfers across 3 days in multiple cities. Achieved 100% on-time performance.",
       image:
-        "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&auto=format&fit=crop&q=80",
+        "/images/cw-placeholder.svg",
       stats: ["200+ Transfers", "3 Cities", "100% On-time"],
     },
     {
       title: "Financial Conference",
       desc: "24/7 dedicated support for 50+ VIP attendees. Custom billing for different cost centers.",
       image:
-        "https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=800&auto=format&fit=crop&q=80",
+        "/images/cw-placeholder.svg",
       stats: ["50+ VIPs", "24/7 Support", "18% Cost Savings"],
     },
     {
       title: "Fashion Week",
       desc: "Luxury fleet coordination for designer showcases. Real-time tracking and schedule adjustments.",
       image:
-        "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=800&auto=format&fit=crop&q=80",
+        "/images/cw-placeholder.svg",
       stats: ["100+ Routes", "Premium Fleet", "Live Tracking"],
     },
   ];

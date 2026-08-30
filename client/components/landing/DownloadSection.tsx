@@ -72,7 +72,7 @@ export default function DownloadSection() {
                 {/* Screen Content */}
                 <div className="absolute inset-0 bg-black z-0" />
                 <img
-                  src="/mobile-app.jpg"
+                  src="/images/cw-placeholder.svg"
                   alt="Mobile App Screen"
                   className="absolute inset-0 w-full h-full object-cover blur-[3px] opacity-50 scale-110 group-hover:scale-100 transition-transform duration-700 z-10" 
                 />

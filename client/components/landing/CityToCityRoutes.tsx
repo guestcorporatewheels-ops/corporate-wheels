@@ -9,7 +9,7 @@ const topCities = [
     routes: 25,
     features: ["Cross-country routes", "Chauffeur service", "VIP access"],
     image:
-      "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+      "/images/cw-placeholder.svg",
   },
   {
     name: "Manchester",
@@ -17,7 +17,7 @@ const topCities = [
     routes: 18,
     features: ["Airport transfers", "Corporate accounts", "Event service"],
     image:
-      "https://images.unsplash.com/photo-1515586838455-8f8f940d6853?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+      "/images/cw-placeholder.svg",
   },
   {
     name: "Birmingham",
@@ -25,7 +25,7 @@ const topCities = [
     routes: 15,
     features: ["Business class", "Meet & greet", "NEC transfers"],
     image:
-      "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+      "/images/cw-placeholder.svg",
   },
   {
     name: "Edinburgh",
@@ -33,7 +33,7 @@ const topCities = [
     routes: 12,
     features: ["Tour service", "VIP access", "Luxury sedans"],
     image:
-      "https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+      "/images/cw-placeholder.svg",
   },
 ];
 

@@ -11,7 +11,7 @@ const featuredPost = {
   title: "Revolutionizing Executive Travel",
   excerpt: "How AI and sustainability are reshaping the luxury transportation landscape in 2025",
   date: "October 18, 2025",
-  image: "https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&q=80",
+  image: "/images/cw-placeholder.svg",
   category: "Future of Travel",
   author: "James Mitchell",
   readTime: "6 min read"
@@ -31,7 +31,7 @@ const recentPosts = [
     title: "The Evolution of Our Electric Fleet",
     excerpt: "Introducing our newest Tesla Model S and Mercedes EQS luxury vehicles",
     date: "October 15, 2025",
-    image: "https://images.unsplash.com/photo-1553440569-bcc63803a83d?auto=format&fit=crop&q=80",
+    image: "/images/cw-placeholder.svg",
     category: "Luxury Fleet",
     author: "Sarah Bennett",
     readTime: "4 min read"
@@ -40,16 +40,16 @@ const recentPosts = [
     title: "Dubai to Abu Dhabi: A Premium Journey",
     excerpt: "Experience the epitome of luxury travel between UAE's most dynamic cities",
     date: "October 12, 2025",
-    image: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&q=80",
+    image: "/images/cw-placeholder.svg",
     category: "City Guides",
     author: "Ahmed Hassan",
     readTime: "5 min read"
   },
   {
-    title: "5-Star Chauffeur Excellence",
+    title: "The Hallmarks of Chauffeur Excellence",
     excerpt: "What sets our chauffeur service apart in the luxury transport industry",
     date: "October 10, 2025",
-    image: "https://images.unsplash.com/photo-1517524008697-84bbe3c3fd98?auto=format&fit=crop&q=80",
+    image: "/images/cw-placeholder.svg",
     category: "Service Excellence",
     author: "Michael Chang",
     readTime: "4 min read"
@@ -59,25 +59,25 @@ const recentPosts = [
 const popularArticles = [
   {
     title: "Corporate Travel Trends 2025",
-    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80",
+    image: "/images/cw-placeholder.svg",
     category: "Executive Travel",
     readTime: "7 min read"
   },
   {
     title: "Sustainable Luxury: Our Green Initiative",
-    image: "https://images.unsplash.com/photo-1573950940509-d924ee3fd345?auto=format&fit=crop&q=80",
+    image: "/images/cw-placeholder.svg",
     category: "Sustainability",
     readTime: "5 min read"
   },
   {
     title: "London's Hidden Business Venues",
-    image: "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&q=80",
+    image: "/images/cw-placeholder.svg",
     category: "City Guides",
     readTime: "6 min read"
   },
   {
     title: "The Art of Airport Transfers",
-    image: "https://images.unsplash.com/photo-1583267746897-2cf415887172?auto=format&fit=crop&q=80",
+    image: "/images/cw-placeholder.svg",
     category: "Service Excellence",
     readTime: "4 min read"
   }

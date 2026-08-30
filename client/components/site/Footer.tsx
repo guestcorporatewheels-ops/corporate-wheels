@@ -40,7 +40,7 @@ export default function Footer() {
             <div className="mt-6 flex items-center gap-4">
               <div className="w-16">
                 <img
-                  src="/images/partners/ico.png"
+                  src="/images/cw-placeholder.svg"
                   alt="ICO"
                   className="w-full h-auto object-contain"
                 />

@@ -396,61 +396,61 @@ export default function ServiceCategory({ forcedCategoryId }: ServiceCategoryPro
                   title: "London Eye",
                   type: "Historic Landmark Spot",
                   desc: "Witness the breathtaking panoramic views of the city skyline from the spectacular giant observation wheel.",
-                  img: "/images/ada607e9-1a77-4abe-b383-edba1d490fc2.png"
+                  img: "/images/cw-placeholder.svg"
                 },
                 {
                   title: "Tower of London",
                   type: "Royal Fortress Spot",
                   desc: "Explore nearly a thousand years of British royal history inside this legendary stone fortress and Treasury.",
-                  img: "/images/chufferas.png"
+                  img: "/images/cw-placeholder.svg"
                 },
                 {
                   title: "Buckingham Palace",
                   type: "Royal Sovereign Residence",
                   desc: "Marvel at the majestic official London residence of the British Sovereign and its historic royal gates.",
-                  img: "/images/LuxuryFleet.jpg"
+                  img: "/images/cw-placeholder.svg"
                 },
                 {
                   title: "Big Ben & Houses of Parliament",
                   type: "National Heritage Landmark",
                   desc: "Behold the towering golden clock face of Elizabeth Tower and the grand neo-Gothic Palace of Westminster.",
-                  img: "/images/979a4982-9613-46b4-8ef9-8c7550905be5.png"
+                  img: "/images/cw-placeholder.svg"
                 },
                 {
                   title: "British Museum",
                   type: "Global Human History Spot",
                   desc: "Dive into a vast world sanctuary of global human history, art, and ancient archaeological artifacts.",
-                  img: "/images/EliteChauffeurs.jpeg"
+                  img: "/images/cw-placeholder.svg"
                 },
                 {
                   title: "Tower Bridge",
                   type: "Historic Suspension Bridge",
                   desc: "Cross the most famous neo-Gothic suspension bridge stretching majestically over the historic River Thames.",
-                  img: "/images/e6661373-4328-497e-bfaf-aa1de930f0a0.png"
+                  img: "/images/cw-placeholder.svg"
                 },
                 {
                   title: "Westminster Abbey",
                   type: "Coronation Church Spot",
                   desc: "Walk in the footsteps of kings inside the majestic church of coronations, royal weddings, and legends.",
-                  img: "/images/LuxuryLimousineExperience.jpg"
+                  img: "/images/cw-placeholder.svg"
                 },
                 {
                   title: "St. Paul's Cathedral",
                   type: "Architectural Dome Masterpiece",
                   desc: "Gaze at the iconic breathtaking cathedral dome that has crowned the London skyline for centuries.",
-                  img: "/images/Relaxrest1762454212669.jpeg"
+                  img: "/images/cw-placeholder.svg"
                 },
                 {
                   title: "Trafalgar Square",
                   type: "Geographical Heart Spot",
                   desc: "Stand in the vibrant absolute center of London, flanked by Nelson's Column and giant royal stone lions.",
-                  img: "/images/FlexibleScheduling.jpeg"
+                  img: "/images/cw-placeholder.svg"
                 },
                 {
                   title: "Hyde Park",
                   type: "Royal Parklands Spot",
                   desc: "Stroll through 350 acres of historic royal parklands and the scenic Serpentine recreational lake.",
-                  img: "/images/ada607e9-1a77-4abe-b383-edba1d490fc2.png"
+                  img: "/images/cw-placeholder.svg"
                 }
               ].map((item, idx) => (
                 <motion.div
@@ -613,87 +613,6 @@ export default function ServiceCategory({ forcedCategoryId }: ServiceCategoryPro
                     <span>Reserve</span>
                     <ArrowRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1" />
                   </Link>
-                </div>
-
-              </motion.div>
-            ))}
-          </div>
-
-        </div>
-      </section>
-
-      {/* 3.5 ELITE CLIENT TESTIMONIALS SECTION (NEW PREMIUM ADDITION) */}
-      <section className="relative py-28 border-b border-white/5 bg-gradient-to-b from-transparent via-white/[0.01] to-transparent">
-        
-        {/* Glow spots */}
-        <div className="absolute top-1/3 left-1/4 w-[400px] h-[400px] bg-corporate-gold/5 blur-[120px] rounded-full pointer-events-none" />
-        
-        <div className="container relative z-10">
-          
-          <motion.div
-            initial={{ opacity: 0, y: 25 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-            className="text-center max-w-3xl mx-auto mb-20"
-          >
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-corporate-gold/10 border border-corporate-gold/20 mb-4">
-              <span className="text-[10px] text-corporate-gold font-bold uppercase tracking-widest">Client Endorsements</span>
-            </div>
-            <h2 className="text-3xl md:text-5xl font-heading font-bold text-white tracking-tight">
-              What Our Clients Say
-              <span className="text-gradient-gold block italic font-light mt-1.5">
-                Trusted by professionals.
-              </span>
-            </h2>
-            <div className="w-20 h-[2px] bg-gradient-to-r from-transparent via-corporate-gold to-transparent mx-auto mt-6" />
-            <p className="mt-6 text-white/60 text-base font-light leading-relaxed">
-              Read how corporate directors, international diplomats, and wedding planners experience the unmatched precision and luxury of our chauffeured transits.
-            </p>
-          </motion.div>
-
-          <div className="grid gap-8 md:grid-cols-2 max-w-5xl mx-auto">
-            {data.testimonials.map((testi, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: idx * 0.1 }}
-                className="relative rounded-3xl bg-gradient-to-b from-white/[0.05] to-white/[0.01] border border-white/5 p-8 md:p-10 hover:border-corporate-gold/20 hover:bg-white/[0.03] transition-all duration-400 group overflow-hidden flex flex-col justify-between"
-              >
-                {/* Accent bracket indicators */}
-                <div className="absolute top-0 left-0 w-4 h-4 border-t border-l border-corporate-gold/0 group-hover:border-corporate-gold/20 rounded-tl-3xl transition-all duration-500" />
-                <div className="absolute bottom-0 right-0 w-4 h-4 border-b border-r border-corporate-gold/0 group-hover:border-corporate-gold/20 rounded-br-3xl transition-all duration-500" />
-                
-                <div>
-                  {/* Rating Stars Row */}
-                  <div className="flex items-center gap-1 mb-6">
-                    {[...Array(testi.rating)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-corporate-gold text-corporate-gold" />
-                    ))}
-                  </div>
-
-                  {/* Review Text */}
-                  <p className="text-sm md:text-base text-white/70 italic leading-relaxed font-light mb-8 group-hover:text-white/95 transition-colors duration-300">
-                    "{testi.review}"
-                  </p>
-                </div>
-
-                {/* Reviewer Details Footer */}
-                <div className="flex justify-between items-end pt-6 border-t border-white/5 mt-4">
-                  <div>
-                    <h4 className="text-base font-bold text-white group-hover:text-corporate-gold transition-colors duration-300">
-                      {testi.clientName}
-                    </h4>
-                    <span className="text-[10px] text-white/40 uppercase tracking-widest font-semibold block mt-0.5">
-                      {testi.designation}
-                    </span>
-                  </div>
-
-                  <span className="text-[10px] text-corporate-gold/60 font-bold uppercase tracking-wider">
-                    {testi.date}
-                  </span>
                 </div>
 
               </motion.div>

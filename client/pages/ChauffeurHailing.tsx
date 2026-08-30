@@ -10,7 +10,6 @@ import {
   AccordionContent,
 } from "@/components/ui/accordion";
 import {
-  Star,
   Shield,
   Clock,
   MapPin,
@@ -123,11 +122,11 @@ export default function ChauffeurHailing() {
 
               <div className="mt-6 flex items-center gap-8">
                 <div className="flex items-center gap-3">
-                  <Star className="w-6 h-6 text-corporate-gold" />
+                  <Clock className="w-6 h-6 text-corporate-gold" />
                   <div>
-                    <p className="font-semibold">Rated 4.9/5</p>
+                    <p className="font-semibold">Minutes to Pickup</p>
                     <p className="text-sm text-gray-400">
-                      by thousands of riders
+                      in covered cities
                     </p>
                   </div>
                 </div>
@@ -158,7 +157,7 @@ export default function ChauffeurHailing() {
                 <Card className="p-8 bg-black/50 border-gray-800 shadow-2xl">
                   <div className="flex gap-4 items-center">
                     <img
-                      src="https://plus.unsplash.com/premium_photo-1661288451211-b61d32db1d11?fm=jpg&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8Y2hhdWZmZXVyJTIwc2VydmljZXxlbnwwfHwwfHx8MA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000"
+                      src="/images/cw-placeholder.svg"
                       alt="chauffeur"
                       className="w-28 h-28 rounded-xl object-cover shadow-lg"
                     />
@@ -196,7 +195,7 @@ export default function ChauffeurHailing() {
                     transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
                   >
                     <img
-                      src="https://images.unsplash.com/photo-1547731269-e4073e054f12?fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE3fHx8ZW58MHx8fHx8&ixlib=rb-4.1.0&q=60&w=3000"
+                      src="/images/cw-placeholder.svg"
                       alt="app preview"
                       className="w-full h-full object-cover"
                     />
@@ -207,7 +206,7 @@ export default function ChauffeurHailing() {
                     transition={{ type: "spring", stiffness: 120 }}
                   >
                     <img
-                      src="https://plus.unsplash.com/premium_photo-1661306646017-c3f9293fdbd8?fm=jpg&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cHJvZmVzc2lvbmFsJTIwZHJpdmVyfGVufDB8fDB8fHww&ixlib=rb-4.1.0&q=60&w=3000"
+                      src="/images/cw-placeholder.svg"
                       alt="app preview 2"
                       className="w-full h-full object-cover"
                     />
@@ -336,7 +335,7 @@ export default function ChauffeurHailing() {
             >
               <div className="relative bg-black/10 h-72 rounded-lg border border-gray-800 overflow-hidden">
                 <img
-                  src="https://upload.wikimedia.org/wikipedia/commons/8/80/World_map_-_low_resolution.svg"
+                  src="/images/cw-placeholder.svg"
                   alt="map"
                   className="w-full h-full object-cover brightness-70"
                 />
@@ -453,7 +452,7 @@ export default function ChauffeurHailing() {
                     transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
                   >
                     <img
-                      src="/images/ada607e9-1a77-4abe-b383-edba1d490fc2.png"
+                      src="/images/cw-placeholder.svg"
                       alt="app preview"
                       className="w-full h-full object-cover"
                     />
@@ -461,61 +460,6 @@ export default function ChauffeurHailing() {
                 </div>
               </div>
             </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials - upgraded */}
-      <section className="py-24">
-        <div className="container">
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-8"
-          >
-            <h2 className="text-3xl font-bold">Rider Stories</h2>
-            <p className="text-gray-300">
-              Real feedback from corporate and leisure travelers.
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              {
-                name: "John D.",
-                text: "Fast, professional and comfortable. My go-to service for city meetings.",
-              },
-              {
-                name: "Sara L.",
-                text: "Seamless booking and excellent chauffeurs. Always on time.",
-              },
-              {
-                name: "Akira T.",
-                text: "Premium experience, great for airport runs and city hops.",
-              },
-            ].map((t, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: i * 0.08 }}
-              >
-                <Card className="p-8 bg-black/40 border-gray-800 rounded-xl shadow-lg hover:scale-[1.02] transition-transform">
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-gray-800 to-black flex items-center justify-center text-corporate-gold font-semibold">
-                      {t.name.charAt(0)}
-                    </div>
-                    <div>
-                      <p className="font-semibold">{t.name}</p>
-                      <p className="text-sm text-gray-300">"{t.text}"</p>
-                    </div>
-                  </div>
-                </Card>
-              </motion.div>
-            ))}
           </div>
         </div>
       </section>

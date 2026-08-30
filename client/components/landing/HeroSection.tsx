@@ -78,7 +78,7 @@ export default function HeroSection() {
 
           </div>
 
-          {/* Trust Badge / Testimonial */}
+          {/* Trust Badge */}
           <div className="mt-8 flex flex-col sm:flex-row gap-6 items-center text-base text-muted-foreground justify-center lg:justify-start">
 
             <div className="flex items-center gap-2 ">
@@ -94,16 +94,10 @@ export default function HeroSection() {
               <span>Verified chauffeurs</span>
             </div>
             <div className="flex items-center gap-2 ">
-              <svg width="18" height="18" fill="none" viewBox="0 0 24 24">
-                <path
-                  d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
-                  stroke="#e6a700"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
+              <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="5" cy="5" r="5" fill="#E6A700" />
               </svg>
-              <span>5-Star Rated Service</span>
+              <span>Fixed pricing, no surge</span>
             </div>
           </div>
 

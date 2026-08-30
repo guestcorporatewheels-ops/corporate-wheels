@@ -1,10 +1,10 @@
 const VEHICLE_CLASS_IMAGES: Record<string, string> = {
-  "business class": "/images/fleet/business-class.png",
-  "first class": "/images/fleet/first-class.png",
-  "business van": "/images/fleet/business-van.png",
+  "business class": "/images/cw-placeholder.svg",
+  "first class": "/images/cw-placeholder.svg",
+  "business van": "/images/cw-placeholder.svg",
 };
 
-export const DEFAULT_VEHICLE_CLASS_IMAGE = "/images/fleet/business-class.png";
+export const DEFAULT_VEHICLE_CLASS_IMAGE = "/images/cw-placeholder.svg";
 
 export function resolveVehicleClassImage(
   name: string,

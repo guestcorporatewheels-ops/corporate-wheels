@@ -54,7 +54,7 @@ export const HOURLY_FALLBACK_VEHICLES: SelectedCar[] = [
   {
     id: "business",
     name: "Business Class",
-    image: "/images/fleet/business-class.png",
+    image: "/images/cw-placeholder.svg",
     price: 65,
     total_price: 130,
     passengers: 3,
@@ -65,7 +65,7 @@ export const HOURLY_FALLBACK_VEHICLES: SelectedCar[] = [
   {
     id: "first-class",
     name: "First Class",
-    image: "/images/fleet/first-class.png",
+    image: "/images/cw-placeholder.svg",
     price: 85,
     total_price: 170,
     passengers: 3,
@@ -76,7 +76,7 @@ export const HOURLY_FALLBACK_VEHICLES: SelectedCar[] = [
   {
     id: "business-van",
     name: "Business Van",
-    image: "/images/fleet/business-van.png",
+    image: "/images/cw-placeholder.svg",
     price: 110,
     total_price: 220,
     passengers: 7,

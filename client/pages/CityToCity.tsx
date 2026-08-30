@@ -14,7 +14,6 @@ import {
   MapPin,
   Clock,
   Shield,
-  Star,
   CheckCircle,
   Route,
   ArrowRight,
@@ -35,7 +34,7 @@ const cityRoutes = [
     duration: "4 hours",
     price: "349",
     image:
-      "https://images.unsplash.com/photo-1515586838455-8f8f940d6853?q=80&w=2940&auto=format&fit=crop",
+      "/images/cw-placeholder.svg",
   },
   {
     from: "London",
@@ -44,7 +43,7 @@ const cityRoutes = [
     duration: "1.5 hours",
     price: "189",
     image:
-      "https://images.unsplash.com/photo-1548013146-72479768bbaa?q=80&w=2940&auto=format&fit=crop",
+      "/images/cw-placeholder.svg",
   },
   {
     from: "London",
@@ -53,7 +52,7 @@ const cityRoutes = [
     duration: "2.5 hours",
     price: "249",
     image:
-      "https://images.unsplash.com/photo-1601372740920-80252579df85?q=80&w=2940&auto=format&fit=crop",
+      "/images/cw-placeholder.svg",
   },
   {
     from: "London",
@@ -62,7 +61,7 @@ const cityRoutes = [
     duration: "7.5 hours",
     price: "599",
     image:
-      "https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?q=80&w=2940&auto=format&fit=crop",
+      "/images/cw-placeholder.svg",
   },
 ];
 
@@ -80,7 +79,7 @@ export default function CityToCity() {
       <section className="relative min-h-[72vh] flex items-center overflow-hidden pt-20">
         <div className="absolute inset-0 z-0">
           <img
-            src="https://images.unsplash.com/photo-1502877338535-766e1452684a?q=80&w=2940&auto=format&fit=crop"
+            src="/images/cw-placeholder.svg"
             alt="City skyline at dusk"
             className="w-full h-full object-cover brightness-75"
           />
@@ -130,11 +129,11 @@ export default function CityToCity() {
 
               <div className="flex items-center gap-6">
                 <div className="flex items-center gap-3">
-                  <Star className="w-6 h-6 text-corporate-gold" />
+                  <Clock className="w-6 h-6 text-corporate-gold" />
                   <div>
-                    <p className="font-semibold">4.9/5</p>
+                    <p className="font-semibold">On-Time Pickups</p>
                     <p className="text-sm text-gray-400">
-                      Average Customer Rating
+                      Flight tracking &amp; live updates
                     </p>
                   </div>
                 </div>
@@ -163,19 +162,19 @@ export default function CityToCity() {
                 {[
                   {
                     city: "London → Manchester",
-                    img: "https://images.unsplash.com/photo-1515586838455-8f8f940d6853?q=80&w=1000",
+                    img: "/images/cw-placeholder.svg",
                   },
                   {
                     city: "London → Oxford",
-                    img: "https://images.unsplash.com/photo-1548013146-72479768bbaa?q=80&w=1000",
+                    img: "/images/cw-placeholder.svg",
                   },
                   {
                     city: "London → Birmingham",
-                    img: "https://images.unsplash.com/photo-1601372740920-80252579df85?q=80&w=1000",
+                    img: "/images/cw-placeholder.svg",
                   },
                   {
                     city: "London → Edinburgh",
-                    img: "https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?q=80&w=1000",
+                    img: "/images/cw-placeholder.svg",
                   },
                 ].map((c, i) => (
                   <div
@@ -421,19 +420,10 @@ export default function CityToCity() {
               className="relative"
             >
               <img
-                src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?q=80&w=2940&auto=format&fit=crop"
+                src="/images/cw-placeholder.svg"
                 alt="Luxury car service"
                 className="rounded-lg shadow-2xl"
               />
-              <div className="absolute -bottom-6 -right-6 bg-black/90 backdrop-blur-sm p-6 rounded-lg border border-gray-800">
-                <div className="flex items-center gap-4">
-                  <Star className="w-12 h-12 text-corporate-gold" />
-                  <div>
-                    <p className="text-2xl font-bold">4.9/5</p>
-                    <p className="text-gray-400">Customer Rating</p>
-                  </div>
-                </div>
-              </div>
             </motion.div>
           </div>
         </div>
@@ -444,7 +434,7 @@ export default function CityToCity() {
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-black/60" />
           <img
-            src="/images/ada607e9-1a77-4abe-b383-edba1d490fc2.png"
+            src="/images/cw-placeholder.svg"
             alt="Background"
             className="w-full h-full object-cover"
           />

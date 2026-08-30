@@ -7,7 +7,6 @@ import GlobalCoverage from "@/components/landing/GlobalCoverage";
 import HowItWorks from "@/components/landing/HowItWorks";
 import Safety from "@/components/landing/Safety";
 import CorporateAccounts from "@/components/landing/CorporateAccounts";
-import Testimonials from "@/components/landing/Testimonials";
 import FAQSection, { homeFaqs } from "@/components/landing/FAQSection";
 import DownloadSection from "@/components/landing/DownloadSection";
 import FinalCTA from "@/components/landing/FinalCTA";
@@ -44,7 +43,6 @@ export default function Index() {
       <HowItWorks />
       <Safety />
       <CorporateAccounts />
-      <Testimonials />
       <FAQSection />
 
       <section id="signin" className="py-10">

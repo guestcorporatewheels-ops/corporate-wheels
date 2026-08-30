@@ -50,7 +50,7 @@ const chooseDataMap: Record<string, {
     badge: "Uncompromised Safety Protocol",
     title: "Military-grade travel safety & close-protection driving.",
     subtitle: "Your physical security, sensitive digital data privacy, and travel tranquility are protected at every single mile of transit.",
-    heroImg: "/images/Relaxrest1762454212669.jpeg",
+    heroImg: "/images/cw-placeholder.svg",
     icon: <Shield className="w-8 h-8 text-corporate-gold" />,
     pillarsTitle: "WHAT SETS US APART",
     pillarsDesc: "We implement defense-grade systems to ensure zero-risk transits.",
@@ -139,7 +139,7 @@ const chooseDataMap: Record<string, {
     badge: "Guaranteed Flat Fare Rates",
     title: "No surge prices. No hidden fees. Flawless corporate accounting.",
     subtitle: "We coordinate with corporate desks to guarantee fully itemized flat rate fare schedules with zero dynamic pricing surprises.",
-    heroImg: "/images/FlexibleScheduling.jpeg",
+    heroImg: "/images/cw-placeholder.svg",
     icon: <DollarSign className="w-8 h-8 text-corporate-gold" />,
     pillarsTitle: "WHAT SETS US APART",
     pillarsDesc: "We eliminate the unpredictability of transit billing.",
@@ -228,7 +228,7 @@ const chooseDataMap: Record<string, {
     badge: "Pristine Luxury Cabin Standards",
     title: "A majestic collection of acoustically silent cabins.",
     subtitle: "Select from pristine executive saloons, high-specification spacious SUVs, and eco-conscious electric luxury classes.",
-    heroImg: "/images/LuxuryFleet.jpg",
+    heroImg: "/images/cw-placeholder.svg",
     icon: <Car className="w-8 h-8 text-corporate-gold" />,
     pillarsTitle: "WHAT SETS US APART",
     pillarsDesc: "We curate vehicles that serve as fully functional private working offices on wheels.",
@@ -317,7 +317,7 @@ const chooseDataMap: Record<string, {
     badge: "VIP Protocol Excellence",
     title: "Hospitality-trained chauffeurs versed in VIP protocol.",
     subtitle: "Our vetted, close-protection drivers combine flawless presentation, absolute discretion, and comprehensive local knowledge.",
-    heroImg: "/images/chufferas.png",
+    heroImg: "/images/cw-placeholder.svg",
     icon: <UserCheck className="w-8 h-8 text-corporate-gold" />,
     pillarsTitle: "WHAT SETS US APART",
     pillarsDesc: "The finest elite chauffeurs representing your company values.",
@@ -718,80 +718,6 @@ export default function WhyChooseUs() {
                 </div>
               </div>
               
-            </div>
-            
-          </div>
-        </div>
-      </section>
-
-      {/* 4.5 CLIENT ENDORSEMENTS & PROOF PANEL (NEW PREMIUM SECTION) */}
-      <section className="relative py-28 bg-gradient-to-b from-transparent via-white/[0.01] to-transparent">
-        
-        {/* Ambient dividers */}
-        <div className="absolute top-0 inset-x-0 h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent pointer-events-none" />
-        <div className="absolute bottom-0 inset-x-0 h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent pointer-events-none" />
-        
-        <div className="container relative z-10">
-          <div className="max-w-6xl mx-auto">
-            
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="text-center max-w-3xl mx-auto mb-20"
-            >
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-corporate-gold/10 border border-corporate-gold/20 mb-4">
-                <span className="text-[11px] text-corporate-gold font-bold uppercase tracking-widest">Global Reputations</span>
-              </div>
-              <h2 className="text-3xl md:text-5xl font-heading font-bold text-white">
-                {data.endorsementsTitle}
-              </h2>
-              <div className="w-20 h-1 bg-gradient-to-r from-corporate-gold to-orange-500 mx-auto mt-5 rounded-full" />
-            </motion.div>
-            
-            <div className="grid gap-8 md:grid-cols-2">
-              {data.endorsements.map((end, idx) => (
-                <motion.div
-                  key={idx}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.7, delay: idx * 0.1 }}
-                  className="relative rounded-3xl bg-gradient-to-br from-white/[0.05] via-white/[0.01] to-black border border-white/10 p-8 md:p-12 hover:border-corporate-gold/20 hover:shadow-[0_20px_50px_rgba(230,167,0,0.08)] transition-all duration-400 group overflow-hidden"
-                >
-                  {/* Top borders light leak */}
-                  <div className="absolute inset-x-0 top-0 h-[1.5px] bg-gradient-to-r from-transparent via-white/10 to-transparent group-hover:via-corporate-gold/40 transition-all duration-500" />
-                  
-                  {/* Large quotes marks */}
-                  <div className="absolute -top-6 -left-2 text-9xl font-serif font-black text-corporate-gold/5 select-none pointer-events-none">
-                    “
-                  </div>
-                  
-                  <div className="relative z-10 flex flex-col justify-between h-full space-y-6">
-                    {/* Star Rating */}
-                    <div className="flex items-center gap-1">
-                      {[...Array(5)].map((_, i) => (
-                        <Star key={i} className="w-4 h-4 text-corporate-gold fill-corporate-gold" />
-                      ))}
-                    </div>
-                    
-                    <p className="text-base sm:text-lg italic text-white/80 leading-relaxed font-light">
-                      "{end.quote}"
-                    </p>
-                    
-                    <div className="flex items-center gap-4 pt-4 border-t border-white/5">
-                      <div className="w-10 h-10 rounded-full bg-corporate-gold/10 border border-corporate-gold/20 flex items-center justify-center text-corporate-gold font-bold">
-                        {end.author[0]}
-                      </div>
-                      <div>
-                        <h4 className="text-sm font-bold text-white tracking-wide">{end.author}</h4>
-                        <p className="text-xs text-corporate-gold font-medium">{end.role}</p>
-                      </div>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
             </div>
             
           </div>

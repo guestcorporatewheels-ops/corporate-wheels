@@ -10,7 +10,6 @@ export default function About() {
   const heroRef = useReveal<HTMLElement>({ threshold: 0.06 });
   const galleryRef = useReveal<HTMLElement>({ threshold: 0.08 });
   const whyRef = useReveal<HTMLElement>({ threshold: 0.12 });
-  const testimonialsRef = useReveal<HTMLElement>({ threshold: 0.12 });
   const ctaRef = useReveal<HTMLElement>({ threshold: 0.12 });
 
   return (
@@ -142,7 +141,7 @@ export default function About() {
             <div className="relative rounded-2xl overflow-hidden group">
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent opacity-80 group-hover:opacity-70 transition-opacity duration-500" />
               <img
-                src="https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&q=80"
+                src="/images/cw-placeholder.svg"
                 alt="Luxury Fleet"
                 className="rounded-2xl w-full h-[500px] object-cover object-center"
               />
@@ -187,7 +186,7 @@ export default function About() {
             >
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent group-hover:opacity-70 transition-opacity duration-500" />
               <img
-                src="https://plus.unsplash.com/premium_photo-1661306646017-c3f9293fdbd8?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8UHJvZmVzc2lvbmFsJTIwQ2hhdWZmZXVyc3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&q=60&w=600"
+                src="/images/cw-placeholder.svg"
                 alt="Chauffeur Service"
                 className="w-full h-[240px] object-cover object-center"
               />
@@ -486,7 +485,7 @@ export default function About() {
           {/* Mission - image left, text right */}
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <motion.img
-              src="https://images.unsplash.com/photo-1502877338535-766e1452684a?w=1600&q=80&auto=format&fit=crop"
+              src="/images/cw-placeholder.svg"
               alt="Our Mission"
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -514,7 +513,7 @@ export default function About() {
                 <li>
                   Punctuality backed by real-time flight & traffic monitoring
                 </li>
-                <li>Consistent five-star customer experiences</li>
+                <li>Consistent premium customer experiences</li>
               </ul>
             </motion.div>
           </div>
@@ -544,7 +543,7 @@ export default function About() {
               </ul>
             </motion.div>
             <motion.img
-              src="https://images.unsplash.com/photo-1750409221671-d925a6d7126c?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170"
+              src="/images/cw-placeholder.svg"
               alt="Our Vision"
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -589,7 +588,7 @@ export default function About() {
             </div>
             <div className="flex items-center justify-center">
               <img
-                src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1600&q=80&auto=format&fit=crop"
+                src="/images/cw-placeholder.svg"
                 alt="Core Values"
                 className="rounded-xl shadow-lg w-full max-w-md object-cover border-2 border-corporate-gold"
               />
@@ -743,7 +742,7 @@ export default function About() {
         </svg>
         <div className="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
           <motion.img
-            src="https://images.unsplash.com/photo-1593941707874-ef25b8b4a92b?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1172"
+            src="/images/cw-placeholder.svg"
             alt="Electric Fleet"
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -772,96 +771,6 @@ export default function About() {
               <li>Green partnerships and initiatives</li>
             </ul>
           </motion.div>
-        </div>
-      </section>
-
-  {/* Testimonials Section */}
-  <section ref={testimonialsRef} className="relative py-16 reveal opacity-0 translate-y-6 transition-transform duration-700 ease-out">
-        <svg
-          className="absolute left-1/2 -translate-x-1/2 -top-10 w-32 h-32 z-0 animate-pulse"
-          viewBox="0 0 128 128"
-          fill="none"
-        >
-          <polygon
-            points="64,8 120,120 8,120"
-            fill="#E6A700"
-            fillOpacity="0.13"
-          />
-          <polygon
-            points="64,24 104,112 24,112"
-            stroke="#FF6B35"
-            strokeWidth="5"
-            fill="none"
-          />
-        </svg>
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-heading text-white mb-12 text-center">
-            What Our Clients Say
-          </h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.7 }}
-              className="bg-white/[0.03] backdrop-blur-sm border border-white/10 rounded-xl p-8 text-center"
-            >
-              <svg
-                width="32"
-                height="32"
-                fill="#F4C430"
-                className="mx-auto mb-4"
-              >
-                <circle cx="16" cy="16" r="16" />
-              </svg>
-              <p className="text-lg text-white mb-4">
-                “The best chauffeur experience I’ve ever had. Professional,
-                punctual, and truly luxurious.”
-              </p>
-              <p className="text-corporate-gold">— Emily R.</p>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.7, delay: 0.2 }}
-              className="bg-white/[0.03] backdrop-blur-sm border border-white/10 rounded-xl p-8 text-center"
-            >
-              <svg
-                width="32"
-                height="32"
-                fill="#F4C430"
-                className="mx-auto mb-4"
-              >
-                <circle cx="16" cy="16" r="16" />
-              </svg>
-              <p className="text-lg text-white mb-4">
-                “Corporate Wheels sets the standard for sustainable luxury
-                travel.”
-              </p>
-              <p className="text-corporate-gold">— Michael C.</p>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.7, delay: 0.4 }}
-              className="bg-white/[0.03] backdrop-blur-sm border border-white/10 rounded-xl p-8 text-center"
-            >
-              <svg
-                width="32"
-                height="32"
-                fill="#F4C430"
-                className="mx-auto mb-4"
-              >
-                <circle cx="16" cy="16" r="16" />
-              </svg>
-              <p className="text-lg text-white mb-4">
-                “Booking is seamless and the service is always top-notch.”
-              </p>
-              <p className="text-corporate-gold">— Sarah L.</p>
-            </motion.div>
-          </div>
         </div>
       </section>
 

@@ -25,14 +25,6 @@ export interface ServiceProtocol {
   iconName: string;
 }
 
-export interface ServiceTestimonial {
-  clientName: string;
-  designation: string;
-  review: string;
-  rating: number;
-  date: string;
-}
-
 export interface PopularRoute {
   from: string;
   to: string;
@@ -64,7 +56,6 @@ export interface ServiceCategoryData {
   benefits: ServiceBenefit[];
   amenities: ServiceAmenity[];
   protocol: ServiceProtocol[];
-  testimonials: ServiceTestimonial[];
   popularRoutesTitle: string;
   popularRoutes: PopularRoute[];
   faqs: FAQItem[];
@@ -84,7 +75,7 @@ export const serviceCategoriesData: Record<string, ServiceCategoryData> = {
     heroHighlights: ["60 Mins Free Waiting Time", "Flight Tracking Sync", "Complimentary Water & WiFi"],
     overviewCard: {
       title: "Terminal Meet & Greet",
-      image: "/images/Relaxrest1762454212669.jpeg",
+      image: "/images/cw-placeholder.svg",
       description: "Our professional chauffeur will greet you inside the arrivals hall holding a customized digital name board, manage your luggage, and escort you to your executive vehicle.",
       highlights: [
         "Complimentary flight delay adjustments",
@@ -191,22 +182,6 @@ export const serviceCategoriesData: Record<string, ServiceCategoryData> = {
         iconName: "MapPin"
       }
     ],
-    testimonials: [
-      {
-        clientName: "Alexander Sterling",
-        designation: "Managing Director, Sterling Group",
-        review: "Fabulous meet and greet at Heathrow terminal 5. My driver was waiting with a clear digital iPad name sign, handled our heavy bags seamlessly, and drove in supreme comfort.",
-        rating: 5,
-        date: "May 2026"
-      },
-      {
-        clientName: "Sophia Dupont",
-        designation: "Luxury Travel Advisor",
-        review: "Highly recommended for corporate executives arriving in London. Flight tracking was spot on despite a 40-minute runway delay at Gatwick.",
-        rating: 5,
-        date: "April 2026"
-      }
-    ],
     popularRoutesTitle: "Popular London Airport Transfers",
     popularRoutes: [
       { from: "London Heathrow (LHR)", to: "Mayfair, Central London", duration: "45 mins", priceFrom: "£95", vehicle: "E-Class" },
@@ -246,7 +221,7 @@ export const serviceCategoriesData: Record<string, ServiceCategoryData> = {
     heroHighlights: ["Dedicated Account Manager", "Gigabit In-Car Wi-Fi", "Confidentiality Guaranteed"],
     overviewCard: {
       title: "Corporate Account Benefits",
-      image: "/images/FlexibleScheduling.jpeg",
+      image: "/images/cw-placeholder.svg",
       description: "Manage travel expenses with consolidated monthly billing invoices, priority telephone dispatch, and custom vehicle allocations for your company's VIP clients.",
       highlights: [
         "NDA-compliant security certified drivers",
@@ -353,22 +328,6 @@ export const serviceCategoriesData: Record<string, ServiceCategoryData> = {
         iconName: "Laptop"
       }
     ],
-    testimonials: [
-      {
-        clientName: "Marcus Thorne",
-        designation: "Chief Financial Officer, Horizon Global",
-        review: "Our board members use Corporate Wheels for all London roadshows. Absolute discretion, pristine cars, and reliable monthly invoice logs make this a perfect partnership.",
-        rating: 5,
-        date: "May 2026"
-      },
-      {
-        clientName: "Helena Vance",
-        designation: "Executive Assistant to CEO",
-        review: "The corporate billing portal is extremely easy to use. Organizing multiple transfers for high-profile delegates is seamless.",
-        rating: 5,
-        date: "March 2026"
-      }
-    ],
     popularRoutesTitle: "Frequent Executive Connections",
     popularRoutes: [
       { from: "Canary Wharf", to: "Mayfair, Central London", duration: "25 mins", priceFrom: "£65", vehicle: "E-Class" },
@@ -408,7 +367,7 @@ export const serviceCategoriesData: Record<string, ServiceCategoryData> = {
     heroHighlights: ["Uniformed Driver Attire", "Event Schedule Sync", "Ribbons & Florals Available"],
     overviewCard: {
       title: "Wedding & Gala Protocols",
-      image: "/images/LuxuryLimousineExperience.jpg",
+      image: "/images/cw-placeholder.svg",
       description: "Our wedding packages include a ceremonially uniformed chauffeur, red carpet door protocol, and custom-colored car ribbons to perfectly complement your event's theme.",
       highlights: [
         "Complimentary vintage champagne toast",
@@ -515,22 +474,6 @@ export const serviceCategoriesData: Record<string, ServiceCategoryData> = {
         iconName: "Gift"
       }
     ],
-    testimonials: [
-      {
-        clientName: "Eleanor & James Montgomery",
-        designation: "Married June 2026",
-        review: "The S-Class with custom silk ribbons was the highlight of our wedding transport. Our chauffeur wore an immaculate uniform and cap and escorted us with absolute grace.",
-        rating: 5,
-        date: "June 2026"
-      },
-      {
-        clientName: "Clara Pemberton",
-        designation: "Luxury Wedding Planner",
-        review: "An exceptional partner for high-end events. Punctual, pristine vehicles, and chauffeurs who truly understand peak etiquette. Highly recommended.",
-        rating: 5,
-        date: "May 2026"
-      }
-    ],
     popularRoutesTitle: "Exclusive Special Event Venues",
     popularRoutes: [
       { from: "Central London", to: "Ascot Racecourse", duration: "1h 10m", priceFrom: "£160", vehicle: "S-Class" },
@@ -570,7 +513,7 @@ export const serviceCategoriesData: Record<string, ServiceCategoryData> = {
     heroHighlights: ["Customized Tour Itineraries", "Knowledgeable Local Drivers", "Comfortable Regular Stops"],
     overviewCard: {
       title: "Tailored Sightseeing Routes",
-      image: "/images/ada607e9-1a77-4abe-b383-edba1d490fc2.png",
+      image: "/images/cw-placeholder.svg",
       description: "Design your custom London sightseeing itinerary. Stop for high-profile photographs at historic sites, lunch in Mayfair, and shop in Harrods at your own leisure.",
       highlights: [
         "Experienced sightseeing chauffeurs",
@@ -677,22 +620,6 @@ export const serviceCategoriesData: Record<string, ServiceCategoryData> = {
         iconName: "Camera"
       }
     ],
-    testimonials: [
-      {
-        clientName: "The Henderson Family",
-        designation: "Sightseeing Travelers",
-        review: "Private tours of London can't get any better. Our chauffeur was incredibly knowledgeable about royal history and took great family photos at Tower Bridge.",
-        rating: 5,
-        date: "May 2026"
-      },
-      {
-        clientName: "Dr. Hiroshi Tanaka",
-        designation: "Historical Researcher",
-        review: "Outstanding 8-hour heritage tour covering Windsor Castle and Stonehenge. Meticulous driving, great refreshments, and an elite vehicle.",
-        rating: 5,
-        date: "April 2026"
-      }
-    ],
     popularRoutesTitle: "Curated Historic Tours",
     popularRoutes: [
       { from: "Central London Hotels", to: "Royal London Tour (4h)", duration: "4 hours", priceFrom: "£240", vehicle: "E-Class" },
@@ -732,7 +659,7 @@ export const serviceCategoriesData: Record<string, ServiceCategoryData> = {
     heroHighlights: ["FBO Airside Access Vetted", "Flight Tail Number Sync", "Absolute Privacy Guaranteed"],
     overviewCard: {
       title: "FBO & Tarmac Greetings",
-      image: "/images/chufferas.png",
+      image: "/images/cw-placeholder.svg",
       description: "Our chauffeurs are specifically vetted for direct tarmac pick-ups, coordinating handovers directly with FBO handling staff and flight crew.",
       highlights: [
         "Tail number active monitoring",
@@ -839,22 +766,6 @@ export const serviceCategoriesData: Record<string, ServiceCategoryData> = {
         iconName: "Shield"
       }
     ],
-    testimonials: [
-      {
-        clientName: "Charles Sterling",
-        designation: "Private Jet Passenger",
-        review: "Best FBO airside tarmac pickups in London. Absolute coordination with our jet crew at Farnborough.",
-        rating: 5,
-        date: "May 2026"
-      },
-      {
-        clientName: "Victoria Vance",
-        designation: "Global Flight Concierge",
-        review: "Corporate Wheels is our exclusive ground transit provider. They never miss a private jet tail coordinate, regardless of delays.",
-        rating: 5,
-        date: "May 2026"
-      }
-    ],
     popularRoutesTitle: "Exclusive FBO Transfer Connections",
     popularRoutes: [
       { from: "Farnborough Airport (FAB)", to: "Mayfair, Central London", duration: "1h 10m", priceFrom: "£160", vehicle: "S-Class" },
@@ -894,7 +805,7 @@ export const serviceCategoriesData: Record<string, ServiceCategoryData> = {
     heroHighlights: ["Generous Luggage Capacity", "Fixed Flat-Rate Prices", "Comfortable Scenic Transit"],
     overviewCard: {
       title: "Cruise Port Meet & Greet",
-      image: "/images/LuxuryFleet.jpg",
+      image: "/images/cw-placeholder.svg",
       description: "Avoid crowded train platforms and busy port logistics. Your personal chauffeur greets you at the terminal luggage hall exit and escorts you in relaxed luxury.",
       highlights: [
         "Spacious high-capacity SUVs available",
@@ -999,22 +910,6 @@ export const serviceCategoriesData: Record<string, ServiceCategoryData> = {
         duration: "En-route Coffee Intervals",
         desc: "Enjoy a smooth highway cruise with self-leveling air ride systems and premium refreshments.",
         iconName: "Clock"
-      }
-    ],
-    testimonials: [
-      {
-        clientName: "Michael & Ellen Davies",
-        designation: "Cruise Passengers",
-        review: "Transiting to Southampton Cruise terminal was so easy. Our chauffeur planned a fantastic coffee stop at Cliveden House and handled all heavy luggage.",
-        rating: 5,
-        date: "April 2026"
-      },
-      {
-        clientName: "Grace Cunningham",
-        designation: "Cruise Travel Agent",
-        review: "Took all the stress out of long-distance cruise transfers. Fast, safe driving, and massive luggage capacity for the family.",
-        rating: 5,
-        date: "March 2026"
       }
     ],
     popularRoutesTitle: "Frequent Cruise Port Connections",

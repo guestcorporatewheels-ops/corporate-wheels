@@ -48,35 +48,35 @@ const serviceClasses = [
 const globalCities = [
   {
     name: "New York",
-    img: "https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80",
+    img: "/images/cw-placeholder.svg",
   },
   {
     name: "London",
-    img: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80",
+    img: "/images/cw-placeholder.svg",
   },
   {
     name: "Paris",
-    img: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80",
+    img: "/images/cw-placeholder.svg",
   },
   {
     name: "Dubai",
-    img: "https://images.unsplash.com/photo-1501594907352-04cda38ebc29?auto=format&fit=crop&w=400&q=80",
+    img: "/images/cw-placeholder.svg",
   },
   {
     name: "Singapore",
-    img: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=400&q=80",
+    img: "/images/cw-placeholder.svg",
   },
   {
     name: "Los Angeles",
-    img: "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=400&q=80",
+    img: "/images/cw-placeholder.svg",
   },
   {
     name: "Berlin",
-    img: "https://images.unsplash.com/photo-1467269204594-9661b134dd2b?auto=format&fit=crop&w=400&q=80",
+    img: "/images/cw-placeholder.svg",
   },
   {
     name: "Tokyo",
-    img: "https://images.unsplash.com/photo-1513407030348-c983a97b98d8?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1172",
+    img: "/images/cw-placeholder.svg",
   },
 ];
 
@@ -236,7 +236,7 @@ export default function AirportTransfer() {
                   <Star className="w-12 h-12 text-corporate-gold drop-shadow-md" />
                 ),
                 title: "Gold Standard Cleanliness",
-                desc: "Vehicles sanitized before every ride. 5-star service guarantee.",
+                desc: "Vehicles sanitized inside and out before every ride.",
               },
             ].map((item, idx) => (
               <motion.div
@@ -354,7 +354,7 @@ export default function AirportTransfer() {
                 transition={{ duration: 0.7 }}
               >
                 <img
-                  src="https://plus.unsplash.com/premium_photo-1661514308071-add7e30fd4c9?fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDEzfHx8ZW58MHx8fHx8&ixlib=rb-4.1.0&q=60&w=3000"
+                  src="/images/cw-placeholder.svg"
                   alt="VIP Meet & Greet"
                   className="rounded-2xl shadow-2xl w-80 h-64 object-cover border-4 border-corporate-gold/30"
                 />
@@ -407,48 +407,6 @@ export default function AirportTransfer() {
         </div>
       </section>
 
-      {/* Real Customer Reviews Section */}
-      <section className="py-12">
-        <div className="container max-w-4xl">
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-14"
-          >
-            <h2 className="text-3xl font-bold mb-4">Real Customer Reviews</h2>
-            <p className="text-gray-300 max-w-2xl mx-auto">
-              Hear from travelers who trust our airport transfer service
-              worldwide.
-            </p>
-          </motion.div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-            <Card className="p-8 bg-black/40 border border-gray-800 rounded-xl flex flex-col gap-4">
-              <div className="flex items-center gap-3">
-                <Star className="w-6 h-6 text-corporate-gold" />
-                <span className="font-semibold">
-                  “Flawless experience from start to finish. My chauffeur was
-                  waiting at arrivals and helped with my bags. Highly
-                  recommend!”
-                </span>
-              </div>
-              <span className="text-gray-400 text-sm">— Olivia, London</span>
-            </Card>
-            <Card className="p-8 bg-black/40 border border-gray-800 rounded-xl flex flex-col gap-4">
-              <div className="flex items-center gap-3">
-                <Star className="w-6 h-6 text-corporate-gold" />
-                <span className="font-semibold">
-                  “The booking process was easy, and the car was immaculate.
-                  Will use again for all my business trips.”
-                </span>
-              </div>
-              <span className="text-gray-400 text-sm">— Daniel, Birmingham</span>
-            </Card>
-          </div>
-        </div>
-      </section>
-
       {/* Safety & Cleanliness Section (Removed, now combined above) */}
 
       {/* Get To or From the Airport */}
@@ -496,7 +454,7 @@ export default function AirportTransfer() {
             >
               <Card className="p-8 bg-black/40 border border-gray-800 rounded-xl shadow-2xl flex flex-col items-center">
                 <img
-                  src="/images/Relaxrest1762454212669.jpeg"
+                  src="/images/cw-placeholder.svg"
                   alt="airport transfer"
                   className="w-full h-64 object-cover rounded-xl mb-6"
                 />

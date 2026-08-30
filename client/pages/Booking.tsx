@@ -52,7 +52,7 @@ export default function Booking() {
               </svg>
 
               <img
-                src="/images/FlexibleScheduling.jpeg"
+                src="/images/cw-placeholder.svg"
                 alt="Corporate Wheels executive car"
                 className="hidden lg:block rounded-xl w-64 h-40 object-cover mb-4 shadow-md"
               />

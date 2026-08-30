@@ -134,7 +134,7 @@ function Hero() {
             <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent z-10" />
             <div className="relative">
               <img
-                src="/images/chufferas.png"
+                src="/images/cw-placeholder.svg"
                 alt="Luxury Chauffeur Service"
                 className="rounded-lg border border-white/10 shadow-2xl object-cover h-[500px]"
               />
@@ -143,14 +143,14 @@ function Hero() {
                   <div className="flex -space-x-2">
                     <div className="w-8 h-8 rounded-full border-2 border-background bg-[#E6A700]">
                       <img
-                        src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&fit=crop&q=80"
+                        src="/images/cw-placeholder.svg"
                         alt="Professional Chauffeur"
                         className="w-full h-full rounded-full object-cover"
                       />
                     </div>
                     <div className="w-8 h-8 rounded-full border-2 border-background bg-[#E6A700]">
                       <img
-                        src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&fit=crop&q=80"
+                        src="/images/cw-placeholder.svg"
                         alt="Professional Chauffeur"
                         className="w-full h-full rounded-full object-cover"
                       />
@@ -521,7 +521,7 @@ function RequirementsOnboarding() {
             className="rounded-xl overflow-hidden shadow-2xl border border-white/6"
           >
             <img
-              src="/images/features/car.jpeg"
+              src="/images/cw-placeholder.svg"
               alt="Requirements"
               className="w-full h-88 object-cover"
             />
@@ -597,7 +597,7 @@ function RequirementsOnboarding() {
             className="rounded-xl overflow-hidden shadow-2xl border border-white/6"
           >
             <img
-              src="/images/features/car2.jpeg"
+              src="/images/cw-placeholder.svg"
               alt="Onboarding"
               className="w-full h-88 object-cover"
             />
@@ -615,7 +615,7 @@ function RequirementsOnboarding() {
             className="rounded-xl overflow-hidden shadow-2xl border border-white/6"
           >
             <img
-              src="/images/LuxuryFleet.jpg"
+              src="/images/cw-placeholder.svg"
               alt="Sustainable future"
               className="w-full h-88 object-cover"
             />
@@ -752,7 +752,7 @@ function FAQSection() {
         >
           <div className="absolute -left-12 -top-8 w-48 h-48 rounded-full bg-gradient-to-br from-corporate-gold to-orange-400 opacity-10 blur-2xl pointer-events-none" />
           <img
-            src="/images/EliteChauffeurs.jpeg"
+            src="/images/cw-placeholder.svg"
             alt="Corporate Wheels chauffeur"
             className="w-full rounded-lg shadow-lg object-cover h-[520px]"
           />
