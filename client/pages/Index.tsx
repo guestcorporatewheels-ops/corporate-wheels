@@ -1,5 +1,4 @@
 import HeroSection from "@/components/landing/HeroSection";
-import ValueBar from "@/components/landing/ValueBar";
 import Services from "@/components/landing/Services";
 import OurFleet from "@/components/landing/OurFleet";
 import CityToCityRoutes from "@/components/landing/CityToCityRoutes";
@@ -35,7 +34,6 @@ export default function Index() {
       <ScrollToTop />
 
       <HeroSection />
-      <ValueBar />
       <Services />
       <OurFleet />
       <CityToCityRoutes />
