@@ -11,60 +11,62 @@
    * Tailwind CSS theme
    * tailwind.config.ts expects the following color variables to be expressed as HSL values.
    */
-  /* ==========================================================================
-     Light theme (default). Brand gold / orange / red accents are shared with
-     the dark theme; only the neutral surfaces and text tones change.
-     ========================================================================== */
   :root {
-    --background: 0 0% 100%;
-    --foreground: 0 0% 9%;
+    /* Corporate Wheels dark theme based on logo colors */
+    --background: 0 0% 4%;
+    /* Darker black background */
+    --foreground: 0 0% 100%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 9%;
+    --card: 0 0% 7%;
+    /* Slightly lighter than background */
+    --card-foreground: 0 0% 100%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 9%;
+    --popover: 0 0% 7%;
+    --popover-foreground: 0 0% 100%;
 
-    /* Gold gradient primary - extracted from logo (slightly deepened for
-       legibility on light surfaces) */
-    --primary: 43 96% 44%;
-    --primary-foreground: 0 0% 10%;
+    /* Gold gradient primary - extracted from logo */
+    --primary: 43 96% 56%;
+    /* Rich gold #E6A700 */
+    --primary-foreground: 0 0% 4%;
 
     /* Red secondary - from logo needle and separators */
-    --secondary: 0 84% 55%;
+    --secondary: 0 84% 60%;
+    /* Corporate red #E53E3E */
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 40 14% 96%;
-    --muted-foreground: 0 0% 38%;
+    --muted: 0 0% 12%;
+    --muted-foreground: 0 0% 65%;
+    /* Slightly dimmer for better contrast */
 
     /* Orange accent - from gauge gradient */
-    --accent: 25 95% 50%;
-    --accent-foreground: 0 0% 10%;
+    --accent: 25 95% 53%;
+    /* Vibrant orange #FF6B35 */
+    --accent-foreground: 0 0% 4%;
 
     /* Destructive uses logo red */
-    --destructive: 0 84% 52%;
+    --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 89%;
-    --input: 0 0% 89%;
-    --ring: 43 96% 44%;
+    --border: 0 0% 18%;
+    /* Slightly darker borders */
+    --input: 0 0% 18%;
+    --ring: 43 96% 56%;
+    /* Gold ring focus */
 
     --radius: 0.75rem;
 
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 0 0% 20%;
-    --sidebar-primary: 43 96% 44%;
-    --sidebar-primary-foreground: 0 0% 10%;
-    --sidebar-accent: 25 95% 50%;
-    --sidebar-accent-foreground: 0 0% 10%;
-    --sidebar-border: 0 0% 89%;
-    --sidebar-ring: 43 96% 44%;
+    --sidebar-background: 0 0% 4%;
+    --sidebar-foreground: 0 0% 85%;
+    --sidebar-primary: 43 96% 56%;
+    --sidebar-primary-foreground: 0 0% 4%;
+    --sidebar-accent: 25 95% 53%;
+    --sidebar-accent-foreground: 0 0% 4%;
+    --sidebar-border: 0 0% 18%;
+    --sidebar-ring: 43 96% 56%;
   }
 
-  /* ==========================================================================
-     Dark theme - original Corporate Wheels palette based on logo colors.
-     ========================================================================== */
   .dark {
+    /* Same as root - Corporate Wheels dark theme */
     --background: 0 0% 4%;
     --foreground: 0 0% 100%;
 
@@ -302,7 +304,7 @@ display: none !important;
 @layer utilities {
   :root {
     --scrollbar-thumb: #E6A700; /* corporate gold */
-    --scrollbar-track: rgba(0,0,0,0.06);
+    --scrollbar-track: rgba(255,255,255,0.02);
     --scrollbar-thumb-hover: #F4C430;
   }
 

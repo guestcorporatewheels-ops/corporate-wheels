@@ -4,7 +4,6 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { ThemeProvider } from "next-themes";
 import {
   BrowserRouter,
   Routes,
@@ -77,15 +76,8 @@ function BookingFunnelLayout() {
 
 export default function App() {
   return (
-    <ThemeProvider
-      attribute="class"
-      defaultTheme="dark"
-      enableSystem={false}
-      storageKey="theme"
-      disableTransitionOnChange
-    >
-      <QueryClientProvider client={queryClient}>
-        <BookingProvider>
+    <QueryClientProvider client={queryClient}>
+      <BookingProvider>
         <TooltipProvider>
           <Toaster />
           <Sonner />
@@ -150,8 +142,7 @@ export default function App() {
             </BrowserRouter>
           </ErrorBoundary>
         </TooltipProvider>
-        </BookingProvider>
-      </QueryClientProvider>
-    </ThemeProvider>
+      </BookingProvider>
+    </QueryClientProvider>
   );
 }

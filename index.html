@@ -2,18 +2,6 @@
 <html lang="en" class="dark">
   <head>
     <meta charset="UTF-8" />
-    <script>
-      // Apply the persisted theme before first paint to avoid a flash.
-      // Default is dark; only switch to light when the user has chosen it.
-      (function () {
-        try {
-          if (localStorage.getItem("theme") === "light") {
-            document.documentElement.classList.remove("dark");
-            document.documentElement.style.colorScheme = "light";
-          }
-        } catch (e) {}
-      })();
-    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="google-site-verification" content="VSea5FLYjho5svFll4BlZpMgF1kJJ6WSVDhI4aNXfbw" />
     <title>Corporate Wheels</title>
