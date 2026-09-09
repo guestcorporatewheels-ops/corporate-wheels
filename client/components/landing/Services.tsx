@@ -1,100 +1,69 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import {
+  Plane,
+  Briefcase,
+  Clock,
+  MapPinned,
+  PartyPopper,
+  PlaneTakeoff,
+  Ship,
+  type LucideIcon,
+} from "lucide-react";
+import { cn } from "@/lib/utils";
+import SectionHeading from "./SectionHeading";
 
-const features = [
+interface ServiceItem {
+  title: string;
+  desc: string;
+  Icon: LucideIcon;
+}
+
+const services: ServiceItem[] = [
   {
     title: "Airport Transfers",
-    desc: "Flight monitoring, meet & greet service, and express terminal access. Our chauffeurs track your flight and adjust pickup time automatically.",
-    features: [
-      "Flight tracking included",
-      "Meet & greet service",
-      "Express terminals",
-    ],
-    svg: (
-      <svg
-        viewBox="0 0 24 24"
-        className="w-12 h-12 text-corporate-gold mx-auto "
-        fill="none"
-        stroke="currentColor"
-      >
-        <path
-          strokeWidth="1.5"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          d="M15 12H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"
-        />
-        <path
-          strokeWidth="1.5"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          d="M15.91 11.672a.375.375 0 010 .656l-5.603 3.113a.375.375 0 01-.557-.328V8.887c0-.286.307-.466.557-.327l5.603 3.112z"
-        />
-      </svg>
-    ),
+    desc: "Effortless transfers from/to all UK airports with real-time flight tracking.",
+    Icon: Plane,
   },
   {
-    title: "Hourly Hire",
-    desc: "Flexible hourly bookings with dedicated chauffeur. Perfect for events, meetings, or exploring the city at your own pace.",
-    features: ["Minimum 2 hours", "No hidden fees", "Multiple stops"],
-    svg: (
-      <svg
-        viewBox="0 0 24 24"
-        className="w-12 h-12 text-corporate-gold mx-auto "
-        fill="none"
-        stroke="currentColor"
-      >
-        <path
-          strokeWidth="1.5"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"
-        />
-      </svg>
-    ),
+    title: "Corporate Chauffeur Services",
+    desc: "Chauffeur services specifically meant for business meetings, conventions, and road-shows.",
+    Icon: Briefcase,
   },
   {
-    title: "Chauffeur Service",
-    desc: "Professional chauffeurs trained to the highest standards. Discretion, protocol awareness, and impeccable service guaranteed.",
-    features: ["Background checked", "Protocol trained", "Multilingual"],
-    svg: (
-      <svg
-        viewBox="0 0 24 24"
-        className="w-12 h-12 text-corporate-gold mx-auto "
-        fill="none"
-        stroke="currentColor"
-      >
-        <path
-          strokeWidth="1.5"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"
-        />
-      </svg>
-    ),
+    title: "Hourly Chauffeur Hire",
+    desc: "Customised chauffeur services to suit hectic agendas with multiple meetings back-to-back.",
+    Icon: Clock,
   },
   {
-    title: "City-to-City",
-    desc: "Luxurious intercity travel with WiFi, refreshments, and the freedom to work or relax. Fixed pricing with no surprises.",
-    features: ["WiFi equipped", "Refreshments", "Fixed rates"],
-    svg: (
-      <svg
-        viewBox="0 0 24 24"
-        className="w-12 h-12 text-corporate-gold mx-auto "
-        fill="none"
-        stroke="currentColor"
-      >
-        <path
-          strokeWidth="1.5"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          d="M8.25 21v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21m0 0h4.5V3.545M12.75 21h7.5V10.75M2.25 21h1.5m18 0h-18M2.25 9l4.5-1.636M18.75 3l-1.5.545m0 6.205l3 1m1.5.5l-1.5-.5M6.75 7.364V3h-3v18m3-13.636l10.5-3.819"
-        />
-      </svg>
-    ),
+    title: "City-to-City Transfer Service",
+    desc: "Pleasant city-to-city transfer service within the UK as a comfortable alternative to train journeys.",
+    Icon: MapPinned,
+  },
+  {
+    title: "Transportation for Events and Functions",
+    desc: "Reliable transportation service for corporate hospitality, sports fixtures, red carpet events, and functions.",
+    Icon: PartyPopper,
+  },
+  {
+    title: "Private Jet Transfers",
+    desc: "Effortless tarmac/FBO transfer services organised meticulously with regard to flight schedules.",
+    Icon: PlaneTakeoff,
+  },
+  {
+    title: "Cruise Ship Transfers",
+    desc: "Efficient and luxurious road transfer service between UK ports and airport/private residences.",
+    Icon: Ship,
   },
 ];
 
 export default function Services() {
+  const [flipped, setFlipped] = useState<Record<number, boolean>>({});
+
+  const toggleFlip = (index: number) => {
+    setFlipped((prev) => ({ ...prev, [index]: !prev[index] }));
+  };
+
   return (
     <section className="py-24 relative overflow-hidden">
       {/* Decorative Background SVGs */}
@@ -121,104 +90,54 @@ export default function Services() {
 
       <div className="absolute inset-0 bg-gradient-to-b from-black/70 to-black/50" />
       <div className="container relative">
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
-            <h2 className="text-3xl md:text-4xl font-heading text-white mb-6 relative inline-block">
-              Our Services
-            </h2>
-            <p className="text-muted-foreground text-lg ">
-              Premium experiences tailored for business and leisure travelers
-              who expect excellence.
-            </p>
-          </motion.div>
-        </div>
+        <SectionHeading
+          tagline="What We Offer"
+          title="Our Key Services"
+          subtitle="Premium chauffeur solutions tailored for business travel, private journeys, and every occasion in between."
+        />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {features.map((f) => (
-            <motion.div
-              whileHover={{ y: -6, scale: 1.02 }}
-              transition={{ duration: 0.4, ease: "easeOut" }}
-              key={f.title}
-              className="relative bg-white/[0.02] rounded-xl p-8 group border border-white/10 hover:border-corporate-gold/50 overflow-hidden backdrop-blur-sm"
-            >
-              {/* Glow Effect */}
-              <motion.div className="absolute inset-0 bg-gradient-to-tr from-corporate-gold/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-4">
+          {services.map((service, index) => {
+            const isFlipped = !!flipped[index];
+            return (
+              <motion.div
+                key={service.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.05 }}
+                className="group h-56 [perspective:1200px] cursor-pointer"
+                onClick={() => toggleFlip(index)}
+              >
+                <div
+                  className={cn(
+                    "relative w-full h-full rounded-xl transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]",
+                    isFlipped && "[transform:rotateY(180deg)]",
+                  )}
+                >
+                  {/* Front — image */}
+                  <div className="absolute inset-0 [backface-visibility:hidden] rounded-xl bg-white/[0.03] border border-white/10 group-hover:border-corporate-gold/50 flex flex-col items-center justify-center gap-3 p-4 backdrop-blur-sm">
+                    <div className="bg-white/5 rounded-full p-4 shadow-inner shadow-corporate-gold/10">
+                      <service.Icon className="w-8 h-8 text-corporate-gold" strokeWidth={1.5} />
+                    </div>
+                    <p className="text-sm font-medium text-white text-center leading-snug">
+                      {service.title}
+                    </p>
+                  </div>
 
-              {/* Animated Border Lines */}
-              <div className="absolute inset-0 pointer-events-none">
-                <motion.div className="absolute -left-1 top-0 w-1 h-0 bg-gradient-to-b from-corporate-gold/50 to-corporate-gold group-hover:h-full transition-all duration-700" />
-                <motion.div className="absolute left-0 -top-1 w-0 h-1 bg-gradient-to-r from-corporate-gold to-corporate-gold/50 group-hover:w-full transition-all duration-700 delay-75" />
-                <motion.div className="absolute -right-1 top-0 w-1 h-0 bg-gradient-to-b from-corporate-gold/50 to-corporate-gold group-hover:h-full transition-all duration-700" />
-                <motion.div className="absolute left-0 -bottom-1 w-0 h-1 bg-gradient-to-r from-corporate-gold/50 to-corporate-gold group-hover:w-full transition-all duration-700 delay-75" />
-              </div>
-
-              <div className="flex items-start">
-                <div className="flex-shrink-0 bg-white/5 rounded-lg p-3 mr-4 shadow-inner shadow-corporate-gold/10">
-                  {f.svg}
+                  {/* Back — content */}
+                  <div className="absolute inset-0 [backface-visibility:hidden] [transform:rotateY(180deg)] rounded-xl bg-gradient-to-br from-corporate-gold/10 via-black/90 to-black/95 border border-corporate-gold/50 flex flex-col items-center justify-center p-4 text-center">
+                    <h3 className="text-sm font-semibold text-corporate-gold mb-2">
+                      {service.title}
+                    </h3>
+                    <p className="text-xs text-muted-foreground leading-relaxed">
+                      {service.desc}
+                    </p>
+                  </div>
                 </div>
-                <div className="flex-1">
-                  <h4 className="text-xl font-semibold text-white mb-2">
-                    {f.title}
-                  </h4>
-                  <p className="text-muted-foreground">{f.desc}</p>
-                  <ul className="mt-4 space-y-2">
-                    {f.features.map((feature, i) => (
-                      <motion.li
-                        key={feature}
-                        initial={{ opacity: 0, x: -10 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ delay: i * 0.1 }}
-                        viewport={{ once: true }}
-                        className="flex items-center text-sm text-muted-foreground"
-                      >
-                        <svg
-                          viewBox="0 0 24 24"
-                          className="w-5 h-5 mr-2 text-corporate-gold"
-                          fill="none"
-                          stroke="currentColor"
-                        >
-                          <path
-                            strokeWidth="2"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            d="M5 13l4 4L19 7"
-                          />
-                        </svg>
-                        {feature}
-                      </motion.li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-
-        <div className="mt-16 text-center relative z-10">
-          <Link
-            to="/services"
-            className="inline-flex items-center bg-gradient-to-r btn-gradient text-black px-8 py-3 rounded-md font-semibold shadow-lg transition-all hover:shadow-corporate-gold/40 "
-          >
-            View all services
-            <svg
-              viewBox="0 0 24 24"
-              className="w-5 h-5 ml-2"
-              fill="none"
-              stroke="currentColor"
-            >
-              <path
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
-              />
-            </svg>
-          </Link>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>

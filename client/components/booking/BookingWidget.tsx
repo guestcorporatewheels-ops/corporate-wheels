@@ -150,9 +150,6 @@ export default function ChauffeurBookingWidget() {
         return "Please choose To from the Google suggestions list so we can calculate the route.";
       }
     }
-    if (isFromAirport && !flightNumber.trim()) {
-      return "Flight number is required for airport pickups.";
-    }
     if (!date) return "Please select a pickup date.";
     if (!time) return "Please select a pickup time.";
     const ymd = getPickerDayYmd(date);
@@ -255,7 +252,7 @@ export default function ChauffeurBookingWidget() {
       initial={{ opacity: 0, y: 16 }}
       animate={{ opacity: 1, y: 0 }}
     >
-      <div className="bg-card/90 border border-border rounded-2xl p-6 shadow-glow space-y-6">
+      <div className="bg-card/90 border border-border rounded-2xl p-5 shadow-glow space-y-4">
         <div className="flex rounded-xl overflow-hidden bg-muted/50 border border-border">
           {[
             { key: "oneway" as const, label: "One Way" },
@@ -266,7 +263,7 @@ export default function ChauffeurBookingWidget() {
               type="button"
               onClick={() => setBookingType(tab.key)}
               className={cn(
-                "flex-1 py-3 text-sm font-semibold transition-colors",
+                "flex-1 py-2 text-sm font-semibold transition-colors",
                 bookingType === tab.key
                   ? "bg-primary text-primary-foreground"
                   : "text-muted-foreground hover:text-foreground",
@@ -277,42 +274,40 @@ export default function ChauffeurBookingWidget() {
           ))}
         </div>
 
-        <div className="grid gap-4 md:grid-cols-2">
-          <div className="space-y-2 md:col-span-2">
+        <div className="grid gap-3 md:grid-cols-2">
+          <div className="space-y-1.5 md:col-span-2">
             <label className="text-sm font-medium text-primary">From</label>
             <Input
               ref={fromRef}
               value={fromLocation}
               onChange={(e) => {
-                setFromLocation(e.target.value);
+                const value = e.target.value;
+                setFromLocation(value);
                 fromCoordsRef.current = null;
-                setIsFromAirport(false);
+                setIsFromAirport(/airport/i.test(value));
               }}
               placeholder="Pickup address"
             />
           </div>
 
-          <div className="space-y-2 md:col-span-2">
-            <label className="text-sm font-medium text-primary">
-              Flight number{" "}
-              {isFromAirport ? (
-                <span className="text-destructive">(required)</span>
-              ) : (
-                "(optional)"
-              )}
-            </label>
-            <Input
-              value={flightNumber}
-              onChange={(e) => setFlightNumber(e.target.value)}
-              placeholder="e.g. BA123"
-            />
-          </div>
+          {isFromAirport && (
+            <div className="space-y-1.5 md:col-span-2">
+              <label className="text-sm font-medium text-primary">
+                Flight number (optional)
+              </label>
+              <Input
+                value={flightNumber}
+                onChange={(e) => setFlightNumber(e.target.value)}
+                placeholder="e.g. BA123"
+              />
+            </div>
+          )}
 
           {bookingType === "oneway" ? (
-            <div className="md:col-span-2 space-y-3">
+            <div className="md:col-span-2 space-y-2">
               {stops.map((stop, index) => (
                 <div key={stop.id} className="flex gap-2 items-end">
-                  <div className="flex-1 space-y-2">
+                  <div className="flex-1 space-y-1.5">
                     <label className="text-sm font-medium text-primary">
                       {index === 0 ? "To" : `Stop ${index + 1}`}
                     </label>
@@ -361,7 +356,7 @@ export default function ChauffeurBookingWidget() {
               )}
             </div>
           ) : (
-            <div className="space-y-2">
+            <div className="space-y-1.5">
               <label className="text-sm font-medium text-primary">Duration</label>
               <Select value={duration} onValueChange={setDuration}>
                 <SelectTrigger>
@@ -400,8 +395,9 @@ export default function ChauffeurBookingWidget() {
           </div>
         </div>
 
+        {/* Hidden for now — re-enable by removing "hidden" once Maps key is configured */}
         {mapsError && (
-          <p className="text-sm text-amber-600 dark:text-amber-400 text-center">
+          <p className="hidden text-sm text-amber-600 dark:text-amber-400 text-center">
             {mapsError}
           </p>
         )}

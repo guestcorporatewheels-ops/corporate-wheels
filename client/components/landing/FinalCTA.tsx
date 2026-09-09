@@ -1,11 +1,13 @@
 import { Button } from "@/components/ui/button";
 import { CheckCircle } from "lucide-react";
 import { Link } from "react-router-dom";
+import FloatingShapes from "./FloatingShapes";
 
 export default function FinalCTA() {
   return (
-    <section className="relative py-20">
+    <section className="relative py-20 overflow-hidden">
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(50%_50%_at_50%_50%,rgba(230,167,0,0.08),transparent_60%)]" />
+      <FloatingShapes />
       <div className="container text-center">
         <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl text-white leading-tight">
           <span className="block">Ready to ride?</span>

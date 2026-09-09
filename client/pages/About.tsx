@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { ScrollToTop } from "@/components/ui/scroll-to-top";
 import { Link } from "react-router-dom";
 import Seo from "@/components/Seo";
+import FloatingShapes from "@/components/landing/FloatingShapes";
 
 export default function About() {
   const heroRef = useReveal<HTMLElement>({ threshold: 0.06 });
@@ -42,60 +43,7 @@ export default function About() {
 
   {/* Hero Section - Redesigned */}
   <section ref={heroRef} className="relative pt-40 pb-32 text-center flex flex-col items-center justify-center overflow-hidden reveal opacity-0 translate-y-6 transition-transform duration-700 ease-out">
-        {/* Animated SVGs from Business page */}
-        <div className="pointer-events-none absolute inset-0 -z-0">
-          <motion.svg
-            width="200"
-            height="200"
-            viewBox="0 0 100 100"
-            className="absolute left-8 top-24 opacity-30"
-            initial={{ y: -10, rotate: 0 }}
-            animate={{ y: [0, -12, 0], rotate: [0, 6, 0] }}
-            transition={{ duration: 6, repeat: Infinity }}
-          >
-            <defs>
-              <linearGradient id="b1" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0%" stopColor="#E6A700" stopOpacity="0.8" />
-                <stop offset="100%" stopColor="#FF6B35" stopOpacity="0.6" />
-              </linearGradient>
-            </defs>
-            <circle cx="50" cy="50" r="40" fill="url(#b1)" />
-          </motion.svg>
-          <motion.svg
-            width="160"
-            height="160"
-            viewBox="0 0 100 100"
-            className="absolute right-12 top-48 opacity-25"
-            initial={{ y: 0, rotate: 0 }}
-            animate={{ y: [0, 10, 0], rotate: [0, -8, 0] }}
-            transition={{ duration: 7, repeat: Infinity }}
-          >
-            <defs>
-              <linearGradient id="b2" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0%" stopColor="#FF6B35" stopOpacity="0.7" />
-                <stop offset="100%" stopColor="#E53E3E" stopOpacity="0.5" />
-              </linearGradient>
-            </defs>
-            <rect width="100" height="100" rx="18" fill="url(#b2)" />
-          </motion.svg>
-          <motion.svg
-            width="120"
-            height="120"
-            viewBox="0 0 100 100"
-            className="absolute left-1/3 bottom-32 opacity-20"
-            initial={{ scale: 1, rotate: 0 }}
-            animate={{ scale: [1, 1.1, 1], rotate: [0, 180, 360] }}
-            transition={{ duration: 12, repeat: Infinity }}
-          >
-            <defs>
-              <linearGradient id="b3" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0%" stopColor="#F4C430" stopOpacity="0.6" />
-                <stop offset="100%" stopColor="#E6A700" stopOpacity="0.4" />
-              </linearGradient>
-            </defs>
-            <path d="M50 10 L90 50 L50 90 L10 50Z" fill="url(#b3)" />
-          </motion.svg>
-        </div>
+        <FloatingShapes variant="warm" />
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
@@ -714,32 +662,8 @@ export default function About() {
       </section>
 
       {/* Sustainability Section */}
-      <section className="relative py-16">
-        <svg
-          className="absolute left-8 top-8 w-24 h-24 z-0 animate-pulse"
-          viewBox="0 0 96 96"
-          fill="none"
-        >
-          <rect
-            x="8"
-            y="8"
-            width="80"
-            height="80"
-            rx="24"
-            fill="#FF6B35"
-            fillOpacity="0.12"
-          />
-          <rect
-            x="16"
-            y="16"
-            width="64"
-            height="64"
-            rx="16"
-            stroke="#F4C430"
-            strokeWidth="4"
-            fill="none"
-          />
-        </svg>
+      <section className="relative py-16 overflow-hidden">
+        <FloatingShapes variant="warm" />
         <div className="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
           <motion.img
             src="/images/cw-placeholder.svg"
@@ -775,32 +699,8 @@ export default function About() {
       </section>
 
   {/* Call to Action Section */}
-  <section ref={ctaRef} className="relative py-16 reveal opacity-0 translate-y-6 transition-transform duration-700 ease-out">
-        <svg
-          className="absolute left-16 bottom-8 w-20 h-20 z-0 animate-pulse"
-          viewBox="0 0 80 80"
-          fill="none"
-        >
-          <rect
-            x="8"
-            y="8"
-            width="64"
-            height="64"
-            rx="16"
-            fill="#FF6B35"
-            fillOpacity="0.10"
-          />
-          <rect
-            x="16"
-            y="16"
-            width="48"
-            height="48"
-            rx="8"
-            stroke="#F4C430"
-            strokeWidth="3"
-            fill="none"
-          />
-        </svg>
+  <section ref={ctaRef} className="relative py-16 overflow-hidden reveal opacity-0 translate-y-6 transition-transform duration-700 ease-out">
+        <FloatingShapes variant="warm" />
         <div className="container mx-auto px-4 text-center">
           <motion.div
             initial={{ opacity: 0, y: 40 }}

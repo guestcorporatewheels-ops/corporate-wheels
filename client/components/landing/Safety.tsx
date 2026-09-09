@@ -1,5 +1,6 @@
 import { ShieldCheck, Satellite, Leaf, Activity } from "lucide-react";
 import { motion } from "framer-motion";
+import FloatingShapes from "./FloatingShapes";
 
 const items = [
   { title: "Driver background check", icon: ShieldCheck },
@@ -12,9 +13,10 @@ export default function Safety() {
   return (
     <section
       id="safety"
-      className="py-20 bg-[radial-gradient(60%_60%_at_20%_0%,rgba(230,167,0,0.08),transparent)]"
+      className="relative py-20 overflow-hidden bg-[radial-gradient(60%_60%_at_20%_0%,rgba(230,167,0,0.08),transparent)]"
     >
-      <div className="container">
+      <FloatingShapes />
+      <div className="container relative">
         <div className="text-center mb-10">
           <h2 className="font-heading text-3xl md:text-4xl text-white">
             Safety & Trust

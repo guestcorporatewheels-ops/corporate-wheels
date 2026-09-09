@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowRight, Users, Briefcase } from "lucide-react";
 import { fleetCategoriesData } from "@/data/fleet-data";
+import FloatingShapes from "./FloatingShapes";
 
 const featured = [
   "executive-cars",
@@ -16,6 +17,7 @@ export default function OurFleet() {
   return (
     <section className="py-24 relative overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(60%_60%_at_80%_0%,rgba(230,167,0,0.06),transparent)]" />
+      <FloatingShapes />
       <div className="container relative">
         <div className="text-center max-w-2xl mx-auto mb-16">
           <motion.div
