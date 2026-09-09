@@ -2,6 +2,7 @@ import { useEffect, useState, useRef } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, ChevronDown, Apple, Play } from "lucide-react";
+import ThemeToggle from "@/components/site/ThemeToggle";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -95,7 +96,7 @@ export default function Navbar() {
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-colors ${scrolled
-        ? "backdrop-blur-md bg-black/60 border-b border-white/5"
+        ? "backdrop-blur-md bg-background/70 border-b border-border"
         : "bg-transparent"
         }`}
     >
@@ -117,7 +118,7 @@ export default function Navbar() {
                 Our Services <ChevronDown className="size-4" />
               </button>
             }
-            className="w-56 bg-black/90 border border-white/8 backdrop-blur-md rounded-lg shadow-lg p-2"
+            className="w-56 bg-popover/95 border border-border backdrop-blur-md rounded-lg shadow-lg p-2"
           >
             <div className="py-1">
               {[
@@ -131,7 +132,7 @@ export default function Navbar() {
                 <Link
                   key={item.label}
                   to={item.path}
-                  className="group block px-3 py-3 rounded-md text-white/90 hover:bg-white/8 focus:bg-white/12 focus:outline-none transition-colors"
+                  className="group block px-3 py-3 rounded-md text-popover-foreground/90 hover:bg-foreground/8 focus:bg-foreground/10 focus:outline-none transition-colors"
                 >
                   <span className="group-hover:text-corporate-gold group-focus:text-corporate-gold transition-colors">
                     {item.label}
@@ -149,7 +150,7 @@ export default function Navbar() {
                 Fleet <ChevronDown className="size-4" />
               </button>
             }
-            className="w-64 bg-black/90 border border-white/8 backdrop-blur-md rounded-lg shadow-lg p-2"
+            className="w-64 bg-popover/95 border border-border backdrop-blur-md rounded-lg shadow-lg p-2"
           >
             <div className="py-1">
               {[
@@ -164,7 +165,7 @@ export default function Navbar() {
                 <Link
                   key={item.label}
                   to={item.path}
-                  className="group block px-3 py-3 rounded-md text-white/90 hover:bg-white/8 focus:bg-white/12 focus:outline-none transition-colors"
+                  className="group block px-3 py-3 rounded-md text-popover-foreground/90 hover:bg-foreground/8 focus:bg-foreground/10 focus:outline-none transition-colors"
                 >
                   <span className="group-hover:text-corporate-gold group-focus:text-corporate-gold transition-colors">
                     {item.label}
@@ -182,7 +183,7 @@ export default function Navbar() {
                 Why Choose Us <ChevronDown className="size-4" />
               </button>
             }
-            className="w-60 bg-black/90 border border-white/8 backdrop-blur-md rounded-lg shadow-lg p-2"
+            className="w-60 bg-popover/95 border border-border backdrop-blur-md rounded-lg shadow-lg p-2"
           >
             <div className="py-1">
               {[
@@ -194,7 +195,7 @@ export default function Navbar() {
                 <Link
                   key={item.label}
                   to={item.path}
-                  className="group block px-3 py-3 rounded-md text-white/90 hover:bg-white/8 focus:bg-white/12 focus:outline-none transition-colors"
+                  className="group block px-3 py-3 rounded-md text-popover-foreground/90 hover:bg-foreground/8 focus:bg-foreground/10 focus:outline-none transition-colors"
                 >
                   <span className="group-hover:text-corporate-gold group-focus:text-corporate-gold transition-colors">
                     {item.label}
@@ -248,29 +249,34 @@ export default function Navbar() {
             Contact Us
           </NavLink>
 
+          <ThemeToggle className="ml-2" />
+
           <Button asChild variant="glow" className="ml-2">
             <NavLink to="/booking">Book Now</NavLink>
           </Button>
         </nav>
-        <button
-          className="md:hidden inline-flex items-center justify-center p-2 rounded-md border border-white/10 hover:bg-white/5"
-          onClick={() => setOpen((v) => !v)}
-          aria-label="Open Menu"
-          aria-expanded={open}
-        >
-          <Menu className="text-white" />
-        </button>
+        <div className="md:hidden flex items-center gap-2">
+          <ThemeToggle />
+          <button
+            className="inline-flex items-center justify-center p-2 rounded-md border border-border hover:bg-foreground/5"
+            onClick={() => setOpen((v) => !v)}
+            aria-label="Open Menu"
+            aria-expanded={open}
+          >
+            <Menu className="text-foreground" />
+          </button>
+        </div>
       </div>
 
       {/* Mobile menu: keep in DOM and animate via max-height + opacity for smooth transition */}
       <div
         className={`md:hidden transition-[max-height,opacity] duration-300 ease-in-out ${open
-          ? "max-h-[calc(100vh-5rem)] opacity-100 border-t border-white/10 bg-black/80 backdrop-blur-md overflow-y-auto"
+          ? "max-h-[calc(100vh-5rem)] opacity-100 border-t border-border bg-background/95 backdrop-blur-md overflow-y-auto"
           : "max-h-0 opacity-0 border-t-0 overflow-hidden"
           }`}
       >
         <div className="container pt-4 pb-10 flex flex-col gap-4">
-          <div className="text-white font-medium mb-2">Our Services</div>
+          <div className="text-foreground font-medium mb-2">Our Services</div>
           <div className="pl-4 space-y-2">
             {[
               { label: "Airport Transfers", path: "/services/airport-transfers" },
@@ -286,7 +292,7 @@ export default function Navbar() {
                 onClick={() => setOpen(false)}
                 className={({ isActive }) =>
                   isActive
-                    ? "block text-white"
+                    ? "block text-foreground"
                     : "block text-muted-foreground hover:text-corporate-gold focus:text-corporate-gold"
                 }
               >
@@ -295,7 +301,7 @@ export default function Navbar() {
             ))}
           </div>
 
-          <div className="text-white font-medium mb-2 mt-4">Our Fleet</div>
+          <div className="text-foreground font-medium mb-2 mt-4">Our Fleet</div>
           <div className="pl-4 space-y-2">
             {[
               { label: "Executive Cars", path: "/fleet/executive-cars" },
@@ -312,7 +318,7 @@ export default function Navbar() {
                 onClick={() => setOpen(false)}
                 className={({ isActive }) =>
                   isActive
-                    ? "block text-white"
+                    ? "block text-foreground"
                     : "block text-muted-foreground hover:text-corporate-gold focus:text-corporate-gold"
                 }
               >
@@ -321,7 +327,7 @@ export default function Navbar() {
             ))}
           </div>
 
-          <div className="text-white font-medium mb-2 mt-4">Why Choose Us</div>
+          <div className="text-foreground font-medium mb-2 mt-4">Why Choose Us</div>
           <div className="pl-4 space-y-2">
             {[
               { label: "Safety First", path: "/why-choose-us/safety-first" },
@@ -335,7 +341,7 @@ export default function Navbar() {
                 onClick={() => setOpen(false)}
                 className={({ isActive }) =>
                   isActive
-                    ? "block text-white"
+                    ? "block text-foreground"
                     : "block text-muted-foreground hover:text-corporate-gold focus:text-corporate-gold"
                 }
               >
@@ -349,7 +355,7 @@ export default function Navbar() {
             to="/chauffeurs"
             onClick={() => setOpen(false)}
             className={({ isActive }) =>
-              isActive ? "text-white" : "text-muted-foreground hover:text-white"
+              isActive ? "text-foreground" : "text-muted-foreground hover:text-foreground"
             }
           >
             For Chauffeurs
@@ -358,7 +364,7 @@ export default function Navbar() {
             to="/help"
             onClick={() => setOpen(false)}
             className={({ isActive }) =>
-              isActive ? "text-white" : "text-muted-foreground hover:text-white"
+              isActive ? "text-foreground" : "text-muted-foreground hover:text-foreground"
             }
           >
             Help
@@ -367,7 +373,7 @@ export default function Navbar() {
             to="/contact"
             onClick={() => setOpen(false)}
             className={({ isActive }) =>
-              isActive ? "text-white" : "text-muted-foreground hover:text-white"
+              isActive ? "text-foreground" : "text-muted-foreground hover:text-foreground"
             }
           >
             Contact Us
@@ -376,7 +382,7 @@ export default function Navbar() {
             to="/booking"
             onClick={() => setOpen(false)}
             className={({ isActive }) =>
-              isActive ? "text-white" : "text-muted-foreground hover:text-white"
+              isActive ? "text-foreground" : "text-muted-foreground hover:text-foreground"
             }
           >
             Booking

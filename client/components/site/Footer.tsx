@@ -17,7 +17,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="border-t border-white/10 bg-black">
+    <footer className="border-t border-border bg-background">
 
       {/* Primary 6-Column Directory */}
       <div className="container py-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-6 gap-10">
@@ -52,7 +52,7 @@ export default function Footer() {
 
         {/* Column 2: Our Services */}
         <div>
-          <h4 className="text-white font-heading font-semibold text-sm uppercase tracking-wider mb-4">Our Services</h4>
+          <h4 className="text-foreground font-heading font-semibold text-sm uppercase tracking-wider mb-4">Our Services</h4>
           <ul className="space-y-2.5 text-xs sm:text-sm text-muted-foreground font-light">
             {[
               { label: "Airport Transfers", path: "/services/airport-transfers" },
@@ -73,7 +73,7 @@ export default function Footer() {
 
         {/* Column 3: Premium Fleet */}
         <div>
-          <h4 className="text-white font-heading font-semibold text-sm uppercase tracking-wider mb-4">Premium Fleet</h4>
+          <h4 className="text-foreground font-heading font-semibold text-sm uppercase tracking-wider mb-4">Premium Fleet</h4>
           <ul className="space-y-2.5 text-xs sm:text-sm text-muted-foreground font-light">
             {[
               { label: "Executive Cars", path: "/fleet/executive-cars" },
@@ -95,7 +95,7 @@ export default function Footer() {
 
         {/* Column 4: Why Choose Us */}
         <div>
-          <h4 className="text-white font-heading font-semibold text-sm uppercase tracking-wider mb-4">Why Choose Us</h4>
+          <h4 className="text-foreground font-heading font-semibold text-sm uppercase tracking-wider mb-4">Why Choose Us</h4>
           <ul className="space-y-2.5 text-xs sm:text-sm text-muted-foreground font-light">
             {[
               { label: "Safety First", path: "/why-choose-us/safety-first" },
@@ -114,7 +114,7 @@ export default function Footer() {
 
         {/* Column 5: Legal & Help */}
         <div>
-          <h4 className="text-white font-heading font-semibold text-sm uppercase tracking-wider mb-4">Legal & Help</h4>
+          <h4 className="text-foreground font-heading font-semibold text-sm uppercase tracking-wider mb-4">Legal & Help</h4>
           <ul className="space-y-2.5 text-xs sm:text-sm text-muted-foreground font-light">
             {[
               { label: "Privacy Policy", path: "/privacy" },
@@ -136,10 +136,10 @@ export default function Footer() {
       </div>
 
       {/* Full-width Newsletter & Social Bar */}
-      <div className="border-t border-white/5 bg-white/[0.01]">
+      <div className="border-t border-border bg-foreground/[0.02]">
         <div className="container py-10 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           <div>
-            <h4 className="text-white font-heading font-bold text-sm tracking-wide mb-1">
+            <h4 className="text-foreground font-heading font-bold text-sm tracking-wide mb-1">
               Subscribe to Concierge Dispatch
             </h4>
             <p className="text-xs text-muted-foreground font-light">
@@ -157,7 +157,7 @@ export default function Footer() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter executive email"
-                className="flex-1 h-11 bg-white/5 border border-white/10 text-white text-xs px-4 rounded-xl placeholder:text-white/20 focus:outline-none focus:border-corporate-gold/40 focus:ring-1 focus:ring-corporate-gold/20 transition-all font-light"
+                className="flex-1 h-11 bg-foreground/5 border border-border text-foreground text-xs px-4 rounded-xl placeholder:text-muted-foreground focus:outline-none focus:border-corporate-gold/40 focus:ring-1 focus:ring-corporate-gold/20 transition-all font-light"
                 required
               />
               <button
@@ -172,12 +172,12 @@ export default function Footer() {
       </div>
 
       {/* Footer Bottom copyright */}
-      <div className="border-t border-white/10 bg-black/60">
+      <div className="border-t border-border bg-foreground/[0.03]">
         <div className="container py-6 text-xs text-muted-foreground flex flex-col md:flex-row items-center justify-between font-light">
           <p>
             © {new Date().getFullYear()} Corporate Wheels. All rights reserved.
           </p>
-          <p className="mt-2 md:mt-0 italic text-white/30">
+          <p className="mt-2 md:mt-0 italic text-muted-foreground">
             Built for comfort, designed for the future.
           </p>
         </div>
