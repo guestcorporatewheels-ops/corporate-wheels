@@ -96,7 +96,8 @@ export default function App() {
                   <Route path="airport-transfer" element={<AirportTransfer />} />
                   <Route path="limousine-service" element={<LimousineService />} />
                   <Route path="privacy" element={<Privacy />} />
-                  <Route path="terms" element={<Terms />} />
+                  <Route path="terms-and-conditions" element={<Terms />} />
+                  <Route path="terms" element={<Navigate to="/terms-and-conditions" replace />} />
                   <Route path="contact" element={<Contact />} />
                   <Route path="blog" element={<Blog />} />
                   <Route path="about" element={<About />} />

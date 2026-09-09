@@ -118,7 +118,7 @@ export default function Footer() {
           <ul className="space-y-2.5 text-xs sm:text-sm text-muted-foreground font-light">
             {[
               { label: "Privacy Policy", path: "/privacy" },
-              { label: "Terms & Conditions", path: "/terms" },
+              { label: "Terms & Conditions", path: "/terms-and-conditions" },
               { label: "Contact Us", path: "/contact" },
               { label: "Help Portal", path: "/help" },
               { label: "About Us", path: "/about" },

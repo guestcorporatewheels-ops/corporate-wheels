@@ -17,7 +17,7 @@
   <url><loc>https://corporatewheels.co.uk/cities</loc><priority>0.7</priority></url>
   <url><loc>https://corporatewheels.co.uk/routes</loc><priority>0.7</priority></url>
   <url><loc>https://corporatewheels.co.uk/privacy</loc><priority>0.3</priority></url>
-  <url><loc>https://corporatewheels.co.uk/terms</loc><priority>0.3</priority></url>
+  <url><loc>https://corporatewheels.co.uk/terms-and-conditions</loc><priority>0.3</priority></url>
 
   <!-- Fleet categories -->
   <url><loc>https://corporatewheels.co.uk/fleet/executive-cars</loc><priority>0.7</priority></url>
