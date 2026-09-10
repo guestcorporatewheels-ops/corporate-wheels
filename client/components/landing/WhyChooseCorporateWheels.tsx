@@ -58,12 +58,12 @@ export default function WhyChooseCorporateWheels() {
         >
           <div className="relative rounded-2xl overflow-hidden border border-white/10 bg-white/[0.02]">
             <img
-              src="/images/cw-placeholder.svg"
-              alt="Corporate Wheels luxury chauffeur service"
-              className="w-full h-full object-cover aspect-[4/5]"
+              src="/images/why-choose-chauffeur.png"
+              alt="Corporate Wheels chauffeur opening a car door for a business client"
+              className="w-full h-full object-cover aspect-[4/3]"
               loading="lazy"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
           </div>
           <div className="absolute -inset-4 -z-10 rounded-3xl bg-corporate-gold/5 blur-2xl" />
         </motion.div>
