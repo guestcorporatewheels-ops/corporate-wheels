@@ -1,5 +1,6 @@
 import HeroSection from "@/components/landing/HeroSection";
 import Services from "@/components/landing/Services";
+import WhyChooseCorporateWheels from "@/components/landing/WhyChooseCorporateWheels";
 import OurFleet from "@/components/landing/OurFleet";
 import CityToCityRoutes from "@/components/landing/CityToCityRoutes";
 import GlobalCoverage from "@/components/landing/GlobalCoverage";
@@ -35,6 +36,7 @@ export default function Index() {
 
       <HeroSection />
       <Services />
+      <WhyChooseCorporateWheels />
       <OurFleet />
       <CityToCityRoutes />
       <GlobalCoverage />
