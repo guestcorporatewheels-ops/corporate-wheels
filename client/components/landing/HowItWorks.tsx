@@ -71,8 +71,7 @@ export default function HowItWorks() {
         />
 
         <div className="relative ">
-          <div className="absolute left-0 right-0 top-28 h-px bg-gradient-to-r from-transparent via-corporate-gold/30 to-transparent" />
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {steps.map((s, i) => {
               const isFlipped = !!flipped[i];
