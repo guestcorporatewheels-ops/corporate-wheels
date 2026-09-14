@@ -8,24 +8,24 @@ import {
 
 export const homeFaqs = [
   {
-    q: "How far in advance do I need to book?",
-    a: "You can book as little as 2 hours ahead for standard rides. For airport pickups during peak times or event days, we recommend booking 24 hours in advance to guarantee your preferred vehicle class.",
+    q: "How can I plan my trip?",
+    a: "One can make bookings via our quoting engine, make an inquiry through email, or call us at our booking desk.",
   },
   {
-    q: "What's included in the price?",
-    a: "Your fare includes the chauffeur, vehicle, complimentary wait time, and bottled water. There are no hidden fees — the price you're quoted at booking is the price you pay.",
+    q: "Do you offer airport meet and greet service?",
+    a: "Yes, our chauffeur will be watching out for your arrival and will come and pick you from the airport terminal along with your name plate.",
   },
   {
-    q: "Can I cancel or change my booking?",
-    a: "Yes. Standard bookings can be rescheduled or cancelled free of charge up to 2 hours before pickup. See our terms for full details.",
+    q: "Can I employ a chauffeur on an hourly basis?",
+    a: "Certainly. We have hourly packages that allow maximum flexibility if one wants to stop multiple times along the way, or go for a road show or night out.",
   },
   {
-    q: "Are your chauffeurs vetted?",
-    a: "Every chauffeur is background-checked, licensed, and trained before joining our network — whether they're a direct Corporate Wheels driver or part of our partner network abroad.",
+    q: "Do you have corporate accounts?",
+    a: "We provide specialised corporate accounts that provide simplified billing options, first call availability and tailored travel options for frequent corporate users.",
   },
   {
-    q: "Do you offer corporate accounts?",
-    a: "Yes. Businesses can set up a corporate account with consolidated monthly invoicing, cost-center coding, and a dedicated account manager.",
+    q: "Where do you operate?",
+    a: "We operate throughout the UK with emphasis on business centres, airports, and private airports terminals.",
   },
 ];
 
