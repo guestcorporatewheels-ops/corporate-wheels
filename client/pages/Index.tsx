@@ -50,14 +50,6 @@ export default function Index() {
       <HowItWorks />
       <FAQSection />
 
-      <section id="signin" className="py-10">
-        <div className="container text-center">
-          <p className="text-sm text-muted-foreground">
-            Account sign-in is coming soon. For bookings, proceed above.
-          </p>
-        </div>
-      </section>
-
       <DownloadSection />
       <FinalCTA />
     </main>
