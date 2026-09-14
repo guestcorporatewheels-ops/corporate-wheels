@@ -286,16 +286,9 @@ export default function CityToCityRoutes() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="flex items-center justify-between mb-8"
+            className="mb-8"
           >
             <h3 className="text-2xl font-heading text-white">Popular Cities</h3>
-            <Link
-              to="/cities"
-              className="inline-flex items-center gap-1.5 text-corporate-gold hover:text-corporate-gold/80 transition-colors"
-            >
-              View all cities
-              <ArrowRight className="size-4" />
-            </Link>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -364,15 +357,9 @@ export default function CityToCityRoutes() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="flex items-center justify-between mb-8"
+            className="mb-8"
           >
             <h3 className="text-2xl font-heading text-white">Popular Routes</h3>
-            <Link
-              to="/routes"
-              className="text-corporate-gold hover:text-corporate-gold/80 transition-colors"
-            >
-              View all routes
-            </Link>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
