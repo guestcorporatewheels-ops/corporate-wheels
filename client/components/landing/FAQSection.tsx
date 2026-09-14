@@ -5,6 +5,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import SectionHeading from "./SectionHeading";
 
 export const homeFaqs = [
   {
@@ -33,14 +34,11 @@ export default function FAQSection() {
   return (
     <section className="py-20">
       <div className="container max-w-3xl">
-        <div className="text-center mb-12">
-          <h2 className="font-heading text-3xl md:text-4xl text-white mb-3">
-            Frequently Asked Questions
-          </h2>
-          <p className="text-muted-foreground">
-            Everything you need to know before you book.
-          </p>
-        </div>
+        <SectionHeading
+          tagline="Got Questions?"
+          title="Frequently Asked Questions"
+          subtitle="Everything you need to know before you book."
+        />
 
         <Accordion type="single" collapsible className="space-y-3">
           {homeFaqs.map((faq, i) => (
