@@ -3,7 +3,7 @@ import { Send, Smartphone, Sparkles, ShieldCheck, MapPin, Clock } from "lucide-r
 
 export default function DownloadSection() {
   return (
-    <section id="download" className="py-24 relative overflow-hidden">
+    <section id="download" className="py-14 relative overflow-hidden">
       {/* Background glowing effects */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-corporate-gold/10 rounded-full blur-[120px] pointer-events-none -z-10" />
       

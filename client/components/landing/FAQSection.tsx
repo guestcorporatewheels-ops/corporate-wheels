@@ -32,7 +32,7 @@ export const homeFaqs = [
 
 export default function FAQSection() {
   return (
-    <section className="py-20">
+    <section className="py-14">
       <div className="container max-w-3xl">
         <SectionHeading
           tagline="Got Questions?"

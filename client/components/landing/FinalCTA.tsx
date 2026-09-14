@@ -5,7 +5,7 @@ import FloatingShapes from "./FloatingShapes";
 
 export default function FinalCTA() {
   return (
-    <section className="relative py-20 overflow-hidden">
+    <section className="relative py-14 overflow-hidden">
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(50%_50%_at_50%_50%,rgba(230,167,0,0.08),transparent_60%)]" />
       <FloatingShapes />
       <div className="container text-center">

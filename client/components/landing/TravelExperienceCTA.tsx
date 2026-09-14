@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 export default function TravelExperienceCTA() {
   return (
-    <section className="relative py-20 overflow-hidden">
+    <section className="relative py-12 overflow-hidden">
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(50%_50%_at_50%_50%,rgba(230,167,0,0.08),transparent_60%)]" />
       <div className="container relative">
         <motion.div
@@ -13,7 +13,7 @@ export default function TravelExperienceCTA() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="relative rounded-3xl overflow-hidden border border-corporate-gold/20 px-6 py-16 sm:px-12 sm:py-24 text-center"
+          className="relative rounded-3xl overflow-hidden border border-corporate-gold/20 px-6 py-12 sm:px-12 sm:py-16 text-center"
         >
           <img
             src="/images/travel-cta-bg.jpg"
