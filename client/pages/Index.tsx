@@ -3,6 +3,7 @@ import Services from "@/components/landing/Services";
 import WhyChooseCorporateWheels from "@/components/landing/WhyChooseCorporateWheels";
 import ServiceHighlights from "@/components/landing/ServiceHighlights";
 import CityToCityRoutes from "@/components/landing/CityToCityRoutes";
+import PremiumFleet from "@/components/landing/PremiumFleet";
 import GlobalCoverage from "@/components/landing/GlobalCoverage";
 import HowItWorks from "@/components/landing/HowItWorks";
 import Safety from "@/components/landing/Safety";
@@ -46,6 +47,7 @@ export default function Index() {
       </div>
 
       <CityToCityRoutes />
+      <PremiumFleet />
       <GlobalCoverage />
       <HowItWorks />
       <Safety />
