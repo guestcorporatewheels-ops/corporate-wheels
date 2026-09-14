@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import SectionHeading from "./SectionHeading";
 
 interface Highlight {
   eyebrow: string;
@@ -104,10 +105,19 @@ export default function ServiceHighlights() {
   return (
     <section className="py-20 relative overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(60%_60%_at_50%_0%,rgba(230,167,0,0.06),transparent)]" />
-      <div className="container relative space-y-14 lg:space-y-20">
-        {highlights.map((item, i) => (
-          <HighlightRow key={item.title} item={item} index={i} />
-        ))}
+      <div className="container relative">
+        <SectionHeading
+          tagline="What We Deliver"
+          title="Service, Tailored to You"
+          subtitle="From airport meet-and-greet to corporate accounts with full duty-of-care compliance, every journey is planned around your schedule."
+          className="mb-12 lg:mb-16"
+        />
+
+        <div className="space-y-14 lg:space-y-20">
+          {highlights.map((item, i) => (
+            <HighlightRow key={item.title} item={item} index={i} />
+          ))}
+        </div>
       </div>
     </section>
   );
