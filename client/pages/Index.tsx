@@ -36,9 +36,16 @@ export default function Index() {
       <ScrollToTop />
 
       <HeroSection />
-      <Services />
-      <WhyChooseCorporateWheels />
-      <ServiceHighlights />
+
+      <div className="relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(55%_40%_at_15%_5%,rgba(230,167,0,0.07),transparent_70%),radial-gradient(55%_40%_at_85%_95%,rgba(230,167,0,0.06),transparent_70%)]" />
+        <div className="relative">
+          <Services />
+          <WhyChooseCorporateWheels />
+          <ServiceHighlights />
+        </div>
+      </div>
+
       <OurFleet />
       <CityToCityRoutes />
       <GlobalCoverage />
