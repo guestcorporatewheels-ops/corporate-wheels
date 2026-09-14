@@ -2,7 +2,6 @@ import HeroSection from "@/components/landing/HeroSection";
 import Services from "@/components/landing/Services";
 import WhyChooseCorporateWheels from "@/components/landing/WhyChooseCorporateWheels";
 import ServiceHighlights from "@/components/landing/ServiceHighlights";
-import OurFleet from "@/components/landing/OurFleet";
 import CityToCityRoutes from "@/components/landing/CityToCityRoutes";
 import GlobalCoverage from "@/components/landing/GlobalCoverage";
 import HowItWorks from "@/components/landing/HowItWorks";
@@ -46,7 +45,6 @@ export default function Index() {
         </div>
       </div>
 
-      <OurFleet />
       <CityToCityRoutes />
       <GlobalCoverage />
       <HowItWorks />
