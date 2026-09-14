@@ -7,6 +7,7 @@ import PremiumFleet from "@/components/landing/PremiumFleet";
 import GlobalCoverage from "@/components/landing/GlobalCoverage";
 import HowItWorks from "@/components/landing/HowItWorks";
 import FAQSection, { homeFaqs } from "@/components/landing/FAQSection";
+import TravelExperienceCTA from "@/components/landing/TravelExperienceCTA";
 import DownloadSection from "@/components/landing/DownloadSection";
 import FinalCTA from "@/components/landing/FinalCTA";
 import { ScrollToTop } from "@/components/ui/scroll-to-top";
@@ -49,6 +50,7 @@ export default function Index() {
       <GlobalCoverage />
       <HowItWorks />
       <FAQSection />
+      <TravelExperienceCTA />
 
       <DownloadSection />
       <FinalCTA />
