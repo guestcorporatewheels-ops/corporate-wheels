@@ -1,30 +1,31 @@
 import { ListChecks, Car, CreditCard, MapPin, Calendar, Shield, Clock } from "lucide-react";
 import { motion, useReducedMotion } from "framer-motion";
+import SectionHeading from "./SectionHeading";
 
 const steps = [
-  { 
-    title: "Book Your Journey",
-    desc: "Enter your pickup location, destination, and preferred time. Our smart system calculates the optimal route.",
+  {
+    title: "Book Your Trip",
+    desc: "Input your pick-up point, destination, and preferred time. We use an advanced booking engine to provide the best route possible.",
     icon: MapPin,
-    features: ["Real-time route planning", "Flexible scheduling", "Multiple stops option"]
+    features: ["Real-time routing", "Scheduling flexibility", "Multiple pick-ups and drop-offs capability"]
   },
-  { 
-    title: "Select Your Vehicle",
-    desc: "Choose from our fleet of luxury vehicles. Each car is maintained to the highest standards.",
+  {
+    title: "Choose Your Vehicle",
+    desc: "Select from our luxurious range of luxury cars which offer top quality and luxury features.",
     icon: Car,
-    features: ["Premium fleet", "Chauffeur profiles", "Vehicle amenities"]
+    features: ["Luxury fleet", "Profiles of chauffeurs", "Car amenities"]
   },
-  { 
-    title: "Secure Payment",
-    desc: "Pay securely with your preferred method. Clear pricing with no hidden fees.",
+  {
+    title: "Pay Securely",
+    desc: "Pay for your trip via your desired method of payment.",
     icon: CreditCard,
-    features: ["Multiple payment options", "Secure transactions", "Corporate billing"]
+    features: ["Various payment methods", "Safe payment process", "Corporate invoicing"]
   },
-  { 
-    title: "Travel in Style",
-    desc: "Enjoy a smooth, comfortable journey with our professional chauffeurs.",
+  {
+    title: "Get a Comfortable Ride",
+    desc: "Enjoy your ride in the company of our courteous and professional chauffeurs.",
     icon: ListChecks,
-    features: ["Live tracking", "24/7 support", "Door-to-door service"]
+    features: ["Track in real-time", "24/7 support", "Door-to-door service"]
   },
 ];
 
@@ -55,14 +56,11 @@ export default function HowItWorks() {
         <motion.circle cx="420" cy="40" r="10" fill="#D1B24A" animate={prefersReducedMotion ? undefined : { y: [0, -12, 0] }} transition={{ duration: 6, repeat: Infinity, repeatType: 'reverse' }} />
       </motion.svg>
       <div className="container relative">
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <h2 className="font-heading text-3xl md:text-4xl text-white mb-4">
-            How It Works
-          </h2>
-          <p className="text-lg text-muted-foreground">
-            Experience luxury travel in four simple steps. Our seamless booking process ensures a premium journey from start to finish.
-          </p>
-        </div>
+        <SectionHeading
+          tagline="Simple Process"
+          title="How It Works"
+          subtitle="Experience luxury travel in four simple steps. Our seamless booking process ensures a premium journey from start to finish."
+        />
 
         <div className="relative ">
           <div className="absolute left-0 right-0 top-28 h-px bg-gradient-to-r from-transparent via-corporate-gold/30 to-transparent" />
