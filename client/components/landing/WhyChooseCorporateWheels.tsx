@@ -52,9 +52,10 @@ export default function WhyChooseCorporateWheels() {
         <SectionHeading
           tagline="The Corporate Wheels Difference"
           title="Why Choose Corporate Wheels"
+          subtitle="Five reasons corporate travellers and private clients keep choosing Corporate Wheels for every journey."
         />
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
           {reasons.map((reason, index) => (
             <motion.div
               key={reason.title}
@@ -66,20 +67,20 @@ export default function WhyChooseCorporateWheels() {
               className="group rounded-2xl overflow-hidden border border-white/10 bg-white/[0.02] hover:border-corporate-gold/40 transition-colors"
             >
               {/* Visual header — stands in for a photo */}
-              <div className="relative aspect-[16/10] overflow-hidden bg-gradient-to-br from-corporate-gold/15 via-black/50 to-black/70 flex items-center justify-center">
+              <div className="relative aspect-square overflow-hidden bg-gradient-to-br from-corporate-gold/15 via-black/50 to-black/70 flex items-center justify-center">
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(230,167,0,0.3),transparent_60%)]" />
                 <div className="absolute inset-0 opacity-[0.06] bg-[linear-gradient(45deg,white_1px,transparent_1px)] bg-[length:14px_14px]" />
-                <div className="relative p-5 rounded-2xl bg-black/40 border border-corporate-gold/30 backdrop-blur-sm transition-transform duration-500 group-hover:scale-110">
+                <div className="relative p-4 rounded-2xl bg-black/40 border border-corporate-gold/30 backdrop-blur-sm transition-transform duration-500 group-hover:scale-110">
                   <reason.Icon
-                    className="size-8 text-corporate-gold"
+                    className="size-7 text-corporate-gold"
                     strokeWidth={1.5}
                   />
                 </div>
               </div>
 
               {/* Copy */}
-              <div className="p-6">
-                <h3 className="font-heading text-lg text-white mb-2">
+              <div className="p-5">
+                <h3 className="font-heading text-base text-white mb-2">
                   {reason.title}
                 </h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">
