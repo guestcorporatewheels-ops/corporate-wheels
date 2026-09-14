@@ -52,8 +52,6 @@ const reasons: Reason[] = [
 export default function WhyChooseCorporateWheels() {
   return (
     <section className="py-24 relative overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(60%_60%_at_50%_0%,rgba(230,167,0,0.07),transparent)]" />
-
       <div className="container relative">
         <SectionHeading
           tagline="The Corporate Wheels Difference"

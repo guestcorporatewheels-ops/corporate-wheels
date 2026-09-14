@@ -104,7 +104,6 @@ function HighlightRow({ item, index }: { item: Highlight; index: number }) {
 export default function ServiceHighlights() {
   return (
     <section className="py-20 relative overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(60%_60%_at_50%_0%,rgba(230,167,0,0.06),transparent)]" />
       <div className="container relative">
         <SectionHeading
           tagline="What We Deliver"
