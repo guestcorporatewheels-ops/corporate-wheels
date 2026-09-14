@@ -3,6 +3,7 @@ import Services from "@/components/landing/Services";
 import WhyChooseCorporateWheels from "@/components/landing/WhyChooseCorporateWheels";
 import AirportTransferHighlight from "@/components/landing/AirportTransferHighlight";
 import CorporateTravelHighlight from "@/components/landing/CorporateTravelHighlight";
+import CorporateAccountsDutyOfCareHighlight from "@/components/landing/CorporateAccountsDutyOfCareHighlight";
 import OurFleet from "@/components/landing/OurFleet";
 import CityToCityRoutes from "@/components/landing/CityToCityRoutes";
 import GlobalCoverage from "@/components/landing/GlobalCoverage";
@@ -41,6 +42,7 @@ export default function Index() {
       <WhyChooseCorporateWheels />
       <AirportTransferHighlight />
       <CorporateTravelHighlight />
+      <CorporateAccountsDutyOfCareHighlight />
       <OurFleet />
       <CityToCityRoutes />
       <GlobalCoverage />
