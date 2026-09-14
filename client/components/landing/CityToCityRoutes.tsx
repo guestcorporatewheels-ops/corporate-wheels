@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import SectionHeading from "./SectionHeading";
 const topCities = [
   {
     name: "London",
@@ -259,26 +260,11 @@ export default function CityToCityRoutes() {
       </div>
 
       <div className="container relative z-10">
-        <motion.div
-          className="text-center max-w-3xl mx-auto mb-16"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-        >
-          <motion.h2 className="font-heading text-4xl md:text-5xl mb-4">
-            City-to-City Routes
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-lg text-muted-foreground"
-          >
-            Seamless intercity chauffeur transportation with affordable
-            prices, Wi-Fi-enabled premium cars, and professional chauffeurs.
-          </motion.p>
-        </motion.div>
+        <SectionHeading
+          tagline="Nationwide Coverage"
+          title="City-to-City Routes"
+          subtitle="Seamless intercity chauffeur transportation with affordable prices, Wi-Fi-enabled premium cars, and professional chauffeurs."
+        />
 
         {/* Top Cities Section */}
         <div className="mb-20">
