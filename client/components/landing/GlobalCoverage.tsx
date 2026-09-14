@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { MapPin } from "lucide-react";
+import SectionHeading from "./SectionHeading";
 
 const ukCities = [
   "London",
@@ -24,24 +25,11 @@ export default function GlobalCoverage() {
     <section className="py-24 relative overflow-hidden border-y border-white/5">
       <div className="absolute inset-0 bg-[radial-gradient(50%_50%_at_20%_100%,rgba(230,167,0,0.06),transparent)]" />
       <div className="container relative">
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
-            <h2 className="text-3xl md:text-4xl font-heading text-white mb-6">
-              UK Coverage &amp; Global Network
-            </h2>
-            <p className="text-muted-foreground text-lg">
-              We have complete coverage at all main business centres in the
-              UK as well as at all major international airports. We can
-              also arrange chauffeur transfers for you at selected
-              international destinations through our partner network.
-            </p>
-          </motion.div>
-        </div>
+        <SectionHeading
+          tagline="Where We Operate"
+          title="UK Coverage & Global Network"
+          subtitle="We have complete coverage at all main business centres in the UK as well as at all major international airports. We can also arrange chauffeur transfers for you at selected international destinations through our partner network."
+        />
 
         <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           <motion.div
