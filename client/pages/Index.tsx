@@ -6,7 +6,6 @@ import CityToCityRoutes from "@/components/landing/CityToCityRoutes";
 import PremiumFleet from "@/components/landing/PremiumFleet";
 import GlobalCoverage from "@/components/landing/GlobalCoverage";
 import HowItWorks from "@/components/landing/HowItWorks";
-import Safety from "@/components/landing/Safety";
 import CorporateAccounts from "@/components/landing/CorporateAccounts";
 import FAQSection, { homeFaqs } from "@/components/landing/FAQSection";
 import DownloadSection from "@/components/landing/DownloadSection";
@@ -50,7 +49,6 @@ export default function Index() {
       <PremiumFleet />
       <GlobalCoverage />
       <HowItWorks />
-      <Safety />
       <CorporateAccounts />
       <FAQSection />
 
