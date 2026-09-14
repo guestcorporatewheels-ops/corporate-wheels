@@ -6,7 +6,6 @@ import CityToCityRoutes from "@/components/landing/CityToCityRoutes";
 import PremiumFleet from "@/components/landing/PremiumFleet";
 import GlobalCoverage from "@/components/landing/GlobalCoverage";
 import HowItWorks from "@/components/landing/HowItWorks";
-import CorporateAccounts from "@/components/landing/CorporateAccounts";
 import FAQSection, { homeFaqs } from "@/components/landing/FAQSection";
 import DownloadSection from "@/components/landing/DownloadSection";
 import FinalCTA from "@/components/landing/FinalCTA";
@@ -49,7 +48,6 @@ export default function Index() {
       <PremiumFleet />
       <GlobalCoverage />
       <HowItWorks />
-      <CorporateAccounts />
       <FAQSection />
 
       <section id="signin" className="py-10">
