@@ -11,7 +11,7 @@ const topCities = [
       "Luxury chauffeur car hire services",
       "VIP terminal and event transfers",
     ],
-    image: "/images/cw-placeholder.svg",
+    image: "/images/cities/london.jpg",
   },
   {
     name: "Manchester",
@@ -21,7 +21,7 @@ const topCities = [
       "Corporate account management",
       "Venue and corporate event transfers",
     ],
-    image: "/images/cw-placeholder.svg",
+    image: "/images/cities/manchester.jpg",
   },
   {
     name: "Birmingham",
@@ -31,7 +31,7 @@ const topCities = [
       "Meet and greet at the terminal",
       "NEC and venue transfers",
     ],
-    image: "/images/cw-placeholder.svg",
+    image: "/images/cities/birmingham.jpg",
   },
   {
     name: "Edinburgh",
@@ -41,7 +41,7 @@ const topCities = [
       "VIP private transfer services",
       "Luxury saloons and flagship fleet",
     ],
-    image: "/images/cw-placeholder.svg",
+    image: "/images/cities/edinburgh.jpg",
   },
 ];
 
