@@ -53,7 +53,7 @@ export default function FAQSection() {
                 value={`item-${i}`}
                 className="border border-white/10 rounded-xl px-5 bg-white/[0.02]"
               >
-                <AccordionTrigger className="text-left text-white hover:text-corporate-gold">
+                <AccordionTrigger className="text-left text-white hover:text-corporate-gold hover:no-underline">
                   {faq.q}
                 </AccordionTrigger>
                 <AccordionContent className="text-muted-foreground">
