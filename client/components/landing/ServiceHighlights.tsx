@@ -31,6 +31,7 @@ const highlights: Highlight[] = [
     image: "/images/corporate-travel-highlight.jpg",
     alt: "Corporate Wheels chauffeur greeting a business executive beside a luxury sedan",
     imageSide: "right",
+    cta: { label: "Explore Corporate Travel", to: "/services/corporate-travel" },
   },
   {
     eyebrow: "Signature Service",
@@ -40,6 +41,7 @@ const highlights: Highlight[] = [
     image: "/images/corporate-accounts-duty-of-care.jpg",
     alt: "Corporate account manager reviewing a travel dashboard with a Corporate Wheels chauffeur car visible outside",
     imageSide: "left",
+    cta: { label: "Explore Corporate Accounts", to: "/business" },
   },
 ];
 
