@@ -5,35 +5,43 @@ import { Link } from "react-router-dom";
 const topCities = [
   {
     name: "London",
-    desc: "Premier service across UK's business and leisure destinations",
-    routes: 25,
-    features: ["Cross-country routes", "Chauffeur service", "VIP access"],
-    image:
-      "/images/cw-placeholder.svg",
+    desc: "Luxurious chauffeur transfer services to all major business districts of the capital.",
+    features: [
+      "Long-haul & cross-country journeys",
+      "Luxury chauffeur car hire services",
+      "VIP terminal and event transfers",
+    ],
+    image: "/images/cw-placeholder.svg",
   },
   {
     name: "Manchester",
-    desc: "Luxury transport in the heart of the North's business hub",
-    routes: 18,
-    features: ["Airport transfers", "Corporate accounts", "Event service"],
-    image:
-      "/images/cw-placeholder.svg",
+    desc: "First-class ground transportation service for the major commercial and media centre of the North.",
+    features: [
+      "Airport & FBO transfers",
+      "Corporate account management",
+      "Venue and corporate event transfers",
+    ],
+    image: "/images/cw-placeholder.svg",
   },
   {
     name: "Birmingham",
-    desc: "Premium chauffeur services across the West Midlands",
-    routes: 15,
-    features: ["Business class", "Meet & greet", "NEC transfers"],
-    image:
-      "/images/cw-placeholder.svg",
+    desc: "High-quality chauffeur transportation throughout the major business network of the West Midlands.",
+    features: [
+      "VVIP-class travel",
+      "Meet and greet at the terminal",
+      "NEC and venue transfers",
+    ],
+    image: "/images/cw-placeholder.svg",
   },
   {
     name: "Edinburgh",
-    desc: "Elite travel throughout Scotland's historic capital",
-    routes: 12,
-    features: ["Tour service", "VIP access", "Luxury sedans"],
-    image:
-      "/images/cw-placeholder.svg",
+    desc: "Exclusive private transport in Scotland's historical capital and financial centre.",
+    features: [
+      "City tours and roadshow services",
+      "VIP private transfer services",
+      "Luxury saloons and flagship fleet",
+    ],
+    image: "/images/cw-placeholder.svg",
   },
 ];
 
@@ -267,8 +275,8 @@ export default function CityToCityRoutes() {
             transition={{ delay: 0.1 }}
             className="text-lg text-muted-foreground"
           >
-            Premium intercity travel with fixed rates, WiFi-equipped vehicles,
-            and professional chauffeurs.
+            Seamless intercity chauffeur transportation with affordable
+            prices, Wi-Fi-enabled premium cars, and professional chauffeurs.
           </motion.p>
         </motion.div>
 
@@ -283,9 +291,10 @@ export default function CityToCityRoutes() {
             <h3 className="text-2xl font-heading text-white">Popular Cities</h3>
             <Link
               to="/cities"
-              className="text-corporate-gold hover:text-corporate-gold/80 transition-colors"
+              className="inline-flex items-center gap-1.5 text-corporate-gold hover:text-corporate-gold/80 transition-colors"
             >
               View all cities
+              <ArrowRight className="size-4" />
             </Link>
           </motion.div>
 
@@ -308,9 +317,9 @@ export default function CityToCityRoutes() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
                   <div className="absolute bottom-0 left-0 right-0 p-4">
-                    <h4 className="font-heading text-xl text-white mb-1">
-                      {city.name}
-                    </h4>
+                    <h3 className="font-heading text-xl text-white mb-1">
+                      {i + 1}. {city.name}
+                    </h3>
                     <p className="text-sm text-white/80">{city.desc}</p>
                   </div>
                 </div>
