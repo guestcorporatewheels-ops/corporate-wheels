@@ -13,14 +13,22 @@ export default function TravelExperienceCTA() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="relative rounded-3xl overflow-hidden border border-corporate-gold/20 bg-white/[0.02] px-6 py-16 sm:px-12 sm:py-20 text-center"
+          className="relative rounded-3xl overflow-hidden border border-corporate-gold/20 px-6 py-16 sm:px-12 sm:py-24 text-center"
         >
-          <div className="absolute inset-0 bg-gradient-to-br from-corporate-gold/10 via-transparent to-transparent" />
+          <img
+            src="/images/travel-cta-bg.jpg"
+            alt=""
+            aria-hidden="true"
+            className="absolute inset-0 w-full h-full object-cover"
+            loading="lazy"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/85 via-black/70 to-black/90" />
+          <div className="absolute inset-0 bg-gradient-to-br from-corporate-gold/15 via-transparent to-transparent" />
           <div className="relative">
             <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl text-white leading-tight">
               <span className="text-gradient-gold">Travel Experience, Elevated.</span>
             </h2>
-            <p className="mt-4 text-muted-foreground max-w-2xl mx-auto text-lg">
+            <p className="mt-4 text-white/80 max-w-2xl mx-auto text-lg">
               Ready to book your chauffeur? Get your quotation or corporate
               account now.
             </p>
