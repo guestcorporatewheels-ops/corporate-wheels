@@ -13,6 +13,7 @@ interface Reason {
   title: string;
   desc: string;
   Icon: LucideIcon;
+  image: string;
 }
 
 const reasons: Reason[] = [
@@ -20,26 +21,31 @@ const reasons: Reason[] = [
     title: "Professional Chauffeurs",
     desc: "Well-bred and well-vetted chauffeurs who respect and honour the privacy of our clients.",
     Icon: BadgeCheck,
+    image: "/images/why-choose/professional-chauffeurs.jpg",
   },
   {
     title: "Punctuality",
     desc: "State-of-the-art flight tracking and route planning allow Corporate Wheels to get there before our scheduled times.",
     Icon: Clock,
+    image: "/images/why-choose/punctuality.jpg",
   },
   {
     title: "Luxury Vehicles",
     desc: "Spick-and-span and modern cars ranging from premium sedans to luxurious limos and MPVs.",
     Icon: Car,
+    image: "/images/why-choose/luxury-vehicles.jpg",
   },
   {
     title: "Comfort & Privacy",
     desc: "Eco-friendly travel, Wi-Fi connection, fresh bottled water, air conditioning, and a quiet zone to do work and relax.",
     Icon: ShieldCheck,
+    image: "/images/why-choose/comfort-privacy.jpg",
   },
   {
     title: "Flexible Travel Options",
     desc: "Customised routes and flexible travel options that can fit into your busy schedule.",
     Icon: CalendarClock,
+    image: "/images/why-choose/flexible-travel.jpg",
   },
 ];
 
@@ -66,13 +72,18 @@ export default function WhyChooseCorporateWheels() {
               whileHover={{ y: -4 }}
               className="group rounded-2xl overflow-hidden border border-white/10 bg-white/[0.02] hover:border-corporate-gold/40 transition-colors"
             >
-              {/* Visual header — stands in for a photo */}
-              <div className="relative aspect-square overflow-hidden bg-gradient-to-br from-corporate-gold/15 via-black/50 to-black/70 flex items-center justify-center">
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(230,167,0,0.3),transparent_60%)]" />
-                <div className="absolute inset-0 opacity-[0.06] bg-[linear-gradient(45deg,white_1px,transparent_1px)] bg-[length:14px_14px]" />
-                <div className="relative p-4 rounded-2xl bg-black/40 border border-corporate-gold/30 backdrop-blur-sm transition-transform duration-500 group-hover:scale-110">
+              {/* Visual header — AI-generated photo */}
+              <div className="relative aspect-square overflow-hidden">
+                <img
+                  src={reason.image}
+                  alt={reason.title}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/10 to-transparent" />
+                <div className="absolute bottom-3 left-3 p-2 rounded-lg bg-black/50 border border-corporate-gold/40 backdrop-blur-sm">
                   <reason.Icon
-                    className="size-7 text-corporate-gold"
+                    className="size-5 text-corporate-gold"
                     strokeWidth={1.5}
                   />
                 </div>
