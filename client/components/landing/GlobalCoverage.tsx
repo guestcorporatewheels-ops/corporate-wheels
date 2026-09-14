@@ -12,10 +12,10 @@ const ukCities = [
 
 const partnerHubs = [
   "New York",
+  "Los Angeles",
   "Paris",
   "Dubai",
   "Singapore",
-  "Los Angeles",
   "Berlin",
 ];
 
@@ -32,12 +32,13 @@ export default function GlobalCoverage() {
             transition={{ duration: 0.8 }}
           >
             <h2 className="text-3xl md:text-4xl font-heading text-white mb-6">
-              Nationwide Coverage, Global Reach
+              UK Coverage &amp; Global Network
             </h2>
             <p className="text-muted-foreground text-lg">
-              Direct chauffeur operations across the UK, with a trusted
-              partner network covering major international hubs for
-              seamless travel abroad.
+              We have complete coverage at all main business centres in the
+              UK as well as at all major international airports. We can
+              also arrange chauffeur transfers for you at selected
+              international destinations through our partner network.
             </p>
           </motion.div>
         </div>
@@ -51,7 +52,7 @@ export default function GlobalCoverage() {
             className="rounded-2xl border border-corporate-gold/20 bg-white/[0.02] p-6"
           >
             <h3 className="text-sm font-semibold uppercase tracking-wider text-corporate-gold mb-4">
-              UK Operations
+              Our UK Operations
             </h3>
             <ul className="space-y-2.5">
               {ukCities.map((city) => (
@@ -74,7 +75,7 @@ export default function GlobalCoverage() {
             className="rounded-2xl border border-white/10 bg-white/[0.02] p-6"
           >
             <h3 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground mb-4">
-              Partner Network Abroad
+              Our Abroad Operations
             </h3>
             <ul className="space-y-2.5">
               {partnerHubs.map((city) => (
