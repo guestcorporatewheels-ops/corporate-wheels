@@ -436,7 +436,7 @@ export default function Help() {
               <Link to="/contact" className="flex-1 px-6 py-4 rounded-lg bg-corporate-gold text-black font-semibold text-lg shadow-lg hover:bg-yellow-400 transition-colors text-center">
                 Contact Us
               </Link>
-              <a href="tel:+447351111355" className="flex-1 px-6 py-4 rounded-lg border-2 border-corporate-gold text-corporate-gold font-semibold text-lg hover:bg-corporate-gold/10 transition-colors text-center">
+              <a href="tel:+4403333553755" className="flex-1 px-6 py-4 rounded-lg border-2 border-corporate-gold text-corporate-gold font-semibold text-lg hover:bg-corporate-gold/10 transition-colors text-center">
                 Call Now
               </a>
             </div>

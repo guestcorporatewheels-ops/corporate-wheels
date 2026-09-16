@@ -10,7 +10,7 @@ import type { ChatMessage } from "@shared/chat";
 
 const STORAGE_KEY = "corporate-wheels-chat";
 
-const WHATSAPP_NUMBER = "447351111355";
+const WHATSAPP_NUMBER = "4403333553755";
 const WHATSAPP_MESSAGE =
   "Hi Corporate Wheels, I'd like to enquire about a chauffeur booking.";
 const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
@@ -146,7 +146,7 @@ export default function ChatWidget() {
           {
             role: "assistant",
             content:
-              "Sorry, I couldn't reach our system just now. Please call or WhatsApp us on +44 7351 111355 using the button below.",
+              "Sorry, I couldn't reach our system just now. Please call or WhatsApp us on +44 03333553755 using the button below.",
           },
         ],
       }));
