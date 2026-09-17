@@ -26,7 +26,7 @@ const locationsData = [
   {
     name: "Corporate Wheels HQ",
     address: "42 Watling Street, Radlett, Hertfordshire, WD7 7NN",
-    phone: "+44 03333553755",
+    phone: "+44 (0)333 355 3755",
     email: "info@corporatewheels.co.uk",
     badge: "Registered Office",
     timezone: "GMT / BST"
@@ -406,7 +406,7 @@ export default function Contact() {
 
                 <div className="flex flex-wrap items-center gap-4">
                   <Button variant="glow" className="rounded-xl font-bold uppercase tracking-wider text-[10px] py-5 px-6 shadow-glow" asChild>
-                    <a href="tel:+4403333553755">+44 03333553755</a>
+                    <a href="tel:+4403333553755">+44 (0)333 355 3755</a>
                   </Button>
                   <Button variant="outline" className="rounded-xl border-white/10 text-white hover:bg-white/5 text-[10px] py-5 px-6" asChild>
                     <Link to="/booking">Modify Booking</Link>

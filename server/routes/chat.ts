@@ -39,7 +39,7 @@ ${buildKnowledgeBase()}`;
 function fallbackResponse(): ChatResponseBody {
   return {
     reply:
-      "Sorry, I'm having trouble connecting right now. Please call or WhatsApp us on +44 03333553755 using the button below and our team will help right away.",
+      "Sorry, I'm having trouble connecting right now. Please call or WhatsApp us on +44 (0)333 355 3755 using the button below and our team will help right away.",
     leadCaptured: false,
   };
 }

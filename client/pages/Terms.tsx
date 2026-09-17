@@ -16,8 +16,8 @@ const INTRO_PARAGRAPHS: string[] = [
 
 const CONTACT_LINES: { label: string; value: string }[] = [
   { label: "Email", value: "info@corporatewheels.co.uk" },
-  { label: "Phone", value: "+44 03333553755" },
-  { label: "Office Telephone", value: "+44 03333553755" },
+  { label: "Phone", value: "+44 (0)333 355 3755" },
+  { label: "Office Telephone", value: "+44 (0)333 355 3755" },
   {
     label: "Address",
     value:

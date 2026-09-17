@@ -20,7 +20,7 @@ export const BUSINESS_LOCATIONS: BusinessLocation[] = [
     addressLocality: "Radlett, Hertfordshire",
     postalCode: "WD7 7NN",
     addressCountry: "GB",
-    telephone: "+44-03333553755",
+    telephone: "+44 (0)333 355 3755",
     email: "info@corporatewheels.co.uk",
   },
 ];

@@ -146,7 +146,7 @@ export default function ChatWidget() {
           {
             role: "assistant",
             content:
-              "Sorry, I couldn't reach our system just now. Please call or WhatsApp us on +44 03333553755 using the button below.",
+              "Sorry, I couldn't reach our system just now. Please call or WhatsApp us on +44 (0)333 355 3755 using the button below.",
           },
         ],
       }));
