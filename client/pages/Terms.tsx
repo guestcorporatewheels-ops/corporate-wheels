@@ -499,6 +499,22 @@ const SECTIONS: Section[] = [
   },
 ];
 
+function boldWebsite(text: string) {
+  const marker = "www.corporatewheels.co.uk";
+  const parts = text.split(marker);
+  if (parts.length === 1) return text;
+  return parts.flatMap((part, i) =>
+    i === 0
+      ? [part]
+      : [
+          <strong key={i} className="font-semibold text-white">
+            {marker}
+          </strong>,
+          part,
+        ],
+  );
+}
+
 function ListItem({ text }: { text: string }) {
   const idx = text.indexOf(": ");
   if (idx > 0 && idx < 80) {
@@ -518,7 +534,7 @@ function Blocks({ blocks }: { blocks: Block[] }) {
       {blocks.map((block, i) =>
         block.kind === "p" ? (
           <p key={i} className="text-muted-foreground leading-relaxed">
-            {block.text}
+            {boldWebsite(block.text)}
           </p>
         ) : (
           <div key={i} className="space-y-3">
@@ -605,7 +621,7 @@ export default function Terms() {
                   <div className="space-y-4">
                     {INTRO_PARAGRAPHS.map((text, i) => (
                       <p key={i} className="text-muted-foreground leading-relaxed">
-                        {text}
+                        {boldWebsite(text)}
                       </p>
                     ))}
                     <div className="rounded-lg border border-white/10 bg-white/5 p-5">
