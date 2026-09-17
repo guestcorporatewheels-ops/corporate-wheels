@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import Seo from "@/components/Seo";
+import { highlightKeyTerms } from "@/lib/legalHighlight";
 
 type Block =
   | { kind: "p"; text: string }
@@ -499,33 +500,17 @@ const SECTIONS: Section[] = [
   },
 ];
 
-function boldWebsite(text: string) {
-  const marker = "www.corporatewheels.co.uk";
-  const parts = text.split(marker);
-  if (parts.length === 1) return text;
-  return parts.flatMap((part, i) =>
-    i === 0
-      ? [part]
-      : [
-          <strong key={i} className="font-semibold text-white">
-            {marker}
-          </strong>,
-          part,
-        ],
-  );
-}
-
 function ListItem({ text }: { text: string }) {
   const idx = text.indexOf(": ");
   if (idx > 0 && idx < 80) {
     return (
       <li>
         <span className="text-white font-medium">{text.slice(0, idx)}:</span>{" "}
-        {text.slice(idx + 2)}
+        {highlightKeyTerms(text.slice(idx + 2))}
       </li>
     );
   }
-  return <li>{text}</li>;
+  return <li>{highlightKeyTerms(text)}</li>;
 }
 
 function Blocks({ blocks }: { blocks: Block[] }) {
@@ -534,12 +519,14 @@ function Blocks({ blocks }: { blocks: Block[] }) {
       {blocks.map((block, i) =>
         block.kind === "p" ? (
           <p key={i} className="text-muted-foreground leading-relaxed">
-            {boldWebsite(block.text)}
+            {highlightKeyTerms(block.text)}
           </p>
         ) : (
           <div key={i} className="space-y-3">
             {block.intro && (
-              <p className="text-muted-foreground leading-relaxed">{block.intro}</p>
+              <p className="text-muted-foreground leading-relaxed">
+                {highlightKeyTerms(block.intro)}
+              </p>
             )}
             <ul className="list-disc pl-6 text-muted-foreground space-y-2">
               {block.items.map((item, j) => (
@@ -621,7 +608,7 @@ export default function Terms() {
                   <div className="space-y-4">
                     {INTRO_PARAGRAPHS.map((text, i) => (
                       <p key={i} className="text-muted-foreground leading-relaxed">
-                        {boldWebsite(text)}
+                        {highlightKeyTerms(text)}
                       </p>
                     ))}
                     <div className="rounded-lg border border-white/10 bg-white/5 p-5">
