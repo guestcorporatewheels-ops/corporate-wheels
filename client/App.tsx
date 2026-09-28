@@ -34,6 +34,7 @@ import FleetCategory from "./pages/FleetCategory";
 import ExecutiveCars from "./pages/fleet/ExecutiveCars";
 import ServiceCategory from "./pages/ServiceCategory";
 import WhyChooseUs from "./pages/WhyChooseUs";
+import SocialConnect from "./pages/SocialConnect";
 import Navbar from "@/components/site/Navbar";
 import Footer from "@/components/site/Footer";
 import CookieBanner from "@/components/site/CookieBanner";
@@ -109,6 +110,8 @@ export default function App() {
                   <Route path="fleet/:categoryId" element={<FleetCategory />} />
                   <Route path="services/:serviceId" element={<ServiceCategory />} />
                   <Route path="why-choose-us/:chooseId" element={<WhyChooseUs />} />
+                  <Route path="Socialconnect" element={<SocialConnect />} />
+                  <Route path="socialconnect" element={<Navigate to="/Socialconnect" replace />} />
                 </Route>
 
                 <Route element={<BookingFunnelLayout />}>
