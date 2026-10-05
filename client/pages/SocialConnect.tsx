@@ -537,6 +537,65 @@ export default function SocialConnect() {
         </div>
       </section>
 
+      <GoldDivider />
+
+      {/* Thank you */}
+      <section className="relative py-20 sm:py-28">
+        <div className="pointer-events-none absolute left-1/2 top-1/2 h-[22rem] w-[22rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#E3A501]/10 blur-[110px]" />
+        <div className="container relative">
+          <div className="mx-auto max-w-2xl rounded-3xl border border-[#E3A501]/40 bg-[#0F1525]/70 px-6 py-12 text-center shadow-[0_0_60px_rgba(227,165,1,0.12)] sm:px-12 sm:py-16">
+            <img
+              src="/socialconnect/founder.jpg"
+              alt="Nurali Virani"
+              className="mx-auto size-24 rounded-full border-2 border-[#E3A501] object-cover object-top shadow-[0_0_30px_rgba(227,165,1,0.35)] sm:size-28"
+            />
+            <h2 className="mt-8 font-heading text-5xl font-bold text-[#E3A501] sm:text-6xl">
+              Thank You
+            </h2>
+            <p className="mt-3 text-sm font-semibold uppercase tracking-[0.24em] text-white/80">
+              for connecting with us
+            </p>
+            <p className="mx-auto mt-6 max-w-lg text-base leading-relaxed text-[#9CA3AF] sm:text-lg">
+              Thank you for taking the time to get to know Corporate Wheels.
+              Whether it is an airport transfer, a business journey or a special
+              occasion, we look forward to welcoming you on board.
+            </p>
+            <div className="mt-8">
+              <p className="font-heading text-xl font-semibold text-white">
+                Nurali Virani
+              </p>
+              <p className="mt-1 text-sm text-[#E3A501]">
+                Founder, Corporate Wheels
+              </p>
+            </div>
+            <div className="mx-auto mt-10 flex max-w-md flex-col gap-3 sm:flex-row">
+              <Button
+                asChild
+                className="h-auto flex-1 rounded-xl bg-[#E3A501] py-3.5 text-base font-bold text-black hover:bg-[#F4C430]"
+              >
+                <a href={PHONE_LINK}>
+                  <Phone className="mr-2 size-4" />
+                  Call now
+                </a>
+              </Button>
+              <Button
+                asChild
+                variant="outline"
+                className="h-auto flex-1 rounded-xl border-[#E3A501]/60 bg-transparent py-3.5 text-base font-semibold text-white hover:bg-[#E3A501]/10 hover:text-white"
+              >
+                <a href="/socialconnect/corporate-wheels.vcf" download>
+                  <Download className="mr-2 size-4" />
+                  Save contact
+                </a>
+              </Button>
+            </div>
+            <p className="mt-10 text-xs font-bold uppercase tracking-[0.3em] text-white/50">
+              Always on time
+            </p>
+          </div>
+        </div>
+      </section>
+
       <Dialog
         open={thankYouKind !== null}
         onOpenChange={(open) => {
