@@ -110,6 +110,9 @@ export default function App() {
                   <Route path="fleet/:categoryId" element={<FleetCategory />} />
                   <Route path="services/:serviceId" element={<ServiceCategory />} />
                   <Route path="why-choose-us/:chooseId" element={<WhyChooseUs />} />
+                </Route>
+
+                <Route element={<RootLayout showFooter={false} />}>
                   <Route path="Socialconnect" element={<SocialConnect />} />
                   <Route path="socialconnect" element={<Navigate to="/Socialconnect" replace />} />
                 </Route>
