@@ -25,7 +25,7 @@ import Seo from "@/components/Seo";
 const locationsData = [
   {
     name: "Corporate Wheels HQ",
-    address: "42 Watling Street, Radlett, Hertfordshire, WD7 7NN",
+    address: "450 Bath Road, Longford, Heathrow, UB7 0EB",
     phone: "+44 (0)333 355 3755",
     email: "info@corporatewheels.co.uk",
     badge: "Registered Office",
@@ -124,7 +124,7 @@ export default function Contact() {
     <main className="relative bg-background text-foreground overflow-hidden selection:bg-corporate-gold selection:text-black">
       <Seo
         title="Contact Us"
-        description="Get in touch with Corporate Wheels for bookings, corporate accounts, or support. Registered office in Hertfordshire, available 24/7."
+        description="Get in touch with Corporate Wheels for bookings, corporate accounts, or support. Registered office at Heathrow, available 24/7."
         path="/contact"
         jsonLd={faqJsonLd}
       />

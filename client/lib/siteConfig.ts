@@ -16,9 +16,9 @@ export interface BusinessLocation {
 export const BUSINESS_LOCATIONS: BusinessLocation[] = [
   {
     name: "Corporate Wheels",
-    streetAddress: "42 Watling Street",
-    addressLocality: "Radlett, Hertfordshire",
-    postalCode: "WD7 7NN",
+    streetAddress: "450 Bath Road",
+    addressLocality: "Longford, Heathrow",
+    postalCode: "UB7 0EB",
     addressCountry: "GB",
     telephone: "+44 (0)333 355 3755",
     email: "info@corporatewheels.co.uk",

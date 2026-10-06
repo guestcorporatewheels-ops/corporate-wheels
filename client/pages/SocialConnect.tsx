@@ -459,7 +459,7 @@ export default function SocialConnect() {
                 {
                   icon: MapPin,
                   label: "Registered office",
-                  value: "42 Watling Street, Radlett, Hertfordshire, WD7 7NN",
+                  value: "450 Bath Road, Longford, Heathrow, UB7 0EB",
                 },
               ].map(({ icon: Icon, label, value, href }) => {
                 const content = (
