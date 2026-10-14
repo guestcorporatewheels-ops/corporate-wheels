@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { sendChatMessage } from "@/lib/chatApi";
 import type { ChatMessage } from "@shared/chat";
+import { STORAGE_KEY as COOKIE_CONSENT_KEY } from "@/components/site/CookieBanner";
 
 const STORAGE_KEY = "corporate-wheels-chat";
 
@@ -70,6 +71,14 @@ function TypingDots() {
 
 const GREETING_KEY = "corporate-wheels-chat-greeted";
 
+function hasCookieConsent(): boolean {
+  try {
+    return localStorage.getItem(COOKIE_CONSENT_KEY) !== null;
+  } catch {
+    return true;
+  }
+}
+
 export default function ChatWidget() {
   const isMobile = useIsMobile();
   const [open, setOpen] = useState(false);
@@ -77,7 +86,16 @@ export default function ChatWidget() {
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
   const [showGreeting, setShowGreeting] = useState(false);
+  // Hide the launcher while the cookie banner is up so it can't cover "Accept All".
+  const [consentGiven, setConsentGiven] = useState(() => hasCookieConsent());
   const scrollRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (consentGiven) return;
+    const onConsent = () => setConsentGiven(true);
+    window.addEventListener("cookieConsentChanged", onConsent);
+    return () => window.removeEventListener("cookieConsentChanged", onConsent);
+  }, [consentGiven]);
 
   useEffect(() => {
     try {
@@ -94,7 +112,7 @@ export default function ChatWidget() {
     } catch {
       /* ignore */
     }
-    if (alreadyGreeted || open) return;
+    if (!consentGiven || alreadyGreeted || open) return;
 
     const showTimer = setTimeout(() => {
       setShowGreeting(true);
@@ -106,7 +124,7 @@ export default function ChatWidget() {
     }, 2500);
     return () => clearTimeout(showTimer);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [consentGiven]);
 
   useEffect(() => {
     if (!showGreeting) return;
@@ -156,6 +174,8 @@ export default function ChatWidget() {
   }
 
   const showWelcomeState = state.messages.length === 1;
+
+  if (!consentGiven) return null;
 
   return (
     <>
