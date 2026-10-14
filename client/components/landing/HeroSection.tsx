@@ -164,7 +164,7 @@ export default function HeroSection() {
         >
           <div
             id="booking"
-            className="w-full max-w-lg bg-gradient-to-br from-white/80 dark:from-black/80 via-white/90 dark:via-black/90 to-[#e6a700]/10 backdrop-blur-xl border-2 border-corporate-gold rounded-3xl p-6 shadow-glow"
+            className="w-full max-w-lg"
           >
             <ChauffeurBookingWidget />
             <p className="mt-3 text-sm text-corporate-gold text-center font-semibold">
