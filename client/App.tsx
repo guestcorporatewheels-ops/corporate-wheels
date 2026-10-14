@@ -55,6 +55,7 @@ import AdminSettings from "./pages/admin/AdminSettings";
 import AdminLayout from "@/components/admin/AdminLayout";
 import AdminGuard from "@/components/admin/AdminGuard";
 import OrganizationSchema from "@/components/OrganizationSchema";
+import { ThemeSync } from "@/hooks/use-theme";
 
 const queryClient = new QueryClient();
 
@@ -85,6 +86,7 @@ export default function App() {
           <OrganizationSchema />
           <ErrorBoundary>
             <BrowserRouter>
+              <ThemeSync />
               <Routes>
                 <Route element={<RootLayout />}>
                   <Route index element={<Index />} />

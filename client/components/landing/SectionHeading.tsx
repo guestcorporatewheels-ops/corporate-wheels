@@ -30,7 +30,7 @@ export default function SectionHeading({
         <span className="w-1.5 h-1.5 rotate-45 bg-corporate-gold shrink-0" />
         <span className="h-px w-8 sm:w-12 bg-corporate-gold/60" />
       </div>
-      <h2 className="text-3xl md:text-4xl font-heading text-white mb-4">
+      <h2 className="text-3xl md:text-4xl font-heading text-neutral-900 dark:text-white mb-4">
         {title}
       </h2>
       {subtitle && (

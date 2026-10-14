@@ -59,14 +59,14 @@ function HighlightRow({ item, index }: { item: Highlight; index: number }) {
         transition={{ duration: 0.7 }}
         className={`relative ${imageOrder}`}
       >
-        <div className="relative rounded-2xl overflow-hidden border border-white/10 bg-white/[0.02]">
+        <div className="relative rounded-2xl overflow-hidden border border-black/10 dark:border-white/10 bg-black/[0.02] dark:bg-white/[0.02]">
           <img
             src={item.image}
             alt={item.alt}
             className="w-full h-full object-cover aspect-[3/2]"
             loading="lazy"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-white/60 dark:from-black/60 via-transparent to-transparent" />
         </div>
         <div className="absolute -inset-4 -z-10 rounded-3xl bg-corporate-gold/5 blur-2xl" />
       </motion.div>
@@ -85,7 +85,7 @@ function HighlightRow({ item, index }: { item: Highlight; index: number }) {
             {item.eyebrow}
           </span>
         </div>
-        <h2 className="text-3xl md:text-4xl font-heading text-white mb-4">
+        <h2 className="text-3xl md:text-4xl font-heading text-neutral-900 dark:text-white mb-4">
           {item.title}
         </h2>
         <p className="text-muted-foreground text-lg leading-relaxed">

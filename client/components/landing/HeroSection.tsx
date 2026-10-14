@@ -28,8 +28,8 @@ export default function HeroSection() {
           alt="Luxury chauffeur standing beside a chauffeur-driven car"
           className="absolute inset-0 w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-black/30" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/20" />
+        <div className="absolute inset-0 bg-gradient-to-r from-white/90 dark:from-black/90 via-white/60 dark:via-black/60 to-white/30 dark:to-black/30" />
+        <div className="absolute inset-0 bg-gradient-to-t from-white/70 dark:from-black/70 via-transparent to-white/20 dark:to-black/20" />
         {/* Floating Gold Circles */}
         <motion.div
           className="absolute top-10 left-10 w-32 h-32 rounded-full bg-gradient-to-tr from-[#e6a700]/60 to-[#fff]/10 blur-2xl"
@@ -52,8 +52,8 @@ export default function HeroSection() {
           transition={{ duration: 0.6 }}
           className="text-center lg:text-left max-w-xl mx-auto lg:mx-0"
         >
-          <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-6xl text-white mb-6 leading-tight">
-            <span className="block bg-gradient-to-r from-[#e6a700] via-[#fff] to-[#e6a700] bg-clip-text text-transparent">
+          <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-6xl text-neutral-900 dark:text-white mb-6 leading-tight">
+            <span className="block bg-gradient-to-r from-[#c99400] via-neutral-900 dark:from-[#e6a700] dark:via-[#fff] to-[#c99400] dark:to-[#e6a700] bg-clip-text text-transparent">
               Luxury Chauffeur & Private Transfer Services
             </span>
           </h1>
@@ -147,7 +147,7 @@ export default function HeroSection() {
               initial={{ y: 0, opacity: 0.7 }}
               animate={{ y: [0, 16, 0], opacity: [0.7, 1, 0.7] }}
               transition={{ duration: 2, repeat: Infinity }}
-              className="w-10 h-10 rounded-full border-2 border-[#e6a700] flex items-center justify-center bg-black/30 shadow-lg cursor-pointer hover:bg-black/50 transition-colors"
+              className="w-10 h-10 rounded-full border-2 border-[#e6a700] flex items-center justify-center bg-white/30 dark:bg-black/30 shadow-lg cursor-pointer hover:bg-white/50 dark:hover:bg-black/50 transition-colors"
             >
               <svg width="24" height="24" fill="none" viewBox="0 0 24 24">
                 <path d="M12 16l-6-6h12l-6 6z" fill="#e6a700" />
@@ -164,7 +164,7 @@ export default function HeroSection() {
         >
           <div
             id="booking"
-            className="w-full max-w-lg bg-gradient-to-br from-black/80 via-black/90 to-[#e6a700]/10 backdrop-blur-xl border-2 border-corporate-gold rounded-3xl p-6 shadow-glow"
+            className="w-full max-w-lg bg-gradient-to-br from-white/80 dark:from-black/80 via-white/90 dark:via-black/90 to-[#e6a700]/10 backdrop-blur-xl border-2 border-corporate-gold rounded-3xl p-6 shadow-glow"
           >
             <ChauffeurBookingWidget />
             <p className="mt-3 text-sm text-corporate-gold text-center font-semibold">

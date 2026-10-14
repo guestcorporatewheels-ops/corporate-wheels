@@ -274,7 +274,7 @@ export default function CityToCityRoutes() {
             viewport={{ once: true }}
             className="mb-8"
           >
-            <h3 className="text-2xl font-heading text-white">Popular Cities</h3>
+            <h3 className="text-2xl font-heading text-neutral-900 dark:text-white">Popular Cities</h3>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -286,7 +286,7 @@ export default function CityToCityRoutes() {
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
                 whileHover={{ y: -4, scale: 1.02 }}
-                className="group relative rounded-2xl overflow-hidden border border-white/10 bg-card"
+                className="group relative rounded-2xl overflow-hidden border border-black/10 dark:border-white/10 bg-card"
               >
                 <div className="relative h-48 overflow-hidden">
                   <img
@@ -294,12 +294,12 @@ export default function CityToCityRoutes() {
                     alt={city.name}
                     className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-white/80 dark:from-black/80 via-white/40 dark:via-black/40 to-transparent" />
                   <div className="absolute bottom-0 left-0 right-0 p-4">
-                    <h3 className="font-heading text-xl text-white mb-1">
+                    <h3 className="font-heading text-xl text-neutral-900 dark:text-white mb-1">
                       {i + 1}. {city.name}
                     </h3>
-                    <p className="text-sm text-white/80">{city.desc}</p>
+                    <p className="text-sm text-neutral-900/80 dark:text-white/80">{city.desc}</p>
                   </div>
                 </div>
                 <div className="p-4 space-y-3">
@@ -345,7 +345,7 @@ export default function CityToCityRoutes() {
             viewport={{ once: true }}
             className="mb-8"
           >
-            <h3 className="text-2xl font-heading text-white">Popular Routes</h3>
+            <h3 className="text-2xl font-heading text-neutral-900 dark:text-white">Popular Routes</h3>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -357,10 +357,10 @@ export default function CityToCityRoutes() {
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
                 whileHover={{ y: -4, scale: 1.02 }}
-                className="group relative p-6 rounded-xl border border-white/10 bg-white/[0.03] hover:bg-white/[0.05]"
+                className="group relative p-6 rounded-xl border border-black/10 dark:border-white/10 bg-black/[0.03] dark:bg-white/[0.03] hover:bg-black/[0.05] dark:hover:bg-white/[0.05]"
               >
                 <div className="mb-4">
-                  <div className="text-lg font-medium text-white">
+                  <div className="text-lg font-medium text-neutral-900 dark:text-white">
                     {route.from} → {route.to}
                   </div>
                   <div className="mt-1 flex items-center space-x-3 text-sm text-muted-foreground">
@@ -422,10 +422,10 @@ export default function CityToCityRoutes() {
             <div className="max-w-3xl mx-auto">
               <div className="flex flex-col md:flex-row items-center justify-between gap-6">
                 <div className="text-center md:text-left">
-                  <h3 className="text-2xl md:text-3xl font-heading text-white mb-2">
+                  <h3 className="text-2xl md:text-3xl font-heading text-neutral-900 dark:text-white mb-2">
                     Ready to Book Your Journey?
                   </h3>
-                  <p className="text-lg text-white/80">
+                  <p className="text-lg text-neutral-900/80 dark:text-white/80">
                     Fixed rates, luxury vehicles, professional chauffeurs.
                   </p>
                 </div>

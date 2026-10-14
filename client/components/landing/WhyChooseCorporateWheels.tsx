@@ -68,7 +68,7 @@ export default function WhyChooseCorporateWheels() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.08 }}
               whileHover={{ y: -4 }}
-              className="group rounded-2xl overflow-hidden border border-white/10 bg-white/[0.02] hover:border-corporate-gold/40 transition-colors"
+              className="group rounded-2xl overflow-hidden border border-black/10 dark:border-white/10 bg-black/[0.02] dark:bg-white/[0.02] hover:border-corporate-gold/40 transition-colors"
             >
               {/* Visual header — AI-generated photo */}
               <div className="relative aspect-square overflow-hidden">
@@ -78,8 +78,8 @@ export default function WhyChooseCorporateWheels() {
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/10 to-transparent" />
-                <div className="absolute bottom-3 left-3 p-2 rounded-lg bg-black/50 border border-corporate-gold/40 backdrop-blur-sm">
+                <div className="absolute inset-0 bg-gradient-to-t from-white/85 dark:from-black/85 via-white/10 dark:via-black/10 to-transparent" />
+                <div className="absolute bottom-3 left-3 p-2 rounded-lg bg-white/50 dark:bg-black/50 border border-corporate-gold/40 backdrop-blur-sm">
                   <reason.Icon
                     className="size-5 text-corporate-gold"
                     strokeWidth={1.5}
@@ -89,7 +89,7 @@ export default function WhyChooseCorporateWheels() {
 
               {/* Copy */}
               <div className="p-5">
-                <h3 className="font-heading text-base text-white mb-2">
+                <h3 className="font-heading text-base text-neutral-900 dark:text-white mb-2">
                   {reason.title}
                 </h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">

@@ -22,13 +22,13 @@ export default function TravelExperienceCTA() {
             className="absolute inset-0 w-full h-full object-cover"
             loading="lazy"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/85 via-black/70 to-black/90" />
+          <div className="absolute inset-0 bg-gradient-to-b from-white/85 dark:from-black/85 via-white/70 dark:via-black/70 to-white/90 dark:to-black/90" />
           <div className="absolute inset-0 bg-gradient-to-br from-corporate-gold/15 via-transparent to-transparent" />
           <div className="relative">
-            <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl text-white leading-tight">
+            <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl text-neutral-900 dark:text-white leading-tight">
               <span className="text-gradient-gold">Travel Experience, Elevated.</span>
             </h2>
-            <p className="mt-4 text-white/80 max-w-2xl mx-auto text-lg">
+            <p className="mt-4 text-neutral-900/80 dark:text-white/80 max-w-2xl mx-auto text-lg">
               Ready to book your chauffeur? Get your quotation or corporate
               account now.
             </p>

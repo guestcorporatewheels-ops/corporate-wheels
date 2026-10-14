@@ -14,6 +14,14 @@
       content="Luxury, carbon-neutral chauffeur rides with global coverage. Book in seconds." />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="/logo.png" />
+    <script>
+      // Apply the saved theme before first paint (see client/hooks/use-theme.tsx).
+      try {
+        if (location.pathname === "/" && localStorage.getItem("cw-theme") === "light") {
+          document.documentElement.classList.remove("dark");
+        }
+      } catch (e) {}
+    </script>
   </head>
 
   <body>

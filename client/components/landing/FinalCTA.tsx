@@ -9,7 +9,7 @@ export default function FinalCTA() {
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(50%_50%_at_50%_50%,rgba(230,167,0,0.08),transparent_60%)]" />
       <FloatingShapes />
       <div className="container text-center">
-        <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl text-white leading-tight">
+        <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl text-neutral-900 dark:text-white leading-tight">
           <span className="block">Ready to ride?</span>
           <span className="block text-gradient-gold">
             Book now and experience the difference.

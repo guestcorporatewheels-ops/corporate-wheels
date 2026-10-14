@@ -90,16 +90,16 @@ export default function PremiumFleet() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.08 }}
               whileHover={{ y: -4 }}
-              className="group flex flex-col rounded-2xl overflow-hidden border border-white/10 bg-white/[0.02] hover:border-corporate-gold/40 transition-colors"
+              className="group flex flex-col rounded-2xl overflow-hidden border border-black/10 dark:border-white/10 bg-black/[0.02] dark:bg-white/[0.02] hover:border-corporate-gold/40 transition-colors"
             >
               <div className="px-6 pt-6">
-                <h3 className="font-heading text-xl text-white">
+                <h3 className="font-heading text-xl text-neutral-900 dark:text-white">
                   {index + 1}. {item.title}
                 </h3>
                 <p className="text-sm text-corporate-gold mt-1">{item.car}</p>
               </div>
 
-              <div className="relative h-44 mt-4 overflow-hidden bg-black/40">
+              <div className="relative h-44 mt-4 overflow-hidden bg-white/40 dark:bg-black/40">
                 <img
                   src={item.image}
                   alt={item.car}

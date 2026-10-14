@@ -41,7 +41,7 @@ export default function HowItWorks() {
 
   return (
     <section id="how" className="py-20 relative overflow-hidden ">
-      <div className="absolute inset-0 bg-[radial-gradient(60%_60%_at_20%_0%,rgba(230,167,0,0.08),black)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(60%_60%_at_20%_0%,rgba(230,167,0,0.08),white)] dark:bg-[radial-gradient(60%_60%_at_20%_0%,rgba(230,167,0,0.08),black)]" />
       {/* Decorative animated SVG accents (purely visual) */}
       <motion.svg
         aria-hidden
@@ -92,7 +92,7 @@ export default function HowItWorks() {
                     )}
                   >
                     {/* Front — icon, title, view details cue */}
-                    <div className="absolute inset-0 [backface-visibility:hidden] rounded-2xl bg-white/[0.03] border border-white/10 group-hover:border-corporate-gold/40 flex flex-col items-center justify-center text-center p-6">
+                    <div className="absolute inset-0 [backface-visibility:hidden] rounded-2xl bg-black/[0.03] dark:bg-white/[0.03] border border-black/10 dark:border-white/10 group-hover:border-corporate-gold/40 flex flex-col items-center justify-center text-center p-6">
                       <div className="relative inline-flex mb-4">
                         <div className="w-16 h-16 rounded-2xl bg-corporate-gold/10 border border-corporate-gold/20 flex items-center justify-center">
                           <s.icon className="size-8 text-corporate-gold" />
@@ -101,14 +101,14 @@ export default function HowItWorks() {
                           {i + 1}
                         </div>
                       </div>
-                      <h3 className="text-xl font-semibold text-white mb-3">{s.title}</h3>
+                      <h3 className="text-xl font-semibold text-neutral-900 dark:text-white mb-3">{s.title}</h3>
                       <span className="text-xs font-semibold uppercase tracking-[0.2em] text-corporate-gold">
                         View Details
                       </span>
                     </div>
 
                     {/* Back — description + feature checklist */}
-                    <div className="absolute inset-0 [backface-visibility:hidden] [transform:rotateY(180deg)] rounded-2xl bg-gradient-to-br from-corporate-gold/10 via-black/90 to-black/95 border border-corporate-gold/50 flex flex-col p-6">
+                    <div className="absolute inset-0 [backface-visibility:hidden] [transform:rotateY(180deg)] rounded-2xl bg-gradient-to-br from-corporate-gold/10 via-white/90 dark:via-black/90 to-white/95 dark:to-black/95 border border-corporate-gold/50 flex flex-col p-6">
                       <h3 className="text-lg font-semibold text-corporate-gold mb-2">
                         {i + 1}. {s.title}
                       </h3>
@@ -138,7 +138,7 @@ export default function HowItWorks() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="inline-flex items-center space-x-8 bg-white/5 backdrop-blur rounded-2xl p-6 border border-white/10"
+              className="inline-flex items-center space-x-8 bg-black/5 dark:bg-white/5 backdrop-blur rounded-2xl p-6 border border-black/10 dark:border-white/10"
             >
               <div className="flex items-center space-x-3">
                 <Clock className="size-5 text-corporate-gold" />

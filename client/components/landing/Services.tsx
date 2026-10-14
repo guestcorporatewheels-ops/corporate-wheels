@@ -88,7 +88,7 @@ export default function Services() {
         />
       </svg>
 
-      <div className="absolute inset-0 bg-gradient-to-b from-black/70 to-black/50" />
+      <div className="absolute inset-0 bg-gradient-to-b from-white/70 dark:from-black/70 to-white/50 dark:to-black/50" />
       <div className="container relative">
         <SectionHeading
           tagline="What We Offer"
@@ -116,17 +116,17 @@ export default function Services() {
                   )}
                 >
                   {/* Front — image */}
-                  <div className="absolute inset-0 [backface-visibility:hidden] rounded-xl bg-white/[0.03] border border-white/10 group-hover:border-corporate-gold/50 flex flex-col items-center justify-center gap-3 p-4 backdrop-blur-sm">
-                    <div className="bg-white/5 rounded-full p-4 shadow-inner shadow-corporate-gold/10">
+                  <div className="absolute inset-0 [backface-visibility:hidden] rounded-xl bg-black/[0.03] dark:bg-white/[0.03] border border-black/10 dark:border-white/10 group-hover:border-corporate-gold/50 flex flex-col items-center justify-center gap-3 p-4 backdrop-blur-sm">
+                    <div className="bg-black/5 dark:bg-white/5 rounded-full p-4 shadow-inner shadow-corporate-gold/10">
                       <service.Icon className="w-8 h-8 text-corporate-gold" strokeWidth={1.5} />
                     </div>
-                    <p className="text-sm font-medium text-white text-center leading-snug">
+                    <p className="text-sm font-medium text-neutral-900 dark:text-white text-center leading-snug">
                       {service.title}
                     </p>
                   </div>
 
                   {/* Back — content */}
-                  <div className="absolute inset-0 [backface-visibility:hidden] [transform:rotateY(180deg)] rounded-xl bg-gradient-to-br from-corporate-gold/10 via-black/90 to-black/95 border border-corporate-gold/50 flex flex-col items-center justify-center p-4 text-center">
+                  <div className="absolute inset-0 [backface-visibility:hidden] [transform:rotateY(180deg)] rounded-xl bg-gradient-to-br from-corporate-gold/10 via-white/90 dark:via-black/90 to-white/95 dark:to-black/95 border border-corporate-gold/50 flex flex-col items-center justify-center p-4 text-center">
                     <h3 className="text-sm font-semibold text-corporate-gold mb-2">
                       {service.title}
                     </h3>
