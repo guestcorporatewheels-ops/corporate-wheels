@@ -169,7 +169,7 @@ export default function SocialConnect() {
           <div className="mx-auto w-full max-w-sm sm:max-w-md lg:max-w-none">
             <div className="overflow-hidden rounded-2xl border-2 border-[#E3A501]/70 shadow-[0_0_40px_rgba(227,165,1,0.25)]">
               <img
-                src="/socialconnect/founder.jpg"
+                src="/socialconnect/founder.png"
                 alt="Nurali Virani, founder of Corporate Wheels"
                 width={1080}
                 height={1350}

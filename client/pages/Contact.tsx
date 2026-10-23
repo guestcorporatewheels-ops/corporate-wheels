@@ -22,7 +22,16 @@ import {
 import Seo from "@/components/Seo";
 
 // Corporate Locations
-const locationsData = [
+type OfficeLocation = {
+  name: string;
+  address: string;
+  badge: string;
+  phone?: string;
+  email?: string;
+  timezone?: string;
+};
+
+const locationsData: OfficeLocation[] = [
   {
     name: "Corporate Wheels HQ",
     address: "450 Bath Road, Longford, Heathrow, UB7 0EB",
@@ -30,6 +39,11 @@ const locationsData = [
     email: "info@corporatewheels.co.uk",
     badge: "Registered Office",
     timezone: "GMT / BST"
+  },
+  {
+    name: "CORPORATE WHEELS LTD",
+    address: "Nurali Barkatali Virani\nCentre 42 Watling Street\nRadlett\nWD7 7NN\nUnited Kingdom",
+    badge: "Office Address"
   }
 ];
 
@@ -361,20 +375,26 @@ export default function Contact() {
                         <div className="space-y-2.5 text-xs sm:text-sm text-white/50 leading-relaxed font-light">
                           <div className="flex items-start gap-2.5">
                             <MapPin className="w-4 h-4 text-corporate-gold shrink-0 mt-0.5" />
-                            <span>{loc.address}</span>
+                            <span className="whitespace-pre-line">{loc.address}</span>
                           </div>
-                          <div className="flex items-center gap-2.5">
-                            <Phone className="w-4 h-4 text-corporate-gold shrink-0" />
-                            <span>{loc.phone}</span>
-                          </div>
-                          <div className="flex items-center gap-2.5">
-                            <Mail className="w-4 h-4 text-corporate-gold shrink-0" />
-                            <span>{loc.email}</span>
-                          </div>
-                          <div className="flex items-center gap-2.5">
-                            <Clock className="w-4 h-4 text-corporate-gold shrink-0" />
-                            <span>Timezone: {loc.timezone}</span>
-                          </div>
+                          {loc.phone && (
+                            <div className="flex items-center gap-2.5">
+                              <Phone className="w-4 h-4 text-corporate-gold shrink-0" />
+                              <span>{loc.phone}</span>
+                            </div>
+                          )}
+                          {loc.email && (
+                            <div className="flex items-center gap-2.5">
+                              <Mail className="w-4 h-4 text-corporate-gold shrink-0" />
+                              <span>{loc.email}</span>
+                            </div>
+                          )}
+                          {loc.timezone && (
+                            <div className="flex items-center gap-2.5">
+                              <Clock className="w-4 h-4 text-corporate-gold shrink-0" />
+                              <span>Timezone: {loc.timezone}</span>
+                            </div>
+                          )}
                         </div>
                       </div>
                     </div>

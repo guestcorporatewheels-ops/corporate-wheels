@@ -106,11 +106,23 @@ const sections = [
           <ul className="space-y-2">
             <li className="flex items-start gap-2">
               <div className="w-1 h-1 rounded-full bg-corporate-gold mt-2"></div>
-              <span>Free cancellation up to 1 hour before pickup</span>
+              <span>Free cancellation outside the minimum notice period for your booking</span>
             </li>
             <li className="flex items-start gap-2">
               <div className="w-1 h-1 rounded-full bg-corporate-gold mt-2"></div>
-              <span>50% refund for cancellations within 1 hour</span>
+              <span>50% charge for cancellations within 6 hours of pickup</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <div className="w-1 h-1 rounded-full bg-corporate-gold mt-2"></div>
+              <span>Luxury bookings (Cars or MPVs): minimum notice 6 hours (Inner London) and 12 hours (elsewhere)</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <div className="w-1 h-1 rounded-full bg-corporate-gold mt-2"></div>
+              <span>Pre-booked specialist vehicles (other than Luxury) require double the notice period of Standard Cars</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <div className="w-1 h-1 rounded-full bg-corporate-gold mt-2"></div>
+              <span>No changes for ASAP bookings</span>
             </li>
             <li className="flex items-start gap-2">
               <div className="w-1 h-1 rounded-full bg-corporate-gold mt-2"></div>
