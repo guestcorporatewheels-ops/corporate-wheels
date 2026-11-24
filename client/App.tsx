@@ -39,6 +39,7 @@ import ViewAllCities from "./pages/ViewAllCities";
 import ViewAllRoutes from "./pages/ViewAllRoutes";
 import FleetCategory from "./pages/FleetCategory";
 import ExecutiveCars from "./pages/fleet/ExecutiveCars";
+import PremiumSuvFleet from "./pages/fleet/PremiumSuvFleet";
 import ServiceCategory from "./pages/ServiceCategory";
 import WhyChooseUs from "./pages/WhyChooseUs";
 import SocialConnect from "./pages/SocialConnect";
@@ -118,6 +119,7 @@ export default function App() {
                   <Route path="routes" element={<ViewAllRoutes />} />
                   <Route path="fleet/executive-cars" element={<ExecutiveCars />} />
                   <Route path="fleet/business-vans" element={<BusinessVanFleet />} />
+                  <Route path="fleet/premium-suvs" element={<PremiumSuvFleet />} />
                   <Route path="fleet/:categoryId" element={<FleetCategory />} />
                   <Route path="services/airport-transfers" element={<AirportTransfersService />} />
                   <Route path="services/corporate-travel" element={<CorporateTravelService />} />
