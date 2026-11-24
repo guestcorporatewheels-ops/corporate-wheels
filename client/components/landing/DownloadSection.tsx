@@ -1,5 +1,96 @@
-import { motion } from "framer-motion";
-import { Send, Smartphone, Sparkles, ShieldCheck, MapPin, Clock } from "lucide-react";
+import { useEffect, useState } from "react";
+import { motion, useReducedMotion } from "framer-motion";
+import { Smartphone, Sparkles, ShieldCheck, MapPin, Clock } from "lucide-react";
+import { APP_STORE_URL, GOOGLE_PLAY_URL } from "@/lib/siteConfig";
+
+const appScreens = [
+  { src: "/images/app/screen-1.jpg", alt: "Corporate Wheels app – book a one-way or hourly ride" },
+  { src: "/images/app/screen-2.jpg", alt: "Corporate Wheels app – passenger, luggage and vehicle selection" },
+  { src: "/images/app/screen-3.jpg", alt: "Corporate Wheels app – journey and payment summary" },
+  { src: "/images/app/screen-4.jpg", alt: "Corporate Wheels app – manage bookings and track your driver" },
+  { src: "/images/app/screen-5.jpg", alt: "Corporate Wheels app – booking confirmation" },
+  { src: "/images/app/screen-6.jpg", alt: "Corporate Wheels app – sign in to your account" },
+];
+
+function AppScreenCarousel() {
+  const [active, setActive] = useState(0);
+  const [paused, setPaused] = useState(false);
+  const reduceMotion = useReducedMotion();
+  const total = appScreens.length;
+
+  useEffect(() => {
+    if (paused || reduceMotion) return;
+    const id = window.setInterval(() => setActive((i) => (i + 1) % total), 3500);
+    return () => window.clearInterval(id);
+  }, [paused, reduceMotion, total]);
+
+  return (
+    <div
+      className="relative flex flex-col items-center"
+      onMouseEnter={() => setPaused(true)}
+      onMouseLeave={() => setPaused(false)}
+    >
+      <div className="relative h-[480px] w-[270px] sm:h-[533px] sm:w-[300px]">
+        {appScreens.map((screen, i) => {
+          // position relative to the active card, wrapped to -2..3
+          let offset = (i - active + total) % total;
+          if (offset > total / 2) offset -= total;
+          const visible = Math.abs(offset) <= 1;
+          return (
+            <motion.button
+              type="button"
+              key={screen.src}
+              onClick={() => setActive(i)}
+              aria-label={`Show screenshot ${i + 1}`}
+              tabIndex={visible ? 0 : -1}
+              className="absolute inset-0 overflow-hidden rounded-[2rem] bg-white shadow-[0_25px_60px_rgba(0,0,0,0.45)] ring-1 ring-black/10 dark:ring-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-corporate-gold"
+              initial={false}
+              animate={{
+                x: offset * 70,
+                rotate: offset * 6,
+                scale: offset === 0 ? 1 : 0.88,
+                opacity: visible ? (offset === 0 ? 1 : 0.55) : 0,
+                zIndex: 10 - Math.abs(offset),
+              }}
+              transition={{ type: "spring", stiffness: 260, damping: 30 }}
+              style={{ pointerEvents: visible ? "auto" : "none" }}
+            >
+              <img
+                src={screen.src}
+                alt={screen.alt}
+                loading="lazy"
+                draggable={false}
+                className="h-full w-full object-cover"
+              />
+            </motion.button>
+          );
+        })}
+      </div>
+
+      <div className="mt-6 flex items-center gap-1" role="tablist" aria-label="App screenshots">
+        {appScreens.map((screen, i) => (
+          <button
+            key={screen.src}
+            type="button"
+            role="tab"
+            aria-selected={i === active}
+            aria-label={`Screenshot ${i + 1}`}
+            onClick={() => setActive(i)}
+            className="group flex h-6 items-center justify-center px-0.5 focus-visible:outline-none"
+          >
+            <span
+              className={`block h-2 rounded-full transition-all duration-300 group-focus-visible:ring-2 group-focus-visible:ring-corporate-gold ${
+                i === active
+                  ? "w-6 bg-corporate-gold"
+                  : "w-2 bg-black/20 dark:bg-white/25 group-hover:bg-corporate-gold/60"
+              }`}
+            />
+          </button>
+        ))}
+      </div>
+    </div>
+  );
+}
 
 export default function DownloadSection() {
   return (
@@ -30,7 +121,7 @@ export default function DownloadSection() {
               </h3>
 
               <p className="text-lg text-neutral-900/70 dark:text-white/70 max-w-xl mb-10 leading-relaxed">
-                We're building a dedicated app for instant confirmations, live GPS tracking, and corporate billing — all in your pocket.
+                Download the Corporate Wheels app for instant confirmations, live GPS tracking, and corporate billing — all in your pocket. Available now on iPhone and Android.
               </p>
 
               {/* Glowing features grid */}
@@ -50,48 +141,49 @@ export default function DownloadSection() {
                 ))}
               </div>
 
-
+              {/* Store badges */}
+              <div className="flex flex-wrap items-center gap-4">
+                <a
+                  href={APP_STORE_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Download Corporate Wheels on the App Store"
+                  className="block rounded-xl transition-transform duration-300 hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-corporate-gold"
+                >
+                  <img
+                    src="/app-store-badge.png"
+                    alt="Download on the App Store"
+                    className="h-14 w-auto"
+                  />
+                </a>
+                <a
+                  href={GOOGLE_PLAY_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Get Corporate Wheels on Google Play"
+                  className="block transition-transform duration-300 hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-corporate-gold rounded-xl"
+                >
+                  <img
+                    src="/google-play-badge.svg"
+                    alt="Get it on Google Play"
+                    className="h-14 w-auto"
+                  />
+                </a>
+              </div>
             </motion.div>
 
-            {/* Right: phone mockup */}
+            {/* Right: live app screenshots */}
             <motion.div 
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="flex justify-center lg:justify-end relative mt-10 md:mt-0"
+              className="flex justify-center lg:justify-end relative mt-10 md:mt-0 lg:pr-16"
             >
-              {/* Phone Aura */}
+              {/* Aura */}
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[500px] bg-corporate-gold/20 blur-[80px] rounded-full pointer-events-none" />
-              
-              <div className="relative h-[600px] w-[290px] rounded-[48px] border-[6px] border-[#222] bg-black shadow-[0_20px_50px_rgba(0,0,0,0.5),0_0_0_1px_rgba(255,255,255,0.1)] overflow-hidden group transform transition-transform hover:-translate-y-4 duration-700">
-                
-                {/* Dynamic Island / Notch */}
-                <div className="absolute top-3 left-1/2 -translate-x-1/2 w-24 h-7 bg-black rounded-full z-30 shadow-[inset_0_-2px_4px_rgba(255,255,255,0.1)]" />
-                
-                {/* Screen Content */}
-                <div className="absolute inset-0 bg-black z-0" />
-                <img
-                  src="/images/cw-placeholder.svg"
-                  alt="Mobile App Screen"
-                  className="absolute inset-0 w-full h-full object-cover blur-[3px] opacity-50 scale-110 group-hover:scale-100 transition-transform duration-700 z-10" 
-                />
-                
-                {/* Coming Soon Badge Overlay */}
-                <div className="absolute inset-0 flex flex-col items-center justify-center z-20 pointer-events-none">
-                  <div className="w-32 h-32 bg-corporate-gold/20 rounded-full blur-2xl absolute" />
-                  <motion.div 
-                    animate={{ y: [0, -8, 0] }} 
-                    transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
-                    className="relative bg-gradient-to-r from-corporate-gold to-[#cc9400] text-black px-8 py-3.5 rounded-full font-black text-sm shadow-[0_10px_40px_rgba(230,167,0,0.6)] tracking-[0.2em] uppercase border border-white/20 backdrop-blur-md"
-                  >
-                    COMING SOON
-                  </motion.div>
-                </div>
 
-                {/* Glass Glare Effect */}
-                <div className="absolute inset-0 bg-gradient-to-tr from-white/10 via-white/0 to-white/20 pointer-events-none z-30" />
-              </div>
+              <AppScreenCarousel />
             </motion.div>
             
           </div>

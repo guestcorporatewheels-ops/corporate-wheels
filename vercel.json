@@ -2,6 +2,21 @@
   "buildCommand": "npm run build:client",
   "outputDirectory": "dist/spa",
   "rewrites": [
-    { "source": "/((?!api/).*)", "destination": "/" }
+    {
+      "source": "/((?!api/).*)",
+      "destination": "/"
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/chauffeurs",
+      "destination": "/services",
+      "permanent": true
+    },
+    {
+      "source": "/login",
+      "destination": "https://corporatewheels.dashboardloginapp.com/login",
+      "permanent": false
+    }
   ]
 }

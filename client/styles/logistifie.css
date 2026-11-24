@@ -1,0 +1,616 @@
+/*
+ * Logistifie booking-widget theming.
+ *
+ * The Logistifie booking engine (window_bundle.js / bundle_booking.js) renders
+ * an Angular widget in light DOM with `lf-`-prefixed utility classes. Without
+ * these overrides it ships a plain white card that clashes with the site's
+ * dark, gold-accented identity. No shadow DOM is used, so plain CSS reaches
+ * everything, including the suggestion panels the widget teleports to <body>.
+ *
+ * The `lf-` prefix is unique to Logistifie's stylesheet, so the global
+ * selectors below cannot collide with our own classes.
+ */
+
+/* Hero search card and full-page booking cards. */
+booking-widget .lf-dropdown {
+  background: linear-gradient(180deg, rgba(10, 15, 28, 0.97), rgba(2, 6, 14, 0.98)) !important;
+  border: 1px solid rgba(227, 165, 1, 0.35) !important;
+  border-radius: 1.25rem !important;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.55) !important;
+}
+
+/* Text inputs, date and time fields. */
+booking-widget input {
+  background: rgba(255, 255, 255, 0.06) !important;
+  color: #fff !important;
+  border-color: rgba(255, 255, 255, 0.18) !important;
+}
+
+booking-widget input::placeholder {
+  color: rgba(255, 255, 255, 0.45) !important;
+}
+
+booking-widget input:focus {
+  border-color: rgba(227, 165, 1, 0.65) !important;
+}
+
+/* Journey-type tabs: active tab keeps the gold underline from --primary-color;
+   inactive tabs get a subtle light divider instead of the default #ddd. */
+booking-widget [class*="lf-border-[#ddd]"] {
+  border-color: rgba(255, 255, 255, 0.12) !important;
+}
+
+/* Primary action button (Search Ride / Continue), gold like the site CTAs. */
+booking-widget .lf-capitalize[class*="lf-bg-["] {
+  background: linear-gradient(135deg, #e3a501, #f5c542) !important;
+  color: #0a0a0a !important;
+  font-weight: 700 !important;
+  border-radius: 0.75rem !important;
+  box-shadow: 0 0 24px rgba(227, 165, 1, 0.3);
+}
+
+booking-widget .lf-capitalize[class*="lf-bg-["]:hover {
+  filter: brightness(1.08);
+}
+
+/* Address suggestion panel — the widget teleports this to <body>. */
+.lf-dropdown-panel {
+  background: #0d1322 !important;
+  border: 1px solid rgba(227, 165, 1, 0.35) !important;
+  border-radius: 0.9rem !important;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.65) !important;
+  overflow: hidden;
+}
+
+.lf-dropdown-panel .lf-text-black {
+  color: #e5e7eb !important;
+  background: transparent !important;
+}
+
+.lf-dropdown-panel .lf-text-black:hover {
+  background: rgba(227, 165, 1, 0.12) !important;
+  color: #fff !important;
+}
+
+/* Any other white surface the widget renders (dropdown lists, sections). */
+.lf-web-comp[class*="lf-bg-white"],
+.cdk-overlay-container div[class*="lf-bg-white"] {
+  background: #0d1322 !important;
+  color: #e5e7eb !important;
+  border-color: rgba(227, 165, 1, 0.3) !important;
+}
+
+/* Gray section headers inside suggestion lists ("AIRPORT ADDRESSES"). */
+.cdk-overlay-container [class*="lf-bg-gray"],
+.lf-dropdown-panel [class*="lf-bg-gray"] {
+  background: rgba(227, 165, 1, 0.14) !important;
+  color: #e3a501 !important;
+}
+
+/* Progress-step labels and number circles on the full-page booking flow —
+   Logistifie ships these black, which is unreadable on the dark card. */
+booking-widget .lf-text-black {
+  color: #fff !important;
+}
+
+booking-widget [class*="lf-text-black/60"] {
+  color: rgba(255, 255, 255, 0.55) !important;
+}
+
+booking-widget [class*="lf-rounded-full"][class*="lf-w-8"] {
+  color: #0a0a0a !important;
+  background: rgba(227, 165, 1, 0.85) !important;
+}
+
+/* Teleported list dropdowns (time picker, hourly duration picker, ...).
+   The widget mounts them on <body> with fixed inline positioning, so they
+   must be targeted globally, not under booking-widget. Without this they
+   render white text on a white panel (looks blank). */
+div.lf-web-component-dropdown:not(.flatpickr-calendar) {
+  background: #0d1322 !important;
+  border: 1px solid rgba(227, 165, 1, 0.35) !important;
+  border-radius: 0.75rem !important;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.65) !important;
+  color: #e5e7eb !important;
+  max-width: 220px !important;
+}
+
+div.lf-web-component-dropdown:not(.flatpickr-calendar) > div > div {
+  box-shadow: none !important;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(227, 165, 1, 0.45) transparent;
+}
+
+div.lf-web-component-dropdown:not(.flatpickr-calendar) > div > div + div {
+  border-left: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+div.lf-web-component-dropdown:not(.flatpickr-calendar) button,
+div.lf-web-component-dropdown:not(.flatpickr-calendar) i {
+  color: #e5e7eb !important;
+}
+
+div.lf-web-component-dropdown:not(.flatpickr-calendar) [class*="hover:lf-bg-gray-200"]:hover {
+  background: rgba(227, 165, 1, 0.15) !important;
+}
+
+div.lf-web-component-dropdown:not(.flatpickr-calendar) [class*="hover:lf-bg-gray-200"]:hover button {
+  color: #fff !important;
+}
+
+/* Date calendar (flatpickr), also teleported to <body> with fixed inline
+   positioning. Ships white by default; theme it to match the dark card. */
+.flatpickr-calendar.lf-web-component-dropdown {
+  background: #0d1322 !important;
+  color: #e5e7eb !important;
+  border: 1px solid rgba(227, 165, 1, 0.35) !important;
+  border-radius: 0.9rem !important;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.65) !important;
+  padding: 6px 4px 8px;
+}
+
+.flatpickr-calendar.lf-web-component-dropdown::before,
+.flatpickr-calendar.lf-web-component-dropdown::after {
+  display: none !important;
+}
+
+.lf-web-component-dropdown .flatpickr-months,
+.lf-web-component-dropdown .flatpickr-month,
+.lf-web-component-dropdown .flatpickr-weekdays,
+.lf-web-component-dropdown .flatpickr-weekdaycontainer,
+.lf-web-component-dropdown .flatpickr-innerContainer,
+.lf-web-component-dropdown .flatpickr-rContainer,
+.lf-web-component-dropdown .flatpickr-days,
+.lf-web-component-dropdown .dayContainer {
+  background: transparent !important;
+  color: #fff !important;
+  fill: #fff !important;
+}
+
+.lf-web-component-dropdown .flatpickr-current-month,
+.lf-web-component-dropdown .flatpickr-current-month .cur-month,
+.lf-web-component-dropdown .flatpickr-current-month input,
+.lf-web-component-dropdown .flatpickr-current-month select,
+.lf-web-component-dropdown .flatpickr-monthDropdown-months {
+  color: #fff !important;
+  background: transparent !important;
+  font-weight: 600;
+}
+
+.lf-web-component-dropdown .flatpickr-prev-month,
+.lf-web-component-dropdown .flatpickr-next-month {
+  color: #e3a501 !important;
+  fill: #e3a501 !important;
+}
+
+.lf-web-component-dropdown .flatpickr-prev-month svg,
+.lf-web-component-dropdown .flatpickr-next-month svg {
+  fill: #e3a501 !important;
+}
+
+.lf-web-component-dropdown .flatpickr-prev-month:hover svg,
+.lf-web-component-dropdown .flatpickr-next-month:hover svg {
+  fill: #f5c542 !important;
+}
+
+.lf-web-component-dropdown .flatpickr-weekday {
+  color: #e3a501 !important;
+  background: transparent !important;
+  font-weight: 600;
+}
+
+.lf-web-component-dropdown .flatpickr-day {
+  color: #e5e7eb !important;
+  border-color: transparent !important;
+}
+
+.lf-web-component-dropdown .flatpickr-day:hover {
+  background: rgba(227, 165, 1, 0.18) !important;
+  color: #fff !important;
+}
+
+.lf-web-component-dropdown .flatpickr-day.flatpickr-disabled,
+.lf-web-component-dropdown .flatpickr-day.prevMonthDay,
+.lf-web-component-dropdown .flatpickr-day.nextMonthDay {
+  /* Dimmed to read as unavailable, but still legible (~3:1). */
+  color: rgba(255, 255, 255, 0.4) !important;
+  background: transparent !important;
+}
+
+.lf-web-component-dropdown .flatpickr-day.today:not(.selected) {
+  border-color: rgba(227, 165, 1, 0.6) !important;
+}
+
+/* Extra .flatpickr-calendar so this beats the widget's own
+   `.flatpickr-day.selected[_ngcontent]` !important (white text on gold). */
+.flatpickr-calendar.lf-web-component-dropdown .flatpickr-day.selected,
+.flatpickr-calendar.lf-web-component-dropdown .flatpickr-day.selected:hover {
+  background: #e3a501 !important;
+  border-color: #e3a501 !important;
+  color: #0a0a0a !important;
+  font-weight: 700;
+}
+
+/* Full booking page (bundle_booking.js) uses ngx-daterangepicker-material
+   rendered inline. It defaults to white and anchors upward (bottom: 0),
+   covering the progress steps. Theme it and open it below the field. */
+booking-widget .md-drppicker {
+  top: calc(100% + 8px) !important;
+  bottom: auto !important;
+  z-index: 50 !important;
+  background: #0d1322 !important;
+  color: #e5e7eb !important;
+  border: 1px solid rgba(227, 165, 1, 0.35) !important;
+  border-radius: 0.9rem !important;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.65) !important;
+}
+
+booking-widget .md-drppicker::before,
+booking-widget .md-drppicker::after {
+  display: none !important;
+}
+
+booking-widget .md-drppicker .calendar-table,
+booking-widget .md-drppicker table,
+booking-widget .md-drppicker td,
+booking-widget .md-drppicker th {
+  background-color: transparent !important;
+  border-color: transparent !important;
+}
+
+booking-widget .md-drppicker th,
+booking-widget .md-drppicker th.month {
+  color: #fff !important;
+  font-weight: 600;
+}
+
+booking-widget .md-drppicker .week-days th {
+  color: #e3a501 !important;
+}
+
+booking-widget .md-drppicker td {
+  color: #e5e7eb !important;
+}
+
+booking-widget .md-drppicker td.off,
+booking-widget .md-drppicker td.disabled {
+  /* Dimmed to read as unavailable, but still legible (~3:1). */
+  color: rgba(255, 255, 255, 0.4) !important;
+}
+
+/* The widget un-highlights an "active" day that isn't the chosen date (e.g.
+   the outbound date shown in the return calendar) with
+   `td.active:not(.highlighted-date)` -> #3b3b3b, invisible on dark. Show it
+   as a normal day; only the real selection (.highlighted-date) goes gold. */
+booking-widget .md-drppicker .calendar-table td.active:not(.highlighted-date) {
+  background-color: transparent !important;
+  color: #e5e7eb !important;
+  font-weight: 400;
+}
+
+booking-widget .md-drppicker .calendar-table td.active.highlighted-date,
+booking-widget .md-drppicker .calendar-table td.highlighted-date:not(.off) {
+  background-color: #e3a501 !important;
+  color: #0a0a0a !important;
+  font-weight: 700;
+}
+
+booking-widget .md-drppicker td.available:hover {
+  background-color: rgba(227, 165, 1, 0.18) !important;
+  color: #fff !important;
+}
+
+booking-widget .md-drppicker td.active,
+booking-widget .md-drppicker td.active:hover {
+  background-color: #e3a501 !important;
+  color: #0a0a0a !important;
+  font-weight: 700;
+}
+
+/* Prev/next arrows are dark background-image SVGs; flip them to gold-ish. */
+booking-widget .md-drppicker th.prev,
+booking-widget .md-drppicker th.next {
+  filter: invert(72%) sepia(83%) saturate(1200%) hue-rotate(5deg) brightness(97%);
+}
+
+/* Its wrapper is anchored above the field (lf-bottom-[60%]), covering the
+   address inputs. Open it below the field instead. */
+booking-widget .lf-absolute[class*="lf-bottom-[60%]"] {
+  bottom: auto !important;
+  top: calc(100% + 8px) !important;
+}
+
+/* Time picker inside the full booking page (rendered inline, not teleported). */
+booking-widget [class*="lf-max-w-[180px]"] {
+  background: #0d1322 !important;
+  border-color: rgba(227, 165, 1, 0.35) !important;
+  border-radius: 0.75rem !important;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.65) !important;
+  color: #e5e7eb !important;
+}
+
+booking-widget [class*="hover:lf-bg-gray-200"] {
+  color: #e5e7eb !important;
+}
+
+booking-widget [class*="hover:lf-bg-gray-200"]:hover {
+  background: rgba(227, 165, 1, 0.15) !important;
+}
+
+/* Full-page booking widget — the 510px card cap is for the hero widget;
+   on the dedicated booking pages the card should use the page width. */
+.logistifie-page booking-widget [class*="lf-max-w-[510px]"] {
+  max-width: 100% !important;
+}
+
+/* The widget's outer column (custm_wdth) is lg:w-1/4 / md:w-1/3, which
+   squeezes the full booking form into a narrow strip on desktop. Let it fill
+   the page container instead. */
+.logistifie-page booking-widget .custm_wdth {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+/* ------------------------------------------------------------------------
+ * Full booking flow (Cars, Passenger Details, Payments steps).
+ * bundle_booking.js renders these on light-theme utility classes
+ * (lf-bg-white cards, lf-text-gray-800 copy, black buttons). Remap the
+ * palette to the dark card + gold accent theme. Scoped to .logistifie-page
+ * so the home-page hero widget is unaffected.
+ * --------------------------------------------------------------------- */
+
+/* Surfaces: white cards/panels -> dark card; light grays -> subtle tint. */
+/* :where() keeps this generic rule low-specificity so the targeted
+   overrides below (buttons, phone field) win. */
+.logistifie-page booking-widget :where([class*="lf-bg-white"]:not(.lf-dropdown):not(input)) {
+  background-color: #0d1322 !important;
+  border-color: rgba(227, 165, 1, 0.22) !important;
+}
+
+.logistifie-page booking-widget [class*="lf-bg-gray-50"],
+.logistifie-page booking-widget [class*="lf-bg-gray-100"],
+.logistifie-page booking-widget [class*="lf-bg-slate-50"],
+.logistifie-page booking-widget [class*="lf-bg-slate-100"] {
+  background-color: rgba(255, 255, 255, 0.04) !important;
+}
+
+.logistifie-page booking-widget [class*="lf-bg-gray-200"]:not([class*="hover:lf-bg-gray-200"]) {
+  background-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+/* Text: dark grays -> near-white; mid grays -> muted light gray. */
+.logistifie-page booking-widget [class*="lf-text-gray-900"],
+.logistifie-page booking-widget [class*="lf-text-gray-800"],
+.logistifie-page booking-widget [class*="lf-text-gray-700"],
+.logistifie-page booking-widget [class*="lf-text-slate-900"],
+.logistifie-page booking-widget [class*="lf-text-slate-800"],
+.logistifie-page booking-widget [class*="lf-text-slate-700"] {
+  color: #f3f4f6 !important;
+}
+
+.logistifie-page booking-widget [class*="lf-text-gray-600"],
+.logistifie-page booking-widget [class*="lf-text-gray-500"],
+.logistifie-page booking-widget [class*="lf-text-gray-400"],
+.logistifie-page booking-widget [class*="lf-text-slate-600"],
+.logistifie-page booking-widget [class*="lf-text-slate-500"] {
+  color: #a1a1aa !important;
+}
+
+/* Unclassed copy inside cards inherits the card's dark text. */
+.logistifie-page booking-widget [class*="lf-rounded-2xl"][class*="lf-bg-white"] div,
+.logistifie-page booking-widget [class*="lf-rounded-2xl"][class*="lf-bg-white"] span:not([class*="lf-text-"]) {
+  color: #d4d4d8;
+}
+
+/* Borders and dividers. */
+.logistifie-page booking-widget [class*="lf-border-gray-"],
+.logistifie-page booking-widget [class*="lf-border-slate-"],
+.logistifie-page booking-widget [class*="lf-divide-gray-"] > * {
+  border-color: rgba(255, 255, 255, 0.12) !important;
+}
+
+/* Black action buttons ("Select" on vehicle cards) -> gold. */
+.logistifie-page booking-widget app-button.lf-bg-black,
+.logistifie-page booking-widget app-button.lf-bg-black button,
+.logistifie-page booking-widget button.lf-bg-black {
+  background: linear-gradient(135deg, #e3a501, #f5c542) !important;
+  color: #0a0a0a !important;
+  font-weight: 700;
+}
+
+.logistifie-page booking-widget app-button.lf-bg-black *,
+.logistifie-page booking-widget button.lf-bg-black * {
+  color: #0a0a0a !important;
+}
+
+.logistifie-page booking-widget app-button.lf-bg-black:hover,
+.logistifie-page booking-widget button.lf-bg-black:hover {
+  filter: brightness(1.08);
+}
+
+/* Secondary white buttons ("Go Back") -> gold outline. */
+.logistifie-page booking-widget button[class*="lf-bg-white"] {
+  background: transparent !important;
+  border: 1px solid rgba(227, 165, 1, 0.6) !important;
+  color: #e3a501 !important;
+}
+
+.logistifie-page booking-widget button[class*="lf-bg-white"]:hover {
+  background: rgba(227, 165, 1, 0.1) !important;
+}
+
+/* Progress stepper: black connector (completed) -> gold; pending -> faint. */
+.logistifie-page booking-widget div[class*="lf-h-0.5"].lf-bg-black {
+  background-color: #e3a501 !important;
+}
+
+.logistifie-page booking-widget div[class*="lf-h-0.5"].lf-bg-gray-400 {
+  background-color: rgba(255, 255, 255, 0.18) !important;
+}
+
+.logistifie-page booking-widget [class*="lf-rounded-full"][class*="lf-border-black"] {
+  border-color: #e3a501 !important;
+}
+
+/* Native form controls on Passenger/Payment steps. */
+.logistifie-page booking-widget textarea,
+.logistifie-page booking-widget select {
+  background: rgba(255, 255, 255, 0.06) !important;
+  color: #fff !important;
+  border-color: rgba(255, 255, 255, 0.18) !important;
+}
+
+.logistifie-page booking-widget select option {
+  background: #0d1322;
+  color: #fff;
+}
+
+.logistifie-page booking-widget textarea::placeholder {
+  color: rgba(255, 255, 255, 0.45) !important;
+}
+
+.logistifie-page booking-widget input[type="checkbox"],
+.logistifie-page booking-widget input[type="radio"] {
+  accent-color: #e3a501;
+}
+
+/* Vehicle photos: some are JPGs on white, some transparent PNGs. Put every
+   photo on the same soft light plate so they read as one consistent set
+   on the dark card instead of mismatched white boxes. */
+.logistifie-page booking-widget img.lf-object-contain {
+  background: linear-gradient(180deg, #f8f8f8, #e9e9ec);
+  border-radius: 0.75rem !important;
+  padding: 6px 8px;
+}
+
+/* Default border colour. The widget's preflight paints every bare
+   `lf-border` light gray (#e5e7eb), which shows as bright white outlines
+   on dark (payment summary box, dividers, vehicle list frame). Keep
+   intentional gold borders. */
+.logistifie-page booking-widget *:not([class*="lf-border-[--primary"]):not([class*="border-[--primary"]) {
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+/* Phone number field: match the other inputs (one surface, no inner strip)
+   and keep the dial code on a single line. */
+.logistifie-page booking-widget app-phoneinput > div[class*="lf-border"] {
+  background: rgba(255, 255, 255, 0.06) !important;
+  border-color: rgba(255, 255, 255, 0.18) !important;
+}
+
+.logistifie-page booking-widget app-phoneinput input {
+  background: transparent !important;
+  border-top: 0 !important;
+  border-right: 0 !important;
+  border-bottom: 0 !important;
+}
+
+.logistifie-page booking-widget app-phoneinput button,
+.logistifie-page booking-widget app-phoneinput span {
+  white-space: nowrap;
+}
+
+/* "Notes" label ships unstyled; match the gold field labels. */
+.logistifie-page booking-widget label.lf-font-medium {
+  color: #e3a501 !important;
+  font-size: 0.875rem;
+}
+
+/* Payments step: Journey Details card uses an arbitrary light hex
+   (lf-bg-[#F6F3F3]) that the lf-bg-white rule doesn't catch, so its white
+   copy was invisible. Catch light arbitrary hex backgrounds too. */
+.logistifie-page booking-widget :where([class*="lf-bg-[#F"], [class*="lf-bg-[#f"], [class*="lf-bg-[#E"], [class*="lf-bg-[#e"]) {
+  background-color: #0d1322 !important;
+  border-color: rgba(227, 165, 1, 0.22) !important;
+}
+
+/* Count badges in Additional Information (light gray circle, white digit). */
+.logistifie-page booking-widget [class*="lf-bg-gray-300"] {
+  background-color: rgba(227, 165, 1, 0.16) !important;
+  color: #e3a501 !important;
+}
+
+/* Black PNG glyphs (passenger, luggage, seat, dropoff flag) vanish on dark;
+   invert them to light. The red pickup pin keeps its colour. */
+.logistifie-page booking-widget img.lf-w-5,
+.logistifie-page booking-widget img[src$="flag.png"] {
+  filter: invert(1) brightness(0.85);
+}
+
+/* "End At Different Location?" ships in dark navy (#004A7F), ~2:1 on the
+   dark card. Use the gold label colour (hero and booking pages). */
+booking-widget [class*="lf-text-[#004A7F]"],
+booking-widget [class*="lf-text-[#004a7f]"] {
+  color: #e3a501 !important;
+}
+
+booking-widget input[type="checkbox"],
+booking-widget input[type="radio"] {
+  accent-color: #e3a501;
+}
+
+/* Hero "+ Add Return Booking" is an unstyled button (white); match the gold
+   text links used elsewhere in the widget. */
+booking-widget .lf-justify-end > button:not([class]) {
+  color: #e3a501 !important;
+  font-weight: 600;
+}
+
+/* Gold-filled buttons (GO NEXT, GO TO PAYMENT, child-seat Select, +/-
+   counters) ship white text/icons on gold (~2:1). Use near-black, like the
+   site's other gold CTAs. Exact class token, so hover-only variants
+   (hover:lf-bg-[--primary-color]) are not matched. */
+booking-widget .lf-bg-\[--primary-color\],
+booking-widget .lf-bg-\[--primary-color\] *,
+booking-widget button.cardcusbtn,
+booking-widget button.cardcusbtn * {
+  color: #0a0a0a !important;
+}
+
+booking-widget button.cardcusbtn {
+  font-weight: 700;
+}
+
+/* Loading spinner: faint ring with a gold arc. (The generic border rule
+   above would otherwise flatten its coloured top border and the spinner
+   becomes invisible.) */
+booking-widget .lf-animate-spin {
+  border-color: rgba(255, 255, 255, 0.12) !important;
+  border-top-color: #e3a501 !important;
+}
+
+/* Full-screen loading overlay (lf-fixed lf-inset-0 lf-bg-gray-200): a dark
+   scrim instead of a light wash. */
+.logistifie-page booking-widget .lf-fixed.lf-inset-0[class*="lf-bg-gray-200"] {
+  background-color: rgba(0, 0, 0, 0.55) !important;
+}
+
+/* Focus rings ship blue (focus:lf-ring-blue-300); use the gold accent. */
+booking-widget * {
+  --tw-ring-color: rgba(227, 165, 1, 0.5);
+}
+
+/* Mobile only: the widget gives the vehicle capacity row (Adults /
+   Suitcases / Carry-on) a light #f3f3f3 strip under a media query, with
+   light text on it. Keep it a subtle dark strip. */
+.logistifie-page booking-widget .pas_Detilsnew {
+  background-color: rgba(255, 255, 255, 0.05) !important;
+  border-radius: 0.5rem;
+}
+
+/* Same strip: the widget sets overflow-wrap:anywhere, which splits words
+   mid-way on phones ("Adul / ts"). Only break between words. */
+.logistifie-page booking-widget .pas_Detilsnew,
+.logistifie-page booking-widget .pas_Detilsnew * {
+  word-break: normal !important;
+  overflow-wrap: normal !important;
+}
+
+@media (max-width: 640px) {
+  .logistifie-page booking-widget .pas_Detilsnew {
+    column-gap: 0.5rem !important;
+    font-size: 0.8125rem !important;
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+  }
+}

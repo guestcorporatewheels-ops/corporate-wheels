@@ -206,7 +206,7 @@ export default function Navbar() {
           {/* Other Navigation Items */}
 
           <NavLink
-            to="/chauffeurs"
+            to="/services"
             className={({ isActive }) =>
               isActive
                 ? "text-corporate-gold"
@@ -246,6 +246,10 @@ export default function Navbar() {
           >
             Contact Us
           </NavLink>
+
+          <Button asChild variant="glow">
+            <a href="https://corporatewheels.dashboardloginapp.com/login">Login</a>
+          </Button>
 
           <ThemeToggle />
 
@@ -350,7 +354,7 @@ export default function Navbar() {
 
 
           <NavLink
-            to="/chauffeurs"
+            to="/services"
             onClick={() => setOpen(false)}
             className={({ isActive }) =>
               isActive ? "text-neutral-900 dark:text-white" : "text-muted-foreground hover:text-neutral-900 dark:hover:text-white"
@@ -385,6 +389,12 @@ export default function Navbar() {
           >
             Booking
           </NavLink>
+
+          <Button asChild variant="glow" className="mt-4">
+            <a href="https://corporatewheels.dashboardloginapp.com/login">
+              Login
+            </a>
+          </Button>
 
           <Button asChild variant="glow" className="mt-4">
             <NavLink to="/booking" onClick={() => setOpen(false)}>

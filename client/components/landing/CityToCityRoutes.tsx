@@ -52,7 +52,7 @@ const topRoutes = [
     to: "Manchester",
     duration: "4h 00m",
     distance: "208 mi",
-    price: "From £349",
+    price: "From £700",
     perks: ["WiFi", "Refreshments", "Flexible pickup"],
   },
   {
@@ -60,7 +60,7 @@ const topRoutes = [
     to: "Oxford",
     duration: "1h 45m",
     distance: "60 mi",
-    price: "From £189",
+    price: "From £210",
     perks: ["University service", "Corporate class", "Door-to-door"],
   },
   {
@@ -68,47 +68,47 @@ const topRoutes = [
     to: "Birmingham",
     duration: "2h 30m",
     distance: "126 mi",
-    price: "From £249",
+    price: "From £370",
     perks: ["Business class", "Meet & greet", "VIP service"],
   },
   {
-    from: "Manchester",
-    to: "Liverpool",
-    duration: "1h",
-    distance: "35 mi",
+    from: "London",
+    to: "Farnborough Airport",
+    duration: "1h 00m",
+    distance: "38 mi",
     price: "From £149",
-    perks: ["Event service", "Match day", "Express route"],
+    perks: ["Meet & Greet", "Professional Chauffeur", "Refreshment"],
   },
   {
     from: "London",
     to: "Edinburgh",
     duration: "7h 30m",
     distance: "402 mi",
-    price: "From £599",
-    perks: ["Long distance", "Comfort stop", "Luxury SUV"],
+    price: "From £1200",
+    perks: ["Long distance", "Comfort stop", "Business Car"],
   },
   {
     from: "London",
-    to: "Cambridge",
-    duration: "1h 30m",
-    distance: "62 mi",
-    price: "From £189",
+    to: "Stansted Airport",
+    duration: "1h 15m",
+    distance: "40 mi",
+    price: "From £280",
     perks: ["WiFi", "Executive sedan", "Fixed rate"],
   },
   {
-    from: "Birmingham",
-    to: "London",
-    duration: "2h 30m",
-    distance: "126 mi",
-    price: "From £249",
-    perks: ["City transfer", "Airport link", "VIP service"],
+    from: "London",
+    to: "Gatwick",
+    duration: "1h 15m",
+    distance: "30 mi",
+    price: "From £160",
+    perks: ["City Transfer", "Airport Link", "WiFi and Water"],
   },
   {
-    from: "London",
-    to: "Heathrow",
+    from: "Heathrow",
+    to: "London",
     duration: "0h 45m",
     distance: "18 mi",
-    price: "From £99",
+    price: "From £70*",
     perks: ["Airport transfer", "Flight tracking", "Meet & greet"],
   },
 ];
@@ -408,6 +408,12 @@ export default function CityToCityRoutes() {
               </motion.div>
             ))}
           </div>
+
+          <p className="mt-6 text-sm text-muted-foreground">
+            <span className="text-corporate-gold font-semibold">*</span> VAT
+            and Parking Extra. Prices shown are starting fares and may vary by
+            vehicle class and journey details.
+          </p>
         </div>
 
         {/* Call to Action Section */}

@@ -1,69 +1,39 @@
-import { motion } from "framer-motion";
-import ChauffeurBookingWidget from "@/components/booking/BookingWidget";
+import { useEffect } from "react";
 import Seo from "@/components/Seo";
+import { loadLogistifieBundle } from "@/lib/logistifie";
 
+// Guest booking page backed by the Logistifie booking engine
+// (useractivestate="1" per the Logistifie Window Booking Engine setup guide).
 export default function Booking() {
+  useEffect(() => {
+    loadLogistifieBundle("booking");
+  }, []);
+
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen bg-background text-foreground">
       <Seo
         title="Book a Chauffeur"
         description="Book premium chauffeur transfers in seconds. Choose your vehicle, set pickup and drop-off, and get an instant quote."
         path="/booking"
       />
-      {/* Hero */}
-      <section className="relative bg-gradient-to-b from-slate-900/60 to-transparent pb-12 pt-24">
-        <div className="container">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-            <motion.div
-              initial={{ x: -8, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              transition={{ duration: 0.6 }}
-            >
-              <h1 className="text-4xl md:text-5xl font-extrabold leading-tight">
-                Book premium transfers in seconds
-              </h1>
-              <p className="mt-4 text-muted-foreground max-w-xl">
-                Instant quotes, professional chauffeurs and a fleet to match
-                your requirements. Choose a vehicle, set pickup & drop-off and
-                get an immediate estimate.
-              </p>
-            </motion.div>
-
-            <motion.div
-              initial={{ y: 8, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.6, delay: 0.08 }}
-              className="relative"
-            >
-              {/* decorative golden swoosh */}
-              <svg
-                aria-hidden
-                className="absolute -right-16 -top-12 w-72 h-72 opacity-90 hidden lg:block"
-                viewBox="0 0 200 200"
-                fill="none"
-              >
-                <defs>
-                  <radialGradient id="goldGrad" cx="30%" cy="30%">
-                    <stop offset="0%" stopColor="#F4C430" stopOpacity="0.9" />
-                    <stop offset="100%" stopColor="#E6A700" stopOpacity="0" />
-                  </radialGradient>
-                </defs>
-                <circle cx="100" cy="60" r="80" fill="url(#goldGrad)" />
-              </svg>
-
-              <img
-                src="/images/cw-placeholder.svg"
-                alt="Corporate Wheels executive car"
-                className="hidden lg:block rounded-xl w-64 h-40 object-cover mb-4 shadow-md"
-              />
-            </motion.div>
+      <section className="pt-28 pb-16">
+        <div className="container max-w-4xl logistifie-page">
+          <h1 className="text-3xl md:text-4xl font-extrabold text-center">
+            Book your chauffeur
+          </h1>
+          <p className="mt-3 text-muted-foreground text-center max-w-xl mx-auto">
+            Add your pickup, destination, date and time to see available
+            vehicles and get an instant quote.
+          </p>
+          <div className="mt-10">
+            <booking-widget
+              primarycolor="#E3A501"
+              useractivestate="1"
+              masteraccountid="9987250"
+              bookingtypes="oneway,hourly,airportpickup"
+            />
           </div>
         </div>
-      </section>
-
-      {/* Booking form */}
-      <section className="container py-12" id="form">
-        <ChauffeurBookingWidget />
       </section>
     </main>
   );

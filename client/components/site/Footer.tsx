@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useToast } from "@/hooks/use-toast";
+import { APP_STORE_URL, GOOGLE_PLAY_URL } from "@/lib/siteConfig";
 
 // Social profiles shown in the footer brand column.
 const SOCIAL_LINKS = [
@@ -165,7 +166,9 @@ export default function Footer() {
 
             <div className="flex flex-wrap items-center gap-3">
               <a
-                href="#"
+                href={APP_STORE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label="Download on the App Store"
                 className="transition-opacity duration-200 hover:opacity-80"
               >
@@ -176,7 +179,9 @@ export default function Footer() {
                 />
               </a>
               <a
-                href="#"
+                href={GOOGLE_PLAY_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label="Get it on Google Play"
                 className="transition-opacity duration-200 hover:opacity-80"
               >
@@ -262,7 +267,7 @@ export default function Footer() {
               { label: "Contact Us", path: "/contact" },
               { label: "Help Portal", path: "/help" },
               { label: "About Us", path: "/about" },
-              { label: "Chauffeur Careers", path: "/chauffeurs" }
+              { label: "Chauffeur Careers", path: "/chauffeur-careers" }
             ].map((item) => (
               <li key={item.label}>
                 <Link to={item.path} className="hover:text-corporate-gold transition-colors duration-200">

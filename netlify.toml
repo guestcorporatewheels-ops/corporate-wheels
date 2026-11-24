@@ -10,6 +10,12 @@
   
 [[redirects]]
   force = true
+  from = "/login"
+  status = 302
+  to = "https://corporatewheels.dashboardloginapp.com/login"
+
+[[redirects]]
+  force = true
   from = "/api/*"
   status = 200
   to = "/.netlify/functions/api/:splat"

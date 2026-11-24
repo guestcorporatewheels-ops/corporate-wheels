@@ -1,4 +1,5 @@
 import "./global.css";
+import "./styles/logistifie.css";
 
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
@@ -27,6 +28,7 @@ import Contact from "./pages/Contact";
 import Blog from "./pages/Blog";
 import About from "./pages/About";
 import Booking from "./pages/Booking";
+import BookFleet from "./pages/BookFleet";
 import ViewAllServices from "./pages/ViewAllServices";
 import ViewAllCities from "./pages/ViewAllCities";
 import ViewAllRoutes from "./pages/ViewAllRoutes";
@@ -41,13 +43,17 @@ import CookieBanner from "@/components/site/CookieBanner";
 import ChatWidget from "@/components/site/ChatWidget";
 import ErrorBoundary from "@/components/ErrorBoundary";
 import { ScrollToTop } from "@/components/ui/scroll-to-top";
-import { BookingProvider } from "@/context/BookingProvider";
-import SelectCar from "./pages/booking/SelectCar";
-import CustomerInfo from "./pages/booking/CustomerInfo";
-import Checkout from "./pages/booking/Checkout";
-import Payment from "./pages/booking/Payment";
-import BookingSuccess from "./pages/booking/Success";
 import AdminLogin from "./pages/admin/AdminLogin";
+import { useEffect } from "react";
+
+const DASHBOARD_LOGIN_URL = "https://corporatewheels.dashboardloginapp.com/login";
+
+function ExternalRedirect({ to }: { to: string }) {
+  useEffect(() => {
+    window.location.replace(to);
+  }, [to]);
+  return null;
+}
 import AdminDashboard from "./pages/admin/AdminDashboard";
 import AdminBookingData from "./pages/admin/AdminBookingData";
 import AdminVehicleClasses from "./pages/admin/AdminVehicleClasses";
@@ -72,26 +78,22 @@ function RootLayout({ showFooter = true }: { showFooter?: boolean }) {
   );
 }
 
-function BookingFunnelLayout() {
-  return <RootLayout showFooter={false} />;
-}
-
 export default function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <BookingProvider>
-        <TooltipProvider>
-          <Toaster />
-          <Sonner />
-          <OrganizationSchema />
-          <ErrorBoundary>
-            <BrowserRouter>
-              <ThemeSync />
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <OrganizationSchema />
+        <ErrorBoundary>
+          <BrowserRouter>
+            <ThemeSync />
               <Routes>
                 <Route element={<RootLayout />}>
                   <Route index element={<Index />} />
                   <Route path="business" element={<Business />} />
-                  <Route path="chauffeurs" element={<Chauffeurs />} />
+                  <Route path="chauffeurs" element={<Navigate to="/services" replace />} />
+                  <Route path="chauffeur-careers" element={<Chauffeurs />} />
                   <Route path="chauffeur-hailing" element={<ChauffeurHailing />} />
                   <Route path="help" element={<Help />} />
                   <Route path="hourly-hire" element={<HourlyHire />} />
@@ -104,7 +106,7 @@ export default function App() {
                   <Route path="contact" element={<Contact />} />
                   <Route path="blog" element={<Blog />} />
                   <Route path="about" element={<About />} />
-                  <Route path="booking" element={<Booking />} />
+                  <Route path="booking/*" element={<Booking />} />
                   <Route path="services" element={<ViewAllServices />} />
                   <Route path="cities" element={<ViewAllCities />} />
                   <Route path="routes" element={<ViewAllRoutes />} />
@@ -119,13 +121,9 @@ export default function App() {
                   <Route path="socialconnect" element={<Navigate to="/Socialconnect" replace />} />
                 </Route>
 
-                <Route element={<BookingFunnelLayout />}>
-                  <Route path="booking/select-car" element={<SelectCar />} />
-                  <Route path="booking/customer-info" element={<CustomerInfo />} />
-                  <Route path="booking/checkout" element={<Checkout />} />
-                  <Route path="booking/payment" element={<Payment />} />
-                  <Route path="booking/success" element={<BookingSuccess />} />
-                </Route>
+                <Route path="book-fleet" element={<BookFleet />} />
+
+                <Route path="login" element={<ExternalRedirect to={DASHBOARD_LOGIN_URL} />} />
 
                 <Route path="admin-panel" element={<Navigate to="/admin-panel/login" replace />} />
                 <Route path="admin-panel/login" element={<AdminLogin />} />
@@ -150,7 +148,6 @@ export default function App() {
             </BrowserRouter>
           </ErrorBoundary>
         </TooltipProvider>
-      </BookingProvider>
     </QueryClientProvider>
   );
 }

@@ -1,4 +1,4 @@
-import { FormEvent, ReactNode, useState } from "react";
+import { FormEvent, ReactNode, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import {
   ArrowRight,
@@ -17,7 +17,7 @@ import {
   Star,
 } from "lucide-react";
 
-import ChauffeurBookingWidget from "@/components/booking/BookingWidget";
+import { loadLogistifieBundle } from "@/lib/logistifie";
 import Seo from "@/components/Seo";
 import { Button } from "@/components/ui/button";
 import {
@@ -108,6 +108,10 @@ const inputClass =
 export default function SocialConnect() {
   const [selectedRating, setSelectedRating] = useState(5);
   const [thankYouKind, setThankYouKind] = useState<ThankYouKind>(null);
+
+  useEffect(() => {
+    loadLogistifieBundle("booking");
+  }, []);
 
   const submitReview = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -327,7 +331,12 @@ export default function SocialConnect() {
             you.
           </SectionHeading>
           <div className="mx-auto mt-10 max-w-4xl [&_.bg-card\/90]:bg-[#0F1525] [&_.border-border]:border-[#E3A501]/30">
-            <ChauffeurBookingWidget />
+            <booking-widget
+              primarycolor="#E3A501"
+              useractivestate="1"
+              masteraccountid="9987250"
+              bookingtypes="oneway,hourly,airportpickup"
+            />
           </div>
         </div>
       </section>
@@ -545,9 +554,9 @@ export default function SocialConnect() {
         <div className="container relative">
           <div className="mx-auto max-w-2xl rounded-3xl border border-[#E3A501]/40 bg-[#0F1525]/70 px-6 py-12 text-center shadow-[0_0_60px_rgba(227,165,1,0.12)] sm:px-12 sm:py-16">
             <img
-              src="/socialconnect/founder.jpg"
-              alt="Nurali Virani"
-              className="mx-auto size-24 rounded-full border-2 border-[#E3A501] object-cover object-top shadow-[0_0_30px_rgba(227,165,1,0.35)] sm:size-28"
+              src="/logo.png"
+              alt="Corporate Wheels — Always on time"
+              className="mx-auto size-24 rounded-full border-2 border-[#E3A501] bg-black object-contain p-1 shadow-[0_0_30px_rgba(227,165,1,0.35)] sm:size-28"
             />
             <h2 className="mt-8 font-heading text-5xl font-bold text-[#E3A501] sm:text-6xl">
               Thank You

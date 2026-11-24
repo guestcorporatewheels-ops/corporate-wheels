@@ -994,7 +994,7 @@ export default function Chauffeurs() {
       <Seo
         title="Become a Chauffeur Partner"
         description="Join our network of professional chauffeurs. Flexible hours, reliable earnings, and premium clients — apply to drive with Corporate Wheels today."
-        path="/chauffeurs"
+        path="/chauffeur-careers"
         jsonLd={faqJsonLd}
       />
       <Hero />

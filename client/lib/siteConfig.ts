@@ -24,3 +24,9 @@ export const BUSINESS_LOCATIONS: BusinessLocation[] = [
     email: "info@corporatewheels.co.uk",
   },
 ];
+
+// Mobile app store links (Corporate Wheels passenger app, bundle com.cw.passenger).
+export const APP_STORE_URL =
+  "https://apps.apple.com/gb/app/corporate-wheels/id6812624557";
+export const GOOGLE_PLAY_URL =
+  "https://play.google.com/store/apps/details?id=com.cw.passenger";

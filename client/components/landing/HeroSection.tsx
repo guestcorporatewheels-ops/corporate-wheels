@@ -1,11 +1,15 @@
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
-import ChauffeurBookingWidget from "@/components/booking/BookingWidget";
+import { loadLogistifieBundle } from "@/lib/logistifie";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
 export default function HeroSection() {
   const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    loadLogistifieBundle("window");
+  }, []);
 
   const handleScrollDown = () => {
     const next = sectionRef.current?.nextElementSibling;
@@ -166,7 +170,12 @@ export default function HeroSection() {
             id="booking"
             className="w-full max-w-lg"
           >
-            <ChauffeurBookingWidget />
+            <booking-widget
+              primarycolor="#E3A501"
+              masteraccountid="9987250"
+              bookingpageurl="book-fleet/"
+              bookingtypes="oneway,hourly,airportpickup"
+            />
             <p className="mt-3 text-sm text-corporate-gold text-center font-semibold">
               Fast booking with instant confirmations and free cancellations up
               to 24 hours.
