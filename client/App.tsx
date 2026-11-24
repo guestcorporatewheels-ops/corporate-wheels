@@ -30,6 +30,7 @@ import AirportTransfersService from "./pages/AirportTransfersService";
 import CorporateTravelService from "./pages/CorporateTravelService";
 import BusinessVanFleet from "./pages/BusinessVanFleet";
 import CancellationRefundPolicy from "./pages/CancellationRefundPolicy";
+import EliteChauffeurs from "./pages/EliteChauffeurs";
 import Booking from "./pages/Booking";
 import BookFleet from "./pages/BookFleet";
 import ViewAllServices from "./pages/ViewAllServices";
@@ -120,6 +121,7 @@ export default function App() {
                   <Route path="services/airport-transfers" element={<AirportTransfersService />} />
                   <Route path="services/corporate-travel" element={<CorporateTravelService />} />
                   <Route path="services/:serviceId" element={<ServiceCategory />} />
+                  <Route path="why-choose-us/elite-chauffeurs" element={<EliteChauffeurs />} />
                   <Route path="why-choose-us/:chooseId" element={<WhyChooseUs />} />
                 </Route>
 

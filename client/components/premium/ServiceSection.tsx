@@ -39,7 +39,13 @@ function FeatureList({
   layout: "stack" | "row";
 }) {
   return (
-    <div className={layout === "row" ? "grid gap-5 md:grid-cols-3" : "space-y-4"}>
+    <div
+      className={
+        layout === "row"
+          ? `grid gap-5 ${features.length === 4 ? "md:grid-cols-2 xl:grid-cols-4" : "md:grid-cols-3"}`
+          : "space-y-4"
+      }
+    >
       {features.map((f, i) => {
         const Icon = icons[i];
         return (
