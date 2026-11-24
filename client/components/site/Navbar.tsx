@@ -227,16 +227,33 @@ export default function Navbar() {
           >
             About Us
           </NavLink>
-          <NavLink
-            to="/help"
-            className={({ isActive }) =>
-              isActive
-                ? "text-corporate-gold"
-                : "hover:text-corporate-gold transition-colors"
+          {/* Help Dropdown */}
+          <HoverDropdown
+            dropdownId="help"
+            trigger={
+              <button className="flex items-center gap-1 hover:text-corporate-gold transition-colors focus:outline-none">
+                Help <ChevronDown className="size-4" />
+              </button>
             }
+            className="w-64 bg-white/90 dark:bg-black/90 border border-black/8 dark:border-white/8 backdrop-blur-md rounded-lg shadow-lg p-2"
           >
-            Help
-          </NavLink>
+            <div className="py-1">
+              {[
+                { label: "Help Portal", path: "/help" },
+                { label: "Cancellation & Refund Policy", path: "/cancellation-refund-policy" },
+              ].map((item) => (
+                <Link
+                  key={item.label}
+                  to={item.path}
+                  className="group block px-3 py-3 rounded-md text-neutral-900/90 dark:text-white/90 hover:bg-black/8 dark:hover:bg-white/8 focus:bg-black/12 dark:focus:bg-white/12 focus:outline-none transition-colors"
+                >
+                  <span className="group-hover:text-corporate-gold group-focus:text-corporate-gold transition-colors">
+                    {item.label}
+                  </span>
+                </Link>
+              ))}
+            </div>
+          </HoverDropdown>
           <NavLink
             to="/contact"
             className={({ isActive }) =>
@@ -362,7 +379,7 @@ export default function Navbar() {
               isActive ? "text-neutral-900 dark:text-white" : "text-muted-foreground hover:text-neutral-900 dark:hover:text-white"
             }
           >
-            For Chauffeurs
+            Chauffeurs
           </NavLink>
           <NavLink
             to="/help"
@@ -372,6 +389,15 @@ export default function Navbar() {
             }
           >
             Help
+          </NavLink>
+          <NavLink
+            to="/cancellation-refund-policy"
+            onClick={() => setOpen(false)}
+            className={({ isActive }) =>
+              isActive ? "text-neutral-900 dark:text-white" : "text-muted-foreground hover:text-neutral-900 dark:hover:text-white"
+            }
+          >
+            Cancellation & Refund Policy
           </NavLink>
           <NavLink
             to="/contact"
