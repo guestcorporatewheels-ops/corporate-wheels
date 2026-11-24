@@ -22,7 +22,7 @@ const highlights: Highlight[] = [
     image: "/images/airport-transfer-highlight.jpg",
     alt: "Corporate Wheels chauffeur greeting a client with a name sign at the airport arrivals hall",
     imageSide: "left",
-    cta: { label: "Book an Airport Transfer", to: "/airport-transfer" },
+    cta: { label: "Book an Airport Transfer", to: "/services/airport-transfers" },
   },
   {
     eyebrow: "Signature Service",

@@ -10,7 +10,7 @@ interface PremiumCTAProps {
   goldSuffix?: string;
   text: string;
   primary: { label: string; to: string };
-  secondary: { label: string; to: string };
+  secondary?: { label: string; to: string };
   image?: string;
   /** Optional "Label: value" highlights shown under the buttons. */
   highlights?: readonly { label?: string; text: string }[];
@@ -84,9 +84,11 @@ export default function PremiumCTA({
                     <ArrowRight className="ml-2 size-4" />
                   </Link>
                 </Button>
-                <Button asChild variant="outline-glow" size="lg" className="w-full sm:w-auto px-8">
-                  <Link to={secondary.to}>{secondary.label}</Link>
-                </Button>
+                {secondary && (
+                  <Button asChild variant="outline-glow" size="lg" className="w-full sm:w-auto px-8">
+                    <Link to={secondary.to}>{secondary.label}</Link>
+                  </Button>
+                )}
               </div>
               {highlights?.length ? (
                 <ul className="mt-8 flex flex-wrap items-center justify-center lg:justify-start gap-3">

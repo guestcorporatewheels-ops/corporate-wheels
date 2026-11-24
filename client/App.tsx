@@ -20,7 +20,6 @@ import Chauffeurs from "./pages/Chauffeurs";
 import HourlyHire from "./pages/HourlyHire";
 import CityToCity from "./pages/CityToCity";
 import ChauffeurHailing from "./pages/ChauffeurHailing";
-import AirportTransfer from "./pages/AirportTransfer";
 import LimousineService from "./pages/LimousineService";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
@@ -29,6 +28,7 @@ import Blog from "./pages/Blog";
 import About from "./pages/About";
 import AirportTransfersService from "./pages/AirportTransfersService";
 import CorporateTravelService from "./pages/CorporateTravelService";
+import BusinessVanFleet from "./pages/BusinessVanFleet";
 import Booking from "./pages/Booking";
 import BookFleet from "./pages/BookFleet";
 import ViewAllServices from "./pages/ViewAllServices";
@@ -100,7 +100,7 @@ export default function App() {
                   <Route path="help" element={<Help />} />
                   <Route path="hourly-hire" element={<HourlyHire />} />
                   <Route path="city-to-city" element={<CityToCity />} />
-                  <Route path="airport-transfer" element={<AirportTransfer />} />
+                  <Route path="airport-transfer" element={<Navigate to="/services/airport-transfers" replace />} />
                   <Route path="limousine-service" element={<LimousineService />} />
                   <Route path="privacy" element={<Privacy />} />
                   <Route path="terms-and-conditions" element={<Terms />} />
@@ -113,6 +113,7 @@ export default function App() {
                   <Route path="cities" element={<ViewAllCities />} />
                   <Route path="routes" element={<ViewAllRoutes />} />
                   <Route path="fleet/executive-cars" element={<ExecutiveCars />} />
+                  <Route path="fleet/business-vans" element={<BusinessVanFleet />} />
                   <Route path="fleet/:categoryId" element={<FleetCategory />} />
                   <Route path="services/airport-transfers" element={<AirportTransfersService />} />
                   <Route path="services/corporate-travel" element={<CorporateTravelService />} />

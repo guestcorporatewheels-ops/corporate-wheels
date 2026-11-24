@@ -44,7 +44,7 @@ const SERVICES = [
     icon: Plane,
     title: "Airport transfers",
     text: "Real-time flight tracking and meet & greet at every major UK airport.",
-    to: "/airport-transfer",
+    to: "/services/airport-transfers",
   },
   {
     icon: Briefcase,

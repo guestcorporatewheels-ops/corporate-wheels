@@ -8,7 +8,7 @@ export const THEME_STORAGE_KEY = "cw-theme";
 
 // Only these routes have been designed for the light theme so far; every other
 // page is forced dark until it is converted.
-const THEMEABLE_PATHS = new Set(["/", "/about", "/services", "/services/airport-transfers", "/services/corporate-travel"]);
+const THEMEABLE_PATHS = new Set(["/", "/about", "/services", "/services/airport-transfers", "/services/corporate-travel", "/fleet/business-vans"]);
 
 export function isThemeablePath(pathname: string) {
   return THEMEABLE_PATHS.has(pathname);
