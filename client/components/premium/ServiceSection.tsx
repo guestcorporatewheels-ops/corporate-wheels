@@ -17,6 +17,8 @@ interface ServiceSectionProps {
   heading: string;
   /** Writer's paragraph, rendered verbatim as the subtitle. */
   paragraph: string;
+  /** Further writer paragraphs shown under the subtitle (split variant). */
+  moreParagraphs?: readonly string[];
   features: readonly ServiceFeature[];
   /** One decorative icon per feature. */
   icons: LucideIcon[];
@@ -88,6 +90,7 @@ export default function ServiceSection({
   tagline,
   heading,
   paragraph,
+  moreParagraphs,
   features,
   icons,
   image,
@@ -167,7 +170,25 @@ export default function ServiceSection({
 
         {/* Copy */}
         <div className={reverse ? "lg:order-1" : ""}>
-          <SectionHeading align="left" tagline={tagline} title={heading} subtitle={paragraph} className="!mb-8" />
+          <SectionHeading
+            align="left"
+            tagline={tagline}
+            title={heading}
+            subtitle={paragraph}
+            className={moreParagraphs?.length ? "!mb-4" : "!mb-8"}
+          />
+          {moreParagraphs?.map((p) => (
+            <motion.p
+              key={p}
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, delay: 0.15 }}
+              className="mb-8 max-w-2xl text-center lg:text-left text-lg text-muted-foreground"
+            >
+              {p}
+            </motion.p>
+          ))}
           <FeatureList features={features} icons={icons} layout="stack" />
         </div>
       </div>
