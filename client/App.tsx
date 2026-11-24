@@ -35,6 +35,7 @@ import CruisePortTransfers from "./pages/CruisePortTransfers";
 import CityTours from "./pages/CityTours";
 import PrivateJetTransfers from "./pages/PrivateJetTransfers";
 import SafetyFirst from "./pages/SafetyFirst";
+import SpecialEvents from "./pages/SpecialEvents";
 import Booking from "./pages/Booking";
 import BookFleet from "./pages/BookFleet";
 import ViewAllServices from "./pages/ViewAllServices";
@@ -129,6 +130,7 @@ export default function App() {
                   <Route path="services/london-cruise-transfer" element={<CruisePortTransfers />} />
                   <Route path="services/city-tours" element={<CityTours />} />
                   <Route path="services/private-jet-chauffeur" element={<PrivateJetTransfers />} />
+                  <Route path="services/special-events" element={<SpecialEvents />} />
                   <Route path="services/:serviceId" element={<ServiceCategory />} />
                   <Route path="why-choose-us/elite-chauffeurs" element={<EliteChauffeurs />} />
                   <Route path="why-choose-us/safety-first" element={<SafetyFirst />} />
