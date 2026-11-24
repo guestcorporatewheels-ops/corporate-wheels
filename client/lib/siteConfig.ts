@@ -1,4 +1,4 @@
-export const SITE_URL = "https://corporatewheels.co.uk";
+export const SITE_URL = "https://www.corporatewheels.co.uk";
 export const SITE_NAME = "Corporate Wheels";
 export const DEFAULT_OG_IMAGE = `${SITE_URL}/logo.png`;
 
