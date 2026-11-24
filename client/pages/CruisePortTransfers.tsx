@@ -9,7 +9,7 @@ import { cruiseContent, cruiseLabels } from "@/components/cruise/content";
 const { title, intro, sections } = cruiseContent;
 const [ports, comfort] = sections;
 
-/** /services/london-cruise-transfer — built from "CW Contents/Executive Cruise Port TransfersCW.docx". */
+/** /services/london-cruise-transfer — built from "CW Contents/Premium Cruise Port TransfersCW.docx". */
 export default function CruisePortTransfers() {
   return (
     <MotionConfig reducedMotion="user">

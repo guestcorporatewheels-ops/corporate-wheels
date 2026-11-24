@@ -1,7 +1,7 @@
-// Verbatim copy from "CW Contents/Executive Cruise Port TransfersCW.docx" (written by the content writer).
+// Verbatim copy from "CW Contents/Premium Cruise Port TransfersCW.docx" (written by the content writer).
 // Do not edit wording here without the writer's approval.
 export const cruiseContent = {
-  "title": "Executive Cruise Port Transfers",
+  "title": "Premium Cruise Port Transfers",
   "intro": [
     "Corporate Wheels offers a luxurious, seamless chauffeur transfer between London, international airports, and cruise terminals of the United Kingdom. Whether travelling across the Atlantic or coming back from the trip, we guarantee that you will enjoy our personalised, luxurious private transfer service."
   ],
@@ -33,12 +33,12 @@ export const cruiseContent = {
     {
       "heading": "Uncompromised Long-Distance Comfort",
       "paragraphs": [
-        "Transfers from cruise terminals are generally lengthy trips. Our executive vehicles have been built to provide an extremely comfortable environment for your relaxation, whether you are returning from a cruise or approaching the port fresh and ready."
+        "Transfers from cruise terminals are generally lengthy trips. Our premium vehicles have been built to provide an extremely comfortable environment for your relaxation, whether you are returning from a cruise or approaching the port fresh and ready."
       ],
       "bullets": [
         {
           "label": "Large Luggage Capacity Fleet",
-          "text": "Luxury MPVs and executive cars with large boot space that are tailored to store large wardrobe trunks, several suitcases, and other luggage easily."
+          "text": "Luxury MPVs and premium cars with large boot space that are tailored to store large wardrobe trunks, several suitcases, and other luggage easily."
         },
         {
           "label": "First Class Interior",
@@ -50,7 +50,7 @@ export const cruiseContent = {
         },
         {
           "label": "Chauffeur Standards",
-          "text": "Experienced and polite drivers who are professional and expert in escorting executives, trip planning, and long distance driving."
+          "text": "Experienced and polite chauffeurs who are professional and expert in escorting executives, trip planning, and long distance driving."
         }
       ]
     }
