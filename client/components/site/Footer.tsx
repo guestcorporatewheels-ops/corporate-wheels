@@ -264,6 +264,7 @@ export default function Footer() {
             {[
               { label: "Privacy Policy", path: "/privacy" },
               { label: "Terms & Conditions", path: "/terms-and-conditions" },
+              { label: "Cancellation & Refund Policy", path: "/cancellation-refund-policy" },
               { label: "Contact Us", path: "/contact" },
               { label: "Help Portal", path: "/help" },
               { label: "About Us", path: "/about" },

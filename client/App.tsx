@@ -29,6 +29,7 @@ import About from "./pages/About";
 import AirportTransfersService from "./pages/AirportTransfersService";
 import CorporateTravelService from "./pages/CorporateTravelService";
 import BusinessVanFleet from "./pages/BusinessVanFleet";
+import CancellationRefundPolicy from "./pages/CancellationRefundPolicy";
 import Booking from "./pages/Booking";
 import BookFleet from "./pages/BookFleet";
 import ViewAllServices from "./pages/ViewAllServices";
@@ -105,6 +106,7 @@ export default function App() {
                   <Route path="privacy" element={<Privacy />} />
                   <Route path="terms-and-conditions" element={<Terms />} />
                   <Route path="terms" element={<Navigate to="/terms-and-conditions" replace />} />
+                  <Route path="cancellation-refund-policy" element={<CancellationRefundPolicy />} />
                   <Route path="contact" element={<Contact />} />
                   <Route path="blog" element={<Blog />} />
                   <Route path="about" element={<About />} />
