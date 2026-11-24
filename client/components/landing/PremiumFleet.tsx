@@ -134,6 +134,21 @@ export default function PremiumFleet() {
             </motion.div>
           ))}
         </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mt-12 flex justify-center"
+        >
+          <Button asChild variant="glow" size="lg" className="rounded-full px-8">
+            <Link to="/book-fleet">
+              View Our Fleet
+              <ArrowRight className="size-4 ml-1.5" />
+            </Link>
+          </Button>
+        </motion.div>
       </div>
     </section>
   );

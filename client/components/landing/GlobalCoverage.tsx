@@ -39,8 +39,8 @@ export default function GlobalCoverage() {
             transition={{ duration: 0.6 }}
             className="rounded-2xl border border-corporate-gold/20 bg-black/[0.02] dark:bg-white/[0.02] p-6"
           >
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-corporate-gold mb-4">
-              Our UK Operations
+            <h3 className="text-base font-heading text-corporate-gold mb-4">
+              Our UK operations include:
             </h3>
             <ul className="space-y-2.5">
               {ukCities.map((city) => (
@@ -62,8 +62,8 @@ export default function GlobalCoverage() {
             transition={{ duration: 0.6 }}
             className="rounded-2xl border border-black/10 dark:border-white/10 bg-black/[0.02] dark:bg-white/[0.02] p-6"
           >
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground mb-4">
-              Our Abroad Operations
+            <h3 className="text-base font-heading text-neutral-900 dark:text-white mb-4">
+              Our abroad operations include:
             </h3>
             <ul className="space-y-2.5">
               {partnerHubs.map((city) => (

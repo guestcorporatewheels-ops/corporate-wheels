@@ -272,9 +272,15 @@ export default function CityToCityRoutes() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="mb-8"
+            className="mb-8 flex flex-wrap items-center justify-between gap-4"
           >
             <h3 className="text-2xl font-heading text-neutral-900 dark:text-white">Popular Cities</h3>
+            <Link
+              to="/cities"
+              className="group inline-flex items-center gap-2 rounded-full border border-corporate-gold/50 px-5 py-2.5 text-sm font-medium text-corporate-gold transition-colors hover:bg-corporate-gold hover:text-black"
+            >
+              View all cities →
+            </Link>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
