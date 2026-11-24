@@ -27,6 +27,7 @@ import Terms from "./pages/Terms";
 import Contact from "./pages/Contact";
 import Blog from "./pages/Blog";
 import About from "./pages/About";
+import AirportTransfersService from "./pages/AirportTransfersService";
 import Booking from "./pages/Booking";
 import BookFleet from "./pages/BookFleet";
 import ViewAllServices from "./pages/ViewAllServices";
@@ -112,6 +113,7 @@ export default function App() {
                   <Route path="routes" element={<ViewAllRoutes />} />
                   <Route path="fleet/executive-cars" element={<ExecutiveCars />} />
                   <Route path="fleet/:categoryId" element={<FleetCategory />} />
+                  <Route path="services/airport-transfers" element={<AirportTransfersService />} />
                   <Route path="services/:serviceId" element={<ServiceCategory />} />
                   <Route path="why-choose-us/:chooseId" element={<WhyChooseUs />} />
                 </Route>

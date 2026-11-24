@@ -17,7 +17,7 @@
     <script>
       // Apply the saved theme before first paint (see client/hooks/use-theme.tsx).
       try {
-        if (["/", "/about", "/services"].indexOf(location.pathname.replace(/\/$/, "") || "/") !== -1 && localStorage.getItem("cw-theme") === "light") {
+        if (["/", "/about", "/services", "/services/airport-transfers"].indexOf(location.pathname.replace(/\/$/, "") || "/") !== -1 && localStorage.getItem("cw-theme") === "light") {
           document.documentElement.classList.remove("dark");
         }
       } catch (e) {}

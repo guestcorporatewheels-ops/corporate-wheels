@@ -207,6 +207,7 @@ export default function Navbar() {
 
           <NavLink
             to="/services"
+            end
             className={({ isActive }) =>
               isActive
                 ? "text-corporate-gold"
@@ -355,6 +356,7 @@ export default function Navbar() {
 
           <NavLink
             to="/services"
+            end
             onClick={() => setOpen(false)}
             className={({ isActive }) =>
               isActive ? "text-neutral-900 dark:text-white" : "text-muted-foreground hover:text-neutral-900 dark:hover:text-white"
