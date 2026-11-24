@@ -12,6 +12,8 @@ interface PremiumCTAProps {
   primary: { label: string; to: string };
   secondary: { label: string; to: string };
   image?: string;
+  /** Optional "Label: value" highlights shown under the buttons. */
+  highlights?: readonly { label?: string; text: string }[];
 }
 
 /** Closing call-to-action panel with animated gold border, shared by content pages. */
@@ -23,6 +25,7 @@ export default function PremiumCTA({
   primary,
   secondary,
   image = "/images/why-choose-chauffeur.png",
+  highlights,
 }: PremiumCTAProps) {
   const hasGold = goldSuffix && heading.endsWith(goldSuffix);
   const lead = hasGold ? heading.slice(0, heading.length - goldSuffix.length) : heading;
@@ -85,6 +88,20 @@ export default function PremiumCTA({
                   <Link to={secondary.to}>{secondary.label}</Link>
                 </Button>
               </div>
+              {highlights?.length ? (
+                <ul className="mt-8 flex flex-wrap items-center justify-center lg:justify-start gap-3">
+                  {highlights.map((h) => (
+                    <li
+                      key={h.label ?? h.text}
+                      className="flex items-center gap-2 rounded-full border border-corporate-gold/30 bg-white/70 dark:bg-white/[0.05] px-4 py-2 text-sm backdrop-blur-md"
+                    >
+                      <span aria-hidden className="w-1.5 h-1.5 rotate-45 bg-corporate-gold" />
+                      {h.label && <span className="text-muted-foreground">{h.label}:</span>}
+                      <span className="font-medium text-neutral-900 dark:text-white">{h.text}</span>
+                    </li>
+                  ))}
+                </ul>
+              ) : null}
             </div>
           </div>
         </motion.div>
