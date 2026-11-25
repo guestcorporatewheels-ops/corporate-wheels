@@ -40,7 +40,7 @@ export default function ChauffeurHailing() {
   const downloadRef = useReveal<HTMLDivElement>({ threshold: 0.12 });
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-black via-gray-900 to-black text-white">
+    <div className="min-h-screen bg-gradient-to-b from-white dark:from-black via-gray-900 to-white dark:to-black text-neutral-900 dark:text-white">
       <Seo
         title="On-Demand Chauffeur Hailing"
         description="Hail a professional chauffeur in minutes. On-demand private hire rides with vetted drivers and premium vehicles, booked instantly from the app."
@@ -52,7 +52,7 @@ export default function ChauffeurHailing() {
         className="relative overflow-hidden pt-24 pb-28 reveal opacity-0 translate-y-6 transition-transform duration-700 ease-out"
       >
         <div className="absolute inset-0 -z-10">
-          <div className="absolute inset-0 bg-gradient-to-b from-black to-black/85" />
+          <div className="absolute inset-0 bg-gradient-to-b from-white dark:from-black to-white/85 dark:to-black/85" />
           <motion.svg
             className="absolute -top-32 left-1/4 opacity-20"
             width="900"
@@ -97,7 +97,7 @@ export default function ChauffeurHailing() {
                   Chauffeur Hailing™
                 </span>
               </h1>
-              <p className="text-lg text-gray-300 max-w-2xl mb-8">
+              <p className="text-lg text-neutral-700 dark:text-gray-300 max-w-2xl mb-8">
                 Premium rides on demand — professional chauffeurs, swift
                 pickups, and an experience designed for people who value time
                 and comfort.
@@ -125,7 +125,7 @@ export default function ChauffeurHailing() {
                   <Clock className="w-6 h-6 text-corporate-gold" />
                   <div>
                     <p className="font-semibold">Minutes to Pickup</p>
-                    <p className="text-sm text-gray-400">
+                    <p className="text-sm text-neutral-500 dark:text-gray-400">
                       in covered cities
                     </p>
                   </div>
@@ -134,7 +134,7 @@ export default function ChauffeurHailing() {
                   <Shield className="w-6 h-6 text-corporate-gold" />
                   <div>
                     <p className="font-semibold">Vetted Chauffeurs</p>
-                    <p className="text-sm text-gray-400">
+                    <p className="text-sm text-neutral-500 dark:text-gray-400">
                       background checked & insured
                     </p>
                   </div>
@@ -154,7 +154,7 @@ export default function ChauffeurHailing() {
                   animate={{ y: [0, -8, 0], rotate: [0, 3, 0] }}
                   transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
                 />
-                <Card className="p-8 bg-black/50 border-gray-800 shadow-2xl">
+                <Card className="p-8 bg-white/50 dark:bg-black/50 border-neutral-200 dark:border-gray-800 shadow-2xl">
                   <div className="flex gap-4 items-center">
                     <img
                       src="/images/client/meet-greet-sign.jpg"
@@ -165,7 +165,7 @@ export default function ChauffeurHailing() {
                       <p className="text-lg font-semibold">
                         Chauffeur at your service
                       </p>
-                      <p className="text-sm text-gray-400">
+                      <p className="text-sm text-neutral-500 dark:text-gray-400">
                         Uniformed, professional, and familiar with the fastest
                         routes in the city.
                       </p>
@@ -190,7 +190,7 @@ export default function ChauffeurHailing() {
 
                 <div className="mt-6 flex gap-4 justify-center">
                   <motion.div
-                    className="w-45 h-40 bg-gradient-to-b from-gray-800 to-black rounded-xl overflow-hidden shadow-xl"
+                    className="w-45 h-40 bg-gradient-to-b from-gray-800 to-white dark:to-black rounded-xl overflow-hidden shadow-xl"
                     animate={{ y: [0, -6, 0], scale: [1, 1.02, 1] }}
                     transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
                   >
@@ -201,7 +201,7 @@ export default function ChauffeurHailing() {
                     />
                   </motion.div>
                   <motion.div
-                    className="w-45 h-40 bg-gradient-to-b from-gray-800 to-black rounded-xl overflow-hidden shadow-xl"
+                    className="w-45 h-40 bg-gradient-to-b from-gray-800 to-white dark:to-black rounded-xl overflow-hidden shadow-xl"
                     whileHover={{ scale: 1.03 }}
                     transition={{ type: "spring", stiffness: 120 }}
                   >
@@ -234,7 +234,7 @@ export default function ChauffeurHailing() {
             <h2 className="text-3xl font-bold mb-4">
               Why riders prefer Chauffeur Hailing
             </h2>
-            <p className="text-gray-300 max-w-2xl mx-auto">
+            <p className="text-neutral-700 dark:text-gray-300 max-w-2xl mx-auto">
               Service built for professionals who demand reliability, comfort
               and discretion.
             </p>
@@ -281,13 +281,13 @@ export default function ChauffeurHailing() {
                 whileHover={{ y: -6, scale: 1.02 }}
                 transition={{ duration: 0.5, delay: idx * 0.08, type: "spring", stiffness: 120 }}
               >
-                <Card className="p-8 bg-black/40 border border-gray-800 rounded-xl hover:shadow-2xl transition-transform">
+                <Card className="p-8 bg-white/40 dark:bg-black/40 border border-neutral-200 dark:border-gray-800 rounded-xl hover:shadow-2xl transition-transform">
                   <div className="flex flex-col items-center text-center gap-4">
-                    <div className="p-3 rounded-full bg-black/30 border border-white/5">
+                    <div className="p-3 rounded-full bg-white/30 dark:bg-black/30 border border-black/5 dark:border-white/5">
                       {item.icon}
                     </div>
                     <h3 className="font-semibold">{item.title}</h3>
-                    <p className="text-sm text-gray-400">{item.desc}</p>
+                    <p className="text-sm text-neutral-500 dark:text-gray-400">{item.desc}</p>
                   </div>
                 </Card>
               </motion.div>
@@ -299,7 +299,7 @@ export default function ChauffeurHailing() {
       {/* On-Demand - improved map */}
       <section
         ref={onDemandRef}
-        className="py-24 bg-gradient-to-b from-gray-900/20 to-black reveal opacity-0 translate-y-6 transition-transform duration-700 ease-out"
+        className="py-24 bg-gradient-to-b from-gray-900/20 to-white dark:to-black reveal opacity-0 translate-y-6 transition-transform duration-700 ease-out"
       >
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -312,7 +312,7 @@ export default function ChauffeurHailing() {
               <h2 className="text-3xl font-bold mb-4">
                 Convenient on-demand rides within minutes
               </h2>
-              <p className="text-gray-300 mb-6">
+              <p className="text-neutral-700 dark:text-gray-300 mb-6">
                 Instant availability in supported cities — request a chauffeur
                 for immediate pickup or schedule ahead.
               </p>
@@ -333,7 +333,7 @@ export default function ChauffeurHailing() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <div className="relative bg-black/10 h-72 rounded-lg border border-gray-800 overflow-hidden">
+              <div className="relative bg-white/10 dark:bg-black/10 h-72 rounded-lg border border-neutral-200 dark:border-gray-800 overflow-hidden">
                 <img
                   src="/images/generated/route-map.jpg"
                   alt="map"
@@ -376,7 +376,7 @@ export default function ChauffeurHailing() {
             className="text-center mb-8"
           >
             <h2 className="text-3xl font-bold">Available cities</h2>
-            <p className="text-gray-300">
+            <p className="text-neutral-700 dark:text-gray-300">
               Where Chauffeur Hailing is currently available.
             </p>
           </motion.div>
@@ -390,7 +390,7 @@ export default function ChauffeurHailing() {
                 viewport={{ once: true }}
                 whileHover={{ scale: 1.04, y: -4 }}
                 transition={{ duration: 0.35, delay: i * 0.03, type: "spring", stiffness: 120 }}
-                className="px-6 py-3 rounded-full bg-gradient-to-r from-gray-800/60 to-black/40 border border-gray-800 text-sm text-gray-100 flex items-center gap-3"
+                className="px-6 py-3 rounded-full bg-gradient-to-r from-gray-800/60 to-white/40 dark:to-black/40 border border-neutral-200 dark:border-gray-800 text-sm text-neutral-700 dark:text-gray-100 flex items-center gap-3"
               >
                 <span className="w-3 h-3 bg-corporate-gold rounded-full shadow-md" />
                 <span className="font-medium">{c}</span>
@@ -403,7 +403,7 @@ export default function ChauffeurHailing() {
       {/* Download - polished */}
       <section
         ref={downloadRef}
-        className="py-24 bg-gradient-to-b from-gray-900/50 to-black relative overflow-hidden reveal opacity-0 translate-y-6 transition-transform duration-700 ease-out"
+        className="py-24 bg-gradient-to-b from-gray-900/50 to-white dark:to-black relative overflow-hidden reveal opacity-0 translate-y-6 transition-transform duration-700 ease-out"
       >
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -416,7 +416,7 @@ export default function ChauffeurHailing() {
               <h2 className="text-3xl font-bold mb-4">
                 Your chauffeur, one tap away
               </h2>
-              <p className="text-gray-300 mb-6">
+              <p className="text-neutral-700 dark:text-gray-300 mb-6">
                 Download the app to request rides, track chauffeurs in real
                 time, and manage bookings with ease.
               </p>
@@ -445,9 +445,9 @@ export default function ChauffeurHailing() {
               transition={{ duration: 0.6 }}
             >
               <div className="relative w-full max-w-lg mx-auto">
-                <div className="bg-gradient-to-b from-gray-800/60 to-black/60 border border-gray-800 rounded-3xl p-8 shadow-2xl">
+                <div className="bg-gradient-to-b from-gray-800/60 to-white/60 dark:to-black/60 border border-neutral-200 dark:border-gray-800 rounded-3xl p-8 shadow-2xl">
                   <motion.div
-                    className="w-64 h-[420px] bg-gradient-to-b from-black to-gray-800 rounded-2xl mx-auto overflow-hidden shadow-inner"
+                    className="w-64 h-[420px] bg-gradient-to-b from-white dark:from-black to-gray-800 rounded-2xl mx-auto overflow-hidden shadow-inner"
                     animate={{ y: [0, -8, 0], scale: [1, 1.01, 1] }}
                     transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
                   >
@@ -465,7 +465,7 @@ export default function ChauffeurHailing() {
       </section>
 
       {/* FAQ - polished */}
-      <section className="py-20 bg-gradient-to-b from-gray-900/20 to-black">
+      <section className="py-20 bg-gradient-to-b from-gray-900/20 to-white dark:to-black">
         <div className="container max-w-3xl">
           <motion.div
             initial={{ opacity: 0, y: 10 }}
@@ -475,7 +475,7 @@ export default function ChauffeurHailing() {
             className="text-center mb-6"
           >
             <h2 className="text-3xl font-bold">Frequently asked questions</h2>
-            <p className="text-gray-400">
+            <p className="text-neutral-500 dark:text-gray-400">
               Quick answers about Chauffeur Hailing.
             </p>
           </motion.div>
@@ -498,12 +498,12 @@ export default function ChauffeurHailing() {
               <AccordionItem
                 key={idx}
                 value={`faq-${idx}`}
-                className="border-gray-800"
+                className="border-neutral-200 dark:border-gray-800"
               >
                 <AccordionTrigger className="hover:text-corporate-gold">
                   {f.q}
                 </AccordionTrigger>
-                <AccordionContent className="text-gray-300">
+                <AccordionContent className="text-neutral-700 dark:text-gray-300">
                   {f.a}
                 </AccordionContent>
               </AccordionItem>

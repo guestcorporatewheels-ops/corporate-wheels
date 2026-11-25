@@ -87,7 +87,7 @@ function SectionHeading({
 }) {
   return (
     <div className="mx-auto max-w-2xl text-center">
-      <p className="text-xs font-bold uppercase tracking-[0.28em] text-[#E3A501]">
+      <p className="text-xs font-bold uppercase tracking-[0.28em] text-corporate-gold">
         {eyebrow}
       </p>
       <h2 className="mt-4 font-heading text-3xl font-bold leading-tight sm:text-4xl">
@@ -103,7 +103,7 @@ function SectionHeading({
 }
 
 const inputClass =
-  "h-12 rounded-xl border-white/10 bg-white/[0.04] text-white placeholder:text-white/40 focus-visible:ring-[#E3A501]";
+  "h-12 rounded-xl border-black/10 dark:border-white/10 bg-black/[0.04] dark:bg-white/[0.04] text-neutral-900 dark:text-white placeholder:text-white/40 focus-visible:ring-[#E3A501]";
 
 export default function SocialConnect() {
   const [selectedRating, setSelectedRating] = useState(5);
@@ -157,7 +157,7 @@ export default function SocialConnect() {
   ];
 
   return (
-    <main className="overflow-hidden bg-[linear-gradient(180deg,#0A0F1C_0%,#000000_100%)] text-white">
+    <main className="overflow-hidden bg-[linear-gradient(180deg,#0A0F1C_0%,#000000_100%)] text-neutral-900 dark:text-white">
       <Seo
         title="Social Connect | Nurali Virani, Corporate Wheels"
         description="Connect with Nurali Virani, founder of Corporate Wheels. Book a chauffeur, save our contact, leave a review, or get in touch."
@@ -187,10 +187,10 @@ export default function SocialConnect() {
             <h1 className="font-heading text-4xl font-bold uppercase leading-tight tracking-wide sm:text-5xl lg:text-6xl">
               Nurali Virani
             </h1>
-            <p className="mt-4 text-sm font-semibold uppercase tracking-[0.24em] text-[#E3A501] sm:text-base">
+            <p className="mt-4 text-sm font-semibold uppercase tracking-[0.24em] text-corporate-gold sm:text-base">
               Founder of Corporate Wheels
             </p>
-            <p className="mx-auto mt-6 max-w-md text-lg font-medium text-white/85 lg:mx-0">
+            <p className="mx-auto mt-6 max-w-md text-lg font-medium text-neutral-900/85 dark:text-white/85 lg:mx-0">
               Professional Chauffeurs. Personalised Service.
             </p>
 
@@ -207,7 +207,7 @@ export default function SocialConnect() {
               <Button
                 asChild
                 variant="outline"
-                className="h-auto flex-1 rounded-xl border-[#E3A501]/60 bg-transparent py-3.5 text-base font-semibold text-white hover:bg-[#E3A501]/10 hover:text-white"
+                className="h-auto flex-1 rounded-xl border-[#E3A501]/60 bg-transparent py-3.5 text-base font-semibold text-neutral-900 dark:text-white hover:bg-[#E3A501]/10 hover:text-white"
               >
                 <a href="#booking">
                   Book a journey
@@ -226,7 +226,7 @@ export default function SocialConnect() {
                     target={href.startsWith("http") ? "_blank" : undefined}
                     rel={href.startsWith("http") ? "noreferrer" : undefined}
                     download={label === "Save contact" ? true : undefined}
-                    className="flex size-11 items-center justify-center rounded-full bg-[#E3A501]/15 text-[#E3A501] ring-1 ring-[#E3A501]/40 transition-all hover:scale-95 hover:bg-[#E3A501] hover:text-black"
+                    className="flex size-11 items-center justify-center rounded-full bg-[#E3A501]/15 text-corporate-gold ring-1 ring-[#E3A501]/40 transition-all hover:scale-95 hover:bg-[#E3A501] hover:text-black"
                   >
                     <Icon className="size-[18px]" />
                   </a>
@@ -247,7 +247,7 @@ export default function SocialConnect() {
             className="mx-auto w-full max-w-[18rem] object-contain drop-shadow-[0_0_60px_rgba(227,165,1,0.25)] sm:max-w-sm lg:max-w-md"
           />
           <div className="text-center lg:text-left">
-            <p className="text-xs font-bold uppercase tracking-[0.28em] text-[#E3A501]">
+            <p className="text-xs font-bold uppercase tracking-[0.28em] text-corporate-gold">
               About us
             </p>
             <h2 className="mt-4 font-heading text-3xl font-bold leading-tight sm:text-4xl">
@@ -264,7 +264,7 @@ export default function SocialConnect() {
               built around your schedule, we take care of the details so you
               can simply sit back and enjoy the journey.
             </p>
-            <p className="mt-6 font-heading text-lg font-semibold text-white">
+            <p className="mt-6 font-heading text-lg font-semibold text-neutral-900 dark:text-white">
               Professional chauffeurs. Luxury vehicles.
               <br />
               A service tailored around you.
@@ -299,9 +299,9 @@ export default function SocialConnect() {
               <Link
                 key={title}
                 to={to}
-                className="group rounded-2xl border border-white/10 bg-white/[0.03] p-6 transition-colors hover:border-[#E3A501]/60 hover:bg-[#E3A501]/[0.06]"
+                className="group rounded-2xl border border-black/10 dark:border-white/10 bg-black/[0.03] dark:bg-white/[0.03] p-6 transition-colors hover:border-[#E3A501]/60 hover:bg-[#E3A501]/[0.06]"
               >
-                <div className="flex size-12 items-center justify-center rounded-xl bg-[#E3A501]/15 text-[#E3A501]">
+                <div className="flex size-12 items-center justify-center rounded-xl bg-[#E3A501]/15 text-corporate-gold">
                   <Icon className="size-6" />
                 </div>
                 <h3 className="mt-5 font-heading text-lg font-semibold">
@@ -310,7 +310,7 @@ export default function SocialConnect() {
                 <p className="mt-2 text-sm leading-relaxed text-[#9CA3AF]">
                   {text}
                 </p>
-                <span className="mt-4 inline-flex items-center text-sm font-semibold text-[#E3A501]">
+                <span className="mt-4 inline-flex items-center text-sm font-semibold text-corporate-gold">
                   Learn more
                   <ArrowRight className="ml-1.5 size-4 transition-transform group-hover:translate-x-1" />
                 </span>
@@ -330,7 +330,7 @@ export default function SocialConnect() {
             vehicles. Choose hourly hire when you need a chauffeur to stay with
             you.
           </SectionHeading>
-          <div className="mx-auto mt-10 max-w-4xl [&_.bg-card\/90]:bg-[#0F1525] [&_.border-border]:border-[#E3A501]/30">
+          <div className="mx-auto mt-10 max-w-4xl rounded-3xl bg-[#05080f] p-4 sm:p-8 shadow-[0_30px_80px_-30px_rgba(0,0,0,0.6)] ring-1 ring-[#E3A501]/25 dark:rounded-none dark:bg-transparent dark:p-0 dark:shadow-none dark:ring-0 [&_.bg-card\/90]:bg-[#0F1525] [&_.border-border]:border-[#E3A501]/30">
             <booking-widget
               primarycolor="#E3A501"
               useractivestate="1"
@@ -350,14 +350,14 @@ export default function SocialConnect() {
             <h2 className="font-heading text-3xl font-bold sm:text-4xl">
               What Our Clients Say
             </h2>
-            <p className="mt-4 font-semibold text-white">
+            <p className="mt-4 font-semibold text-neutral-900 dark:text-white">
               Your journey. Your experience. Your feedback.
             </p>
             <p className="mt-4 text-base leading-relaxed text-[#9CA3AF] sm:text-lg">
               From airport transfers to corporate travel, we make every journey
               comfortable, professional and seamless.
             </p>
-            <p className="mt-6 font-heading text-xl italic text-[#E3A501]">
+            <p className="mt-6 font-heading text-xl italic text-corporate-gold">
               “Share your experience with us.”
             </p>
             <Button
@@ -399,8 +399,8 @@ export default function SocialConnect() {
                     <Star
                       className={
                         rating <= selectedRating
-                          ? "size-8 fill-[#E3A501] text-[#E3A501]"
-                          : "size-8 text-white/25"
+                          ? "size-8 fill-[#E3A501] text-corporate-gold"
+                          : "size-8 text-neutral-900/25 dark:text-white/25"
                       }
                     />
                   </button>
@@ -422,12 +422,12 @@ export default function SocialConnect() {
               <Button
                 type="submit"
                 variant="outline"
-                className="h-12 rounded-xl border-[#E3A501]/60 bg-transparent font-semibold text-white hover:bg-[#E3A501] hover:text-black"
+                className="h-12 rounded-xl border-[#E3A501]/60 bg-transparent font-semibold text-neutral-900 dark:text-white hover:bg-[#E3A501] hover:text-black"
               >
                 Send feedback
               </Button>
               <p className="flex items-center justify-center gap-2 text-xs text-[#9CA3AF]">
-                <ShieldCheck className="size-4 text-[#E3A501]" />
+                <ShieldCheck className="size-4 text-corporate-gold" />
                 Sent directly to our team.
               </p>
             </div>
@@ -441,7 +441,7 @@ export default function SocialConnect() {
       <section className="py-16 sm:py-24">
         <div className="container grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16">
           <div className="text-center lg:text-left">
-            <p className="text-xs font-bold uppercase tracking-[0.28em] text-[#E3A501]">
+            <p className="text-xs font-bold uppercase tracking-[0.28em] text-corporate-gold">
               Get in touch
             </p>
             <h2 className="mt-4 font-heading text-3xl font-bold sm:text-4xl">
@@ -473,7 +473,7 @@ export default function SocialConnect() {
               ].map(({ icon: Icon, label, value, href }) => {
                 const content = (
                   <>
-                    <span className="flex size-11 shrink-0 items-center justify-center rounded-full bg-[#E3A501]/15 text-[#E3A501]">
+                    <span className="flex size-11 shrink-0 items-center justify-center rounded-full bg-[#E3A501]/15 text-corporate-gold">
                       <Icon className="size-5" />
                     </span>
                     <span className="min-w-0">
@@ -487,7 +487,7 @@ export default function SocialConnect() {
                   </>
                 );
                 const cls =
-                  "flex items-center gap-4 rounded-2xl border border-white/10 bg-white/[0.03] p-4";
+                  "flex items-center gap-4 rounded-2xl border border-black/10 dark:border-white/10 bg-black/[0.03] dark:bg-white/[0.03] p-4";
                 return href ? (
                   <a
                     key={label}
@@ -556,12 +556,12 @@ export default function SocialConnect() {
             <img
               src="/logo.png"
               alt="Corporate Wheels — Always on time"
-              className="mx-auto size-24 rounded-full border-2 border-[#E3A501] bg-black object-contain p-1 shadow-[0_0_30px_rgba(227,165,1,0.35)] sm:size-28"
+              className="mx-auto size-24 rounded-full border-2 border-[#E3A501] bg-white dark:bg-black object-contain p-1 shadow-[0_0_30px_rgba(227,165,1,0.35)] sm:size-28"
             />
-            <h2 className="mt-8 font-heading text-5xl font-bold text-[#E3A501] sm:text-6xl">
+            <h2 className="mt-8 font-heading text-5xl font-bold text-corporate-gold sm:text-6xl">
               Thank You
             </h2>
-            <p className="mt-3 text-sm font-semibold uppercase tracking-[0.24em] text-white/80">
+            <p className="mt-3 text-sm font-semibold uppercase tracking-[0.24em] text-neutral-900/80 dark:text-white/80">
               for connecting with us
             </p>
             <p className="mx-auto mt-6 max-w-lg text-base leading-relaxed text-[#9CA3AF] sm:text-lg">
@@ -570,10 +570,10 @@ export default function SocialConnect() {
               occasion, we look forward to welcoming you on board.
             </p>
             <div className="mt-8">
-              <p className="font-heading text-xl font-semibold text-white">
+              <p className="font-heading text-xl font-semibold text-neutral-900 dark:text-white">
                 Nurali Virani
               </p>
-              <p className="mt-1 text-sm text-[#E3A501]">
+              <p className="mt-1 text-sm text-corporate-gold">
                 Founder, Corporate Wheels
               </p>
             </div>
@@ -590,7 +590,7 @@ export default function SocialConnect() {
               <Button
                 asChild
                 variant="outline"
-                className="h-auto flex-1 rounded-xl border-[#E3A501]/60 bg-transparent py-3.5 text-base font-semibold text-white hover:bg-[#E3A501]/10 hover:text-white"
+                className="h-auto flex-1 rounded-xl border-[#E3A501]/60 bg-transparent py-3.5 text-base font-semibold text-neutral-900 dark:text-white hover:bg-[#E3A501]/10 hover:text-white"
               >
                 <a href="/socialconnect/corporate-wheels.vcf" download>
                   <Download className="mr-2 size-4" />
@@ -598,7 +598,7 @@ export default function SocialConnect() {
                 </a>
               </Button>
             </div>
-            <p className="mt-10 text-xs font-bold uppercase tracking-[0.3em] text-white/50">
+            <p className="mt-10 text-xs font-bold uppercase tracking-[0.3em] text-neutral-900/50 dark:text-white/50">
               Always on time
             </p>
           </div>
@@ -611,12 +611,12 @@ export default function SocialConnect() {
           if (!open) setThankYouKind(null);
         }}
       >
-        <DialogContent className="max-w-[calc(100%-2rem)] rounded-2xl border-[#E3A501]/45 bg-[#0A0F1C] p-8 text-center text-white sm:max-w-md">
+        <DialogContent className="max-w-[calc(100%-2rem)] rounded-2xl border-[#E3A501]/45 bg-[#0A0F1C] p-8 text-center text-neutral-900 dark:text-white sm:max-w-md">
           <div className="mx-auto flex size-16 items-center justify-center rounded-full border border-[#E3A501]/40 bg-[#E3A501]/10">
-            <CheckCircle2 className="size-8 text-[#E3A501]" />
+            <CheckCircle2 className="size-8 text-corporate-gold" />
           </div>
           <DialogHeader className="text-center sm:text-center">
-            <DialogTitle className="mt-3 text-3xl font-bold text-[#E3A501]">
+            <DialogTitle className="mt-3 text-3xl font-bold text-corporate-gold">
               Thank you
             </DialogTitle>
             <DialogDescription className="mt-3 text-base leading-relaxed text-[#9CA3AF]">

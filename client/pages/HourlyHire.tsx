@@ -79,7 +79,7 @@ export default function HourlyHire() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-black via-gray-900 to-black text-white">
+    <div className="min-h-screen bg-gradient-to-b from-white dark:from-black via-gray-900 to-white dark:to-black text-neutral-900 dark:text-white">
       <Seo
         title="Hourly Chauffeur Hire"
         description="Book a dedicated chauffeur by the hour for meetings, events, or a day at your own pace. Flexible bookings with no hidden fees."
@@ -94,7 +94,7 @@ export default function HourlyHire() {
             alt="luxury car"
             className="w-full h-full object-cover brightness-60"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70" />
+          <div className="absolute inset-0 bg-gradient-to-b from-white/60 dark:from-black/60 via-white/40 dark:via-black/40 to-white/70 dark:to-black/70" />
           <div className="absolute -top-12 right-12 w-56 h-56 rounded-full bg-corporate-gold/10 blur-3xl" />
         </div>
 
@@ -113,7 +113,7 @@ export default function HourlyHire() {
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight">
                 Premium Hourly Chauffeur Service
               </h1>
-              <p className="text-lg text-gray-300 max-w-2xl mb-8">
+              <p className="text-lg text-neutral-700 dark:text-gray-300 max-w-2xl mb-8">
                 Tailored hourly chauffeur solutions for business and leisure —
                 flexible booking, seamless itineraries, and professional
                 chauffeurs available 24/7.
@@ -136,13 +136,13 @@ export default function HourlyHire() {
               <div className="flex items-center gap-8">
                 <div>
                   <p className="font-semibold">24/7 Availability</p>
-                  <p className="text-sm text-gray-400">
+                  <p className="text-sm text-neutral-500 dark:text-gray-400">
                     Flexible hours to suit your schedule
                   </p>
                 </div>
                 <div>
                   <p className="font-semibold">Vetted Chauffeurs</p>
-                  <p className="text-sm text-gray-400">
+                  <p className="text-sm text-neutral-500 dark:text-gray-400">
                     Professional, licensed and insured
                   </p>
                 </div>
@@ -155,9 +155,9 @@ export default function HourlyHire() {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <Card className="bg-black/60 border-gray-800 p-6 shadow-2xl">
+              <Card className="bg-white/60 dark:bg-black/60 border-neutral-200 dark:border-gray-800 p-6 shadow-2xl">
                 <h3 className="text-xl font-semibold mb-4">Quick Book</h3>
-                <p className="text-sm text-gray-400 mb-4">
+                <p className="text-sm text-neutral-500 dark:text-gray-400 mb-4">
                   Choose hours, vehicle type and request add-ons — book
                   instantly.
                 </p>
@@ -174,7 +174,7 @@ export default function HourlyHire() {
                     onChange={(v) => setQuickHours(v)}
                     ariaLabel="Quick book hours"
                     name="quick-hours"
-                    className="bg-gray-900/50 border border-gray-700 rounded-lg p-3 text-white"
+                    className="bg-neutral-100/50 dark:bg-gray-900/50 border border-neutral-200 dark:border-gray-700 rounded-lg p-3 text-neutral-900 dark:text-white"
                   />
 
                   <SelectInput
@@ -187,7 +187,7 @@ export default function HourlyHire() {
                     onChange={(v) => setQuickCar(v)}
                     ariaLabel="Quick book car"
                     name="quick-car"
-                    className="bg-gray-900/50 border border-gray-700 rounded-lg p-3 text-white"
+                    className="bg-neutral-100/50 dark:bg-gray-900/50 border border-neutral-200 dark:border-gray-700 rounded-lg p-3 text-neutral-900 dark:text-white"
                   />
 
                   <div className="flex flex-col sm:flex-row gap-2 hourly-hire">
@@ -196,14 +196,14 @@ export default function HourlyHire() {
                       onChange={(d) => setDate(d)}
                       ariaLabel="Booking date"
                       name="widget-date"
-                      className="w-full rounded-xl border  bg-gray-900 border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-corporate-gold"
+                      className="w-full rounded-xl border  bg-neutral-100 dark:bg-gray-900 border-neutral-200 dark:border-gray-700 text-neutral-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-corporate-gold"
                     />
                     <TimeInput
                       value={time}
                       onChange={(t) => setTime(t)}
                       ariaLabel="Booking time"
                       name="widget-time"
-                      className="w-full rounded-xl border  bg-gray-900 border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-corporate-gold "
+                      className="w-full rounded-xl border  bg-neutral-100 dark:bg-gray-900 border-neutral-200 dark:border-gray-700 text-neutral-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-corporate-gold "
                     />
                   </div>
 
@@ -230,7 +230,7 @@ export default function HourlyHire() {
             <h2 className="text-4xl font-bold mb-6">
               Experience Premium Service
             </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            <p className="text-xl text-neutral-700 dark:text-gray-300 max-w-3xl mx-auto">
               Discover why leading businesses and individuals choose our premium
               chauffeur service for their transportation needs.
             </p>
@@ -268,18 +268,18 @@ export default function HourlyHire() {
                 transition={{ duration: 0.6, delay: index * 0.2 }}
                 className="group"
               >
-                <Card className="relative overflow-hidden h-[420px] bg-black/40 border-gray-800 hover:border-corporate-gold transition-all duration-500 shadow-lg">
+                <Card className="relative overflow-hidden h-[420px] bg-white/40 dark:bg-black/40 border-neutral-200 dark:border-gray-800 hover:border-corporate-gold transition-all duration-500 shadow-lg">
                   <img
                     src={feature.image}
                     alt={feature.title}
                     className="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:opacity-30 transition-opacity duration-500"
                   />
-                  <div className="relative z-10 p-6 h-full flex flex-col justify-end bg-gradient-to-t from-black/90 to-transparent">
+                  <div className="relative z-10 p-6 h-full flex flex-col justify-end bg-gradient-to-t from-white/90 dark:from-black/90 to-transparent">
                     <feature.icon className="w-12 h-12 text-corporate-gold mb-4 transform group-hover:scale-110 transition-transform duration-500" />
                     <h3 className="text-2xl font-semibold mb-3">
                       {feature.title}
                     </h3>
-                    <p className="text-gray-300">{feature.description}</p>
+                    <p className="text-neutral-700 dark:text-gray-300">{feature.description}</p>
                   </div>
                 </Card>
               </motion.div>
@@ -289,7 +289,7 @@ export default function HourlyHire() {
       </section>
 
       {/* Pricing Section */}
-      <section className="py-24 bg-gray-900/30">
+      <section className="py-24 bg-neutral-100/30 dark:bg-gray-900/30">
         <div className="container">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -299,7 +299,7 @@ export default function HourlyHire() {
             className="text-center mb-16"
           >
             <h2 className="text-4xl font-bold mb-6">Transparent Pricing</h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            <p className="text-xl text-neutral-700 dark:text-gray-300 max-w-3xl mx-auto">
               Choose the perfect package for your needs with our straightforward
               pricing options.
             </p>
@@ -364,12 +364,12 @@ export default function HourlyHire() {
                   </div>
                 )}
                 <Card
-                  className={`p-8 ${plan.popular ? "bg-black/50 border-corporate-gold shadow-xl" : "bg-black/40 border-gray-800"} hover:border-corporate-gold transition-all duration-300`}
+                  className={`p-8 ${plan.popular ? "bg-white dark:bg-black/50 border-corporate-gold shadow-xl" : "bg-white/80 dark:bg-black/40 border-neutral-200 dark:border-gray-800"} hover:border-corporate-gold transition-all duration-300`}
                 >
                   <h3 className="text-2xl font-semibold mb-2">{plan.title}</h3>
                   <div className="mb-6">
                     <span className="text-4xl font-bold">£{plan.price}</span>
-                    <span className="text-gray-400">/{plan.duration}</span>
+                    <span className="text-neutral-500 dark:text-gray-400">/{plan.duration}</span>
                   </div>
                   <ul className="space-y-4 mb-8">
                     {plan.features.map((feature, i) => (
@@ -383,7 +383,7 @@ export default function HourlyHire() {
                     className={`w-full ${
                       plan.popular
                         ? "bg-corporate-gold hover:bg-corporate-gold/90 text-black"
-                        : "bg-gray-800 hover:bg-gray-700"
+                        : "bg-neutral-100 hover:bg-neutral-200 text-neutral-900 dark:bg-gray-800 dark:hover:bg-gray-700 dark:text-white"
                     }`}
                   >
                     Select Package
@@ -411,7 +411,7 @@ export default function HourlyHire() {
                 <h2 className="text-4xl md:text-5xl font-bold mb-6">
                   Multi-Stop Journey Excellence
                 </h2>
-                <p className="text-xl text-gray-300 mb-8">
+                <p className="text-xl text-neutral-700 dark:text-gray-300 mb-8">
                   Perfect for days filled with multiple destinations. Experience
                   seamless transitions between locations with our professional
                   chauffeur service.
@@ -451,7 +451,7 @@ export default function HourlyHire() {
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.4, delay: index * 0.1 }}
-                      className="bg-gray-900/50 border border-gray-800 rounded-xl p-6 hover:border-corporate-gold transition-colors group"
+                      className="bg-neutral-100/50 dark:bg-gray-900/50 border border-neutral-200 dark:border-gray-800 rounded-xl p-6 hover:border-corporate-gold transition-colors group"
                     >
                       <div className="mb-4 transform group-hover:scale-110 transition-transform">
                         {item.icon}
@@ -459,7 +459,7 @@ export default function HourlyHire() {
                       <h3 className="text-lg font-semibold mb-2">
                         {item.title}
                       </h3>
-                      <p className="text-gray-400 text-sm">
+                      <p className="text-neutral-500 dark:text-gray-400 text-sm">
                         {item.description}
                       </p>
                     </motion.div>
@@ -503,9 +503,9 @@ export default function HourlyHire() {
       </section>
 
       {/* Benefits Section */}
-      <section className="py-20 bg-gray-900/30 relative overflow-hidden">
+      <section className="py-20 bg-neutral-100/30 dark:bg-gray-900/30 relative overflow-hidden">
         <div className="absolute inset-0 opacity-30">
-          <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black" />
+          <div className="absolute inset-0 bg-gradient-to-b from-white dark:from-black via-transparent to-white dark:to-black" />
           <div
             className="absolute inset-0"
             style={{
@@ -525,7 +525,7 @@ export default function HourlyHire() {
             className="text-center mb-16"
           >
             <h2 className="text-4xl font-bold mb-6">Why Choose Our Service?</h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            <p className="text-xl text-neutral-700 dark:text-gray-300 max-w-3xl mx-auto">
               Experience the perfect blend of luxury, reliability, and
               professional service.
             </p>
@@ -563,11 +563,11 @@ export default function HourlyHire() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-black/30 backdrop-blur-sm border border-gray-800 rounded-xl p-6 hover:border-corporate-gold transition-all duration-300 group"
+                className="bg-white/30 dark:bg-black/30 backdrop-blur-sm border border-neutral-200 dark:border-gray-800 rounded-xl p-6 hover:border-corporate-gold transition-all duration-300 group"
               >
                 <benefit.icon className="w-12 h-12 text-corporate-gold mb-4 transform group-hover:scale-110 transition-transform" />
                 <h3 className="text-xl font-semibold mb-3">{benefit.title}</h3>
-                <p className="text-gray-400">{benefit.description}</p>
+                <p className="text-neutral-500 dark:text-gray-400">{benefit.description}</p>
               </motion.div>
             ))}
           </div>
@@ -586,7 +586,7 @@ export default function HourlyHire() {
             className="text-center mb-12"
           >
             <h2 className="text-4xl font-bold mb-6">Common Questions</h2>
-            <p className="text-xl text-gray-300">
+            <p className="text-xl text-neutral-700 dark:text-gray-300">
               Find answers to frequently asked questions about our hourly
               chauffeur service.
             </p>
@@ -603,17 +603,17 @@ export default function HourlyHire() {
               >
                 <AccordionItem
                   value={`item-${index}`}
-                  className="border-gray-800"
+                  className="border-neutral-200 dark:border-gray-800"
                 >
                   <AccordionTrigger className="text-left hover:text-corporate-gold group">
                     <div className="flex items-center gap-3">
-                      <div className="p-2 rounded-lg bg-gray-900/50 group-hover:bg-corporate-gold/10 transition-colors">
+                      <div className="p-2 rounded-lg bg-neutral-100/50 dark:bg-gray-900/50 group-hover:bg-corporate-gold/10 transition-colors">
                         <faq.icon className="w-5 h-5 text-corporate-gold" />
                       </div>
                       <span>{faq.question}</span>
                     </div>
                   </AccordionTrigger>
-                  <AccordionContent className="text-gray-300 pl-14">
+                  <AccordionContent className="text-neutral-700 dark:text-gray-300 pl-14">
                     {faq.answer}
                   </AccordionContent>
                 </AccordionItem>
@@ -626,7 +626,7 @@ export default function HourlyHire() {
       {/* Final Call-to-Action Section */}
       <section className="py-20 relative overflow-hidden">
         <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black z-10" />
+          <div className="absolute inset-0 bg-gradient-to-b from-white dark:from-black via-transparent to-white dark:to-black z-10" />
           <img
             src="/images/client/sclass-starlight.jpg"
             alt=""
@@ -644,7 +644,7 @@ export default function HourlyHire() {
               <h2 className="text-4xl md:text-5xl font-bold mb-6">
                 Experience Luxury Transportation
               </h2>
-              <p className="text-xl text-gray-300 mb-12">
+              <p className="text-xl text-neutral-700 dark:text-gray-300 mb-12">
                 Book your premium chauffeur service today and elevate your
                 journey with Corporate Wheels.
               </p>

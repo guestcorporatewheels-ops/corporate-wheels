@@ -59,7 +59,7 @@ export default function DateInput({
           value={formatted}
           onClick={() => setOpen((s) => !s)}
           placeholder={placeholder}
-          className="w-full rounded-lg bg-black/40 px-3 py-2 border border-white/10 focus:outline-none focus:ring-2 focus:ring-corporate-gold cursor-pointer placeholder:text-[#E6A700]"
+          className="w-full rounded-lg bg-white/40 dark:bg-black/40 px-3 py-2 border border-black/10 dark:border-white/10 focus:outline-none focus:ring-2 focus:ring-corporate-gold cursor-pointer placeholder:text-[#E6A700]"
         />
         <CalendarIcon className="absolute right-3 top-1/2 -translate-y-1/2 text-corporate-gold" />
 
@@ -67,9 +67,9 @@ export default function DateInput({
           <motion.div
             initial={{ opacity: 0, y: -6 }}
             animate={{ opacity: 1, y: 0 }}
-            className="absolute  z-[9999] mt-2 bg-black/95 backdrop-blur-md border border-white/10 rounded-xl shadow-2xl p-3"
+            className="absolute  z-[9999] mt-2 bg-white/95 dark:bg-black/95 backdrop-blur-md border border-black/10 dark:border-white/10 rounded-xl shadow-2xl p-3"
           >
-            <div className="w-[320px] text-white">
+            <div className="w-[320px] text-neutral-900 dark:text-white">
               {/* Custom header */}
               <div className="flex items-center justify-between mb-2 px-2">
                 <button
@@ -107,7 +107,7 @@ export default function DateInput({
 
               {/* Year dropdown */}
               {showYearSelect && (
-                <div className="max-h-[200px] overflow-y-auto mb-2 border border-white/10 rounded-md">
+                <div className="max-h-[200px] overflow-y-auto mb-2 border border-black/10 dark:border-white/10 rounded-md">
                   {years.map((y) => (
                     <div
                       key={y}
@@ -139,7 +139,7 @@ export default function DateInput({
                   setShowYearSelect(false);
                 }}
                 // captionLayout="none"
-                className="rounded-md border border-white/10 bg-black/40 text-white [&_.rdp-head_cell]:text-xs [&_.rdp-head_cell]:text-white/60 [&_.rdp-day]:text-sm [&_.rdp-day]:text-white [&_.rdp-day_selected]:bg-corporate-gold [&_.rdp-day_selected]:text-black"
+                className="rounded-md border border-black/10 dark:border-white/10 bg-white/40 dark:bg-black/40 text-neutral-900 dark:text-white [&_.rdp-head_cell]:text-xs [&_.rdp-head_cell]:text-white/60 [&_.rdp-day]:text-sm [&_.rdp-day]:text-white [&_.rdp-day_selected]:bg-corporate-gold [&_.rdp-day_selected]:text-black"
               />
             </div>
           </motion.div>

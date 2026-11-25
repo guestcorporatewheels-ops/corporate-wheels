@@ -422,7 +422,7 @@ export default function WhyChooseUs() {
       />
 
       {/* 1. ULTRA-PREMIUM HERO SEGMENT */}
-      <section className="relative py-20 lg:py-28 overflow-hidden bg-gradient-to-b from-black via-white/[0.01] to-transparent">
+      <section className="relative py-20 lg:py-28 overflow-hidden bg-gradient-to-b from-white dark:from-black via-white/[0.01] to-transparent">
         
         {/* Background glow effects */}
         <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-corporate-gold/5 blur-[120px] rounded-full pointer-events-none" />
@@ -445,14 +445,14 @@ export default function WhyChooseUs() {
                 </span>
               </div>
               
-              <h1 className="text-4xl md:text-6xl font-heading font-bold text-white tracking-tight leading-none">
+              <h1 className="text-4xl md:text-6xl font-heading font-bold text-neutral-900 dark:text-white tracking-tight leading-none">
                 {data.title.split(".")[0]}
                 <span className="text-gradient-gold block italic font-light mt-2">
                   {data.title.split(".")[1] || ""}
                 </span>
               </h1>
               
-              <p className="text-white/60 text-base md:text-lg font-light leading-relaxed max-w-xl">
+              <p className="text-neutral-900/60 dark:text-white/60 text-base md:text-lg font-light leading-relaxed max-w-xl">
                 {data.subtitle}
               </p>
               
@@ -460,7 +460,7 @@ export default function WhyChooseUs() {
                 <Button variant="glow" size="lg" className="rounded-xl font-bold px-8 shadow-lg shadow-corporate-gold/10" asChild>
                   <Link to="/booking">Book Chauffeur</Link>
                 </Button>
-                <Button variant="outline" size="lg" className="rounded-xl border-white/10 hover:bg-white/5" asChild>
+                <Button variant="outline" size="lg" className="rounded-xl border-black/10 dark:border-white/10 hover:bg-white/5" asChild>
                   <Link to="/contact">Consult Concierge</Link>
                 </Button>
               </div>
@@ -479,13 +479,13 @@ export default function WhyChooseUs() {
               <div className="absolute top-0 left-0 w-6 h-6 border-t-2 border-l-2 border-corporate-gold/30 rounded-tl-3xl z-10" />
               <div className="absolute bottom-0 right-0 w-6 h-6 border-b-2 border-r-2 border-corporate-gold/30 rounded-br-3xl z-10" />
               
-              <div className="relative rounded-3xl overflow-hidden border border-white/10 aspect-[4/3] sm:aspect-video lg:aspect-[4/3]">
+              <div className="relative rounded-3xl overflow-hidden border border-black/10 dark:border-white/10 aspect-[4/3] sm:aspect-video lg:aspect-[4/3]">
                 <img
                   src={data.heroImg}
                   alt={data.badge}
                   className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-t from-white/60 dark:from-black/60 via-white/10 dark:via-black/10 to-transparent pointer-events-none" />
               </div>
             </motion.div>
             
@@ -494,7 +494,7 @@ export default function WhyChooseUs() {
       </section>
 
       {/* 2. PILLARS OF EXCELLENCE SEGMENT */}
-      <section className="relative py-24 bg-black/30 border-t border-b border-white/5">
+      <section className="relative py-24 bg-white/30 dark:bg-black/30 border-t border-b border-black/5 dark:border-white/5">
         <div className="container relative z-10">
           <div className="max-w-6xl mx-auto">
             
@@ -505,10 +505,10 @@ export default function WhyChooseUs() {
                 <span className="text-[10px] text-corporate-gold font-bold uppercase tracking-widest block">
                   {data.pillarsTitle}
                 </span>
-                <h3 className="text-2xl md:text-3xl font-heading font-bold text-white tracking-tight">
+                <h3 className="text-2xl md:text-3xl font-heading font-bold text-neutral-900 dark:text-white tracking-tight">
                   Why We Lead In Luxury Travel
                 </h3>
-                <p className="text-white/50 text-sm font-light leading-relaxed">
+                <p className="text-neutral-900/50 dark:text-white/50 text-sm font-light leading-relaxed">
                   {data.pillarsDesc} We maintain absolute quality controls so that every single journey exceeds top executive requirements.
                 </p>
               </div>
@@ -523,18 +523,18 @@ export default function WhyChooseUs() {
                     whileHover={{ y: -6 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: idx * 0.1 }}
-                    className="relative p-8 rounded-3xl bg-gradient-to-b from-white/[0.05] to-white/[0.01] border border-white/5 backdrop-blur-md hover:border-corporate-gold/20 transition-all duration-400 group overflow-hidden"
+                    className="relative p-8 rounded-3xl bg-gradient-to-b from-white/[0.05] to-white/[0.01] border border-black/5 dark:border-white/5 backdrop-blur-md hover:border-corporate-gold/20 transition-all duration-400 group overflow-hidden"
                   >
                     <div className="absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent group-hover:via-corporate-gold/30 transition-all duration-500" />
                     
                     <div className="flex flex-col items-start gap-4">
-                      <div className="w-10 h-10 rounded-full bg-white/[0.03] border border-white/10 flex items-center justify-center group-hover:border-corporate-gold/30 group-hover:bg-corporate-gold/5 transition-all duration-300">
+                      <div className="w-10 h-10 rounded-full bg-black/[0.03] dark:bg-white/[0.03] border border-black/10 dark:border-white/10 flex items-center justify-center group-hover:border-corporate-gold/30 group-hover:bg-corporate-gold/5 transition-all duration-300">
                         {item.icon}
                       </div>
-                      <h4 className="text-lg font-bold text-white group-hover:text-corporate-gold transition-colors duration-300">
+                      <h4 className="text-lg font-bold text-neutral-900 dark:text-white group-hover:text-corporate-gold transition-colors duration-300">
                         {item.title}
                       </h4>
-                      <p className="text-xs sm:text-sm text-white/50 leading-relaxed font-light group-hover:text-white/70 transition-colors duration-300">
+                      <p className="text-xs sm:text-sm text-neutral-900/50 dark:text-white/50 leading-relaxed font-light group-hover:text-white/70 transition-colors duration-300">
                         {item.desc}
                       </p>
                     </div>
@@ -568,11 +568,11 @@ export default function WhyChooseUs() {
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-corporate-gold/10 border border-corporate-gold/20 mb-4">
                 <span className="text-[11px] text-corporate-gold font-bold uppercase tracking-widest">Service Delivery Flow</span>
               </div>
-              <h2 className="text-3xl md:text-5xl font-heading font-bold text-white">
+              <h2 className="text-3xl md:text-5xl font-heading font-bold text-neutral-900 dark:text-white">
                 {data.protocolsTitle}
               </h2>
               <div className="w-20 h-1 bg-gradient-to-r from-corporate-gold to-orange-500 mx-auto mt-5 rounded-full" />
-              <p className="mt-5 text-white/50 text-base md:text-lg font-light leading-relaxed">
+              <p className="mt-5 text-neutral-900/50 dark:text-white/50 text-base md:text-lg font-light leading-relaxed">
                 {data.protocolsDesc}
               </p>
             </motion.div>
@@ -586,7 +586,7 @@ export default function WhyChooseUs() {
                   whileHover={{ y: -8 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: idx * 0.1 }}
-                  className="relative rounded-3xl bg-gradient-to-b from-white/[0.06] to-white/[0.01] border border-white/10 p-8 hover:border-corporate-gold/20 hover:shadow-[0_20px_50px_rgba(230,167,0,0.1)] transition-all duration-400 group overflow-hidden"
+                  className="relative rounded-3xl bg-gradient-to-b from-white/[0.06] to-white/[0.01] border border-black/10 dark:border-white/10 p-8 hover:border-corporate-gold/20 hover:shadow-[0_20px_50px_rgba(230,167,0,0.1)] transition-all duration-400 group overflow-hidden"
                 >
                   {/* Top borders light leak */}
                   <div className="absolute inset-x-0 top-0 h-[1.5px] bg-gradient-to-r from-transparent via-white/10 to-transparent group-hover:via-corporate-gold/40 transition-all duration-500" />
@@ -597,15 +597,15 @@ export default function WhyChooseUs() {
                   </div>
                   
                   <div className="flex flex-col items-start gap-6 relative z-10">
-                    <div className="w-12 h-12 rounded-full bg-white/[0.03] border border-white/10 flex items-center justify-center group-hover:border-corporate-gold/20 group-hover:bg-corporate-gold/5 transition-all duration-300">
+                    <div className="w-12 h-12 rounded-full bg-black/[0.03] dark:bg-white/[0.03] border border-black/10 dark:border-white/10 flex items-center justify-center group-hover:border-corporate-gold/20 group-hover:bg-corporate-gold/5 transition-all duration-300">
                       {item.icon}
                     </div>
                     
                     <div>
-                      <h4 className="text-xl font-heading font-bold text-white group-hover:text-corporate-gold transition-colors duration-300 mb-3">
+                      <h4 className="text-xl font-heading font-bold text-neutral-900 dark:text-white group-hover:text-corporate-gold transition-colors duration-300 mb-3">
                         {item.label}
                       </h4>
-                      <p className="text-sm text-white/50 leading-relaxed font-light group-hover:text-white/70 transition-colors">
+                      <p className="text-sm text-neutral-900/50 dark:text-white/50 leading-relaxed font-light group-hover:text-white/70 transition-colors">
                         {item.desc}
                       </p>
                     </div>
@@ -627,10 +627,10 @@ export default function WhyChooseUs() {
               <span className="text-[10px] text-corporate-gold font-bold uppercase tracking-widest block">
                 {data.programsTitle}
               </span>
-              <h3 className="text-3xl font-heading font-bold text-white tracking-tight">
+              <h3 className="text-3xl font-heading font-bold text-neutral-900 dark:text-white tracking-tight">
                 Our Continuous Quality Programs
               </h3>
-              <p className="text-white/50 text-sm font-light leading-relaxed">
+              <p className="text-neutral-900/50 dark:text-white/50 text-sm font-light leading-relaxed">
                 {data.programsDesc}
               </p>
             </div>
@@ -643,14 +643,14 @@ export default function WhyChooseUs() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: idx * 0.1 }}
-                  className="flex items-start gap-5 p-6 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-corporate-gold/10 transition-colors"
+                  className="flex items-start gap-5 p-6 rounded-2xl bg-black/[0.02] dark:bg-white/[0.02] border border-black/5 dark:border-white/5 hover:border-corporate-gold/10 transition-colors"
                 >
                   <div className="w-10 h-10 rounded-full bg-corporate-gold/5 border border-corporate-gold/20 flex items-center justify-center shrink-0">
                     {item.icon}
                   </div>
                   <div>
-                    <h4 className="text-base font-bold text-white mb-2">{item.title}</h4>
-                    <p className="text-xs text-white/50 leading-relaxed font-light">{item.desc}</p>
+                    <h4 className="text-base font-bold text-neutral-900 dark:text-white mb-2">{item.title}</h4>
+                    <p className="text-xs text-neutral-900/50 dark:text-white/50 leading-relaxed font-light">{item.desc}</p>
                   </div>
                 </motion.div>
               ))}
@@ -661,7 +661,7 @@ export default function WhyChooseUs() {
       </section>
 
       {/* 4. EXCLUSIVE FIVE-STAR COMMITMENTS */}
-      <section className="relative py-24 bg-black/40 border-t border-b border-white/5">
+      <section className="relative py-24 bg-white/40 dark:bg-black/40 border-t border-b border-black/5 dark:border-white/5">
         <div className="container relative z-10">
           <div className="max-w-6xl mx-auto">
             
@@ -673,7 +673,7 @@ export default function WhyChooseUs() {
                   <span className="text-[10px] text-corporate-gold font-bold uppercase tracking-widest block mb-3">
                     Five-Star Service Standard
                   </span>
-                  <h3 className="text-3xl font-heading font-bold text-white tracking-tight">
+                  <h3 className="text-3xl font-heading font-bold text-neutral-900 dark:text-white tracking-tight">
                     Our Unwavering Commitment To You
                   </h3>
                 </div>
@@ -685,12 +685,12 @@ export default function WhyChooseUs() {
                         <div className="w-8 h-8 rounded-full bg-corporate-gold/10 border border-corporate-gold/20 flex items-center justify-center">
                           {com.icon}
                         </div>
-                        <h4 className="text-base font-bold text-white">{com.title}</h4>
+                        <h4 className="text-base font-bold text-neutral-900 dark:text-white">{com.title}</h4>
                       </div>
                       
                       <ul className="space-y-2.5">
                         {com.items.map((item, i) => (
-                          <li key={i} className="flex items-start gap-2.5 text-xs text-white/50 font-light">
+                          <li key={i} className="flex items-start gap-2.5 text-xs text-neutral-900/50 dark:text-white/50 font-light">
                             <CheckCircle className="w-3.5 h-3.5 text-corporate-gold shrink-0 mt-0.5" />
                             <span>{item}</span>
                           </li>
@@ -702,17 +702,17 @@ export default function WhyChooseUs() {
               </div>
               
               {/* Right Column: Compliance Certifications */}
-              <div className="lg:col-span-5 p-8 rounded-3xl bg-gradient-to-b from-white/[0.05] to-white/[0.01] border border-white/5 space-y-6">
+              <div className="lg:col-span-5 p-8 rounded-3xl bg-gradient-to-b from-white/[0.05] to-white/[0.01] border border-black/5 dark:border-white/5 space-y-6">
                 <div>
-                  <h4 className="text-lg font-bold text-white mb-2">{data.complianceTitle}</h4>
-                  <p className="text-xs text-white/50 leading-relaxed font-light">{data.complianceDesc}</p>
+                  <h4 className="text-lg font-bold text-neutral-900 dark:text-white mb-2">{data.complianceTitle}</h4>
+                  <p className="text-xs text-neutral-900/50 dark:text-white/50 leading-relaxed font-light">{data.complianceDesc}</p>
                 </div>
                 
                 <div className="space-y-3">
                   {data.complianceItems.map((item, idx) => (
-                    <div key={idx} className="flex items-center gap-3 p-3 rounded-xl bg-white/[0.02] border border-white/5">
+                    <div key={idx} className="flex items-center gap-3 p-3 rounded-xl bg-black/[0.02] dark:bg-white/[0.02] border border-black/5 dark:border-white/5">
                       <FileCheck className="w-5 h-5 text-corporate-gold shrink-0" />
-                      <span className="text-xs text-white/80 font-medium">{item}</span>
+                      <span className="text-xs text-neutral-900/80 dark:text-white/80 font-medium">{item}</span>
                     </div>
                   ))}
                 </div>
@@ -737,14 +737,14 @@ export default function WhyChooseUs() {
                 Reserve Your Ride
               </span>
               
-              <h3 className="text-3xl md:text-4xl font-heading font-bold text-white tracking-tight leading-tight">
+              <h3 className="text-3xl md:text-4xl font-heading font-bold text-neutral-900 dark:text-white tracking-tight leading-tight">
                 Secure Your Premium Travel
                 <span className="text-gradient-gold block italic font-light mt-1">
                   Voucher Instantly.
                 </span>
               </h3>
               
-              <p className="text-white/60 text-sm md:text-base font-light leading-relaxed max-w-xl">
+              <p className="text-neutral-900/60 dark:text-white/60 text-sm md:text-base font-light leading-relaxed max-w-xl">
                 Experience the uncompromised standards of Corporate Wheels. Secure your luxury chauffeur immediately and receive real-time driver telemetry updates 2 hours prior to flight tarmac pickup.
               </p>
               
@@ -754,7 +754,7 @@ export default function WhyChooseUs() {
                     Book Travel Now <ArrowRight className="w-4 h-4" />
                   </Link>
                 </Button>
-                <Button variant="ghost" size="lg" className="rounded-xl text-white/70 hover:text-white w-full sm:w-auto" asChild>
+                <Button variant="ghost" size="lg" className="rounded-xl text-neutral-900/70 dark:text-white/70 hover:text-white w-full sm:w-auto" asChild>
                   <Link to="/contact">Request Custom Quote</Link>
                 </Button>
               </div>

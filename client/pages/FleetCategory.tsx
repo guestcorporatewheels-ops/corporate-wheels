@@ -67,7 +67,7 @@ function AnimatedGradientBg({ className = "" }: { className?: string }) {
       />
       {/* Delicate Gold Stardust Overlay */}
       <div className="absolute inset-0 bg-[radial-gradient(60%_60%_at_50%_50%,rgba(230,167,0,0.08)_0%,transparent_70%)]" />
-      <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/50 to-black/95" />
+      <div className="absolute inset-0 bg-gradient-to-b from-white/20 dark:from-black/20 via-white/50 dark:via-black/50 to-white/95 dark:to-black/95" />
     </div>
   );
 }
@@ -227,15 +227,15 @@ export default function FleetCategory({ forcedCategoryId }: FleetCategoryProps =
               className="lg:col-span-7"
             >
               {/* Category Tag Badge */}
-              <div className="inline-flex items-center gap-2.5 px-4.5 py-2 rounded-full bg-white/[0.04] border border-white/10 mb-6 backdrop-blur-md">
+              <div className="inline-flex items-center gap-2.5 px-4.5 py-2 rounded-full bg-black/[0.04] dark:bg-white/[0.04] border border-black/10 dark:border-white/10 mb-6 backdrop-blur-md">
                 <span className="w-2 h-2 rounded-full bg-corporate-gold animate-ping" />
-                <span className="text-xs text-white/90 font-semibold tracking-widest uppercase">
+                <span className="text-xs text-neutral-900/90 dark:text-white/90 font-semibold tracking-widest uppercase">
                   {data.heroBadge}
                 </span>
               </div>
 
               {/* Main Immersive Title */}
-              <h1 className="text-4xl sm:text-6xl xl:text-7xl font-heading text-white leading-[1.1] font-bold tracking-tight">
+              <h1 className="text-4xl sm:text-6xl xl:text-7xl font-heading text-neutral-900 dark:text-white leading-[1.1] font-bold tracking-tight">
                 {data.heroTitle}
                 <span className="text-gradient-gold block italic font-light mt-1">
                   {data.heroItalic}
@@ -259,14 +259,14 @@ export default function FleetCategory({ forcedCategoryId }: FleetCategoryProps =
               </div>
 
               {/* Sub description */}
-              <p className="mt-4 text-base md:text-lg text-white/70 leading-relaxed font-light max-w-xl">
+              <p className="mt-4 text-base md:text-lg text-neutral-900/70 dark:text-white/70 leading-relaxed font-light max-w-xl">
                 {data.heroSub}
               </p>
 
               {/* Hero highlights checklist pills */}
               <div className="mt-8 flex flex-wrap gap-3">
                 {data.heroHighlights.map((hl, idx) => (
-                  <div key={idx} className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/[0.03] border border-white/5 text-xs text-white/80">
+                  <div key={idx} className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-black/[0.03] dark:bg-white/[0.03] border border-black/5 dark:border-white/5 text-xs text-neutral-900/80 dark:text-white/80">
                     <Check className="w-3.5 h-3.5 text-corporate-gold" />
                     <span>{hl}</span>
                   </div>
@@ -281,7 +281,7 @@ export default function FleetCategory({ forcedCategoryId }: FleetCategoryProps =
                 <Button
                   size="lg"
                   variant="outline"
-                  className="sm:min-w-[200px] h-14 text-sm font-semibold tracking-wide uppercase rounded-xl border-white/10 hover:bg-white/5 backdrop-blur-md"
+                  className="sm:min-w-[200px] h-14 text-sm font-semibold tracking-wide uppercase rounded-xl border-black/10 dark:border-white/10 hover:bg-white/5 backdrop-blur-md"
                   onClick={() => setIsContactOpen(true)}
                 >
                   Contact Concierge
@@ -296,66 +296,66 @@ export default function FleetCategory({ forcedCategoryId }: FleetCategoryProps =
               transition={{ duration: 0.9, delay: 0.1 }}
               className="lg:col-span-5"
             >
-              <div className="relative rounded-3xl bg-gradient-to-b from-white/[0.08] to-white/[0.02] border border-white/10 p-6 md:p-8 backdrop-blur-xl shadow-glow transition-all duration-500 hover:border-corporate-gold/40 hover:shadow-[0_20px_50px_rgba(230,167,0,0.15)] group">
+              <div className="relative rounded-3xl bg-gradient-to-b from-white/[0.08] to-white/[0.02] border border-black/10 dark:border-white/10 p-6 md:p-8 backdrop-blur-xl shadow-glow transition-all duration-500 hover:border-corporate-gold/40 hover:shadow-[0_20px_50px_rgba(230,167,0,0.15)] group">
 
                 {/* Gold corner accents */}
                 <div className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-corporate-gold/45 rounded-tl-3xl pointer-events-none" />
                 <div className="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-corporate-gold/45 rounded-br-3xl pointer-events-none" />
 
-                <div className="absolute top-5 left-5 z-10 bg-black/60 backdrop-blur-md px-4 py-1.5 rounded-full border border-white/10 shadow-lg">
+                <div className="absolute top-5 left-5 z-10 bg-white/60 dark:bg-black/60 backdrop-blur-md px-4 py-1.5 rounded-full border border-black/10 dark:border-white/10 shadow-lg">
                   <span className="text-corporate-gold text-[10px] font-bold uppercase tracking-widest">
                     Vehicle Configurator Sheet
                   </span>
                 </div>
 
                 {/* Vehicle Showcase Image */}
-                <div className="relative h-60 w-full rounded-2xl overflow-hidden border border-white/5">
+                <div className="relative h-60 w-full rounded-2xl overflow-hidden border border-black/5 dark:border-white/5">
                   <img
                     src={data.overviewCard.image}
                     alt={data.overviewCard.carName}
                     className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/10 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-white/85 dark:from-black/85 via-white/10 dark:via-black/10 to-transparent" />
 
                   <div className="absolute bottom-5 left-5">
                     <span className="text-[10px] text-corporate-gold uppercase tracking-wider font-semibold">Flagship Standard</span>
-                    <h3 className="text-2xl font-heading font-bold text-white mt-0.5 drop-shadow-md">
+                    <h3 className="text-2xl font-heading font-bold text-neutral-900 dark:text-white mt-0.5 drop-shadow-md">
                       {data.overviewCard.carName}
                     </h3>
                   </div>
                 </div>
 
                 {/* Badges metrics strip */}
-                <div className="mt-6 grid grid-cols-3 gap-3 border-b border-white/10 pb-5 text-center">
-                  <div className="bg-white/[0.03] rounded-xl p-2 border border-white/5">
+                <div className="mt-6 grid grid-cols-3 gap-3 border-b border-black/10 dark:border-white/10 pb-5 text-center">
+                  <div className="bg-black/[0.03] dark:bg-white/[0.03] rounded-xl p-2 border border-black/5 dark:border-white/5">
                     <Users className="w-4 h-4 text-corporate-gold mx-auto mb-1" />
-                    <span className="text-[11px] text-white/90 font-medium block">{data.overviewCard.pax}</span>
+                    <span className="text-[11px] text-neutral-900/90 dark:text-white/90 font-medium block">{data.overviewCard.pax}</span>
                   </div>
-                  <div className="bg-white/[0.03] rounded-xl p-2 border border-white/5">
+                  <div className="bg-black/[0.03] dark:bg-white/[0.03] rounded-xl p-2 border border-black/5 dark:border-white/5">
                     <Briefcase className="w-4 h-4 text-corporate-gold mx-auto mb-1" />
-                    <span className="text-[11px] text-white/90 font-medium block">{data.overviewCard.luggage}</span>
+                    <span className="text-[11px] text-neutral-900/90 dark:text-white/90 font-medium block">{data.overviewCard.luggage}</span>
                   </div>
-                  <div className="bg-white/[0.03] rounded-xl p-2 border border-white/5">
+                  <div className="bg-black/[0.03] dark:bg-white/[0.03] rounded-xl p-2 border border-black/5 dark:border-white/5">
                     <Wifi className="w-4 h-4 text-corporate-gold mx-auto mb-1" />
-                    <span className="text-[11px] text-white/90 font-medium block">{data.overviewCard.wifi}</span>
+                    <span className="text-[11px] text-neutral-900/90 dark:text-white/90 font-medium block">{data.overviewCard.wifi}</span>
                   </div>
                 </div>
 
                 {/* Configurator Spec Sheet grid */}
                 <div className="mt-5">
-                  <span className="text-[10px] text-white/50 uppercase tracking-widest font-semibold block mb-3">Technical Specifications</span>
+                  <span className="text-[10px] text-neutral-900/50 dark:text-white/50 uppercase tracking-widest font-semibold block mb-3">Technical Specifications</span>
                   <div className="grid grid-cols-2 gap-3.5">
                     {data.overviewCard.techSpecs.map((spec, sIdx) => (
-                      <div key={sIdx} className="bg-white/[0.02] border border-white/5 rounded-xl p-3 flex flex-col justify-center transition-colors duration-300 hover:bg-white/[0.05]">
-                        <span className="text-[10px] text-white/40 uppercase tracking-wider font-medium">{spec.label}</span>
-                        <span className="text-sm font-semibold text-white mt-1">{spec.value}</span>
+                      <div key={sIdx} className="bg-black/[0.02] dark:bg-white/[0.02] border border-black/5 dark:border-white/5 rounded-xl p-3 flex flex-col justify-center transition-colors duration-300 hover:bg-white/[0.05]">
+                        <span className="text-[10px] text-neutral-900/40 dark:text-white/40 uppercase tracking-wider font-medium">{spec.label}</span>
+                        <span className="text-sm font-semibold text-neutral-900 dark:text-white mt-1">{spec.value}</span>
                       </div>
                     ))}
                   </div>
                 </div>
 
                 {/* Card footer description */}
-                <p className="mt-6 text-xs text-white/60 leading-relaxed font-light text-center italic border-t border-white/5 pt-4">
+                <p className="mt-6 text-xs text-neutral-900/60 dark:text-white/60 leading-relaxed font-light text-center italic border-t border-black/5 dark:border-white/5 pt-4">
                   "{data.overviewCard.description}"
                 </p>
 
@@ -367,7 +367,7 @@ export default function FleetCategory({ forcedCategoryId }: FleetCategoryProps =
       </section>
 
       {/* 2. AVAILABLE VEHICLES FLEET (UPGRADED FOR ELITE VISUAL DESIGN) */}
-      <section className="relative py-28 bg-black/50 border-y border-white/5">
+      <section className="relative py-28 bg-white/50 dark:bg-black/50 border-y border-black/5 dark:border-white/5">
 
         {/* Subtle glowing radial spots */}
         <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-corporate-gold/5 blur-[120px] rounded-full pointer-events-none" />
@@ -384,7 +384,7 @@ export default function FleetCategory({ forcedCategoryId }: FleetCategoryProps =
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-corporate-gold/10 border border-corporate-gold/20 mb-4">
               <span className="text-[11px] text-corporate-gold font-bold uppercase tracking-widest">Luxury Inventory</span>
             </div>
-            <h2 className="text-3xl md:text-5xl font-heading font-bold text-white">
+            <h2 className="text-3xl md:text-5xl font-heading font-bold text-neutral-900 dark:text-white">
               Explore Our Premium {data.title} Fleet
             </h2>
             <div className="w-20 h-1 bg-gradient-to-r from-corporate-gold to-orange-500 mx-auto mt-5 rounded-full" />
@@ -401,30 +401,30 @@ export default function FleetCategory({ forcedCategoryId }: FleetCategoryProps =
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.7, delay: index * 0.1 }}
-                className="relative rounded-3xl overflow-hidden bg-gradient-to-b from-white/[0.06] to-white/[0.01] border border-white/10 shadow-2xl flex flex-col group transition-all duration-400 hover:border-corporate-gold/20"
+                className="relative rounded-3xl overflow-hidden bg-gradient-to-b from-white/[0.06] to-white/[0.01] border border-black/10 dark:border-white/10 shadow-2xl flex flex-col group transition-all duration-400 hover:border-corporate-gold/20"
               >
 
                 {/* Vehicle image with luxury name overlay & hover scale */}
-                <div className="relative h-64 md:h-72 overflow-hidden border-b border-white/5">
+                <div className="relative h-64 md:h-72 overflow-hidden border-b border-black/5 dark:border-white/5">
                   <img
                     src={car.image}
                     alt={car.name}
                     className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent pointer-events-none" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-white/90 dark:from-black/90 via-white/20 dark:via-black/20 to-transparent pointer-events-none" />
 
                   {/* Category overlay tags */}
                   <div className="absolute top-5 right-5 flex gap-2">
-                    <div className="bg-black/60 backdrop-blur-md px-3 py-1 rounded-full border border-white/10 text-[10px] text-white font-medium uppercase tracking-wider">
+                    <div className="bg-white/60 dark:bg-black/60 backdrop-blur-md px-3 py-1 rounded-full border border-black/10 dark:border-white/10 text-[10px] text-neutral-900 dark:text-white font-medium uppercase tracking-wider">
                       {car.pax}
                     </div>
-                    <div className="bg-black/60 backdrop-blur-md px-3 py-1 rounded-full border border-white/10 text-[10px] text-white font-medium uppercase tracking-wider">
+                    <div className="bg-white/60 dark:bg-black/60 backdrop-blur-md px-3 py-1 rounded-full border border-black/10 dark:border-white/10 text-[10px] text-neutral-900 dark:text-white font-medium uppercase tracking-wider">
                       {car.luggage}
                     </div>
                   </div>
 
                   <div className="absolute bottom-5 left-6">
-                    <h3 className="text-2xl md:text-3xl font-heading font-bold text-white group-hover:text-corporate-gold transition-colors duration-300">
+                    <h3 className="text-2xl md:text-3xl font-heading font-bold text-neutral-900 dark:text-white group-hover:text-corporate-gold transition-colors duration-300">
                       {car.name}
                     </h3>
                   </div>
@@ -435,26 +435,26 @@ export default function FleetCategory({ forcedCategoryId }: FleetCategoryProps =
                   <div>
                     {/* Performance specifications pills row */}
                     <div className="mb-6">
-                      <span className="text-[10px] text-white/40 uppercase tracking-widest font-semibold block mb-2.5">Engine Metrics</span>
+                      <span className="text-[10px] text-neutral-900/40 dark:text-white/40 uppercase tracking-widest font-semibold block mb-2.5">Engine Metrics</span>
                       <div className="grid grid-cols-3 gap-2">
                         {car.engineSpecs.map((spec, specIdx) => (
-                          <div key={specIdx} className="bg-white/[0.03] border border-white/5 rounded-lg py-2 px-1 text-center transition-colors duration-300 hover:bg-white/[0.06]">
-                            <span className="text-[9px] text-white/50 block font-medium uppercase tracking-wider">{spec.label}</span>
-                            <span className="text-[11px] text-white font-semibold mt-0.5 block">{spec.value}</span>
+                          <div key={specIdx} className="bg-black/[0.03] dark:bg-white/[0.03] border border-black/5 dark:border-white/5 rounded-lg py-2 px-1 text-center transition-colors duration-300 hover:bg-white/[0.06]">
+                            <span className="text-[9px] text-neutral-900/50 dark:text-white/50 block font-medium uppercase tracking-wider">{spec.label}</span>
+                            <span className="text-[11px] text-neutral-900 dark:text-white font-semibold mt-0.5 block">{spec.value}</span>
                           </div>
                         ))}
                       </div>
                     </div>
 
                     {/* Features checklist */}
-                    <span className="text-[10px] text-white/40 uppercase tracking-widest font-semibold block mb-3">Premium Inclusions</span>
+                    <span className="text-[10px] text-neutral-900/40 dark:text-white/40 uppercase tracking-widest font-semibold block mb-3">Premium Inclusions</span>
                     <div className="space-y-3.5 mb-8">
                       {car.features.map((feature, fIndex) => (
                         <div key={fIndex} className="flex items-start gap-3">
                           <div className="w-5 h-5 rounded-full bg-corporate-gold/10 flex items-center justify-center shrink-0 mt-0.5">
                             <Check className="w-3.5 h-3.5 text-corporate-gold" />
                           </div>
-                          <span className="text-sm md:text-base text-white/80 font-light leading-snug">{feature}</span>
+                          <span className="text-sm md:text-base text-neutral-900/80 dark:text-white/80 font-light leading-snug">{feature}</span>
                         </div>
                       ))}
                     </div>
@@ -494,7 +494,7 @@ export default function FleetCategory({ forcedCategoryId }: FleetCategoryProps =
               </span>
             </div>
             
-            <h2 className="text-3xl md:text-5xl font-heading font-bold text-white tracking-tight">
+            <h2 className="text-3xl md:text-5xl font-heading font-bold text-neutral-900 dark:text-white tracking-tight">
               Elite Cabin
               <span className="text-gradient-gold block italic font-light mt-1.5">
                 Comforts & Conveniences.
@@ -502,7 +502,7 @@ export default function FleetCategory({ forcedCategoryId }: FleetCategoryProps =
             </h2>
             <div className="w-24 h-[2px] bg-gradient-to-r from-transparent via-corporate-gold to-transparent mx-auto mt-6" />
             
-            <p className="mt-6 text-white/60 text-base md:text-lg font-light leading-relaxed max-w-2xl mx-auto">
+            <p className="mt-6 text-neutral-900/60 dark:text-white/60 text-base md:text-lg font-light leading-relaxed max-w-2xl mx-auto">
               Every vehicle class in our fleet is meticulously customized to maintain absolute mental clarity, physical rest, and remote digital productivity.
             </p>
           </motion.div>
@@ -517,7 +517,7 @@ export default function FleetCategory({ forcedCategoryId }: FleetCategoryProps =
                 whileHover={{ y: -6 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: idx * 0.05 }}
-                className="relative rounded-2xl bg-gradient-to-b from-white/[0.04] to-white/[0.01] border border-white/5 p-8 hover:border-corporate-gold/20 hover:bg-white/[0.03] transition-all duration-400 group overflow-hidden"
+                className="relative rounded-2xl bg-gradient-to-b from-white/[0.04] to-white/[0.01] border border-black/5 dark:border-white/5 p-8 hover:border-corporate-gold/20 hover:bg-white/[0.03] transition-all duration-400 group overflow-hidden"
               >
                 {/* Thin top gradient light leak */}
                 <div className="absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent group-hover:via-corporate-gold/30 transition-all duration-500" />
@@ -527,15 +527,15 @@ export default function FleetCategory({ forcedCategoryId }: FleetCategoryProps =
                 <div className="absolute bottom-0 right-0 w-3 h-3 border-b border-r border-corporate-gold/0 group-hover:border-corporate-gold/20 rounded-br-xl transition-all duration-500" />
                 
                 <div className="flex flex-col items-start gap-5 relative z-10">
-                  <div className="w-12 h-12 rounded-full bg-white/[0.03] border border-white/10 flex items-center justify-center group-hover:border-corporate-gold/20 group-hover:bg-corporate-gold/5 transition-all duration-300">
+                  <div className="w-12 h-12 rounded-full bg-black/[0.03] dark:bg-white/[0.03] border border-black/10 dark:border-white/10 flex items-center justify-center group-hover:border-corporate-gold/20 group-hover:bg-corporate-gold/5 transition-all duration-300">
                     {getIcon(item.iconName)}
                   </div>
                   
                   <div>
-                    <h4 className="text-lg font-bold text-white group-hover:text-corporate-gold transition-colors duration-300 mb-2">
+                    <h4 className="text-lg font-bold text-neutral-900 dark:text-white group-hover:text-corporate-gold transition-colors duration-300 mb-2">
                       {item.title}
                     </h4>
-                    <p className="text-xs sm:text-sm text-white/50 leading-relaxed font-light group-hover:text-white/70 transition-colors duration-300">
+                    <p className="text-xs sm:text-sm text-neutral-900/50 dark:text-white/50 leading-relaxed font-light group-hover:text-white/70 transition-colors duration-300">
                       {item.desc}
                     </p>
                   </div>
@@ -569,7 +569,7 @@ export default function FleetCategory({ forcedCategoryId }: FleetCategoryProps =
               </span>
             </div>
 
-            <h2 className="text-3xl md:text-5xl font-heading font-bold text-white tracking-tight">
+            <h2 className="text-3xl md:text-5xl font-heading font-bold text-neutral-900 dark:text-white tracking-tight">
               Why Choose Our
               <span className="text-gradient-gold block italic font-light mt-1.5">
                 {data.title}?
@@ -577,7 +577,7 @@ export default function FleetCategory({ forcedCategoryId }: FleetCategoryProps =
             </h2>
             <div className="w-24 h-[2px] bg-gradient-to-r from-transparent via-corporate-gold to-transparent mx-auto mt-6" />
 
-            <p className="mt-6 text-white/60 text-base md:text-lg font-light leading-relaxed max-w-2xl mx-auto">
+            <p className="mt-6 text-neutral-900/60 dark:text-white/60 text-base md:text-lg font-light leading-relaxed max-w-2xl mx-auto">
               We define industry-leading luxury transport standards by delivering a premium service tailored specifically to your schedule.
             </p>
           </motion.div>
@@ -608,7 +608,7 @@ export default function FleetCategory({ forcedCategoryId }: FleetCategoryProps =
                     <div className="absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent group-hover:via-corporate-gold/40 transition-all duration-500 z-10" />
 
                     {/* The Luxury Card */}
-                    <div className="relative p-8 md:p-10 rounded-3xl bg-gradient-to-b from-white/[0.04] to-white/[0.01] border border-white/5 backdrop-blur-md shadow-2xl group-hover:border-corporate-gold/20 group-hover:shadow-[0_20px_50px_rgba(230,167,0,0.08)] transition-all duration-400 flex-1 flex flex-col justify-between overflow-hidden">
+                    <div className="relative p-8 md:p-10 rounded-3xl bg-gradient-to-b from-white/[0.04] to-white/[0.01] border border-black/5 dark:border-white/5 backdrop-blur-md shadow-2xl group-hover:border-corporate-gold/20 group-hover:shadow-[0_20px_50px_rgba(230,167,0,0.08)] transition-all duration-400 flex-1 flex flex-col justify-between overflow-hidden">
 
                       {/* Subtly Glowing Serial Number in the Background (Serif-Italic style) */}
                       <div className="absolute top-4 right-6 text-7xl font-heading font-extrabold italic text-corporate-gold/5 pointer-events-none select-none transition-all duration-500 group-hover:text-corporate-gold/10 group-hover:scale-110 group-hover:translate-x-1">
@@ -623,7 +623,7 @@ export default function FleetCategory({ forcedCategoryId }: FleetCategoryProps =
 
                         {/* Premium Dynamic Orbital Icon Container */}
                         <div className="flex-none transition-transform duration-500 group-hover:scale-110 group-hover:rotate-6">
-                          <div className="relative w-14 h-14 rounded-full bg-white/[0.03] border border-white/10 flex items-center justify-center group-hover:border-corporate-gold/30 transition-all duration-500 shadow-md">
+                          <div className="relative w-14 h-14 rounded-full bg-black/[0.03] dark:bg-white/[0.03] border border-black/10 dark:border-white/10 flex items-center justify-center group-hover:border-corporate-gold/30 transition-all duration-500 shadow-md">
 
                             {/* Orbital rotating ring overlay */}
                             <div className="absolute inset-0 rounded-full border border-dashed border-corporate-gold/30 scale-110 group-hover:scale-120 animate-spin-slow opacity-60 group-hover:opacity-100 transition-all duration-500" />
@@ -639,10 +639,10 @@ export default function FleetCategory({ forcedCategoryId }: FleetCategoryProps =
                           {/* Mini gold accent slug line */}
                           <div className="w-8 h-[1px] bg-corporate-gold/30 group-hover:w-14 transition-all duration-500 mb-3" />
 
-                          <h4 className="text-xl md:text-2xl font-heading font-bold text-white tracking-tight mb-3 group-hover:text-corporate-gold transition-colors duration-300">
+                          <h4 className="text-xl md:text-2xl font-heading font-bold text-neutral-900 dark:text-white tracking-tight mb-3 group-hover:text-corporate-gold transition-colors duration-300">
                             {item.title}
                           </h4>
-                          <p className="text-sm md:text-base text-white/60 leading-relaxed font-light group-hover:text-white/80 transition-colors duration-300">
+                          <p className="text-sm md:text-base text-neutral-900/60 dark:text-white/60 leading-relaxed font-light group-hover:text-white/80 transition-colors duration-300">
                             {item.desc}
                           </p>
                         </div>
@@ -659,7 +659,7 @@ export default function FleetCategory({ forcedCategoryId }: FleetCategoryProps =
       </section>
 
       {/* 4. PREMIUM DYNAMIC CTA SECTION (REDESIGNED FOR MAJESTIC VIP RESERVATION) */}
-      <section className="relative py-32 pb-40 bg-gradient-to-b from-transparent to-black/20">
+      <section className="relative py-32 pb-40 bg-gradient-to-b from-transparent to-white/20 dark:to-black/20">
 
         {/* Decorative ambient glowing backdrops */}
         <div className="absolute bottom-12 left-1/2 -translate-x-1/2 w-[800px] h-[350px] bg-corporate-gold/5 blur-[150px] rounded-full pointer-events-none" />
@@ -671,7 +671,7 @@ export default function FleetCategory({ forcedCategoryId }: FleetCategoryProps =
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="rounded-[3rem] border border-white/10 bg-gradient-to-br from-white/[0.06] via-white/[0.01] to-black p-8 md:p-20 backdrop-blur-2xl relative overflow-hidden shadow-[0_30px_70px_rgba(0,0,0,0.8)] group hover:border-corporate-gold/20 transition-all duration-500"
+            className="rounded-[3rem] border border-black/10 dark:border-white/10 bg-gradient-to-br from-white/[0.06] via-white/[0.01] to-white dark:to-black p-8 md:p-20 backdrop-blur-2xl relative overflow-hidden shadow-[0_30px_70px_rgba(0,0,0,0.8)] group hover:border-corporate-gold/20 transition-all duration-500"
           >
             {/* Top border luxury lighting light leak */}
             <div className="absolute inset-x-0 top-0 h-[1.5px] bg-gradient-to-r from-transparent via-corporate-gold/40 to-transparent group-hover:via-corporate-gold/60 transition-all duration-500 z-10" />
@@ -691,22 +691,22 @@ export default function FleetCategory({ forcedCategoryId }: FleetCategoryProps =
             <div className="text-center relative z-10">
 
               {/* Premium Reservation Tag */}
-              <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white/[0.04] border border-white/10 mb-8 backdrop-blur-md">
+              <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-black/[0.04] dark:bg-white/[0.04] border border-black/10 dark:border-white/10 mb-8 backdrop-blur-md">
                 <span className="w-1.5 h-1.5 rounded-full bg-corporate-gold animate-pulse shadow-[0_0_8px_rgba(230,167,0,0.8)]" />
-                <span className="text-[10px] text-white/80 font-bold uppercase tracking-widest">
+                <span className="text-[10px] text-neutral-900/80 dark:text-white/80 font-bold uppercase tracking-widest">
                   VIP Concierge Dispatch
                 </span>
               </div>
 
               {/* Splendid Multi-layered Title */}
-              <h3 className="text-3xl sm:text-5xl lg:text-6xl font-heading font-bold text-white leading-[1.1] tracking-tight max-w-4xl mx-auto">
+              <h3 className="text-3xl sm:text-5xl lg:text-6xl font-heading font-bold text-neutral-900 dark:text-white leading-[1.1] tracking-tight max-w-4xl mx-auto">
                 {data.ctaTitle}
               </h3>
 
               {/* Delicate gold-dust divider */}
               <div className="w-20 h-[1.5px] bg-gradient-to-r from-transparent via-corporate-gold to-transparent mx-auto mt-6" />
 
-              <p className="mt-6 text-base md:text-lg text-white/70 max-w-2xl mx-auto font-light leading-relaxed">
+              <p className="mt-6 text-base md:text-lg text-neutral-900/70 dark:text-white/70 max-w-2xl mx-auto font-light leading-relaxed">
                 {data.ctaSubtitle}
               </p>
 
@@ -718,7 +718,7 @@ export default function FleetCategory({ forcedCategoryId }: FleetCategoryProps =
                 <Button
                   size="lg"
                   variant="outline"
-                  className="w-full sm:w-auto sm:min-w-[240px] h-14 text-sm font-semibold uppercase tracking-wider rounded-xl border-white/15 text-white hover:bg-white/5 backdrop-blur-md transition-transform duration-300 hover:scale-[1.03]"
+                  className="w-full sm:w-auto sm:min-w-[240px] h-14 text-sm font-semibold uppercase tracking-wider rounded-xl border-black/15 dark:border-white/15 text-neutral-900 dark:text-white hover:bg-white/5 backdrop-blur-md transition-transform duration-300 hover:scale-[1.03]"
                   onClick={() => setIsContactOpen(true)}
                 >
                   Contact Partnership Desk
@@ -726,7 +726,7 @@ export default function FleetCategory({ forcedCategoryId }: FleetCategoryProps =
               </div>
 
               {/* Dynamic trust credentials plaques row */}
-              <div className="mt-20 pt-12 border-t border-white/10 grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="mt-20 pt-12 border-t border-black/10 dark:border-white/10 grid grid-cols-1 md:grid-cols-3 gap-6">
                 {data.ctaBadges.map((badge, idx) => {
                   const parts = badge.split(":");
                   const label = parts[0]?.trim() || "VERIFIED";
@@ -735,7 +735,7 @@ export default function FleetCategory({ forcedCategoryId }: FleetCategoryProps =
                   return (
                     <div
                       key={idx}
-                      className="bg-white/[0.02] border border-white/5 rounded-2xl p-5 text-center flex flex-col items-center justify-center transition-all duration-300 hover:bg-white/[0.05] hover:border-corporate-gold/25 group/badge"
+                      className="bg-black/[0.02] dark:bg-white/[0.02] border border-black/5 dark:border-white/5 rounded-2xl p-5 text-center flex flex-col items-center justify-center transition-all duration-300 hover:bg-white/[0.05] hover:border-corporate-gold/25 group/badge"
                     >
                       {/* Badge Seal Icon */}
                       <div className="w-10 h-10 rounded-full bg-corporate-gold/10 flex items-center justify-center mb-3.5 border border-corporate-gold/20 group-hover/badge:border-corporate-gold/45 group-hover/badge:bg-corporate-gold/20 transition-all duration-300 shadow-md">
@@ -745,7 +745,7 @@ export default function FleetCategory({ forcedCategoryId }: FleetCategoryProps =
                       <span className="text-[10px] text-corporate-gold font-bold uppercase tracking-widest mb-1 block">
                         {label}
                       </span>
-                      <span className="text-xs md:text-sm text-white font-semibold tracking-wide block uppercase">
+                      <span className="text-xs md:text-sm text-neutral-900 dark:text-white font-semibold tracking-wide block uppercase">
                         {value}
                       </span>
                     </div>

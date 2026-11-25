@@ -20,11 +20,13 @@ export default function BookFleet() {
       />
       <section className="pt-28 pb-16">
         <div className="container max-w-5xl logistifie-page">
+          <div className="rounded-3xl bg-[#05080f] p-4 sm:p-8 shadow-[0_30px_80px_-30px_rgba(0,0,0,0.6)] ring-1 ring-[#E3A501]/25 dark:rounded-none dark:bg-transparent dark:p-0 dark:shadow-none dark:ring-0">
           <booking-widget
             primarycolor="#E3A501"
             useractivestate="2"
             masteraccountid="9987250"
           />
+          </div>
         </div>
       </section>
     </main>

@@ -69,7 +69,7 @@ export default function CityToCity() {
   const [selectedRoute, setSelectedRoute] = useState<number | null>(null);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-black via-gray-900 to-black text-white">
+    <div className="min-h-screen bg-gradient-to-b from-white dark:from-black via-gray-900 to-white dark:to-black text-neutral-900 dark:text-white">
       <Seo
         title="City-to-City Chauffeur Transfers"
         description="Fixed-rate intercity chauffeur travel with WiFi and refreshments on board. Comfortable, reliable transfers between UK cities."
@@ -83,7 +83,7 @@ export default function CityToCity() {
             alt="City skyline at dusk"
             className="w-full h-full object-cover brightness-75"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/60" />
+          <div className="absolute inset-0 bg-gradient-to-b from-white/60 dark:from-black/60 via-white/40 dark:via-black/40 to-white/60 dark:to-black/60" />
         </div>
 
         <div className="container relative z-10">
@@ -102,7 +102,7 @@ export default function CityToCity() {
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
                 Travel Between Cities—Comfort, Punctuality, and Transparency
               </h1>
-              <p className="text-lg text-gray-300 max-w-2xl mb-8">
+              <p className="text-lg text-neutral-700 dark:text-gray-300 max-w-2xl mb-8">
                 Book professional chauffeurs and premium vehicles for
                 predictable, door-to-door intercity journeys. We offer fixed,
                 all-inclusive pricing, flexible pickup times, and vetted
@@ -132,7 +132,7 @@ export default function CityToCity() {
                   <Clock className="w-6 h-6 text-corporate-gold" />
                   <div>
                     <p className="font-semibold">On-Time Pickups</p>
-                    <p className="text-sm text-gray-400">
+                    <p className="text-sm text-neutral-500 dark:text-gray-400">
                       Flight tracking &amp; live updates
                     </p>
                   </div>
@@ -142,7 +142,7 @@ export default function CityToCity() {
                   <Shield className="w-6 h-6 text-corporate-gold" />
                   <div>
                     <p className="font-semibold">Vetted Drivers</p>
-                    <p className="text-sm text-gray-400">
+                    <p className="text-sm text-neutral-500 dark:text-gray-400">
                       Background-checked & insured
                     </p>
                   </div>
@@ -186,9 +186,9 @@ export default function CityToCity() {
                       alt={c.city}
                       className="w-full h-40 object-cover"
                     />
-                    <div className="absolute inset-0 bg-black/30 flex items-end p-4">
-                      <div className="text-white">
-                        <p className="text-sm text-gray-200">Popular route</p>
+                    <div className="absolute inset-0 bg-white/30 dark:bg-black/30 flex items-end p-4">
+                      <div className="text-neutral-900 dark:text-white">
+                        <p className="text-sm text-neutral-700 dark:text-gray-200">Popular route</p>
                         <p className="font-semibold">{c.city}</p>
                       </div>
                     </div>
@@ -196,7 +196,7 @@ export default function CityToCity() {
                 ))}
               </div>
 
-              <p className="text-sm text-gray-400 mt-4">
+              <p className="text-sm text-neutral-500 dark:text-gray-400 mt-4">
                 Can’t find your route? Contact our concierge for a custom quote
                 and schedule.
               </p>
@@ -208,7 +208,7 @@ export default function CityToCity() {
       {/* Long-Distance Service Features */}
       <section className="py-20 relative overflow-hidden">
         <div className="absolute inset-0 opacity-30">
-          <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black" />
+          <div className="absolute inset-0 bg-gradient-to-b from-white dark:from-black via-transparent to-white dark:to-black" />
         </div>
         <div className="container relative z-10">
           <motion.div
@@ -221,7 +221,7 @@ export default function CityToCity() {
             <h2 className="text-4xl font-bold mb-6">
               The Better Way Between Cities
             </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            <p className="text-xl text-neutral-700 dark:text-gray-300 max-w-3xl mx-auto">
               Experience the comfort and convenience of our premium intercity
               chauffeur service.
             </p>
@@ -256,12 +256,12 @@ export default function CityToCity() {
                 transition={{ duration: 0.6, delay: index * 0.2 }}
                 className="group"
               >
-                <Card className="bg-black/30 backdrop-blur-sm border-gray-800 p-8 hover:border-corporate-gold transition-all duration-300">
+                <Card className="bg-white/30 dark:bg-black/30 backdrop-blur-sm border-neutral-200 dark:border-gray-800 p-8 hover:border-corporate-gold transition-all duration-300">
                   <feature.icon className="w-12 h-12 text-corporate-gold mb-6 transform group-hover:scale-110 transition-transform" />
                   <h3 className="text-xl font-semibold mb-4">
                     {feature.title}
                   </h3>
-                  <p className="text-gray-300">{feature.description}</p>
+                  <p className="text-neutral-700 dark:text-gray-300">{feature.description}</p>
                 </Card>
               </motion.div>
             ))}
@@ -270,7 +270,7 @@ export default function CityToCity() {
       </section>
 
       {/* Popular Routes */}
-      <section className="py-20 bg-gradient-to-b from-gray-900/50 to-black">
+      <section className="py-20 bg-gradient-to-b from-gray-900/50 to-white dark:to-black">
         <div className="container">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -282,7 +282,7 @@ export default function CityToCity() {
             <h2 className="text-4xl font-bold mb-6">
               Popular City-to-City Routes
             </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            <p className="text-xl text-neutral-700 dark:text-gray-300 max-w-3xl mx-auto">
               Discover our most frequently traveled routes with fixed
               competitive rates.
             </p>
@@ -301,13 +301,13 @@ export default function CityToCity() {
                 }
                 className="cursor-pointer group"
               >
-                <Card className="relative overflow-hidden h-[300px] border-gray-800 hover:border-corporate-gold transition-all duration-500">
+                <Card className="relative overflow-hidden h-[300px] border-neutral-200 dark:border-gray-800 hover:border-corporate-gold transition-all duration-500">
                   <img
                     src={route.image}
                     alt={`${route.from} to ${route.to}`}
                     className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
-                  <div className="absolute inset-0 bg-black/60 transition-opacity duration-500 group-hover:bg-black/70" />
+                  <div className="absolute inset-0 bg-white/60 dark:bg-black/60 transition-opacity duration-500 group-hover:bg-black/70" />
                   <div className="relative z-10 h-full p-8 flex flex-col justify-between">
                     <div>
                       <div className="flex items-center gap-4 mb-4">
@@ -316,7 +316,7 @@ export default function CityToCity() {
                           {route.from} → {route.to}
                         </h3>
                       </div>
-                      <div className="flex items-center gap-6 text-gray-300">
+                      <div className="flex items-center gap-6 text-neutral-700 dark:text-gray-300">
                         <span className="flex items-center gap-2">
                           <Route className="w-4 h-4" />
                           {route.distance}
@@ -329,7 +329,7 @@ export default function CityToCity() {
                     </div>
                     <div className="flex items-end justify-between">
                       <div>
-                        <p className="text-gray-400">Starting from</p>
+                        <p className="text-neutral-500 dark:text-gray-400">Starting from</p>
                         <p className="text-3xl font-bold text-corporate-gold">
                           £{route.price}
                         </p>
@@ -364,7 +364,7 @@ export default function CityToCity() {
               <h2 className="text-4xl font-bold mb-6">
                 Why Choose Our City-to-City Service?
               </h2>
-              <p className="text-xl text-gray-300 mb-8">
+              <p className="text-xl text-neutral-700 dark:text-gray-300 mb-8">
                 Experience a new standard in intercity travel with our premium
                 chauffeur service.
               </p>
@@ -406,7 +406,7 @@ export default function CityToCity() {
                       <h3 className="text-lg font-semibold mb-2">
                         {item.title}
                       </h3>
-                      <p className="text-gray-400">{item.description}</p>
+                      <p className="text-neutral-500 dark:text-gray-400">{item.description}</p>
                     </div>
                   </motion.div>
                 ))}
@@ -430,9 +430,9 @@ export default function CityToCity() {
       </section>
 
       {/* App Download Section */}
-      <section className="py-20 bg-gradient-to-b from-gray-900/50 to-black relative overflow-hidden">
+      <section className="py-20 bg-gradient-to-b from-gray-900/50 to-white dark:to-black relative overflow-hidden">
         <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-black/60" />
+          <div className="absolute inset-0 bg-white/60 dark:bg-black/60" />
           <img
             src="/images/client/sclass-starlight.jpg"
             alt="Background"
@@ -448,7 +448,7 @@ export default function CityToCity() {
               transition={{ duration: 0.6 }}
             >
               <h2 className="text-4xl font-bold mb-6">Download Our App</h2>
-              <p className="text-xl text-gray-300 mb-12">
+              <p className="text-xl text-neutral-700 dark:text-gray-300 mb-12">
                 Book your city-to-city rides instantly, track your chauffeur in
                 real-time, and manage your bookings with ease.
               </p>
@@ -488,7 +488,7 @@ export default function CityToCity() {
             <h2 className="text-4xl font-bold mb-6">
               Frequently Asked Questions
             </h2>
-            <p className="text-xl text-gray-300">
+            <p className="text-xl text-neutral-700 dark:text-gray-300">
               Find answers to common questions about our city-to-city service.
             </p>
           </motion.div>
@@ -530,12 +530,12 @@ export default function CityToCity() {
               >
                 <AccordionItem
                   value={`item-${index}`}
-                  className="border-gray-800"
+                  className="border-neutral-200 dark:border-gray-800"
                 >
                   <AccordionTrigger className="text-left hover:text-corporate-gold">
                     {faq.question}
                   </AccordionTrigger>
-                  <AccordionContent className="text-gray-300">
+                  <AccordionContent className="text-neutral-700 dark:text-gray-300">
                     {faq.answer}
                   </AccordionContent>
                 </AccordionItem>
@@ -546,7 +546,7 @@ export default function CityToCity() {
       </section>
 
       {/* Final CTA */}
-      <section className="py-20 bg-gradient-to-b from-gray-900/50 to-black relative overflow-hidden">
+      <section className="py-20 bg-gradient-to-b from-gray-900/50 to-white dark:to-black relative overflow-hidden">
         <div className="container">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -558,7 +558,7 @@ export default function CityToCity() {
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               Ready to Travel in Style?
             </h2>
-            <p className="text-xl text-gray-300 mb-12">
+            <p className="text-xl text-neutral-700 dark:text-gray-300 mb-12">
               Book your intercity journey today and experience the comfort of
               premium chauffeur service.
             </p>

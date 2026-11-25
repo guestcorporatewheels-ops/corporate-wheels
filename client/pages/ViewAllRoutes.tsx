@@ -18,11 +18,11 @@ export default function ViewAllRoutes() {
       />
       <section className="pt-36 pb-12">
         <div className="container">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-6">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 mb-6">
             <span className="w-2 h-2 rounded-full bg-corporate-gold animate-pulse" />
-            <span className="text-sm text-white/80">All Routes</span>
+            <span className="text-sm text-neutral-900/80 dark:text-white/80">All Routes</span>
           </div>
-          <h1 className="text-4xl md:text-5xl font-heading text-white mb-4">
+          <h1 className="text-4xl md:text-5xl font-heading text-neutral-900 dark:text-white mb-4">
             Popular <span className="text-gradient-gold">routes</span>
           </h1>
           <p className="text-muted-foreground max-w-2xl">
@@ -38,9 +38,9 @@ export default function ViewAllRoutes() {
             {routes.map((r) => (
               <div
                 key={`${r.from}-${r.to}`}
-                className="group p-6 rounded-2xl border border-white/10 bg-white/[0.02] hover:border-corporate-gold/30 hover:bg-white/[0.04] transition-colors"
+                className="group p-6 rounded-2xl border border-black/10 dark:border-white/10 bg-black/[0.02] dark:bg-white/[0.02] hover:border-corporate-gold/30 hover:bg-white/[0.04] transition-colors"
               >
-                <h3 className="text-lg font-semibold text-white mb-2">
+                <h3 className="text-lg font-semibold text-neutral-900 dark:text-white mb-2">
                   {r.from} → {r.to}
                 </h3>
                 <p className="text-sm text-muted-foreground mb-4">

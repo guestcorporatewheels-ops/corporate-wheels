@@ -121,11 +121,11 @@ export default function Blog() {
             transition={{ duration: 0.6 }}
             className="text-center mb-12"
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-6">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 mb-6">
               <span className="w-2 h-2 rounded-full bg-[#E6A700] animate-pulse" />
-              <span className="text-sm text-white/80">Latest Insights</span>
+              <span className="text-sm text-neutral-900/80 dark:text-white/80">Latest Insights</span>
             </div>
-            <h1 className="text-4xl md:text-6xl xl:text-7xl font-heading text-white leading-tight mb-6">
+            <h1 className="text-4xl md:text-6xl xl:text-7xl font-heading text-neutral-900 dark:text-white leading-tight mb-6">
               Luxury Travel <span className="text-corporate-gold">Insights</span>
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -143,7 +143,7 @@ export default function Blog() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <div className="bg-white/[0.02] backdrop-blur-sm border border-white/10 rounded-2xl overflow-hidden">
+            <div className="bg-black/[0.02] dark:bg-white/[0.02] backdrop-blur-sm border border-black/10 dark:border-white/10 rounded-2xl overflow-hidden">
               <div className="grid md:grid-cols-2 gap-8">
                 <div className="relative h-[400px] md:h-full">
                   <img
@@ -157,17 +157,17 @@ export default function Blog() {
                     <div className="px-3 py-1 rounded-full bg-corporate-gold/10 border border-corporate-gold/20">
                       <span className="text-corporate-gold text-sm">{featuredPost.category}</span>
                     </div>
-                    <span className="text-sm text-white/60">{featuredPost.date}</span>
+                    <span className="text-sm text-neutral-900/60 dark:text-white/60">{featuredPost.date}</span>
                   </div>
-                  <h2 className="text-3xl md:text-4xl font-heading text-white mb-4">
+                  <h2 className="text-3xl md:text-4xl font-heading text-neutral-900 dark:text-white mb-4">
                     {featuredPost.title}
                   </h2>
                   <p className="text-muted-foreground mb-6">{featuredPost.excerpt}</p>
                   <div className="flex items-center gap-4 mb-6">
-                    <div className="h-10 w-10 rounded-full bg-white/10" />
+                    <div className="h-10 w-10 rounded-full bg-black/10 dark:bg-white/10" />
                     <div>
-                      <p className="text-sm text-white">{featuredPost.author}</p>
-                      <p className="text-sm text-white/60">{featuredPost.readTime}</p>
+                      <p className="text-sm text-neutral-900 dark:text-white">{featuredPost.author}</p>
+                      <p className="text-sm text-neutral-900/60 dark:text-white/60">{featuredPost.readTime}</p>
                     </div>
                   </div>
                   <Button variant="glow" size="lg" className="w-fit" onClick={notifyComingSoon}>
@@ -181,10 +181,10 @@ export default function Blog() {
       </section>
 
       {/* Categories */}
-      <section className="py-16 bg-white/[0.02]">
+      <section className="py-16 bg-black/[0.02] dark:bg-white/[0.02]">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-heading text-white mb-4">Explore Topics</h2>
+            <h2 className="text-3xl font-heading text-neutral-900 dark:text-white mb-4">Explore Topics</h2>
             <p className="text-muted-foreground">Find insights on your areas of interest</p>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
@@ -196,9 +196,9 @@ export default function Blog() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: index * 0.1 }}
-                className="bg-white/[0.02] backdrop-blur-sm border border-white/10 rounded-xl p-4 text-center transition-colors hover:bg-white/[0.04]"
+                className="bg-black/[0.02] dark:bg-white/[0.02] backdrop-blur-sm border border-black/10 dark:border-white/10 rounded-xl p-4 text-center transition-colors hover:bg-white/[0.04]"
               >
-                <h3 className="text-white mb-2">{category.name}</h3>
+                <h3 className="text-neutral-900 dark:text-white mb-2">{category.name}</h3>
                 <span className="text-sm text-corporate-gold">{category.count} articles</span>
               </motion.button>
             ))}
@@ -209,7 +209,7 @@ export default function Blog() {
       {/* Recent Posts Grid */}
       <section className="py-16">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-heading text-white mb-12">Latest Articles</h2>
+          <h2 className="text-3xl font-heading text-neutral-900 dark:text-white mb-12">Latest Articles</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {recentPosts.map((post, index) => (
               <motion.article
@@ -221,7 +221,7 @@ export default function Blog() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
-                className="bg-white/[0.02] backdrop-blur-sm border border-white/10 rounded-2xl overflow-hidden transition-transform hover:translate-y-[-4px] cursor-pointer"
+                className="bg-black/[0.02] dark:bg-white/[0.02] backdrop-blur-sm border border-black/10 dark:border-white/10 rounded-2xl overflow-hidden transition-transform hover:translate-y-[-4px] cursor-pointer"
               >
                 <div className="relative h-48">
                   <img
@@ -235,15 +235,15 @@ export default function Blog() {
                     <div className="px-3 py-1 rounded-full bg-corporate-gold/10 border border-corporate-gold/20">
                       <span className="text-corporate-gold text-sm">{post.category}</span>
                     </div>
-                    <span className="text-sm text-white/60">{post.readTime}</span>
+                    <span className="text-sm text-neutral-900/60 dark:text-white/60">{post.readTime}</span>
                   </div>
-                  <h3 className="text-xl font-heading text-white mb-3">{post.title}</h3>
+                  <h3 className="text-xl font-heading text-neutral-900 dark:text-white mb-3">{post.title}</h3>
                   <p className="text-sm text-muted-foreground mb-6">{post.excerpt}</p>
                   <div className="flex items-center gap-3">
-                    <div className="h-8 w-8 rounded-full bg-white/10" />
+                    <div className="h-8 w-8 rounded-full bg-black/10 dark:bg-white/10" />
                     <div>
-                      <p className="text-sm text-white">{post.author}</p>
-                      <p className="text-xs text-white/60">{post.date}</p>
+                      <p className="text-sm text-neutral-900 dark:text-white">{post.author}</p>
+                      <p className="text-xs text-neutral-900/60 dark:text-white/60">{post.date}</p>
                     </div>
                   </div>
                 </div>
@@ -254,9 +254,9 @@ export default function Blog() {
       </section>
 
       {/* Popular Articles */}
-      <section className="py-16 bg-white/[0.02]">
+      <section className="py-16 bg-black/[0.02] dark:bg-white/[0.02]">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-heading text-white mb-12">Popular This Week</h2>
+          <h2 className="text-3xl font-heading text-neutral-900 dark:text-white mb-12">Popular This Week</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {popularArticles.map((article, index) => (
               <motion.div
@@ -276,13 +276,13 @@ export default function Blog() {
                     alt={article.title}
                     className="absolute inset-0 w-full h-full object-cover transition-transform group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-white/80 dark:from-black/80 via-white/50 dark:via-black/50 to-transparent" />
                   <div className="absolute bottom-4 left-4 right-4">
                     <div className="flex items-center gap-2 mb-2">
                       <span className="text-xs text-corporate-gold">{article.category}</span>
-                      <span className="text-xs text-white/60">• {article.readTime}</span>
+                      <span className="text-xs text-neutral-900/60 dark:text-white/60">• {article.readTime}</span>
                     </div>
-                    <h3 className="text-lg text-white font-medium leading-tight">{article.title}</h3>
+                    <h3 className="text-lg text-neutral-900 dark:text-white font-medium leading-tight">{article.title}</h3>
                   </div>
                 </div>
               </motion.div>
@@ -298,9 +298,9 @@ export default function Blog() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="bg-white/[0.02] backdrop-blur-sm border border-white/10 rounded-2xl p-8 md:p-12 text-center"
+            className="bg-black/[0.02] dark:bg-white/[0.02] backdrop-blur-sm border border-black/10 dark:border-white/10 rounded-2xl p-8 md:p-12 text-center"
           >
-            <h2 className="text-3xl font-heading text-white mb-4">Stay Updated</h2>
+            <h2 className="text-3xl font-heading text-neutral-900 dark:text-white mb-4">Stay Updated</h2>
             <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
               Subscribe to our newsletter for exclusive insights on luxury travel, fleet updates,
               and industry trends delivered to your inbox.
@@ -315,7 +315,7 @@ export default function Blog() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter your email"
-                className="w-full px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-corporate-gold/50"
+                className="w-full px-4 py-2 rounded-lg bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 text-neutral-900 dark:text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-corporate-gold/50"
               />
               <Button type="submit" variant="glow" size="lg" className="w-full sm:w-auto">
                 Subscribe

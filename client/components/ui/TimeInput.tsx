@@ -48,7 +48,7 @@ export default function TimeInput({
           value={value || ""}
           onClick={() => setOpen((s) => !s)}
           placeholder={placeholder}
-          className="w-full rounded-lg bg-black/40 px-3 py-2 border border-white/10 focus:outline-none focus:ring-2 focus:ring-corporate-gold cursor-pointer placeholder:text-[#E6A700]"
+          className="w-full rounded-lg bg-white/40 dark:bg-black/40 px-3 py-2 border border-black/10 dark:border-white/10 focus:outline-none focus:ring-2 focus:ring-corporate-gold cursor-pointer placeholder:text-[#E6A700]"
         />
         <Clock className="absolute right-3 top-1/2 -translate-y-1/2 text-corporate-gold" />
 
@@ -56,9 +56,9 @@ export default function TimeInput({
           <motion.div
             initial={{ opacity: 0, y: -6 }}
             animate={{ opacity: 1, y: 0 }}
-            className="absolute right-0 z-50 mt-2 w-64 bg-black/95 backdrop-blur-sm rounded-lg shadow-xl border border-white/10"
+            className="absolute right-0 z-50 mt-2 w-64 bg-white/95 dark:bg-black/95 backdrop-blur-sm rounded-lg shadow-xl border border-black/10 dark:border-white/10"
           >
-            <div className="p-3 border-b border-white/10">
+            <div className="p-3 border-b border-black/10 dark:border-white/10">
               <div className="text-lg font-medium text-center">
                 {value || "00:00"}
               </div>

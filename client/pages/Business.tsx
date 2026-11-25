@@ -122,7 +122,7 @@ function AnimatedGradientBg({ className = "" }: { className?: string }) {
         }}
       />
       <div className="absolute inset-0 bg-[radial-gradient(50%_50%_at_50%_50%,rgba(230,167,0,0.08)_0%,transparent_60%)]" />
-      <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/70 to-black/90" />
+      <div className="absolute inset-0 bg-gradient-to-b from-white/40 dark:from-black/40 via-white/70 dark:via-black/70 to-white/90 dark:to-black/90" />
 
       {/* Subtle moving gradient overlay */}
       <motion.div
@@ -159,13 +159,13 @@ function Hero() {
             transition={{ duration: 0.6 }}
             className="max-w-3xl"
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-6">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 mb-6">
               <span className="w-2 h-2 rounded-full bg-[#E6A700] animate-pulse" />
-              <span className="text-sm text-white/80">
+              <span className="text-sm text-neutral-900/80 dark:text-white/80">
                 Corporate Accounts
               </span>
             </div>
-            <h1 className="text-4xl md:text-6xl xl:text-7xl font-heading text-white leading-tight">
+            <h1 className="text-4xl md:text-6xl xl:text-7xl font-heading text-neutral-900 dark:text-white leading-tight">
               <span className="text-gradient-gold inline-block">
                 {displayText}
               </span>
@@ -194,7 +194,7 @@ function Hero() {
             </div>
             <div className="mt-8 flex items-center gap-3">
               <span className="w-2 h-2 rounded-full bg-[#E6A700]" />
-              <p className="text-sm text-white/80">
+              <p className="text-sm text-neutral-900/80 dark:text-white/80">
                 Trusted by corporate travel desks across the UK
               </p>
             </div>
@@ -210,18 +210,18 @@ function Hero() {
             <img
               src="/images/client/sclass-business-street.jpg"
               alt="Corporate Wheels executive fleet vehicle"
-              className="rounded-lg border border-white/10 shadow-2xl bg-black/40"
+              className="rounded-lg border border-black/10 dark:border-white/10 shadow-2xl bg-white/40 dark:bg-black/40"
             />
-            <div className="absolute -right-8 -bottom-8 p-6 backdrop-blur-md bg-white/5 border border-white/10 rounded-lg z-20">
+            <div className="absolute -right-8 -bottom-8 p-6 backdrop-blur-md bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 rounded-lg z-20">
               <div className="flex items-center gap-3">
                 <div className="w-12 h-12 rounded-full bg-[#E6A700]/20 flex items-center justify-center">
-                  <span className="text-[#E6A700] text-xl">✓</span>
+                  <span className="text-corporate-gold text-xl">✓</span>
                 </div>
                 <div>
-                  <p className="text-white text-sm font-medium">
+                  <p className="text-neutral-900 dark:text-white text-sm font-medium">
                     Dedicated account manager
                   </p>
-                  <p className="text-[#E6A700] text-sm">
+                  <p className="text-corporate-gold text-sm">
                     Priority booking, always on call
                   </p>
                 </div>
@@ -249,9 +249,9 @@ function Feature({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.3 }}
       transition={{ duration: 0.6, delay }}
-      className="rounded-xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm shadow-glow"
+      className="rounded-xl border border-black/10 dark:border-white/10 bg-black/5 dark:bg-white/5 p-6 backdrop-blur-sm shadow-glow"
     >
-      <h3 className="text-xl font-heading text-white">{title}</h3>
+      <h3 className="text-xl font-heading text-neutral-900 dark:text-white">{title}</h3>
       <p className="mt-2 text-sm text-muted-foreground">{desc}</p>
     </motion.div>
   );
@@ -278,7 +278,7 @@ function Stats() {
               transition={{ duration: 0.5, delay: i * 0.1 }}
               className="text-center"
             >
-              <h3 className="text-3xl md:text-4xl font-bold text-white mb-2">
+              <h3 className="text-3xl md:text-4xl font-bold text-neutral-900 dark:text-white mb-2">
                 {stat.prefix}
                 <span className="text-gradient-gold">{stat.value}</span>
                 {stat.suffix}
@@ -352,7 +352,7 @@ function Features() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <h2 className="text-3xl md:text-5xl font-heading text-white mb-4">
+            <h2 className="text-3xl md:text-5xl font-heading text-neutral-900 dark:text-white mb-4">
               Built for Modern Enterprises
             </h2>
             <p className="text-lg text-muted-foreground">
@@ -371,10 +371,10 @@ function Features() {
               whileHover={{ y: -4 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.6, delay: i * 0.07 }}
-              className="group rounded-xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm hover:border-white/20 hover:bg-white/10"
+              className="group rounded-xl border border-black/10 dark:border-white/10 bg-black/5 dark:bg-white/5 p-6 backdrop-blur-sm hover:border-white/20 hover:bg-white/10"
             >
               <div className="mb-4 text-3xl">{it.icon}</div>
-              <h3 className="text-xl font-heading text-white mb-2 group-hover:text-gradient-gold">
+              <h3 className="text-xl font-heading text-neutral-900 dark:text-white mb-2 group-hover:text-gradient-gold">
                 {it.t}
               </h3>
               <p className="text-sm text-muted-foreground">{it.d}</p>
@@ -460,7 +460,7 @@ function WorldwidePresence() {
           transition={{ duration: 0.7 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl font-heading text-white mb-4">
+          <h2 className="text-3xl font-heading text-neutral-900 dark:text-white mb-4">
             In action across the UK
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
@@ -485,10 +485,10 @@ function WorldwidePresence() {
                 className="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-              <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
+              <div className="absolute inset-0 bg-gradient-to-t from-white/80 dark:from-black/80 via-white/20 dark:via-black/20 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-4 text-neutral-900 dark:text-white">
                 <h3 className="text-xl font-semibold mb-1">{city.name}</h3>
-                <p className="text-sm text-white/80">{city.stats}</p>
+                <p className="text-sm text-neutral-900/80 dark:text-white/80">{city.stats}</p>
               </div>
             </motion.div>
           ))}
@@ -531,7 +531,7 @@ function EnterpriseFeatures() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-3xl md:text-4xl font-heading text-white text-center"
+          className="text-3xl md:text-4xl font-heading text-neutral-900 dark:text-white text-center"
         >
           Enterprise features
         </motion.h2>
@@ -543,9 +543,9 @@ function EnterpriseFeatures() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: i * 0.08 }}
-              className="p-6 rounded-xl border border-white/6 bg-white/4 backdrop-blur-sm"
+              className="p-6 rounded-xl border border-black/6 dark:border-white/6 bg-black/4 dark:bg-white/4 backdrop-blur-sm"
             >
-              <h4 className="text-lg font-medium text-white">{it.t}</h4>
+              <h4 className="text-lg font-medium text-neutral-900 dark:text-white">{it.t}</h4>
               <p className="mt-2 text-sm text-muted-foreground">{it.d}</p>
             </motion.div>
           ))}
@@ -568,7 +568,7 @@ function Compliance() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-3xl md:text-4xl font-heading text-white text-center"
+          className="text-3xl md:text-4xl font-heading text-neutral-900 dark:text-white text-center"
         >
           Trusted & compliant
         </motion.h2>
@@ -584,7 +584,7 @@ function Compliance() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.06 }}
-              className="bg-white/4 rounded-lg p-6 flex flex-col items-center justify-center gap-3 border border-white/6 w-40"
+              className="bg-black/4 dark:bg-white/4 rounded-lg p-6 flex flex-col items-center justify-center gap-3 border border-black/6 dark:border-white/6 w-40"
             >
               {m.src ? (
                 <img src={m.src} alt={m.name} className="h-10 w-auto object-contain" />
@@ -653,7 +653,7 @@ function CaseStudies() {
           transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl md:text-4xl font-heading text-white mb-4">
+          <h2 className="text-3xl md:text-4xl font-heading text-neutral-900 dark:text-white mb-4">
             Success Stories
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
@@ -670,7 +670,7 @@ function CaseStudies() {
               whileInView={{ opacity: 1, y: 0 }}
               whileHover={{ y: -5 }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="rounded-xl overflow-hidden bg-black/40 border border-white/6 group"
+              className="rounded-xl overflow-hidden bg-white/40 dark:bg-black/40 border border-black/6 dark:border-white/6 group"
             >
               <div className="relative aspect-[16/10] overflow-hidden">
                 <img
@@ -679,10 +679,10 @@ function CaseStudies() {
                   className="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110"
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-white/80 dark:from-black/80 via-white/20 dark:via-black/20 to-transparent" />
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-semibold text-white mb-3">
+                <h3 className="text-xl font-semibold text-neutral-900 dark:text-white mb-3">
                   {study.title}
                 </h3>
                 <p className="text-muted-foreground text-sm mb-4">
@@ -692,7 +692,7 @@ function CaseStudies() {
                   {study.stats.map((stat, index) => (
                     <span
                       key={index}
-                      className="inline-block px-3 py-1 rounded-full text-xs bg-white/5 border border-white/10 text-white/80"
+                      className="inline-block px-3 py-1 rounded-full text-xs bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 text-neutral-900/80 dark:text-white/80"
                     >
                       {stat}
                     </span>
@@ -717,17 +717,17 @@ function CTA() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="rounded-2xl border border-white/10 bg-gradient-to-r from-[#E6A700]/20 via-[#FF6B35]/10 to-[#E6A700]/5 p-12 backdrop-blur-sm"
+          className="rounded-2xl border border-black/10 dark:border-white/10 bg-gradient-to-r from-[#E6A700]/20 via-[#FF6B35]/10 to-[#E6A700]/5 p-12 backdrop-blur-sm"
         >
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-6">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 mb-6">
                 <span className="w-2 h-2 rounded-full bg-[#E6A700] animate-pulse" />
-                <span className="text-sm text-white/80">
+                <span className="text-sm text-neutral-900/80 dark:text-white/80">
                   Corporate Accounts
                 </span>
               </div>
-              <h3 className="text-3xl md:text-4xl font-heading text-white leading-tight">
+              <h3 className="text-3xl md:text-4xl font-heading text-neutral-900 dark:text-white leading-tight">
                 Transform Your{" "}
                 <span className="text-gradient-gold">Corporate Travel</span>{" "}
                 Today
@@ -765,13 +765,13 @@ function CTA() {
               >
                 <div className="w-full h-full rounded-full border-2 border-dashed border-[#E6A700]/30 animate-spin-slow" />
               </motion.div>
-              <div className="relative z-10 p-6 backdrop-blur-md bg-black/40 border border-white/10 rounded-lg">
+              <div className="relative z-10 p-6 backdrop-blur-md bg-white/40 dark:bg-black/40 border border-black/10 dark:border-white/10 rounded-lg">
                 <div className="flex items-center justify-between mb-6">
                   <div className="flex items-center gap-3">
                     <div className="w-10 h-10 rounded-full bg-[#E6A700]/20 flex items-center justify-center">
-                      <span className="text-[#E6A700]">✓</span>
+                      <span className="text-corporate-gold">✓</span>
                     </div>
-                    <span className="text-white font-medium">
+                    <span className="text-neutral-900 dark:text-white font-medium">
                       Enterprise Features
                     </span>
                   </div>
@@ -784,7 +784,7 @@ function CTA() {
                   ].map((feature) => (
                     <div key={feature} className="flex items-center gap-2">
                       <div className="w-1.5 h-1.5 rounded-full bg-[#E6A700]" />
-                      <span className="text-sm text-white/80">{feature}</span>
+                      <span className="text-sm text-neutral-900/80 dark:text-white/80">{feature}</span>
                     </div>
                   ))}
                 </div>

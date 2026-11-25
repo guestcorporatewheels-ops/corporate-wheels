@@ -6,12 +6,9 @@ export type Theme = "light" | "dark";
 // Must match the inline script in index.html that applies the theme before first paint.
 export const THEME_STORAGE_KEY = "cw-theme";
 
-// Only these routes have been designed for the light theme so far; every other
-// page is forced dark until it is converted.
-const THEMEABLE_PATHS = new Set(["/", "/about", "/services", "/services/airport-transfers", "/services/corporate-travel", "/fleet/business-vans", "/cancellation-refund-policy", "/chauffeur-careers", "/contact", "/why-choose-us/elite-chauffeurs", "/services/london-cruise-transfer", "/help", "/fleet/executive-cars", "/fleet/premium-suvs", "/services/city-tours", "/services/private-jet-chauffeur", "/why-choose-us/safety-first", "/services/special-events", "/why-choose-us/tailored-luxury-fleet", "/privacy", "/terms-and-conditions"]);
-
+// Every public page supports both themes; only the internal admin panel stays dark.
 export function isThemeablePath(pathname: string) {
-  return THEMEABLE_PATHS.has(pathname);
+  return !pathname.toLowerCase().startsWith("/admin-panel");
 }
 
 function readTheme(): Theme {
