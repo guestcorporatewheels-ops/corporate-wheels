@@ -157,7 +157,7 @@ export default function ChauffeurHailing() {
                 <Card className="p-8 bg-black/50 border-gray-800 shadow-2xl">
                   <div className="flex gap-4 items-center">
                     <img
-                      src="/images/cw-placeholder.svg"
+                      src="/images/client/meet-greet-sign.jpg"
                       alt="chauffeur"
                       className="w-28 h-28 rounded-xl object-cover shadow-lg"
                     />
@@ -195,7 +195,7 @@ export default function ChauffeurHailing() {
                     transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
                   >
                     <img
-                      src="/images/cw-placeholder.svg"
+                      src="/images/app/screen-1.jpg"
                       alt="app preview"
                       className="w-full h-full object-cover"
                     />
@@ -206,7 +206,7 @@ export default function ChauffeurHailing() {
                     transition={{ type: "spring", stiffness: 120 }}
                   >
                     <img
-                      src="/images/cw-placeholder.svg"
+                      src="/images/app/screen-2.jpg"
                       alt="app preview 2"
                       className="w-full h-full object-cover"
                     />
@@ -335,7 +335,7 @@ export default function ChauffeurHailing() {
             >
               <div className="relative bg-black/10 h-72 rounded-lg border border-gray-800 overflow-hidden">
                 <img
-                  src="/images/cw-placeholder.svg"
+                  src="/images/generated/route-map.jpg"
                   alt="map"
                   className="w-full h-full object-cover brightness-70"
                 />
@@ -452,7 +452,7 @@ export default function ChauffeurHailing() {
                     transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
                   >
                     <img
-                      src="/images/cw-placeholder.svg"
+                      src="/images/app/screen-3.jpg"
                       alt="app preview"
                       className="w-full h-full object-cover"
                     />

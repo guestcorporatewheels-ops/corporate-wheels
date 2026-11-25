@@ -11,7 +11,7 @@ const featuredPost = {
   title: "Revolutionizing Executive Travel",
   excerpt: "How AI and sustainability are reshaping the luxury transportation landscape in 2025",
   date: "October 18, 2025",
-  image: "/images/cw-placeholder.svg",
+  image: "/images/client/sclass-london-hotel.jpg",
   category: "Future of Travel",
   author: "James Mitchell",
   readTime: "6 min read"
@@ -31,7 +31,7 @@ const recentPosts = [
     title: "The Evolution of Our Electric Fleet",
     excerpt: "Introducing our newest Tesla Model S and Mercedes EQS luxury vehicles",
     date: "October 15, 2025",
-    image: "/images/cw-placeholder.svg",
+    image: "/images/client/bmw-i7.jpg",
     category: "Luxury Fleet",
     author: "Sarah Bennett",
     readTime: "4 min read"
@@ -40,7 +40,7 @@ const recentPosts = [
     title: "Dubai to Abu Dhabi: A Premium Journey",
     excerpt: "Experience the epitome of luxury travel between UAE's most dynamic cities",
     date: "October 12, 2025",
-    image: "/images/cw-placeholder.svg",
+    image: "/images/client/vclass-private-jet.jpg",
     category: "City Guides",
     author: "Ahmed Hassan",
     readTime: "5 min read"
@@ -49,7 +49,7 @@ const recentPosts = [
     title: "The Hallmarks of Chauffeur Excellence",
     excerpt: "What sets our chauffeur service apart in the luxury transport industry",
     date: "October 10, 2025",
-    image: "/images/cw-placeholder.svg",
+    image: "/images/client/sclass-chauffeur-rain.jpg",
     category: "Service Excellence",
     author: "Michael Chang",
     readTime: "4 min read"
@@ -59,25 +59,25 @@ const recentPosts = [
 const popularArticles = [
   {
     title: "Corporate Travel Trends 2025",
-    image: "/images/cw-placeholder.svg",
+    image: "/images/client/sclass-business-street.jpg",
     category: "Executive Travel",
     readTime: "7 min read"
   },
   {
     title: "Sustainable Luxury: Our Green Initiative",
-    image: "/images/cw-placeholder.svg",
+    image: "/images/fleet-premium/electric-class.jpg",
     category: "Sustainability",
     readTime: "5 min read"
   },
   {
     title: "London's Hidden Business Venues",
-    image: "/images/cw-placeholder.svg",
+    image: "/images/client/sclass-hotel-night.jpg",
     category: "City Guides",
     readTime: "6 min read"
   },
   {
     title: "The Art of Airport Transfers",
-    image: "/images/cw-placeholder.svg",
+    image: "/images/client/meet-greet-arrivals.jpg",
     category: "Service Excellence",
     readTime: "4 min read"
   }

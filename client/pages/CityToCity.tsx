@@ -34,7 +34,7 @@ const cityRoutes = [
     duration: "4 hours",
     price: "349",
     image:
-      "/images/cw-placeholder.svg",
+      "/images/cities/manchester.jpg",
   },
   {
     from: "London",
@@ -43,7 +43,7 @@ const cityRoutes = [
     duration: "1.5 hours",
     price: "189",
     image:
-      "/images/cw-placeholder.svg",
+      "/images/generated/oxford.jpg",
   },
   {
     from: "London",
@@ -52,7 +52,7 @@ const cityRoutes = [
     duration: "2.5 hours",
     price: "249",
     image:
-      "/images/cw-placeholder.svg",
+      "/images/cities/birmingham.jpg",
   },
   {
     from: "London",
@@ -61,7 +61,7 @@ const cityRoutes = [
     duration: "7.5 hours",
     price: "599",
     image:
-      "/images/cw-placeholder.svg",
+      "/images/cities/edinburgh.jpg",
   },
 ];
 
@@ -79,7 +79,7 @@ export default function CityToCity() {
       <section className="relative min-h-[72vh] flex items-center overflow-hidden pt-20">
         <div className="absolute inset-0 z-0">
           <img
-            src="/images/cw-placeholder.svg"
+            src="/images/cities/london.jpg"
             alt="City skyline at dusk"
             className="w-full h-full object-cover brightness-75"
           />
@@ -162,19 +162,19 @@ export default function CityToCity() {
                 {[
                   {
                     city: "London → Manchester",
-                    img: "/images/cw-placeholder.svg",
+                    img: "/images/cities/manchester.jpg",
                   },
                   {
                     city: "London → Oxford",
-                    img: "/images/cw-placeholder.svg",
+                    img: "/images/generated/oxford.jpg",
                   },
                   {
                     city: "London → Birmingham",
-                    img: "/images/cw-placeholder.svg",
+                    img: "/images/cities/birmingham.jpg",
                   },
                   {
                     city: "London → Edinburgh",
-                    img: "/images/cw-placeholder.svg",
+                    img: "/images/cities/edinburgh.jpg",
                   },
                 ].map((c, i) => (
                   <div
@@ -420,7 +420,7 @@ export default function CityToCity() {
               className="relative"
             >
               <img
-                src="/images/cw-placeholder.svg"
+                src="/images/client/sclass-chauffeur-rain.jpg"
                 alt="Luxury car service"
                 className="rounded-lg shadow-2xl"
               />
@@ -434,7 +434,7 @@ export default function CityToCity() {
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-black/60" />
           <img
-            src="/images/cw-placeholder.svg"
+            src="/images/client/sclass-starlight.jpg"
             alt="Background"
             className="w-full h-full object-cover"
           />

@@ -90,7 +90,7 @@ export default function HourlyHire() {
       <section className="relative min-h-[72vh] flex items-center  pt-20">
         <div className="absolute inset-0 z-0">
           <img
-            src="/images/cw-placeholder.svg"
+            src="/images/client/sclass-hotel-dusk.jpg"
             alt="luxury car"
             className="w-full h-full object-cover brightness-60"
           />
@@ -243,21 +243,21 @@ export default function HourlyHire() {
                 title: "Flexible Scheduling",
                 description:
                   "Book for as many hours as needed, with easy extensions and 24/7 availability",
-                image: "/images/cw-placeholder.svg",
+                image: "/images/FlexibleScheduling.jpeg",
               },
               {
                 icon: Shield,
                 title: "Elite Chauffeurs",
                 description:
                   "Professionally trained, background-checked, and certified for your peace of mind",
-                image: "/images/cw-placeholder.svg",
+                image: "/images/EliteChauffeurs.jpeg",
               },
               {
                 icon: Car,
                 title: "Luxury Fleet",
                 description:
                   "Choose from our curated selection of premium vehicles for any occasion",
-                image: "/images/cw-placeholder.svg",
+                image: "/images/LuxuryFleet.jpg",
               },
             ].map((feature, index) => (
               <motion.div
@@ -476,22 +476,22 @@ export default function HourlyHire() {
             >
               <div className="grid grid-cols-2 gap-4">
                 <img
-                  src="/images/cw-placeholder.svg"
+                  src="/images/client/sclass-business-team.jpg"
                   alt="Business meeting transition"
                   className="rounded-lg shadow-xl w-full h-64 object-cover"
                 />
                 <img
-                  src="/images/cw-placeholder.svg"
+                  src="/images/client/rolls-royce-ghost.jpg"
                   alt="Luxury shopping experience"
                   className="rounded-lg shadow-xl w-full h-64 object-cover mt-12"
                 />
                 <img
-                  src="/images/cw-placeholder.svg"
+                  src="/images/client/rolls-royce-big-ben.jpg"
                   alt="Tourist destinations"
                   className="rounded-lg shadow-xl w-full h-64 object-cover"
                 />
                 <img
-                  src="/images/cw-placeholder.svg"
+                  src="/images/client/vclass-red-carpet.jpg"
                   alt="Special event transportation"
                   className="rounded-lg shadow-xl w-full h-64 object-cover mt-12"
                 />
@@ -628,7 +628,7 @@ export default function HourlyHire() {
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black z-10" />
           <img
-            src="/images/cw-placeholder.svg"
+            src="/images/client/sclass-starlight.jpg"
             alt=""
             className="w-full h-full object-cover opacity-30"
           />

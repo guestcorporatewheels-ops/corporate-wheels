@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { ShieldCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useTypingAnimation } from "@/hooks/use-typing-animation";
 import { cn } from "@/lib/utils";
@@ -207,7 +208,7 @@ function Hero() {
           >
             <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent z-10" />
             <img
-              src="/images/cw-placeholder.svg"
+              src="/images/client/sclass-business-street.jpg"
               alt="Corporate Wheels executive fleet vehicle"
               className="rounded-lg border border-white/10 shadow-2xl bg-black/40"
             />
@@ -390,37 +391,37 @@ function WorldwidePresence() {
     {
       name: "London",
       image:
-        "/images/cw-placeholder.svg",
+        "/images/cities/london.jpg",
       stats: "500+ rides/month",
     },
     {
       name: "Manchester",
       image:
-        "/images/cw-placeholder.svg",
+        "/images/cities/manchester.jpg",
       stats: "300+ rides/month",
     },
     {
       name: "Birmingham",
       image:
-        "/images/cw-placeholder.svg",
+        "/images/cities/birmingham.jpg",
       stats: "250+ rides/month",
     },
     {
       name: "Edinburgh",
       image:
-        "/images/cw-placeholder.svg",
+        "/images/cities/edinburgh.jpg",
       stats: "200+ rides/month",
     },
     {
       name: "Liverpool",
       image:
-        "/images/cw-placeholder.svg",
+        "/images/generated/liverpool.jpg",
       stats: "150+ rides/month",
     },
     {
       name: "Bristol",
       image:
-        "/images/cw-placeholder.svg",
+        "/images/generated/bristol.jpg",
       stats: "100+ rides/month",
     },
   ];
@@ -556,8 +557,8 @@ function EnterpriseFeatures() {
 
 function Compliance() {
   const marks = [
-    { name: "ICO Registered", src: "/images/cw-placeholder.svg" },
-    { name: "TfL Licensed", src: "/images/cw-placeholder.svg" },
+    { name: "ICO Registered", src: "" },
+    { name: "TfL Licensed", src: "/images/tfl-logo.png" },
   ];
   return (
     <section className="relative py-20">
@@ -585,7 +586,11 @@ function Compliance() {
               transition={{ duration: 0.5, delay: i * 0.06 }}
               className="bg-white/4 rounded-lg p-6 flex flex-col items-center justify-center gap-3 border border-white/6 w-40"
             >
-              <img src={m.src} alt={m.name} className="h-10 w-auto object-contain" />
+              {m.src ? (
+                <img src={m.src} alt={m.name} className="h-10 w-auto object-contain" />
+              ) : (
+                <ShieldCheck aria-hidden className="h-10 w-10 text-corporate-gold" strokeWidth={1.5} />
+              )}
               <span className="text-xs text-muted-foreground text-center">
                 {m.name}
               </span>
@@ -603,21 +608,21 @@ function CaseStudies() {
       title: "Global Tech Summit",
       desc: "Coordinated 200+ executive transfers across 3 days in multiple cities. Achieved 100% on-time performance.",
       image:
-        "/images/cw-placeholder.svg",
+        "/images/client/sclass-business-team.jpg",
       stats: ["200+ Transfers", "3 Cities", "100% On-time"],
     },
     {
       title: "Financial Conference",
       desc: "24/7 dedicated support for 50+ VIP attendees. Custom billing for different cost centers.",
       image:
-        "/images/cw-placeholder.svg",
+        "/images/client/sclass-hotel-chauffeurs.jpg",
       stats: ["50+ VIPs", "24/7 Support", "18% Cost Savings"],
     },
     {
       title: "Fashion Week",
       desc: "Luxury fleet coordination for designer showcases. Real-time tracking and schedule adjustments.",
       image:
-        "/images/cw-placeholder.svg",
+        "/images/client/sclass-red-carpet.jpg",
       stats: ["100+ Routes", "Premium Fleet", "Live Tracking"],
     },
   ];

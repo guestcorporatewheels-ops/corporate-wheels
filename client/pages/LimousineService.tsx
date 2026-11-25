@@ -122,7 +122,7 @@ export default function LimousineService() {
         </div>
         <div className="relative z-10">
           <img
-            src="/images/cw-placeholder.svg"
+            src="/images/client/stretch-limousine.jpg"
             alt="Limousine Service"
             className="mx-auto rounded-2xl shadow-2xl mb-8 w-full max-w-3xl object-cover border-4 border-corporate-gold/30"
           />
@@ -285,7 +285,7 @@ export default function LimousineService() {
           Limo Service in the City
         </h2>
         <img
-          src="/images/cw-placeholder.svg"
+          src="/images/client/rolls-royce-phantom.jpg"
           alt="City Limo"
           className="rounded-xl shadow-2xl mb-8 w-full object-cover border-4 border-corporate-gold/20"
         />
@@ -333,7 +333,7 @@ export default function LimousineService() {
           Get Around with Corporate Wheels
         </h2>
         <img
-          src="/images/cw-placeholder.svg"
+          src="/images/client/vclass-hotel-night.jpg"
           alt="Get Around"
           className="rounded-xl shadow-2xl mb-8 w-full object-cover border-4 border-corporate-gold/20"
         />
@@ -387,7 +387,7 @@ export default function LimousineService() {
           Airport Limousine Service
         </h2>
         <img
-          src="/images/cw-placeholder.svg"
+          src="/images/client/sclass-private-jet.jpg"
           alt="Airport Limo"
           className="rounded-xl shadow-2xl mb-8 w-full object-cover border-4 border-corporate-gold/20"
         />
